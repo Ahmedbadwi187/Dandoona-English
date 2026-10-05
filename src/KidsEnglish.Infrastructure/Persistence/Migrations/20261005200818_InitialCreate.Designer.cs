@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KidsEnglish.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20261005194255_InitialCreate")]
+    [Migration("20261005200818_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -24,89 +24,6 @@ namespace KidsEnglish.Infrastructure.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("KidsEnglish.Domain.Entities.Activity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ConfigJson")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("LessonId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Order")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("LessonId");
-
-                    b.ToTable("Activities");
-                });
-
-            modelBuilder.Entity("KidsEnglish.Domain.Entities.Asset", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("ActivityId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("BlobPath")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<string>("ContentHash")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("nvarchar(64)");
-
-                    b.Property<string>("Kind")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<Guid>("LessonId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<bool>("RequiresHumanReview")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("Source")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ActivityId");
-
-                    b.HasIndex("ContentHash");
-
-                    b.HasIndex("LessonId");
-
-                    b.ToTable("Assets");
-                });
 
             modelBuilder.Entity("KidsEnglish.Domain.Entities.Child", b =>
                 {
@@ -133,109 +50,18 @@ namespace KidsEnglish.Infrastructure.Persistence.Migrations
                     b.Property<Guid>("ParentId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("TrackId")
-                        .HasColumnType("int");
+                    b.Property<string>("Track")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("little-learners");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ParentId");
 
-                    b.HasIndex("TrackId");
-
                     b.ToTable("Children");
-                });
-
-            modelBuilder.Entity("KidsEnglish.Domain.Entities.ContentPack", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ManifestBlobPath")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<DateTime>("PublishedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("PublishedBy")
-                        .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<int>("TrackId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Version")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TrackId", "Version")
-                        .IsUnique();
-
-                    b.ToTable("ContentPacks");
-                });
-
-            modelBuilder.Entity("KidsEnglish.Domain.Entities.ContentPackLesson", b =>
-                {
-                    b.Property<Guid>("ContentPackId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("LessonId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CurriculumHash")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("nvarchar(64)");
-
-                    b.HasKey("ContentPackId", "LessonId");
-
-                    b.HasIndex("LessonId");
-
-                    b.ToTable("ContentPackLesson");
-                });
-
-            modelBuilder.Entity("KidsEnglish.Domain.Entities.Lesson", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Code")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("CurriculumHash")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("nvarchar(64)");
-
-                    b.Property<int>("Order")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<int>("TrackId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TrackId", "Code")
-                        .IsUnique();
-
-                    b.ToTable("Lessons");
                 });
 
             modelBuilder.Entity("KidsEnglish.Domain.Entities.Parent", b =>
@@ -270,8 +96,10 @@ namespace KidsEnglish.Infrastructure.Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ActivityId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Activity")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<int>("Attempts")
                         .HasColumnType("int");
@@ -285,6 +113,11 @@ namespace KidsEnglish.Infrastructure.Persistence.Migrations
                     b.Property<DateTime>("CompletedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("LessonId")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<int>("Stars")
                         .HasColumnType("int");
 
@@ -292,8 +125,6 @@ namespace KidsEnglish.Infrastructure.Persistence.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ActivityId");
 
                     b.HasIndex("ChildId", "ClientRecordId")
                         .IsUnique();
@@ -335,80 +166,6 @@ namespace KidsEnglish.Infrastructure.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("RefreshTokens");
-                });
-
-            modelBuilder.Entity("KidsEnglish.Domain.Entities.Track", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CefrFrom")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<string>("CefrTo")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<string>("Code")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<int>("MaxAge")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MinAge")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Code")
-                        .IsUnique();
-
-                    b.ToTable("Tracks");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CefrFrom = "Pre-A1",
-                            CefrTo = "Pre-A1",
-                            Code = "little-learners",
-                            MaxAge = 5,
-                            MinAge = 3,
-                            Name = "Little Learners"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CefrFrom = "Pre-A1",
-                            CefrTo = "A1",
-                            Code = "explorers",
-                            MaxAge = 8,
-                            MinAge = 6,
-                            Name = "Explorers"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CefrFrom = "A1",
-                            CefrTo = "A2",
-                            Code = "champions",
-                            MaxAge = 12,
-                            MinAge = 9,
-                            Name = "Champions"
-                        });
                 });
 
             modelBuilder.Entity("KidsEnglish.Infrastructure.Persistence.ApplicationUser", b =>
@@ -608,33 +365,6 @@ namespace KidsEnglish.Infrastructure.Persistence.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("KidsEnglish.Domain.Entities.Activity", b =>
-                {
-                    b.HasOne("KidsEnglish.Domain.Entities.Lesson", "Lesson")
-                        .WithMany("Activities")
-                        .HasForeignKey("LessonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Lesson");
-                });
-
-            modelBuilder.Entity("KidsEnglish.Domain.Entities.Asset", b =>
-                {
-                    b.HasOne("KidsEnglish.Domain.Entities.Activity", null)
-                        .WithMany()
-                        .HasForeignKey("ActivityId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.HasOne("KidsEnglish.Domain.Entities.Lesson", "Lesson")
-                        .WithMany("Assets")
-                        .HasForeignKey("LessonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Lesson");
-                });
-
             modelBuilder.Entity("KidsEnglish.Domain.Entities.Child", b =>
                 {
                     b.HasOne("KidsEnglish.Domain.Entities.Parent", "Parent")
@@ -643,52 +373,7 @@ namespace KidsEnglish.Infrastructure.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("KidsEnglish.Domain.Entities.Track", "Track")
-                        .WithMany()
-                        .HasForeignKey("TrackId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.Navigation("Parent");
-
-                    b.Navigation("Track");
-                });
-
-            modelBuilder.Entity("KidsEnglish.Domain.Entities.ContentPack", b =>
-                {
-                    b.HasOne("KidsEnglish.Domain.Entities.Track", "Track")
-                        .WithMany()
-                        .HasForeignKey("TrackId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Track");
-                });
-
-            modelBuilder.Entity("KidsEnglish.Domain.Entities.ContentPackLesson", b =>
-                {
-                    b.HasOne("KidsEnglish.Domain.Entities.ContentPack", null)
-                        .WithMany("Lessons")
-                        .HasForeignKey("ContentPackId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("KidsEnglish.Domain.Entities.Lesson", null)
-                        .WithMany()
-                        .HasForeignKey("LessonId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("KidsEnglish.Domain.Entities.Lesson", b =>
-                {
-                    b.HasOne("KidsEnglish.Domain.Entities.Track", "Track")
-                        .WithMany("Lessons")
-                        .HasForeignKey("TrackId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Track");
                 });
 
             modelBuilder.Entity("KidsEnglish.Domain.Entities.Parent", b =>
@@ -702,19 +387,11 @@ namespace KidsEnglish.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("KidsEnglish.Domain.Entities.ProgressRecord", b =>
                 {
-                    b.HasOne("KidsEnglish.Domain.Entities.Activity", "Activity")
-                        .WithMany()
-                        .HasForeignKey("ActivityId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("KidsEnglish.Domain.Entities.Child", "Child")
                         .WithMany("Progress")
                         .HasForeignKey("ChildId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Activity");
 
                     b.Navigation("Child");
                 });
@@ -784,28 +461,11 @@ namespace KidsEnglish.Infrastructure.Persistence.Migrations
                     b.Navigation("Progress");
                 });
 
-            modelBuilder.Entity("KidsEnglish.Domain.Entities.ContentPack", b =>
-                {
-                    b.Navigation("Lessons");
-                });
-
-            modelBuilder.Entity("KidsEnglish.Domain.Entities.Lesson", b =>
-                {
-                    b.Navigation("Activities");
-
-                    b.Navigation("Assets");
-                });
-
             modelBuilder.Entity("KidsEnglish.Domain.Entities.Parent", b =>
                 {
                     b.Navigation("Children");
 
                     b.Navigation("RefreshTokens");
-                });
-
-            modelBuilder.Entity("KidsEnglish.Domain.Entities.Track", b =>
-                {
-                    b.Navigation("Lessons");
                 });
 #pragma warning restore 612, 618
         }

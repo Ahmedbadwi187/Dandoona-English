@@ -7,11 +7,6 @@ public interface IAppDbContext
 {
     DbSet<Parent> Parents { get; }
     DbSet<Child> Children { get; }
-    DbSet<Track> Tracks { get; }
-    DbSet<Lesson> Lessons { get; }
-    DbSet<Activity> Activities { get; }
-    DbSet<Asset> Assets { get; }
-    DbSet<ContentPack> ContentPacks { get; }
     DbSet<ProgressRecord> ProgressRecords { get; }
     DbSet<RefreshToken> RefreshTokens { get; }
     Task<int> SaveChangesAsync(CancellationToken ct);

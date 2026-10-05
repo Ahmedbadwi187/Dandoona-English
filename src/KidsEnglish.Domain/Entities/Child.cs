@@ -8,10 +8,10 @@ public class Child
     public string Name { get; set; } = "";
     public string AvatarKey { get; set; } = "";
     public int BirthYear { get; set; }
-    public int TrackId { get; set; }
+    /// <summary>Track code, see <see cref="Tracks"/>.</summary>
+    public string Track { get; set; } = Tracks.LittleLearners;
     public DateTime CreatedAt { get; set; }
 
     public Parent Parent { get; set; } = null!;
-    public Track Track { get; set; } = null!;
     public List<ProgressRecord> Progress { get; set; } = [];
 }

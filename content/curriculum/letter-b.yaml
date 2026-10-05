@@ -10,4 +10,4 @@ words:
 narration:
   intro: "This is the letter B. B says b, b, ball!"
   praise: ["Great job!", "Well done!", "You did it!"]
-activities: [trace, listen-and-tap, say-it, match-picture]
+activities: [trace, listen-and-tap, record-and-listen, match-picture]

@@ -1,7 +1,7 @@
 using FluentValidation;
-using FluentValidation.Results;
 using KidsEnglish.Application.Abstractions;
 using KidsEnglish.Application.Common;
+using KidsEnglish.Domain;
 using KidsEnglish.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,11 +12,12 @@ public interface IChildInput
     string Name { get; }
     string AvatarKey { get; }
     int BirthYear { get; }
+    string Track { get; }
 }
 
-public record CreateChildRequest(string Name, string AvatarKey, int BirthYear, int TrackId) : IChildInput;
-public record UpdateChildRequest(string Name, string AvatarKey, int BirthYear, int TrackId) : IChildInput;
-public record ChildDto(Guid Id, string Name, string AvatarKey, int BirthYear, int TrackId, string TrackCode);
+public record CreateChildRequest(string Name, string AvatarKey, int BirthYear, string Track) : IChildInput;
+public record UpdateChildRequest(string Name, string AvatarKey, int BirthYear, string Track) : IChildInput;
+public record ChildDto(Guid Id, string Name, string AvatarKey, int BirthYear, string Track);
 
 public abstract class ChildInputValidator<T> : AbstractValidator<T> where T : IChildInput
 {
@@ -24,6 +25,7 @@ public abstract class ChildInputValidator<T> : AbstractValidator<T> where T : IC
     {
         RuleFor(x => x.Name).NotEmpty().MaximumLength(30);
         RuleFor(x => x.AvatarKey).NotEmpty().MaximumLength(50);
+        RuleFor(x => x.Track).Must(Tracks.IsValid).WithMessage("Unknown track.");
         // Allow slack around the 3-12 target audience.
         RuleFor(x => x.BirthYear)
             .Must(y => y >= clock.UtcNow.Year - 13 && y <= clock.UtcNow.Year - 2)
@@ -45,20 +47,20 @@ public class ChildService(
         await db.Children.AsNoTracking()
             .Where(c => c.ParentId == user.ParentId)
             .OrderBy(c => c.CreatedAt)
-            .Select(c => new ChildDto(c.Id, c.Name, c.AvatarKey, c.BirthYear, c.TrackId, c.Track.Code))
+            .Select(c => new ChildDto(c.Id, c.Name, c.AvatarKey, c.BirthYear, c.Track))
             .ToListAsync(ct);
 
     public async Task<ChildDto> GetAsync(Guid id, CancellationToken ct) =>
         await db.Children.AsNoTracking()
             .Where(c => c.Id == id && c.ParentId == user.ParentId)
-            .Select(c => new ChildDto(c.Id, c.Name, c.AvatarKey, c.BirthYear, c.TrackId, c.Track.Code))
+            .Select(c => new ChildDto(c.Id, c.Name, c.AvatarKey, c.BirthYear, c.Track))
             .FirstOrDefaultAsync(ct)
         ?? throw new NotFoundException("Child not found.");
 
     public async Task<ChildDto> CreateAsync(CreateChildRequest request, CancellationToken ct)
     {
         await createValidator.ValidateAndThrowAsync(request, ct);
-        await EnsureTrackExistsAsync(request.TrackId, ct);
+        
 
         var child = new Child
         {
@@ -67,7 +69,7 @@ public class ChildService(
             Name = request.Name.Trim(),
             AvatarKey = request.AvatarKey,
             BirthYear = request.BirthYear,
-            TrackId = request.TrackId,
+            Track = request.Track,
             CreatedAt = clock.UtcNow
         };
         db.Children.Add(child);
@@ -78,14 +80,14 @@ public class ChildService(
     public async Task<ChildDto> UpdateAsync(Guid id, UpdateChildRequest request, CancellationToken ct)
     {
         await updateValidator.ValidateAndThrowAsync(request, ct);
-        await EnsureTrackExistsAsync(request.TrackId, ct);
+        
 
         var child = await db.Children.FirstOrDefaultAsync(c => c.Id == id && c.ParentId == user.ParentId, ct)
             ?? throw new NotFoundException("Child not found.");
         child.Name = request.Name.Trim();
         child.AvatarKey = request.AvatarKey;
         child.BirthYear = request.BirthYear;
-        child.TrackId = request.TrackId;
+        child.Track = request.Track;
         await db.SaveChangesAsync(ct);
         return await GetAsync(id, ct);
     }
@@ -98,9 +100,4 @@ public class ChildService(
         await db.SaveChangesAsync(ct);
     }
 
-    private async Task EnsureTrackExistsAsync(int trackId, CancellationToken ct)
-    {
-        if (!await db.Tracks.AnyAsync(t => t.Id == trackId, ct))
-            throw new ValidationException([new ValidationFailure("TrackId", "Unknown track.")]);
-    }
 }

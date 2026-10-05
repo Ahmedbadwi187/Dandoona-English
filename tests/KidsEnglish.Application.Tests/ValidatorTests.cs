@@ -2,7 +2,7 @@ using KidsEnglish.Application.Abstractions;
 using KidsEnglish.Application.Auth;
 using KidsEnglish.Application.Children;
 using KidsEnglish.Domain.Entities;
-using KidsEnglish.Domain.Enums;
+using KidsEnglish.Domain;
 using NSubstitute;
 using Shouldly;
 
@@ -33,27 +33,27 @@ public class ValidatorTests
     public void Child_birth_year_range(int birthYear, bool valid)
     {
         var v = new CreateChildRequestValidator(Clock2026());
-        v.Validate(new CreateChildRequest("Omar", "fox", birthYear, 1)).IsValid.ShouldBe(valid);
+        v.Validate(new CreateChildRequest("Omar", "fox", birthYear, "little-learners")).IsValid.ShouldBe(valid);
     }
 
     [Fact]
     public void Child_name_is_required_and_capped()
     {
         var v = new CreateChildRequestValidator(Clock2026());
-        v.Validate(new CreateChildRequest("", "fox", 2022, 1)).IsValid.ShouldBeFalse();
-        v.Validate(new CreateChildRequest(new string('x', 31), "fox", 2022, 1)).IsValid.ShouldBeFalse();
+        v.Validate(new CreateChildRequest("", "fox", 2022, "little-learners")).IsValid.ShouldBeFalse();
+        v.Validate(new CreateChildRequest(new string('x', 31), "fox", 2022, "little-learners")).IsValid.ShouldBeFalse();
     }
 }
 
 public class DomainTests
 {
     [Fact]
-    public void Asset_only_moves_forward_one_step_or_back_to_draft()
+    public void Track_codes_are_validated()
     {
-        var asset = new Asset { Status = AssetStatus.Generated };
-        asset.CanTransitionTo(AssetStatus.Approved).ShouldBeTrue();
-        asset.CanTransitionTo(AssetStatus.Draft).ShouldBeTrue();
-        asset.CanTransitionTo(AssetStatus.Published).ShouldBeFalse(); // cannot skip review
+        Tracks.IsValid("little-learners").ShouldBeTrue();
+        Tracks.IsValid("explorers").ShouldBeTrue();
+        Tracks.IsValid("nope").ShouldBeFalse();
+        Tracks.IsValid(null).ShouldBeFalse();
     }
 
     [Fact]

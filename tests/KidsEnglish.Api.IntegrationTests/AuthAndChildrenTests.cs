@@ -80,10 +80,10 @@ public class AuthAndChildrenTests(ApiFactory factory)
         var other = Authed(Client(), (await RegisterAsync(Client())).AccessToken);
 
         var create = await owner.PostAsJsonAsync("/api/children",
-            new CreateChildRequest("Omar", "fox", DateTime.UtcNow.Year - 4, 1));
+            new CreateChildRequest("Omar", "fox", DateTime.UtcNow.Year - 4, "little-learners"));
         create.StatusCode.ShouldBe(HttpStatusCode.Created);
         var child = (await create.Content.ReadFromJsonAsync<ChildDto>())!;
-        child.TrackCode.ShouldBe("little-learners");
+        child.Track.ShouldBe("little-learners");
 
         (await owner.GetFromJsonAsync<List<ChildDto>>("/api/children"))!.Count.ShouldBe(1);
 
@@ -99,7 +99,7 @@ public class AuthAndChildrenTests(ApiFactory factory)
     public async Task Unknown_track_is_400()
     {
         var c = Authed(Client(), (await RegisterAsync(Client())).AccessToken);
-        var res = await c.PostAsJsonAsync("/api/children", new CreateChildRequest("Omar", "fox", DateTime.UtcNow.Year - 4, 999));
+        var res = await c.PostAsJsonAsync("/api/children", new CreateChildRequest("Omar", "fox", DateTime.UtcNow.Year - 4, "no-such-track"));
         res.StatusCode.ShouldBe(HttpStatusCode.BadRequest);
     }
 }

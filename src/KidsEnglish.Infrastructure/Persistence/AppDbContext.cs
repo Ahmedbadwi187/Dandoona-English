@@ -13,11 +13,6 @@ public class AppDbContext(DbContextOptions<AppDbContext> options)
 {
     public DbSet<Parent> Parents => Set<Parent>();
     public DbSet<Child> Children => Set<Child>();
-    public DbSet<Track> Tracks => Set<Track>();
-    public DbSet<Lesson> Lessons => Set<Lesson>();
-    public DbSet<Activity> Activities => Set<Activity>();
-    public DbSet<Asset> Assets => Set<Asset>();
-    public DbSet<ContentPack> ContentPacks => Set<ContentPack>();
     public DbSet<ProgressRecord> ProgressRecords => Set<ProgressRecord>();
     public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
 

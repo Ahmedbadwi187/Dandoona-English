@@ -1,7 +1,6 @@
 using FluentValidation;
 using KidsEnglish.Application.Auth;
 using KidsEnglish.Application.Children;
-using KidsEnglish.Application.Curriculum;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace KidsEnglish.Application;
@@ -13,7 +12,6 @@ public static class DependencyInjection
         services.AddValidatorsFromAssemblyContaining<RegisterRequestValidator>();
         services.AddScoped<AuthService>();
         services.AddScoped<ChildService>();
-        services.AddScoped<CurriculumSyncService>();
         return services;
     }
 }

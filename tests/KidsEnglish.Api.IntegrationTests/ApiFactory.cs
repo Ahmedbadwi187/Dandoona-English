@@ -8,24 +8,24 @@ using Testcontainers.MsSql;
 namespace KidsEnglish.Api.IntegrationTests;
 
 /// <summary>
-/// Runs against a Testcontainers SQL Server by default. Set KIDS_TEST_SQL to a connection string
-/// (e.g. LocalDB) to run without Docker; that database is dropped and recreated on start.
+/// Runs against a Testcontainers SQL Server by default. Set KIDS_TEST_SQL to a connection string for a
+/// throwaway database to run without Docker; that database is dropped and recreated on start.
 /// </summary>
 public class ApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
 {
-    private static readonly string? ExternalSql = Environment.GetEnvironmentVariable("KIDS_TEST_SQL");
-    private readonly MsSqlContainer? _sql = ExternalSql is null
+    private static readonly string? ExternalDb = Environment.GetEnvironmentVariable("KIDS_TEST_SQL");
+    private readonly MsSqlContainer? _sql = ExternalDb is null
         ? new MsSqlBuilder("mcr.microsoft.com/mssql/server:2022-latest").Build()
         : null;
 
-    private string ConnectionString => ExternalSql ?? _sql!.GetConnectionString();
+    private string ConnectionString => ExternalDb ?? _sql!.GetConnectionString();
 
     public async Task InitializeAsync()
     {
         if (_sql is not null) await _sql.StartAsync();
         using var scope = Services.CreateScope();
         var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-        if (ExternalSql is not null) await db.Database.EnsureDeletedAsync();
+        if (ExternalDb is not null) await db.Database.EnsureDeletedAsync();
         await db.Database.MigrateAsync();
     }
 

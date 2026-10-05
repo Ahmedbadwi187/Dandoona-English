@@ -12,12 +12,12 @@ Every field the system stores. Update this file whenever the schema changes.
 | Child | Name | Display in child UI | Nickname only; the app must not ask for a real/full name |
 | Child | AvatarKey | Avatar choice | Opaque key |
 | Child | BirthYear | Age-appropriate track | Year only, no full date of birth |
-| Child | TrackId | Learning track | |
-| ProgressRecord | Stars, Attempts, TimeSpentSeconds, CompletedAt, ClientRecordId | Progress and parent dashboard | No free text |
+| Child | Track | Learning track code (little-learners, explorers, champions) | |
+| ProgressRecord | LessonId, Activity, Stars, Attempts, TimeSpentSeconds, CompletedAt, ClientRecordId | Progress and parent dashboard | LessonId is a curriculum id like letter-a. No free text |
 
 ## Not stored
 
-- Children's voice recordings (Phase 4: audio is scored in-memory and discarded).
+- Children's voice recordings. The app plays a recording back on-device and deletes it; nothing is uploaded.
 - Child email, phone, address, photo, device identifiers, location.
 - Advertising IDs or behavioral tracking data. No ad SDKs.
 

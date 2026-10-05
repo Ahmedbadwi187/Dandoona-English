@@ -1,6 +1,4 @@
 using KidsEnglish.Application.Abstractions;
-using KidsEnglish.Application.Curriculum;
-using KidsEnglish.Infrastructure.Curriculum;
 using KidsEnglish.Infrastructure.Identity;
 using KidsEnglish.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Identity;
@@ -39,7 +37,6 @@ public static class DependencyInjection
         services.AddSingleton<IClock, SystemClock>();
         services.AddScoped<IIdentityService, IdentityService>();
         services.AddScoped<ITokenService, TokenService>();
-        services.AddSingleton<ICurriculumReader, YamlCurriculumReader>();
         return services;
     }
 }
