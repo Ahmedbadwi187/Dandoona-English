@@ -1,0 +1,13 @@
+id: letter-c
+track: little-learners
+level: pre-a1
+letter: C
+phoneme: "/k/"
+words:
+  - { word: cat, imagePrompt: "a cute fluffy cartoon cat sitting" }
+  - { word: car, imagePrompt: "a small red cartoon car" }
+  - { word: cow, imagePrompt: "a friendly black and white cartoon cow" }
+narration:
+  intro: "This is the letter C. C says k, k, cat!"
+  praise: ["Great job!", "Well done!", "You did it!"]
+activities: [trace, listen-and-tap, say-it, match-picture]

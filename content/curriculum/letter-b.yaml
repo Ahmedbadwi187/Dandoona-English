@@ -1,0 +1,13 @@
+id: letter-b
+track: little-learners
+level: pre-a1
+letter: B
+phoneme: "/b/"
+words:
+  - { word: ball, imagePrompt: "a bright blue bouncy ball" }
+  - { word: bear, imagePrompt: "a friendly brown cartoon bear" }
+  - { word: banana, imagePrompt: "a ripe yellow banana" }
+narration:
+  intro: "This is the letter B. B says b, b, ball!"
+  praise: ["Great job!", "Well done!", "You did it!"]
+activities: [trace, listen-and-tap, say-it, match-picture]

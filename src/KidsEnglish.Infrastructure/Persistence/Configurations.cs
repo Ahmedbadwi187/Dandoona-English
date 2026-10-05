@@ -86,7 +86,9 @@ internal class AssetConfig : IEntityTypeConfiguration<Asset>
         b.Property(x => x.Role).HasMaxLength(50);
         b.Property(x => x.ContentHash).HasMaxLength(64);
         b.Property(x => x.BlobPath).HasMaxLength(500);
+        b.Property(x => x.SourceText).HasColumnType("nvarchar(max)");
         b.HasIndex(x => x.ContentHash);
+        b.HasIndex(x => new { x.LessonId, x.Role }).IsUnique();
         b.HasOne(x => x.Lesson).WithMany(l => l.Assets).HasForeignKey(x => x.LessonId).OnDelete(DeleteBehavior.Cascade);
         b.HasOne<Activity>().WithMany().HasForeignKey(x => x.ActivityId).OnDelete(DeleteBehavior.NoAction);
     }

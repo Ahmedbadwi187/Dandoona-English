@@ -1,0 +1,13 @@
+id: letter-a
+track: little-learners
+level: pre-a1
+letter: A
+phoneme: "/æ/"
+words:
+  - { word: apple, imagePrompt: "a shiny red apple" }
+  - { word: ant, imagePrompt: "a small friendly cartoon ant" }
+  - { word: alligator, imagePrompt: "a friendly green cartoon alligator smiling" }
+narration:
+  intro: "This is the letter A. A says a, a, apple!"
+  praise: ["Great job!", "Well done!", "You did it!"]
+activities: [trace, listen-and-tap, say-it, match-picture]
