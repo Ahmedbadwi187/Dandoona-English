@@ -19,7 +19,6 @@ const _instr = {
   'listen-and-tap': 'audio/x/instr_listen.mp3',
   'record-and-listen': 'audio/x/instr_record.mp3',
   'match-picture': 'audio/x/instr_match.mp3',
-  'hint': 'audio/x/instr_hint.mp3',
 };
 
 /// The real lessons with spoken instructions added to the first one (the exported file only has them after the audio is generated).
@@ -138,7 +137,7 @@ void main() {
   });
 
   group('hints', () {
-    testWidgets('listen-and-tap: nothing tapped for a while lights up the right picture and says the hint and the word', (t) async {
+    testWidgets('listen-and-tap: nothing tapped for a while lights up the right picture and says the word again', (t) async {
       final content = _content();
       final audio = await _pump(
         t,
@@ -148,13 +147,13 @@ void main() {
       final target = content.lessons.first.words.firstWhere((w) => audio.played.last == 'asset:${w.audio}');
       audio.played.clear();
       await t.pump(const Duration(milliseconds: 600));
-      expect(audio.played, ['asset:${_instr['hint']}', 'asset:${target.audio}']);
+      expect(audio.played, ['asset:${target.audio}']); // the hint is the lit-up picture and the word again, no extra sentence
       final box = t.widget<Container>(find.descendant(of: find.byKey(Key('option-${target.word}')), matching: find.byType(Container)).first);
       expect((box.decoration! as BoxDecoration).border!.top.width, 10); // highlighted
       await t.pumpWidget(const SizedBox()); // disposing cancels the repeating hint timer
     });
 
-    testWidgets('listen-and-tap: two wrong taps in a row give the hint', (t) async {
+    testWidgets('listen-and-tap: two wrong taps in a row light up the right picture', (t) async {
       final content = _content();
       final audio = await _pump(t, content, (l) => ListenAndTapActivity(lesson: l, track: content, random: Random(1), onFinished: (_) {}));
       final words = content.lessons.first.words;
@@ -171,7 +170,7 @@ void main() {
       audio.played.clear();
       await t.tap(find.byKey(wrongKey));
       await t.pump(const Duration(milliseconds: 700));
-      expect(audio.played, ['asset:${_instr['hint']}', 'asset:${target.audio}']);
+      expect(audio.played, ['asset:${target.audio}']); // the hint is the lit-up picture and the word again, no extra sentence
     });
   });
 }

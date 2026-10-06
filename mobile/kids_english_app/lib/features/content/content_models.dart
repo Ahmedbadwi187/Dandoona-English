@@ -73,7 +73,7 @@ class Lesson {
 class LessonAudio {
   const LessonAudio({required this.intro, required this.praise, this.phoneme, this.instructions = const {}});
 
-  /// Spoken instruction per activity name (plus `hint`), played when the activity starts. Older lesson files have none.
+  /// Spoken instruction per activity name, played when the activity starts. Older lesson files have none.
   final Map<String, String> instructions;
 
   final String intro;

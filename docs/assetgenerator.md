@@ -97,8 +97,8 @@ images contain no text.
   the optimised mono/normalised audio and 768 px WebP.
 
 ## Spoken instructions
-Each lesson's `narration.instructions` (keys: the activity names plus `hint`) is generated with the same narrator voice as every
+Each lesson's `narration.instructions` (keys: the activity names) is generated with the same narrator voice as every
 other line (`voices.json`, `ELEVENLABS_VOICE_ID`) and exported to `audio/little_learners/<lesson>/instr_<key>.mp3`; the lesson JSON
-gets `audio.instructions`. The app speaks the instruction when an activity starts (then the target word), repeats the hint after
+gets `audio.instructions`. The app speaks the instruction when an activity starts (then the target word), lights up the right picture and repeats the word after
 8 s of no action or two wrong taps, and plays the letter's `intro` when a lesson opens. Lessons exported without instructions
 (older files) simply stay quiet there. Lines are not generated until `audio --track little-learners` is run (see its `--dry-run`).
