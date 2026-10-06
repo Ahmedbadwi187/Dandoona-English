@@ -11,7 +11,7 @@ Future<void> main() async {
   runApp(
     ProviderScope(
       overrides: [sharedPreferencesProvider.overrideWithValue(prefs)],
-      child: const KidsEnglishApp(),
+      child: const KidsEnglishApp(showSplash: true),
     ),
   );
 }

@@ -7,7 +7,7 @@ const double kMinTapTarget = 64;
 
 ThemeData buildTheme() {
   final scheme = ColorScheme.fromSeed(
-    seedColor: Palette.orange,
+    seedColor: Palette.plum,
     brightness: Brightness.light,
     surface: Palette.cream,
   );

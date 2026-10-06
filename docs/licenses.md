@@ -72,6 +72,8 @@ In use (versions from pubspec.yaml; licenses read from pub.dev on 2026-10-06):
 | Transitive: synchronized, yaml | resolved in pubspec.lock | MIT |
 | flutter_localizations, flutter_test (Flutter SDK) | sdk | BSD-3-Clause |
 | flutter_lints (dev) | ^6.0.0 | BSD-3-Clause |
+| flutter_launcher_icons (dev) | ^0.14.4 | MIT |
+| flutter_native_splash (dev) | ^2.4.8 | MIT |
 
 Not code-generating on purpose: no freezed / json_serializable / drift / build_runner (models are hand-written, local storage is
 shared_preferences). Planned for later phases, re-check license + exact version when added:

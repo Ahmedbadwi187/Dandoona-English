@@ -18,6 +18,11 @@ abstract final class Palette {
   static const red = Color(0xFFE5524A);
   static const gray = Color(0xFFB8B8B8);
 
+  /// Dandoona brand colors (from her channel).
+  static const plum = Color(0xFF9B6BD3);
+  static const sunflower = Color(0xFFFFC93C);
+  static const nightInk = Color(0xFF2E1F47);
+
   /// Colors cycled through for the letter map nodes.
   static const nodeColors = [red, orange, yellow, green, teal, blue, purple, pink];
 }

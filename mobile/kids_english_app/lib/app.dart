@@ -5,10 +5,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/strings.dart';
 import 'core/theme.dart';
 import 'features/settings/settings.dart';
+import 'features/splash/dandoona_splash.dart';
 import 'router.dart';
 
 class KidsEnglishApp extends ConsumerWidget {
-  const KidsEnglishApp({super.key});
+  const KidsEnglishApp({super.key, this.showSplash = false});
+
+  /// Dandoona's animated splash over the app (main.dart turns it on; widget tests leave it off).
+  final bool showSplash;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,6 +29,7 @@ class KidsEnglishApp extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+      builder: (context, child) => DandoonaSplash(enabled: showSplash, child: child ?? const SizedBox.shrink()),
       routerConfig: ref.watch(routerProvider),
     );
   }

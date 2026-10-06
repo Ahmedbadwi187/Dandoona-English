@@ -1,0 +1,11 @@
+# Static first frame shown by the OS while Flutter starts. The animated part is DandoonaSplash (Flutter code),
+# whose first frame matches this one (cream background, Dandoona centered at 128 dp = 512 px / 4).
+# Regenerate with: dart run flutter_native_splash:create   (then discard its changes to Info.plist, web/ and project.pbxproj)
+flutter_native_splash:
+  color: "#FDF8E6"
+  image: icon/splash.png
+  android_12:
+    color: "#FDF8E6"
+    image: icon/splash_android12.png
+    icon_background_color: "#FDF8E6"
+  fullscreen: false
