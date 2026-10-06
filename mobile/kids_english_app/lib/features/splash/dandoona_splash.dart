@@ -1,39 +1,13 @@
-import 'dart:async';
 import 'dart:math' as math;
 
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/palette.dart';
-import '../settings/settings.dart';
-
-/// Plays Dandoona's own short greeting ("I'm Dandoona!", from her channel's audio) in the parent's language.
-/// Behind a provider so tests use a fake. It uses the system's "ambient" audio category on iOS, so the silent
-/// switch mutes it, and Android plays it on the media stream, so a muted phone stays silent. Failures are ignored.
-typedef GreetingPlayer = Future<void> Function(String assetPath);
-
-final greetingPlayerProvider = Provider<GreetingPlayer>((ref) {
-  AudioPlayer? player;
-  ref.onDispose(() => unawaited(player?.dispose()));
-  return (assetPath) async {
-    try {
-      player ??= AudioPlayer();
-      await player!.setAudioContext(AudioContextConfig(respectSilence: true).build());
-      await player!.play(AssetSource(assetPath));
-    } on Object {
-      // no audio device, codec problem...: the splash simply stays silent
-    }
-  };
-});
-
-String greetingAsset(String languageCode) =>
-    languageCode == 'ar' ? 'audio/brand/dandoona_hello_ar.mp3' : 'audio/brand/dandoona_hello_en.mp3';
 
 /// The first Flutter frame is identical to the native splash (cream background, Dandoona centered), then she
 /// bounces, waves and fades away over about 2.3 seconds. The app is built underneath from the start, so it loads
 /// in parallel; a tap skips the animation. [enabled] is off in tests.
-class DandoonaSplash extends ConsumerStatefulWidget {
+class DandoonaSplash extends StatefulWidget {
   const DandoonaSplash({super.key, required this.child, this.enabled = true});
 
   final Widget child;
@@ -44,13 +18,12 @@ class DandoonaSplash extends ConsumerStatefulWidget {
   static const Duration total = Duration(milliseconds: 2300);
 
   @override
-  ConsumerState<DandoonaSplash> createState() => _DandoonaSplashState();
+  State<DandoonaSplash> createState() => _DandoonaSplashState();
 }
 
-class _DandoonaSplashState extends ConsumerState<DandoonaSplash> with SingleTickerProviderStateMixin {
+class _DandoonaSplashState extends State<DandoonaSplash> with SingleTickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(vsync: this, duration: DandoonaSplash.total);
   bool _done = false;
-  bool _greeted = false;
 
   @override
   void initState() {
@@ -67,12 +40,6 @@ class _DandoonaSplashState extends ConsumerState<DandoonaSplash> with SingleTick
     if (_done || !mounted) return;
     _controller.stop();
     setState(() => _done = true);
-  }
-
-  void _greet() {
-    if (_greeted) return;
-    _greeted = true;
-    unawaited(ref.read(greetingPlayerProvider)(greetingAsset(ref.read(settingsProvider).languageCode)));
   }
 
   @override
@@ -97,7 +64,6 @@ class _DandoonaSplashState extends ConsumerState<DandoonaSplash> with SingleTick
             animation: _controller,
             builder: (context, _) {
               final t = _controller.value;
-              if (t > _bounceFrom) _greet();
               final fade = 1 - Curves.easeIn.transform(((t - _waveTo) / (1 - _waveTo)).clamp(0.0, 1.0));
               return IgnorePointer(
                 ignoring: fade <= 0,
