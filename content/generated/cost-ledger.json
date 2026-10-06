@@ -2007,5 +2007,2021 @@
     "what": "letter-z/instr-trace (19 chars)",
     "usd": 0.00152,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:24.2801089Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/intro (41 chars)",
+    "usd": 0.00328,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:25.1814954Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:26.1118126Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:27.1403642Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:28.0925438Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:29.0877142Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/word-apple (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:30.033838Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/word-ant (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:30.9905139Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/word-alligator (9 chars)",
+    "usd": 0.00072,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:31.9817344Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:33.017436Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:34.0061684Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:35.0250934Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:36.1882485Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/intro (40 chars)",
+    "usd": 0.0032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:37.172119Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:38.2042493Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:39.1893062Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:40.1681602Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:41.0864414Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/word-ball (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:42.0701344Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/word-bear (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:43.0216433Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/word-banana (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:44.0342932Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:45.059225Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:46.0379596Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:47.0030505Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:48.1299864Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/intro (39 chars)",
+    "usd": 0.00312,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:49.062994Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:50.0332832Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:51.1408362Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:52.123464Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:53.1484425Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/word-cat (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:54.2736473Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/word-car (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:55.1742992Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/word-cow (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:56.1535234Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:57.2458213Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:58.2683612Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:15:59.3164702Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:00.4546148Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/intro (43 chars)",
+    "usd": 0.00344,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:01.4405224Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:02.369479Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:03.3487872Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:04.3098769Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:05.2580247Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/word-dog (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:06.1615393Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/word-duck (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:07.1783575Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:08.3050951Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:09.291652Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:10.2708574Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:11.3246215Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/intro (41 chars)",
+    "usd": 0.00328,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:12.2283643Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:13.1767819Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:14.097017Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:15.0483446Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:15.9800664Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/word-egg (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:16.8945188Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/word-elephant (8 chars)",
+    "usd": 0.00064,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:17.9138695Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:18.9316921Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:19.9743089Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:20.9385792Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:22.0717258Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/intro (42 chars)",
+    "usd": 0.00336,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:22.9828556Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:23.9699599Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:24.9977317Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:25.9410446Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:26.9015402Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/word-fish (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:27.9612061Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/word-frog (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:28.9902333Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:30.1180078Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:31.1388755Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:32.1381342Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:33.2484573Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/intro (44 chars)",
+    "usd": 0.00352,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:34.1610876Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:35.2566094Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:36.2574917Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:37.2044531Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:38.2047548Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/word-gift (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:39.1251851Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/word-goat (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:40.0955703Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:41.1494521Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:42.1698751Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:43.1443484Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:44.2993079Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/intro (43 chars)",
+    "usd": 0.00344,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:45.3628912Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:46.2903717Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:47.3155568Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:48.3392015Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:49.2329222Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/word-hat (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:50.1347241Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/word-horse (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:51.2068108Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:52.2375383Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:53.2554026Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:54.2793937Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:55.5104551Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/intro (47 chars)",
+    "usd": 0.00376,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:56.5306119Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:57.5555999Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:58.6248088Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:16:59.7074264Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:00.8326314Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/word-ice-cream (9 chars)",
+    "usd": 0.00072,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:01.7913612Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/word-igloo (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:02.7985004Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:03.9049143Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:04.9301906Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:05.8731897Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:06.9561145Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/intro (43 chars)",
+    "usd": 0.00344,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:07.8596356Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/phoneme (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:08.9219246Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:09.9448796Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:11.0740595Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:11.9833989Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/word-jar (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:12.9156143Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/word-juice (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:14.0417971Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:15.0691714Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:16.0934753Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:17.1268674Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:18.2419011Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/intro (44 chars)",
+    "usd": 0.00352,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:19.1607964Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:20.0973118Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:21.055023Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:22.0062182Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:22.9083977Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/word-kite (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:23.8751937Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/word-key (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:25.4283216Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:26.6362658Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:27.6617473Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:28.7009065Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:29.8651384Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/intro (42 chars)",
+    "usd": 0.00336,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:30.8680831Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:31.8358931Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:32.7662241Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:33.7126382Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:34.7252331Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/word-lion (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:35.779923Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/word-leaf (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:36.8241799Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:37.9064933Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:17:38.9255185Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:18:54.3805892Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/intro (42 chars)",
+    "usd": 0.00336,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:18:55.3236536Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:18:56.2923867Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:18:57.2604179Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:18:58.2860476Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:18:59.3083161Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/word-moon (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:00.216164Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/word-monkey (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:01.1965941Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:02.259835Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:03.3133758Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:04.3282482Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:05.6076889Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/intro (42 chars)",
+    "usd": 0.00336,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:06.5588742Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:07.5054492Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:08.5264531Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:09.5865915Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:10.5745401Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/word-nest (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:11.5358746Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/word-nut (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:12.5540767Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:13.7010303Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:14.7568963Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:15.7997102Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:17.0851667Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/intro (44 chars)",
+    "usd": 0.00352,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:18.1038806Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:19.1068544Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:20.0567376Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:21.0761552Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:22.0028419Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/word-orange (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:22.9423995Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/word-octopus (7 chars)",
+    "usd": 0.00056,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:23.9249157Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:24.9881014Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:26.0044679Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:27.0194242Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:28.1431196Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/intro (43 chars)",
+    "usd": 0.00344,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:29.1066472Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:30.1360592Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:31.1569737Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:32.1070136Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:33.0214706Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/word-pig (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:33.9234836Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/word-pizza (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:34.9182025Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:35.9480753Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:36.9701284Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:38.0227785Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:39.2570646Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/intro (47 chars)",
+    "usd": 0.00376,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:40.1850782Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/phoneme (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:41.1911503Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:42.2457288Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:43.1810382Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:44.1592224Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/word-queen (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:45.0790248Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/word-quilt (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:46.0907384Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:47.1196018Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:48.0729146Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:49.0390717Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:50.2252297Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/intro (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:51.1235232Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:52.0994527Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:53.022318Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:53.9872704Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:54.929126Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/word-rainbow (7 chars)",
+    "usd": 0.00056,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:55.8744367Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/word-rabbit (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:56.8663284Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:57.9240422Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:58.9072882Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:19:59.9371124Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:01.053508Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/intro (41 chars)",
+    "usd": 0.00328,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:01.9696144Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:02.9041399Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:03.9221779Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:04.9536467Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:05.8631553Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/word-sun (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:06.8289168Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/word-snake (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:07.8276797Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:08.8757263Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:09.8528721Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:10.8317394Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:12.0248908Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/intro (44 chars)",
+    "usd": 0.00352,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:13.0373017Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:13.9848184Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:15.0655784Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:16.0064551Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:16.9029516Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/word-tree (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:17.8547273Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/word-tiger (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:18.8750108Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:19.8991777Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:21.0260213Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:22.0561076Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:23.2028336Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/intro (46 chars)",
+    "usd": 0.00368,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:24.1983772Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:25.1214499Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:26.0583925Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:27.0762682Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:28.000294Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/word-umbrella (8 chars)",
+    "usd": 0.00064,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:29.0180083Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/word-unicorn (7 chars)",
+    "usd": 0.00056,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:30.038455Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:31.0784738Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:32.0826831Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:33.0851773Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:34.2451423Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/intro (41 chars)",
+    "usd": 0.00328,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:35.1676962Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:36.0937359Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:37.03287Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:37.9714598Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:38.8890034Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/word-van (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:39.864803Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/word-violin (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:40.8892868Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:41.9201427Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:42.9041929Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:43.9015065Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:45.0486707Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/intro (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:45.9666011Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:46.932232Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:47.8652759Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:48.797714Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:49.7978822Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/word-whale (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:50.9246644Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/word-window (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:51.938012Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:52.982153Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:54.0062155Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:55.4590926Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:56.8381129Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/intro (41 chars)",
+    "usd": 0.00328,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:57.7753411Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/phoneme (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:58.7212136Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:20:59.6529393Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:00.5812489Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:01.5107282Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/word-box (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:02.5332558Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/word-xylophone (9 chars)",
+    "usd": 0.00072,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:03.5516365Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:04.6466545Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:05.6116603Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:06.6312761Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:07.7618001Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/intro (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:08.6854979Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:09.6539636Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:10.6024543Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:11.5183748Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:12.4581678Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/word-yo-yo (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:13.4056489Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/word-yak (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:14.4817546Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:15.605487Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:16.5692747Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:17.5519252Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:18.8494492Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/intro (43 chars)",
+    "usd": 0.00344,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:19.7847284Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/phoneme (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:20.8267499Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:21.7780354Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:22.7875116Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:23.726693Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/word-zebra (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:24.6255939Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/word-zip (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:25.6340857Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:26.869761Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:27.8892195Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:21:28.9019833Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
   }
 ]
