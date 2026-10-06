@@ -29,8 +29,8 @@ and the privacy laws of the Arab countries you target).
 | Permissions only as needed, with explanation | Done | Microphone prompted on first use of record-and-listen; iOS usage string written. The activity works without it (skip, 1 star). |
 | Data safety form | Owner action | Local-only mode: "No data collected". With sync enabled: email address (account), child nickname/birth year, app activity (progress) - collected, linked to the parent account, encrypted in transit, **deletion available** (see below). |
 | Deleting a child's data | Done | Deleting a child profile in the app also hard-deletes the child and all progress on the server (queued and retried if offline). Integration-tested (rows physically removed, sibling untouched) and verified against the live API. |
-| Account deletion in-app + a web link | Partly | In-app deletion with password confirmation is built and tested (Settings > Account & sync > Delete account & data; `POST /api/account/delete`). **Owner action:** host a web page that explains how to delete an account/data and paste its URL in Play Console. |
-| Privacy policy URL | Owner action | Required for the store listing. Use `privacy-data-map.md` as the source of truth; must cover the optional sync and the microphone. |
+| Account deletion in-app + a web link | Partly | In-app deletion with password confirmation is built and tested (Settings > Account & sync > Delete account & data; `POST /api/account/delete`). **Owner action:** a draft page exists (`site/delete-account.html`, English + Arabic): have it reviewed, host it over HTTPS and paste its URL in Play Console. |
+| Privacy policy URL | Owner action | Required for the store listing. A draft exists (`site/privacy-policy.html`, English + Arabic, covering PDPL, Families Policy and Kids Category): have a lawyer review it, fill the placeholders, host it over HTTPS. |
 | Target API level | Done | Flutter's default `targetSdk` (36 at the time of build); keep up to date with Play's yearly requirement. |
 
 ## Apple - Kids Category (App Store Review 1.3, 5.1.4)
