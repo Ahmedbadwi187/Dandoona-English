@@ -48,7 +48,7 @@ May call the ElevenLabs and OpenAI APIs because it is a dev-only tool outside th
 | Microsoft.Extensions.Hosting / Configuration.UserSecrets | 10.0.12 | MIT |
 | Microsoft.Extensions.Http.Resilience (+ Polly.Core 8.8.0) | 10.10.0 | MIT / BSD-3-Clause |
 | FluentValidation | 12.1.1 | Apache-2.0 |
-| ffmpeg (external executable, not linked or shipped) | user-installed | LGPL/GPL depending on build; use an LGPL build with libmp3lame (LGPL) and libwebp (BSD) |
+| ffmpeg 9.0.2 (external executable, **dev tool only**) | winget `Gyan.FFmpeg` (gyan.dev full build) | GPL-3.0 build. Run by AssetGenerator as a separate process to re-encode audio/images; never linked, bundled or referenced by the app or the API. Only its output files (MP3/WebP) ship |
 
 ## Mobile (`/mobile/kids_english_app`) - pub.dev
 

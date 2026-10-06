@@ -6,9 +6,9 @@ review, not legal advice: have the privacy policy checked for the markets you sh
 and the privacy laws of the Arab countries you target).
 
 ## What the shipped app contains (verified on the 2026-10-06 release build)
-- **Android release APK:** arm64 24.7 MB, armeabi-v7a 22.4 MB, x86_64 26.2 MB (`flutter build apk --release --split-per-abi`).
-  Budget enforced in `azure-pipelines.yml`: arm64 <= 40 MB. About 5.6 MB of that is the bundled lessons (will shrink once the
-  asset tool re-encodes audio/images with ffmpeg: mono, loudness-normalised, 768 px WebP).
+- **Android release APK:** arm64 21.6 MB, armeabi-v7a 19.4 MB, x86_64 23.1 MB (`flutter build apk --release --split-per-abi`).
+  Budget enforced in `azure-pipelines.yml`: arm64 <= 40 MB. About 2.4 MB of that is the bundled lessons (mono,
+  loudness-normalised audio and 768 px WebP, re-encoded with ffmpeg).
 - **Permissions in the final manifest:** `RECORD_AUDIO` (record-and-listen only, requested on first use) and `INTERNET`
   (optional parent sync only). Nothing else: no advertising ID (`AD_ID`), no location, contacts, camera, storage or phone state.
   Re-check after any dependency change: `apkanalyzer manifest permissions app-arm64-v8a-release.apk`.
@@ -72,4 +72,3 @@ and the privacy laws of the Arab countries you target).
 3. Build and test on iOS (needs a Mac). Test on a few real low-end Android phones.
 4. Decide the production hosting for the API (https, SQL Server licensing beyond Express limits, backups, monitoring).
 5. Listen to the phoneme clips and sound-out intros flagged in `asset-decisions.md`; record your own where TTS is wrong.
-6. Install ffmpeg and run the asset tool's `export --force` to shrink the audio and images.

@@ -1,15 +1,15 @@
 # Performance and size (measured 2026-10-06)
 
 ## App size (release, `flutter build apk --release --split-per-abi`)
-| ABI | Size |
-|---|---|
-| arm64-v8a (most phones) | 24.7 MB |
-| armeabi-v7a (older phones) | 22.4 MB |
-| x86_64 | 26.2 MB |
+| ABI | Before ffmpeg export (2026-10-06) | After (2026-10-07) |
+|---|---|---|
+| arm64-v8a (most phones) | 24.7 MB | 21.6 MB |
+| armeabi-v7a (older phones) | 22.4 MB | 19.4 MB |
+| x86_64 | 26.2 MB | 23.1 MB |
 
-About 5.6 MB is the bundled lessons (185 audio files, 26 illustrations, 29 SVGs). The audio is still the raw stereo 128 kbps
-MP3 from ElevenLabs and the images are 1024 px WebP because ffmpeg is not installed on the dev machine: running the asset tool's
-`export --force` with ffmpeg (mono, loudness-normalised, 768 px) should cut this noticeably. CI fails the build above 40 MB arm64.
+The bundled lessons are now 2.4 MB (were 5.5 MB): audio 4388 KB -> 2456 KB (185 files, mono MP3 64 kbps, loudness-normalised
+to -16 LUFS, 44.1 kHz); images 1730 KB -> 570 KB (61 files, 768 px WebP q80). Re-encoded with ffmpeg through the asset tool's
+`export --force`; hand-recorded `.override.mp3` files still win. CI fails the build above 40 MB arm64.
 The Flutter engine and framework make up most of the rest.
 
 ## Permissions in the release manifest
