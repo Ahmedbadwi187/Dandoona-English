@@ -28,6 +28,7 @@ class LessonScreen extends ConsumerStatefulWidget {
 
 class _LessonScreenState extends ConsumerState<LessonScreen> {
   bool _introPlayed = false;
+  bool _introPlaying = false;
   late final AudioService _audio = ref.read(audioServiceProvider);
 
   @override
@@ -41,12 +42,14 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
     final lesson = track?.lessonById(widget.lessonId);
     if (_introPlayed || lesson == null) return;
     _introPlayed = true;
-    unawaited(_audio.playAsset(lesson.audio.intro));
+    _introPlaying = true;
+    unawaited(_audio.playAsset(lesson.audio.intro).whenComplete(() => _introPlaying = false));
   }
 
   @override
   void dispose() {
-    unawaited(_audio.stop());
+    // Only the lesson's own intro is cut when leaving; a praise line from the activity that just ended plays on.
+    if (_introPlaying) unawaited(_audio.stop());
     super.dispose();
   }
 

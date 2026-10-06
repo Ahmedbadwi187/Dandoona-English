@@ -113,7 +113,7 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
         ),
         Expanded(
           child: result != null
-              ? ActivityResultView(stars: result.stars, lesson: widget.lesson, mascot: widget.track.mascot, unlocked: _unlocked, onDone: () => context.pop())
+              ? ActivityResultView(stars: result.stars, lesson: widget.lesson, mascot: widget.track.mascot, unlocked: _unlocked, onDone: () => context.go('/map'))
               : switch (widget.activity) {
                   'listen-and-tap' => ListenAndTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   'match-picture' => MatchPictureActivity(lesson: widget.lesson, onFinished: _finished),

@@ -93,10 +93,13 @@ class _ListenAndTapActivityState extends ConsumerState<ListenAndTapActivity> {
         _hinting = false;
       });
       final praise = widget.lesson.audio.praise;
-      if (praise.isNotEmpty) unawaited(_speech.say(then: praise[_random.nextInt(praise.length)]));
-      await Future<void>.delayed(widget.nextDelay);
+      final isLast = _index + 1 >= _rounds.length;
+      // The praise is heard to the end before the next picture appears. After the last picture the result screen
+      // says its own praise, so this one is skipped (two lines would cut each other).
+      final praised = !isLast && praise.isNotEmpty ? _speech.say(then: praise[_random.nextInt(praise.length)]) : Future<void>.value();
+      await Future.wait([praised, Future<void>.delayed(widget.nextDelay)]);
       if (!mounted) return;
-      if (_index + 1 >= _rounds.length) {
+      if (isLast) {
         widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _rounds.length + _mistakes));
       } else {
         setState(() {
