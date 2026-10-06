@@ -48,7 +48,8 @@ class LessonScreen extends ConsumerWidget {
                       ),
                     ),
                     Center(
-                      child: BigTap(
+                      child: TapToHear(
+                        badgeInset: 14,
                         key: const Key('lesson-letter-tap'),
                         semanticLabel: lesson.letter,
                         onTap: () => unawaited(ref.read(audioServiceProvider).playAsset(lesson.audio.phoneme ?? lesson.audio.intro)),
@@ -77,7 +78,7 @@ class LessonScreen extends ConsumerWidget {
                           Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              BigTap(
+                              TapToHear(
                                 key: Key('word-${w.word}'),
                                 semanticLabel: w.word,
                                 onTap: () => unawaited(ref.read(audioServiceProvider).playAsset(w.audio)),

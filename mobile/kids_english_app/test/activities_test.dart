@@ -313,6 +313,7 @@ void main() {
       await tester.tap(find.byKey(const Key('node-letter-a')));
       await tester.pumpAndSettle();
 
+      expect(find.byKey(const Key('speaker-badge')), findsNWidgets(4)); // the letter and its 3 pictures show that they can be pressed
       await tester.ensureVisible(find.byKey(const Key('word-apple')));
       await tester.tap(find.byKey(const Key('word-apple')));
       await tester.pump();

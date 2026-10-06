@@ -90,3 +90,86 @@ class BigTap extends StatelessWidget {
     );
   }
 }
+
+/// A picture (or letter) that speaks when tapped. A small speaker badge tells a child who cannot read that it is
+/// pressable, the badge pulses twice when the screen opens, and the picture bounces when tapped.
+class TapToHear extends StatefulWidget {
+  const TapToHear({super.key, required this.onTap, required this.child, this.semanticLabel, this.badgeInset = 0});
+
+  final VoidCallback onTap;
+  final Widget child;
+  final String? semanticLabel;
+
+  /// Moves the badge towards the middle (for round children, whose corners are empty).
+  final double badgeInset;
+
+  @override
+  State<TapToHear> createState() => _TapToHearState();
+}
+
+class _TapToHearState extends State<TapToHear> with TickerProviderStateMixin {
+  late final AnimationController _pop = AnimationController(vsync: this, duration: const Duration(milliseconds: 320));
+  late final AnimationController _hint = AnimationController(vsync: this, duration: const Duration(milliseconds: 2400));
+
+  static final _popScale = TweenSequence<double>([
+    TweenSequenceItem(tween: Tween(begin: 1.0, end: 1.12).chain(CurveTween(curve: Curves.easeOut)), weight: 40),
+    TweenSequenceItem(tween: Tween(begin: 1.12, end: 1.0).chain(CurveTween(curve: Curves.elasticOut)), weight: 60),
+  ]);
+  static final _hintScale = TweenSequence<double>([
+    for (var i = 0; i < 2; i++) ...[
+      TweenSequenceItem(tween: Tween(begin: 1.0, end: 1.3).chain(CurveTween(curve: Curves.easeOut)), weight: 15),
+      TweenSequenceItem(tween: Tween(begin: 1.3, end: 1.0).chain(CurveTween(curve: Curves.easeIn)), weight: 15),
+      TweenSequenceItem(tween: ConstantTween(1.0), weight: 20),
+    ],
+  ]);
+
+  @override
+  void initState() {
+    super.initState();
+    _hint.forward();
+  }
+
+  @override
+  void dispose() {
+    _pop.dispose();
+    _hint.dispose();
+    super.dispose();
+  }
+
+  void _tapped() {
+    _pop.forward(from: 0);
+    widget.onTap();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BigTap(
+      semanticLabel: widget.semanticLabel,
+      onTap: _tapped,
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          ScaleTransition(scale: _pop.drive(_popScale), child: widget.child),
+          Positioned(
+            right: widget.badgeInset,
+            bottom: widget.badgeInset,
+            child: ScaleTransition(
+              scale: _hint.drive(_hintScale),
+              child: Container(
+                key: const Key('speaker-badge'),
+                width: 44,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: Palette.blue,
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Palette.ink, width: 3),
+                ),
+                child: const Icon(Icons.volume_up_rounded, size: 26, color: Palette.white),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
