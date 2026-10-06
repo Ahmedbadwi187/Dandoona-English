@@ -1,0 +1,21 @@
+id: color-white
+unit: colors
+track: little-learners
+level: pre-a1
+order: 10
+color: { name: white, hex: "#FFFFFF" }
+words:
+  - { word: egg, reuse: letter-e/egg }
+  - { word: snowman, imagePrompt: "a white snowman", source: svg }
+  - { word: milk, imagePrompt: "a glass of white milk", source: svg }
+narration:
+  intro: "This is white! White, white, white!"
+  colorName: "White!"
+  phrases: { egg: "A white egg.", snowman: "A white snowman.", milk: "White milk." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap something white!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+    color-the-object: "Color the egg white!"
+activities: [listen-and-tap, match-picture, record-and-listen, color-the-object]

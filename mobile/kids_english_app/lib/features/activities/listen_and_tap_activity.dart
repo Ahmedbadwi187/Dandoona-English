@@ -52,12 +52,15 @@ class _ListenAndTapActivityState extends ConsumerState<ListenAndTapActivity> {
 
   ChoiceRound get _round => _rounds[_index];
 
+  /// Colors unit: the prompt is the color name ("Red!"), and every picture of the lesson is a right answer; otherwise the word itself.
+  String get _promptAudio => widget.lesson.audio.colorName ?? _round.target.audio;
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
-      unawaited(_speech.say(instruction: widget.lesson.audio.instructions['listen-and-tap'], then: _round.target.audio));
+      unawaited(_speech.say(instruction: widget.lesson.audio.instructions['listen-and-tap'], then: _promptAudio));
       _idle.arm();
     });
   }
@@ -71,7 +74,7 @@ class _ListenAndTapActivityState extends ConsumerState<ListenAndTapActivity> {
 
   void _playTarget() {
     if (!mounted) return;
-    unawaited(_speech.say(then: _round.target.audio));
+    unawaited(_speech.say(then: _promptAudio));
     _idle.arm();
   }
 
@@ -79,7 +82,7 @@ class _ListenAndTapActivityState extends ConsumerState<ListenAndTapActivity> {
   void _showHint() {
     if (!mounted || _locked) return;
     setState(() => _hinting = true);
-    unawaited(_speech.say(instruction: widget.lesson.audio.instructions['hint'], then: _round.target.audio));
+    unawaited(_speech.say(instruction: widget.lesson.audio.instructions['hint'], then: _promptAudio));
     _idle.arm();
   }
 

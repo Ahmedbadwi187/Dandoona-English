@@ -183,7 +183,8 @@ public static class CurriculumReader
 
         if (errors.Count > 0) throw new CurriculumException("Curriculum is invalid:\n" + string.Join("\n", errors));
 
-        return lessons.Select(l => l.Lesson).OrderBy(l => l.Track).ThenBy(l => l.ResolvedOrder).ThenBy(l => l.Id).ToList();
+        int UnitOrder(Lesson l) => units.FirstOrDefault(u => u.Track == l.Track && u.Id == l.Unit)?.Order ?? 0;
+        return lessons.Select(l => l.Lesson).OrderBy(l => l.Track).ThenBy(UnitOrder).ThenBy(l => l.ResolvedOrder).ThenBy(l => l.Id).ToList();
     }
 
     /// <summary>Reads curriculum/units/*.yaml (optional folder). Units are ordered by track then order.</summary>

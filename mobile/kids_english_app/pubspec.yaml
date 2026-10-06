@@ -99,3 +99,23 @@ flutter:
     - assets/audio/little_learners/unit_my_family/
     - assets/audio/little_learners/unit_numbers/
     - assets/audio/little_learners/unit_shapes/
+    - assets/audio/little_learners/color_black/
+    - assets/audio/little_learners/color_blue/
+    - assets/audio/little_learners/color_brown/
+    - assets/audio/little_learners/color_green/
+    - assets/audio/little_learners/color_orange/
+    - assets/audio/little_learners/color_pink/
+    - assets/audio/little_learners/color_purple/
+    - assets/audio/little_learners/color_red/
+    - assets/audio/little_learners/color_white/
+    - assets/audio/little_learners/color_yellow/
+    - assets/images/little_learners/color_black/
+    - assets/images/little_learners/color_blue/
+    - assets/images/little_learners/color_brown/
+    - assets/images/little_learners/color_green/
+    - assets/images/little_learners/color_orange/
+    - assets/images/little_learners/color_pink/
+    - assets/images/little_learners/color_purple/
+    - assets/images/little_learners/color_red/
+    - assets/images/little_learners/color_white/
+    - assets/images/little_learners/color_yellow/

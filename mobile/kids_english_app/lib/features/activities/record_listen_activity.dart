@@ -44,11 +44,14 @@ class _RecordListenActivityState extends ConsumerState<RecordListenActivity> {
 
   LessonWord get _word => widget.lesson.words[_index];
 
+  /// The clip played and compared: the phrase in the Colors unit ("A red apple."), else the word.
+  String get _clip => _word.phrase ?? _word.audio;
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted) unawaited(_speech.say(instruction: widget.lesson.audio.instructions['record-and-listen'], then: _word.audio));
+      if (mounted) unawaited(_speech.say(instruction: widget.lesson.audio.instructions['record-and-listen'], then: _clip));
     });
   }
 
@@ -61,7 +64,7 @@ class _RecordListenActivityState extends ConsumerState<RecordListenActivity> {
     super.dispose();
   }
 
-  void _hear() => unawaited(_speech.say(then: _word.audio));
+  void _hear() => unawaited(_speech.say(then: _clip));
 
   Future<void> _toggleRecord() async {
     if (_phase == _Phase.playing) return;
@@ -94,7 +97,7 @@ class _RecordListenActivityState extends ConsumerState<RecordListenActivity> {
       path = null;
     }
     _pendingFile = path;
-    await _audio.playAsset(_word.audio); // the original first...
+    await _audio.playAsset(_clip); // the original first...
     if (path != null && mounted) await _audio.playFile(path); // ...then the child's own voice
     if (path != null) {
       await _recorder.delete(path);

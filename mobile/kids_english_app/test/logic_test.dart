@@ -40,17 +40,18 @@ void main() {
       json = jsonDecode(File('assets/content/little_learners.json').readAsStringSync()) as Map<String, dynamic>;
     });
 
-    test('parses 26 lessons A-Z in order', () {
+    test('parses the Letters unit with 26 lessons A-Z in order', () {
       final content = TrackContent.fromJson(json);
-      expect(content.lessons, hasLength(26));
-      expect(content.lessons.map((l) => l.letter).join(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+      final letters = content.unitById('letters')!.lessons;
+      expect(letters, hasLength(26));
+      expect(letters.map((l) => l.letter).join(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
       expect(content.lessonById('letter-q')?.words, isNotEmpty);
     });
 
     test('every referenced audio and image file exists, and every lesson has the four activities', () {
       final content = TrackContent.fromJson(json);
       bool exists(String rel) => File('assets/$rel').existsSync();
-      for (final l in content.lessons) {
+      for (final l in content.unitById('letters')!.lessons) {
         expect(exists(l.audio.intro), isTrue, reason: l.audio.intro);
         for (final p in l.audio.praise) {
           expect(exists(p), isTrue, reason: p);

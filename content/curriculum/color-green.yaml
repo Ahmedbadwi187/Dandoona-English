@@ -1,0 +1,21 @@
+id: color-green
+unit: colors
+track: little-learners
+level: pre-a1
+order: 4
+color: { name: green, hex: "#7DBE45" }
+words:
+  - { word: frog, reuse: letter-f/frog }
+  - { word: leaf, reuse: letter-l/leaf }
+  - { word: tree, reuse: letter-t/tree }
+narration:
+  intro: "This is green! Green, green, green!"
+  colorName: "Green!"
+  phrases: { frog: "A green frog.", leaf: "A green leaf.", tree: "A green tree." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap something green!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+    color-the-object: "Color the leaf green!"
+activities: [listen-and-tap, match-picture, record-and-listen, color-the-object]

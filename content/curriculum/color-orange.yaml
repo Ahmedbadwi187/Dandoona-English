@@ -1,0 +1,21 @@
+id: color-orange
+unit: colors
+track: little-learners
+level: pre-a1
+order: 5
+color: { name: orange, hex: "#F0953A" }
+words:
+  - { word: orange, reuse: letter-o/orange }
+  - { word: carrot, imagePrompt: "an orange carrot", source: svg }
+  - { word: pumpkin, imagePrompt: "an orange pumpkin", source: svg }
+narration:
+  intro: "This is orange! Orange, orange, orange!"
+  colorName: "Orange!"
+  phrases: { orange: "An orange orange.", carrot: "An orange carrot.", pumpkin: "An orange pumpkin." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap something orange!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+    color-the-object: "Color the pumpkin orange!"
+activities: [listen-and-tap, match-picture, record-and-listen, color-the-object]

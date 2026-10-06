@@ -11,9 +11,11 @@ public class CurriculumTests
     {
         var layout = Layout.FindFrom(AppContext.BaseDirectory);
         var lessons = CurriculumReader.LoadAll(layout.CurriculumDir);
-        lessons.Count.ShouldBe(26);
+        lessons.Count(l => l.Unit == "letters").ShouldBe(26);
+        lessons.Count(l => l.Unit == "colors").ShouldBe(10);
         lessons.First().Id.ShouldBe("letter-a");
         lessons.ShouldAllBe(l => l.Activities.Contains("record-and-listen") && !l.Activities.Contains("say-it"));
+        lessons.Where(l => l.Unit == "colors").ShouldAllBe(l => l.Activities.Contains("color-the-object") && l.Narration.Instructions.ContainsKey("color-the-object"));
     }
 
     [Fact]

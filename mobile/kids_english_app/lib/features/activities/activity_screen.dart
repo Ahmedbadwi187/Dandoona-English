@@ -20,6 +20,7 @@ import '../progress/progress.dart';
 import '../rewards/accessories.dart';
 import '../session/session.dart';
 import 'activity_logic.dart';
+import 'color_the_object_activity.dart';
 import 'listen_and_tap_activity.dart';
 import 'match_picture_activity.dart';
 import 'record_listen_activity.dart';
@@ -119,6 +120,7 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
                   'match-picture' => MatchPictureActivity(lesson: widget.lesson, onFinished: _finished),
                   'trace' => TraceActivity(lesson: widget.lesson, onFinished: _finished),
                   'record-and-listen' => RecordListenActivity(lesson: widget.lesson, onFinished: _finished),
+                  'color-the-object' => ColorTheObjectActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   _ => Center(child: Text(Strings.en('loadError'))),
                 },
         ),

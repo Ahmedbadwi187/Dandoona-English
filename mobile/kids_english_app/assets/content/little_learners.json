@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "little-learners",
-  "generatedAt": "2026-10-06T22:39:09.4807785Z",
+  "generatedAt": "2026-10-06T22:48:32.5082398Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -1090,7 +1090,528 @@
         "welcome": "audio/little_learners/unit_colors/intro.mp3",
         "celebration": "audio/little_learners/unit_colors/instr_celebration.mp3"
       },
-      "lessons": []
+      "lessons": [
+        {
+          "id": "color-red",
+          "order": 1,
+          "level": "pre-a1",
+          "audio": {
+            "intro": "audio/little_learners/color_red/intro.mp3",
+            "praise": [
+              "audio/little_learners/color_red/praise_0.mp3",
+              "audio/little_learners/color_red/praise_1.mp3",
+              "audio/little_learners/color_red/praise_2.mp3"
+            ],
+            "instructions": {
+              "color-the-object": "audio/little_learners/color_red/instr_color_the_object.mp3",
+              "listen-and-tap": "audio/little_learners/color_red/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/color_red/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/color_red/instr_record_and_listen.mp3"
+            },
+            "colorName": "audio/little_learners/color_red/color_name.mp3"
+          },
+          "words": [
+            {
+              "word": "apple",
+              "audio": "audio/little_learners/color_red/word_apple.mp3",
+              "image": "images/little_learners/color_red/apple.webp",
+              "phrase": "audio/little_learners/color_red/phrase_apple.mp3"
+            },
+            {
+              "word": "strawberry",
+              "audio": "audio/little_learners/color_red/word_strawberry.mp3",
+              "image": "images/little_learners/color_red/strawberry.svg",
+              "phrase": "audio/little_learners/color_red/phrase_strawberry.mp3"
+            },
+            {
+              "word": "heart",
+              "audio": "audio/little_learners/color_red/word_heart.mp3",
+              "image": "images/little_learners/color_red/heart.svg",
+              "phrase": "audio/little_learners/color_red/phrase_heart.mp3"
+            }
+          ],
+          "activities": [
+            "listen-and-tap",
+            "match-picture",
+            "record-and-listen",
+            "color-the-object"
+          ],
+          "color": {
+            "name": "red",
+            "hex": "#E5524A",
+            "swatch": "images/little_learners/color_red/swatch.svg",
+            "drawing": "images/little_learners/color_red/colorable.svg"
+          }
+        },
+        {
+          "id": "color-blue",
+          "order": 2,
+          "level": "pre-a1",
+          "audio": {
+            "intro": "audio/little_learners/color_blue/intro.mp3",
+            "praise": [
+              "audio/little_learners/color_blue/praise_0.mp3",
+              "audio/little_learners/color_blue/praise_1.mp3",
+              "audio/little_learners/color_blue/praise_2.mp3"
+            ],
+            "instructions": {
+              "color-the-object": "audio/little_learners/color_blue/instr_color_the_object.mp3",
+              "listen-and-tap": "audio/little_learners/color_blue/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/color_blue/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/color_blue/instr_record_and_listen.mp3"
+            },
+            "colorName": "audio/little_learners/color_blue/color_name.mp3"
+          },
+          "words": [
+            {
+              "word": "whale",
+              "audio": "audio/little_learners/color_blue/word_whale.mp3",
+              "image": "images/little_learners/color_blue/whale.webp",
+              "phrase": "audio/little_learners/color_blue/phrase_whale.mp3"
+            },
+            {
+              "word": "cloud",
+              "audio": "audio/little_learners/color_blue/word_cloud.mp3",
+              "image": "images/little_learners/color_blue/cloud.svg",
+              "phrase": "audio/little_learners/color_blue/phrase_cloud.mp3"
+            },
+            {
+              "word": "balloon",
+              "audio": "audio/little_learners/color_blue/word_balloon.mp3",
+              "image": "images/little_learners/color_blue/balloon.svg",
+              "phrase": "audio/little_learners/color_blue/phrase_balloon.mp3"
+            }
+          ],
+          "activities": [
+            "listen-and-tap",
+            "match-picture",
+            "record-and-listen",
+            "color-the-object"
+          ],
+          "color": {
+            "name": "blue",
+            "hex": "#4A90D9",
+            "swatch": "images/little_learners/color_blue/swatch.svg",
+            "drawing": "images/little_learners/color_blue/colorable.svg"
+          }
+        },
+        {
+          "id": "color-yellow",
+          "order": 3,
+          "level": "pre-a1",
+          "audio": {
+            "intro": "audio/little_learners/color_yellow/intro.mp3",
+            "praise": [
+              "audio/little_learners/color_yellow/praise_0.mp3",
+              "audio/little_learners/color_yellow/praise_1.mp3",
+              "audio/little_learners/color_yellow/praise_2.mp3"
+            ],
+            "instructions": {
+              "color-the-object": "audio/little_learners/color_yellow/instr_color_the_object.mp3",
+              "listen-and-tap": "audio/little_learners/color_yellow/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/color_yellow/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/color_yellow/instr_record_and_listen.mp3"
+            },
+            "colorName": "audio/little_learners/color_yellow/color_name.mp3"
+          },
+          "words": [
+            {
+              "word": "banana",
+              "audio": "audio/little_learners/color_yellow/word_banana.mp3",
+              "image": "images/little_learners/color_yellow/banana.webp",
+              "phrase": "audio/little_learners/color_yellow/phrase_banana.mp3"
+            },
+            {
+              "word": "sun",
+              "audio": "audio/little_learners/color_yellow/word_sun.mp3",
+              "image": "images/little_learners/color_yellow/sun.svg",
+              "phrase": "audio/little_learners/color_yellow/phrase_sun.mp3"
+            },
+            {
+              "word": "duck",
+              "audio": "audio/little_learners/color_yellow/word_duck.mp3",
+              "image": "images/little_learners/color_yellow/duck.webp",
+              "phrase": "audio/little_learners/color_yellow/phrase_duck.mp3"
+            }
+          ],
+          "activities": [
+            "listen-and-tap",
+            "match-picture",
+            "record-and-listen",
+            "color-the-object"
+          ],
+          "color": {
+            "name": "yellow",
+            "hex": "#F7CF3E",
+            "swatch": "images/little_learners/color_yellow/swatch.svg",
+            "drawing": "images/little_learners/color_yellow/colorable.svg"
+          }
+        },
+        {
+          "id": "color-green",
+          "order": 4,
+          "level": "pre-a1",
+          "audio": {
+            "intro": "audio/little_learners/color_green/intro.mp3",
+            "praise": [
+              "audio/little_learners/color_green/praise_0.mp3",
+              "audio/little_learners/color_green/praise_1.mp3",
+              "audio/little_learners/color_green/praise_2.mp3"
+            ],
+            "instructions": {
+              "color-the-object": "audio/little_learners/color_green/instr_color_the_object.mp3",
+              "listen-and-tap": "audio/little_learners/color_green/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/color_green/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/color_green/instr_record_and_listen.mp3"
+            },
+            "colorName": "audio/little_learners/color_green/color_name.mp3"
+          },
+          "words": [
+            {
+              "word": "frog",
+              "audio": "audio/little_learners/color_green/word_frog.mp3",
+              "image": "images/little_learners/color_green/frog.webp",
+              "phrase": "audio/little_learners/color_green/phrase_frog.mp3"
+            },
+            {
+              "word": "leaf",
+              "audio": "audio/little_learners/color_green/word_leaf.mp3",
+              "image": "images/little_learners/color_green/leaf.svg",
+              "phrase": "audio/little_learners/color_green/phrase_leaf.mp3"
+            },
+            {
+              "word": "tree",
+              "audio": "audio/little_learners/color_green/word_tree.mp3",
+              "image": "images/little_learners/color_green/tree.svg",
+              "phrase": "audio/little_learners/color_green/phrase_tree.mp3"
+            }
+          ],
+          "activities": [
+            "listen-and-tap",
+            "match-picture",
+            "record-and-listen",
+            "color-the-object"
+          ],
+          "color": {
+            "name": "green",
+            "hex": "#7DBE45",
+            "swatch": "images/little_learners/color_green/swatch.svg",
+            "drawing": "images/little_learners/color_green/colorable.svg"
+          }
+        },
+        {
+          "id": "color-orange",
+          "order": 5,
+          "level": "pre-a1",
+          "audio": {
+            "intro": "audio/little_learners/color_orange/intro.mp3",
+            "praise": [
+              "audio/little_learners/color_orange/praise_0.mp3",
+              "audio/little_learners/color_orange/praise_1.mp3",
+              "audio/little_learners/color_orange/praise_2.mp3"
+            ],
+            "instructions": {
+              "color-the-object": "audio/little_learners/color_orange/instr_color_the_object.mp3",
+              "listen-and-tap": "audio/little_learners/color_orange/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/color_orange/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/color_orange/instr_record_and_listen.mp3"
+            },
+            "colorName": "audio/little_learners/color_orange/color_name.mp3"
+          },
+          "words": [
+            {
+              "word": "orange",
+              "audio": "audio/little_learners/color_orange/word_orange.mp3",
+              "image": "images/little_learners/color_orange/orange.svg",
+              "phrase": "audio/little_learners/color_orange/phrase_orange.mp3"
+            },
+            {
+              "word": "carrot",
+              "audio": "audio/little_learners/color_orange/word_carrot.mp3",
+              "image": "images/little_learners/color_orange/carrot.svg",
+              "phrase": "audio/little_learners/color_orange/phrase_carrot.mp3"
+            },
+            {
+              "word": "pumpkin",
+              "audio": "audio/little_learners/color_orange/word_pumpkin.mp3",
+              "image": "images/little_learners/color_orange/pumpkin.svg",
+              "phrase": "audio/little_learners/color_orange/phrase_pumpkin.mp3"
+            }
+          ],
+          "activities": [
+            "listen-and-tap",
+            "match-picture",
+            "record-and-listen",
+            "color-the-object"
+          ],
+          "color": {
+            "name": "orange",
+            "hex": "#F0953A",
+            "swatch": "images/little_learners/color_orange/swatch.svg",
+            "drawing": "images/little_learners/color_orange/colorable.svg"
+          }
+        },
+        {
+          "id": "color-purple",
+          "order": 6,
+          "level": "pre-a1",
+          "audio": {
+            "intro": "audio/little_learners/color_purple/intro.mp3",
+            "praise": [
+              "audio/little_learners/color_purple/praise_0.mp3",
+              "audio/little_learners/color_purple/praise_1.mp3",
+              "audio/little_learners/color_purple/praise_2.mp3"
+            ],
+            "instructions": {
+              "color-the-object": "audio/little_learners/color_purple/instr_color_the_object.mp3",
+              "listen-and-tap": "audio/little_learners/color_purple/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/color_purple/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/color_purple/instr_record_and_listen.mp3"
+            },
+            "colorName": "audio/little_learners/color_purple/color_name.mp3"
+          },
+          "words": [
+            {
+              "word": "grapes",
+              "audio": "audio/little_learners/color_purple/word_grapes.mp3",
+              "image": "images/little_learners/color_purple/grapes.svg",
+              "phrase": "audio/little_learners/color_purple/phrase_grapes.mp3"
+            },
+            {
+              "word": "eggplant",
+              "audio": "audio/little_learners/color_purple/word_eggplant.mp3",
+              "image": "images/little_learners/color_purple/eggplant.svg",
+              "phrase": "audio/little_learners/color_purple/phrase_eggplant.mp3"
+            },
+            {
+              "word": "flower",
+              "audio": "audio/little_learners/color_purple/word_flower.mp3",
+              "image": "images/little_learners/color_purple/flower.svg",
+              "phrase": "audio/little_learners/color_purple/phrase_flower.mp3"
+            }
+          ],
+          "activities": [
+            "listen-and-tap",
+            "match-picture",
+            "record-and-listen",
+            "color-the-object"
+          ],
+          "color": {
+            "name": "purple",
+            "hex": "#8E6BBF",
+            "swatch": "images/little_learners/color_purple/swatch.svg",
+            "drawing": "images/little_learners/color_purple/colorable.svg"
+          }
+        },
+        {
+          "id": "color-pink",
+          "order": 7,
+          "level": "pre-a1",
+          "audio": {
+            "intro": "audio/little_learners/color_pink/intro.mp3",
+            "praise": [
+              "audio/little_learners/color_pink/praise_0.mp3",
+              "audio/little_learners/color_pink/praise_1.mp3",
+              "audio/little_learners/color_pink/praise_2.mp3"
+            ],
+            "instructions": {
+              "color-the-object": "audio/little_learners/color_pink/instr_color_the_object.mp3",
+              "listen-and-tap": "audio/little_learners/color_pink/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/color_pink/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/color_pink/instr_record_and_listen.mp3"
+            },
+            "colorName": "audio/little_learners/color_pink/color_name.mp3"
+          },
+          "words": [
+            {
+              "word": "pig",
+              "audio": "audio/little_learners/color_pink/word_pig.mp3",
+              "image": "images/little_learners/color_pink/pig.webp",
+              "phrase": "audio/little_learners/color_pink/phrase_pig.mp3"
+            },
+            {
+              "word": "cupcake",
+              "audio": "audio/little_learners/color_pink/word_cupcake.mp3",
+              "image": "images/little_learners/color_pink/cupcake.svg",
+              "phrase": "audio/little_learners/color_pink/phrase_cupcake.mp3"
+            },
+            {
+              "word": "bow",
+              "audio": "audio/little_learners/color_pink/word_bow.mp3",
+              "image": "images/little_learners/color_pink/bow.svg",
+              "phrase": "audio/little_learners/color_pink/phrase_bow.mp3"
+            }
+          ],
+          "activities": [
+            "listen-and-tap",
+            "match-picture",
+            "record-and-listen",
+            "color-the-object"
+          ],
+          "color": {
+            "name": "pink",
+            "hex": "#F08FA5",
+            "swatch": "images/little_learners/color_pink/swatch.svg",
+            "drawing": "images/little_learners/color_pink/colorable.svg"
+          }
+        },
+        {
+          "id": "color-brown",
+          "order": 8,
+          "level": "pre-a1",
+          "audio": {
+            "intro": "audio/little_learners/color_brown/intro.mp3",
+            "praise": [
+              "audio/little_learners/color_brown/praise_0.mp3",
+              "audio/little_learners/color_brown/praise_1.mp3",
+              "audio/little_learners/color_brown/praise_2.mp3"
+            ],
+            "instructions": {
+              "color-the-object": "audio/little_learners/color_brown/instr_color_the_object.mp3",
+              "listen-and-tap": "audio/little_learners/color_brown/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/color_brown/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/color_brown/instr_record_and_listen.mp3"
+            },
+            "colorName": "audio/little_learners/color_brown/color_name.mp3"
+          },
+          "words": [
+            {
+              "word": "bear",
+              "audio": "audio/little_learners/color_brown/word_bear.mp3",
+              "image": "images/little_learners/color_brown/bear.webp",
+              "phrase": "audio/little_learners/color_brown/phrase_bear.mp3"
+            },
+            {
+              "word": "monkey",
+              "audio": "audio/little_learners/color_brown/word_monkey.mp3",
+              "image": "images/little_learners/color_brown/monkey.webp",
+              "phrase": "audio/little_learners/color_brown/phrase_monkey.mp3"
+            },
+            {
+              "word": "nut",
+              "audio": "audio/little_learners/color_brown/word_nut.mp3",
+              "image": "images/little_learners/color_brown/nut.svg",
+              "phrase": "audio/little_learners/color_brown/phrase_nut.mp3"
+            }
+          ],
+          "activities": [
+            "listen-and-tap",
+            "match-picture",
+            "record-and-listen",
+            "color-the-object"
+          ],
+          "color": {
+            "name": "brown",
+            "hex": "#B8733F",
+            "swatch": "images/little_learners/color_brown/swatch.svg",
+            "drawing": "images/little_learners/color_brown/colorable.svg"
+          }
+        },
+        {
+          "id": "color-black",
+          "order": 9,
+          "level": "pre-a1",
+          "audio": {
+            "intro": "audio/little_learners/color_black/intro.mp3",
+            "praise": [
+              "audio/little_learners/color_black/praise_0.mp3",
+              "audio/little_learners/color_black/praise_1.mp3",
+              "audio/little_learners/color_black/praise_2.mp3"
+            ],
+            "instructions": {
+              "color-the-object": "audio/little_learners/color_black/instr_color_the_object.mp3",
+              "listen-and-tap": "audio/little_learners/color_black/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/color_black/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/color_black/instr_record_and_listen.mp3"
+            },
+            "colorName": "audio/little_learners/color_black/color_name.mp3"
+          },
+          "words": [
+            {
+              "word": "cat",
+              "audio": "audio/little_learners/color_black/word_cat.mp3",
+              "image": "images/little_learners/color_black/cat.svg",
+              "phrase": "audio/little_learners/color_black/phrase_cat.mp3"
+            },
+            {
+              "word": "tire",
+              "audio": "audio/little_learners/color_black/word_tire.mp3",
+              "image": "images/little_learners/color_black/tire.svg",
+              "phrase": "audio/little_learners/color_black/phrase_tire.mp3"
+            },
+            {
+              "word": "spider",
+              "audio": "audio/little_learners/color_black/word_spider.mp3",
+              "image": "images/little_learners/color_black/spider.svg",
+              "phrase": "audio/little_learners/color_black/phrase_spider.mp3"
+            }
+          ],
+          "activities": [
+            "listen-and-tap",
+            "match-picture",
+            "record-and-listen",
+            "color-the-object"
+          ],
+          "color": {
+            "name": "black",
+            "hex": "#2B2B2B",
+            "swatch": "images/little_learners/color_black/swatch.svg",
+            "drawing": "images/little_learners/color_black/colorable.svg"
+          }
+        },
+        {
+          "id": "color-white",
+          "order": 10,
+          "level": "pre-a1",
+          "audio": {
+            "intro": "audio/little_learners/color_white/intro.mp3",
+            "praise": [
+              "audio/little_learners/color_white/praise_0.mp3",
+              "audio/little_learners/color_white/praise_1.mp3",
+              "audio/little_learners/color_white/praise_2.mp3"
+            ],
+            "instructions": {
+              "color-the-object": "audio/little_learners/color_white/instr_color_the_object.mp3",
+              "listen-and-tap": "audio/little_learners/color_white/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/color_white/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/color_white/instr_record_and_listen.mp3"
+            },
+            "colorName": "audio/little_learners/color_white/color_name.mp3"
+          },
+          "words": [
+            {
+              "word": "egg",
+              "audio": "audio/little_learners/color_white/word_egg.mp3",
+              "image": "images/little_learners/color_white/egg.svg",
+              "phrase": "audio/little_learners/color_white/phrase_egg.mp3"
+            },
+            {
+              "word": "snowman",
+              "audio": "audio/little_learners/color_white/word_snowman.mp3",
+              "image": "images/little_learners/color_white/snowman.svg",
+              "phrase": "audio/little_learners/color_white/phrase_snowman.mp3"
+            },
+            {
+              "word": "milk",
+              "audio": "audio/little_learners/color_white/word_milk.mp3",
+              "image": "images/little_learners/color_white/milk.svg",
+              "phrase": "audio/little_learners/color_white/phrase_milk.mp3"
+            }
+          ],
+          "activities": [
+            "listen-and-tap",
+            "match-picture",
+            "record-and-listen",
+            "color-the-object"
+          ],
+          "color": {
+            "name": "white",
+            "hex": "#FFFFFF",
+            "swatch": "images/little_learners/color_white/swatch.svg",
+            "drawing": "images/little_learners/color_white/colorable.svg"
+          }
+        }
+      ]
     },
     {
       "id": "numbers",

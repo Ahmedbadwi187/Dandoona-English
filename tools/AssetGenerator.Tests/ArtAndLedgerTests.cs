@@ -38,6 +38,8 @@ public class ArtAndLedgerTests
         var layout = Layout.FindFrom(AppContext.BaseDirectory);
         var lessons = CurriculumReader.LoadAll(layout.CurriculumDir);
         var expected = lessons.SelectMany(l => LessonPlan.Images(l).Where(i => i.IsSvg).Select(i => Path.GetFullPath(layout.SvgSource(l, i.Key)))).ToList();
+        // Colors lessons also have a swatch and a drawing to color in
+        expected.AddRange(lessons.Where(l => l.Color is not null).SelectMany(l => new[] { "swatch", "colorable" }.Select(k => Path.GetFullPath(layout.SvgSource(l, k)))));
         expected.ShouldAllBe(p => File.Exists(p));
         // accessories/ holds reward art, not lesson words
         var actual = Directory.GetFiles(layout.ArtDir, "*.svg", SearchOption.AllDirectories)
@@ -50,7 +52,7 @@ public class ArtAndLedgerTests
     {
         var layout = Layout.FindFrom(AppContext.BaseDirectory);
         var lessons = CurriculumReader.LoadAll(layout.CurriculumDir);
-        lessons.Select(l => l.Letter).ShouldBe("ABCDEFGHIJKLMNOPQRSTUVWXYZ".Select(c => c.ToString()));
+        lessons.Where(l => l.Letter is not null).Select(l => l.Letter).ShouldBe("ABCDEFGHIJKLMNOPQRSTUVWXYZ".Select(c => c.ToString()));
         lessons.SelectMany(l => l.Words).ShouldAllBe(w => w.Source == "openai" || w.Source == "svg");
     }
 

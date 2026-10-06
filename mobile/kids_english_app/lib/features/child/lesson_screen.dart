@@ -8,6 +8,7 @@ import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
 import '../../core/widgets.dart';
+import '../activities/color_the_object_activity.dart' show colorFromHex;
 import '../audio/audio_service.dart';
 import '../content/content_models.dart';
 import '../content/content_repository.dart';
@@ -85,19 +86,21 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                         badgeInset: 14,
                         key: const Key('lesson-letter-tap'),
                         semanticLabel: lesson.letter,
-                        onTap: () => unawaited(ref.read(audioServiceProvider).playAsset(lesson.audio.phoneme ?? lesson.audio.intro)),
+                        onTap: () => unawaited(ref.read(audioServiceProvider).playAsset(lesson.audio.colorName ?? lesson.audio.phoneme ?? lesson.audio.intro)),
                         child: Container(
                           width: 180,
                           height: 180,
                           decoration: BoxDecoration(
-                            color: Palette.nodeColors[(lesson.order - 1) % Palette.nodeColors.length],
+                            color: lesson.color != null ? colorFromHex(lesson.color!.hex) : Palette.nodeColors[(lesson.order - 1) % Palette.nodeColors.length],
                             shape: BoxShape.circle,
                             border: Border.all(color: Palette.ink, width: 6),
                           ),
                           alignment: Alignment.center,
-                          child: Text(lesson.letter ?? '?',
-                              key: const Key('lesson-letter'),
-                              style: const TextStyle(fontSize: 110, fontWeight: FontWeight.w900, color: Palette.white)),
+                          child: lesson.color != null
+                              ? const SizedBox(key: Key('lesson-letter')) // a Colors lesson shows the color itself
+                              : Text(lesson.letter ?? '?',
+                                  key: const Key('lesson-letter'),
+                                  style: const TextStyle(fontSize: 110, fontWeight: FontWeight.w900, color: Palette.white)),
                         ),
                       ),
                     ),
@@ -149,6 +152,7 @@ const _activityIcons = {
   'listen-and-tap': Icons.hearing_rounded,
   'record-and-listen': Icons.mic_rounded,
   'match-picture': Icons.extension_rounded,
+  'color-the-object': Icons.palette_rounded,
 };
 
 /// Icon-only (no reading needed). Tapping opens the activity; the stars show the child's best result.

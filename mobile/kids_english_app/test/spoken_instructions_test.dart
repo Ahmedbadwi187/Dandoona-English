@@ -24,12 +24,13 @@ const _instr = {
 /// The real lessons with spoken instructions added to the first one (the exported file only has them after the audio is generated).
 TrackContent _content({bool withInstructions = true}) {
   final c = realContent();
-  final first = c.lessons.first.id;
+  final letters = c.unitById('letters')!.lessons; // the Letters unit only, written as a flat (schemaVersion 1) file
+  final first = letters.first.id;
   return TrackContent.fromJson({
     'schemaVersion': 1,
     'track': 'little-learners',
     'lessons': [
-      for (final l in c.lessons)
+      for (final l in letters)
         {
           'id': l.id,
           'order': l.order,

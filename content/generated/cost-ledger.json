@@ -4191,5 +4191,1055 @@
     "what": "unit-my-family/instr-title (9 chars)",
     "usd": 0.00072,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:43.3789236Z",
+    "service": "ElevenLabs",
+    "what": "color-red/intro (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:44.3224566Z",
+    "service": "ElevenLabs",
+    "what": "color-red/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:45.2754266Z",
+    "service": "ElevenLabs",
+    "what": "color-red/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:46.2143876Z",
+    "service": "ElevenLabs",
+    "what": "color-red/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:47.189974Z",
+    "service": "ElevenLabs",
+    "what": "color-red/word-apple (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:48.1264742Z",
+    "service": "ElevenLabs",
+    "what": "color-red/word-strawberry (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:49.0598166Z",
+    "service": "ElevenLabs",
+    "what": "color-red/word-heart (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:49.9975956Z",
+    "service": "ElevenLabs",
+    "what": "color-red/color-name (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:51.0424423Z",
+    "service": "ElevenLabs",
+    "what": "color-red/phrase-apple (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:52.0344356Z",
+    "service": "ElevenLabs",
+    "what": "color-red/phrase-strawberry (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:52.9992624Z",
+    "service": "ElevenLabs",
+    "what": "color-red/phrase-heart (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:54.2997683Z",
+    "service": "ElevenLabs",
+    "what": "color-red/instr-color-the-object (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:55.4020396Z",
+    "service": "ElevenLabs",
+    "what": "color-red/instr-listen-and-tap (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:56.4631908Z",
+    "service": "ElevenLabs",
+    "what": "color-red/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:57.5061101Z",
+    "service": "ElevenLabs",
+    "what": "color-red/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:58.5360829Z",
+    "service": "ElevenLabs",
+    "what": "color-blue/intro (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:45:59.4767439Z",
+    "service": "ElevenLabs",
+    "what": "color-blue/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:00.4364684Z",
+    "service": "ElevenLabs",
+    "what": "color-blue/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:01.4053221Z",
+    "service": "ElevenLabs",
+    "what": "color-blue/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:02.3224177Z",
+    "service": "ElevenLabs",
+    "what": "color-blue/word-whale (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:03.2526312Z",
+    "service": "ElevenLabs",
+    "what": "color-blue/word-cloud (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:04.1829141Z",
+    "service": "ElevenLabs",
+    "what": "color-blue/word-balloon (7 chars)",
+    "usd": 0.00056,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:05.1002945Z",
+    "service": "ElevenLabs",
+    "what": "color-blue/color-name (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:06.0520165Z",
+    "service": "ElevenLabs",
+    "what": "color-blue/phrase-whale (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:06.9936228Z",
+    "service": "ElevenLabs",
+    "what": "color-blue/phrase-cloud (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:07.9789224Z",
+    "service": "ElevenLabs",
+    "what": "color-blue/phrase-balloon (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:08.9441323Z",
+    "service": "ElevenLabs",
+    "what": "color-blue/instr-color-the-object (21 chars)",
+    "usd": 0.00168,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:10.0283979Z",
+    "service": "ElevenLabs",
+    "what": "color-blue/instr-listen-and-tap (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:11.0476395Z",
+    "service": "ElevenLabs",
+    "what": "color-blue/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:12.0036789Z",
+    "service": "ElevenLabs",
+    "what": "color-blue/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:13.1653796Z",
+    "service": "ElevenLabs",
+    "what": "color-yellow/intro (39 chars)",
+    "usd": 0.00312,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:14.1012938Z",
+    "service": "ElevenLabs",
+    "what": "color-yellow/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:15.0629906Z",
+    "service": "ElevenLabs",
+    "what": "color-yellow/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:16.0041823Z",
+    "service": "ElevenLabs",
+    "what": "color-yellow/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:16.9676989Z",
+    "service": "ElevenLabs",
+    "what": "color-yellow/word-banana (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:17.8841413Z",
+    "service": "ElevenLabs",
+    "what": "color-yellow/word-sun (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:18.7850823Z",
+    "service": "ElevenLabs",
+    "what": "color-yellow/word-duck (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:19.7543102Z",
+    "service": "ElevenLabs",
+    "what": "color-yellow/color-name (7 chars)",
+    "usd": 0.00056,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:20.7642405Z",
+    "service": "ElevenLabs",
+    "what": "color-yellow/phrase-banana (16 chars)",
+    "usd": 0.00128,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:21.6980587Z",
+    "service": "ElevenLabs",
+    "what": "color-yellow/phrase-sun (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:22.6425816Z",
+    "service": "ElevenLabs",
+    "what": "color-yellow/phrase-duck (14 chars)",
+    "usd": 0.00112,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:23.6184688Z",
+    "service": "ElevenLabs",
+    "what": "color-yellow/instr-color-the-object (21 chars)",
+    "usd": 0.00168,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:24.692043Z",
+    "service": "ElevenLabs",
+    "what": "color-yellow/instr-listen-and-tap (34 chars)",
+    "usd": 0.00272,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:25.8137675Z",
+    "service": "ElevenLabs",
+    "what": "color-yellow/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:26.7693609Z",
+    "service": "ElevenLabs",
+    "what": "color-yellow/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:27.8357922Z",
+    "service": "ElevenLabs",
+    "what": "color-green/intro (35 chars)",
+    "usd": 0.00280,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:28.7746712Z",
+    "service": "ElevenLabs",
+    "what": "color-green/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:29.7406633Z",
+    "service": "ElevenLabs",
+    "what": "color-green/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:30.6753037Z",
+    "service": "ElevenLabs",
+    "what": "color-green/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:31.5693469Z",
+    "service": "ElevenLabs",
+    "what": "color-green/word-frog (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:32.5190075Z",
+    "service": "ElevenLabs",
+    "what": "color-green/word-leaf (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:33.4589502Z",
+    "service": "ElevenLabs",
+    "what": "color-green/word-tree (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:34.3481392Z",
+    "service": "ElevenLabs",
+    "what": "color-green/color-name (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:35.3226638Z",
+    "service": "ElevenLabs",
+    "what": "color-green/phrase-frog (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:36.3330746Z",
+    "service": "ElevenLabs",
+    "what": "color-green/phrase-leaf (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:37.3084682Z",
+    "service": "ElevenLabs",
+    "what": "color-green/phrase-tree (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:38.2870973Z",
+    "service": "ElevenLabs",
+    "what": "color-green/instr-color-the-object (21 chars)",
+    "usd": 0.00168,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:39.3465555Z",
+    "service": "ElevenLabs",
+    "what": "color-green/instr-listen-and-tap (33 chars)",
+    "usd": 0.00264,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:40.3986507Z",
+    "service": "ElevenLabs",
+    "what": "color-green/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:41.36111Z",
+    "service": "ElevenLabs",
+    "what": "color-green/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:42.461001Z",
+    "service": "ElevenLabs",
+    "what": "color-orange/intro (39 chars)",
+    "usd": 0.00312,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:43.4272162Z",
+    "service": "ElevenLabs",
+    "what": "color-orange/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:44.390834Z",
+    "service": "ElevenLabs",
+    "what": "color-orange/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:45.3769696Z",
+    "service": "ElevenLabs",
+    "what": "color-orange/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:46.3161996Z",
+    "service": "ElevenLabs",
+    "what": "color-orange/word-orange (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:47.2235296Z",
+    "service": "ElevenLabs",
+    "what": "color-orange/word-carrot (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:48.1686139Z",
+    "service": "ElevenLabs",
+    "what": "color-orange/word-pumpkin (7 chars)",
+    "usd": 0.00056,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:49.079639Z",
+    "service": "ElevenLabs",
+    "what": "color-orange/color-name (7 chars)",
+    "usd": 0.00056,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:50.0310084Z",
+    "service": "ElevenLabs",
+    "what": "color-orange/phrase-orange (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:50.9813799Z",
+    "service": "ElevenLabs",
+    "what": "color-orange/phrase-carrot (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:51.940641Z",
+    "service": "ElevenLabs",
+    "what": "color-orange/phrase-pumpkin (18 chars)",
+    "usd": 0.00144,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:52.9442043Z",
+    "service": "ElevenLabs",
+    "what": "color-orange/instr-color-the-object (25 chars)",
+    "usd": 0.00200,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:53.9593543Z",
+    "service": "ElevenLabs",
+    "what": "color-orange/instr-listen-and-tap (34 chars)",
+    "usd": 0.00272,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:54.9519828Z",
+    "service": "ElevenLabs",
+    "what": "color-orange/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:55.9272092Z",
+    "service": "ElevenLabs",
+    "what": "color-orange/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:56.9739172Z",
+    "service": "ElevenLabs",
+    "what": "color-purple/intro (39 chars)",
+    "usd": 0.00312,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:57.9398904Z",
+    "service": "ElevenLabs",
+    "what": "color-purple/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:58.8768406Z",
+    "service": "ElevenLabs",
+    "what": "color-purple/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:46:59.8180587Z",
+    "service": "ElevenLabs",
+    "what": "color-purple/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:00.7369973Z",
+    "service": "ElevenLabs",
+    "what": "color-purple/word-grapes (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:01.6880398Z",
+    "service": "ElevenLabs",
+    "what": "color-purple/word-eggplant (8 chars)",
+    "usd": 0.00064,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:02.618289Z",
+    "service": "ElevenLabs",
+    "what": "color-purple/word-flower (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:03.5320733Z",
+    "service": "ElevenLabs",
+    "what": "color-purple/color-name (7 chars)",
+    "usd": 0.00056,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:04.4715332Z",
+    "service": "ElevenLabs",
+    "what": "color-purple/phrase-grapes (14 chars)",
+    "usd": 0.00112,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:05.4672739Z",
+    "service": "ElevenLabs",
+    "what": "color-purple/phrase-eggplant (18 chars)",
+    "usd": 0.00144,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:06.4686482Z",
+    "service": "ElevenLabs",
+    "what": "color-purple/phrase-flower (16 chars)",
+    "usd": 0.00128,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:07.4386017Z",
+    "service": "ElevenLabs",
+    "what": "color-purple/instr-color-the-object (24 chars)",
+    "usd": 0.00192,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:08.4931493Z",
+    "service": "ElevenLabs",
+    "what": "color-purple/instr-listen-and-tap (34 chars)",
+    "usd": 0.00272,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:09.5397235Z",
+    "service": "ElevenLabs",
+    "what": "color-purple/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:10.5097725Z",
+    "service": "ElevenLabs",
+    "what": "color-purple/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:11.5066449Z",
+    "service": "ElevenLabs",
+    "what": "color-pink/intro (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:12.4385153Z",
+    "service": "ElevenLabs",
+    "what": "color-pink/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:13.3641418Z",
+    "service": "ElevenLabs",
+    "what": "color-pink/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:14.292611Z",
+    "service": "ElevenLabs",
+    "what": "color-pink/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:15.2065094Z",
+    "service": "ElevenLabs",
+    "what": "color-pink/word-pig (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:16.1329761Z",
+    "service": "ElevenLabs",
+    "what": "color-pink/word-cupcake (7 chars)",
+    "usd": 0.00056,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:17.0232141Z",
+    "service": "ElevenLabs",
+    "what": "color-pink/word-bow (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:17.9500388Z",
+    "service": "ElevenLabs",
+    "what": "color-pink/color-name (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:18.9064514Z",
+    "service": "ElevenLabs",
+    "what": "color-pink/phrase-pig (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:19.9351211Z",
+    "service": "ElevenLabs",
+    "what": "color-pink/phrase-cupcake (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:20.8969881Z",
+    "service": "ElevenLabs",
+    "what": "color-pink/phrase-bow (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:21.8881311Z",
+    "service": "ElevenLabs",
+    "what": "color-pink/instr-color-the-object (25 chars)",
+    "usd": 0.00200,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:22.9075999Z",
+    "service": "ElevenLabs",
+    "what": "color-pink/instr-listen-and-tap (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:23.92042Z",
+    "service": "ElevenLabs",
+    "what": "color-pink/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:24.8826298Z",
+    "service": "ElevenLabs",
+    "what": "color-pink/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:25.9558743Z",
+    "service": "ElevenLabs",
+    "what": "color-brown/intro (35 chars)",
+    "usd": 0.00280,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:26.8766992Z",
+    "service": "ElevenLabs",
+    "what": "color-brown/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:27.804536Z",
+    "service": "ElevenLabs",
+    "what": "color-brown/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:28.7713756Z",
+    "service": "ElevenLabs",
+    "what": "color-brown/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:29.756375Z",
+    "service": "ElevenLabs",
+    "what": "color-brown/word-bear (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:30.7218345Z",
+    "service": "ElevenLabs",
+    "what": "color-brown/word-monkey (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:31.6443457Z",
+    "service": "ElevenLabs",
+    "what": "color-brown/word-nut (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:32.5856425Z",
+    "service": "ElevenLabs",
+    "what": "color-brown/color-name (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:33.549564Z",
+    "service": "ElevenLabs",
+    "what": "color-brown/phrase-bear (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:34.5157657Z",
+    "service": "ElevenLabs",
+    "what": "color-brown/phrase-monkey (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:35.4559627Z",
+    "service": "ElevenLabs",
+    "what": "color-brown/phrase-nut (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:36.4279758Z",
+    "service": "ElevenLabs",
+    "what": "color-brown/instr-color-the-object (21 chars)",
+    "usd": 0.00168,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:37.4605232Z",
+    "service": "ElevenLabs",
+    "what": "color-brown/instr-listen-and-tap (33 chars)",
+    "usd": 0.00264,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:38.5144277Z",
+    "service": "ElevenLabs",
+    "what": "color-brown/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:39.4803587Z",
+    "service": "ElevenLabs",
+    "what": "color-brown/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:40.6138768Z",
+    "service": "ElevenLabs",
+    "what": "color-black/intro (35 chars)",
+    "usd": 0.00280,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:41.5629745Z",
+    "service": "ElevenLabs",
+    "what": "color-black/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:42.4967456Z",
+    "service": "ElevenLabs",
+    "what": "color-black/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:43.9443244Z",
+    "service": "ElevenLabs",
+    "what": "color-black/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:44.8745778Z",
+    "service": "ElevenLabs",
+    "what": "color-black/word-cat (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:45.8199228Z",
+    "service": "ElevenLabs",
+    "what": "color-black/word-tire (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:46.8104997Z",
+    "service": "ElevenLabs",
+    "what": "color-black/word-spider (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:47.7709342Z",
+    "service": "ElevenLabs",
+    "what": "color-black/color-name (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:48.755516Z",
+    "service": "ElevenLabs",
+    "what": "color-black/phrase-cat (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:49.7182414Z",
+    "service": "ElevenLabs",
+    "what": "color-black/phrase-tire (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:50.725619Z",
+    "service": "ElevenLabs",
+    "what": "color-black/phrase-spider (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:51.7120316Z",
+    "service": "ElevenLabs",
+    "what": "color-black/instr-color-the-object (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:52.8354268Z",
+    "service": "ElevenLabs",
+    "what": "color-black/instr-listen-and-tap (33 chars)",
+    "usd": 0.00264,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:53.9625547Z",
+    "service": "ElevenLabs",
+    "what": "color-black/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:54.9913145Z",
+    "service": "ElevenLabs",
+    "what": "color-black/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:56.1879838Z",
+    "service": "ElevenLabs",
+    "what": "color-white/intro (35 chars)",
+    "usd": 0.00280,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:57.1446923Z",
+    "service": "ElevenLabs",
+    "what": "color-white/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:58.1086721Z",
+    "service": "ElevenLabs",
+    "what": "color-white/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:59.0288945Z",
+    "service": "ElevenLabs",
+    "what": "color-white/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:47:59.9118766Z",
+    "service": "ElevenLabs",
+    "what": "color-white/word-egg (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:48:00.818702Z",
+    "service": "ElevenLabs",
+    "what": "color-white/word-snowman (7 chars)",
+    "usd": 0.00056,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:48:01.7347018Z",
+    "service": "ElevenLabs",
+    "what": "color-white/word-milk (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:48:02.7099925Z",
+    "service": "ElevenLabs",
+    "what": "color-white/color-name (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:48:03.6277417Z",
+    "service": "ElevenLabs",
+    "what": "color-white/phrase-egg (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:48:04.6445779Z",
+    "service": "ElevenLabs",
+    "what": "color-white/phrase-snowman (16 chars)",
+    "usd": 0.00128,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:48:05.5917603Z",
+    "service": "ElevenLabs",
+    "what": "color-white/phrase-milk (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:48:06.5597801Z",
+    "service": "ElevenLabs",
+    "what": "color-white/instr-color-the-object (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:48:07.585864Z",
+    "service": "ElevenLabs",
+    "what": "color-white/instr-listen-and-tap (33 chars)",
+    "usd": 0.00264,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:48:08.6186037Z",
+    "service": "ElevenLabs",
+    "what": "color-white/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:48:09.6247601Z",
+    "service": "ElevenLabs",
+    "what": "color-white/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
   }
 ]

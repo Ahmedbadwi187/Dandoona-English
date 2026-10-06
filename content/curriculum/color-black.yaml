@@ -1,0 +1,21 @@
+id: color-black
+unit: colors
+track: little-learners
+level: pre-a1
+order: 9
+color: { name: black, hex: "#2B2B2B" }
+words:
+  - { word: cat, imagePrompt: "a black cat", source: svg }
+  - { word: tire, imagePrompt: "a black tire", source: svg }
+  - { word: spider, imagePrompt: "a black spider", source: svg }
+narration:
+  intro: "This is black! Black, black, black!"
+  colorName: "Black!"
+  phrases: { cat: "A black cat.", tire: "A black tire.", spider: "A black spider." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap something black!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+    color-the-object: "Color the cat black!"
+activities: [listen-and-tap, match-picture, record-and-listen, color-the-object]

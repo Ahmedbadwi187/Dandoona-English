@@ -1,0 +1,21 @@
+id: color-brown
+unit: colors
+track: little-learners
+level: pre-a1
+order: 8
+color: { name: brown, hex: "#B8733F" }
+words:
+  - { word: bear, reuse: letter-b/bear }
+  - { word: monkey, reuse: letter-m/monkey }
+  - { word: nut, reuse: letter-n/nut }
+narration:
+  intro: "This is brown! Brown, brown, brown!"
+  colorName: "Brown!"
+  phrases: { bear: "A brown bear.", monkey: "A brown monkey.", nut: "A brown nut." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap something brown!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+    color-the-object: "Color the bear brown!"
+activities: [listen-and-tap, match-picture, record-and-listen, color-the-object]

@@ -1,0 +1,21 @@
+id: color-pink
+unit: colors
+track: little-learners
+level: pre-a1
+order: 7
+color: { name: pink, hex: "#F08FA5" }
+words:
+  - { word: pig, reuse: letter-p/pig }
+  - { word: cupcake, imagePrompt: "a pink cupcake", source: svg }
+  - { word: bow, imagePrompt: "a pink bow", source: svg }
+narration:
+  intro: "This is pink! Pink, pink, pink!"
+  colorName: "Pink!"
+  phrases: { pig: "A pink pig.", cupcake: "A pink cupcake.", bow: "A pink bow." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap something pink!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+    color-the-object: "Color the ice cream pink!"
+activities: [listen-and-tap, match-picture, record-and-listen, color-the-object]

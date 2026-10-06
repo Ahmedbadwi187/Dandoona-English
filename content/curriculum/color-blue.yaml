@@ -1,0 +1,21 @@
+id: color-blue
+unit: colors
+track: little-learners
+level: pre-a1
+order: 2
+color: { name: blue, hex: "#4A90D9" }
+words:
+  - { word: whale, reuse: letter-w/whale }
+  - { word: cloud, imagePrompt: "a blue cloud", source: svg }
+  - { word: balloon, imagePrompt: "a blue balloon", source: svg }
+narration:
+  intro: "This is blue! Blue, blue, blue!"
+  colorName: "Blue!"
+  phrases: { whale: "A blue whale.", cloud: "A blue cloud.", balloon: "A blue balloon." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap something blue!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+    color-the-object: "Color the whale blue!"
+activities: [listen-and-tap, match-picture, record-and-listen, color-the-object]

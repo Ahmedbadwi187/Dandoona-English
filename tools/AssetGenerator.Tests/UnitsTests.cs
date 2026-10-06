@@ -164,3 +164,37 @@ public class UnitsTests
         why.ShouldContain("image/colorable");
     }
 }
+
+public class ColorsUnitContentTests
+{
+    [Fact]
+    public void Colors_unit_has_ten_lessons_each_with_a_palette_color_swatch_and_drawing_to_color()
+    {
+        var layout = Layout.FindFrom(AppContext.BaseDirectory);
+        var palette = Palette.Load(layout).Values.ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var colors = CurriculumReader.LoadAll(layout.CurriculumDir).Where(l => l.Unit == "colors").OrderBy(l => l.ResolvedOrder).ToList();
+
+        colors.Select(l => l.Color!.Name).ShouldBe(["red", "blue", "yellow", "green", "orange", "purple", "pink", "brown", "black", "white"]);
+        foreach (var l in colors)
+        {
+            palette.ShouldContain(l.Color!.Hex, $"{l.Id} uses a color that is not in palette.json");
+            l.Words.Count.ShouldBe(3);
+            l.Narration.ColorName.ShouldNotBeNullOrWhiteSpace();
+            l.Narration.Phrases.Count.ShouldBe(3);
+            File.Exists(layout.SvgSource(l, "swatch")).ShouldBeTrue($"{l.Id} swatch");
+            File.ReadAllText(layout.SvgSource(l, "swatch")).ShouldContain(l.Color.Hex, Case.Insensitive);
+            File.ReadAllText(layout.SvgSource(l, "colorable")).ShouldContain("#FILLME", customMessage: $"{l.Id} colorable needs the fill placeholder");
+            foreach (var (_, reuse) in LessonPlan.Reused(l))
+                layout.ReuseSource(l, reuse).ShouldNotBeNull($"{l.Id}: reused picture {reuse} does not exist");
+        }
+    }
+
+    [Fact]
+    public void Every_colors_lesson_speaks_an_instruction_for_each_of_its_activities()
+    {
+        var layout = Layout.FindFrom(AppContext.BaseDirectory);
+        foreach (var l in CurriculumReader.LoadAll(layout.CurriculumDir).Where(l => l.Unit == "colors"))
+            foreach (var a in l.Activities)
+                l.Narration.Instructions.ShouldContainKey(a, $"{l.Id} has no spoken instruction for {a}");
+    }
+}

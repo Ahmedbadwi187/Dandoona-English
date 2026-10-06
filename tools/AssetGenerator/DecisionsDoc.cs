@@ -36,6 +36,18 @@ public static class DecisionsDoc
         sb.AppendLine("No lesson illustration contains the otter (no word uses `mascot: true`), so none had to be regenerated.");
         sb.AppendLine();
 
+        var reused = lessons.SelectMany(l => LessonPlan.Reused(l).Select(r => (l, r))).ToList();
+        if (reused.Count > 0)
+        {
+            sb.AppendLine("## Reused pictures");
+            sb.AppendLine($"{reused.Count} pictures of the Colors unit are copied from the Letters unit (same file, nothing new generated). OpenAI is not used for any Colors picture: every new object, swatch and drawing to color in is self-drawn SVG in palette.json colors.");
+            sb.AppendLine();
+            sb.AppendLine("| Lesson | Word | Copied from |");
+            sb.AppendLine("|---|---|---|");
+            foreach (var (l, r) in reused) sb.AppendLine($"| {l.Id} | {r.Key} | {r.Reuse} |");
+            sb.AppendLine();
+        }
+
         sb.AppendLine("## Images");
         sb.AppendLine("| Lesson | Word | Source | Pick | Why |");
         sb.AppendLine("|---|---|---|---|---|");

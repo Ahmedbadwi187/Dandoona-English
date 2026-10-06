@@ -23,8 +23,10 @@ class ChoiceRound {
 /// Each word of the lesson becomes a round (in random order). Wrong options come from other lessons so
 /// they are visibly different pictures; if the track is tiny, the lesson's own other words are used.
 List<ChoiceRound> buildChoiceRounds(Lesson lesson, TrackContent track, Random random, {int optionCount = 3}) {
+  // A Colors lesson asks for a color, so wrong pictures come only from the unit's other colors (never a same-colored thing).
+  final pool0 = lesson.color != null ? (track.unitOfLesson(lesson.id)?.lessons ?? track.lessons) : track.lessons;
   final others = [
-    for (final l in track.lessons)
+    for (final l in pool0)
       if (l.id != lesson.id) ...l.words,
   ];
   List<LessonWord> ownOthers(LessonWord target) => lesson.words.where((w) => w.word != target.word).toList();

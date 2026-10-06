@@ -1,0 +1,21 @@
+id: color-yellow
+unit: colors
+track: little-learners
+level: pre-a1
+order: 3
+color: { name: yellow, hex: "#F7CF3E" }
+words:
+  - { word: banana, reuse: letter-b/banana }
+  - { word: sun, reuse: letter-s/sun }
+  - { word: duck, reuse: letter-d/duck }
+narration:
+  intro: "This is yellow! Yellow, yellow, yellow!"
+  colorName: "Yellow!"
+  phrases: { banana: "A yellow banana.", sun: "A yellow sun.", duck: "A yellow duck." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap something yellow!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+    color-the-object: "Color the sun yellow!"
+activities: [listen-and-tap, match-picture, record-and-listen, color-the-object]

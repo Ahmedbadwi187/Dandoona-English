@@ -1,0 +1,21 @@
+id: color-purple
+unit: colors
+track: little-learners
+level: pre-a1
+order: 6
+color: { name: purple, hex: "#8E6BBF" }
+words:
+  - { word: grapes, imagePrompt: "purple grapes", source: svg }
+  - { word: eggplant, imagePrompt: "a purple eggplant", source: svg }
+  - { word: flower, imagePrompt: "a purple flower", source: svg }
+narration:
+  intro: "This is purple! Purple, purple, purple!"
+  colorName: "Purple!"
+  phrases: { grapes: "Purple grapes.", eggplant: "A purple eggplant.", flower: "A purple flower." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap something purple!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+    color-the-object: "Color the grapes purple!"
+activities: [listen-and-tap, match-picture, record-and-listen, color-the-object]
