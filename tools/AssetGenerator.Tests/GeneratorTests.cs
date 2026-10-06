@@ -304,3 +304,34 @@ public class PubspecUpdaterTests
         text.ShouldContain("flutter:\r\n  assets:");
     }
 }
+
+public class ReviewPageTests
+{
+    [Fact]
+    public void Shows_every_variant_with_its_file_name_and_marks_approved()
+    {
+        using var repo = new TestRepo(); var lesson = repo.WriteLessonA();
+        foreach (var n in new[] { 1, 2, 3 }) repo.Touch(repo.Layout.ImageReview(lesson, "apple", n));
+        repo.Touch(repo.Layout.ImageApproved(lesson, "ant"));
+        repo.Touch(repo.Layout.MascotReview(1));
+
+        var html = ReviewPage.Build(repo.Layout, [lesson]);
+
+        foreach (var name in new[] { "apple.v1.webp", "apple.v2.webp", "apple.v3.webp", "ant.approved.webp", "mascot.v1.webp" })
+            html.ShouldContain(name);
+        html.ShouldContain("src=\"little-learners/letter-a/images/_review/apple.v2.webp\"");
+        html.ShouldContain("src=\"mascot/_review/mascot.v1.webp\"");
+        html.ShouldContain("class=\"approved\"");
+    }
+
+    [Fact]
+    public void Escapes_prompt_text_and_notes_words_without_images()
+    {
+        using var repo = new TestRepo();
+        var lesson = repo.WriteLessonA(TestRepo.LetterA.Replace("a shiny red apple", "a <b>bold</b> apple"));
+        var html = ReviewPage.Build(repo.Layout, [lesson]);
+        html.ShouldContain("a &lt;b&gt;bold&lt;/b&gt; apple");
+        html.ShouldNotContain("<b>bold</b>");
+        html.ShouldContain("No images yet");
+    }
+}

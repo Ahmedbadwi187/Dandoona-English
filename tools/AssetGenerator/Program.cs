@@ -23,6 +23,7 @@ var all = new Command("all", "Generate audio and images for a track.") { lessonO
 var approveOpt = new Option<int?>("--approve") { Description = "Lock concept N as the mascot reference image." };
 var mascot = new Command("mascot", "Generate mascot concepts, or lock one with --approve N.") { dryRunOpt, forceOpt, approveOpt };
 var status = new Command("status", "Show missing/unapproved assets and phonemes without your own recording.") { lessonOpt, trackOpt };
+var review = new Command("review", "Write content/generated/review.html: all candidate images with file names (no API calls).") { lessonOpt, trackOpt };
 var export = new Command("export", "Encode approved assets into the Flutter assets folder and write the lesson JSON.") { trackOpt };
 
 audio.SetAction((pr, ct) => Guard(async () =>
@@ -70,6 +71,13 @@ status.SetAction((pr, ct) => Guard(() =>
     return Task.FromResult(0);
 }));
 
+review.SetAction((pr, ct) => Guard(() =>
+{
+    var (layout, lessons) = Load(pr);
+    Console.WriteLine("Wrote " + ReviewPage.Write(layout, lessons));
+    return Task.FromResult(0);
+}));
+
 export.SetAction((pr, ct) => Guard(async () =>
 {
     var layout = Layout.Find(pr.GetValue(rootOpt));
@@ -81,7 +89,7 @@ export.SetAction((pr, ct) => Guard(async () =>
 
 var root = new RootCommand("Kids English AssetGenerator (dev-only: produces static .mp3/.webp files; never part of the app or API).")
 {
-    audio, images, all, mascot, status, export
+    audio, images, all, mascot, status, review, export
 };
 root.Add(rootOpt);
 return await root.Parse(args).InvokeAsync();
