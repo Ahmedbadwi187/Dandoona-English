@@ -9,4 +9,10 @@ words:
 narration:
   intro: "This is the letter Z. Z says zz, zz, zebra!"
   praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    trace: "Trace the letter Z!"
+    listen-and-tap: "Listen, then tap the picture!"
+    record-and-listen: "Listen, then say it!"
+    match-picture: "Match each sound to its picture!"
+    hint: "Try again. Listen carefully!"
 activities: [trace, listen-and-tap, record-and-listen, match-picture]

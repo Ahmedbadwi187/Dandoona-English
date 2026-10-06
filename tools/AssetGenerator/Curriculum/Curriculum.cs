@@ -35,6 +35,8 @@ public class Narration
 {
     public string Intro { get; set; } = "";
     public List<string> Praise { get; set; } = [];
+    /// <summary>Spoken instructions, keyed by activity name (shown to the child when the activity starts), plus an optional "hint".</summary>
+    public Dictionary<string, string> Instructions { get; set; } = [];
 }
 
 public class CurriculumException(string message) : Exception(message);
@@ -69,6 +71,8 @@ public class LessonValidator : AbstractValidator<Lesson>
         RuleFor(x => x.Narration.Intro).NotEmpty().MaximumLength(500);
         RuleFor(x => x.Narration.Praise).NotEmpty();
         RuleForEach(x => x.Narration.Praise).NotEmpty().MaximumLength(100);
+        RuleForEach(x => x.Narration.Instructions).Must(kv => (ActivityNames.Contains(kv.Key) || kv.Key == "hint") && !string.IsNullOrWhiteSpace(kv.Value) && kv.Value.Length <= 100)
+            .WithMessage("Instructions must be keyed by an activity name or 'hint' and be 1-100 characters.");
 
         RuleFor(x => x.Activities).NotEmpty();
         RuleForEach(x => x.Activities).Must(a => ActivityNames.Contains(a))

@@ -63,7 +63,7 @@ public class StatusRunner(Layout layout, VoiceConfig voices, string? fallbackVoi
 public record ExportDoc(int SchemaVersion, string Track, DateTime GeneratedAt, string? Mascot, List<ExportLesson> Lessons);
 public record ExportLesson(string Id, int Order, string Level, string? Letter, string? Phoneme,
     ExportLessonAudio Audio, List<ExportWord> Words, List<string> Activities);
-public record ExportLessonAudio(string Intro, string? Phoneme, List<string> Praise);
+public record ExportLessonAudio(string Intro, string? Phoneme, List<string> Praise, Dictionary<string, string>? Instructions = null);
 public record ExportWord(string Word, string Audio, string Image);
 
 public record ExportResult(int Exported, IReadOnlyList<string> Incomplete, long TotalBytes, string? JsonPath);
@@ -106,7 +106,8 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
                 new ExportLessonAudio(
                     Layout.ExportAudioRel(l, "intro"),
                     string.IsNullOrWhiteSpace(l.Phoneme) ? null : Layout.ExportAudioRel(l, "phoneme"),
-                    l.Narration.Praise.Select((_, n) => Layout.ExportAudioRel(l, $"praise-{n}")).ToList()),
+                    l.Narration.Praise.Select((_, n) => Layout.ExportAudioRel(l, $"praise-{n}")).ToList(),
+                    l.Narration.Instructions.Count == 0 ? null : l.Narration.Instructions.OrderBy(k => k.Key, StringComparer.Ordinal).ToDictionary(k => k.Key, k => Layout.ExportAudioRel(l, LessonPlan.InstructionRole(k.Key)))),
                 l.Words.Select(w => new ExportWord(w.Word.Trim(), Layout.ExportAudioRel(l, $"word-{LessonPlan.Slug(w.Word)}"), Layout.ExportImageRel(l, LessonPlan.Slug(w.Word), w.Source == "svg"))).ToList(),
                 l.Activities.ToList()));
         }

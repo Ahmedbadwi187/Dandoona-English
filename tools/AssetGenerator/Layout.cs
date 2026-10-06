@@ -92,11 +92,14 @@ public static class LessonPlan
         if (!string.IsNullOrWhiteSpace(l.Phoneme)) items.Add(new("phoneme", l.Phoneme.Trim(), true));
         for (var i = 0; i < l.Narration.Praise.Count; i++) items.Add(new($"praise-{i}", l.Narration.Praise[i].Trim(), false));
         foreach (var w in l.Words) items.Add(new($"word-{Slug(w.Word)}", w.Word.Trim(), false));
+        foreach (var (key, text) in l.Narration.Instructions.OrderBy(k => k.Key, StringComparer.Ordinal)) items.Add(new(InstructionRole(key), text.Trim(), false));
         return items;
     }
 
     public static IReadOnlyList<ImageItem> Images(Lesson l) =>
         l.Words.Select(w => new ImageItem(Slug(w.Word), w.ImagePrompt.Trim(), w.Mascot, w.Source == "svg")).ToList();
+
+    public static string InstructionRole(string key) => $"instr-{key}";
 
     public static string Slug(string word) =>
         new(word.Trim().ToLowerInvariant().Select(ch => char.IsLetterOrDigit(ch) ? ch : '-').ToArray());

@@ -9,4 +9,10 @@ words:
 narration:
   intro: "This is the letter N. N says nn, nn, nest!"
   praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    trace: "Trace the letter N!"
+    listen-and-tap: "Listen, then tap the picture!"
+    record-and-listen: "Listen, then say it!"
+    match-picture: "Match each sound to its picture!"
+    hint: "Try again. Listen carefully!"
 activities: [trace, listen-and-tap, record-and-listen, match-picture]
