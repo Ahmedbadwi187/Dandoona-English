@@ -37,3 +37,16 @@ test/            logic tests (incl. the real bundled JSON and asset files) and w
 `assets/` is written by `dotnet run --project tools/AssetGenerator -- export --track little-learners`, which also registers
 every asset folder in `pubspec.yaml` (Flutter does not include sub-folders). Do not edit by hand; swap picks with the tool
 (see `docs/asset-decisions.md`). Self-drawn `.svg` images are rendered with `flutter_svg` (MIT), generated `.webp` with `Image.asset`.
+
+## Running on Android (Windows)
+One-time setup used on the dev machine (all under `C:\src`, nothing on the system PATH):
+Flutter SDK `C:\src\flutter`, Android SDK `C:\src\android-sdk` (platform 36, build-tools 36.0.0, NDK 28.2.13676358, emulator,
+system image `android-36;google_apis;x86_64`), an AVD named `kids_phone` (Pixel 6), `flutter config --android-sdk ... --jdk-dir ...`.
+```
+set PATH=C:\src\flutter\bin;C:\src\android-sdk\platform-tools;C:\src\android-sdk\emulator;%PATH%
+emulator -avd kids_phone          # wait ~2 min for boot
+cd mobile\kids_english_app
+flutter run -d emulator-5554      # first build ~4 min (Gradle downloads); later builds ~1 min
+```
+`android/gradle.properties` sets `kotlin.incremental=false`: with the project on `D:` and the Pub cache on `C:`, Kotlin's
+incremental cache fails to close. Other targets: `flutter run -d chrome` or `-d windows`.
