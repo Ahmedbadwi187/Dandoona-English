@@ -5,3 +5,6 @@ obj/
 .env
 appsettings.Development.json
 **/secrets.json
+
+# AssetGenerator review candidates (you pick one by renaming it to *.approved.webp)
+**/_review/

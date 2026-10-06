@@ -1,0 +1,1 @@
+Flat vector illustration for a young children's learning app. Bright, cheerful colors, rounded shapes, soft thin outlines, simple gentle shading. A single centered subject with generous empty margin on a plain, light cream background. Friendly and child-safe. There must be no text of any kind in the image: no letters, no numbers, no words, no labels, no signs.

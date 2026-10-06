@@ -11,7 +11,7 @@
 - Database: SQL Server (EF Core). Owner decision; see the exceptions section in licenses.md.
 
 ## Phases (current order)
-1. **AssetGenerator** (`/tools/AssetGenerator`): curriculum YAML loader, `mascot` concept command, ElevenLabs +
+1. **AssetGenerator** (`/tools/AssetGenerator`, see [assetgenerator.md](assetgenerator.md); code complete and tested with fakes, awaiting a first live run): curriculum YAML loader, `mascot` concept command, ElevenLabs +
    OpenAI generation with skip-if-exists, review/approve flow, `status`, `export` into Flutter assets. Letters A-C first.
 2. **Mobile shell:** Flutter app, parent area (Arabic RTL), parental gate, child profiles, local storage.
 3. **Learning activities:** trace, listen-and-tap, match-picture, record-and-listen.

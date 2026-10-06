@@ -1,0 +1,1 @@
+Character concept for the app's mascot: an original, lovable animal character for children aged 3 to 5. Round, soft body, big kind eyes, a small friendly smile, a simple memorable color palette of two or three colors, and one distinctive feature that is easy to redraw. Full body, front-facing, neutral standing pose, arms relaxed. Not based on any existing character.

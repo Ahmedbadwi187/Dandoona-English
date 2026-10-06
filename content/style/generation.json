@@ -1,0 +1,22 @@
+{
+  "images": {
+    "generateModel": "gpt-image-2.5-flare",
+    "editModel": "gpt-image-2.5-sunburst",
+    "size": "1024x1024",
+    "quality": "medium",
+    "variants": 3,
+    "mascotVariants": 4,
+    "outputCompression": 90
+  },
+  "export": {
+    "imageSizePx": 768,
+    "imageQuality": 80,
+    "audioBitrateKbps": 64,
+    "loudnessLufs": -16
+  },
+  // Prices are not in the API docs. Fill in your own rates to get dollar estimates from --dry-run.
+  "pricing": {
+    "elevenLabsUsdPer1kChars": null,
+    "imageUsdEach": null
+  }
+}

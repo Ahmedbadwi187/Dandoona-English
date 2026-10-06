@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="AssetGenerator.Tests/AssetGenerator.Tests.csproj" />
+  <Project Path="AssetGenerator/AssetGenerator.csproj" />
+</Solution>
