@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:record/record.dart';
@@ -31,11 +32,12 @@ class AudioplayersService implements AudioService {
   Future<void> _play(Source source) async {
     try {
       await _player.stop();
-      final done = _player.onPlayerComplete.first.timeout(const Duration(seconds: 30), onTimeout: () {});
+      final done = firstEventOrTimeout(_player.onPlayerComplete, const Duration(seconds: 30));
       await _player.play(source);
       await done;
-    } on Object {
+    } on Object catch (e) {
       // Missing codec, no audio device, web autoplay rules...: the activity continues silently.
+      debugPrint('audio: could not play $source: $e');
     }
   }
 
@@ -115,3 +117,15 @@ final recorderServiceProvider = Provider<RecorderService>((ref) {
   ref.onDispose(service.dispose);
   return service;
 });
+
+/// Completes when [events] emits once, or after [timeout] (a clip that never reports its end must not hang the caller).
+/// Written without `Stream.first.timeout(onTimeout: ...)`: the stream's element type is not `void`, so a
+/// `() {}` fallback throws a TypeError at run time, which the player's catch-all hid (no clip was ever played).
+Future<void> firstEventOrTimeout(Stream<Object?> events, Duration timeout) {
+  final completer = Completer<void>();
+  late final StreamSubscription<Object?> sub;
+  sub = events.listen((_) {
+    if (!completer.isCompleted) completer.complete();
+  });
+  return completer.future.timeout(timeout, onTimeout: () {}).whenComplete(() => unawaited(sub.cancel()));
+}
