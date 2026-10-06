@@ -158,3 +158,24 @@ public class ArtAndLedgerTests
         words[1].GetProperty("image").GetString().ShouldBe("images/little_learners/letter_a/ant.webp");
     }
 }
+
+public class PubspecRegistrationTests
+{
+    [Fact]
+    public async Task Export_registers_every_leaf_asset_folder_in_pubspec()
+    {
+        using var repo = new TestRepo();
+        var lesson = repo.WriteLessonA(TestRepo.LetterA.Replace(", mascot: true", ""));
+        foreach (var a in LessonPlan.Audio(lesson)) repo.Touch(repo.Layout.AudioGen(lesson, a.Role));
+        foreach (var i in LessonPlan.Images(lesson)) repo.Touch(repo.Layout.ImageApproved(lesson, i.Key));
+        repo.Touch(repo.Layout.Pubspec, "name: app\nflutter:\n  uses-material-design: true\n");
+
+        await new ExportRunner(repo.Layout, new GenerationConfig(), new FakeMedia(), new StringWriter()).RunAsync("little-learners", [lesson], default);
+
+        var pubspec = File.ReadAllText(repo.Layout.Pubspec);
+        pubspec.ShouldContain("    - assets/audio/little_learners/letter_a/");
+        pubspec.ShouldContain("    - assets/images/little_learners/letter_a/");
+        pubspec.ShouldContain("    - assets/content/");
+        pubspec.ShouldContain("uses-material-design: true");
+    }
+}

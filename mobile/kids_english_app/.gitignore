@@ -1,0 +1,16 @@
+# Flutter / Dart
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+.idea/
+.vscode/
+pubspec.lock.bak
+# Local-only files
+*.keystore
+key.properties
+local.properties

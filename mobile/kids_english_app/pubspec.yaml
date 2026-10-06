@@ -1,0 +1,84 @@
+name: kids_english_app
+description: Kids English learning app for Arabic-speaking children aged 3-12 (Little Learners track).
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.9.0 <4.0.0"
+
+# All dependencies are MIT / BSD-3 / Apache-2.0 (see /docs/licenses.md). No AI, ads, analytics or cloud SDKs.
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_riverpod: ^3.4.3
+  go_router: ^18.0.2
+  flutter_svg: ^2.3.0
+  shared_preferences: ^2.5.6
+  intl: ^0.20.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  # Asset folders are registered by `dotnet run --project tools/AssetGenerator -- export --track little-learners`
+  # (Flutter does not include sub-folders of a listed folder, so every leaf folder is listed).
+  assets:
+    - assets/content/
+    - assets/audio/little_learners/letter_a/
+    - assets/audio/little_learners/letter_b/
+    - assets/audio/little_learners/letter_c/
+    - assets/audio/little_learners/letter_d/
+    - assets/audio/little_learners/letter_e/
+    - assets/audio/little_learners/letter_f/
+    - assets/audio/little_learners/letter_g/
+    - assets/audio/little_learners/letter_h/
+    - assets/audio/little_learners/letter_i/
+    - assets/audio/little_learners/letter_j/
+    - assets/audio/little_learners/letter_k/
+    - assets/audio/little_learners/letter_l/
+    - assets/audio/little_learners/letter_m/
+    - assets/audio/little_learners/letter_n/
+    - assets/audio/little_learners/letter_o/
+    - assets/audio/little_learners/letter_p/
+    - assets/audio/little_learners/letter_q/
+    - assets/audio/little_learners/letter_r/
+    - assets/audio/little_learners/letter_s/
+    - assets/audio/little_learners/letter_t/
+    - assets/audio/little_learners/letter_u/
+    - assets/audio/little_learners/letter_v/
+    - assets/audio/little_learners/letter_w/
+    - assets/audio/little_learners/letter_x/
+    - assets/audio/little_learners/letter_y/
+    - assets/audio/little_learners/letter_z/
+    - assets/images/little_learners/letter_a/
+    - assets/images/little_learners/letter_b/
+    - assets/images/little_learners/letter_c/
+    - assets/images/little_learners/letter_d/
+    - assets/images/little_learners/letter_e/
+    - assets/images/little_learners/letter_f/
+    - assets/images/little_learners/letter_g/
+    - assets/images/little_learners/letter_h/
+    - assets/images/little_learners/letter_i/
+    - assets/images/little_learners/letter_j/
+    - assets/images/little_learners/letter_k/
+    - assets/images/little_learners/letter_l/
+    - assets/images/little_learners/letter_m/
+    - assets/images/little_learners/letter_n/
+    - assets/images/little_learners/letter_o/
+    - assets/images/little_learners/letter_p/
+    - assets/images/little_learners/letter_q/
+    - assets/images/little_learners/letter_r/
+    - assets/images/little_learners/letter_s/
+    - assets/images/little_learners/letter_t/
+    - assets/images/little_learners/letter_u/
+    - assets/images/little_learners/letter_v/
+    - assets/images/little_learners/letter_w/
+    - assets/images/little_learners/letter_x/
+    - assets/images/little_learners/letter_y/
+    - assets/images/little_learners/letter_z/
+    - assets/images/mascot/

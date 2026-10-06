@@ -11,9 +11,9 @@
 - Database: SQL Server (EF Core). Owner decision; see the exceptions section in licenses.md.
 
 ## Phases (current order)
-1. **AssetGenerator** (`/tools/AssetGenerator`, see [assetgenerator.md](assetgenerator.md); code complete and tested with fakes, awaiting a first live run): curriculum YAML loader, `mascot` concept command, ElevenLabs +
+1. **AssetGenerator** (`/tools/AssetGenerator`, see [assetgenerator.md](assetgenerator.md); DONE: live-verified, 26 letters exported): curriculum YAML loader, `mascot` concept command, ElevenLabs +
    OpenAI generation with skip-if-exists, review/approve flow, `status`, `export` into Flutter assets. Letters A-C first.
-2. **Mobile shell:** Flutter app, parent area (Arabic RTL), parental gate, child profiles, local storage.
+2. **Mobile shell** (code complete, not yet compiled: no Flutter SDK here): Flutter app, parent area (Arabic RTL), parental gate, child profiles, local storage, 26-letter map. See mobile/kids_english_app/README.md.
 3. **Learning activities:** trace, listen-and-tap, match-picture, record-and-listen.
 4. **Backend:** API (auth, children, progress sync, weekly summary), Docker Compose, EF Core on SQL Server.
 5. **Gamification and dashboard.**

@@ -160,11 +160,20 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
     {
         if (!File.Exists(layout.Pubspec))
         {
-            output.WriteLine("  note: mobile/kids_english_app/pubspec.yaml does not exist yet; register assets/audio/, assets/images/ and assets/content/ when the Flutter app is created.");
+            output.WriteLine("  note: mobile/kids_english_app/pubspec.yaml does not exist yet; re-run export after the Flutter app is created so every asset folder is registered.");
             return;
         }
         var text = File.ReadAllText(layout.Pubspec);
-        var (updated, changed) = PubspecUpdater.EnsureAssets(text, ["assets/audio/", "assets/images/", "assets/content/"]);
+        // Flutter does not include subfolders of a listed asset folder, so every folder that holds files is registered.
+        var folders = new[] { "audio", "images", "content" }
+            .Select(r => Path.Combine(layout.AssetsDir, r))
+            .Where(Directory.Exists)
+            .SelectMany(r => Directory.EnumerateDirectories(r, "*", SearchOption.AllDirectories).Prepend(r))
+            .Where(d => Directory.EnumerateFiles(d).Any())
+            .Select(d => "assets/" + Path.GetRelativePath(layout.AssetsDir, d).Replace('\\', '/') + "/")
+            .Order(StringComparer.Ordinal)
+            .ToList();
+        var (updated, changed) = PubspecUpdater.EnsureAssets(text, folders);
         if (changed) { File.WriteAllText(layout.Pubspec, updated); output.WriteLine("  pubspec.yaml: registered asset folders."); }
     }
 }

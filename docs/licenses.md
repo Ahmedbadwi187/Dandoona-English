@@ -50,22 +50,32 @@ May call the ElevenLabs and OpenAI APIs because it is a dev-only tool outside th
 | FluentValidation | 12.1.1 | Apache-2.0 |
 | ffmpeg (external executable, not linked or shipped) | user-installed | LGPL/GPL depending on build; use an LGPL build with libmp3lame (LGPL) and libwebp (BSD) |
 
-## Mobile (`/mobile`) - pub.dev, planned, re-check the exact version when each is added
+## Mobile (`/mobile/kids_english_app`) - pub.dev
 
-| Package | Latest checked (2026-10-05) | License |
+In use (versions from pubspec.yaml; licenses read from pub.dev on 2026-10-06):
+
+| Package | Constraint | License |
 |---|---|---|
-| flutter_riverpod | 3.4.3 | MIT |
-| go_router | 18.0.2 | BSD-3-Clause |
-| drift | 2.35.1 | MIT |
-| rive | 0.14.11 | MIT |
-| lottie | 3.6.1 | MIT |
-| dio | 5.11.1 | MIT |
+| flutter_riverpod | ^3.4.3 | MIT |
+| go_router | ^18.0.2 | BSD-3-Clause |
+| flutter_svg | ^2.3.0 | MIT |
+| shared_preferences | ^2.5.6 | BSD-3-Clause |
+| intl | ^0.20.2 | BSD-3-Clause |
+| flutter_localizations, flutter_test (Flutter SDK) | sdk | BSD-3-Clause |
+| flutter_lints (dev) | ^6.0.0 | BSD-3-Clause |
+
+Not code-generating on purpose: no freezed / json_serializable / drift / build_runner yet (models are hand-written, local storage is
+shared_preferences). Planned for later phases, re-check license + exact version when added:
+
+| Package | Latest checked | License |
+|---|---|---|
 | audioplayers / just_audio | 6.8.1 / 0.10.6 | MIT / Apache-2.0 + MIT |
 | record | 7.1.1 | BSD-3-Clause |
 | permission_handler | 13.0.2 | MIT |
+| drift | 2.35.1 | MIT |
+| dio | 5.11.1 | MIT |
 | flutter_secure_storage | 11.2.0 | BSD-3-Clause |
-| intl, path_provider, shared_preferences, json_serializable | 0.20.3 / 2.1.6 / 2.5.5 / 6.14.1 | BSD-3-Clause |
-| freezed | 4.0.2 | MIT |
+| rive / lottie | 0.14.11 / 3.6.1 | MIT |
 
 Rejected: `hive` (no license recorded on pub.dev; use drift). `sqlite3_flutter_libs` is end-of-life; resolve
 drift's current SQLite setup when adding it.

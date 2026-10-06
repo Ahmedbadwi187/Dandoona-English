@@ -24,3 +24,14 @@ Every field the system stores. Update this file whenever the schema changes.
 ## Logging
 
 Serilog structured logs must never include passwords, tokens, API keys, request bodies or audio.
+
+## On-device storage (Flutter app, Phase 2). Nothing leaves the device until the optional backend sync (Phase 4)
+
+| Key (SharedPreferences) | Fields | Purpose | Notes |
+|---|---|---|---|
+| `children.v1` | id, name (nickname, max 30), avatarKey, birthYear, track, createdAt | Child profiles | No photo, email, full name or exact birth date. Deleted with the profile. |
+| `progress.v1` | clientRecordId, childId, lessonId, activity, stars, attempts, timeSpentSeconds, completedAt | Progress and the parent dashboard | Deleted with the child. |
+| `settings.v1` | languageCode, sessionMinutes, unlockAll, onboarded | Parent settings | |
+
+The app collects no analytics, advertising identifiers, location or contacts. The microphone is only used by the
+record-and-listen activity (Phase 3): recordings are played back locally and deleted when the activity ends.
