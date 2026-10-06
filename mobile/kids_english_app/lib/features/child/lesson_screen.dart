@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -6,6 +8,7 @@ import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
 import '../../core/widgets.dart';
+import '../audio/audio_service.dart';
 import '../content/content_repository.dart';
 import '../profiles/child_profile.dart';
 import '../progress/progress.dart';
@@ -45,18 +48,23 @@ class LessonScreen extends ConsumerWidget {
                       ),
                     ),
                     Center(
-                      child: Container(
-                        width: 180,
-                        height: 180,
-                        decoration: BoxDecoration(
-                          color: Palette.nodeColors[(lesson.order - 1) % Palette.nodeColors.length],
-                          shape: BoxShape.circle,
-                          border: Border.all(color: Palette.ink, width: 6),
+                      child: BigTap(
+                        key: const Key('lesson-letter-tap'),
+                        semanticLabel: lesson.letter,
+                        onTap: () => unawaited(ref.read(audioServiceProvider).playAsset(lesson.audio.phoneme ?? lesson.audio.intro)),
+                        child: Container(
+                          width: 180,
+                          height: 180,
+                          decoration: BoxDecoration(
+                            color: Palette.nodeColors[(lesson.order - 1) % Palette.nodeColors.length],
+                            shape: BoxShape.circle,
+                            border: Border.all(color: Palette.ink, width: 6),
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(lesson.letter ?? '?',
+                              key: const Key('lesson-letter'),
+                              style: const TextStyle(fontSize: 110, fontWeight: FontWeight.w900, color: Palette.white)),
                         ),
-                        alignment: Alignment.center,
-                        child: Text(lesson.letter ?? '?',
-                            key: const Key('lesson-letter'),
-                            style: const TextStyle(fontSize: 110, fontWeight: FontWeight.w900, color: Palette.white)),
                       ),
                     ),
                     const SizedBox(height: 24),
@@ -69,7 +77,12 @@ class LessonScreen extends ConsumerWidget {
                           Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              AssetPicture(w.image, size: 150, semanticLabel: w.word),
+                              BigTap(
+                                key: Key('word-${w.word}'),
+                                semanticLabel: w.word,
+                                onTap: () => unawaited(ref.read(audioServiceProvider).playAsset(w.audio)),
+                                child: AssetPicture(w.image, size: 150, semanticLabel: w.word),
+                              ),
                               const SizedBox(height: 4),
                               Text(w.word, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
                             ],

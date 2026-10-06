@@ -296,5 +296,32 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byKey(const Key('hear-again')), findsOneWidget);
     });
+
+    testWidgets('tapping a word picture says the word, tapping the big letter says its sound', (tester) async {
+      final audio = FakeAudio();
+      final overrides = await testOverrides(content: content, prefs: {
+        'settings.v1': '{"languageCode":"ar","sessionMinutes":15,"unlockAll":false,"onboarded":true}',
+        'children.v1': '[{"id":"c1","name":"Omar","avatarKey":"star","birthYear":2022,"track":"little-learners","createdAt":"2026-01-01T00:00:00Z"}]',
+      });
+      await tester.pumpWidget(ProviderScope(
+        overrides: [...overrides, audioServiceProvider.overrideWithValue(audio), recorderServiceProvider.overrideWithValue(FakeRecorder())],
+        child: const KidsEnglishApp(),
+      ));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Omar'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const Key('node-letter-a')));
+      await tester.pumpAndSettle();
+
+      await tester.ensureVisible(find.byKey(const Key('word-apple')));
+      await tester.tap(find.byKey(const Key('word-apple')));
+      await tester.pump();
+      expect(audio.played, ['asset:audio/little_learners/letter_a/word_apple.mp3']);
+
+      await tester.ensureVisible(find.byKey(const Key('lesson-letter-tap')));
+      await tester.tap(find.byKey(const Key('lesson-letter-tap')));
+      await tester.pump();
+      expect(audio.played.length, 2);
+    });
   });
 }

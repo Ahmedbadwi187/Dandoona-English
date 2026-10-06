@@ -122,7 +122,12 @@ class _RecordListenActivityState extends ConsumerState<RecordListenActivity> {
             ],
           ),
           const SizedBox(height: 20),
-          AssetPicture(_word.image, size: 220, semanticLabel: _word.word),
+          BigTap(
+            key: const Key('word-picture'),
+            semanticLabel: _word.word,
+            onTap: _phase == _Phase.idle ? _hear : null,
+            child: AssetPicture(_word.image, size: 220, semanticLabel: _word.word),
+          ),
           const SizedBox(height: 28),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
