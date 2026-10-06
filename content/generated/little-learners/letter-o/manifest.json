@@ -27,6 +27,22 @@
     "word-octopus": {
       "hash": "b0b0572db1ae515a7a98893ddd4b02536380ae226783a8d162a30ee3352d702c",
       "generatedAtUtc": "2026-10-06T18:09:14.2204154Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "d7c325d7b0a47ce832491e0d88616c4b54df1753ff64f16006eb7d07f5dfc167",
+      "generatedAtUtc": "2026-10-06T22:07:10.8048784Z"
+    },
+    "instr-match-picture": {
+      "hash": "9ca3a1df28755ef7253b1897cd9597d74af60fde784476a3e00bd1b7de7691d6",
+      "generatedAtUtc": "2026-10-06T22:07:11.9340321Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "4b07ab178e7b68b30e31715f8e61d39be0965d22ff9609e2e80faf09963dc4b1",
+      "generatedAtUtc": "2026-10-06T22:07:12.9240312Z"
+    },
+    "instr-trace": {
+      "hash": "c46c531cf565706ebe147212cd8fbd171884d33a3439130bf947269b6796fdaa",
+      "generatedAtUtc": "2026-10-06T22:07:13.8836333Z"
     }
   }
 }

@@ -27,6 +27,22 @@
     "word-nut": {
       "hash": "fba779d32e1e002ce0177596c5026990a6ba8b3ce74b5d6a0ab2b5b3ff6f0fad",
       "generatedAtUtc": "2026-10-06T18:09:07.4585016Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "d7c325d7b0a47ce832491e0d88616c4b54df1753ff64f16006eb7d07f5dfc167",
+      "generatedAtUtc": "2026-10-06T22:07:06.754784Z"
+    },
+    "instr-match-picture": {
+      "hash": "9ca3a1df28755ef7253b1897cd9597d74af60fde784476a3e00bd1b7de7691d6",
+      "generatedAtUtc": "2026-10-06T22:07:07.7884923Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "4b07ab178e7b68b30e31715f8e61d39be0965d22ff9609e2e80faf09963dc4b1",
+      "generatedAtUtc": "2026-10-06T22:07:08.7585588Z"
+    },
+    "instr-trace": {
+      "hash": "25bd9c8bed96114509ffa1502b2f476c3e708ecd63c93f9247049c249812a78c",
+      "generatedAtUtc": "2026-10-06T22:07:09.7548479Z"
     }
   }
 }

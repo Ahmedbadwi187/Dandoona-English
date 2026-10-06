@@ -31,6 +31,22 @@
     "word-cow": {
       "hash": "395b4589aed4eb41d1f563749af9a9dd3f2ed5ce3ec2f643bfb571e63b25a8de",
       "generatedAtUtc": "2026-10-06T17:42:18.8550799Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "d7c325d7b0a47ce832491e0d88616c4b54df1753ff64f16006eb7d07f5dfc167",
+      "generatedAtUtc": "2026-10-06T22:06:20.8127627Z"
+    },
+    "instr-match-picture": {
+      "hash": "9ca3a1df28755ef7253b1897cd9597d74af60fde784476a3e00bd1b7de7691d6",
+      "generatedAtUtc": "2026-10-06T22:06:21.845978Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "4b07ab178e7b68b30e31715f8e61d39be0965d22ff9609e2e80faf09963dc4b1",
+      "generatedAtUtc": "2026-10-06T22:06:22.8824298Z"
+    },
+    "instr-trace": {
+      "hash": "dd993e4c47d2bedc8fd4bfb77578e49eff62b6f51e0152a508c5832c4a2e80c0",
+      "generatedAtUtc": "2026-10-06T22:06:23.9054314Z"
     }
   }
 }

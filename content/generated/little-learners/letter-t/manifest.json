@@ -27,6 +27,22 @@
     "word-tiger": {
       "hash": "4d621a741640eb32409c20111fb061742e289d2b5fb8078c6765dc7fae528ece",
       "generatedAtUtc": "2026-10-06T18:09:47.717813Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "d7c325d7b0a47ce832491e0d88616c4b54df1753ff64f16006eb7d07f5dfc167",
+      "generatedAtUtc": "2026-10-06T22:07:31.4805555Z"
+    },
+    "instr-match-picture": {
+      "hash": "9ca3a1df28755ef7253b1897cd9597d74af60fde784476a3e00bd1b7de7691d6",
+      "generatedAtUtc": "2026-10-06T22:07:32.5032995Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "4b07ab178e7b68b30e31715f8e61d39be0965d22ff9609e2e80faf09963dc4b1",
+      "generatedAtUtc": "2026-10-06T22:07:33.4980802Z"
+    },
+    "instr-trace": {
+      "hash": "28d6bfc2c7d72ba1b4ceab77bfa40a221fd4f513fe03327796cf251ef943253b",
+      "generatedAtUtc": "2026-10-06T22:07:34.5600429Z"
     }
   }
 }

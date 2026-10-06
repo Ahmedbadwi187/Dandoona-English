@@ -27,6 +27,22 @@
     "word-juice": {
       "hash": "b2d7f18f3eda3825f2c03dc1ebfd0146a290ea84a95ceecc358ac80654cda1ec",
       "generatedAtUtc": "2026-10-06T18:08:40.2022093Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "d7c325d7b0a47ce832491e0d88616c4b54df1753ff64f16006eb7d07f5dfc167",
+      "generatedAtUtc": "2026-10-06T22:06:50.128511Z"
+    },
+    "instr-match-picture": {
+      "hash": "9ca3a1df28755ef7253b1897cd9597d74af60fde784476a3e00bd1b7de7691d6",
+      "generatedAtUtc": "2026-10-06T22:06:51.2519037Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "4b07ab178e7b68b30e31715f8e61d39be0965d22ff9609e2e80faf09963dc4b1",
+      "generatedAtUtc": "2026-10-06T22:06:52.2400334Z"
+    },
+    "instr-trace": {
+      "hash": "131f476b2fe8fae36545490aa967c141705c138c2fd4f460e11c7994979c0698",
+      "generatedAtUtc": "2026-10-06T22:06:53.2065913Z"
     }
   }
 }

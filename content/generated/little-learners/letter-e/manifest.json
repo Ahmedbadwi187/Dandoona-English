@@ -27,6 +27,22 @@
     "word-elephant": {
       "hash": "7f26a692cc508404a93972f8f9e208c37448b4f86f8be9af669c447ef32970ae",
       "generatedAtUtc": "2026-10-06T18:08:06.6392109Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "d7c325d7b0a47ce832491e0d88616c4b54df1753ff64f16006eb7d07f5dfc167",
+      "generatedAtUtc": "2026-10-06T22:06:29.2644349Z"
+    },
+    "instr-match-picture": {
+      "hash": "9ca3a1df28755ef7253b1897cd9597d74af60fde784476a3e00bd1b7de7691d6",
+      "generatedAtUtc": "2026-10-06T22:06:30.3354499Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "4b07ab178e7b68b30e31715f8e61d39be0965d22ff9609e2e80faf09963dc4b1",
+      "generatedAtUtc": "2026-10-06T22:06:31.3244593Z"
+    },
+    "instr-trace": {
+      "hash": "f0b0d6481a75db56aa8b8ec37b0dba5bc72a1a19192df668061bc75c67cbabc8",
+      "generatedAtUtc": "2026-10-06T22:06:32.3396743Z"
     }
   }
 }

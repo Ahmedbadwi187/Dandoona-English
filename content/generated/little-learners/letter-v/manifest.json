@@ -27,6 +27,22 @@
     "word-violin": {
       "hash": "dbe0a8ac070765d2642af5a8ddb91f20842bce0b575b86e9a73274d25c32c216",
       "generatedAtUtc": "2026-10-06T18:10:01.5883769Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "d7c325d7b0a47ce832491e0d88616c4b54df1753ff64f16006eb7d07f5dfc167",
+      "generatedAtUtc": "2026-10-06T22:07:39.6853021Z"
+    },
+    "instr-match-picture": {
+      "hash": "9ca3a1df28755ef7253b1897cd9597d74af60fde784476a3e00bd1b7de7691d6",
+      "generatedAtUtc": "2026-10-06T22:07:40.8156693Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "4b07ab178e7b68b30e31715f8e61d39be0965d22ff9609e2e80faf09963dc4b1",
+      "generatedAtUtc": "2026-10-06T22:07:41.8305481Z"
+    },
+    "instr-trace": {
+      "hash": "de7df3d046fbdf055d5ff663e9c5a405bd573c353093678e4ce8e49db7b903fb",
+      "generatedAtUtc": "2026-10-06T22:07:42.9576105Z"
     }
   }
 }

@@ -27,6 +27,22 @@
     "word-igloo": {
       "hash": "d29db22b2f5760b2bb27c64ff91d2f8b6fa5243445958c812f9f08dfb32adbc3",
       "generatedAtUtc": "2026-10-06T18:08:33.5878993Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "d7c325d7b0a47ce832491e0d88616c4b54df1753ff64f16006eb7d07f5dfc167",
+      "generatedAtUtc": "2026-10-06T22:06:45.9218467Z"
+    },
+    "instr-match-picture": {
+      "hash": "9ca3a1df28755ef7253b1897cd9597d74af60fde784476a3e00bd1b7de7691d6",
+      "generatedAtUtc": "2026-10-06T22:06:47.0318492Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "4b07ab178e7b68b30e31715f8e61d39be0965d22ff9609e2e80faf09963dc4b1",
+      "generatedAtUtc": "2026-10-06T22:06:48.0755424Z"
+    },
+    "instr-trace": {
+      "hash": "c0c107b42df45e318256afb881a65d1e51175aec40e329da87543a3b219a8bf1",
+      "generatedAtUtc": "2026-10-06T22:06:49.0963138Z"
     }
   }
 }

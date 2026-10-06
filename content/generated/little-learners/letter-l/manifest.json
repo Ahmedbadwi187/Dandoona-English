@@ -27,6 +27,22 @@
     "word-leaf": {
       "hash": "436ef58be4a26d9b8fba8096324392fcf0c66b2aa288c93dda59de8392cd4a02",
       "generatedAtUtc": "2026-10-06T18:08:53.7552681Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "d7c325d7b0a47ce832491e0d88616c4b54df1753ff64f16006eb7d07f5dfc167",
+      "generatedAtUtc": "2026-10-06T22:06:58.3970773Z"
+    },
+    "instr-match-picture": {
+      "hash": "9ca3a1df28755ef7253b1897cd9597d74af60fde784476a3e00bd1b7de7691d6",
+      "generatedAtUtc": "2026-10-06T22:06:59.540537Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "4b07ab178e7b68b30e31715f8e61d39be0965d22ff9609e2e80faf09963dc4b1",
+      "generatedAtUtc": "2026-10-06T22:07:00.6671542Z"
+    },
+    "instr-trace": {
+      "hash": "6c8c5ee11384609b25b43cd0f9cb1c7f829e183f239b0c8fe3a2c1b6b0440f37",
+      "generatedAtUtc": "2026-10-06T22:07:01.7087176Z"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "track": "little-learners",
-  "generatedAt": "2026-10-06T21:08:44.6532401Z",
+  "generatedAt": "2026-10-06T22:08:25.087217Z",
   "mascot": "images/mascot/mascot.webp",
   "lessons": [
     {
@@ -17,7 +17,13 @@
           "audio/little_learners/letter_a/praise_0.mp3",
           "audio/little_learners/letter_a/praise_1.mp3",
           "audio/little_learners/letter_a/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_a/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_a/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_a/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_a/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -56,7 +62,13 @@
           "audio/little_learners/letter_b/praise_0.mp3",
           "audio/little_learners/letter_b/praise_1.mp3",
           "audio/little_learners/letter_b/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_b/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_b/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_b/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_b/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -95,7 +107,13 @@
           "audio/little_learners/letter_c/praise_0.mp3",
           "audio/little_learners/letter_c/praise_1.mp3",
           "audio/little_learners/letter_c/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_c/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_c/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_c/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_c/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -134,7 +152,13 @@
           "audio/little_learners/letter_d/praise_0.mp3",
           "audio/little_learners/letter_d/praise_1.mp3",
           "audio/little_learners/letter_d/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_d/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_d/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_d/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_d/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -168,7 +192,13 @@
           "audio/little_learners/letter_e/praise_0.mp3",
           "audio/little_learners/letter_e/praise_1.mp3",
           "audio/little_learners/letter_e/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_e/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_e/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_e/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_e/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -202,7 +232,13 @@
           "audio/little_learners/letter_f/praise_0.mp3",
           "audio/little_learners/letter_f/praise_1.mp3",
           "audio/little_learners/letter_f/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_f/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_f/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_f/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_f/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -236,7 +272,13 @@
           "audio/little_learners/letter_g/praise_0.mp3",
           "audio/little_learners/letter_g/praise_1.mp3",
           "audio/little_learners/letter_g/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_g/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_g/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_g/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_g/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -270,7 +312,13 @@
           "audio/little_learners/letter_h/praise_0.mp3",
           "audio/little_learners/letter_h/praise_1.mp3",
           "audio/little_learners/letter_h/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_h/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_h/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_h/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_h/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -304,7 +352,13 @@
           "audio/little_learners/letter_i/praise_0.mp3",
           "audio/little_learners/letter_i/praise_1.mp3",
           "audio/little_learners/letter_i/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_i/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_i/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_i/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_i/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -338,7 +392,13 @@
           "audio/little_learners/letter_j/praise_0.mp3",
           "audio/little_learners/letter_j/praise_1.mp3",
           "audio/little_learners/letter_j/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_j/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_j/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_j/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_j/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -372,7 +432,13 @@
           "audio/little_learners/letter_k/praise_0.mp3",
           "audio/little_learners/letter_k/praise_1.mp3",
           "audio/little_learners/letter_k/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_k/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_k/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_k/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_k/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -406,7 +472,13 @@
           "audio/little_learners/letter_l/praise_0.mp3",
           "audio/little_learners/letter_l/praise_1.mp3",
           "audio/little_learners/letter_l/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_l/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_l/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_l/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_l/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -440,7 +512,13 @@
           "audio/little_learners/letter_m/praise_0.mp3",
           "audio/little_learners/letter_m/praise_1.mp3",
           "audio/little_learners/letter_m/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_m/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_m/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_m/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_m/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -474,7 +552,13 @@
           "audio/little_learners/letter_n/praise_0.mp3",
           "audio/little_learners/letter_n/praise_1.mp3",
           "audio/little_learners/letter_n/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_n/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_n/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_n/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_n/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -508,7 +592,13 @@
           "audio/little_learners/letter_o/praise_0.mp3",
           "audio/little_learners/letter_o/praise_1.mp3",
           "audio/little_learners/letter_o/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_o/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_o/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_o/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_o/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -542,7 +632,13 @@
           "audio/little_learners/letter_p/praise_0.mp3",
           "audio/little_learners/letter_p/praise_1.mp3",
           "audio/little_learners/letter_p/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_p/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_p/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_p/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_p/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -576,7 +672,13 @@
           "audio/little_learners/letter_q/praise_0.mp3",
           "audio/little_learners/letter_q/praise_1.mp3",
           "audio/little_learners/letter_q/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_q/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_q/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_q/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_q/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -610,7 +712,13 @@
           "audio/little_learners/letter_r/praise_0.mp3",
           "audio/little_learners/letter_r/praise_1.mp3",
           "audio/little_learners/letter_r/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_r/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_r/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_r/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_r/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -644,7 +752,13 @@
           "audio/little_learners/letter_s/praise_0.mp3",
           "audio/little_learners/letter_s/praise_1.mp3",
           "audio/little_learners/letter_s/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_s/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_s/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_s/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_s/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -678,7 +792,13 @@
           "audio/little_learners/letter_t/praise_0.mp3",
           "audio/little_learners/letter_t/praise_1.mp3",
           "audio/little_learners/letter_t/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_t/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_t/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_t/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_t/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -712,7 +832,13 @@
           "audio/little_learners/letter_u/praise_0.mp3",
           "audio/little_learners/letter_u/praise_1.mp3",
           "audio/little_learners/letter_u/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_u/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_u/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_u/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_u/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -746,7 +872,13 @@
           "audio/little_learners/letter_v/praise_0.mp3",
           "audio/little_learners/letter_v/praise_1.mp3",
           "audio/little_learners/letter_v/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_v/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_v/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_v/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_v/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -780,7 +912,13 @@
           "audio/little_learners/letter_w/praise_0.mp3",
           "audio/little_learners/letter_w/praise_1.mp3",
           "audio/little_learners/letter_w/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_w/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_w/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_w/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_w/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -814,7 +952,13 @@
           "audio/little_learners/letter_x/praise_0.mp3",
           "audio/little_learners/letter_x/praise_1.mp3",
           "audio/little_learners/letter_x/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_x/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_x/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_x/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_x/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -848,7 +992,13 @@
           "audio/little_learners/letter_y/praise_0.mp3",
           "audio/little_learners/letter_y/praise_1.mp3",
           "audio/little_learners/letter_y/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_y/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_y/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_y/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_y/instr_trace.mp3"
+        }
       },
       "words": [
         {
@@ -882,7 +1032,13 @@
           "audio/little_learners/letter_z/praise_0.mp3",
           "audio/little_learners/letter_z/praise_1.mp3",
           "audio/little_learners/letter_z/praise_2.mp3"
-        ]
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/letter_z/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/letter_z/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/letter_z/instr_record_and_listen.mp3",
+          "trace": "audio/little_learners/letter_z/instr_trace.mp3"
+        }
       },
       "words": [
         {

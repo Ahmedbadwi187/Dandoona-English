@@ -31,6 +31,22 @@
     "word-alligator": {
       "hash": "b0efb0c2ca88f52701db3649449891fdd83eabda980968ed5f82f101145ccdd3",
       "generatedAtUtc": "2026-10-06T17:41:53.6746183Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "d7c325d7b0a47ce832491e0d88616c4b54df1753ff64f16006eb7d07f5dfc167",
+      "generatedAtUtc": "2026-10-06T22:06:12.4976285Z"
+    },
+    "instr-match-picture": {
+      "hash": "9ca3a1df28755ef7253b1897cd9597d74af60fde784476a3e00bd1b7de7691d6",
+      "generatedAtUtc": "2026-10-06T22:06:13.592668Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "4b07ab178e7b68b30e31715f8e61d39be0965d22ff9609e2e80faf09963dc4b1",
+      "generatedAtUtc": "2026-10-06T22:06:14.5902432Z"
+    },
+    "instr-trace": {
+      "hash": "43f41595d8d1fa7f6927ac645544d260753402cd9169c69829cdcd329f25a794",
+      "generatedAtUtc": "2026-10-06T22:06:15.6226938Z"
     }
   }
 }

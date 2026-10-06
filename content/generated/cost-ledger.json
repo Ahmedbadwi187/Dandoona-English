@@ -1279,5 +1279,733 @@
     "what": "letter-z/zebra x2",
     "usd": 0.02837,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:12.5040644Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:13.595374Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:14.5915299Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:15.6241864Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:16.6444125Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:17.7663576Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:18.8089008Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:19.7913997Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:20.8140753Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:21.8468698Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:22.8831547Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:23.9067849Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:24.9623476Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:26.0757543Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:27.1836492Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:28.244535Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:29.2654143Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:30.3363248Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:31.3251136Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:32.3403962Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:33.4294893Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:34.474603Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:35.4760491Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:36.5014942Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:37.5565404Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:38.6571579Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:39.6544306Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:40.6210366Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:41.7586761Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:42.8593087Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:43.875746Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:44.8660173Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:45.9668742Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:47.0326684Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:48.0767682Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:49.0977717Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:50.1300062Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:51.2529447Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:52.2410422Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:53.2071982Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:54.2396867Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:55.2961558Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:56.3691596Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:57.3904222Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:58.3991861Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:06:59.5412881Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:00.6679747Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:01.7091263Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:02.7149964Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:03.7565248Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:04.772948Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:05.7450665Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:06.7554Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:07.7893802Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:08.7605363Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:09.7566169Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:10.8054739Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:11.9349389Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:12.9249648Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:13.884137Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:14.9214034Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:16.0258226Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:17.1317551Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:18.1093543Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:19.1215327Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:20.1356127Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:21.1186236Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:22.1467286Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:23.2315346Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:24.321753Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:25.3479238Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:26.3309264Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:27.3609461Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:28.4167298Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:29.4438539Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:30.4654313Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:31.4811065Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:32.5038456Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:33.4989755Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:34.5613162Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:35.5861993Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:36.7471599Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:37.7075351Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:38.6825249Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:39.6861561Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:40.8162858Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:41.8312323Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:42.95851Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:43.9405554Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:45.0115039Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:46.0305247Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:47.0638116Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:48.0827677Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:49.1905658Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:50.2279901Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:51.2544054Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:52.2499695Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:53.2885363Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:54.3260796Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:55.3057648Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:56.4751894Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:57.5099191Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/instr-match-picture (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:58.5362964Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-06T22:07:59.6527053Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/instr-trace (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
   }
 ]

@@ -27,6 +27,22 @@
     "word-xylophone": {
       "hash": "931c58e5947b18a2b2aa8d5eed8a283b56771430dab87a693c59b1e76f59b6bc",
       "generatedAtUtc": "2026-10-06T18:10:14.8756389Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "d7c325d7b0a47ce832491e0d88616c4b54df1753ff64f16006eb7d07f5dfc167",
+      "generatedAtUtc": "2026-10-06T22:07:48.0811869Z"
+    },
+    "instr-match-picture": {
+      "hash": "9ca3a1df28755ef7253b1897cd9597d74af60fde784476a3e00bd1b7de7691d6",
+      "generatedAtUtc": "2026-10-06T22:07:49.1897637Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "4b07ab178e7b68b30e31715f8e61d39be0965d22ff9609e2e80faf09963dc4b1",
+      "generatedAtUtc": "2026-10-06T22:07:50.2273678Z"
+    },
+    "instr-trace": {
+      "hash": "110a6cb1861a799b0f96956606ce32efaadada4f28b7d3e618c466d389d21ed3",
+      "generatedAtUtc": "2026-10-06T22:07:51.2540279Z"
     }
   }
 }

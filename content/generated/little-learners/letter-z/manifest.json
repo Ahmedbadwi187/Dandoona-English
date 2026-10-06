@@ -27,6 +27,22 @@
     "word-zip": {
       "hash": "3f1eb1d5bf094f3149fe9977af270904dd94f0a351181446be1451c292c8cffd",
       "generatedAtUtc": "2026-10-06T18:10:28.3911419Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "d7c325d7b0a47ce832491e0d88616c4b54df1753ff64f16006eb7d07f5dfc167",
+      "generatedAtUtc": "2026-10-06T22:07:56.4745818Z"
+    },
+    "instr-match-picture": {
+      "hash": "9ca3a1df28755ef7253b1897cd9597d74af60fde784476a3e00bd1b7de7691d6",
+      "generatedAtUtc": "2026-10-06T22:07:57.5094954Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "4b07ab178e7b68b30e31715f8e61d39be0965d22ff9609e2e80faf09963dc4b1",
+      "generatedAtUtc": "2026-10-06T22:07:58.5357999Z"
+    },
+    "instr-trace": {
+      "hash": "4be1f807fbd2c047d14254febf3109608d35e16256f625b0dbfcbfd27b0aae60",
+      "generatedAtUtc": "2026-10-06T22:07:59.6518433Z"
     }
   }
 }
