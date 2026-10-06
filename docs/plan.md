@@ -13,11 +13,11 @@
 ## Phases (current order)
 1. **AssetGenerator** (`/tools/AssetGenerator`, see [assetgenerator.md](assetgenerator.md); DONE: live-verified, 26 letters exported): curriculum YAML loader, `mascot` concept command, ElevenLabs +
    OpenAI generation with skip-if-exists, review/approve flow, `status`, `export` into Flutter assets. Letters A-C first.
-2. **Mobile shell** (code complete, not yet compiled: no Flutter SDK here): Flutter app, parent area (Arabic RTL), parental gate, child profiles, local storage, 26-letter map. See mobile/kids_english_app/README.md.
+2. **Mobile shell** (DONE, tested on an emulator): Flutter app, parent area (Arabic RTL), parental gate, child profiles, local storage, 26-letter map. See mobile/kids_english_app/README.md.
 3. **Learning activities** (DONE, tested on an Android emulator): trace, listen-and-tap, match-picture, record-and-listen, with stars saved to local progress.
-4. **Backend:** API (auth, children, progress sync, weekly summary), Docker Compose, EF Core on SQL Server.
-5. **Gamification and dashboard.**
-6. **Hardening:** tests, privacy review against store policies, CI/CD, app-size check, low-end Android performance.
+4. **Backend** (DONE): API (auth, children, idempotent progress sync, weekly summaries, account deletion), Docker Compose, EF Core on SQL Server; optional account + sync in the app, verified against the live API.
+5. **Gamification and dashboard** (DONE): stars, 5 mascot accessories unlocked by stars with a wardrobe, weekly summary for parents.
+6. **Hardening** (DONE except real-device/iOS testing): see [store-compliance.md](store-compliance.md), [performance.md](performance.md), and `azure-pipelines.yml` (CI with an app-size budget).
 
 ## Backend status
 Foundation exists (cleanup commit): ASP.NET Core Clean Architecture on .NET 10, Identity + JWT with rotating hashed

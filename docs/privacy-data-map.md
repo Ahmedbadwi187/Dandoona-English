@@ -41,3 +41,13 @@ record-and-listen activity (Phase 3): recordings are played back locally and del
 - The recording is a temporary AAC file in the app's temp folder. It is played back immediately after the original word and **deleted
   right after play-back** (and on leaving the screen). No scoring, no speech recognition, no upload, no copy kept.
 - If the permission is denied the activity offers a skip (1 star); nothing is recorded.
+
+### Optional account + sync (Phase 4)
+Nothing below is stored or sent unless a parent signs in under Settings > Account & sync and taps "Sync now".
+
+| Where | Data | Purpose | Notes |
+|---|---|---|---|
+| Device keystore (flutter_secure_storage) | Refresh token | Stay signed in | Rotating, single-use. The password is never stored on the device. |
+| Device (`sync.v1`) | Server address, account email, local-to-server child id map, ids of already-sent progress records, last sync time | Make sync resumable and idempotent | No tokens or passwords. |
+| Server | Parent email, password hash, display name; children (nickname, avatar, birth year, track); progress records (lesson, activity, stars, attempts, seconds, completed-at) | Cross-device progress and the weekly summary | **Deleted entirely** by Settings > Account & sync > Delete account & data (password required): cascades to children, progress and tokens. |
+| Server logs | Request method/path/status/timing | Operations | No bodies, passwords, tokens or audio. |

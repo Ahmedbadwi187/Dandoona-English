@@ -1,0 +1,12 @@
+# The API image only needs the .NET sources. Keep everything else out of the build context.
+**/bin/
+**/obj/
+.git/
+.vs/
+.env
+mobile/
+tools/
+content/
+tests/
+docs/
+*.md

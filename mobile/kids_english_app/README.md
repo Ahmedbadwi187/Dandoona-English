@@ -52,3 +52,20 @@ flutter run -d emulator-5554      # first build ~4 min (Gradle downloads); later
 ```
 `android/gradle.properties` sets `kotlin.incremental=false`: with the project on `D:` and the Pub cache on `C:`, Kotlin's
 incremental cache fails to close. Other targets: `flutter run -d chrome` or `-d windows`.
+
+## Rewards, dashboard and sync (Phases 4-5)
+- `features/rewards/`: 5 mascot accessories (self-drawn SVG, `content/art/accessories`) unlocked at 5/15/30/50/80 stars; the
+  child's wardrobe (hanger button on the letter map) lets them try them on and wear one; a "new!" reveal appears on the stars
+  screen when a result crosses a threshold.
+- Parent dashboard (`features/parent/`): weekly summary per child (stars, activities, minutes, active days, 7-day chart).
+- Optional account + sync (`features/sync/`, Settings > Account & sync): sign in or register against your own API, then
+  "Sync now" pushes children and progress (idempotent and resumable); "Delete account & data" erases the server copy.
+  Default server address: `--dart-define=API_BASE_URL=https://api.example.com`. Release builds need https.
+- Live end-to-end test against a running API (skipped by default):
+  `set KIDS_API_URL=http://localhost:5080` then `flutter test test/e2e/sync_server_test.dart`
+  (run the API in Development against a throwaway database; see docs).
+
+## Release build
+`flutter build apk --release --split-per-abi` (about 25 MB for arm64). Android permissions: microphone (record-and-listen) and
+network (optional sync). See `docs/store-compliance.md` and `docs/performance.md`. The `ios/` runner has never been built
+(needs a Mac).

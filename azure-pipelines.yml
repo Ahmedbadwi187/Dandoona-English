@@ -1,0 +1,124 @@
+# Azure DevOps pipeline: backend (build, test, Docker image) and mobile (analyze, test, release APK, size budget).
+#
+# The dev-only tools/AssetGenerator is NEVER built, tested or deployed here: it is excluded from the triggers, and the
+# first step fails the build if it ever appears in the product solution (KidsEnglish.slnx).
+# No secrets are needed: backend integration tests use Testcontainers (SQL Server) and a test-only JWT key.
+
+trigger:
+  branches:
+    include: [main]
+  paths:
+    exclude:
+      - tools/*
+      - content/generated/*
+      - docs/*
+
+pr:
+  branches:
+    include: [main]
+  paths:
+    exclude:
+      - tools/*
+      - content/generated/*
+      - docs/*
+
+pool:
+  vmImage: ubuntu-latest # has Docker (Testcontainers), the Android SDK and a JDK
+
+variables:
+  FLUTTER_CHANNEL: stable
+  # Release APK budget (arm64) in MB. The bundled lessons dominate the size; see docs/store-compliance.md.
+  APK_BUDGET_MB: 40
+
+stages:
+  - stage: Backend
+    displayName: Backend (.NET)
+    jobs:
+      - job: BuildAndTest
+        displayName: Build and test
+        steps:
+          - checkout: self
+          - script: |
+              if grep -qi "tools/" KidsEnglish.slnx; then
+                echo "##vso[task.logissue type=error]tools/AssetGenerator must not be part of the product solution."
+                exit 1
+              fi
+            displayName: Guard - dev-only tools stay out of the product build
+          - task: UseDotNet@2
+            displayName: Use .NET SDK
+            inputs:
+              packageType: sdk
+              version: 10.x
+          - script: dotnet restore KidsEnglish.slnx
+            displayName: Restore
+          - script: dotnet build KidsEnglish.slnx -c Release --no-restore
+            displayName: Build
+          - script: dotnet test KidsEnglish.slnx -c Release --no-build --logger "trx;LogFileName=results.trx" --results-directory $(Agent.TempDirectory)/trx
+            displayName: Test (unit + integration, Testcontainers SQL Server)
+          - task: PublishTestResults@2
+            condition: succeededOrFailed()
+            inputs:
+              testResultsFormat: VSTest
+              testResultsFiles: $(Agent.TempDirectory)/trx/*.trx
+              testRunTitle: Backend
+
+      - job: DockerImage
+        displayName: Docker image (API)
+        dependsOn: BuildAndTest
+        condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+        steps:
+          - checkout: self
+          - script: docker build -f src/KidsEnglish.Api/Dockerfile -t kidsenglish-api:$(Build.BuildId) .
+            displayName: Build image
+          # Push/deploy needs a service connection (e.g. a container registry). Add it here, never a password in this file:
+          # - task: Docker@2
+          #   inputs: { containerRegistry: '<service connection>', repository: kidsenglish-api, command: push, tags: $(Build.BuildId) }
+
+  - stage: Mobile
+    displayName: Mobile (Flutter)
+    dependsOn: []
+    jobs:
+      - job: FlutterBuild
+        displayName: Analyze, test, release APK
+        steps:
+          - checkout: self
+          - task: Cache@2
+            displayName: Cache Flutter SDK
+            inputs:
+              key: 'flutter | "$(FLUTTER_CHANNEL)" | $(Agent.OS)'
+              path: $(Pipeline.Workspace)/flutter
+              cacheHitVar: FLUTTER_CACHE_HIT
+          - script: git clone --depth 1 -b $(FLUTTER_CHANNEL) https://github.com/flutter/flutter.git $(Pipeline.Workspace)/flutter
+            displayName: Install Flutter SDK
+            condition: ne(variables.FLUTTER_CACHE_HIT, 'true')
+          - script: |
+              echo "##vso[task.prependpath]$(Pipeline.Workspace)/flutter/bin"
+              export PATH="$(Pipeline.Workspace)/flutter/bin:$PATH"
+              flutter config --no-analytics
+              flutter --version
+            displayName: Flutter version
+          - script: flutter pub get
+            workingDirectory: mobile/kids_english_app
+            displayName: Pub get
+          - script: flutter analyze
+            workingDirectory: mobile/kids_english_app
+            displayName: Analyze (must be clean)
+          - script: flutter test
+            workingDirectory: mobile/kids_english_app
+            displayName: Test (logic, widgets, bundled content and asset files)
+          - script: flutter build apk --release --split-per-abi
+            workingDirectory: mobile/kids_english_app
+            displayName: Build release APKs
+          - script: |
+              apk=$(ls mobile/kids_english_app/build/app/outputs/flutter-apk/app-arm64-v8a-release.apk)
+              size_mb=$(( $(stat -c %s "$apk") / 1024 / 1024 ))
+              echo "arm64 release APK: ${size_mb} MB (budget $(APK_BUDGET_MB) MB)"
+              if [ "$size_mb" -gt "$(APK_BUDGET_MB)" ]; then
+                echo "##vso[task.logissue type=error]APK size ${size_mb} MB exceeds the $(APK_BUDGET_MB) MB budget."
+                exit 1
+              fi
+            displayName: App-size budget
+          - task: PublishBuildArtifacts@1
+            inputs:
+              PathtoPublish: mobile/kids_english_app/build/app/outputs/flutter-apk
+              ArtifactName: android-apks

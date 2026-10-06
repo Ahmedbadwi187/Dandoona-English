@@ -64,24 +64,24 @@ In use (versions from pubspec.yaml; licenses read from pub.dev on 2026-10-06):
 | audioplayers (+ _android, _darwin, _linux, _web, _windows, _platform_interface) | ^6.8.1 | MIT |
 | record (+ _android, _ios, _linux, _macos, _web, _windows, _platform_interface) | ^7.1.1 | BSD-3-Clause |
 | path_provider (+ _android, _foundation) | ^2.1.6 | BSD-3-Clause |
+| http | ^1.5.0 | BSD-3-Clause |
+| crypto | ^3.0.6 | BSD-3-Clause |
+| flutter_secure_storage (+ _darwin, _linux, _platform_interface, _web, _windows) | ^11.2.0 | BSD-3-Clause |
+| Transitive: ffi_leak_tracker, win32 | resolved in pubspec.lock | BSD-3-Clause |
 | Transitive build/plugin helpers: code_assets, hooks, jni, jni_flutter, jni_util, objective_c, package_config, pub_semver, record_use | resolved in pubspec.lock | BSD-3-Clause |
 | Transitive: synchronized, yaml | resolved in pubspec.lock | MIT |
 | flutter_localizations, flutter_test (Flutter SDK) | sdk | BSD-3-Clause |
 | flutter_lints (dev) | ^6.0.0 | BSD-3-Clause |
 
-Not code-generating on purpose: no freezed / json_serializable / drift / build_runner yet (models are hand-written, local storage is
+Not code-generating on purpose: no freezed / json_serializable / drift / build_runner (models are hand-written, local storage is
 shared_preferences). Planned for later phases, re-check license + exact version when added:
 
 | Package | Latest checked | License |
 |---|---|---|
-| permission_handler | 13.0.2 | MIT |
-| drift | 2.35.1 | MIT |
-| dio | 5.11.1 | MIT |
-| flutter_secure_storage | 11.2.0 | BSD-3-Clause |
 | rive / lottie | 0.14.11 / 3.6.1 | MIT |
 
-Rejected: `hive` (no license recorded on pub.dev; use drift). `sqlite3_flutter_libs` is end-of-life; resolve
-drift's current SQLite setup when adding it.
+Rejected: `hive` (no license recorded on pub.dev). If a database is ever needed: drift (MIT) - `sqlite3_flutter_libs` is end-of-life, resolve
+its current SQLite setup when adding it.
 
 ## Infrastructure / tooling (not shipped inside the product)
 
