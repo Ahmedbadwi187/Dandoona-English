@@ -71,7 +71,10 @@ class Lesson {
 }
 
 class LessonAudio {
-  const LessonAudio({required this.intro, required this.praise, this.phoneme});
+  const LessonAudio({required this.intro, required this.praise, this.phoneme, this.instructions = const {}});
+
+  /// Spoken instruction per activity name (plus `hint`), played when the activity starts. Older lesson files have none.
+  final Map<String, String> instructions;
 
   final String intro;
   final String? phoneme;
@@ -81,6 +84,7 @@ class LessonAudio {
         intro: json['intro'] as String,
         phoneme: json['phoneme'] as String?,
         praise: (json['praise'] as List<dynamic>).cast<String>(),
+        instructions: ((json['instructions'] as Map<String, dynamic>?) ?? const {}).map((k, v) => MapEntry(k, v as String)),
       );
 }
 

@@ -9,6 +9,7 @@ import '../../core/strings.dart';
 import '../../core/theme.dart';
 import '../../core/widgets.dart';
 import '../audio/audio_service.dart';
+import '../content/content_models.dart';
 import '../content/content_repository.dart';
 import '../profiles/child_profile.dart';
 import '../progress/progress.dart';
@@ -16,13 +17,42 @@ import '../session/session.dart';
 import 'child_scope.dart';
 
 /// One lesson: the big letter, its pictures, and the four activity tiles (the activities themselves arrive in Phase 3).
-class LessonScreen extends ConsumerWidget {
+class LessonScreen extends ConsumerStatefulWidget {
   const LessonScreen({super.key, required this.lessonId});
 
   final String lessonId;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<LessonScreen> createState() => _LessonScreenState();
+}
+
+class _LessonScreenState extends ConsumerState<LessonScreen> {
+  bool _introPlayed = false;
+  late final AudioService _audio = ref.read(audioServiceProvider);
+
+  @override
+  void initState() {
+    super.initState();
+    // The letter introduces itself as soon as the lesson opens (when the lesson data is there).
+    ref.listenManual(contentProvider, (_, next) => _playIntro(next.value), fireImmediately: true);
+  }
+
+  void _playIntro(TrackContent? track) {
+    final lesson = track?.lessonById(widget.lessonId);
+    if (_introPlayed || lesson == null) return;
+    _introPlayed = true;
+    unawaited(_audio.playAsset(lesson.audio.intro));
+  }
+
+  @override
+  void dispose() {
+    unawaited(_audio.stop());
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final lessonId = widget.lessonId;
     final content = ref.watch(contentProvider);
     return ChildScope(
       child: SessionGuard(

@@ -314,6 +314,9 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byKey(const Key('speaker-badge')), findsNWidgets(4)); // the letter and its 3 pictures show that they can be pressed
+      expect(audio.played, ['asset:audio/little_learners/letter_a/intro.mp3']); // the letter introduces itself when the lesson opens
+      audio.played.clear();
+
       await tester.ensureVisible(find.byKey(const Key('word-apple')));
       await tester.tap(find.byKey(const Key('word-apple')));
       await tester.pump();

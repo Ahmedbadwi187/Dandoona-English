@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/palette.dart';
 import '../../core/theme.dart';
 import '../../core/widgets.dart';
+import '../audio/activity_speech.dart';
 import '../audio/audio_service.dart';
 import '../content/content_models.dart';
 import 'activity_logic.dart';
@@ -39,18 +40,28 @@ class _RecordListenActivityState extends ConsumerState<RecordListenActivity> {
   String? _pendingFile;
   late final RecorderService _recorder = ref.read(recorderServiceProvider);
   late final AudioService _audio = ref.read(audioServiceProvider);
+  late final ActivitySpeech _speech = ActivitySpeech(_audio);
 
   LessonWord get _word => widget.lesson.words[_index];
 
   @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) unawaited(_speech.say(instruction: widget.lesson.audio.instructions['record-and-listen'], then: _word.audio));
+    });
+  }
+
+  @override
   void dispose() {
+    _speech.cancel();
     _cap?.cancel();
     final file = _pendingFile;
     if (file != null) unawaited(_recorder.delete(file)); // never leave a child's voice behind
     super.dispose();
   }
 
-  void _hear() => unawaited(_audio.playAsset(_word.audio));
+  void _hear() => unawaited(_speech.say(then: _word.audio));
 
   Future<void> _toggleRecord() async {
     if (_phase == _Phase.playing) return;

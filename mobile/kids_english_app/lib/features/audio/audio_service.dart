@@ -22,6 +22,7 @@ abstract class AudioService {
 
 class AudioplayersService implements AudioService {
   final AudioPlayer _player = AudioPlayer();
+  Completer<void>? _cut; // completes when the current clip is replaced or stopped, so its caller stops waiting
 
   @override
   Future<void> playAsset(String assetPath) => _play(AssetSource(assetPath));
@@ -31,10 +32,12 @@ class AudioplayersService implements AudioService {
 
   Future<void> _play(Source source) async {
     try {
+      _cut?.complete();
+      final cut = _cut = Completer<void>();
       await _player.stop();
       final done = firstEventOrTimeout(_player.onPlayerComplete, const Duration(seconds: 30));
       await _player.play(source);
-      await done;
+      await Future.any([done, cut.future]);
     } on Object catch (e) {
       // Missing codec, no audio device, web autoplay rules...: the activity continues silently.
       debugPrint('audio: could not play $source: $e');
@@ -43,6 +46,7 @@ class AudioplayersService implements AudioService {
 
   @override
   Future<void> stop() async {
+    _cut?.complete();
     try {
       await _player.stop();
     } on Object {

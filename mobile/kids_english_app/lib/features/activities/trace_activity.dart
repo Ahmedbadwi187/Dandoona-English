@@ -2,9 +2,12 @@ import 'dart:async';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/palette.dart';
 import '../../core/theme.dart';
+import '../audio/activity_speech.dart';
+import '../audio/audio_service.dart';
 import '../content/content_models.dart';
 import 'activity_logic.dart';
 
@@ -64,17 +67,18 @@ class _InkPainter extends CustomPainter {
 
 /// Trace the big letter with a finger. The letter and the drawing are rasterised and compared (coverage of the
 /// letter vs. ink far away from it). Too little ink: the board clears for another try; after 3 tries it gives 1 star.
-class TraceActivity extends StatefulWidget {
+class TraceActivity extends ConsumerStatefulWidget {
   const TraceActivity({super.key, required this.lesson, required this.onFinished});
 
   final Lesson lesson;
   final ValueChanged<ActivityResult> onFinished;
 
   @override
-  State<TraceActivity> createState() => _TraceActivityState();
+  ConsumerState<TraceActivity> createState() => _TraceActivityState();
 }
 
-class _TraceActivityState extends State<TraceActivity> {
+class _TraceActivityState extends ConsumerState<TraceActivity> {
+  late final ActivitySpeech _speech = ActivitySpeech(ref.read(audioServiceProvider));
   final List<List<Offset>> _strokes = [];
   int _version = 0;
   int _attempts = 0;
@@ -82,6 +86,22 @@ class _TraceActivityState extends State<TraceActivity> {
   bool _tryAgain = false;
 
   String get _letter => widget.lesson.letter ?? '?';
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _sayInstruction());
+  }
+
+  @override
+  void dispose() {
+    _speech.cancel();
+    super.dispose();
+  }
+
+  void _sayInstruction() {
+    if (mounted) unawaited(_speech.say(instruction: widget.lesson.audio.instructions['trace']));
+  }
 
   void _clear() => setState(() {
         _strokes.clear();
@@ -119,6 +139,7 @@ class _TraceActivityState extends State<TraceActivity> {
         _strokes.clear();
         _version++;
       });
+      unawaited(_speech.say(instruction: widget.lesson.audio.instructions['hint']));
     }
   }
 
@@ -163,6 +184,14 @@ class _TraceActivityState extends State<TraceActivity> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                IconButton.filled(
+                  key: const Key('trace-hear'),
+                  style: IconButton.styleFrom(backgroundColor: Palette.blue, minimumSize: const Size(kMinTapTarget, kMinTapTarget)),
+                  iconSize: 36,
+                  onPressed: _sayInstruction,
+                  icon: const Icon(Icons.volume_up_rounded, color: Palette.white),
+                ),
+                const SizedBox(width: 24),
                 IconButton.filled(
                   key: const Key('trace-clear'),
                   style: IconButton.styleFrom(backgroundColor: Palette.gray, minimumSize: const Size(kMinTapTarget, kMinTapTarget)),
