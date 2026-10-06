@@ -6,6 +6,7 @@ import '../../core/palette.dart';
 import '../../core/widgets.dart';
 import '../profiles/child_profile.dart';
 import '../settings/settings.dart';
+import '../sync/sync_controller.dart';
 
 /// Manage child profiles: add, edit, delete (with confirmation).
 class ChildrenScreen extends ConsumerWidget {
@@ -72,6 +73,10 @@ class ChildrenScreen extends ConsumerWidget {
         ),
       ),
     );
-    if (ok == true) await ref.read(profilesProvider.notifier).remove(p.id);
+    if (ok == true) {
+      await ref.read(profilesProvider.notifier).remove(p.id);
+      // Also hard-delete the child on the server (profile + all progress); queued if offline.
+      await ref.read(syncControllerProvider.notifier).childDeleted(p.id);
+    }
   }
 }

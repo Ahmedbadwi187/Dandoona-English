@@ -48,6 +48,17 @@ Nothing below is stored or sent unless a parent signs in under Settings > Accoun
 | Where | Data | Purpose | Notes |
 |---|---|---|---|
 | Device keystore (flutter_secure_storage) | Refresh token | Stay signed in | Rotating, single-use. The password is never stored on the device. |
-| Device (`sync.v1`) | Server address, account email, local-to-server child id map, ids of already-sent progress records, last sync time | Make sync resumable and idempotent | No tokens or passwords. |
+| Device (`sync.v1`) | Server address, account email, local-to-server child id map, ids of already-sent progress records, **server ids of children whose deletion is still queued**, last sync time | Make sync resumable and idempotent; remember a delete made while offline | No tokens or passwords. |
 | Server | Parent email, password hash, display name; children (nickname, avatar, birth year, track); progress records (lesson, activity, stars, attempts, seconds, completed-at) | Cross-device progress and the weekly summary | **Deleted entirely** by Settings > Account & sync > Delete account & data (password required): cascades to children, progress and tokens. |
 | Server logs | Request method/path/status/timing | Operations | No bodies, passwords, tokens or audio. |
+
+### Deleting a child (device and server)
+- Deleting a child profile in Parent area > Child profiles removes the profile and all of that child's progress from the device.
+- If that child had been synced, the **server copy is hard-deleted as well** (`DELETE /api/children/{id}`): the child row and every
+  progress record are physically removed by a database cascade (integration-tested), not flagged or archived.
+- If the device is offline (or signed out) at that moment, the deletion is **queued** on the device (only the server child id is
+  kept) and sent first on the next sync or when the parent signs in again; a child that is already gone on the server counts as
+  deleted. Settings > Account & sync shows how many deletions are still waiting.
+- A child that was never synced has no server copy, so there is nothing to delete remotely.
+- Deleting the whole account (Settings > Account & sync > Delete account & data) removes every child, all progress and the
+  login on the server in one step, and clears the queue.

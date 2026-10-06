@@ -48,20 +48,37 @@ class MemoryTokenStore implements TokenStore {
 /// Sync bookkeeping kept on the device: the server address, the account e-mail (never the password), which local
 /// child maps to which server child, and which progress records were already delivered.
 class SyncState {
-  const SyncState({this.baseUrl = '', this.email = '', this.childMap = const {}, this.pushed = const {}, this.lastSyncUtc});
+  const SyncState({
+    this.baseUrl = '',
+    this.email = '',
+    this.childMap = const {},
+    this.pushed = const {},
+    this.pendingDeletes = const {},
+    this.lastSyncUtc,
+  });
 
   final String baseUrl;
   final String email;
   final Map<String, String> childMap; // local child id -> server child id
   final Set<String> pushed; // local clientRecordIds already accepted by the server
+  /// Server child ids whose local profile was deleted but the server copy is not confirmed deleted yet (e.g. it was offline).
+  final Set<String> pendingDeletes;
   final DateTime? lastSyncUtc;
 
-  SyncState copyWith({String? baseUrl, String? email, Map<String, String>? childMap, Set<String>? pushed, DateTime? lastSyncUtc}) =>
+  SyncState copyWith({
+    String? baseUrl,
+    String? email,
+    Map<String, String>? childMap,
+    Set<String>? pushed,
+    Set<String>? pendingDeletes,
+    DateTime? lastSyncUtc,
+  }) =>
       SyncState(
         baseUrl: baseUrl ?? this.baseUrl,
         email: email ?? this.email,
         childMap: childMap ?? this.childMap,
         pushed: pushed ?? this.pushed,
+        pendingDeletes: pendingDeletes ?? this.pendingDeletes,
         lastSyncUtc: lastSyncUtc ?? this.lastSyncUtc,
       );
 
@@ -70,6 +87,7 @@ class SyncState {
         'email': email,
         'childMap': childMap,
         'pushed': pushed.toList(),
+        'pendingDeletes': pendingDeletes.toList(),
         if (lastSyncUtc != null) 'lastSyncUtc': lastSyncUtc!.toUtc().toIso8601String(),
       };
 
@@ -78,6 +96,7 @@ class SyncState {
         email: (json['email'] as String?) ?? '',
         childMap: ((json['childMap'] as Map?) ?? {}).map((k, v) => MapEntry(k as String, v as String)),
         pushed: ((json['pushed'] as List?) ?? []).cast<String>().toSet(),
+        pendingDeletes: ((json['pendingDeletes'] as List?) ?? []).cast<String>().toSet(),
         lastSyncUtc: json['lastSyncUtc'] == null ? null : DateTime.parse(json['lastSyncUtc'] as String),
       );
 }
@@ -140,11 +159,9 @@ class SyncService {
     await store.save(sameAccount ? previous : SyncState(baseUrl: baseUrl, email: email));
   }
 
-  Future<void> signOut() async {
-    await tokens.clear();
-    final s = store.load();
-    await store.save(SyncState(baseUrl: s.baseUrl, email: s.email)); // keep the address, forget the mapping
-  }
+  /// Forgets the login only. The child mapping and any queued deletions stay, so signing back in resumes cleanly and a
+  /// deletion made while signed out still reaches the server later.
+  Future<void> signOut() async => tokens.clear();
 
   /// Deletes the server account and every record on it, then forgets the account on this device.
   /// Local profiles and progress stay on the device (they belong to the family, not the account).
@@ -160,6 +177,48 @@ class SyncService {
     await store.save(SyncState(baseUrl: state.baseUrl));
   }
 
+  /// A local child was deleted: if it had been synced, queue a hard delete of its server copy (profile + all progress).
+  /// Returns false when there is nothing on the server to delete (the child was never synced).
+  Future<bool> queueChildDelete(String localChildId) async {
+    final state = store.load();
+    final serverId = state.childMap[localChildId];
+    if (serverId == null) return false;
+    await store.save(state.copyWith(
+      childMap: Map.of(state.childMap)..remove(localChildId),
+      pendingDeletes: {...state.pendingDeletes, serverId},
+    ));
+    return true;
+  }
+
+  int get pendingDeleteCount => store.load().pendingDeletes.length;
+
+  /// Sends the queued child deletions. Anything still unconfirmed stays queued for the next attempt.
+  Future<int> flushDeletes() async {
+    final state = store.load();
+    if (state.pendingDeletes.isEmpty) return 0;
+    final refreshToken = await tokens.readRefreshToken();
+    if (refreshToken == null || state.baseUrl.isEmpty) throw const SyncException(SyncErrorKind.auth, 'Not signed in');
+    final api = apiFor(state.baseUrl);
+    final auth = await api.refresh(refreshToken);
+    await tokens.saveRefreshToken(auth.refreshToken);
+    return _deletePending(api, auth.accessToken);
+  }
+
+  Future<int> _deletePending(SyncApi api, String accessToken) async {
+    var done = 0;
+    for (final serverId in store.load().pendingDeletes.toList()) {
+      try {
+        await api.deleteChild(accessToken, serverId);
+      } on SyncException catch (e) {
+        if (e.kind != SyncErrorKind.notFound) rethrow; // already gone on the server counts as done
+      }
+      final current = store.load();
+      await store.save(current.copyWith(pendingDeletes: {...current.pendingDeletes}..remove(serverId)));
+      done++;
+    }
+    return done;
+  }
+
   Future<bool> isSignedIn() async => (await tokens.readRefreshToken()) != null && store.load().baseUrl.isNotEmpty;
 
   Future<SyncReport> syncNow({required List<ChildProfile> children, required List<ProgressRecord> progress}) async {
@@ -172,6 +231,9 @@ class SyncService {
 
     final auth = await api.refresh(refreshToken); // refresh tokens rotate: persist the new one immediately
     await tokens.saveRefreshToken(auth.refreshToken);
+
+    await _deletePending(api, auth.accessToken); // queued deletions first, so a removed child is never resurrected
+    state = store.load();
 
     var created = 0, pushedCount = 0, duplicates = 0;
 

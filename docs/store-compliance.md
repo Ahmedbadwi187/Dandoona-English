@@ -28,6 +28,7 @@ and the privacy laws of the Arab countries you target).
 | Only age-appropriate content | Done | Self-drawn and generated illustrations reviewed by hand; no text in images; audio is the developer's reviewed script. |
 | Permissions only as needed, with explanation | Done | Microphone prompted on first use of record-and-listen; iOS usage string written. The activity works without it (skip, 1 star). |
 | Data safety form | Owner action | Local-only mode: "No data collected". With sync enabled: email address (account), child nickname/birth year, app activity (progress) - collected, linked to the parent account, encrypted in transit, **deletion available** (see below). |
+| Deleting a child's data | Done | Deleting a child profile in the app also hard-deletes the child and all progress on the server (queued and retried if offline). Integration-tested (rows physically removed, sibling untouched) and verified against the live API. |
 | Account deletion in-app + a web link | Partly | In-app deletion with password confirmation is built and tested (Settings > Account & sync > Delete account & data; `POST /api/account/delete`). **Owner action:** host a web page that explains how to delete an account/data and paste its URL in Play Console. |
 | Privacy policy URL | Owner action | Required for the store listing. Use `privacy-data-map.md` as the source of truth; must cover the optional sync and the microphone. |
 | Target API level | Done | Flutter's default `targetSdk` (36 at the time of build); keep up to date with Play's yearly requirement. |
@@ -51,7 +52,7 @@ and the privacy laws of the Arab countries you target).
 - Voice: recorded to a temp file, played back immediately, deleted right after (and on leaving the screen). Never uploaded,
   never scored, no speech recognition. Covered by tests (`record_listen` deletes every created file).
 - Server (optional sync): stores the parent email + password hash, children (nickname, avatar, birth year, track) and progress
-  records. Parent can delete everything in-app; the deletion cascades to children, progress and tokens (integration-tested).
+  records. Parent can delete everything in-app; a single child can be deleted at any time (hard delete of the profile and all its progress, queued if the device is offline); the deletion cascades to children, progress and tokens (integration-tested).
   Logs contain request metadata only, never bodies, passwords, tokens or audio.
 
 ## Security review (backend + app)

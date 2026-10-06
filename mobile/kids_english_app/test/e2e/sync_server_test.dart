@@ -65,6 +65,42 @@ void main() {
     expect(summary['totalStars'], records.fold<int>(0, (a, r) => a + r.stars));
   }, skip: skip);
 
+  test('deleting a child hard-deletes it on the server (profile and progress), the sibling stays', () async {
+    final email = 'e2e-${newUuid().substring(0, 8)}@test.com';
+    final prefs = await mockPrefs();
+    final service = SyncService(apiFor: (u) => HttpSyncApi(u), store: SyncStore(prefs), tokens: MemoryTokenStore());
+    await service.register(url!, email, 'Passw0rd!x');
+
+    final now = DateTime.now().toUtc();
+    ChildProfile kid(String id, String name) =>
+        ChildProfile(id: id, name: name, avatarKey: 'star', birthYear: now.year - 4, createdAt: now);
+    final omar = kid('local-omar', 'Omar'), sara = kid('local-sara', 'Sara');
+    ProgressRecord rec(String child) => ProgressRecord(
+        clientRecordId: newUuid(), childId: child, lessonId: 'letter-a', activity: 'trace', stars: 3, attempts: 1,
+        timeSpentSeconds: 20, completedAt: now.subtract(const Duration(seconds: 30)));
+    await service.syncNow(children: [omar, sara], progress: [rec(omar.id), rec(sara.id)]);
+
+    final state = SyncStore(prefs).load();
+    final omarServerId = state.childMap[omar.id]!, saraServerId = state.childMap[sara.id]!;
+
+    expect(await service.queueChildDelete(omar.id), isTrue);
+    expect(await service.flushDeletes(), 1);
+    expect(service.pendingDeleteCount, 0);
+
+    final auth = await HttpSyncApi(url).login(email: email, password: 'Passw0rd!x');
+    Future<int> status(String path) async =>
+        (await http.get(Uri.parse('$url$path'), headers: {'Authorization': 'Bearer ${auth.accessToken}'})).statusCode;
+    expect(await status('/api/children/$omarServerId'), 404);
+    expect(await status('/api/children/$omarServerId/progress'), 404);
+    expect(await status('/api/children/$saraServerId'), 200);
+
+    // deleting again is harmless: the app treats "already gone" as done
+    final api = HttpSyncApi(url);
+    final fresh = await api.refresh((await HttpSyncApi(url).login(email: email, password: 'Passw0rd!x')).refreshToken);
+    await expectLater(api.deleteChild(fresh.accessToken, omarServerId),
+        throwsA(isA<SyncException>().having((e) => e.kind, 'kind', SyncErrorKind.notFound)));
+  }, skip: skip);
+
   test('deleting the account erases it on the server: wrong password refused, right password deletes, login then fails', () async {
     final email = 'e2e-${newUuid().substring(0, 8)}@test.com';
     final tokens = MemoryTokenStore();

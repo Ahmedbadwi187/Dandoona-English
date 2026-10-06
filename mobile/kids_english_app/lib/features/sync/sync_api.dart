@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-enum SyncErrorKind { network, auth, validation, server }
+enum SyncErrorKind { network, auth, validation, notFound, server }
 
 class SyncException implements Exception {
   const SyncException(this.kind, this.message);
@@ -36,6 +36,9 @@ abstract class SyncApi {
 
   /// Permanently deletes the account and all its data on the server (needs the password again).
   Future<void> deleteAccount(String accessToken, String password);
+
+  /// Hard-deletes one child (profile and all progress) on the server. A child that is already gone is `notFound`.
+  Future<void> deleteChild(String accessToken, String serverChildId);
 }
 
 /// HTTP implementation. Release builds must point at an https:// server (Android blocks cleartext by default;
@@ -89,6 +92,8 @@ class HttpSyncApi implements SyncApi {
       case 401:
       case 403:
         throw SyncException(SyncErrorKind.auth, detail);
+      case 404:
+        throw SyncException(SyncErrorKind.notFound, detail);
       default:
         throw SyncException(SyncErrorKind.server, 'Server error ${response.statusCode}: $detail');
     }
@@ -137,5 +142,10 @@ class HttpSyncApi implements SyncApi {
   @override
   Future<void> deleteAccount(String accessToken, String password) async {
     await _send('POST', 'api/account/delete', {'password': password}, accessToken);
+  }
+
+  @override
+  Future<void> deleteChild(String accessToken, String serverChildId) async {
+    await _send('DELETE', 'api/children/$serverChildId', null, accessToken);
   }
 }

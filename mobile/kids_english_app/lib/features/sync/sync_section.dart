@@ -103,6 +103,8 @@ class _SyncSectionState extends ConsumerState<SyncSection> {
             ] else ...[
               Text('${s('signedInAs')} ${_email.text}', key: const Key('sync-signed-in')),
               if (last != null) Text('${s('lastSync')}: ${last.toLocal().toString().substring(0, 16)}', style: const TextStyle(fontSize: 12)),
+              if (ref.read(syncServiceProvider).pendingDeleteCount > 0)
+                Text('${s('pendingDeletes')} ${ref.read(syncServiceProvider).pendingDeleteCount}', key: const Key('pending-deletes'), style: const TextStyle(fontSize: 12)),
               const SizedBox(height: 12),
               Row(
                 children: [

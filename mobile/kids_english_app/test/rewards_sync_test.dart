@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:kids_english_app/core/ids.dart';
 import 'package:kids_english_app/features/activities/activity_screen.dart';
 import 'package:kids_english_app/features/audio/audio_service.dart';
+import 'package:kids_english_app/features/parent/children_screen.dart';
 import 'package:kids_english_app/features/parent/settings_screen.dart';
 import 'package:kids_english_app/features/parent/weekly_view.dart';
 import 'package:kids_english_app/features/profiles/child_profile.dart';
@@ -84,6 +85,17 @@ class FakeSyncApi implements SyncApi {
       if (stored[serverChildId]!.add(i['clientRecordId'] as String)) accepted++;
     }
     return SubmitResult(accepted: accepted, duplicates: items.length - accepted);
+  }
+
+  final List<String> deletedChildren = [];
+  bool childAlreadyGone = false;
+
+  @override
+  Future<void> deleteChild(String accessToken, String serverChildId) async {
+    _net();
+    if (childAlreadyGone) throw const SyncException(SyncErrorKind.notFound, 'Child not found.');
+    deletedChildren.add(serverChildId);
+    stored.remove(serverChildId); // hard delete: the child's progress goes with it
   }
 
   bool accountDeleted = false;
@@ -378,6 +390,159 @@ void main() {
       final raw = (await mockPrefs()).getKeys().join();
       expect(raw.contains('secret'), isFalse);
       expect(store.load().toJson().toString().contains('secret'), isFalse);
+    });
+  });
+
+  group('child deletion reaches the server (queued when offline)', () {
+    late FakeSyncApi api;
+    late MemoryTokenStore tokens;
+    late SyncStore store;
+    late SyncService service;
+    final t0 = DateTime.utc(2026, 10, 5, 9);
+
+    setUp(() async {
+      api = FakeSyncApi();
+      tokens = MemoryTokenStore();
+      store = SyncStore(await mockPrefs());
+      service = SyncService(apiFor: (_) => api, store: store, tokens: tokens);
+      await service.login('http://x', 'mom@example.com', 'secret');
+      await service.syncNow(
+          children: [kid('c1'), kid('c2', 'Sara')],
+          progress: [rec(newUuid(), 'c1', 'letter-a', 'trace', 3, t0), rec(newUuid(), 'c2', 'letter-a', 'trace', 3, t0)]);
+    });
+
+    test('a synced child is queued and then hard-deleted on the server with its progress; the sibling stays', () async {
+      expect(await service.queueChildDelete('c1'), isTrue);
+      expect(service.pendingDeleteCount, 1);
+      expect(store.load().childMap.containsKey('c1'), isFalse);
+
+      expect(await service.flushDeletes(), 1);
+      expect(api.deletedChildren, ['server-0']);
+      expect(api.stored.containsKey('server-0'), isFalse); // progress gone with the child
+      expect(api.stored['server-1'], hasLength(1)); // sibling untouched
+      expect(service.pendingDeleteCount, 0);
+    });
+
+    test('a child that was never synced has nothing to delete on the server', () async {
+      expect(await service.queueChildDelete('never-synced'), isFalse);
+      expect(service.pendingDeleteCount, 0);
+      expect(await service.flushDeletes(), 0);
+      expect(api.deletedChildren, isEmpty);
+    });
+
+    test('offline: the delete stays queued, survives a restart, and goes out first on the next sync', () async {
+      await service.queueChildDelete('c1');
+      api.offline = true;
+      await expectLater(service.flushDeletes(), throwsA(isA<SyncException>().having((e) => e.kind, 'kind', SyncErrorKind.network)));
+      expect(service.pendingDeleteCount, 1);
+
+      // "restart": a new service over the same storage still knows about the queued delete
+      final again = SyncService(apiFor: (_) => api, store: store, tokens: tokens);
+      expect(again.pendingDeleteCount, 1);
+
+      api.offline = false;
+      final report = await again.syncNow(children: [kid('c2', 'Sara')], progress: []);
+      expect(api.deletedChildren, ['server-0']);
+      expect(again.pendingDeleteCount, 0);
+      expect(report.childrenCreated, 0); // the deleted child was not recreated
+      expect(api.createdChildren, hasLength(2));
+    });
+
+    test('a child that is already gone on the server counts as deleted', () async {
+      await service.queueChildDelete('c1');
+      api.childAlreadyGone = true;
+      expect(await service.flushDeletes(), 1);
+      expect(service.pendingDeleteCount, 0);
+    });
+
+    test('a failing delete keeps the rest of the queue intact', () async {
+      await service.queueChildDelete('c1');
+      await service.queueChildDelete('c2');
+      expect(service.pendingDeleteCount, 2);
+      api.offline = true;
+      await expectLater(service.flushDeletes(), throwsA(isA<SyncException>()));
+      expect(service.pendingDeleteCount, 2);
+      api.offline = false;
+      expect(await service.flushDeletes(), 2);
+      expect(service.pendingDeleteCount, 0);
+    });
+
+    test('deleting while signed out queues it; signing back in as the same account sends it', () async {
+      await service.signOut();
+      expect(await service.queueChildDelete('c1'), isTrue); // the mapping survived the sign-out
+      await expectLater(service.flushDeletes(), throwsA(isA<SyncException>().having((e) => e.kind, 'kind', SyncErrorKind.auth)));
+      expect(service.pendingDeleteCount, 1);
+
+      await service.login('http://x', 'mom@example.com', 'secret');
+      expect(await service.flushDeletes(), 1);
+      expect(api.deletedChildren, ['server-0']);
+    });
+
+    test('signing in as a different account drops the queue (those ids belong to another account)', () async {
+      await service.queueChildDelete('c1');
+      await service.signOut();
+      await service.login('http://x', 'someone-else@example.com', 'secret');
+      expect(service.pendingDeleteCount, 0);
+      expect(api.deletedChildren, isEmpty);
+    });
+
+    test('the queue is cleared when the whole account is deleted', () async {
+      await service.queueChildDelete('c1');
+      await service.deleteAccount('secret');
+      expect(service.pendingDeleteCount, 0);
+    });
+
+    testWidgets('children screen: delete + confirm removes locally and on the server', (tester) async {
+      final base = await testOverrides();
+      final container = ProviderContainer(overrides: [
+        ...base,
+        syncApiFactoryProvider.overrideWithValue((_) => api),
+        tokenStoreProvider.overrideWithValue(tokens),
+      ]);
+      addTearDown(container.dispose);
+      // a real local profile that has been synced
+      final omar = await container.read(profilesProvider.notifier).add(name: 'Omar', avatarKey: 'star', birthYear: 2022);
+      final svc = container.read(syncServiceProvider);
+      await svc.login('http://x', 'mom@example.com', 'secret');
+      await svc.syncNow(children: [omar], progress: []);
+      final serverId = container.read(syncStoreProvider).load().childMap[omar.id]!;
+
+      await tester.pumpWidget(UncontrolledProviderScope(container: container, child: const MaterialApp(home: ChildrenScreen())));
+      await tester.pump();
+      await tester.tap(find.byKey(Key('delete-${omar.id}')));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const Key('confirm-delete')));
+      await tester.pumpAndSettle();
+
+      expect(container.read(profilesProvider), isEmpty);
+      expect(api.deletedChildren, contains(serverId));
+      expect(svc.pendingDeleteCount, 0);
+    });
+
+    testWidgets('children screen while offline: the profile is deleted now, the server delete waits and is shown as pending', (tester) async {
+      api.offline = true;
+      final base = await testOverrides();
+      final container = ProviderContainer(overrides: [
+        ...base,
+        syncApiFactoryProvider.overrideWithValue((_) => api),
+        tokenStoreProvider.overrideWithValue(tokens),
+      ]);
+      addTearDown(container.dispose);
+      final omar = await container.read(profilesProvider.notifier).add(name: 'Omar', avatarKey: 'star', birthYear: 2022);
+      // sync state with a mapping for this child (as if it had synced earlier)
+      await container.read(syncStoreProvider).save(SyncState(baseUrl: 'http://x', email: 'mom@example.com', childMap: {omar.id: 'server-9'}));
+      await tokens.saveRefreshToken('refresh-0');
+
+      await tester.pumpWidget(UncontrolledProviderScope(container: container, child: const MaterialApp(home: ChildrenScreen())));
+      await tester.pump();
+      await tester.tap(find.byKey(Key('delete-${omar.id}')));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const Key('confirm-delete')));
+      await tester.pumpAndSettle();
+
+      expect(container.read(profilesProvider), isEmpty); // gone locally right away
+      expect(container.read(syncServiceProvider).pendingDeleteCount, 1); // queued for the server
+      expect(api.deletedChildren, isEmpty);
     });
   });
 

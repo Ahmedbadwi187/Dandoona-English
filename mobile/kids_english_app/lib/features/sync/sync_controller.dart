@@ -67,6 +67,19 @@ class SyncController extends Notifier<SyncUiState> {
         return 'accountDeleted';
       });
 
+  /// A child profile was deleted on this device: queue (and, if signed in and online, immediately send) the hard delete of
+  /// its server copy. Failures are silent here; the deletion stays queued and is retried on the next sync.
+  Future<void> childDeleted(String localChildId) async {
+    final queued = await _service.queueChildDelete(localChildId);
+    if (!queued) return;
+    try {
+      if (await _service.isSignedIn()) await _service.flushDeletes();
+    } on SyncException {
+      // offline or signed out: stays queued
+    }
+    state = state.copyWith(); // let the settings screen refresh its "waiting" count
+  }
+
   Future<void> signOut() async {
     await _service.signOut();
     state = state.copyWith(signedIn: false, clearMessage: true);
@@ -83,7 +96,7 @@ class SyncController extends Notifier<SyncUiState> {
         SyncErrorKind.network => 'syncNetwork',
         SyncErrorKind.auth => 'syncAuth',
         SyncErrorKind.validation => 'syncInvalid',
-        SyncErrorKind.server => 'syncFailed',
+        SyncErrorKind.notFound || SyncErrorKind.server => 'syncFailed',
       };
       state = state.copyWith(busy: false, messageKey: key, messageIsError: true);
     }
