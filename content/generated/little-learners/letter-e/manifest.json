@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "2880b7881351f0d98ac8085032b0124b60f6b029fafe204b802d5ab962d6b638",
+      "generatedAtUtc": "2026-10-06T18:08:01.0046093Z"
+    },
+    "phoneme": {
+      "hash": "12eda6e064482fb84821ac2d7705c9735405de177df9b9481876a1fc1383aa1e",
+      "generatedAtUtc": "2026-10-06T18:08:01.9073846Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:08:02.8582685Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:08:03.7924468Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:08:04.7228414Z"
+    },
+    "word-egg": {
+      "hash": "121dbb100f437aca9b5079b1758e6a8068059bd75b281d41a4b4be74e8f5fdce",
+      "generatedAtUtc": "2026-10-06T18:08:05.630254Z"
+    },
+    "word-elephant": {
+      "hash": "7f26a692cc508404a93972f8f9e208c37448b4f86f8be9af669c447ef32970ae",
+      "generatedAtUtc": "2026-10-06T18:08:06.6392109Z"
+    }
+  }
+}

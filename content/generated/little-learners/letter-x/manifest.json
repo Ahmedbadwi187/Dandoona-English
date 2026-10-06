@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "825b46f48088f8541c34d94b65a8bf0d6346fa558a2b29a13be74ad4fc3d64b8",
+      "generatedAtUtc": "2026-10-06T18:10:09.3056996Z"
+    },
+    "phoneme": {
+      "hash": "408405958afca83253ab0f150e3b0bd6fbbe09a970eb3baf746b5488f1ba5440",
+      "generatedAtUtc": "2026-10-06T18:10:10.2334183Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:10:11.1688107Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:10:12.0802783Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:10:13.0081001Z"
+    },
+    "word-box": {
+      "hash": "07c45bc7d0da88e134b34eeac8de1dbf0a252cc7460ee51b387a404f4fb490ad",
+      "generatedAtUtc": "2026-10-06T18:10:13.9649536Z"
+    },
+    "word-xylophone": {
+      "hash": "931c58e5947b18a2b2aa8d5eed8a283b56771430dab87a693c59b1e76f59b6bc",
+      "generatedAtUtc": "2026-10-06T18:10:14.8756389Z"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "4e8064f51b6b4ade2e7a6d9f98a02f35b92a675a2ee3bddcedcb341960b694a4",
+      "generatedAtUtc": "2026-10-06T18:09:21.984562Z"
+    },
+    "phoneme": {
+      "hash": "6ed8253a14c78d2e2c173b6c5a19f77162bbcac41b905109d723ae911719966a",
+      "generatedAtUtc": "2026-10-06T18:09:22.9022135Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:09:23.8477162Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:09:24.8683072Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:09:25.8159768Z"
+    },
+    "word-queen": {
+      "hash": "6fe27947e5742758810f86ce6930d7d096b4bb4578ce4d7bd2a4231b78e102c4",
+      "generatedAtUtc": "2026-10-06T18:09:26.7185111Z"
+    },
+    "word-quilt": {
+      "hash": "7ad6f8657210ad2b4d50bb1fdac24db23df04c173e138875c5929652b9a4012a",
+      "generatedAtUtc": "2026-10-06T18:09:27.625901Z"
+    }
+  }
+}

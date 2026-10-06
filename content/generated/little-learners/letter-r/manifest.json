@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "245923bd6670f75900b7e9b0f3183f7282a393985170179681a8f6a4a62a1810",
+      "generatedAtUtc": "2026-10-06T18:09:28.7596459Z"
+    },
+    "phoneme": {
+      "hash": "c48c980b33e4eb96d1a62c6ca4954a01eba86691336a1fd29fad808a312e3fea",
+      "generatedAtUtc": "2026-10-06T18:09:29.6701458Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:09:30.5816055Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:09:31.5020541Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:09:32.5816551Z"
+    },
+    "word-rainbow": {
+      "hash": "801c4dad25554fcf7ee6e06c98eb0efd185a4b3c5c987a7373ca9a2a7963f4df",
+      "generatedAtUtc": "2026-10-06T18:09:33.4935572Z"
+    },
+    "word-rabbit": {
+      "hash": "f355fd0c610bd826fd4a13718260dd99bfcf914638e8fdf2864c6a2d4c8dd5df",
+      "generatedAtUtc": "2026-10-06T18:09:34.380202Z"
+    }
+  }
+}

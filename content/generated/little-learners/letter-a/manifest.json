@@ -1,0 +1,36 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "d3efc7a0fd15763ffe22008fe142e4efe663fe8e727ab38a09f212faeb0d7d03",
+      "generatedAtUtc": "2026-10-06T17:41:47.3203643Z"
+    },
+    "phoneme": {
+      "hash": "58f703c205a4c304fb80aec4ab208f493d37f3dc280639c1a1c82ed42c0c8328",
+      "generatedAtUtc": "2026-10-06T17:41:48.2063723Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T17:41:49.1240554Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T17:41:50.0286849Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T17:41:50.9529954Z"
+    },
+    "word-apple": {
+      "hash": "feb0f840ca6ecc50cbf4bf5d87d40ba8dc54aacf02f53a3dd9860332061754d3",
+      "generatedAtUtc": "2026-10-06T17:41:51.8526764Z"
+    },
+    "word-ant": {
+      "hash": "133791c55a6599fe1b0070e3ac28502e2cffc2ae6138e161d3dea2f987784756",
+      "generatedAtUtc": "2026-10-06T17:41:52.7275288Z"
+    },
+    "word-alligator": {
+      "hash": "b0efb0c2ca88f52701db3649449891fdd83eabda980968ed5f82f101145ccdd3",
+      "generatedAtUtc": "2026-10-06T17:41:53.6746183Z"
+    }
+  }
+}

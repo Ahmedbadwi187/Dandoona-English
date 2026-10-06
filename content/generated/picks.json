@@ -1,0 +1,218 @@
+[
+  {
+    "lesson": "letter-a",
+    "key": "alligator",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Full body, friendly open smile, clearest silhouette of the three",
+    "decidedAtUtc": "2026-10-06T18:23:59.1850741Z"
+  },
+  {
+    "lesson": "letter-a",
+    "key": "ant",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Largest and clearest six-legged ant, simple friendly face",
+    "decidedAtUtc": "2026-10-06T18:24:01.4053005Z"
+  },
+  {
+    "lesson": "letter-a",
+    "key": "apple",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Classic red apple with leaf, plain background, instantly recognisable",
+    "decidedAtUtc": "2026-10-06T18:24:03.6675672Z"
+  },
+  {
+    "lesson": "letter-b",
+    "key": "banana",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Plain banana without a face, unmistakable shape",
+    "decidedAtUtc": "2026-10-06T18:24:05.8582225Z"
+  },
+  {
+    "lesson": "letter-b",
+    "key": "bear",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Sitting teddy-like bear, face and body clearly separated",
+    "decidedAtUtc": "2026-10-06T18:24:08.0427891Z"
+  },
+  {
+    "lesson": "letter-c",
+    "key": "cat",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Front-facing sitting cat, big eyes, clean outline",
+    "decidedAtUtc": "2026-10-06T18:24:10.0623573Z"
+  },
+  {
+    "lesson": "letter-c",
+    "key": "cow",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Front-facing cow with simple black patches, clear at a glance",
+    "decidedAtUtc": "2026-10-06T18:24:12.1203452Z"
+  },
+  {
+    "lesson": "letter-d",
+    "key": "dog",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Sitting puppy, friendly, clean silhouette",
+    "decidedAtUtc": "2026-10-06T18:24:14.1376531Z"
+  },
+  {
+    "lesson": "letter-d",
+    "key": "duck",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Yellow duckling, simple shapes, high contrast on cream",
+    "decidedAtUtc": "2026-10-06T18:24:16.1845977Z"
+  },
+  {
+    "lesson": "letter-e",
+    "key": "elephant",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Grey elephant with pink ears, trunk and ears clearly readable",
+    "decidedAtUtc": "2026-10-06T18:24:18.1491072Z"
+  },
+  {
+    "lesson": "letter-f",
+    "key": "frog",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Front view with big eyes, simplest shape of the two",
+    "decidedAtUtc": "2026-10-06T18:24:20.110442Z"
+  },
+  {
+    "lesson": "letter-g",
+    "key": "goat",
+    "source": "OpenAI",
+    "variant": "v2",
+    "reason": "Brown goat has better contrast on the cream background than the white one",
+    "decidedAtUtc": "2026-10-06T18:24:22.2223104Z"
+  },
+  {
+    "lesson": "letter-h",
+    "key": "horse",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Standing foal with clear mane and tail, side view reads instantly",
+    "decidedAtUtc": "2026-10-06T18:24:24.1981965Z"
+  },
+  {
+    "lesson": "letter-l",
+    "key": "lion",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Front-facing lion with a clear mane, friendly smile",
+    "decidedAtUtc": "2026-10-06T18:24:26.2589434Z"
+  },
+  {
+    "lesson": "letter-m",
+    "key": "monkey",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Sitting monkey, face and curled tail clearly visible",
+    "decidedAtUtc": "2026-10-06T18:24:28.2712622Z"
+  },
+  {
+    "lesson": "letter-o",
+    "key": "octopus",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Symmetrical purple octopus with eight clear arms",
+    "decidedAtUtc": "2026-10-06T18:24:30.3768561Z"
+  },
+  {
+    "lesson": "letter-p",
+    "key": "pig",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Front view with obvious snout, simplest pink silhouette",
+    "decidedAtUtc": "2026-10-06T18:24:32.5615365Z"
+  },
+  {
+    "lesson": "letter-q",
+    "key": "queen",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Crown and gown clearly readable, no extra props to confuse a child",
+    "decidedAtUtc": "2026-10-06T18:24:34.7877516Z"
+  },
+  {
+    "lesson": "letter-r",
+    "key": "rabbit",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Upright ears and fluffy tail, front sitting pose",
+    "decidedAtUtc": "2026-10-06T18:24:36.9973253Z"
+  },
+  {
+    "lesson": "letter-s",
+    "key": "snake",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Clean coil, friendly face, strong green pattern",
+    "decidedAtUtc": "2026-10-06T18:24:39.034039Z"
+  },
+  {
+    "lesson": "letter-t",
+    "key": "tiger",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Front-facing sitting tiger with bold stripes",
+    "decidedAtUtc": "2026-10-06T18:24:40.9731159Z"
+  },
+  {
+    "lesson": "letter-u",
+    "key": "unicorn",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "White pony with a clear horn and rainbow mane",
+    "decidedAtUtc": "2026-10-06T18:24:42.9618192Z"
+  },
+  {
+    "lesson": "letter-v",
+    "key": "violin",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Violin with bow, plain background, no distracting details",
+    "decidedAtUtc": "2026-10-06T18:24:44.8925957Z"
+  },
+  {
+    "lesson": "letter-w",
+    "key": "whale",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Blue whale with water spout, simple and smiling",
+    "decidedAtUtc": "2026-10-06T18:24:46.9419254Z"
+  },
+  {
+    "lesson": "letter-y",
+    "key": "yak",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Front-facing shaggy yak with visible horns",
+    "decidedAtUtc": "2026-10-06T18:24:48.981116Z"
+  },
+  {
+    "lesson": "letter-z",
+    "key": "zebra",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Black and white stripes clearly visible, sitting front view",
+    "decidedAtUtc": "2026-10-06T18:24:51.0397423Z"
+  },
+  {
+    "lesson": "mascot",
+    "key": "mascot",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Friendliest and simplest to redraw: rounded shapes, big eyes, a bandana that doubles as the first unlockable accessory slot, and it matches no lesson word (unlike the bear cub or dino)",
+    "decidedAtUtc": "2026-10-06T18:25:32.688855Z"
+  }
+]

@@ -11,7 +11,8 @@ public class CurriculumTests
     {
         var layout = Layout.FindFrom(AppContext.BaseDirectory);
         var lessons = CurriculumReader.LoadAll(layout.CurriculumDir);
-        lessons.Select(l => l.Id).ShouldBe(["letter-a", "letter-b", "letter-c"]);
+        lessons.Count.ShouldBe(26);
+        lessons.First().Id.ShouldBe("letter-a");
         lessons.ShouldAllBe(l => l.Activities.Contains("record-and-listen") && !l.Activities.Contains("say-it"));
     }
 

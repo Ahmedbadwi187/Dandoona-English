@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "3624d76bb08e9c5d52ba56098a27cd9578a5e2db7aebe7220fa53535fdd41132",
+      "generatedAtUtc": "2026-10-06T18:08:14.6256585Z"
+    },
+    "phoneme": {
+      "hash": "6ccccbccb91e1256332a9bdcfae63abd6b4f49adc0bc522721e550251b24b3fd",
+      "generatedAtUtc": "2026-10-06T18:08:15.5091422Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:08:16.4700055Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:08:17.3887133Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:08:18.3129963Z"
+    },
+    "word-gift": {
+      "hash": "b8e93a6fe766b3fac44b9fbb935a21f7df99b6340f3280cd03c9460a0396fb95",
+      "generatedAtUtc": "2026-10-06T18:08:19.2238121Z"
+    },
+    "word-goat": {
+      "hash": "e9fdeac3f1ada3d4c3774215e7d31207e1a562c006955c5ea7dd5f13ea4e2775",
+      "generatedAtUtc": "2026-10-06T18:08:20.1311081Z"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "1ffb3548fe5a94cffab6316b0d3866a26f83de49b7ad8be57c7225e6f3a90552",
+      "generatedAtUtc": "2026-10-06T18:09:56.0453238Z"
+    },
+    "phoneme": {
+      "hash": "6ff2514273fb8eb202afb15e70c1a147b1fe7e3cbf14a473a560cbd677affb8e",
+      "generatedAtUtc": "2026-10-06T18:09:56.9563415Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:09:57.9096655Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:09:58.8727707Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:09:59.7951702Z"
+    },
+    "word-van": {
+      "hash": "6b5c948875f2ee78e78d827d12744ba7d6d52a6d709b5401d29a1da2d404feb6",
+      "generatedAtUtc": "2026-10-06T18:10:00.6790919Z"
+    },
+    "word-violin": {
+      "hash": "dbe0a8ac070765d2642af5a8ddb91f20842bce0b575b86e9a73274d25c32c216",
+      "generatedAtUtc": "2026-10-06T18:10:01.5883769Z"
+    }
+  }
+}

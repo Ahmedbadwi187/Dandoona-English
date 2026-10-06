@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "c8ed15bd293c2f6bbc02fb20cdedaee0314ac053e72fbad206cd0107345e8a27",
+      "generatedAtUtc": "2026-10-06T18:09:42.106634Z"
+    },
+    "phoneme": {
+      "hash": "fc4b1c2dfab2d1a6b2eb7d3fb943b66a6dfc9627d1b82c946a764dcf60b3f25e",
+      "generatedAtUtc": "2026-10-06T18:09:43.01753Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:09:43.9472892Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:09:44.9054367Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:09:45.841541Z"
+    },
+    "word-tree": {
+      "hash": "9775974cdf6f62a43813eb422a02e6959244b34749ea40e17b4e287fe4b86b44",
+      "generatedAtUtc": "2026-10-06T18:09:46.7925847Z"
+    },
+    "word-tiger": {
+      "hash": "4d621a741640eb32409c20111fb061742e289d2b5fb8078c6765dc7fae528ece",
+      "generatedAtUtc": "2026-10-06T18:09:47.717813Z"
+    }
+  }
+}

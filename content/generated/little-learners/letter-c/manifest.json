@@ -1,0 +1,36 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "0aa2e93f5a8db33859d7c46d45eb3cf8b05c7b815407f76fce74968f1395bbd5",
+      "generatedAtUtc": "2026-10-06T17:42:12.2235384Z"
+    },
+    "phoneme": {
+      "hash": "3550b3285b04995a676e81f5e683c8b26ba8c18fc52f06e6a51bb04bff4ad4fe",
+      "generatedAtUtc": "2026-10-06T17:42:13.2138712Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T17:42:14.1382065Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T17:42:15.0730747Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T17:42:16.1226497Z"
+    },
+    "word-cat": {
+      "hash": "2460cec6e82b3db3549651e8f74925d37cf5403a2c82ca36ee038dac2a056a08",
+      "generatedAtUtc": "2026-10-06T17:42:17.055069Z"
+    },
+    "word-car": {
+      "hash": "e4d1c61b4346190bd8197fd4b9b6b9d58e71cc930446011731b70c456af688c9",
+      "generatedAtUtc": "2026-10-06T17:42:17.9504254Z"
+    },
+    "word-cow": {
+      "hash": "395b4589aed4eb41d1f563749af9a9dd3f2ed5ce3ec2f643bfb571e63b25a8de",
+      "generatedAtUtc": "2026-10-06T17:42:18.8550799Z"
+    }
+  }
+}

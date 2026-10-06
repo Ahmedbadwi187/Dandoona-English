@@ -1,0 +1,36 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "f098f35703569aedad01397ca200741df237f42e9ccd3ecd7cb904c2ff083fe3",
+      "generatedAtUtc": "2026-10-06T17:42:01.5280018Z"
+    },
+    "phoneme": {
+      "hash": "6b9d215671e90d91dd3f5c973e9b03a2e10c628ae1bf808bbaaa3106da3f752a",
+      "generatedAtUtc": "2026-10-06T17:42:02.481112Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T17:42:03.4075356Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T17:42:04.325822Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T17:42:05.2848044Z"
+    },
+    "word-ball": {
+      "hash": "3892233636623817ad01bd4a8af65cd41dd9fb364705f772407bbc85ed689699",
+      "generatedAtUtc": "2026-10-06T17:42:06.224393Z"
+    },
+    "word-bear": {
+      "hash": "b5bbd8e4156f1bd35bf8d40b00d28c8c2ddbe1e3cb3f9e5e7e9788fc00c635ba",
+      "generatedAtUtc": "2026-10-06T17:42:07.1432878Z"
+    },
+    "word-banana": {
+      "hash": "f8e8b0326f66aebe31cab9cc1343d1a28e8e5c6bfbe0f9fb37018958d4e06689",
+      "generatedAtUtc": "2026-10-06T17:42:08.0661053Z"
+    }
+  }
+}

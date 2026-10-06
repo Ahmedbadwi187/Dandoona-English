@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "ddab9986e56ee8718b00db117b75203a5c792f8084ef2e052aa05b3b78f989d1",
+      "generatedAtUtc": "2026-10-06T18:09:35.5510441Z"
+    },
+    "phoneme": {
+      "hash": "aa975b673432420a410f7aa602275474732227d3996e1c498461413ae7c98a2e",
+      "generatedAtUtc": "2026-10-06T18:09:36.4178281Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:09:37.3390875Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:09:38.2586399Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:09:39.1731452Z"
+    },
+    "word-sun": {
+      "hash": "d9eed873a6681e7d456a4bfaca8fe91ad8acbcd13ec196b32c63098e2ca16e95",
+      "generatedAtUtc": "2026-10-06T18:09:40.0783542Z"
+    },
+    "word-snake": {
+      "hash": "dfd331fb9961c759bc39bce2b6bc1615eecf296b3918996b9f62741e21e8d6d4",
+      "generatedAtUtc": "2026-10-06T18:09:41.0484769Z"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "a64d34c63cf897dc4ccdcd6aa7456726968f1b4a34c31f9211721a8a115723f5",
+      "generatedAtUtc": "2026-10-06T18:09:01.7339214Z"
+    },
+    "phoneme": {
+      "hash": "0af750904b792a1375ae1a15d50d01d9cb1cbb5726dc4d29850e82fca9665898",
+      "generatedAtUtc": "2026-10-06T18:09:02.6475654Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:09:03.6505553Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:09:04.7037753Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:09:05.6266388Z"
+    },
+    "word-nest": {
+      "hash": "14bbf9be887e1f62485fad247d4d2ac23ef1a15b25b1b2f0aa77007836acabbb",
+      "generatedAtUtc": "2026-10-06T18:09:06.5701245Z"
+    },
+    "word-nut": {
+      "hash": "fba779d32e1e002ce0177596c5026990a6ba8b3ce74b5d6a0ab2b5b3ff6f0fad",
+      "generatedAtUtc": "2026-10-06T18:09:07.4585016Z"
+    }
+  }
+}

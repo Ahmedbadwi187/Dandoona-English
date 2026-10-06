@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "1b9061e1bc2b44134abe9fd448d6773ab1f09af066270194058bd2ea2010a08c",
+      "generatedAtUtc": "2026-10-06T18:07:54.2133048Z"
+    },
+    "phoneme": {
+      "hash": "c9ee943267c7dc5fa96e301cc006ce1d70cf6ecc4562e4552cd3198d4d58666e",
+      "generatedAtUtc": "2026-10-06T18:07:55.1714415Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:07:56.1360711Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:07:57.0711568Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:07:58.0329862Z"
+    },
+    "word-dog": {
+      "hash": "06d7cb057f611e782d5eade87ef2366b653f296cb28067027eab2c5a91996b37",
+      "generatedAtUtc": "2026-10-06T18:07:58.9611054Z"
+    },
+    "word-duck": {
+      "hash": "6ce141c01cb70c38a4224fce0f0b8bbd1b379cd155f8c5239259f323ccfd4b7b",
+      "generatedAtUtc": "2026-10-06T18:07:59.8756469Z"
+    }
+  }
+}

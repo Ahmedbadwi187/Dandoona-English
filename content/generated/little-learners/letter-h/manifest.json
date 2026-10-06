@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "bbd2d2153b1f5744957d06371e441ff79b3ea206500779a5db4436767e6239fa",
+      "generatedAtUtc": "2026-10-06T18:08:21.2846783Z"
+    },
+    "phoneme": {
+      "hash": "9b5ffbfb8960b9edb91060c445fdbd3489f889e84e8aa4f152c7df513f627976",
+      "generatedAtUtc": "2026-10-06T18:08:22.1851781Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:08:23.1224789Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:08:24.0446884Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:08:24.9772104Z"
+    },
+    "word-hat": {
+      "hash": "4ca3cb84ea354a6c04074dca83c8817b30317d08d2d2c17690b1d46959f95b3b",
+      "generatedAtUtc": "2026-10-06T18:08:25.9084308Z"
+    },
+    "word-horse": {
+      "hash": "ef4906c6a09414cb30db8daeb26227d6f088752652681fb717e2d604fada2250",
+      "generatedAtUtc": "2026-10-06T18:08:26.8197938Z"
+    }
+  }
+}

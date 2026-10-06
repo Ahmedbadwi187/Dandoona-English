@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "60c8d9fd779eaf3279d4ef36eeb393b4826af4fa7cb78196cf6f79608680e4a5",
+      "generatedAtUtc": "2026-10-06T18:10:22.8872707Z"
+    },
+    "phoneme": {
+      "hash": "f3a6023710a63281ba38467f145a936e7b7a79fbec7cb0a43c620e54e75ac495",
+      "generatedAtUtc": "2026-10-06T18:10:23.8168457Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:10:24.7526741Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:10:25.6667687Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:10:26.5950251Z"
+    },
+    "word-zebra": {
+      "hash": "bf4abd8c6af0d31ef8251d0c9aff5be066819b6936b6cd59f8d0f47ce7c78839",
+      "generatedAtUtc": "2026-10-06T18:10:27.5041338Z"
+    },
+    "word-zip": {
+      "hash": "3f1eb1d5bf094f3149fe9977af270904dd94f0a351181446be1451c292c8cffd",
+      "generatedAtUtc": "2026-10-06T18:10:28.3911419Z"
+    }
+  }
+}

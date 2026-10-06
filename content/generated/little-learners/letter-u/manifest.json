@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "31d7c575ba3ee30b18a0779806dde5c65a5fd8a629d3ede00edc373a08221ddb",
+      "generatedAtUtc": "2026-10-06T18:09:48.8328565Z"
+    },
+    "phoneme": {
+      "hash": "c466e13d286fe13be7bd257ea5565634fdf8454e272905ebf971574511381ef5",
+      "generatedAtUtc": "2026-10-06T18:09:49.7519809Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:09:50.7205391Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:09:51.6792556Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:09:52.6050852Z"
+    },
+    "word-umbrella": {
+      "hash": "a3a9189ddb549f8ab137864ddec3453c45e36eaeb971cac8a1d36c810e069b62",
+      "generatedAtUtc": "2026-10-06T18:09:53.964027Z"
+    },
+    "word-unicorn": {
+      "hash": "b3e623427d9599772dfaded28b11e1a3cefcd3ac22fd8a77dbb91030d077dfa0",
+      "generatedAtUtc": "2026-10-06T18:09:54.8984317Z"
+    }
+  }
+}

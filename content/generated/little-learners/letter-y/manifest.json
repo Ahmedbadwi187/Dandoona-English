@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "8fee9ee1a915461d403273dcb05a90735554b7f2515bb902066d41629ab30ef5",
+      "generatedAtUtc": "2026-10-06T18:10:16.0079565Z"
+    },
+    "phoneme": {
+      "hash": "c6c46b3bd9b3b2f718186731c6ab44c85df49ac837a37d379812ac6a1b294f86",
+      "generatedAtUtc": "2026-10-06T18:10:16.912731Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:10:18.0716246Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:10:19.0448047Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:10:19.95276Z"
+    },
+    "word-yo-yo": {
+      "hash": "2064c6714a79f4714535bdaa6eed490c91ec05ca2cb33f71389ea9b1c8b95bcc",
+      "generatedAtUtc": "2026-10-06T18:10:20.8843753Z"
+    },
+    "word-yak": {
+      "hash": "5e61743421008ffaf6a499fcf7c67fd7a4bac5bc797b646efcc5b04cde77b177",
+      "generatedAtUtc": "2026-10-06T18:10:21.7777029Z"
+    }
+  }
+}

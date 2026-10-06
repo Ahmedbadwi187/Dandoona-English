@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "44fcdf52a417403f3ba143d5fe4fe1c66e2cb329efff1b90297187707d6a52dd",
+      "generatedAtUtc": "2026-10-06T18:09:15.3268062Z"
+    },
+    "phoneme": {
+      "hash": "8869a403bac6b20841e140eb16324dc995c7b8571b19ded98f6342c3d47b8fc3",
+      "generatedAtUtc": "2026-10-06T18:09:16.2728701Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:09:17.2122638Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:09:18.1427917Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:09:19.0539294Z"
+    },
+    "word-pig": {
+      "hash": "add7c0c8173e7fdfafa483c096e3c283625cc0df4b4e9f693fd569dcfe756fbc",
+      "generatedAtUtc": "2026-10-06T18:09:19.9516488Z"
+    },
+    "word-pizza": {
+      "hash": "b777c98a9bfc9192078d898ae30570d48c08705c0c968233c025e255ee910971",
+      "generatedAtUtc": "2026-10-06T18:09:20.8750563Z"
+    }
+  }
+}

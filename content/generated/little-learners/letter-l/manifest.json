@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "6d07d92c1864d656c0eb2e9edcdd372a6b8dc1303ec081bd2f3ccff94f62757d",
+      "generatedAtUtc": "2026-10-06T18:08:48.0410218Z"
+    },
+    "phoneme": {
+      "hash": "0780376f232729a998fe2feb8da54b537f2946af9a5424d32b9aacf469c75f81",
+      "generatedAtUtc": "2026-10-06T18:08:48.9426227Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:08:49.8885791Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:08:50.8757286Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:08:51.898133Z"
+    },
+    "word-lion": {
+      "hash": "c2ea1af88593355e8ad804f11a91ddc2c681ad9fffb8ce843a61fe94937028cf",
+      "generatedAtUtc": "2026-10-06T18:08:52.8373034Z"
+    },
+    "word-leaf": {
+      "hash": "436ef58be4a26d9b8fba8096324392fcf0c66b2aa288c93dda59de8392cd4a02",
+      "generatedAtUtc": "2026-10-06T18:08:53.7552681Z"
+    }
+  }
+}

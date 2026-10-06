@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "fc2dce8fc41421b2b5f72bfd21386d9b6cef805825004bea7634fbaec6cad24b",
+      "generatedAtUtc": "2026-10-06T18:08:34.7001123Z"
+    },
+    "phoneme": {
+      "hash": "4793ee3be937197d787d5bd06affce5bb0f39aaec1f2b71d3924a6ba10da35c2",
+      "generatedAtUtc": "2026-10-06T18:08:35.6061713Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:08:36.5262598Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:08:37.465451Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:08:38.378736Z"
+    },
+    "word-jar": {
+      "hash": "642058250581dde5245685bcc6dd5452ec465539e91a0ab7f370eb4b119ae6be",
+      "generatedAtUtc": "2026-10-06T18:08:39.2864598Z"
+    },
+    "word-juice": {
+      "hash": "b2d7f18f3eda3825f2c03dc1ebfd0146a290ea84a95ceecc358ac80654cda1ec",
+      "generatedAtUtc": "2026-10-06T18:08:40.2022093Z"
+    }
+  }
+}

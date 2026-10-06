@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "d8f1c7aa15005444566dc4003e9395614bf1ad687436476eba42a2d73894991e",
+      "generatedAtUtc": "2026-10-06T18:08:27.9726276Z"
+    },
+    "phoneme": {
+      "hash": "d21c531379e56c38a136d2f358b804a6d24e06847ebebbd687380257bf1d1090",
+      "generatedAtUtc": "2026-10-06T18:08:28.8931578Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:08:29.8277483Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:08:30.7858899Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:08:31.7138592Z"
+    },
+    "word-ice-cream": {
+      "hash": "77fdf98687001569126f22183f754f05597bee08b3e268cb72635a6c5bffc3f4",
+      "generatedAtUtc": "2026-10-06T18:08:32.6481004Z"
+    },
+    "word-igloo": {
+      "hash": "d29db22b2f5760b2bb27c64ff91d2f8b6fa5243445958c812f9f08dfb32adbc3",
+      "generatedAtUtc": "2026-10-06T18:08:33.5878993Z"
+    }
+  }
+}

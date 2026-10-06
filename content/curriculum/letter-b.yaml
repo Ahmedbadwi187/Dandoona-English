@@ -4,7 +4,7 @@ level: pre-a1
 letter: B
 phoneme: "/b/"
 words:
-  - { word: ball, imagePrompt: "a bright blue bouncy ball" }
+  - { word: ball, imagePrompt: "a round blue beach ball with white and yellow stripes", source: svg }
   - { word: bear, imagePrompt: "a friendly brown cartoon bear" }
   - { word: banana, imagePrompt: "a ripe yellow banana" }
 narration:

@@ -79,3 +79,19 @@ Exported names are stable snake_case, relative to `assets/`:
 ```
 Optional fields (`mascot`, `letter`, `phoneme`) are omitted when absent. Letters and words are drawn by the app, so
 images contain no text.
+
+## Added in the autonomous pass (2026-10-06)
+- **Self-drawn images:** a word with `source: svg` in the curriculum is never sent to OpenAI. Its drawing lives at
+  `content/art/{track}/{lesson}/{key}.svg` (viewBox 0 0 512 512, a cream background rect, soft ink outline), uses ONLY
+  colors from `content/style/palette.json` and contains no text. A test enforces this for every SVG, and checks that every
+  svg word has a drawing and every drawing has a word. Export copies SVGs unchanged and the JSON points at `.svg`
+  (the app renders them with flutter_svg). OpenAI prompts get the same palette appended.
+- **Cost ledger:** `content/generated/cost-ledger.json` records every API call (OpenAI cost comes from the usage in
+  the response, ElevenLabs from characters). A run that would push the total over `pricing.budgetUsd` ($25) is
+  refused before any API call. Rates in `generation.json` come from the providers' pricing pages.
+- **`approve --lesson L --word W --variant N --reason "..."`** copies the variant to `W.approved.webp` and records the pick;
+  `mascot --approve N --reason "..."` does the same for the mascot.
+- **`decisions`** regenerates `docs/asset-decisions.md` (source and reason for every image, phonemes needing listening, spend).
+- **`review`** writes `content/generated/review.html`.
+- **No ffmpeg?** `export` warns and copies files unchanged; run `export --force` after installing ffmpeg to produce
+  the optimised mono/normalised audio and 768 px WebP.

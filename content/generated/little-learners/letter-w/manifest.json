@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "a7d68e1c4236a6b49d51c6ed492c8dc27336e75f30d72d8de2387d02ce4660d1",
+      "generatedAtUtc": "2026-10-06T18:10:02.651342Z"
+    },
+    "phoneme": {
+      "hash": "07dfaa2a947eae84af865f4ecd1626c0c19439513038794e7d40276b80505895",
+      "generatedAtUtc": "2026-10-06T18:10:03.5255132Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:10:04.4983197Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:10:05.4265257Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:10:06.3371831Z"
+    },
+    "word-whale": {
+      "hash": "3d7dac2bd72ceecf056791d54157dbffbbfc2234d065c96a4ac5b7190aa8d59a",
+      "generatedAtUtc": "2026-10-06T18:10:07.2537608Z"
+    },
+    "word-window": {
+      "hash": "8c354a3a206e9846484a953637fdec9ecf622d59970dc680281d6134a4fa8bfb",
+      "generatedAtUtc": "2026-10-06T18:10:08.1604896Z"
+    }
+  }
+}

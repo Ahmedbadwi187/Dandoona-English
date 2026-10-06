@@ -1,0 +1,32 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "e0b53c7aabb8cdb829d1efb96301cce961c2aad16b4d78dfacd59d2b25c30322",
+      "generatedAtUtc": "2026-10-06T18:09:08.5807373Z"
+    },
+    "phoneme": {
+      "hash": "eed2dd3da1d1d5ad1d99f0cfb9ed7fc66835ddf66b7e0eb5681eea109f2f17e6",
+      "generatedAtUtc": "2026-10-06T18:09:09.4906934Z"
+    },
+    "praise-0": {
+      "hash": "103932fff7272e31ec68e48e2a14603115801abba021f3ac5d8e6de48a191201",
+      "generatedAtUtc": "2026-10-06T18:09:10.4303044Z"
+    },
+    "praise-1": {
+      "hash": "1af4459f50c7ccd9f574f50d42b598bfc4e3db5c61c1d7a70591c306b6c53d54",
+      "generatedAtUtc": "2026-10-06T18:09:11.3703992Z"
+    },
+    "praise-2": {
+      "hash": "8c0496f7871dac94a0ebf310fceff73bd9a056842ed4ab6782cce4e6787972fe",
+      "generatedAtUtc": "2026-10-06T18:09:12.2980528Z"
+    },
+    "word-orange": {
+      "hash": "073729fe2678ad51f0dce3a276f226ed1d7da9ed89e5deee22bdb658cf99b11b",
+      "generatedAtUtc": "2026-10-06T18:09:13.1947499Z"
+    },
+    "word-octopus": {
+      "hash": "b0b0572db1ae515a7a98893ddd4b02536380ae226783a8d162a30ee3352d702c",
+      "generatedAtUtc": "2026-10-06T18:09:14.2204154Z"
+    }
+  }
+}
