@@ -33,6 +33,9 @@ abstract class SyncApi {
   Future<String> createChild(String accessToken,
       {required String name, required String avatarKey, required int birthYear, required String track});
   Future<SubmitResult> submitProgress(String accessToken, String serverChildId, List<Map<String, Object?>> items);
+
+  /// Permanently deletes the account and all its data on the server (needs the password again).
+  Future<void> deleteAccount(String accessToken, String password);
 }
 
 /// HTTP implementation. Release builds must point at an https:// server (Android blocks cleartext by default;
@@ -129,5 +132,10 @@ class HttpSyncApi implements SyncApi {
   Future<SubmitResult> submitProgress(String accessToken, String serverChildId, List<Map<String, Object?>> items) async {
     final json = await _post('api/children/$serverChildId/progress', {'items': items}, token: accessToken);
     return SubmitResult(accepted: json['accepted'] as int, duplicates: json['duplicates'] as int);
+  }
+
+  @override
+  Future<void> deleteAccount(String accessToken, String password) async {
+    await _send('POST', 'api/account/delete', {'password': password}, accessToken);
   }
 }

@@ -62,6 +62,11 @@ class SyncController extends Notifier<SyncUiState> {
         return 'syncDone';
       });
 
+  Future<void> deleteAccount(String password) => _run(() async {
+        await _service.deleteAccount(password);
+        return 'accountDeleted';
+      });
+
   Future<void> signOut() async {
     await _service.signOut();
     state = state.copyWith(signedIn: false, clearMessage: true);

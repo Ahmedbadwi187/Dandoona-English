@@ -146,6 +146,20 @@ class SyncService {
     await store.save(SyncState(baseUrl: s.baseUrl, email: s.email)); // keep the address, forget the mapping
   }
 
+  /// Deletes the server account and every record on it, then forgets the account on this device.
+  /// Local profiles and progress stay on the device (they belong to the family, not the account).
+  Future<void> deleteAccount(String password) async {
+    final state = store.load();
+    final refreshToken = await tokens.readRefreshToken();
+    if (refreshToken == null || state.baseUrl.isEmpty) throw const SyncException(SyncErrorKind.auth, 'Not signed in');
+    final api = apiFor(state.baseUrl);
+    final auth = await api.refresh(refreshToken);
+    await tokens.saveRefreshToken(auth.refreshToken); // tokens rotate: a refused (wrong-password) attempt must not strand the old one
+    await api.deleteAccount(auth.accessToken, password);
+    await tokens.clear();
+    await store.save(SyncState(baseUrl: state.baseUrl));
+  }
+
   Future<bool> isSignedIn() async => (await tokens.readRefreshToken()) != null && store.load().baseUrl.isNotEmpty;
 
   Future<SyncReport> syncNow({required List<ChildProfile> children, required List<ProgressRecord> progress}) async {

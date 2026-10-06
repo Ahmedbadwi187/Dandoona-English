@@ -39,9 +39,13 @@ class FakeSyncApi implements SyncApi {
     if (offline) throw const SyncException(SyncErrorKind.network, 'offline');
   }
 
+  /// Like the real server, refresh tokens are single-use: using one rotates it, and an old one is rejected.
+  final Set<String> _validRefresh = {};
+
   @override
   Future<AuthTokens> register({required String email, required String password, required String displayName}) async {
     _net();
+    _validRefresh.add('refresh-0');
     return const AuthTokens(accessToken: 'access-0', refreshToken: 'refresh-0');
   }
 
@@ -49,13 +53,16 @@ class FakeSyncApi implements SyncApi {
   Future<AuthTokens> login({required String email, required String password}) async {
     _net();
     if (failLogin) throw const SyncException(SyncErrorKind.auth, 'bad credentials');
+    _validRefresh.add('refresh-0');
     return const AuthTokens(accessToken: 'access-0', refreshToken: 'refresh-0');
   }
 
   @override
   Future<AuthTokens> refresh(String refreshToken) async {
     _net();
+    if (!_validRefresh.remove(refreshToken)) throw const SyncException(SyncErrorKind.auth, 'Invalid refresh token.');
     refreshCalls++;
+    _validRefresh.add('refresh-$refreshCalls');
     return AuthTokens(accessToken: 'access-$refreshCalls', refreshToken: 'refresh-$refreshCalls');
   }
 
@@ -77,6 +84,18 @@ class FakeSyncApi implements SyncApi {
       if (stored[serverChildId]!.add(i['clientRecordId'] as String)) accepted++;
     }
     return SubmitResult(accepted: accepted, duplicates: items.length - accepted);
+  }
+
+  bool accountDeleted = false;
+  String? deletedWithPassword;
+  bool wrongPassword = false;
+
+  @override
+  Future<void> deleteAccount(String accessToken, String password) async {
+    _net();
+    deletedWithPassword = password;
+    if (wrongPassword) throw const SyncException(SyncErrorKind.auth, 'Password is incorrect');
+    accountDeleted = true;
   }
 }
 
@@ -359,6 +378,72 @@ void main() {
       final raw = (await mockPrefs()).getKeys().join();
       expect(raw.contains('secret'), isFalse);
       expect(store.load().toJson().toString().contains('secret'), isFalse);
+    });
+  });
+
+  group('delete account', () {
+    test('deletes on the server, forgets the account locally, keeps the address', () async {
+      final api = FakeSyncApi();
+      final tokens = MemoryTokenStore();
+      final store = SyncStore(await mockPrefs());
+      final service = SyncService(apiFor: (_) => api, store: store, tokens: tokens);
+      await service.login('http://x', 'mom@example.com', 'secret');
+      await service.syncNow(children: [kid('c1')], progress: []);
+
+      await service.deleteAccount('secret');
+      expect(api.accountDeleted, isTrue);
+      expect(api.deletedWithPassword, 'secret');
+      expect(await service.isSignedIn(), isFalse);
+      expect(tokens.token, isNull);
+      expect(store.load().childMap, isEmpty); // a future account starts from scratch
+      expect(store.load().baseUrl, 'http://x');
+    });
+
+    test('a wrong password leaves the account and the sign-in untouched', () async {
+      final api = FakeSyncApi()..wrongPassword = true;
+      final tokens = MemoryTokenStore();
+      final service = SyncService(apiFor: (_) => api, store: SyncStore(await mockPrefs()), tokens: tokens);
+      await service.login('http://x', 'mom@example.com', 'secret');
+      await expectLater(service.deleteAccount('nope'), throwsA(isA<SyncException>()));
+      expect(api.accountDeleted, isFalse);
+      expect(await service.isSignedIn(), isTrue);
+
+      // the refused attempt used (and rotated) the refresh token: a second attempt must still work
+      api.wrongPassword = false;
+      await service.deleteAccount('secret');
+      expect(api.accountDeleted, isTrue);
+    });
+
+    testWidgets('settings: the confirm dialog needs a password, then signs out', (tester) async {
+      final api = FakeSyncApi();
+      final base = await testOverrides();
+      final container = ProviderContainer(overrides: [
+        ...base,
+        syncApiFactoryProvider.overrideWithValue((_) => api),
+        tokenStoreProvider.overrideWithValue(MemoryTokenStore()),
+      ]);
+      addTearDown(container.dispose);
+      await container.read(syncServiceProvider).login('http://x', 'mom@example.com', 'secret');
+
+      await tester.pumpWidget(UncontrolledProviderScope(container: container, child: const MaterialApp(home: SettingsScreen())));
+      await tester.pump();
+      await tester.scrollUntilVisible(find.byKey(const Key('sync-delete')), 200, scrollable: find.byType(Scrollable).first);
+
+      await tester.tap(find.byKey(const Key('sync-delete')));
+      await tester.pumpAndSettle();
+      expect(find.text('حذف الحساب نهائيًا؟'), findsOneWidget);
+      await tester.tap(find.byKey(const Key('delete-confirm'))); // empty password: nothing is sent
+      await tester.pumpAndSettle();
+      expect(api.accountDeleted, isFalse);
+
+      await tester.tap(find.byKey(const Key('sync-delete')));
+      await tester.pumpAndSettle();
+      await tester.enterText(find.byKey(const Key('delete-password')), 'secret');
+      await tester.tap(find.byKey(const Key('delete-confirm')));
+      await tester.pumpAndSettle();
+      expect(api.accountDeleted, isTrue);
+      expect(find.text('تم حذف الحساب'), findsOneWidget);
+      expect(find.byKey(const Key('sync-login')), findsOneWidget);
     });
   });
 

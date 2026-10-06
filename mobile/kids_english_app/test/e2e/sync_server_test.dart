@@ -65,6 +65,21 @@ void main() {
     expect(summary['totalStars'], records.fold<int>(0, (a, r) => a + r.stars));
   }, skip: skip);
 
+  test('deleting the account erases it on the server: wrong password refused, right password deletes, login then fails', () async {
+    final email = 'e2e-${newUuid().substring(0, 8)}@test.com';
+    final tokens = MemoryTokenStore();
+    final service = SyncService(apiFor: (u) => HttpSyncApi(u), store: SyncStore(await mockPrefs()), tokens: tokens);
+    await service.register(url!, email, 'Passw0rd!x');
+
+    await expectLater(service.deleteAccount('wrong-password'), throwsA(isA<SyncException>().having((e) => e.kind, 'kind', SyncErrorKind.auth)));
+    expect(await service.isSignedIn(), isTrue); // still signed in, still exists
+
+    await service.deleteAccount('Passw0rd!x');
+    expect(await service.isSignedIn(), isFalse);
+    await expectLater(HttpSyncApi(url).login(email: email, password: 'Passw0rd!x'),
+        throwsA(isA<SyncException>().having((e) => e.kind, 'kind', SyncErrorKind.auth)));
+  }, skip: skip);
+
   test('a wrong password is reported as an auth error, an unreachable server as a network error', () async {
     final email = 'e2e-${newUuid().substring(0, 8)}@test.com';
     final api = HttpSyncApi(url!);

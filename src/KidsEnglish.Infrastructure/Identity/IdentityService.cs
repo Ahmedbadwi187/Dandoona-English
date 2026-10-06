@@ -31,4 +31,10 @@ internal class IdentityService(UserManager<ApplicationUser> users) : IIdentitySe
 
     public async Task<string?> GetEmailAsync(Guid userId, CancellationToken ct) =>
         (await users.FindByIdAsync(userId.ToString()))?.Email;
+
+    public async Task<bool> DeleteUserAsync(Guid userId, CancellationToken ct)
+    {
+        var user = await users.FindByIdAsync(userId.ToString());
+        return user is not null && (await users.DeleteAsync(user)).Succeeded;
+    }
 }

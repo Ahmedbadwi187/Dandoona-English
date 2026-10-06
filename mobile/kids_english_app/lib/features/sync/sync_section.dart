@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/palette.dart';
+import 'delete_account_dialog.dart';
 import '../settings/settings.dart';
 import 'sync_controller.dart';
 
@@ -116,6 +117,14 @@ class _SyncSectionState extends ConsumerState<SyncSection> {
                   const SizedBox(width: 12),
                   OutlinedButton(key: const Key('sync-signout'), onPressed: ui.busy ? null : controller.signOut, child: Text(s('signOut'))),
                 ],
+              ),
+              const SizedBox(height: 8),
+              TextButton.icon(
+                key: const Key('sync-delete'),
+                style: TextButton.styleFrom(foregroundColor: Palette.red),
+                onPressed: ui.busy ? null : () => confirmDeleteAccount(context, s, controller),
+                icon: const Icon(Icons.delete_forever_rounded),
+                label: Text(s('deleteAccount')),
               ),
             ],
             if (ui.busy) const Padding(padding: EdgeInsets.only(top: 12), child: LinearProgressIndicator()),

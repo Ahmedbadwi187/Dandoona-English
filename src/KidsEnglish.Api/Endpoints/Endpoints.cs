@@ -43,6 +43,16 @@ public static class Endpoints
         });
     }
 
+    public static void MapAccountEndpoints(this IEndpointRouteBuilder app)
+    {
+        // POST (not DELETE) so every HTTP client can send the password in a body.
+        app.MapPost("/api/account/delete", async (DeleteAccountRequest r, AccountService s, CancellationToken ct) =>
+        {
+            await s.DeleteAsync(r, ct);
+            return Results.NoContent();
+        }).WithTags("Account").RequireAuthorization().RequireRateLimiting("auth");
+    }
+
     public static void MapProgressEndpoints(this IEndpointRouteBuilder app)
     {
         var children = app.MapGroup("/api/children").WithTags("Progress").RequireAuthorization();

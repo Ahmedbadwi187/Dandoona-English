@@ -23,6 +23,8 @@ public interface IIdentityService
     /// <summary>Returns the user id on valid credentials; null otherwise (including lockout).</summary>
     Task<Guid?> ValidateCredentialsAsync(string email, string password, CancellationToken ct);
     Task<string?> GetEmailAsync(Guid userId, CancellationToken ct);
+    /// <summary>Deletes the Identity user. The database cascades to the parent profile, children, progress and tokens.</summary>
+    Task<bool> DeleteUserAsync(Guid userId, CancellationToken ct);
 }
 
 public record AccessToken(string Token, DateTime ExpiresAt);
