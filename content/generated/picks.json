@@ -210,9 +210,9 @@
   {
     "lesson": "mascot",
     "key": "mascot",
-    "source": "OpenAI",
-    "variant": "v1",
-    "reason": "Friendliest and simplest to redraw: rounded shapes, big eyes, a bandana that doubles as the first unlockable accessory slot, and it matches no lesson word (unlike the bear cub or dino)",
+    "source": "Owner (original character)",
+    "variant": "dandoona-cutout",
+    "reason": "Dandoona (دندونة) is the owner's own original character from their YouTube channel; copied from the channel's artwork (dandoona-cutout.png, padded to a transparent square) so the app matches the channel brand",
     "decidedAtUtc": "2026-10-06T18:25:32.688855Z"
   }
 ]

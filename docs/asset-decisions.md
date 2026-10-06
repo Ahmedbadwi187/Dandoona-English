@@ -7,7 +7,13 @@ To swap a pick: `approve --lesson <id> --word <key> --variant <n> --reason "..."
 - Rule: self-drawn when a simple flat drawing is clear to a 3-year-old; OpenAI only for animals, detailed objects/food and the mascot. All images follow `content/style/art-style.md` and `content/style/palette.json`.
 
 ## Mascot
-- **OpenAI**, concept v1, locked as `content/style/mascot.reference.webp`. Why: Friendliest and simplest to redraw: rounded shapes, big eyes, a bandana that doubles as the first unlockable accessory slot, and it matches no lesson word (unlike the bear cub or dino)
+- **Owner (original character)**, dandoona-cutout, locked as `content/style/mascot.reference.webp`. Why: Dandoona (دندونة) is the owner's own original character from their YouTube channel; copied from the channel's artwork (dandoona-cutout.png, padded to a transparent square) so the app matches the channel brand
+
+Replaced mascot (2026-10-07): the generated otter (OpenAI concept v1, brown otter with a teal bandana). Its assets were:
+- `content/style/mascot.reference.webp` (replaced by Dandoona), `mobile/kids_english_app/assets/images/mascot/mascot.webp` (re-exported from the new reference);
+- `content/generated/mascot/_review/mascot.v1..v4.webp` (concept sheets, deleted);
+- the 5 accessory SVGs in `content/art/accessories/` were drawn for the otter's proportions and brown outline, so they were redrawn for Dandoona (night-ink outline, positions fitted to her head and chest).
+No lesson illustration contains the otter (no word uses `mascot: true`), so none had to be regenerated.
 
 ## Images
 | Lesson | Word | Source | Pick | Why |

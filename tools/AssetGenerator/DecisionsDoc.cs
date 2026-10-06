@@ -27,7 +27,13 @@ public static class DecisionsDoc
         var mascot = picks.FirstOrDefault(p => p.Lesson == "mascot");
         sb.AppendLine(mascot is null
             ? "Not locked yet (`mascot --approve N --reason \"...\"`)."
-            : $"- **OpenAI**, concept {mascot.Variant}, locked as `content/style/mascot.reference.webp`. Why: {mascot.Reason}");
+            : $"- **{mascot.Source}**, {mascot.Variant}, locked as `content/style/mascot.reference.webp`. Why: {mascot.Reason}");
+        sb.AppendLine();
+        sb.AppendLine("Replaced mascot (2026-10-07): the generated otter (OpenAI concept v1, brown otter with a teal bandana). Its assets were:");
+        sb.AppendLine("- `content/style/mascot.reference.webp` (replaced by Dandoona), `mobile/kids_english_app/assets/images/mascot/mascot.webp` (re-exported from the new reference);");
+        sb.AppendLine("- `content/generated/mascot/_review/mascot.v1..v4.webp` (concept sheets, deleted);");
+        sb.AppendLine("- the 5 accessory SVGs in `content/art/accessories/` were drawn for the otter's proportions and brown outline, so they were redrawn for Dandoona (night-ink outline, positions fitted to her head and chest).");
+        sb.AppendLine("No lesson illustration contains the otter (no word uses `mascot: true`), so none had to be regenerated.");
         sb.AppendLine();
 
         sb.AppendLine("## Images");
