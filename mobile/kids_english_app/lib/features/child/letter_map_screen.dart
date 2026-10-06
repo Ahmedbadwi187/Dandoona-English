@@ -87,6 +87,22 @@ class _Map extends ConsumerWidget {
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w800)),
               ),
+              BigTap(
+                onTap: () => context.push('/wardrobe'),
+                semanticLabel: 'Mascot wardrobe',
+                child: Container(
+                  key: const Key('open-wardrobe'),
+                  width: 56,
+                  height: 56,
+                  margin: const EdgeInsets.only(right: 12),
+                  decoration: BoxDecoration(
+                    color: Palette.white,
+                    shape: BoxShape.circle,
+                    border: Border.all(color: Palette.ink, width: 3),
+                  ),
+                  child: const Icon(Icons.checkroom_rounded, color: Palette.ink, size: 30),
+                ),
+              ),
               const Icon(Icons.star_rounded, color: Palette.yellow, size: 36),
               const SizedBox(width: 4),
               Text('$totalStars', key: const Key('total-stars'), style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w800)),

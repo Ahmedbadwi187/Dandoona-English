@@ -7,7 +7,9 @@ import '../../core/widgets.dart';
 import '../content/content_repository.dart';
 import '../profiles/child_profile.dart';
 import '../progress/progress.dart';
+import '../progress/weekly_summary.dart';
 import '../settings/settings.dart';
+import 'weekly_view.dart';
 
 /// Parent dashboard (Arabic, RTL by default). Reached only through the parental gate.
 class ParentHomeScreen extends ConsumerWidget {
@@ -63,6 +65,8 @@ class ParentHomeScreen extends ConsumerWidget {
                             '${lessonIds.where((id) => progress.any((r) => r.childId == child.id && r.lessonId == id)).length}'
                             '/${lessonIds.length}',
                           ),
+                          const SizedBox(height: 14),
+                          WeeklyView(summary: summarizeWeek(progress, child.id, ref.read(clockProvider)()), s: s),
                         ],
                       ),
                     ),

@@ -39,7 +39,9 @@ public class ArtAndLedgerTests
         var lessons = CurriculumReader.LoadAll(layout.CurriculumDir);
         var expected = lessons.SelectMany(l => LessonPlan.Images(l).Where(i => i.IsSvg).Select(i => Path.GetFullPath(layout.SvgSource(l, i.Key)))).ToList();
         expected.ShouldAllBe(p => File.Exists(p));
-        var actual = Directory.GetFiles(layout.ArtDir, "*.svg", SearchOption.AllDirectories).Select(Path.GetFullPath).ToList();
+        // accessories/ holds reward art, not lesson words
+        var actual = Directory.GetFiles(layout.ArtDir, "*.svg", SearchOption.AllDirectories)
+            .Where(f => !f.StartsWith(layout.AccessoriesDir, StringComparison.OrdinalIgnoreCase)).Select(Path.GetFullPath).ToList();
         actual.ShouldBe(expected, ignoreOrder: true);
     }
 
@@ -177,5 +179,30 @@ public class PubspecRegistrationTests
         pubspec.ShouldContain("    - assets/images/little_learners/letter_a/");
         pubspec.ShouldContain("    - assets/content/");
         pubspec.ShouldContain("uses-material-design: true");
+    }
+}
+
+public class AccessoryExportTests
+{
+    [Fact]
+    public async Task Export_copies_accessory_svgs_into_the_apps_assets()
+    {
+        using var repo = new TestRepo();
+        var lesson = repo.WriteLessonA(TestRepo.LetterA.Replace(", mascot: true", ""));
+        foreach (var a in LessonPlan.Audio(lesson)) repo.Touch(repo.Layout.AudioGen(lesson, a.Role));
+        foreach (var i in LessonPlan.Images(lesson)) repo.Touch(repo.Layout.ImageApproved(lesson, i.Key));
+        repo.Touch(Path.Combine(repo.Layout.AccessoriesDir, "crown.svg"), "<svg/>");
+
+        await new ExportRunner(repo.Layout, new GenerationConfig(), new FakeMedia(), new StringWriter()).RunAsync("little-learners", [lesson], default);
+
+        File.ReadAllText(Path.Combine(repo.Layout.AssetsDir, "images/accessories/crown.svg")).ShouldBe("<svg/>");
+    }
+
+    [Fact]
+    public void Repo_has_the_five_accessories_the_app_expects()
+    {
+        var layout = Layout.FindFrom(AppContext.BaseDirectory);
+        Directory.GetFiles(layout.AccessoriesDir, "*.svg").Select(Path.GetFileNameWithoutExtension)
+            .ShouldBe(["bow", "bowtie", "crown", "glasses", "party-hat"], ignoreOrder: true);
     }
 }

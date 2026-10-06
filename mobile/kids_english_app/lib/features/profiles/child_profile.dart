@@ -14,6 +14,7 @@ class ChildProfile {
     required this.birthYear,
     required this.createdAt,
     this.track = 'little-learners',
+    this.equippedAccessory,
   });
 
   final String id;
@@ -23,13 +24,18 @@ class ChildProfile {
   final String track;
   final DateTime createdAt;
 
-  ChildProfile copyWith({String? name, String? avatarKey, int? birthYear}) => ChildProfile(
+  /// Accessory id from rewards/accessories.dart currently worn by the mascot for this child (null = none).
+  final String? equippedAccessory;
+
+  ChildProfile copyWith({String? name, String? avatarKey, int? birthYear, String? equippedAccessory, bool clearAccessory = false}) =>
+      ChildProfile(
         id: id,
         name: name ?? this.name,
         avatarKey: avatarKey ?? this.avatarKey,
         birthYear: birthYear ?? this.birthYear,
         track: track,
         createdAt: createdAt,
+        equippedAccessory: clearAccessory ? null : (equippedAccessory ?? this.equippedAccessory),
       );
 
   Map<String, dynamic> toJson() => {
@@ -39,6 +45,7 @@ class ChildProfile {
         'birthYear': birthYear,
         'track': track,
         'createdAt': createdAt.toUtc().toIso8601String(),
+        if (equippedAccessory != null) 'equippedAccessory': equippedAccessory,
       };
 
   factory ChildProfile.fromJson(Map<String, dynamic> json) => ChildProfile(
@@ -48,6 +55,7 @@ class ChildProfile {
         birthYear: json['birthYear'] as int,
         track: (json['track'] as String?) ?? 'little-learners',
         createdAt: DateTime.parse(json['createdAt'] as String),
+        equippedAccessory: json['equippedAccessory'] as String?,
       );
 }
 
@@ -102,6 +110,14 @@ class ProfilesNotifier extends Notifier<List<ChildProfile>> {
     state = [
       for (final p in state)
         if (p.id == id) p.copyWith(name: name?.trim(), avatarKey: avatarKey, birthYear: birthYear) else p,
+    ];
+    await _save();
+  }
+
+  Future<void> equip(String id, String? accessoryId) async {
+    state = [
+      for (final p in state)
+        if (p.id == id) p.copyWith(equippedAccessory: accessoryId, clearAccessory: accessoryId == null) else p,
     ];
     await _save();
   }

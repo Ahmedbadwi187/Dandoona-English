@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../settings/settings.dart';
+import '../sync/sync_section.dart';
 
 /// Parent settings: language, session timer (default 15 min), unlock all letters.
 class SettingsScreen extends ConsumerWidget {
@@ -50,6 +51,8 @@ class SettingsScreen extends ConsumerWidget {
             value: settings.unlockAll,
             onChanged: notifier.setUnlockAll,
           ),
+          const SizedBox(height: 20),
+          const SyncSection(),
         ],
       ),
     );

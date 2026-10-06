@@ -87,6 +87,17 @@ class ProgressNotifier extends Notifier<List<ProgressRecord>> {
     return best.values.fold(0, (a, b) => a + b);
   }
 
+  /// Total stars a child has earned: the best result per (lesson, activity), summed. Drives the accessory unlocks.
+  int totalStars(String childId) {
+    final best = <String, int>{};
+    for (final r in state) {
+      if (r.childId != childId) continue;
+      final key = '${r.lessonId}|${r.activity}';
+      if (r.stars > (best[key] ?? 0)) best[key] = r.stars;
+    }
+    return best.values.fold(0, (a, b) => a + b);
+  }
+
   /// A lesson counts as started once any activity was finished.
   bool hasProgress(String childId, String lessonId) =>
       state.any((r) => r.childId == childId && r.lessonId == lessonId);

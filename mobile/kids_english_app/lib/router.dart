@@ -6,6 +6,7 @@ import 'features/child/lesson_screen.dart';
 import 'features/child/letter_map_screen.dart';
 import 'features/child/profile_picker_screen.dart';
 import 'features/parent/child_form_screen.dart';
+import 'features/rewards/wardrobe_screen.dart';
 import 'features/parent/children_screen.dart';
 import 'features/parent/onboarding_screen.dart';
 import 'features/parent/parent_home_screen.dart';
@@ -26,7 +27,7 @@ String? guardRoute({
   if (location == '/who' && !hasProfiles) return '/onboarding';
   // Parent area is only reachable through the parental gate.
   if (location.startsWith('/parent') && !parentUnlocked) return '/who';
-  if ((location == '/map' || location.startsWith('/lesson/')) && !hasActiveChild) return '/who';
+  if ((location == '/map' || location == '/wardrobe' || location.startsWith('/lesson/')) && !hasActiveChild) return '/who';
   return null;
 }
 
@@ -46,6 +47,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/onboarding/child', builder: (_, _) => const ChildFormScreen(firstRun: true)),
       GoRoute(path: '/who', builder: (_, _) => const ProfilePickerScreen()),
       GoRoute(path: '/map', builder: (_, _) => const LetterMapScreen()),
+      GoRoute(path: '/wardrobe', builder: (_, _) => const WardrobeScreen()),
       GoRoute(
         path: '/lesson/:id',
         builder: (_, state) => LessonScreen(lessonId: state.pathParameters['id']!),

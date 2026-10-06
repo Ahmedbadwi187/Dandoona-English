@@ -118,6 +118,11 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
             mascot = Layout.ExportMascotRel;
         }
 
+        // Self-drawn mascot accessories (rewards) ship with the app too.
+        if (Directory.Exists(layout.AccessoriesDir))
+            foreach (var svg in Directory.GetFiles(layout.AccessoriesDir, "*.svg").Order(StringComparer.Ordinal))
+                bytes += await CopyIfNeededAsync(svg, Path.Combine(layout.AssetsDir, Layout.ExportAccessoryRel(Path.GetFileName(svg))), force);
+
         string? jsonPath = null;
         if (doc.Count > 0)
         {

@@ -3,8 +3,10 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/ids.dart';
 import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
@@ -15,6 +17,7 @@ import '../content/content_models.dart';
 import '../content/content_repository.dart';
 import '../profiles/child_profile.dart';
 import '../progress/progress.dart';
+import '../rewards/accessories.dart';
 import '../session/session.dart';
 import 'activity_logic.dart';
 import 'listen_and_tap_activity.dart';
@@ -68,13 +71,16 @@ class _ActivityHost extends ConsumerStatefulWidget {
 class _ActivityHostState extends ConsumerState<_ActivityHost> {
   final _stopwatch = Stopwatch()..start();
   ActivityResult? _result;
+  List<Accessory> _unlocked = const [];
 
   Future<void> _finished(ActivityResult result) async {
     if (_result != null) return;
     setState(() => _result = result);
     final childId = ref.read(activeChildIdProvider);
     if (childId == null) return;
-    await ref.read(progressProvider.notifier).record(ProgressRecord(
+    final progress = ref.read(progressProvider.notifier);
+    final before = progress.totalStars(childId);
+    await progress.record(ProgressRecord(
           clientRecordId: newRecordId(),
           childId: childId,
           lessonId: widget.lesson.id,
@@ -84,6 +90,7 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
           timeSpentSeconds: _stopwatch.elapsed.inSeconds,
           completedAt: ref.read(clockProvider)(),
         ));
+    if (mounted) setState(() => _unlocked = newlyUnlocked(before, progress.totalStars(childId)));
   }
 
   @override
@@ -106,7 +113,7 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
         ),
         Expanded(
           child: result != null
-              ? ActivityResultView(stars: result.stars, lesson: widget.lesson, mascot: widget.track.mascot, onDone: () => context.pop())
+              ? ActivityResultView(stars: result.stars, lesson: widget.lesson, mascot: widget.track.mascot, unlocked: _unlocked, onDone: () => context.pop())
               : switch (widget.activity) {
                   'listen-and-tap' => ListenAndTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   'match-picture' => MatchPictureActivity(lesson: widget.lesson, onFinished: _finished),
@@ -120,16 +127,19 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
   }
 }
 
-String newRecordId() => '${DateTime.now().microsecondsSinceEpoch.toRadixString(36)}-${Random().nextInt(1 << 30).toRadixString(36)}';
+String newRecordId() => newUuid();
 
 /// Celebration: stars pop in one by one, the mascot, and a spoken praise line.
 class ActivityResultView extends ConsumerStatefulWidget {
-  const ActivityResultView({super.key, required this.stars, required this.lesson, required this.onDone, this.mascot});
+  const ActivityResultView({super.key, required this.stars, required this.lesson, required this.onDone, this.mascot, this.unlocked = const []});
 
   final int stars;
   final Lesson lesson;
   final String? mascot;
   final VoidCallback onDone;
+
+  /// Accessories this result just unlocked (shown with a sparkle so the child sees the reward).
+  final List<Accessory> unlocked;
 
   @override
   ConsumerState<ActivityResultView> createState() => _ActivityResultViewState();
@@ -173,6 +183,29 @@ class _ActivityResultViewState extends ConsumerState<ActivityResultView> {
                   ),
               ],
             ),
+            if (widget.unlocked.isNotEmpty) ...[
+              const SizedBox(height: 16),
+              Row(
+                key: const Key('new-accessory'),
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Icon(Icons.auto_awesome_rounded, color: Palette.yellow, size: 40),
+                  for (final a in widget.unlocked)
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 8),
+                      width: 84,
+                      height: 84,
+                      decoration: BoxDecoration(
+                        color: Palette.white,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: Palette.yellow, width: 5),
+                      ),
+                      child: Padding(padding: const EdgeInsets.all(6), child: SvgPicture.asset(a.assetPath)),
+                    ),
+                  const Icon(Icons.auto_awesome_rounded, color: Palette.yellow, size: 40),
+                ],
+              ),
+            ],
             const SizedBox(height: 24),
             FilledButton(
               key: const Key('result-done'),
