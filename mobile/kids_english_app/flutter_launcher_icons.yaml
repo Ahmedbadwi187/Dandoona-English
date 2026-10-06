@@ -1,0 +1,10 @@
+# Dandoona app icon. Source art lives in icon/ (derived from content/style/mascot.reference.webp).
+# Regenerate with: dart run flutter_launcher_icons
+flutter_launcher_icons:
+  image_path: "icon/icon_ios.png"          # opaque full-bleed face, used for legacy Android and iOS
+  android: "ic_launcher"
+  min_sdk_android: 21
+  adaptive_icon_background: "#8FD3F4"      # separate background layer
+  adaptive_icon_foreground: "icon/icon_foreground.png"  # separate foreground layer (transparent)
+  ios: true
+  remove_alpha_ios: true                   # App Store rejects icons with transparency
