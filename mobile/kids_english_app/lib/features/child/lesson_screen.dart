@@ -7,6 +7,8 @@ import '../../core/strings.dart';
 import '../../core/theme.dart';
 import '../../core/widgets.dart';
 import '../content/content_repository.dart';
+import '../profiles/child_profile.dart';
+import '../progress/progress.dart';
 import '../session/session.dart';
 import 'child_scope.dart';
 
@@ -79,7 +81,10 @@ class LessonScreen extends ConsumerWidget {
                       spacing: 16,
                       runSpacing: 16,
                       alignment: WrapAlignment.center,
-                      children: [for (final a in lesson.activities) _ActivityTile(activity: a)],
+                      children: [
+                        for (final a in lesson.activities)
+                          _ActivityTile(lessonId: lesson.id, activity: a, stars: _bestStars(ref, lesson.id, a)),
+                      ],
                     ),
                   ],
                 );
@@ -99,26 +104,51 @@ const _activityIcons = {
   'match-picture': Icons.extension_rounded,
 };
 
-/// Icon-only (no reading needed). Disabled until the activities are built in Phase 3.
+/// Icon-only (no reading needed). Tapping opens the activity; the stars show the child's best result.
 class _ActivityTile extends StatelessWidget {
-  const _ActivityTile({required this.activity});
+  const _ActivityTile({required this.lessonId, required this.activity, required this.stars});
+  final String lessonId;
   final String activity;
+  final int stars; // best stars so far, 0-3
 
   @override
   Widget build(BuildContext context) {
-    return Opacity(
-      opacity: 0.45,
+    return GestureDetector(
+      key: Key('activity-$activity'),
+      onTap: () => context.push('/lesson/$lessonId/$activity'),
       child: Container(
-        key: Key('activity-$activity'),
         width: 120,
-        height: 120,
+        height: 130,
         decoration: BoxDecoration(
           color: Palette.white,
           borderRadius: BorderRadius.circular(24),
           border: Border.all(color: Palette.ink, width: 3),
         ),
-        child: Icon(_activityIcons[activity] ?? Icons.help_outline_rounded, size: 56, color: Palette.ink),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(_activityIcons[activity] ?? Icons.help_outline_rounded, size: 56, color: Palette.ink),
+            const SizedBox(height: 6),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                for (var i = 0; i < 3; i++) Icon(Icons.star_rounded, size: 24, color: i < stars ? Palette.yellow : Palette.tan),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
+}
+
+/// Best stars the active child earned in one activity of a lesson.
+int _bestStars(WidgetRef ref, String lessonId, String activity) {
+  final childId = ref.watch(activeChildIdProvider);
+  final records = ref.watch(progressProvider);
+  var best = 0;
+  for (final r in records) {
+    if (r.childId == childId && r.lessonId == lessonId && r.activity == activity && r.stars > best) best = r.stars;
+  }
+  return best;
 }

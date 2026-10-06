@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Microphone: only for the record-and-listen activity. The recording is played back on the device and deleted. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <application
         android:label="kids_english_app"
         android:name="${applicationName}"

@@ -61,6 +61,11 @@ In use (versions from pubspec.yaml; licenses read from pub.dev on 2026-10-06):
 | flutter_svg | ^2.3.0 | MIT |
 | shared_preferences | ^2.5.6 | BSD-3-Clause |
 | intl | ^0.20.2 | BSD-3-Clause |
+| audioplayers (+ _android, _darwin, _linux, _web, _windows, _platform_interface) | ^6.8.1 | MIT |
+| record (+ _android, _ios, _linux, _macos, _web, _windows, _platform_interface) | ^7.1.1 | BSD-3-Clause |
+| path_provider (+ _android, _foundation) | ^2.1.6 | BSD-3-Clause |
+| Transitive build/plugin helpers: code_assets, hooks, jni, jni_flutter, jni_util, objective_c, package_config, pub_semver, record_use | resolved in pubspec.lock | BSD-3-Clause |
+| Transitive: synchronized, yaml | resolved in pubspec.lock | MIT |
 | flutter_localizations, flutter_test (Flutter SDK) | sdk | BSD-3-Clause |
 | flutter_lints (dev) | ^6.0.0 | BSD-3-Clause |
 
@@ -69,8 +74,6 @@ shared_preferences). Planned for later phases, re-check license + exact version 
 
 | Package | Latest checked | License |
 |---|---|---|
-| audioplayers / just_audio | 6.8.1 / 0.10.6 | MIT / Apache-2.0 + MIT |
-| record | 7.1.1 | BSD-3-Clause |
 | permission_handler | 13.0.2 | MIT |
 | drift | 2.35.1 | MIT |
 | dio | 5.11.1 | MIT |

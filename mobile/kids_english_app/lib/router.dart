@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import 'features/activities/activity_screen.dart';
 import 'features/child/lesson_screen.dart';
 import 'features/child/letter_map_screen.dart';
 import 'features/child/profile_picker_screen.dart';
@@ -48,6 +49,13 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/lesson/:id',
         builder: (_, state) => LessonScreen(lessonId: state.pathParameters['id']!),
+      ),
+      GoRoute(
+        path: '/lesson/:id/:activity',
+        builder: (_, state) => ActivityScreen(
+          lessonId: state.pathParameters['id']!,
+          activity: state.pathParameters['activity']!,
+        ),
       ),
       GoRoute(path: '/parent', builder: (_, _) => const ParentHomeScreen()),
       GoRoute(path: '/parent/settings', builder: (_, _) => const SettingsScreen()),

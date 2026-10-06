@@ -35,3 +35,9 @@ Serilog structured logs must never include passwords, tokens, API keys, request 
 
 The app collects no analytics, advertising identifiers, location or contacts. The microphone is only used by the
 record-and-listen activity (Phase 3): recordings are played back locally and deleted when the activity ends.
+
+### Microphone (record-and-listen, Phase 3)
+- Permission is requested only when the child taps the record button (Android `RECORD_AUDIO`, iOS `NSMicrophoneUsageDescription` with an explanation).
+- The recording is a temporary AAC file in the app's temp folder. It is played back immediately after the original word and **deleted
+  right after play-back** (and on leaving the screen). No scoring, no speech recognition, no upload, no copy kept.
+- If the permission is denied the activity offers a skip (1 star); nothing is recorded.

@@ -29,6 +29,8 @@ lib/features/
   session/       session timer + time-up overlay (needs the gate to continue)
   parent/        onboarding, child form, dashboard, profiles, settings (Arabic)
   child/         profile picker, 26-letter map, lesson screen (English)
+  activities/    listen-and-tap, match-picture, trace (finger drawing scored against the letter), record-and-listen, stars screen
+  audio/         playback + recorder behind interfaces (fakes in tests)
 lib/router.dart  routes + guards (parent area unreachable without the gate)
 test/            logic tests (incl. the real bundled JSON and asset files) and widget tests (gate, full flow, map, timer)
 ```

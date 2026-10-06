@@ -1,6 +1,10 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart' show Override;
 import 'package:kids_english_app/core/storage.dart';
+import 'package:kids_english_app/features/audio/audio_service.dart';
 import 'package:kids_english_app/features/content/content_models.dart';
 import 'package:kids_english_app/features/content/content_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -47,3 +51,49 @@ ProviderContainer containerWith(List<Override> overrides) {
   final c = ProviderContainer(overrides: overrides);
   return c;
 }
+
+// ---- activity test doubles -------------------------------------------------------------------------------
+
+/// Records what would have been played instead of touching the audio plugin.
+class FakeAudio implements AudioService {
+  final List<String> played = [];
+  @override
+  Future<void> playAsset(String assetPath) async => played.add('asset:$assetPath');
+  @override
+  Future<void> playFile(String path) async => played.add('file:$path');
+  @override
+  Future<void> stop() async {}
+  @override
+  void dispose() {}
+}
+
+class FakeRecorder implements RecorderService {
+  bool permission = true;
+  bool failOnStart = false;
+  int started = 0;
+  final List<String> created = [];
+  final List<String> deleted = [];
+  @override
+  Future<bool> requestPermission() async => permission;
+  @override
+  Future<void> start() async {
+    if (failOnStart) throw StateError('no microphone');
+    started++;
+  }
+
+  @override
+  Future<String?> stop() async {
+    final path = 'tmp/voice_${created.length}.m4a';
+    created.add(path);
+    return path;
+  }
+
+  @override
+  Future<void> delete(String path) async => deleted.add(path);
+  @override
+  void dispose() {}
+}
+
+/// The real exported lessons (so image/audio paths exist in the test asset bundle).
+TrackContent realContent() =>
+    TrackContent.fromJson(jsonDecode(File('assets/content/little_learners.json').readAsStringSync()) as Map<String, dynamic>);
