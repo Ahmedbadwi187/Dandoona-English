@@ -38,6 +38,13 @@ public sealed class Layout(string root)
     public string ImageReview(Lesson l, string key, int n) => Path.Combine(ImageReviewDir(l), $"{key}.v{n}.webp");
     public string ImageApproved(Lesson l, string key) => Path.Combine(LessonDir(l), "images", $"{key}.approved.webp");
 
+    public string ArtDir => Path.Combine(Root, "content", "art");
+    public string PalettePath => Path.Combine(StyleDir, "palette.json");
+    public string SvgSource(Lesson l, string key) => Path.Combine(ArtDir, l.Track, l.Id, $"{key}.svg");
+    public string PicksPath => Path.Combine(GeneratedDir, "picks.json");
+    public string LedgerPath => Path.Combine(GeneratedDir, "cost-ledger.json");
+    public string DecisionsDoc => Path.Combine(Root, "docs", "asset-decisions.md");
+
     /// <summary>Candidate files for a key that already exist in _review.</summary>
     public IReadOnlyList<string> ImageReviewFiles(Lesson l, string key) =>
         Directory.Exists(ImageReviewDir(l))
@@ -52,7 +59,7 @@ public sealed class Layout(string root)
     // Exported (Flutter) names: stable, snake_case, no suffixes. Paths in JSON are relative to assets/.
     public static string Snake(string s) => s.Replace('-', '_');
     public static string ExportAudioRel(Lesson l, string role) => $"audio/{Snake(l.Track)}/{Snake(l.Id)}/{Snake(role)}.mp3";
-    public static string ExportImageRel(Lesson l, string key) => $"images/{Snake(l.Track)}/{Snake(l.Id)}/{Snake(key)}.webp";
+    public static string ExportImageRel(Lesson l, string key, bool svg = false) => $"images/{Snake(l.Track)}/{Snake(l.Id)}/{Snake(key)}.{(svg ? "svg" : "webp")}";
     public const string ExportMascotRel = "images/mascot/mascot.webp";
     public static string ExportJsonRel(string track) => $"content/{Snake(track)}.json";
 
@@ -73,7 +80,7 @@ public sealed class Layout(string root)
 
 /// <summary>What a lesson needs, derived from its curriculum definition.</summary>
 public record AudioItem(string Role, string Text, bool IsPhoneme);
-public record ImageItem(string Key, string Prompt, bool UsesMascot);
+public record ImageItem(string Key, string Prompt, bool UsesMascot, bool IsSvg = false);
 
 public static class LessonPlan
 {
@@ -87,7 +94,7 @@ public static class LessonPlan
     }
 
     public static IReadOnlyList<ImageItem> Images(Lesson l) =>
-        l.Words.Select(w => new ImageItem(Slug(w.Word), w.ImagePrompt.Trim(), w.Mascot)).ToList();
+        l.Words.Select(w => new ImageItem(Slug(w.Word), w.ImagePrompt.Trim(), w.Mascot, w.Source == "svg")).ToList();
 
     public static string Slug(string word) =>
         new(word.Trim().ToLowerInvariant().Select(ch => char.IsLetterOrDigit(ch) ? ch : '-').ToArray());

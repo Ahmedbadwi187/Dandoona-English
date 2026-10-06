@@ -1,0 +1,12 @@
+id: letter-h
+track: little-learners
+level: pre-a1
+letter: H
+phoneme: "/h/"
+words:
+  - { word: hat, imagePrompt: "a simple blue hat", source: svg }
+  - { word: horse, imagePrompt: "a friendly brown cartoon horse", source: openai }
+narration:
+  intro: "This is the letter H. H says huh, huh, hat!"
+  praise: ["Great job!", "Well done!", "You did it!"]
+activities: [trace, listen-and-tap, record-and-listen, match-picture]

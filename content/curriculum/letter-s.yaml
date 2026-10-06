@@ -1,0 +1,12 @@
+id: letter-s
+track: little-learners
+level: pre-a1
+letter: S
+phoneme: "/s/"
+words:
+  - { word: sun, imagePrompt: "a happy yellow sun with rays", source: svg }
+  - { word: snake, imagePrompt: "a friendly cartoon green snake coiled", source: openai }
+narration:
+  intro: "This is the letter S. S says ss, ss, sun!"
+  praise: ["Great job!", "Well done!", "You did it!"]
+activities: [trace, listen-and-tap, record-and-listen, match-picture]

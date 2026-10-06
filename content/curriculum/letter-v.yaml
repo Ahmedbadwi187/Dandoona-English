@@ -1,0 +1,12 @@
+id: letter-v
+track: little-learners
+level: pre-a1
+letter: V
+phoneme: "/v/"
+words:
+  - { word: van, imagePrompt: "a small blue delivery van", source: svg }
+  - { word: violin, imagePrompt: "a brown violin with a bow", source: openai }
+narration:
+  intro: "This is the letter V. V says vv, vv, van!"
+  praise: ["Great job!", "Well done!", "You did it!"]
+activities: [trace, listen-and-tap, record-and-listen, match-picture]

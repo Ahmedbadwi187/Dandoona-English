@@ -33,7 +33,8 @@ public class StatusRunner(Layout layout, VoiceConfig voices, string? fallbackVoi
             foreach (var i in LessonPlan.Images(l))
             {
                 var review = layout.ImageReviewFiles(l, i.Key).Count;
-                var state = File.Exists(layout.ImageApproved(l, i.Key)) ? "approved"
+                var state = i.IsSvg ? (File.Exists(layout.SvgSource(l, i.Key)) ? "self-drawn (svg)" : "MISSING SVG")
+                    : File.Exists(layout.ImageApproved(l, i.Key)) ? "approved"
                     : review > 0 ? $"awaiting pick ({review} variants)" : "MISSING";
                 lines.Add(new StatusLine(l.Id, $"image/{i.Key}{(i.UsesMascot ? " [mascot]" : "")}", state));
             }
@@ -72,7 +73,7 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
 {
     public const int SchemaVersion = 1;
 
-    public async Task<ExportResult> RunAsync(string track, IReadOnlyList<Lesson> lessons, CancellationToken ct)
+    public async Task<ExportResult> RunAsync(string track, IReadOnlyList<Lesson> lessons, CancellationToken ct, bool force = false)
     {
         var doc = new List<ExportLesson>();
         var incomplete = new List<string>();
@@ -82,7 +83,11 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
         {
             var missing = new List<string>();
             foreach (var a in LessonPlan.Audio(l)) if (layout.AudioForExport(l, a.Role) is null) missing.Add($"audio/{a.Role}");
-            foreach (var i in LessonPlan.Images(l)) if (!File.Exists(layout.ImageApproved(l, i.Key))) missing.Add($"image/{i.Key} (not approved)");
+            foreach (var i in LessonPlan.Images(l))
+            {
+                if (i.IsSvg && !File.Exists(layout.SvgSource(l, i.Key))) missing.Add($"image/{i.Key} (svg missing)");
+                else if (!i.IsSvg && !File.Exists(layout.ImageApproved(l, i.Key))) missing.Add($"image/{i.Key} (not approved)");
+            }
             if (missing.Count > 0)
             {
                 incomplete.Add($"{l.Id}: {string.Join(", ", missing)}");
@@ -90,9 +95,11 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
             }
 
             foreach (var a in LessonPlan.Audio(l))
-                bytes += await EncodeIfNeededAsync(layout.AudioForExport(l, a.Role)!, Path.Combine(layout.AssetsDir, Layout.ExportAudioRel(l, a.Role)), audio: true, ct);
+                bytes += await EncodeIfNeededAsync(layout.AudioForExport(l, a.Role)!, Path.Combine(layout.AssetsDir, Layout.ExportAudioRel(l, a.Role)), audio: true, force, ct);
             foreach (var i in LessonPlan.Images(l))
-                bytes += await EncodeIfNeededAsync(layout.ImageApproved(l, i.Key), Path.Combine(layout.AssetsDir, Layout.ExportImageRel(l, i.Key)), audio: false, ct);
+                bytes += i.IsSvg
+                    ? await CopyIfNeededAsync(layout.SvgSource(l, i.Key), Path.Combine(layout.AssetsDir, Layout.ExportImageRel(l, i.Key, svg: true)), force)
+                    : await EncodeIfNeededAsync(layout.ImageApproved(l, i.Key), Path.Combine(layout.AssetsDir, Layout.ExportImageRel(l, i.Key)), audio: false, force, ct);
 
             doc.Add(new ExportLesson(
                 l.Id, l.ResolvedOrder, l.Level, l.Letter, l.Phoneme,
@@ -100,14 +107,14 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
                     Layout.ExportAudioRel(l, "intro"),
                     string.IsNullOrWhiteSpace(l.Phoneme) ? null : Layout.ExportAudioRel(l, "phoneme"),
                     l.Narration.Praise.Select((_, n) => Layout.ExportAudioRel(l, $"praise-{n}")).ToList()),
-                l.Words.Select(w => new ExportWord(w.Word.Trim(), Layout.ExportAudioRel(l, $"word-{LessonPlan.Slug(w.Word)}"), Layout.ExportImageRel(l, LessonPlan.Slug(w.Word)))).ToList(),
+                l.Words.Select(w => new ExportWord(w.Word.Trim(), Layout.ExportAudioRel(l, $"word-{LessonPlan.Slug(w.Word)}"), Layout.ExportImageRel(l, LessonPlan.Slug(w.Word), w.Source == "svg"))).ToList(),
                 l.Activities.ToList()));
         }
 
         string? mascot = null;
         if (File.Exists(layout.MascotReference))
         {
-            bytes += await EncodeIfNeededAsync(layout.MascotReference, Path.Combine(layout.AssetsDir, Layout.ExportMascotRel), audio: false, ct);
+            bytes += await EncodeIfNeededAsync(layout.MascotReference, Path.Combine(layout.AssetsDir, Layout.ExportMascotRel), audio: false, force, ct);
             mascot = Layout.ExportMascotRel;
         }
 
@@ -128,10 +135,20 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
         return new ExportResult(doc.Count, incomplete, bytes, jsonPath);
     }
 
-    private async Task<long> EncodeIfNeededAsync(string source, string target, bool audio, CancellationToken ct)
+    private async Task<long> CopyIfNeededAsync(string source, string target, bool force)
     {
-        // Incremental: re-encode only when the source is newer than the exported file.
-        if (!File.Exists(target) || File.GetLastWriteTimeUtc(source) > File.GetLastWriteTimeUtc(target))
+        if (force || !File.Exists(target) || File.GetLastWriteTimeUtc(source) > File.GetLastWriteTimeUtc(target))
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(target)!);
+            File.Copy(source, target, overwrite: true);
+        }
+        return new FileInfo(target).Length;
+    }
+
+    private async Task<long> EncodeIfNeededAsync(string source, string target, bool audio, bool force, CancellationToken ct)
+    {
+        // Incremental: re-encode only when forced or the source is newer than the exported file.
+        if (force || !File.Exists(target) || File.GetLastWriteTimeUtc(source) > File.GetLastWriteTimeUtc(target))
         {
             if (audio) await media.EncodeAudioAsync(source, target, config.Export, ct);
             else await media.EncodeImageAsync(source, target, config.Export, ct);

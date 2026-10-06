@@ -4,7 +4,7 @@ level: pre-a1
 letter: A
 phoneme: "/æ/"
 words:
-  - { word: apple, imagePrompt: "a shiny red apple" }
+  - { word: apple, imagePrompt: "a shiny red apple", source: openai }
   - { word: ant, imagePrompt: "a small friendly cartoon ant" }
   - { word: alligator, imagePrompt: "a friendly green cartoon alligator smiling" }
 narration:

@@ -1,0 +1,12 @@
+id: letter-i
+track: little-learners
+level: pre-a1
+letter: I
+phoneme: "/ɪ/"
+words:
+  - { word: ice cream, imagePrompt: "an ice cream cone with two scoops", source: svg }
+  - { word: igloo, imagePrompt: "a white igloo", source: svg }
+narration:
+  intro: "This is the letter I. I says ih, ih, ice cream!"
+  praise: ["Great job!", "Well done!", "You did it!"]
+activities: [trace, listen-and-tap, record-and-listen, match-picture]

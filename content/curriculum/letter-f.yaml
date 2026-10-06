@@ -1,0 +1,12 @@
+id: letter-f
+track: little-learners
+level: pre-a1
+letter: F
+phoneme: "/f/"
+words:
+  - { word: fish, imagePrompt: "a simple orange fish", source: svg }
+  - { word: frog, imagePrompt: "a cute green cartoon frog sitting", source: openai }
+narration:
+  intro: "This is the letter F. F says ff, ff, fish!"
+  praise: ["Great job!", "Well done!", "You did it!"]
+activities: [trace, listen-and-tap, record-and-listen, match-picture]

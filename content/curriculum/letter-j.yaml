@@ -1,0 +1,12 @@
+id: letter-j
+track: little-learners
+level: pre-a1
+letter: J
+phoneme: "/dʒ/"
+words:
+  - { word: jar, imagePrompt: "a glass jar of red jam", source: svg }
+  - { word: juice, imagePrompt: "a glass of orange juice with a straw", source: svg }
+narration:
+  intro: "This is the letter J. J says juh, juh, jar!"
+  praise: ["Great job!", "Well done!", "You did it!"]
+activities: [trace, listen-and-tap, record-and-listen, match-picture]

@@ -27,6 +27,8 @@ public class LessonWord
     public string ImagePrompt { get; set; } = "";
     /// <summary>True when the scene includes the mascot, so the locked reference image is used.</summary>
     public bool Mascot { get; set; }
+    /// <summary>"openai" (generated illustration) or "svg" (self-drawn, content/art/{track}/{lesson}/{key}.svg).</summary>
+    public string Source { get; set; } = "openai";
 }
 
 public class Narration
@@ -58,6 +60,7 @@ public class LessonValidator : AbstractValidator<Lesson>
         {
             w.RuleFor(i => i.Word).NotEmpty().MaximumLength(30).Matches("^[A-Za-z' -]+$");
             w.RuleFor(i => i.ImagePrompt).NotEmpty().MaximumLength(500);
+            w.RuleFor(i => i.Source).Must(s => s is "openai" or "svg").WithMessage("Word source must be openai or svg.");
         });
         RuleFor(x => x.Words)
             .Must(ws => ws.Select(w => w.Word.Trim().ToLowerInvariant()).Distinct().Count() == ws.Count)

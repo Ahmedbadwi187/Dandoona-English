@@ -12,11 +12,13 @@ public interface IVoiceClient
     Task<byte[]> SynthesizeAsync(string text, VoiceSettings voice, string model, string outputFormat, CancellationToken ct);
 }
 
+public record ImageBatch(IReadOnlyList<byte[]> Images, ImageUsage? Usage);
+
 public interface IImageClient
 {
-    Task<IReadOnlyList<byte[]>> GenerateAsync(string prompt, int count, ImageSettings s, CancellationToken ct);
+    Task<ImageBatch> GenerateAsync(string prompt, int count, ImageSettings s, CancellationToken ct);
     /// <summary>Generates using a locked reference image (used so the mascot looks identical everywhere).</summary>
-    Task<IReadOnlyList<byte[]>> EditAsync(string prompt, byte[] reference, int count, ImageSettings s, CancellationToken ct);
+    Task<ImageBatch> EditAsync(string prompt, byte[] reference, int count, ImageSettings s, CancellationToken ct);
 }
 
 public interface IMediaTool
@@ -69,7 +71,7 @@ public sealed class ElevenLabsClient(HttpClient http) : IVoiceClient
 /// <summary>POST /v1/images/generations (JSON) and /v1/images/edits (multipart, image[]), base64 results.</summary>
 public sealed class OpenAiImageClient(HttpClient http) : IImageClient
 {
-    public async Task<IReadOnlyList<byte[]>> GenerateAsync(string prompt, int count, ImageSettings s, CancellationToken ct)
+    public async Task<ImageBatch> GenerateAsync(string prompt, int count, ImageSettings s, CancellationToken ct)
     {
         var body = new
         {
@@ -85,7 +87,7 @@ public sealed class OpenAiImageClient(HttpClient http) : IImageClient
         return await ReadImagesAsync(res, ct);
     }
 
-    public async Task<IReadOnlyList<byte[]>> EditAsync(string prompt, byte[] reference, int count, ImageSettings s, CancellationToken ct)
+    public async Task<ImageBatch> EditAsync(string prompt, byte[] reference, int count, ImageSettings s, CancellationToken ct)
     {
         using var form = new MultipartFormDataContent
         {
@@ -105,16 +107,27 @@ public sealed class OpenAiImageClient(HttpClient http) : IImageClient
         return await ReadImagesAsync(res, ct);
     }
 
-    private static async Task<IReadOnlyList<byte[]>> ReadImagesAsync(HttpResponseMessage res, CancellationToken ct)
+    private static async Task<ImageBatch> ReadImagesAsync(HttpResponseMessage res, CancellationToken ct)
     {
         await ApiErrors.ThrowIfFailedAsync(res, "OpenAI", ct);
         var parsed = await res.Content.ReadFromJsonAsync<ImagesResponse>(cancellationToken: ct);
         var images = parsed?.Data?.Where(d => !string.IsNullOrEmpty(d.B64Json)).Select(d => Convert.FromBase64String(d.B64Json!)).ToList();
         if (images is null || images.Count == 0) throw new ApiException("OpenAI returned no images.");
-        return images;
+        var u = parsed!.Usage;
+        var usage = u is null ? null : new ImageUsage(u.Details?.TextTokens ?? u.InputTokens, u.Details?.ImageTokens ?? 0, u.OutputTokens);
+        return new ImageBatch(images, usage);
     }
 
-    private record ImagesResponse([property: JsonPropertyName("data")] List<ImageData>? Data);
+    private record ImagesResponse(
+        [property: JsonPropertyName("data")] List<ImageData>? Data,
+        [property: JsonPropertyName("usage")] UsageData? Usage);
+    private record UsageData(
+        [property: JsonPropertyName("input_tokens")] int InputTokens,
+        [property: JsonPropertyName("output_tokens")] int OutputTokens,
+        [property: JsonPropertyName("input_tokens_details")] UsageDetails? Details);
+    private record UsageDetails(
+        [property: JsonPropertyName("text_tokens")] int TextTokens,
+        [property: JsonPropertyName("image_tokens")] int ImageTokens);
     private record ImageData([property: JsonPropertyName("b64_json")] string? B64Json);
 }
 
@@ -150,6 +163,38 @@ public sealed class FfmpegTool : IMediaTool
             var stderr = proc.StandardError.ReadToEndAsync(ct);
             await proc.WaitForExitAsync(ct);
             if (proc.ExitCode != 0) throw new ApiException($"ffmpeg failed ({proc.ExitCode}): {(await stderr).Trim()}");
+        }
+    }
+}
+
+/// <summary>Used only when ffmpeg is not installed: copies files unchanged (stereo 128k MP3s, 1024px WebPs). Re-run `export --force` after installing ffmpeg.</summary>
+public sealed class CopyMediaTool : IMediaTool
+{
+    public Task EncodeAudioAsync(string input, string output, ExportSettings s, CancellationToken ct) => Copy(input, output);
+    public Task EncodeImageAsync(string input, string output, ExportSettings s, CancellationToken ct) => Copy(input, output);
+    private static Task Copy(string input, string output)
+    {
+        Directory.CreateDirectory(Path.GetDirectoryName(output)!);
+        File.Copy(input, output, overwrite: true);
+        return Task.CompletedTask;
+    }
+}
+
+public static class MediaTools
+{
+    public static IMediaTool Create(TextWriter output)
+    {
+        try
+        {
+            var exe = Environment.GetEnvironmentVariable("FFMPEG_PATH") is { Length: > 0 } p ? p : "ffmpeg";
+            using var proc = System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(exe, "-version") { RedirectStandardOutput = true, RedirectStandardError = true, UseShellExecute = false });
+            proc!.WaitForExit(5000);
+            return new FfmpegTool();
+        }
+        catch (System.ComponentModel.Win32Exception)
+        {
+            output.WriteLine("WARNING: ffmpeg not found. Exporting files UNCHANGED (not mono, not loudness-normalised, images 1024px). Install ffmpeg and run `export --force` to optimise.");
+            return new CopyMediaTool();
         }
     }
 }

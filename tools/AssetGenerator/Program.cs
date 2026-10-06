@@ -15,16 +15,21 @@ var rootOpt = new Option<string?>("--root") { Description = "Repo root (default:
 var lessonOpt = new Option<string?>("--lesson") { Description = "Lesson id, e.g. letter-a." };
 var trackOpt = new Option<string?>("--track") { Description = "Track code, e.g. little-learners." };
 var dryRunOpt = new Option<bool>("--dry-run") { Description = "Show what would be generated and the estimated usage, without calling any API." };
+var wordOpt = new Option<string?>("--word") { Description = "Word key, e.g. apple." };
+var variantOpt = new Option<int>("--variant") { Description = "Variant number from _review (1, 2, 3)." };
+var reasonOpt = new Option<string?>("--reason") { Description = "One-line reason for the pick (recorded in docs/asset-decisions.md)." };
 var forceOpt = new Option<bool>("--force") { Description = "Regenerate even if output already exists." };
 
 var audio = new Command("audio", "Generate missing/changed audio with ElevenLabs.") { lessonOpt, trackOpt, dryRunOpt, forceOpt };
 var images = new Command("images", "Generate image variants into _review with OpenAI.") { lessonOpt, trackOpt, dryRunOpt, forceOpt };
 var all = new Command("all", "Generate audio and images for a track.") { lessonOpt, trackOpt, dryRunOpt, forceOpt };
 var approveOpt = new Option<int?>("--approve") { Description = "Lock concept N as the mascot reference image." };
-var mascot = new Command("mascot", "Generate mascot concepts, or lock one with --approve N.") { dryRunOpt, forceOpt, approveOpt };
+var mascot = new Command("mascot", "Generate mascot concepts, or lock one with --approve N.") { dryRunOpt, forceOpt, approveOpt, reasonOpt };
+var approve = new Command("approve", "Approve a reviewed image variant and record why.") { lessonOpt, wordOpt, variantOpt, reasonOpt };
+var decisions = new Command("decisions", "Write docs/asset-decisions.md.");
 var status = new Command("status", "Show missing/unapproved assets and phonemes without your own recording.") { lessonOpt, trackOpt };
 var review = new Command("review", "Write content/generated/review.html: all candidate images with file names (no API calls).") { lessonOpt, trackOpt };
-var export = new Command("export", "Encode approved assets into the Flutter assets folder and write the lesson JSON.") { trackOpt };
+var export = new Command("export", "Encode approved assets into the Flutter assets folder and write the lesson JSON.") { trackOpt, forceOpt };
 
 audio.SetAction((pr, ct) => Guard(async () =>
 {
@@ -61,13 +66,33 @@ mascot.SetAction((pr, ct) => Guard(async () =>
     var layout = Layout.Find(pr.GetValue(rootOpt));
     using var sp = Services(config);
     return await new MascotRunner(layout, ConfigLoader.Generation(layout), sp.GetService<OpenAiImageClient>(), Console.Out)
-        .RunAsync(pr.GetValue(dryRunOpt), pr.GetValue(forceOpt), pr.GetValue(approveOpt), ct);
+        .RunAsync(pr.GetValue(dryRunOpt), pr.GetValue(forceOpt), pr.GetValue(approveOpt), pr.GetValue(reasonOpt), ct);
 }));
 
 status.SetAction((pr, ct) => Guard(() =>
 {
     var (layout, lessons) = Load(pr);
     new StatusRunner(layout, ConfigLoader.Voices(layout), config["ELEVENLABS_VOICE_ID"], Console.Out).Run(lessons);
+    return Task.FromResult(0);
+}));
+
+approve.SetAction((pr, ct) => Guard(() =>
+{
+    var layout = Layout.Find(pr.GetValue(rootOpt));
+    var id = pr.GetValue(lessonOpt) ?? throw new CurriculumException("approve requires --lesson.");
+    var word = pr.GetValue(wordOpt) ?? throw new CurriculumException("approve requires --word.");
+    var reason = pr.GetValue(reasonOpt);
+    if (string.IsNullOrWhiteSpace(reason)) throw new CurriculumException("approve requires --reason (one line, recorded in asset-decisions.md).");
+    var lesson = CurriculumReader.Select(CurriculumReader.LoadAll(layout.CurriculumDir), id, null).Single();
+    ApproveCommand.Run(layout, lesson, word, pr.GetValue(variantOpt), reason, Console.Out);
+    return Task.FromResult(0);
+}));
+
+decisions.SetAction((pr, ct) => Guard(() =>
+{
+    var layout = Layout.Find(pr.GetValue(rootOpt));
+    var lessons = CurriculumReader.LoadAll(layout.CurriculumDir);
+    Console.WriteLine("Wrote " + DecisionsDoc.Write(layout, lessons));
     return Task.FromResult(0);
 }));
 
@@ -83,13 +108,13 @@ export.SetAction((pr, ct) => Guard(async () =>
     var layout = Layout.Find(pr.GetValue(rootOpt));
     var track = pr.GetValue(trackOpt) ?? throw new CurriculumException("export requires --track.");
     var lessons = CurriculumReader.Select(CurriculumReader.LoadAll(layout.CurriculumDir), null, track);
-    await new ExportRunner(layout, ConfigLoader.Generation(layout), new FfmpegTool(), Console.Out).RunAsync(track, lessons, ct);
+    await new ExportRunner(layout, ConfigLoader.Generation(layout), MediaTools.Create(Console.Out), Console.Out).RunAsync(track, lessons, ct, pr.GetValue(forceOpt));
     return 0;
 }));
 
 var root = new RootCommand("Kids English AssetGenerator (dev-only: produces static .mp3/.webp files; never part of the app or API).")
 {
-    audio, images, all, mascot, status, review, export
+    audio, images, all, mascot, approve, status, review, decisions, export
 };
 root.Add(rootOpt);
 return await root.Parse(args).InvokeAsync();

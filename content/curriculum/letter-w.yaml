@@ -1,0 +1,12 @@
+id: letter-w
+track: little-learners
+level: pre-a1
+letter: W
+phoneme: "/w/"
+words:
+  - { word: whale, imagePrompt: "a friendly cartoon blue whale", source: openai }
+  - { word: window, imagePrompt: "a window with blue sky and curtains", source: svg }
+narration:
+  intro: "This is the letter W. W says wuh, wuh, whale!"
+  praise: ["Great job!", "Well done!", "You did it!"]
+activities: [trace, listen-and-tap, record-and-listen, match-picture]

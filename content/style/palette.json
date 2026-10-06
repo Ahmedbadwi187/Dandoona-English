@@ -1,0 +1,20 @@
+{
+  // One shared palette. Self-drawn SVGs use ONLY these colors (a test enforces it) and OpenAI prompts are told to prefer them.
+  "colors": {
+    "cream":     "#FDF8E6",
+    "white":     "#FFFFFF",
+    "ink":       "#5A3A28",
+    "brown":     "#B8733F",
+    "tan":       "#F3D9AE",
+    "orange":    "#F0953A",
+    "yellow":    "#F7CF3E",
+    "green":     "#7DBE45",
+    "darkGreen": "#4C9A3C",
+    "teal":      "#43B3B0",
+    "blue":      "#4A90D9",
+    "purple":    "#8E6BBF",
+    "pink":      "#F08FA5",
+    "red":       "#E5524A",
+    "gray":      "#B8B8B8"
+  }
+}

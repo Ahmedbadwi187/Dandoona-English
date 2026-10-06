@@ -58,15 +58,15 @@ public class FakeImages : IImageClient
 {
     public List<string> Generated { get; } = [];
     public List<string> Edited { get; } = [];
-    public Task<IReadOnlyList<byte[]>> GenerateAsync(string prompt, int count, ImageSettings s, CancellationToken ct)
+    public Task<ImageBatch> GenerateAsync(string prompt, int count, ImageSettings s, CancellationToken ct)
     {
         Generated.Add(prompt);
-        return Task.FromResult<IReadOnlyList<byte[]>>(Enumerable.Range(0, count).Select(i => new byte[] { (byte)i }).ToList());
+        return Task.FromResult(new ImageBatch(Enumerable.Range(0, count).Select(i => new byte[] { (byte)i }).ToList(), new ImageUsage(100, 0, 1000)));
     }
-    public Task<IReadOnlyList<byte[]>> EditAsync(string prompt, byte[] reference, int count, ImageSettings s, CancellationToken ct)
+    public Task<ImageBatch> EditAsync(string prompt, byte[] reference, int count, ImageSettings s, CancellationToken ct)
     {
         Edited.Add(prompt);
-        return Task.FromResult<IReadOnlyList<byte[]>>(Enumerable.Range(0, count).Select(i => new byte[] { (byte)i }).ToList());
+        return Task.FromResult(new ImageBatch(Enumerable.Range(0, count).Select(i => new byte[] { (byte)i }).ToList(), new ImageUsage(100, 0, 1000)));
     }
 }
 

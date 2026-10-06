@@ -181,15 +181,15 @@ public class ImageAndMascotTests
         var client = new FakeImages();
         var runner = new MascotRunner(repo.Layout, new GenerationConfig(), client, new StringWriter());
 
-        await runner.RunAsync(false, false, null, default);
+        await runner.RunAsync(false, false, null, null, default);
         Directory.GetFiles(repo.Layout.MascotReviewDir).Length.ShouldBe(4);
         File.Exists(repo.Layout.MascotReference).ShouldBeFalse();
 
-        await runner.RunAsync(false, false, approve: 3, default);
+        await runner.RunAsync(false, false, approve: 3, reason: "friendly", default);
         File.Exists(repo.Layout.MascotReference).ShouldBeTrue();
 
         client.Generated.Count.ShouldBe(1);
-        await runner.RunAsync(false, false, null, default); // locked: no new spend without --force
+        await runner.RunAsync(false, false, null, null, default); // locked: no new spend without --force
         client.Generated.Count.ShouldBe(1);
     }
 }

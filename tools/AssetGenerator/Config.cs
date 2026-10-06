@@ -51,11 +51,20 @@ public class ExportSettings
     public double LoudnessLufs { get; set; } = -16;
 }
 
-/// <summary>Prices are not published in the API docs we read; fill these in to get a dollar estimate in --dry-run.</summary>
+/// <summary>
+/// Rates from the providers' pricing pages (2026-10-06). ElevenLabs API: $0.08 / 1k chars for v2 multilingual.
+/// OpenAI gpt-image-2.5: $5 / $8 / $30 per 1M tokens (text in / image in / image out); the API reports usage per call,
+/// so the ledger records actual cost. ImageFallbackUsdEach is only used for pre-run estimates and if usage is missing.
+/// </summary>
 public class PricingSettings
 {
-    public decimal? ElevenLabsUsdPer1kChars { get; set; }
-    public decimal? ImageUsdEach { get; set; }
+    public decimal ElevenLabsUsdPer1kChars { get; set; } = 0.08m;
+    public decimal ImageTextInputUsdPerMTokens { get; set; } = 5m;
+    public decimal ImageInputUsdPerMTokens { get; set; } = 8m;
+    public decimal ImageOutputUsdPerMTokens { get; set; } = 30m;
+    public decimal ImageFallbackUsdEach { get; set; } = 0.07m;
+    /// <summary>Hard stop: a run that would push the ledger total past this is refused.</summary>
+    public decimal BudgetUsd { get; set; } = 25m;
 }
 
 /// <summary>/content/style/generation.json (all optional; defaults apply).</summary>

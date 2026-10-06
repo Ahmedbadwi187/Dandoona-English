@@ -51,6 +51,14 @@ public static class ReviewPage
                 var approvedFile = layout.ImageApproved(lesson, image.Key);
                 var variants = layout.ImageReviewFiles(lesson, image.Key);
                 sb.Append($"<h3>{Esc(image.Key)}</h3><p class=\"hint\">{Esc(image.Prompt)}</p><div class=\"row\">");
+                if (image.IsSvg)
+                {
+                    var svg = layout.SvgSource(lesson, image.Key);
+                    if (File.Exists(svg)) Figure(sb, layout, svg, approved: true, "self-drawn");
+                    else sb.Append("<span class=\"none\">MISSING SVG: draw it in content/art.</span>");
+                    sb.Append("</div>");
+                    continue;
+                }
                 if (File.Exists(approvedFile)) Figure(sb, layout, approvedFile, approved: true);
                 foreach (var f in variants) Figure(sb, layout, f, approved: false);
                 if (variants.Count == 0 && !File.Exists(approvedFile)) sb.Append("<span class=\"none\">No images yet. Run the images command.</span>");
@@ -68,12 +76,12 @@ public static class ReviewPage
         return path;
     }
 
-    private static void Figure(StringBuilder sb, Layout layout, string file, bool approved)
+    private static void Figure(StringBuilder sb, Layout layout, string file, bool approved, string tag = "approved")
     {
         var rel = Path.GetRelativePath(layout.GeneratedDir, file).Replace('\\', '/');
         var src = string.Join('/', rel.Split('/').Select(Uri.EscapeDataString)); // safe for file:// and spaces
         sb.Append($"<figure{(approved ? " class=\"approved\"" : "")}><img src=\"{src}\" alt=\"{Esc(Path.GetFileName(file))}\" loading=\"lazy\">")
-          .Append($"<figcaption>{Esc(Path.GetFileName(file))}{(approved ? "<span class=\"tag\">approved</span>" : "")}</figcaption></figure>");
+          .Append($"<figcaption>{Esc(Path.GetFileName(file))}{(approved ? $"<span class=\"tag\">{Esc(tag)}</span>" : "")}</figcaption></figure>");
     }
 
     private static string Esc(string s) => WebUtility.HtmlEncode(s);

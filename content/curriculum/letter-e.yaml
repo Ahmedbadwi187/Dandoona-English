@@ -1,0 +1,12 @@
+id: letter-e
+track: little-learners
+level: pre-a1
+letter: E
+phoneme: "/ɛ/"
+words:
+  - { word: egg, imagePrompt: "a plain white egg", source: svg }
+  - { word: elephant, imagePrompt: "a friendly cartoon elephant", source: openai }
+narration:
+  intro: "This is the letter E. E says eh, eh, egg!"
+  praise: ["Great job!", "Well done!", "You did it!"]
+activities: [trace, listen-and-tap, record-and-listen, match-picture]

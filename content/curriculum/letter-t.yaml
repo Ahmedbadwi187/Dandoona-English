@@ -1,0 +1,12 @@
+id: letter-t
+track: little-learners
+level: pre-a1
+letter: T
+phoneme: "/t/"
+words:
+  - { word: tree, imagePrompt: "a green tree with a brown trunk", source: svg }
+  - { word: tiger, imagePrompt: "a friendly cartoon tiger", source: openai }
+narration:
+  intro: "This is the letter T. T says tuh, tuh, tree!"
+  praise: ["Great job!", "Well done!", "You did it!"]
+activities: [trace, listen-and-tap, record-and-listen, match-picture]
