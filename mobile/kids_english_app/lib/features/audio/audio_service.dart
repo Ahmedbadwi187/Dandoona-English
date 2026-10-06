@@ -22,7 +22,7 @@ abstract class AudioService {
 
 class AudioplayersService implements AudioService {
   final AudioPlayer _player = AudioPlayer();
-  Completer<void>? _cut; // completes when the current clip is replaced or stopped, so its caller stops waiting
+  final ClipGate _gate = ClipGate(); // released when the current clip is replaced or stopped, so its caller stops waiting
 
   @override
   Future<void> playAsset(String assetPath) => _play(AssetSource(assetPath));
@@ -32,12 +32,11 @@ class AudioplayersService implements AudioService {
 
   Future<void> _play(Source source) async {
     try {
-      _cut?.complete();
-      final cut = _cut = Completer<void>();
+      final cut = _gate.open();
       await _player.stop();
       final done = firstEventOrTimeout(_player.onPlayerComplete, const Duration(seconds: 30));
       await _player.play(source);
-      await Future.any([done, cut.future]);
+      await Future.any([done, cut]);
     } on Object catch (e) {
       // Missing codec, no audio device, web autoplay rules...: the activity continues silently.
       debugPrint('audio: could not play $source: $e');
@@ -46,7 +45,7 @@ class AudioplayersService implements AudioService {
 
   @override
   Future<void> stop() async {
-    _cut?.complete();
+    _gate.release();
     try {
       await _player.stop();
     } on Object {
@@ -132,4 +131,21 @@ Future<void> firstEventOrTimeout(Stream<Object?> events, Duration timeout) {
     if (!completer.isCompleted) completer.complete();
   });
   return completer.future.timeout(timeout, onTimeout: () {}).whenComplete(() => unawaited(sub.cancel()));
+}
+
+/// Lets a caller wait for "its" clip while a newer clip or a stop can release that wait. Releasing twice is harmless
+/// (a second `Completer.complete()` would throw, and that throw once prevented the next clip from playing).
+class ClipGate {
+  Completer<void>? _current;
+
+  /// Releases the previous waiter and returns a future that completes at the next [release] or [open].
+  Future<void> open() {
+    release();
+    return (_current = Completer<void>()).future;
+  }
+
+  void release() {
+    final c = _current;
+    if (c != null && !c.isCompleted) c.complete();
+  }
 }
