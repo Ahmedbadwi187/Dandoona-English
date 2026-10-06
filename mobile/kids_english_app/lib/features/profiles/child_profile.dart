@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/storage.dart';
 import '../progress/progress.dart';
+import '../units/unit_meta.dart';
 
 /// A child profile. Nickname and birth year only: no photo, no email, no real-name requirement.
 class ChildProfile {
@@ -127,6 +128,7 @@ class ProfilesNotifier extends Notifier<List<ChildProfile>> {
     state = state.where((p) => p.id != id).toList();
     await _save();
     await ref.read(progressProvider.notifier).removeForChild(id);
+    await ref.read(unitMetaProvider.notifier).removeForChild(id);
   }
 
   Future<void> _save() =>

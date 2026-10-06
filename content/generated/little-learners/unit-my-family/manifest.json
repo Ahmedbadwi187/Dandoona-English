@@ -1,0 +1,16 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "af7aa1812dc0fd23b17c1e98373a64b2f63fb40faf5ce6b2755bfee331d1092f",
+      "generatedAtUtc": "2026-10-06T22:39:01.3622542Z"
+    },
+    "instr-celebration": {
+      "hash": "f82992065e20abd340f9ccdd61bb2ff5f502993c29d3f68394dc89079b5286a6",
+      "generatedAtUtc": "2026-10-06T22:39:02.5507847Z"
+    },
+    "instr-title": {
+      "hash": "13cd8a1afd6128c86486b7ab7f9aaccf6d05d130df75e18a15709f0a4f8b7cc9",
+      "generatedAtUtc": "2026-10-06T22:39:03.5434185Z"
+    }
+  }
+}

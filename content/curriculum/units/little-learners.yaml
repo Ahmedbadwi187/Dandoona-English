@@ -1,0 +1,53 @@
+# Units of the Little Learners track, in the order they open (a unit opens when the previous one is finished).
+# A unit with no lessons yet is shown on the map as "coming soon". To add lessons to a unit, add lesson files with
+# `unit: <id>`; no code change is needed. `icon` is a picture key the app knows (unknown keys show a star); `color` is a palette.json name.
+track: little-learners
+units:
+  - id: letters
+    order: 1
+    title: { en: "Letters", ar: "الحروف" }
+    icon: letters
+    color: red
+    narration: { title: "Letters", welcome: "Let's learn the letters!", celebration: "You finished the letters! Amazing!" }
+  - id: colors
+    order: 2
+    title: { en: "Colors", ar: "الألوان" }
+    icon: colors
+    color: orange
+    narration: { title: "Colors", welcome: "Let's learn the colors!", celebration: "You finished the colors! Wow!" }
+  - id: numbers
+    order: 3
+    title: { en: "Numbers 1-10", ar: "الأرقام ١-١٠" }
+    icon: numbers
+    color: blue
+    narration: { title: "Numbers", welcome: "Let's count!", celebration: "You finished the numbers! Great counting!" }
+  - id: shapes
+    order: 4
+    title: { en: "Shapes", ar: "الأشكال" }
+    icon: shapes
+    color: green
+    narration: { title: "Shapes", welcome: "Let's find shapes!", celebration: "You finished the shapes! Fantastic!" }
+  - id: animals
+    order: 5
+    title: { en: "Animals", ar: "الحيوانات" }
+    icon: animals
+    color: teal
+    narration: { title: "Animals", welcome: "Let's meet the animals!", celebration: "Hooray! You know the animals!" }
+  - id: my-body
+    order: 6
+    title: { en: "My Body", ar: "جسمي" }
+    icon: body
+    color: pink
+    narration: { title: "My Body", welcome: "Let's learn about me!", celebration: "You finished My Body! Super!" }
+  - id: food
+    order: 7
+    title: { en: "Food", ar: "الطعام" }
+    icon: food
+    color: yellow
+    narration: { title: "Food", welcome: "Yummy! Let's learn food!", celebration: "You finished the food! Delicious!" }
+  - id: my-family
+    order: 8
+    title: { en: "My Family", ar: "عائلتي" }
+    icon: family
+    color: purple
+    narration: { title: "My Family", welcome: "Let's meet the family!", celebration: "You finished My Family! Wonderful!" }

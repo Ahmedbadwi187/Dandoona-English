@@ -60,22 +60,25 @@ public class StatusRunner(Layout layout, VoiceConfig voices, string? fallbackVoi
     }
 }
 
-public record ExportDoc(int SchemaVersion, string Track, DateTime GeneratedAt, string? Mascot, List<ExportLesson> Lessons);
+public record ExportDoc(int SchemaVersion, string Track, DateTime GeneratedAt, string? Mascot, List<ExportUnit> Units);
+public record ExportUnit(string Id, int Order, Dictionary<string, string> Title, string Icon, string Color, ExportUnitAudio? Audio, List<ExportLesson> Lessons);
+public record ExportUnitAudio(string Title, string? Welcome, string Celebration);
 public record ExportLesson(string Id, int Order, string Level, string? Letter, string? Phoneme,
-    ExportLessonAudio Audio, List<ExportWord> Words, List<string> Activities);
-public record ExportLessonAudio(string Intro, string? Phoneme, List<string> Praise, Dictionary<string, string>? Instructions = null);
-public record ExportWord(string Word, string Audio, string Image);
+    ExportLessonAudio Audio, List<ExportWord> Words, List<string> Activities, ExportColor? Color = null);
+public record ExportLessonAudio(string Intro, string? Phoneme, List<string> Praise, Dictionary<string, string>? Instructions = null, string? ColorName = null);
+public record ExportWord(string Word, string Audio, string Image, string? Phrase = null);
+public record ExportColor(string Name, string Hex, string Swatch, string Drawing);
 
 public record ExportResult(int Exported, IReadOnlyList<string> Incomplete, long TotalBytes, string? JsonPath);
 
 /// <summary>`export`: encode approved media into the Flutter assets folder and write the lesson JSON the app reads.</summary>
 public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool media, TextWriter output, Func<DateTime>? now = null)
 {
-    public const int SchemaVersion = 1;
+    public const int SchemaVersion = 2;
 
-    public async Task<ExportResult> RunAsync(string track, IReadOnlyList<Lesson> lessons, CancellationToken ct, bool force = false)
+    public async Task<ExportResult> RunAsync(string track, IReadOnlyList<Lesson> lessons, CancellationToken ct, bool force = false, IReadOnlyList<UnitDef>? units = null)
     {
-        var doc = new List<ExportLesson>();
+        var exported = new List<(string UnitId, ExportLesson Lesson)>();
         var incomplete = new List<string>();
         long bytes = 0;
 
@@ -87,6 +90,13 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
             {
                 if (i.IsSvg && !File.Exists(layout.SvgSource(l, i.Key))) missing.Add($"image/{i.Key} (svg missing)");
                 else if (!i.IsSvg && !File.Exists(layout.ImageApproved(l, i.Key))) missing.Add($"image/{i.Key} (not approved)");
+            }
+            foreach (var (key, reuse) in LessonPlan.Reused(l))
+                if (layout.ReuseSource(l, reuse) is null) missing.Add($"image/{key} (reused picture {reuse} not found)");
+            if (l.Color is not null)
+            {
+                if (!File.Exists(layout.SvgSource(l, "swatch"))) missing.Add("image/swatch (svg missing)");
+                if (!File.Exists(layout.SvgSource(l, "colorable"))) missing.Add("image/colorable (svg missing)");
             }
             if (missing.Count > 0)
             {
@@ -101,15 +111,71 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
                     ? await CopyIfNeededAsync(layout.SvgSource(l, i.Key), Path.Combine(layout.AssetsDir, Layout.ExportImageRel(l, i.Key, svg: true)), force)
                     : await EncodeIfNeededAsync(layout.ImageApproved(l, i.Key), Path.Combine(layout.AssetsDir, Layout.ExportImageRel(l, i.Key)), audio: false, force, ct);
 
-            doc.Add(new ExportLesson(
+            // Pictures reused from another lesson are copied into this lesson's folder.
+            var reusedSvg = new Dictionary<string, bool>();
+            foreach (var (key, reuse) in LessonPlan.Reused(l))
+            {
+                var src = layout.ReuseSource(l, reuse)!.Value;
+                reusedSvg[key] = src.Svg;
+                var target = Path.Combine(layout.AssetsDir, Layout.ExportImageRel(l, key, src.Svg));
+                bytes += src.Svg ? await CopyIfNeededAsync(src.Path, target, force) : await EncodeIfNeededAsync(src.Path, target, audio: false, force, ct);
+            }
+
+            ExportColor? color = null;
+            if (l.Color is not null)
+            {
+                bytes += await CopyIfNeededAsync(layout.SvgSource(l, "swatch"), Path.Combine(layout.AssetsDir, Layout.ExportImageRel(l, "swatch", svg: true)), force);
+                bytes += await CopyIfNeededAsync(layout.SvgSource(l, "colorable"), Path.Combine(layout.AssetsDir, Layout.ExportImageRel(l, "colorable", svg: true)), force);
+                color = new ExportColor(l.Color.Name, l.Color.Hex, Layout.ExportImageRel(l, "swatch", svg: true), Layout.ExportImageRel(l, "colorable", svg: true));
+            }
+
+            string? PhraseFor(LessonWord w) =>
+                LessonPlan.Audio(l).Any(a => a.Role == LessonPlan.PhraseRole(w.Word)) ? Layout.ExportAudioRel(l, LessonPlan.PhraseRole(w.Word)) : null;
+
+            exported.Add((l.Unit.Length == 0 ? "main" : l.Unit, new ExportLesson(
                 l.Id, l.ResolvedOrder, l.Level, l.Letter, l.Phoneme,
                 new ExportLessonAudio(
                     Layout.ExportAudioRel(l, "intro"),
                     string.IsNullOrWhiteSpace(l.Phoneme) ? null : Layout.ExportAudioRel(l, "phoneme"),
                     l.Narration.Praise.Select((_, n) => Layout.ExportAudioRel(l, $"praise-{n}")).ToList(),
-                    l.Narration.Instructions.Count == 0 ? null : l.Narration.Instructions.OrderBy(k => k.Key, StringComparer.Ordinal).ToDictionary(k => k.Key, k => Layout.ExportAudioRel(l, LessonPlan.InstructionRole(k.Key)))),
-                l.Words.Select(w => new ExportWord(w.Word.Trim(), Layout.ExportAudioRel(l, $"word-{LessonPlan.Slug(w.Word)}"), Layout.ExportImageRel(l, LessonPlan.Slug(w.Word), w.Source == "svg"))).ToList(),
-                l.Activities.ToList()));
+                    l.Narration.Instructions.Count == 0 ? null : l.Narration.Instructions.OrderBy(k => k.Key, StringComparer.Ordinal).ToDictionary(k => k.Key, k => Layout.ExportAudioRel(l, LessonPlan.InstructionRole(k.Key))),
+                    string.IsNullOrWhiteSpace(l.Narration.ColorName) ? null : Layout.ExportAudioRel(l, "color-name")),
+                l.Words.Select(w =>
+                {
+                    var key = LessonPlan.Slug(w.Word);
+                    var svg = w.Reuse is not null ? reusedSvg[key] : w.Source == "svg";
+                    return new ExportWord(w.Word.Trim(), Layout.ExportAudioRel(l, $"word-{key}"), Layout.ExportImageRel(l, key, svg), PhraseFor(w));
+                }).ToList(),
+                l.Activities.ToList(),
+                color)));
+        }
+
+        // Units: ordered as in the units file. With a units file every unit is listed, even without lessons yet (the app shows it locked).
+        var doc = new List<ExportUnit>();
+        var defs = units?.Where(u => u.Track == track).OrderBy(u => u.Order).ToList() ?? [];
+        if (defs.Count == 0)
+            defs = exported.Select(e => e.UnitId).Distinct().Select((id, n) => new UnitDef { Id = id, Track = track, Order = n + 1, Title = new() { ["en"] = id, ["ar"] = id }, Icon = id }).ToList();
+        foreach (var u in defs)
+        {
+            var unitLessons = exported.Where(e => e.UnitId == u.Id).Select(e => e.Lesson).OrderBy(x => x.Order).ToList();
+            if (unitLessons.Count == 0 && units is not { Count: > 0 }) continue; // with a units file, empty units still appear (as "coming soon")
+            ExportUnitAudio? audio = null;
+            if (units is { Count: > 0 })
+            {
+                var ul = CurriculumReader.UnitAudioLesson(u);
+                if (LessonPlan.Audio(ul).Any(a => layout.AudioForExport(ul, a.Role) is null))
+                    incomplete.Add($"{ul.Id}: unit audio missing (run audio)");
+                else
+                {
+                    foreach (var a in LessonPlan.Audio(ul))
+                        bytes += await EncodeIfNeededAsync(layout.AudioForExport(ul, a.Role)!, Path.Combine(layout.AssetsDir, Layout.ExportAudioRel(ul, a.Role)), audio: true, force, ct);
+                    audio = new ExportUnitAudio(
+                        Layout.ExportAudioRel(ul, LessonPlan.InstructionRole("title")),
+                        string.IsNullOrWhiteSpace(u.Narration.Welcome) ? null : Layout.ExportAudioRel(ul, "intro"),
+                        Layout.ExportAudioRel(ul, LessonPlan.InstructionRole("celebration")));
+                }
+            }
+            doc.Add(new ExportUnit(u.Id, u.Order, u.Title, u.Icon, u.Color, audio, unitLessons));
         }
 
         string? mascot = null;
@@ -135,10 +201,10 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
             UpdatePubspec();
         }
 
-        output.WriteLine($"Export ({track}): {doc.Count} lesson(s) exported, {incomplete.Count} incomplete (skipped).");
+        output.WriteLine($"Export ({track}): {exported.Count} lesson(s) exported in {doc.Count} unit(s), {incomplete.Count} incomplete (skipped).");
         foreach (var i in incomplete) output.WriteLine($"  incomplete: {i}");
         output.WriteLine($"Total exported asset size: {bytes / 1024.0:0.0} KB");
-        return new ExportResult(doc.Count, incomplete, bytes, jsonPath);
+        return new ExportResult(exported.Count, incomplete, bytes, jsonPath);
     }
 
     private async Task<long> CopyIfNeededAsync(string source, string target, bool force)

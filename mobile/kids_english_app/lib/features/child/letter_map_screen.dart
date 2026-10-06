@@ -21,9 +21,12 @@ const double _nodeSize = 92;
 /// Node + gap + the row of 3 stars (22 dp each), centred vertically in the row.
 const double _columnHeight = _nodeSize + 2 + 22;
 
-/// The learning path: all lessons (A-Z) as a winding trail. A lesson opens when the previous one has progress.
+/// The lesson path of one unit (the Letters unit: A-Z) as a winding trail. A lesson opens when the previous one has progress.
+/// Without [unitId] the first unit of the track is shown.
 class LetterMapScreen extends ConsumerWidget {
-  const LetterMapScreen({super.key});
+  const LetterMapScreen({super.key, this.unitId});
+
+  final String? unitId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -44,7 +47,10 @@ class LetterMapScreen extends ConsumerWidget {
                   ],
                 ),
               ),
-              data: (track) => _Map(track: track),
+              data: (track) {
+                final unit = (unitId == null ? null : track.unitById(unitId!)) ?? track.units.first;
+                return _Map(track: track, lessons: unit.lessons);
+              },
             ),
           ),
         ),
@@ -54,8 +60,9 @@ class LetterMapScreen extends ConsumerWidget {
 }
 
 class _Map extends ConsumerWidget {
-  const _Map({required this.track});
+  const _Map({required this.track, required this.lessons});
   final TrackContent track;
+  final List<Lesson> lessons;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -114,19 +121,19 @@ class _Map extends ConsumerWidget {
             key: const Key('letter-map'),
             padding: const EdgeInsets.symmetric(vertical: 8),
             itemExtent: _rowHeight,
-            itemCount: track.lessons.length,
+            itemCount: lessons.length,
             itemBuilder: (context, i) {
-              final lesson = track.lessons[i];
+              final lesson = lessons[i];
               final unlocked = isLessonUnlocked(
                 index: i,
                 unlockAll: unlockAll,
                 previousHasProgress:
-                    i > 0 && childId != null && progress.hasProgress(childId, track.lessons[i - 1].id),
+                    i > 0 && childId != null && progress.hasProgress(childId, lessons[i - 1].id),
               );
               final stars = childId == null ? 0 : progress.starsFor(childId, lesson.id);
               return _MapRow(
                 index: i,
-                total: track.lessons.length,
+                total: lessons.length,
                 lesson: lesson,
                 unlocked: unlocked,
                 stars: stars,

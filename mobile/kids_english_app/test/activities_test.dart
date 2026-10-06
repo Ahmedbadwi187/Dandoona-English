@@ -47,7 +47,8 @@ void main() {
     });
 
     test('with a tiny track the lesson\'s own other words are used as distractors', () {
-      final tiny = TrackContent(track: 't', lessons: [lessonA]);
+      final tiny = TrackContent(
+          track: 't', units: [CourseUnit(id: 'u', order: 1, title: const {'en': 'U'}, icon: '', color: '', lessons: [lessonA])]);
       final rounds = buildChoiceRounds(lessonA, tiny, Random(1));
       expect(rounds.every((r) => r.options.length == 3), isTrue);
     });

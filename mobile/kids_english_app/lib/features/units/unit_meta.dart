@@ -1,0 +1,125 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../core/storage.dart';
+import '../content/content_models.dart';
+import '../progress/progress.dart';
+
+/// What the app remembers per child about units, next to (not inside) the progress records: which unit
+/// certificates were earned, and which unit celebrations were already shown.
+/// Stored under `meta.v2`; `progress.v1` is never rewritten, so existing progress is untouched.
+class ChildUnitMeta {
+  const ChildUnitMeta({this.certificates = const {}, this.celebrated = const {}});
+
+  /// unit id -> date earned (yyyy-MM-dd).
+  final Map<String, String> certificates;
+  final Set<String> celebrated;
+
+  ChildUnitMeta copyWith({Map<String, String>? certificates, Set<String>? celebrated}) =>
+      ChildUnitMeta(certificates: certificates ?? this.certificates, celebrated: celebrated ?? this.celebrated);
+
+  Map<String, dynamic> toJson() => {'certificates': certificates, 'celebrated': celebrated.toList()..sort()};
+
+  factory ChildUnitMeta.fromJson(Map<String, dynamic> json) => ChildUnitMeta(
+        certificates: ((json['certificates'] as Map<String, dynamic>?) ?? const {}).map((k, v) => MapEntry(k, v as String)),
+        celebrated: ((json['celebrated'] as List<dynamic>?) ?? const []).cast<String>().toSet(),
+      );
+}
+
+class UnitMeta {
+  const UnitMeta({this.schema = currentSchema, this.children = const {}});
+
+  static const currentSchema = 2;
+
+  final int schema;
+  final Map<String, ChildUnitMeta> children;
+
+  ChildUnitMeta of(String childId) => children[childId] ?? const ChildUnitMeta();
+
+  Map<String, dynamic> toJson() => {'schema': schema, 'children': children.map((k, v) => MapEntry(k, v.toJson()))};
+
+  factory UnitMeta.fromJson(Map<String, dynamic> json) => UnitMeta(
+        schema: (json['schema'] as int?) ?? 0,
+        children: ((json['children'] as Map<String, dynamic>?) ?? const {}).map((k, v) => MapEntry(k, ChildUnitMeta.fromJson(v as Map<String, dynamic>))),
+      );
+}
+
+String dateOnly(DateTime d) => '${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
+
+/// Migration for children who used the app before units existed (their progress is `progress.v1`, unchanged):
+/// for every unit a child had already finished, the certificate counts as earned and the celebration as seen, so
+/// nothing they achieved is lost and nothing is celebrated twice. Pure and idempotent: running it on its own output
+/// changes nothing.
+UnitMeta migrateUnitMeta({
+  required UnitMeta existing,
+  required List<CourseUnit> units,
+  required List<ProgressRecord> progress,
+  required Iterable<String> childIds,
+}) {
+  if (existing.schema >= UnitMeta.currentSchema) return existing;
+  final children = {...existing.children};
+  for (final childId in childIds) {
+    final mine = progress.where((r) => r.childId == childId).toList();
+    var meta = existing.of(childId);
+    for (final unit in units) {
+      if (unit.lessons.isEmpty) continue;
+      final records = mine.where((r) => unit.lessons.any((l) => l.id == r.lessonId)).toList();
+      final finished = unit.lessons.every((l) => records.any((r) => r.lessonId == l.id));
+      if (!finished || meta.certificates.containsKey(unit.id)) continue;
+      final when = records.map((r) => r.completedAt).reduce((a, b) => a.isAfter(b) ? a : b);
+      meta = meta.copyWith(
+        certificates: {...meta.certificates, unit.id: dateOnly(when.toLocal())},
+        celebrated: {...meta.celebrated, unit.id},
+      );
+    }
+    children[childId] = meta;
+  }
+  return UnitMeta(children: children);
+}
+
+class UnitMetaNotifier extends Notifier<UnitMeta> {
+  @override
+  UnitMeta build() {
+    final raw = ref.read(sharedPreferencesProvider).readJson(PrefKeys.unitMeta);
+    if (raw is Map<String, dynamic>) {
+      try {
+        return UnitMeta.fromJson(raw);
+      } on Object {
+        // unreadable: start again (the migration below rebuilds what progress proves)
+      }
+    }
+    return const UnitMeta(schema: 0);
+  }
+
+  /// Runs the migration once (schema 0 -> 2) when the lessons are known.
+  Future<void> migrateIfNeeded({required List<CourseUnit> units, required List<ProgressRecord> progress, required Iterable<String> childIds}) async {
+    if (state.schema >= UnitMeta.currentSchema) return;
+    state = migrateUnitMeta(existing: state, units: units, progress: progress, childIds: childIds);
+    await _save();
+  }
+
+  Future<void> awardCertificate(String childId, String unitId, DateTime when) async {
+    final meta = state.of(childId);
+    if (meta.certificates.containsKey(unitId)) return;
+    _put(childId, meta.copyWith(certificates: {...meta.certificates, unitId: dateOnly(when)}));
+    await _save();
+  }
+
+  Future<void> markCelebrated(String childId, String unitId) async {
+    final meta = state.of(childId);
+    if (meta.celebrated.contains(unitId)) return;
+    _put(childId, meta.copyWith(celebrated: {...meta.celebrated, unitId}));
+    await _save();
+  }
+
+  Future<void> removeForChild(String childId) async {
+    state = UnitMeta(schema: state.schema, children: {...state.children}..remove(childId));
+    await _save();
+  }
+
+  void _put(String childId, ChildUnitMeta meta) =>
+      state = UnitMeta(schema: state.schema, children: {...state.children, childId: meta});
+
+  Future<void> _save() => ref.read(sharedPreferencesProvider).writeJson(PrefKeys.unitMeta, state.toJson());
+}
+
+final unitMetaProvider = NotifierProvider<UnitMetaNotifier, UnitMeta>(UnitMetaNotifier.new);

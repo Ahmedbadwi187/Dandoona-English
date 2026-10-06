@@ -52,6 +52,16 @@ public sealed class Layout(string root)
             ? Directory.GetFiles(ImageReviewDir(l), $"{key}.v*.webp").Order().ToList()
             : [];
 
+    /// <summary>Where a reused picture lives: another lesson's self-drawn SVG, else its approved image. Null when neither exists.</summary>
+    public (string Path, bool Svg)? ReuseSource(Lesson l, string reuse)
+    {
+        var parts = reuse.Split('/');
+        var other = new Lesson { Id = parts[0], Track = l.Track };
+        if (File.Exists(SvgSource(other, parts[1]))) return (SvgSource(other, parts[1]), true);
+        if (File.Exists(ImageApproved(other, parts[1]))) return (ImageApproved(other, parts[1]), false);
+        return null;
+    }
+
     /// <summary>The audio file export would use: your override if present, else the generated file.</summary>
     public string? AudioForExport(Lesson l, string role) =>
         File.Exists(AudioOverride(l, role)) ? AudioOverride(l, role) :
@@ -92,14 +102,24 @@ public static class LessonPlan
         if (!string.IsNullOrWhiteSpace(l.Phoneme)) items.Add(new("phoneme", l.Phoneme.Trim(), true));
         for (var i = 0; i < l.Narration.Praise.Count; i++) items.Add(new($"praise-{i}", l.Narration.Praise[i].Trim(), false));
         foreach (var w in l.Words) items.Add(new($"word-{Slug(w.Word)}", w.Word.Trim(), false));
+        if (!string.IsNullOrWhiteSpace(l.Narration.ColorName)) items.Add(new("color-name", l.Narration.ColorName.Trim(), false));
+        foreach (var w in l.Words)
+            if (l.Narration.Phrases.FirstOrDefault(p => p.Key.Trim().Equals(w.Word.Trim(), StringComparison.OrdinalIgnoreCase)) is { Value: { Length: > 0 } phrase })
+                items.Add(new(PhraseRole(w.Word), phrase.Trim(), false));
         foreach (var (key, text) in l.Narration.Instructions.OrderBy(k => k.Key, StringComparer.Ordinal)) items.Add(new(InstructionRole(key), text.Trim(), false));
         return items;
     }
 
+    /// <summary>Pictures that must be drawn or generated for this lesson (words that reuse another lesson's picture are not included).</summary>
     public static IReadOnlyList<ImageItem> Images(Lesson l) =>
-        l.Words.Select(w => new ImageItem(Slug(w.Word), w.ImagePrompt.Trim(), w.Mascot, w.Source == "svg")).ToList();
+        l.Words.Where(w => w.Reuse is null).Select(w => new ImageItem(Slug(w.Word), w.ImagePrompt.Trim(), w.Mascot, w.Source == "svg")).ToList();
 
     public static string InstructionRole(string key) => $"instr-{key}";
+    public static string PhraseRole(string word) => $"phrase-{Slug(word)}";
+
+    /// <summary>Words that reuse a picture from another lesson: (word key, "lesson-id/key").</summary>
+    public static IReadOnlyList<(string Key, string Reuse)> Reused(Lesson l) =>
+        l.Words.Where(w => w.Reuse is not null).Select(w => (Slug(w.Word), w.Reuse!)).ToList();
 
     public static string Slug(string word) =>
         new(word.Trim().ToLowerInvariant().Select(ch => char.IsLetterOrDigit(ch) ? ch : '-').ToArray());

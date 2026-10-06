@@ -155,7 +155,7 @@ public class ArtAndLedgerTests
         result.Exported.ShouldBe(1);
         File.ReadAllText(Path.Combine(repo.Layout.AssetsDir, "images/little_learners/letter_a/apple.svg")).ShouldBe(Svg);
         using var doc = JsonDocument.Parse(File.ReadAllText(result.JsonPath!));
-        var words = doc.RootElement.GetProperty("lessons")[0].GetProperty("words");
+        var words = doc.RootElement.GetProperty("units")[0].GetProperty("lessons")[0].GetProperty("words");
         words[0].GetProperty("image").GetString().ShouldBe("images/little_learners/letter_a/apple.svg");
         words[1].GetProperty("image").GetString().ShouldBe("images/little_learners/letter_a/ant.webp");
     }

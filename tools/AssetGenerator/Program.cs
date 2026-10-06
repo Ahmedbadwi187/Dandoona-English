@@ -34,6 +34,7 @@ var export = new Command("export", "Encode approved assets into the Flutter asse
 audio.SetAction((pr, ct) => Guard(async () =>
 {
     var (layout, lessons) = Load(pr);
+    lessons = WithUnitAudio(layout, lessons, pr.GetValue(trackOpt));
     using var sp = Services(config);
     return await new AudioRunner(layout, ConfigLoader.Voices(layout), ConfigLoader.Generation(layout),
         sp.GetService<ElevenLabsClient>(), config["ELEVENLABS_VOICE_ID"], Console.Out)
@@ -51,6 +52,7 @@ images.SetAction((pr, ct) => Guard(async () =>
 all.SetAction((pr, ct) => Guard(async () =>
 {
     var (layout, lessons) = Load(pr);
+    lessons = WithUnitAudio(layout, lessons, pr.GetValue(trackOpt));
     using var sp = Services(config);
     var gen = ConfigLoader.Generation(layout);
     var a = await new AudioRunner(layout, ConfigLoader.Voices(layout), gen, sp.GetService<ElevenLabsClient>(), config["ELEVENLABS_VOICE_ID"], Console.Out)
@@ -108,7 +110,8 @@ export.SetAction((pr, ct) => Guard(async () =>
     var layout = Layout.Find(pr.GetValue(rootOpt));
     var track = pr.GetValue(trackOpt) ?? throw new CurriculumException("export requires --track.");
     var lessons = CurriculumReader.Select(CurriculumReader.LoadAll(layout.CurriculumDir), null, track);
-    await new ExportRunner(layout, ConfigLoader.Generation(layout), MediaTools.Create(Console.Out), Console.Out).RunAsync(track, lessons, ct, pr.GetValue(forceOpt));
+    await new ExportRunner(layout, ConfigLoader.Generation(layout), MediaTools.Create(Console.Out), Console.Out)
+        .RunAsync(track, lessons, ct, pr.GetValue(forceOpt), CurriculumReader.LoadUnits(layout.CurriculumDir));
     return 0;
 }));
 
@@ -118,6 +121,10 @@ var root = new RootCommand("Kids English AssetGenerator (dev-only: produces stat
 };
 root.Add(rootOpt);
 return await root.Parse(args).InvokeAsync();
+
+// With --track, the units' own audio lines (title, welcome, celebration) are generated together with the lessons.
+IReadOnlyList<Lesson> WithUnitAudio(Layout layout, IReadOnlyList<Lesson> lessons, string? track) =>
+    track is null ? lessons : lessons.Concat(CurriculumReader.LoadUnits(layout.CurriculumDir).Where(u => u.Track == track).Select(CurriculumReader.UnitAudioLesson)).ToList();
 
 (Layout, IReadOnlyList<Lesson>) Load(ParseResult pr)
 {

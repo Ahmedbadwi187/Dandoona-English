@@ -28,4 +28,5 @@ abstract final class PrefKeys {
   static const settings = 'settings.v1';
   static const children = 'children.v1';
   static const progress = 'progress.v1';
+  static const unitMeta = 'meta.v2';
 }

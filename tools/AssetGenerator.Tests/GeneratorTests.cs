@@ -245,9 +245,9 @@ public class StatusAndExportTests
 
         using var doc = JsonDocument.Parse(File.ReadAllText(result.JsonPath!));
         var root = doc.RootElement;
-        root.GetProperty("schemaVersion").GetInt32().ShouldBe(1);
+        root.GetProperty("schemaVersion").GetInt32().ShouldBe(2);
         root.GetProperty("track").GetString().ShouldBe("little-learners");
-        var l = root.GetProperty("lessons")[0];
+        var l = root.GetProperty("units")[0].GetProperty("lessons")[0];
         l.GetProperty("id").GetString().ShouldBe("letter-a");
         l.GetProperty("letter").GetString().ShouldBe("A");
         l.GetProperty("audio").GetProperty("intro").GetString().ShouldBe("audio/little_learners/letter_a/intro.mp3");
