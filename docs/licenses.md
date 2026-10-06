@@ -9,7 +9,7 @@ version listed. **Update this file whenever a package is added or upgraded.**
 
 Last full audit of the restored graph (2026-10-05): 135 NuGet packages. 111 MIT, 19 Apache-2.0, 2 BSD-3-Clause,
 `xunit.abstractions` 2.0.3 (xunit project, Apache-2.0, license given as a URL rather than an SPDX id), and the two
-exceptions listed under "Known exceptions" below.
+exceptions listed under "Accepted exceptions" below.
 
 ## Backend (`/src`) - NuGet
 
@@ -87,20 +87,28 @@ its current SQLite setup when adding it.
 
 | Item | License |
 |---|---|
-| SQL Server (Docker image, Express edition) | Microsoft proprietary: free of charge (Express/Developer), NOT open source. Decision by the project owner, overriding the PostgreSQL switch |
+| SQL Server (Docker image, Express edition) | Microsoft proprietary: free of charge, max 10 GB per database, NOT open source. Accepted exception, see "Accepted exceptions" below |
 | dotnet-ef (local tool) | MIT |
 | Docker / Docker Compose, Azure DevOps | Hosted/dev tooling, not product components; review terms for your organization |
 
-## Known exceptions to the permissive-license rule
+## Accepted exceptions to the free-components rule
 
-All come from the project owner's decision to use SQL Server (2026-10-05):
+**Decision (project owner, 2026-10-06): the database stays SQL Server.** This is an *accepted exception* to the rule that the
+product uses only free, open-source, permissive components. It is recorded here deliberately and is not a gap to be "fixed".
+
+- **SQL Server Express is free of charge, with a size limit of 10 GB per database** (plus limits on CPU and memory). Docker
+  Compose uses `MSSQL_PID=Express`. The Developer edition is also free but licensed for development and testing only.
+- Staying within Express means no license cost. If one database ever needs to exceed 10 GB (or the CPU/RAM limits), that would
+  need a paid edition or a move to another database: until then no payment is involved. Keep an eye on database size.
+- The two native packages below ship with the SQL Server driver under Microsoft's own (free-to-use) license terms. They are not
+  open source, which is the other half of this exception.
 
 | Item | Terms | Notes |
 |---|---|---|
-| SQL Server (server) | Microsoft proprietary. Express and Developer editions are free of charge; Express is limited (10 GB database, limited CPU/RAM). Production beyond those limits needs a paid license. | Docker Compose uses `MSSQL_PID=Express`. |
+| SQL Server (server) | Microsoft proprietary. Express: free, max 10 GB per database, limited CPU/RAM. Production beyond those limits needs a paid license. | Docker Compose uses `MSSQL_PID=Express`. |
 | Microsoft.Data.SqlClient.SNI.runtime 6.0.2 | Microsoft Software License Terms (free to use, not OSI-approved) | Native networking library required by the SQL Server driver. |
 | Microsoft.Identity.Client.NativeInterop 0.20.6 | Microsoft Software License Terms (free to use, not OSI-approved) | Transitive via the driver's Entra ID authentication support. Not used (we authenticate with SQL logins). |
 
 The managed drivers themselves (Microsoft.EntityFrameworkCore.SqlServer, Microsoft.Data.SqlClient) are MIT. A PostgreSQL
-build (Npgsql, PostgreSQL License) was tried and reverted on request; the PostgreSQL option remains available if the
-fully-open-source rule should win.
+build (Npgsql, PostgreSQL License) was tried and reverted on request; it remains a technical option if the owner ever
+decides the fully-open-source rule should win.
