@@ -75,6 +75,7 @@ if (app.Environment.IsDevelopment())
 app.MapGet("/health", () => Results.Ok(new { status = "ok" })).AllowAnonymous();
 app.MapAuthEndpoints();
 app.MapChildEndpoints();
+app.MapProgressEndpoints();
 
 app.Run();
 

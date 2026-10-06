@@ -1,5 +1,6 @@
 using KidsEnglish.Application.Auth;
 using KidsEnglish.Application.Children;
+using KidsEnglish.Application.Progress;
 
 namespace KidsEnglish.Api.Endpoints;
 
@@ -40,5 +41,21 @@ public static class Endpoints
             await s.DeleteAsync(id, ct);
             return Results.NoContent();
         });
+    }
+
+    public static void MapProgressEndpoints(this IEndpointRouteBuilder app)
+    {
+        var children = app.MapGroup("/api/children").WithTags("Progress").RequireAuthorization();
+
+        // Offline-first sync: the app posts batches (max 200); resubmitting the same client record id is harmless.
+        children.MapPost("/{id:guid}/progress", async (Guid id, SubmitProgressRequest r, ProgressService s, CancellationToken ct) =>
+            Results.Ok(await s.SubmitAsync(id, r, ct)));
+        children.MapGet("/{id:guid}/progress", async (Guid id, DateTime? since, ProgressService s, CancellationToken ct) =>
+            Results.Ok(await s.ListAsync(id, since, ct)));
+        children.MapGet("/{id:guid}/summary", async (Guid id, DateOnly? weekStart, ProgressService s, CancellationToken ct) =>
+            Results.Ok(await s.WeeklySummaryAsync(id, weekStart, ct)));
+
+        app.MapGet("/api/summary", async (DateOnly? weekStart, ProgressService s, CancellationToken ct) =>
+            Results.Ok(await s.WeeklySummariesAsync(weekStart, ct))).WithTags("Progress").RequireAuthorization();
     }
 }
