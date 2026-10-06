@@ -288,6 +288,8 @@ void main() {
 
       await tester.tap(find.text('Omar'));
       await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const Key('unit-letters'))); // the home screen is the unit map
+      await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('node-letter-a')));
       await tester.pumpAndSettle();
       expect(find.byKey(const Key('lesson-letter')), findsOneWidget);
@@ -311,11 +313,13 @@ void main() {
       await tester.pumpAndSettle();
       await tester.tap(find.text('Omar'));
       await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const Key('unit-letters'))); // the home screen is the unit map
+      await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('node-letter-a')));
       await tester.pumpAndSettle();
 
       expect(find.byKey(const Key('speaker-badge')), findsNWidgets(4)); // the letter and its 3 pictures show that they can be pressed
-      expect(audio.played, ['asset:audio/little_learners/letter_a/intro.mp3']); // the letter introduces itself when the lesson opens
+      expect(audio.played.last, 'asset:audio/little_learners/letter_a/intro.mp3'); // the letter introduces itself when the lesson opens (after the unit's title was said on the map)
       audio.played.clear();
 
       await tester.ensureVisible(find.byKey(const Key('word-apple')));

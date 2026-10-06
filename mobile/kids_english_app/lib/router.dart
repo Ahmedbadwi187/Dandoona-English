@@ -14,6 +14,7 @@ import 'features/parent/settings_screen.dart';
 import 'features/profiles/child_profile.dart';
 import 'features/router_state.dart';
 import 'features/settings/settings.dart';
+import 'features/units/unit_map_screen.dart';
 
 /// Where a path may go, given the current state. Pure so it can be unit-tested.
 String? guardRoute({
@@ -27,7 +28,7 @@ String? guardRoute({
   if (location == '/who' && !hasProfiles) return '/onboarding';
   // Parent area is only reachable through the parental gate.
   if (location.startsWith('/parent') && !parentUnlocked) return '/who';
-  if ((location == '/map' || location == '/wardrobe' || location.startsWith('/lesson/')) && !hasActiveChild) return '/who';
+  if ((location == '/map' || location == '/wardrobe' || location.startsWith('/lesson/') || location.startsWith('/unit/') || location.startsWith('/certificate/')) && !hasActiveChild) return '/who';
   return null;
 }
 
@@ -46,7 +47,8 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/onboarding', builder: (_, _) => const OnboardingScreen()),
       GoRoute(path: '/onboarding/child', builder: (_, _) => const ChildFormScreen(firstRun: true)),
       GoRoute(path: '/who', builder: (_, _) => const ProfilePickerScreen()),
-      GoRoute(path: '/map', builder: (_, _) => const LetterMapScreen()),
+      GoRoute(path: '/map', builder: (_, _) => const UnitMapScreen()),
+      GoRoute(path: '/unit/:id', builder: (_, state) => LetterMapScreen(unitId: state.pathParameters['id'])),
       GoRoute(path: '/wardrobe', builder: (_, _) => const WardrobeScreen()),
       GoRoute(
         path: '/lesson/:id',

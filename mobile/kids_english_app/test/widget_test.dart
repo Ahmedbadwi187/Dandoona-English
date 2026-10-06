@@ -130,6 +130,8 @@ void main() {
 
       await tester.tap(find.text('Omar'));
       await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const Key('unit-letters'))); // child -> unit map -> the Letters path
+      await tester.pumpAndSettle();
 
       final list = tester.widget<ListView>(find.byKey(const Key('letter-map')));
       expect(list.childrenDelegate.estimatedChildCount, 26);

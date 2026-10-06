@@ -17,6 +17,7 @@ abstract final class Palette {
   static const pink = Color(0xFFF08FA5);
   static const red = Color(0xFFE5524A);
   static const gray = Color(0xFFB8B8B8);
+  static const black = Color(0xFF2B2B2B);
 
   /// Dandoona brand colors (from her channel).
   static const plum = Color(0xFF9B6BD3);

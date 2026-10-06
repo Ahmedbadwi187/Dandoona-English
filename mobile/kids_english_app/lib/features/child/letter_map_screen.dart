@@ -8,6 +8,7 @@ import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
 import '../../core/widgets.dart';
+import '../activities/color_the_object_activity.dart' show colorFromHex;
 import '../content/content_models.dart';
 import '../content/content_repository.dart';
 import '../profiles/child_profile.dart';
@@ -84,7 +85,7 @@ class _Map extends ConsumerWidget {
                 key: const Key('map-back'),
                 constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
                 iconSize: 32,
-                onPressed: () => context.go('/who'),
+                onPressed: () => context.go('/map'),
                 icon: const Icon(Icons.arrow_back_rounded),
               ),
               if (child != null) AvatarCircle(child.avatarKey, size: 48),
@@ -168,7 +169,7 @@ class _MapRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = unlocked ? Palette.nodeColors[index % Palette.nodeColors.length] : Palette.gray;
+    final color = !unlocked ? Palette.gray : (lesson.color != null ? colorFromHex(lesson.color!.hex) : Palette.nodeColors[index % Palette.nodeColors.length]);
     final filledStars = (stars / 4).ceil().clamp(0, 3); // 0-12 stars summarised as 0-3
     return Stack(
       children: [
@@ -185,7 +186,7 @@ class _MapRow extends StatelessWidget {
           alignment: Alignment(_alignmentFor(index), 0),
           child: BigTap(
             onTap: onTap,
-            semanticLabel: lesson.letter == null ? lesson.id : 'Letter ${lesson.letter}',
+            semanticLabel: lesson.color != null ? lesson.color!.name : (lesson.letter == null ? lesson.id : 'Letter ${lesson.letter}'),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -200,8 +201,10 @@ class _MapRow extends StatelessWidget {
                   ),
                   alignment: Alignment.center,
                   child: unlocked
-                      ? Text(lesson.letter ?? '?',
-                          style: const TextStyle(fontSize: 48, fontWeight: FontWeight.w900, color: Palette.white))
+                      ? (lesson.color != null
+                          ? const SizedBox.shrink() // a Colors lesson is the color itself
+                          : Text(lesson.letter ?? '?',
+                          style: const TextStyle(fontSize: 48, fontWeight: FontWeight.w900, color: Palette.white)))
                       : const Icon(Icons.lock_rounded, color: Palette.white, size: 40),
                 ),
                 const SizedBox(height: 2),
