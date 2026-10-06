@@ -139,7 +139,7 @@ public sealed class FfmpegTool : IMediaTool
     public Task EncodeAudioAsync(string input, string output, ExportSettings s, CancellationToken ct) =>
         RunAsync(["-y", "-v", "error", "-i", input, "-ac", "1",
                   "-af", $"loudnorm=I={s.LoudnessLufs.ToString(System.Globalization.CultureInfo.InvariantCulture)}:TP=-1.5:LRA=11",
-                  "-c:a", "libmp3lame", "-b:a", $"{s.AudioBitrateKbps}k", output], ct);
+                  "-ar", "44100", "-c:a", "libmp3lame", "-b:a", $"{s.AudioBitrateKbps}k", output], ct);
 
     public Task EncodeImageAsync(string input, string output, ExportSettings s, CancellationToken ct) =>
         RunAsync(["-y", "-v", "error", "-i", input,
