@@ -40,20 +40,20 @@ final routerProvider = Provider<GoRouter>((ref) {
       hasActiveChild: ref.read(activeChildIdProvider) != null,
     ),
     routes: [
-      GoRoute(path: '/', builder: (_, __) => const OnboardingScreen()), // redirected by guardRoute
-      GoRoute(path: '/onboarding', builder: (_, __) => const OnboardingScreen()),
-      GoRoute(path: '/onboarding/child', builder: (_, __) => const ChildFormScreen(firstRun: true)),
-      GoRoute(path: '/who', builder: (_, __) => const ProfilePickerScreen()),
-      GoRoute(path: '/map', builder: (_, __) => const LetterMapScreen()),
+      GoRoute(path: '/', builder: (_, _) => const OnboardingScreen()), // redirected by guardRoute
+      GoRoute(path: '/onboarding', builder: (_, _) => const OnboardingScreen()),
+      GoRoute(path: '/onboarding/child', builder: (_, _) => const ChildFormScreen(firstRun: true)),
+      GoRoute(path: '/who', builder: (_, _) => const ProfilePickerScreen()),
+      GoRoute(path: '/map', builder: (_, _) => const LetterMapScreen()),
       GoRoute(
         path: '/lesson/:id',
         builder: (_, state) => LessonScreen(lessonId: state.pathParameters['id']!),
       ),
-      GoRoute(path: '/parent', builder: (_, __) => const ParentHomeScreen()),
-      GoRoute(path: '/parent/settings', builder: (_, __) => const SettingsScreen()),
-      GoRoute(path: '/parent/children', builder: (_, __) => const ChildrenScreen()),
+      GoRoute(path: '/parent', builder: (_, _) => const ParentHomeScreen()),
+      GoRoute(path: '/parent/settings', builder: (_, _) => const SettingsScreen()),
+      GoRoute(path: '/parent/children', builder: (_, _) => const ChildrenScreen()),
       // 'new' must be declared before ':id'.
-      GoRoute(path: '/parent/children/new', builder: (_, __) => const ChildFormScreen()),
+      GoRoute(path: '/parent/children/new', builder: (_, _) => const ChildFormScreen()),
       GoRoute(
         path: '/parent/children/:id',
         builder: (_, state) => ChildFormScreen(childId: state.pathParameters['id']),

@@ -19,7 +19,8 @@ Future<void> pumpApp(WidgetTester tester, {Map<String, Object> prefs = const {}}
 /// Presses and holds the gate button long enough, then returns the challenge the dialog is showing.
 Future<GateChallenge> passHoldStep(WidgetTester tester, int seed) async {
   final gesture = await tester.startGesture(tester.getCenter(find.byKey(const Key('gate-hold'))));
-  await tester.pump(const Duration(seconds: 3));
+  await tester.pump(const Duration(milliseconds: 200)); // press registers, hold animation starts
+  await tester.pump(const Duration(seconds: 3)); // held past the 2 s requirement
   await gesture.up();
   await tester.pump();
   return GateChallenge.random(Random(seed)); // dialog was created with Random(seed): same challenge
@@ -157,7 +158,8 @@ void main() {
 
       // The dialog uses Random(), so read the question from the screen.
       final gesture = await tester.startGesture(tester.getCenter(find.byKey(const Key('gate-hold'))));
-      await tester.pump(const Duration(seconds: 3));
+      await tester.pump(const Duration(milliseconds: 200)); // press registers, hold animation starts
+  await tester.pump(const Duration(seconds: 3)); // held past the 2 s requirement
       await gesture.up();
       await tester.pump();
       final question = (tester.widget<Text>(find.byKey(const Key('gate-question'))).data)!; // "a × b = ?"
