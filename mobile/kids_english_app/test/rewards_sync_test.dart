@@ -206,14 +206,14 @@ void main() {
       expect([w.totalStars, w.activitiesCompleted, w.activeDays, w.maxDayStars], [0, 0, 0, 0]);
     });
 
-    testWidgets('weekly view shows the numbers and seven bars in the parent language', (tester) async {
+    testWidgets('week tiles and chart show the numbers and seven bars in the parent language', (tester) async {
       final w = summarizeWeek([rec('1', 'a', 'letter-a', 'trace', 3, DateTime(2026, 10, 5, 9))], 'a', monday);
-      await tester.pumpWidget(MaterialApp(home: Scaffold(body: WeeklyView(summary: w, s: Strings.ar))));
-      expect(find.text('هذا الأسبوع'), findsOneWidget);
+      await tester.pumpWidget(MaterialApp(home: Scaffold(body: Column(children: [WeekTiles(summary: w, s: Strings.ar), WeekChart(summary: w, s: Strings.ar, goalMinutes: 10, today: monday)]))));
+      expect(find.text('النجوم'), findsOneWidget);
       for (var i = 0; i < 7; i++) {
         expect(find.byKey(Key('week-bar-$i')), findsOneWidget);
       }
-      expect(find.text('1/7'), findsOneWidget); // active days
+      expect(find.text('١/٧'), findsOneWidget); // active days, in Arabic digits
     });
   });
 

@@ -11,6 +11,7 @@ class AppSettings {
     this.onboarded = false,
     this.languageChosen = false,
     this.reminderTime,
+    this.parentName = '',
   });
 
   static const defaultSessionMinutes = 15;
@@ -29,13 +30,17 @@ class AppSettings {
   /// The parent's daily reminder: `morning`, `afternoon` or `evening`; null = no reminder.
   final String? reminderTime;
 
-  AppSettings copyWith({String? languageCode, int? sessionMinutes, bool? unlockAll, bool? onboarded, bool? languageChosen, String? reminderTime, bool clearReminder = false}) => AppSettings(
+  /// The parent's first name, if they gave one when creating an account (used only for the greeting on this phone).
+  final String parentName;
+
+  AppSettings copyWith({String? languageCode, int? sessionMinutes, bool? unlockAll, bool? onboarded, bool? languageChosen, String? reminderTime, bool clearReminder = false, String? parentName}) => AppSettings(
         languageCode: languageCode ?? this.languageCode,
         sessionMinutes: sessionMinutes ?? this.sessionMinutes,
         unlockAll: unlockAll ?? this.unlockAll,
         onboarded: onboarded ?? this.onboarded,
         languageChosen: languageChosen ?? this.languageChosen,
         reminderTime: clearReminder ? null : (reminderTime ?? this.reminderTime),
+        parentName: parentName ?? this.parentName,
       );
 
   Map<String, dynamic> toJson() => {
@@ -45,6 +50,7 @@ class AppSettings {
         'onboarded': onboarded,
         'languageChosen': languageChosen,
         if (reminderTime != null) 'reminderTime': reminderTime,
+        if (parentName.isNotEmpty) 'parentName': parentName,
       };
 
   factory AppSettings.fromJson(Map<String, dynamic> json) => AppSettings(
@@ -57,6 +63,7 @@ class AppSettings {
         // Settings saved before the language screen existed count as already chosen (those parents already picked a language).
         languageChosen: (json['languageChosen'] as bool?) ?? ((json['onboarded'] as bool?) ?? false),
         reminderTime: json['reminderTime'] as String?,
+        parentName: (json['parentName'] as String?) ?? '',
       );
 }
 
@@ -86,6 +93,8 @@ class SettingsNotifier extends Notifier<AppSettings> {
 
   /// Remembers the reminder time (null = no reminder). Scheduling it is the reminder service's job.
   Future<void> setReminder(String? time) => _set(state.copyWith(reminderTime: time, clearReminder: time == null));
+
+  Future<void> setParentName(String name) => _set(state.copyWith(parentName: name.trim()));
 
   /// The first screen: the parent confirmed this language (it also sets the layout direction everywhere in the parent area).
   Future<void> chooseLanguage(String code) => _set(state.copyWith(languageCode: code == 'en' ? 'en' : 'ar', languageChosen: true));

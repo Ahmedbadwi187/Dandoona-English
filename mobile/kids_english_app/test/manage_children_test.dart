@@ -129,7 +129,7 @@ void main() {
       await t.pumpAndSettle();
       await t.tap(find.byKey(const Key('parent-back')));
       await t.pumpAndSettle();
-      expect(find.text('Manage children'), findsNothing);
+      expect(find.byKey(const Key('manage-title')), findsNothing);
     });
   });
 

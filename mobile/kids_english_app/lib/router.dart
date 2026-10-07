@@ -10,6 +10,7 @@ import 'features/child/profile_picker_screen.dart';
 import 'features/onboarding/account_routes.dart';
 import 'features/onboarding/language_route.dart';
 import 'features/onboarding/setup_flow.dart';
+import 'features/parent/child_detail_screen.dart';
 import 'features/parent/edit_child_screen.dart';
 import 'features/rewards/wardrobe_screen.dart';
 import 'features/parent/children_screen.dart';
@@ -84,6 +85,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/parent', builder: (_, _) => const ParentHomeScreen()),
       GoRoute(path: '/parent/settings', builder: (_, _) => const SettingsScreen()),
       GoRoute(path: '/parent/children', builder: (_, _) => const ChildrenScreen()),
+      GoRoute(path: '/parent/child/:id', builder: (_, state) => ChildDetailScreen(childId: state.pathParameters['id']!)),
       GoRoute(path: '/parent/children/:id', builder: (_, state) => EditChildScreen(childId: state.pathParameters['id']!)),
     ],
   );

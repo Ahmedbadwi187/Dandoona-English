@@ -154,7 +154,7 @@ void main() {
 
       expect(find.text('منطقة الأهل'), findsOneWidget);
       expect(Directionality.of(tester.element(find.text('منطقة الأهل'))), TextDirection.rtl);
-      expect(find.text('Omar'), findsOneWidget);
+      expect(find.byKey(const Key('parent-child-c1')), findsOneWidget); // Omar's card
     });
 
     testWidgets('returning user (already onboarded, has a profile) goes straight to the picker', (tester) async {

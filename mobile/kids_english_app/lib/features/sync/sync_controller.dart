@@ -56,6 +56,7 @@ class SyncController extends Notifier<SyncUiState> {
   Future<void> signIn(String baseUrl, String email, String password, {bool register = false, String firstName = '', bool guardianConfirmed = true, bool termsAccepted = true}) => _run(() async {
         if (register) {
           await _service.register(baseUrl.trim(), email.trim(), password, firstName: firstName, guardianConfirmed: guardianConfirmed, termsAccepted: termsAccepted);
+          if (firstName.trim().isNotEmpty) await ref.read(settingsProvider.notifier).setParentName(firstName);
         } else {
           await _service.login(baseUrl.trim(), email.trim(), password);
         }
@@ -121,6 +122,7 @@ class SyncController extends Notifier<SyncUiState> {
 
   Future<void> deleteAccount(String password) => _run(() async {
         await _service.deleteAccount(password);
+        await ref.read(settingsProvider.notifier).setParentName('');
         return 'accountDeleted';
       });
 
@@ -142,6 +144,7 @@ class SyncController extends Notifier<SyncUiState> {
   Future<void> signOut() async {
     await syncQuietly();
     await _service.signOut();
+    await ref.read(settingsProvider.notifier).setParentName('');
     state = state.copyWith(signedIn: false, clearMessage: true);
   }
 
