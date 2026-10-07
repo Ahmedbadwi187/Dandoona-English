@@ -187,6 +187,14 @@ class UnitMetaNotifier extends Notifier<UnitMeta> {
     await _save();
   }
 
+  /// A review (or the castle) on the map was passed: it opens the unit after it.
+  Future<void> passReview(String childId, String reviewId) async {
+    final meta = state.of(childId);
+    if (meta.reviews.contains(reviewId)) return;
+    _put(childId, meta.copyWith(reviews: {...meta.reviews, reviewId}));
+    await _save();
+  }
+
   /// Replaces the units counted as done by placement (the parent answered the English-level question again).
   Future<void> setPlaced(String childId, Set<String> unitIds) async {
     _put(childId, state.of(childId).copyWith(placed: unitIds));
