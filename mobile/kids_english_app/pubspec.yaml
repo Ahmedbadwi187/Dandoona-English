@@ -124,5 +124,6 @@ flutter:
     - assets/images/little_learners/color_white/
     - assets/images/little_learners/color_yellow/
     - assets/images/mascot/poses/
+    - assets/audio/ui/
     - assets/images/avatars/
     - assets/audio/little_learners/unit_app/

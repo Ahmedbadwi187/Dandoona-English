@@ -84,6 +84,7 @@ void main() {
 
   testWidgets('tapping the current unit says its name and opens its lesson path; back returns to the map', (t) async {
     final (audio, _) = await _openMap(t);
+    audio.played.clear(); // Dandoona's question and the chime on the way here
     await t.tap(find.byKey(const Key('unit-play-letters')));
     await t.pumpAndSettle();
     expect(audio.played, ['asset:audio/little_learners/unit_letters/instr_title.mp3']);

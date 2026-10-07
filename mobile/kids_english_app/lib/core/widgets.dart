@@ -45,16 +45,17 @@ class AvatarOption {
     AvatarOption('penguin', Icons.pets_rounded, Color(0xFFBDE6FA), asset: 'assets/images/avatars/penguin.svg'),
   ];
 
-  /// The icon avatars children created before the drawn ones keep using.
+  /// The icon avatars children created before the drawn ones keep: each keeps its color and now shows a matching drawn
+  /// character (star: cat, rocket: puppy, flower: bunny, sun: bear, leaf: frog, fish: goldfish, cloud: penguin, moon: owl).
   static const legacy = [
-    AvatarOption('star', Icons.star_rounded, Palette.yellow),
-    AvatarOption('rocket', Icons.rocket_launch_rounded, Palette.red),
-    AvatarOption('flower', Icons.local_florist_rounded, Palette.pink),
-    AvatarOption('sun', Icons.wb_sunny_rounded, Palette.orange),
-    AvatarOption('leaf', Icons.eco_rounded, Palette.green),
-    AvatarOption('fish', Icons.set_meal_rounded, Palette.teal),
-    AvatarOption('cloud', Icons.cloud_rounded, Palette.blue),
-    AvatarOption('moon', Icons.nightlight_round, Palette.purple),
+    AvatarOption('star', Icons.star_rounded, Palette.yellow, asset: 'assets/images/avatars/cat.svg'),
+    AvatarOption('rocket', Icons.rocket_launch_rounded, Palette.red, asset: 'assets/images/avatars/puppy.svg'),
+    AvatarOption('flower', Icons.local_florist_rounded, Palette.pink, asset: 'assets/images/avatars/bunny.svg'),
+    AvatarOption('sun', Icons.wb_sunny_rounded, Palette.orange, asset: 'assets/images/avatars/bear.svg'),
+    AvatarOption('leaf', Icons.eco_rounded, Palette.green, asset: 'assets/images/avatars/frog.svg'),
+    AvatarOption('fish', Icons.set_meal_rounded, Palette.teal, asset: 'assets/images/avatars/fish.svg'),
+    AvatarOption('cloud', Icons.cloud_rounded, Palette.blue, asset: 'assets/images/avatars/penguin.svg'),
+    AvatarOption('moon', Icons.nightlight_round, Palette.purple, asset: 'assets/images/avatars/owl.svg'),
   ];
 
   /// Every avatar a profile can have (so children made earlier still show theirs).

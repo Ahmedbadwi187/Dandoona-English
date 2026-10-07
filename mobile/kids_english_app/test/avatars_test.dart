@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kids_english_app/core/palette.dart';
 import 'package:kids_english_app/core/widgets.dart';
 
 void main() {
@@ -14,9 +15,15 @@ void main() {
     }
   });
 
-  test('children created with the older icon avatars keep theirs; an unknown key falls back to a valid avatar', () {
-    expect(AvatarOption.byKey('rocket').asset, isNull);
-    expect(AvatarOption.byKey('rocket').icon, Icons.rocket_launch_rounded);
+  test('children created with the older icon avatars keep their color and now show a matching character; an unknown key falls back to a valid avatar', () {
+    const expected = {'star': ('cat', Palette.yellow), 'rocket': ('puppy', Palette.red), 'flower': ('bunny', Palette.pink), 'sun': ('bear', Palette.orange), 'leaf': ('frog', Palette.green), 'fish': ('fish', Palette.teal), 'cloud': ('penguin', Palette.blue), 'moon': ('owl', Palette.purple)};
+    for (final a in AvatarOption.legacy) {
+      final (character, color) = expected[a.key]!;
+      expect(a.color, color, reason: '${a.key} keeps its color');
+      expect(a.asset, 'assets/images/avatars/$character.svg', reason: a.key);
+      expect(File(a.asset!).existsSync(), isTrue, reason: a.asset);
+    }
+    expect(AvatarOption.legacy, hasLength(8));
     expect(AvatarOption.byKey('does-not-exist'), AvatarOption.all.first);
     expect(AvatarOption.all.map((a) => a.key).toSet().length, AvatarOption.all.length, reason: 'keys must be unique');
   });

@@ -2,7 +2,7 @@
 /// schemaVersion 2: the track holds units, each unit holds lessons. schemaVersion 1 (a flat lesson list, before units
 /// existed) still loads, as a single unit named Letters. All paths are relative to `assets/`.
 class TrackContent {
-  const TrackContent({required this.track, required this.units, this.mascot, this.placement = const []});
+  const TrackContent({required this.track, required this.units, this.mascot, this.placement = const [], this.appAudio});
 
   final String track;
   final String? mascot;
@@ -12,6 +12,9 @@ class TrackContent {
 
   /// What each answer to "how much English does your child know?" means (from the content file, not from code).
   final List<PlacementLevel> placement;
+
+  /// Dandoona's own lines: "Who is playing?" (title), the first greeting (welcome), "Welcome back!" (celebration).
+  final UnitAudio? appAudio;
 
   static const supportedSchemas = {1, 2};
 
@@ -37,7 +40,8 @@ class TrackContent {
         .map((e) => PlacementLevel.fromJson(e as Map<String, dynamic>))
         .toList()
       ..sort((a, b) => a.level.compareTo(b.level));
-    return TrackContent(track: json['track'] as String, mascot: json['mascot'] as String?, units: units, placement: placement);
+    final app = json['app'];
+    return TrackContent(track: json['track'] as String, mascot: json['mascot'] as String?, units: units, placement: placement, appAudio: app is Map<String, dynamic> ? UnitAudio.fromJson(app) : null);
   }
 
   Lesson? lessonById(String id) {

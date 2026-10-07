@@ -214,7 +214,7 @@ public class AvatarsExportTests
     public void The_real_repo_has_the_friend_avatars_in_palette_colors()
     {
         var layout = Layout.FindFrom(AppContext.BaseDirectory);
-        foreach (var name in new[] { "bunny", "cat", "bear", "owl", "fish", "puppy", "penguin" })
+        foreach (var name in new[] { "bunny", "cat", "bear", "owl", "fish", "puppy", "penguin", "frog" })
             File.Exists(Path.Combine(layout.AvatarsDir, name + ".svg")).ShouldBeTrue(name);
     }
 }
