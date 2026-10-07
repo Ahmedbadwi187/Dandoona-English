@@ -8,7 +8,14 @@ import '../progress/progress.dart';
 /// certificates were earned, and which unit celebrations were already shown.
 /// Stored under `meta.v2`; `progress.v1` is never rewritten, so existing progress is untouched.
 class ChildUnitMeta {
-  const ChildUnitMeta({this.certificates = const {}, this.celebrated = const {}, this.placed = const {}});
+  const ChildUnitMeta({
+    this.certificates = const {},
+    this.celebrated = const {},
+    this.placed = const {},
+    this.reviews = const {},
+    this.chests = const {},
+    this.stories = const {},
+  });
 
   /// unit id -> date earned (yyyy-MM-dd).
   final Map<String, String> certificates;
@@ -18,20 +25,47 @@ class ChildUnitMeta {
   /// child finished them: they open the next unit and give no certificate.
   final Set<String> placed;
 
-  ChildUnitMeta copyWith({Map<String, String>? certificates, Set<String>? celebrated, Set<String>? placed}) =>
-      ChildUnitMeta(certificates: certificates ?? this.certificates, celebrated: celebrated ?? this.celebrated, placed: placed ?? this.placed);
+  /// Map stops (added with the stations; older saved data has none of them, which reads as "not yet"):
+  /// passed reviews (review ids), opened treasure chests and read stories (unit ids).
+  final Set<String> reviews;
+  final Set<String> chests;
+  final Set<String> stories;
+
+  ChildUnitMeta copyWith({
+    Map<String, String>? certificates,
+    Set<String>? celebrated,
+    Set<String>? placed,
+    Set<String>? reviews,
+    Set<String>? chests,
+    Set<String>? stories,
+  }) => ChildUnitMeta(
+    certificates: certificates ?? this.certificates,
+    celebrated: celebrated ?? this.celebrated,
+    placed: placed ?? this.placed,
+    reviews: reviews ?? this.reviews,
+    chests: chests ?? this.chests,
+    stories: stories ?? this.stories,
+  );
 
   Map<String, dynamic> toJson() => {
-        'certificates': certificates,
-        'celebrated': celebrated.toList()..sort(),
-        if (placed.isNotEmpty) 'placed': placed.toList()..sort(),
-      };
+    'certificates': certificates,
+    'celebrated': celebrated.toList()..sort(),
+    if (placed.isNotEmpty) 'placed': placed.toList()..sort(),
+    if (reviews.isNotEmpty) 'reviews': reviews.toList()..sort(),
+    if (chests.isNotEmpty) 'chests': chests.toList()..sort(),
+    if (stories.isNotEmpty) 'stories': stories.toList()..sort(),
+  };
+
+  static Set<String> _set(Object? raw) => ((raw as List<dynamic>?) ?? const []).cast<String>().toSet();
 
   factory ChildUnitMeta.fromJson(Map<String, dynamic> json) => ChildUnitMeta(
-        certificates: ((json['certificates'] as Map<String, dynamic>?) ?? const {}).map((k, v) => MapEntry(k, v as String)),
-        celebrated: ((json['celebrated'] as List<dynamic>?) ?? const []).cast<String>().toSet(),
-        placed: ((json['placed'] as List<dynamic>?) ?? const []).cast<String>().toSet(),
-      );
+    certificates: ((json['certificates'] as Map<String, dynamic>?) ?? const {}).map((k, v) => MapEntry(k, v as String)),
+    celebrated: _set(json['celebrated']),
+    placed: _set(json['placed']),
+    reviews: _set(json['reviews']),
+    chests: _set(json['chests']),
+    stories: _set(json['stories']),
+  );
 }
 
 class UnitMeta {
@@ -47,9 +81,9 @@ class UnitMeta {
   Map<String, dynamic> toJson() => {'schema': schema, 'children': children.map((k, v) => MapEntry(k, v.toJson()))};
 
   factory UnitMeta.fromJson(Map<String, dynamic> json) => UnitMeta(
-        schema: (json['schema'] as int?) ?? 0,
-        children: ((json['children'] as Map<String, dynamic>?) ?? const {}).map((k, v) => MapEntry(k, ChildUnitMeta.fromJson(v as Map<String, dynamic>))),
-      );
+    schema: (json['schema'] as int?) ?? 0,
+    children: ((json['children'] as Map<String, dynamic>?) ?? const {}).map((k, v) => MapEntry(k, ChildUnitMeta.fromJson(v as Map<String, dynamic>))),
+  );
 }
 
 String dateOnly(DateTime d) => '${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
@@ -75,10 +109,7 @@ UnitMeta migrateUnitMeta({
       final finished = unit.lessons.every((l) => records.any((r) => r.lessonId == l.id));
       if (!finished || meta.certificates.containsKey(unit.id)) continue;
       final when = records.map((r) => r.completedAt).reduce((a, b) => a.isAfter(b) ? a : b);
-      meta = meta.copyWith(
-        certificates: {...meta.certificates, unit.id: dateOnly(when.toLocal())},
-        celebrated: {...meta.celebrated, unit.id},
-      );
+      meta = meta.copyWith(certificates: {...meta.certificates, unit.id: dateOnly(when.toLocal())}, celebrated: {...meta.celebrated, unit.id});
     }
     children[childId] = meta;
   }
@@ -131,8 +162,7 @@ class UnitMetaNotifier extends Notifier<UnitMeta> {
     await _save();
   }
 
-  void _put(String childId, ChildUnitMeta meta) =>
-      state = UnitMeta(schema: state.schema, children: {...state.children, childId: meta});
+  void _put(String childId, ChildUnitMeta meta) => state = UnitMeta(schema: state.schema, children: {...state.children, childId: meta});
 
   Future<void> _save() => ref.read(sharedPreferencesProvider).writeJson(PrefKeys.unitMeta, state.toJson());
 }

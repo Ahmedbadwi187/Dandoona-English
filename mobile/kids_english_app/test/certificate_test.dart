@@ -91,8 +91,7 @@ void main() {
 
   testWidgets('the Letters certificate is already unlocked for a child who had finished Letters, and can be opened from the map', (t) async {
     await _open(t, progress: _progress(_letters));
-    await t.tap(find.byKey(const Key('unit-certificate-letters')));
-    await t.pumpAndSettle();
+    await _tapCertificateOnMap(t);
     expect(find.byKey(const Key('certificate-name')), findsOneWidget);
     expect(t.widget<Text>(find.byKey(const Key('certificate-name'))).data, 'Omar');
     expect(t.widget<Text>(find.byKey(const Key('certificate-unit'))).data, 'Letters');
@@ -104,8 +103,7 @@ void main() {
 
   testWidgets('sharing the certificate asks the parental gate first, then hands a PNG picture to the share sheet', (t) async {
     final (_, sharer, _) = await _open(t, progress: _progress(_letters));
-    await t.tap(find.byKey(const Key('unit-certificate-letters')));
-    await t.pumpAndSettle();
+    await _tapCertificateOnMap(t);
 
     await t.tap(find.byKey(const Key('certificate-share')));
     await t.pump();
@@ -160,4 +158,12 @@ void main() {
     expect(find.byKey(const Key('unit-done-letters')), findsOneWidget);
     expect(find.byKey(const Key('unit-play-colors')), findsOneWidget); // the next unit is open
   });
+}
+
+/// The map opens centered on the current unit (Colors), so the Letters certificate may sit under the top bar: scroll up first.
+Future<void> _tapCertificateOnMap(WidgetTester t) async {
+  await t.drag(find.byKey(const Key('unit-map')), const Offset(0, 400));
+  await t.pumpAndSettle();
+  await t.tap(find.byKey(const Key('unit-certificate-letters')));
+  await t.pumpAndSettle();
 }
