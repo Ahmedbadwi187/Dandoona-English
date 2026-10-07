@@ -1,0 +1,20 @@
+id: shapes-4
+unit: shapes
+track: little-learners
+level: pre-a1
+order: 4
+ownWordsOnly: true
+words:
+  - { word: ball, reuse: letter-b/ball }
+  - { word: window, reuse: letter-w/window }
+  - { word: kite, reuse: letter-k/kite }
+  - { word: egg, reuse: letter-e/egg }
+narration:
+  intro: "Shapes are everywhere! ... A ball. ... A window. ... A kite. ... An egg!"
+  phrases: { ball: "A ball is a circle.", window: "A window is a rectangle.", kite: "A kite is a diamond.", egg: "An egg is an oval." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the picture!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

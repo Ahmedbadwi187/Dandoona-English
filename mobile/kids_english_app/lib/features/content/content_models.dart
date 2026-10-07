@@ -250,6 +250,7 @@ class Lesson {
     this.phoneme,
     this.color,
     this.counting = false,
+    this.ownWordsOnly = false,
   });
 
   final String id;
@@ -265,6 +266,9 @@ class Lesson {
 
   /// Numbers unit: each word is a number and its picture shows that many things.
   final bool counting;
+
+  /// The wrong pictures of the hear-and-tap game come only from this lesson's own words.
+  final bool ownWordsOnly;
 
   static const _numerals = {'one': '1', 'two': '2', 'three': '3', 'four': '4', 'five': '5', 'six': '6', 'seven': '7', 'eight': '8', 'nine': '9', 'ten': '10'};
 
@@ -287,6 +291,7 @@ class Lesson {
         activities: (json['activities'] as List<dynamic>).cast<String>(),
         color: json['color'] == null ? null : LessonColor.fromJson(json['color'] as Map<String, dynamic>),
         counting: (json['counting'] as bool?) ?? false,
+        ownWordsOnly: (json['ownWordsOnly'] as bool?) ?? false,
       );
 }
 

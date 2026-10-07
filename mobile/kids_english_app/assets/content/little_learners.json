@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "little-learners",
-  "generatedAt": "2026-10-07T18:54:46.2096151Z",
+  "generatedAt": "2026-10-07T19:18:11.8605827Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -1695,14 +1695,15 @@
       },
       "lessons": [],
       "pack": {
-        "version": 1,
-        "sha256": "acc433de0f9b70021278ad461390521ef6f83771e6e4a9d473b9031d6ccd85c3",
-        "bytes": 1089981,
-        "manifest": "shapes/v1/manifest.json",
+        "version": 2,
+        "sha256": "b059742bebf06efe35540428409ba0e501917ca1d7ff6cc19253ecd21552e773",
+        "bytes": 1564703,
+        "manifest": "shapes/v2/manifest.json",
         "lessonIds": [
           "shapes-1",
           "shapes-2",
-          "shapes-3"
+          "shapes-3",
+          "shapes-4"
         ]
       },
       "chest": {

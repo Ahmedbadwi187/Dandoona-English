@@ -28,7 +28,8 @@ List<ChoiceRound> buildChoiceRounds(Lesson lesson, TrackContent track, Random ra
   // Every other unit than Letters (Shapes, Animals, ...) keeps its wrong pictures inside the unit too: "tap the circle" among other shapes.
   final unit = track.unitOfLesson(lesson.id);
   final sameUnit = lesson.color != null || lesson.counting || (unit != null && unit.id != 'letters' && unit.lessons.length > 1);
-  final pool0 = sameUnit ? (unit?.lessons ?? track.lessons) : track.lessons;
+  // A lesson of objects ("Shapes around us") keeps them to its own words.
+  final pool0 = lesson.ownWordsOnly ? <Lesson>[] : (sameUnit ? (unit?.lessons ?? track.lessons) : track.lessons);
   final others = [
     for (final l in pool0)
       if (l.id != lesson.id) ...l.words,
