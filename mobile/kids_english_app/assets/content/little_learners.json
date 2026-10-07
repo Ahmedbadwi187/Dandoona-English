@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "little-learners",
-  "generatedAt": "2026-10-07T10:17:24.0732104Z",
+  "generatedAt": "2026-10-07T10:24:41.7758522Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -1708,6 +1708,36 @@
         "celebration": "audio/little_learners/unit_my_family/instr_celebration.mp3"
       },
       "lessons": []
+    }
+  ],
+  "placement": [
+    {
+      "level": 0,
+      "key": "none",
+      "doneUnits": [],
+      "startUnit": "letters"
+    },
+    {
+      "level": 1,
+      "key": "some-letters",
+      "doneUnits": [],
+      "startUnit": "letters"
+    },
+    {
+      "level": 2,
+      "key": "all-letters",
+      "doneUnits": [
+        "letters"
+      ],
+      "startUnit": "colors"
+    },
+    {
+      "level": 3,
+      "key": "reads-words",
+      "doneUnits": [
+        "letters"
+      ],
+      "startUnit": "colors"
     }
   ]
 }

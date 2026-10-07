@@ -4,7 +4,7 @@ import '../content/content_models.dart';
 enum UnitState { done, current, locked, soon }
 
 class UnitStatus {
-  const UnitStatus({required this.unit, required this.state, required this.done, required this.total});
+  const UnitStatus({required this.unit, required this.state, required this.done, required this.total, this.placed = false});
 
   final CourseUnit unit;
   final UnitState state;
@@ -12,6 +12,9 @@ class UnitStatus {
   /// Lessons with progress, and the unit's lesson count (the progress bar, e.g. 4/10).
   final int done;
   final int total;
+
+  /// Done because of the placement answer, not because the child finished it (no certificate).
+  final bool placed;
 }
 
 /// A unit is finished when every lesson has progress: the same rule the lesson path uses to open the next lesson,
@@ -21,7 +24,7 @@ bool isUnitFinished(CourseUnit unit, bool Function(String lessonId) hasProgress)
 
 /// A unit opens only when the previous unit is finished (or the parent turned on "unlock all").
 /// A unit with no lessons yet is "soon" and never counts as finished, so later units stay closed.
-List<UnitStatus> computeUnitStatuses(List<CourseUnit> units, bool Function(String lessonId) hasProgress, {bool unlockAll = false}) {
+List<UnitStatus> computeUnitStatuses(List<CourseUnit> units, bool Function(String lessonId) hasProgress, {bool unlockAll = false, Set<String> placedUnits = const {}}) {
   final result = <UnitStatus>[];
   var previousFinished = true;
   for (final unit in units) {
@@ -32,13 +35,14 @@ List<UnitStatus> computeUnitStatuses(List<CourseUnit> units, bool Function(Strin
       previousFinished = false;
       continue;
     }
-    final finished = isUnitFinished(unit, hasProgress);
+    final placed = placedUnits.contains(unit.id);
+    final finished = placed || isUnitFinished(unit, hasProgress);
     final state = finished
         ? UnitState.done
         : (unlockAll || previousFinished)
             ? UnitState.current
             : UnitState.locked;
-    result.add(UnitStatus(unit: unit, state: state, done: done, total: total));
+    result.add(UnitStatus(unit: unit, state: state, done: done, total: total, placed: placed && !isUnitFinished(unit, hasProgress)));
     previousFinished = finished;
   }
   return result;

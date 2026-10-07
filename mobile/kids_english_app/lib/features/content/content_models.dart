@@ -2,13 +2,16 @@
 /// schemaVersion 2: the track holds units, each unit holds lessons. schemaVersion 1 (a flat lesson list, before units
 /// existed) still loads, as a single unit named Letters. All paths are relative to `assets/`.
 class TrackContent {
-  const TrackContent({required this.track, required this.units, this.mascot});
+  const TrackContent({required this.track, required this.units, this.mascot, this.placement = const []});
 
   final String track;
   final String? mascot;
 
   /// In the order they open.
   final List<CourseUnit> units;
+
+  /// What each answer to "how much English does your child know?" means (from the content file, not from code).
+  final List<PlacementLevel> placement;
 
   static const supportedSchemas = {1, 2};
 
@@ -30,7 +33,11 @@ class TrackContent {
       units = (json['units'] as List<dynamic>).map((e) => CourseUnit.fromJson(e as Map<String, dynamic>)).toList()
         ..sort((a, b) => a.order.compareTo(b.order));
     }
-    return TrackContent(track: json['track'] as String, mascot: json['mascot'] as String?, units: units);
+    final placement = ((json['placement'] as List<dynamic>?) ?? const [])
+        .map((e) => PlacementLevel.fromJson(e as Map<String, dynamic>))
+        .toList()
+      ..sort((a, b) => a.level.compareTo(b.level));
+    return TrackContent(track: json['track'] as String, mascot: json['mascot'] as String?, units: units, placement: placement);
   }
 
   Lesson? lessonById(String id) {
@@ -55,6 +62,23 @@ class TrackContent {
     }
     return null;
   }
+}
+
+/// One answer of the placement question: the units that count as done by placement, and where the child starts.
+class PlacementLevel {
+  const PlacementLevel({required this.level, required this.key, required this.doneUnits, required this.startUnit});
+
+  final int level;
+  final String key;
+  final List<String> doneUnits;
+  final String startUnit;
+
+  factory PlacementLevel.fromJson(Map<String, dynamic> json) => PlacementLevel(
+        level: json['level'] as int,
+        key: json['key'] as String,
+        doneUnits: ((json['doneUnits'] as List<dynamic>?) ?? const []).cast<String>(),
+        startUnit: json['startUnit'] as String,
+      );
 }
 
 List<Lesson> _lessons(List<dynamic> raw) =>

@@ -85,6 +85,19 @@ public class UnitsFile
 {
     public string Track { get; set; } = "";
     public List<UnitDef> Units { get; set; } = [];
+    /// <summary>What each answer to "how much English does your child know?" means for the starting point.</summary>
+    public List<PlacementDef> Placement { get; set; } = [];
+}
+
+/// <summary>One answer of the placement question: the units that count as done by placement, and where the child starts.</summary>
+public class PlacementDef
+{
+    public int Level { get; set; }
+    /// <summary>A short stable name (none, some-letters, all-letters, reads-words).</summary>
+    public string Key { get; set; } = "";
+    public List<string> DoneUnits { get; set; } = [];
+    public string StartUnit { get; set; } = "";
+    public string Track { get; set; } = "";
 }
 
 public class LessonValidator : AbstractValidator<Lesson>
@@ -217,6 +230,32 @@ public static class CurriculumReader
         foreach (var dup in result.GroupBy(u => (u.Track, u.Order)).Where(g => g.Count() > 1)) errors.Add($"Two units share order {dup.Key.Order} in track '{dup.Key.Track}'.");
         if (errors.Count > 0) throw new CurriculumException("Units are invalid:\n" + string.Join("\n", errors));
         return result.OrderBy(u => u.Track).ThenBy(u => u.Order).ToList();
+    }
+
+    /// <summary>The placement answers of a track (curriculum/units/*.yaml), validated against that track's units.</summary>
+    public static IReadOnlyList<PlacementDef> LoadPlacement(string curriculumDirectory)
+    {
+        var dir = Path.Combine(curriculumDirectory, "units");
+        if (!Directory.Exists(dir)) return [];
+        var result = new List<PlacementDef>();
+        var errors = new List<string>();
+        foreach (var path in Directory.EnumerateFiles(dir, "*.yaml").Order(StringComparer.OrdinalIgnoreCase))
+        {
+            var file = Deserializer.Deserialize<UnitsFile>(File.ReadAllText(path));
+            if (file is null) continue;
+            var ids = file.Units.Select(u => u.Id).ToHashSet();
+            foreach (var p in file.Placement)
+            {
+                p.Track = file.Track;
+                if (p.Key.Length == 0) errors.Add($"{Path.GetFileName(path)}: a placement level needs a key.");
+                foreach (var u in p.DoneUnits.Append(p.StartUnit))
+                    if (!ids.Contains(u)) errors.Add($"{Path.GetFileName(path)}: placement '{p.Key}' names unknown unit '{u}'.");
+                result.Add(p);
+            }
+            if (file.Placement.GroupBy(p => p.Level).Any(g => g.Count() > 1)) errors.Add($"{Path.GetFileName(path)}: two placement answers share a level.");
+        }
+        if (errors.Count > 0) throw new CurriculumException("Placement is invalid:\n" + string.Join("\n", errors));
+        return result.OrderBy(p => p.Track).ThenBy(p => p.Level).ToList();
     }
 
     /// <summary>The synthetic lesson that carries a unit's own audio lines so the audio runner and export treat them like any lesson.</summary>

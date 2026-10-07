@@ -60,7 +60,8 @@ public class StatusRunner(Layout layout, VoiceConfig voices, string? fallbackVoi
     }
 }
 
-public record ExportDoc(int SchemaVersion, string Track, DateTime GeneratedAt, string? Mascot, List<ExportUnit> Units);
+public record ExportDoc(int SchemaVersion, string Track, DateTime GeneratedAt, string? Mascot, List<ExportUnit> Units, List<ExportPlacement>? Placement = null);
+public record ExportPlacement(int Level, string Key, List<string> DoneUnits, string StartUnit);
 public record ExportUnit(string Id, int Order, Dictionary<string, string> Title, string Icon, string Color, ExportUnitAudio? Audio, List<ExportLesson> Lessons);
 public record ExportUnitAudio(string Title, string? Welcome, string Celebration);
 public record ExportLesson(string Id, int Order, string Level, string? Letter, string? Phoneme,
@@ -76,7 +77,7 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
 {
     public const int SchemaVersion = 2;
 
-    public async Task<ExportResult> RunAsync(string track, IReadOnlyList<Lesson> lessons, CancellationToken ct, bool force = false, IReadOnlyList<UnitDef>? units = null)
+    public async Task<ExportResult> RunAsync(string track, IReadOnlyList<Lesson> lessons, CancellationToken ct, bool force = false, IReadOnlyList<UnitDef>? units = null, IReadOnlyList<PlacementDef>? placement = null)
     {
         var exported = new List<(string UnitId, ExportLesson Lesson)>();
         var incomplete = new List<string>();
@@ -205,7 +206,8 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
         {
             jsonPath = Path.Combine(layout.AssetsDir, Layout.ExportJsonRel(track));
             Directory.CreateDirectory(Path.GetDirectoryName(jsonPath)!);
-            var json = ConfigLoader.ToJson(new ExportDoc(SchemaVersion, track, (now ?? (() => DateTime.UtcNow))(), mascot, doc));
+            var json = ConfigLoader.ToJson(new ExportDoc(SchemaVersion, track, (now ?? (() => DateTime.UtcNow))(), mascot, doc,
+                placement?.Where(p => p.Track == track).OrderBy(p => p.Level).Select(p => new ExportPlacement(p.Level, p.Key, p.DoneUnits, p.StartUnit)).ToList() is { Count: > 0 } pl ? pl : null));
             await File.WriteAllTextAsync(jsonPath, json, ct);
             bytes += new FileInfo(jsonPath).Length;
             UpdatePubspec();

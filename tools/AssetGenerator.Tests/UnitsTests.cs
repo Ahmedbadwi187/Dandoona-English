@@ -243,3 +243,46 @@ public class PosesExportTests
             File.Exists(Path.Combine(layout.PosesDir, pose + ".webp")).ShouldBeTrue(pose);
     }
 }
+
+public class PlacementTests
+{
+    private const string Units = """
+        track: little-learners
+        placement:
+          - { level: 0, key: none, doneUnits: [], startUnit: letters }
+          - { level: 2, key: all-letters, doneUnits: [letters], startUnit: colors }
+        units:
+          - { id: letters, order: 1, title: { en: "Letters", ar: "الحروف" }, icon: letters, color: red, narration: { title: "Letters", celebration: "Done!" } }
+          - { id: colors, order: 2, title: { en: "Colors", ar: "الألوان" }, icon: colors, color: orange, narration: { title: "Colors", celebration: "Done!" } }
+        """;
+
+    [Fact]
+    public void Placement_answers_are_read_in_level_order()
+    {
+        using var repo = new TestRepo();
+        repo.Touch(Path.Combine(repo.Layout.CurriculumDir, "units", "little-learners.yaml"), Units);
+        var placement = CurriculumReader.LoadPlacement(repo.Layout.CurriculumDir);
+        placement.Select(p => p.Key).ShouldBe(["none", "all-letters"]);
+        placement[1].DoneUnits.ShouldBe(["letters"]);
+        placement[1].StartUnit.ShouldBe("colors");
+    }
+
+    [Fact]
+    public void A_placement_that_names_an_unknown_unit_is_rejected()
+    {
+        using var repo = new TestRepo();
+        repo.Touch(Path.Combine(repo.Layout.CurriculumDir, "units", "little-learners.yaml"), Units.Replace("startUnit: colors", "startUnit: nope"));
+        Should.Throw<CurriculumException>(() => CurriculumReader.LoadPlacement(repo.Layout.CurriculumDir)).Message.ShouldContain("unknown unit 'nope'");
+    }
+
+    [Fact]
+    public void The_real_content_maps_all_four_answers_and_letters_known_means_start_at_colors()
+    {
+        var layout = Layout.FindFrom(AppContext.BaseDirectory);
+        var placement = CurriculumReader.LoadPlacement(layout.CurriculumDir);
+        placement.Select(p => p.Level).ShouldBe([0, 1, 2, 3]);
+        placement.Single(p => p.Key == "all-letters").DoneUnits.ShouldBe(["letters"]);
+        placement.Single(p => p.Key == "all-letters").StartUnit.ShouldBe("colors");
+        placement.Single(p => p.Key == "none").StartUnit.ShouldBe("letters");
+    }
+}

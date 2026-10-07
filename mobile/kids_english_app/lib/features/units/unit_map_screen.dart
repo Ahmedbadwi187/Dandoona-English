@@ -80,6 +80,7 @@ class _UnitMap extends ConsumerWidget {
       track.units,
       (lessonId) => childId != null && progress.hasProgress(childId, lessonId),
       unlockAll: unlockAll,
+      placedUnits: childId == null ? const {} : meta.of(childId).placed,
     );
     final stars = childId == null ? 0 : progress.totalStars(childId);
 
@@ -319,7 +320,7 @@ class _IslandTile extends StatelessWidget {
               ],
             ),
           ),
-          if (state == UnitState.done)
+          if (state == UnitState.done && !(status.placed && certificateDate == null))
             Padding(
               padding: const EdgeInsets.only(top: 4),
               child: BigTap(

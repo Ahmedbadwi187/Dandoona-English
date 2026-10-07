@@ -8,20 +8,29 @@ import '../progress/progress.dart';
 /// certificates were earned, and which unit celebrations were already shown.
 /// Stored under `meta.v2`; `progress.v1` is never rewritten, so existing progress is untouched.
 class ChildUnitMeta {
-  const ChildUnitMeta({this.certificates = const {}, this.celebrated = const {}});
+  const ChildUnitMeta({this.certificates = const {}, this.celebrated = const {}, this.placed = const {}});
 
   /// unit id -> date earned (yyyy-MM-dd).
   final Map<String, String> certificates;
   final Set<String> celebrated;
 
-  ChildUnitMeta copyWith({Map<String, String>? certificates, Set<String>? celebrated}) =>
-      ChildUnitMeta(certificates: certificates ?? this.certificates, celebrated: celebrated ?? this.celebrated);
+  /// Units that count as done because of the parent's answer about the child's English (the placement), not because the
+  /// child finished them: they open the next unit and give no certificate.
+  final Set<String> placed;
 
-  Map<String, dynamic> toJson() => {'certificates': certificates, 'celebrated': celebrated.toList()..sort()};
+  ChildUnitMeta copyWith({Map<String, String>? certificates, Set<String>? celebrated, Set<String>? placed}) =>
+      ChildUnitMeta(certificates: certificates ?? this.certificates, celebrated: celebrated ?? this.celebrated, placed: placed ?? this.placed);
+
+  Map<String, dynamic> toJson() => {
+        'certificates': certificates,
+        'celebrated': celebrated.toList()..sort(),
+        if (placed.isNotEmpty) 'placed': placed.toList()..sort(),
+      };
 
   factory ChildUnitMeta.fromJson(Map<String, dynamic> json) => ChildUnitMeta(
         certificates: ((json['certificates'] as Map<String, dynamic>?) ?? const {}).map((k, v) => MapEntry(k, v as String)),
         celebrated: ((json['celebrated'] as List<dynamic>?) ?? const []).cast<String>().toSet(),
+        placed: ((json['placed'] as List<dynamic>?) ?? const []).cast<String>().toSet(),
       );
 }
 
@@ -101,6 +110,12 @@ class UnitMetaNotifier extends Notifier<UnitMeta> {
     final meta = state.of(childId);
     if (meta.certificates.containsKey(unitId)) return;
     _put(childId, meta.copyWith(certificates: {...meta.certificates, unitId: dateOnly(when)}));
+    await _save();
+  }
+
+  /// Replaces the units counted as done by placement (the parent answered the English-level question again).
+  Future<void> setPlaced(String childId, Set<String> unitIds) async {
+    _put(childId, state.of(childId).copyWith(placed: unitIds));
     await _save();
   }
 

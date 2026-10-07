@@ -2,6 +2,15 @@
 # A unit with no lessons yet is shown on the map as "coming soon". To add lessons to a unit, add lesson files with
 # `unit: <id>`; no code change is needed. `icon` is a picture key the app knows (unknown keys show a star); `color` is a palette.json name.
 track: little-learners
+
+# What each answer to "How much English does your child know?" means. The app reads this from the exported JSON, so changing where a
+# child starts (for example when Numbers is ready) is a change here, not in code. "doneUnits" count as done by placement: they open the
+# next unit but give no certificate.
+placement:
+  - { level: 0, key: none,         doneUnits: [],        startUnit: letters }
+  - { level: 1, key: some-letters, doneUnits: [],        startUnit: letters }
+  - { level: 2, key: all-letters,  doneUnits: [letters], startUnit: colors }
+  - { level: 3, key: reads-words,  doneUnits: [letters], startUnit: colors }
 units:
   - id: letters
     order: 1
