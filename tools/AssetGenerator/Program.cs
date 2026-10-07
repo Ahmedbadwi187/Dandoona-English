@@ -111,7 +111,8 @@ export.SetAction((pr, ct) => Guard(async () =>
     var track = pr.GetValue(trackOpt) ?? throw new CurriculumException("export requires --track.");
     var lessons = CurriculumReader.Select(CurriculumReader.LoadAll(layout.CurriculumDir), null, track);
     await new ExportRunner(layout, ConfigLoader.Generation(layout), MediaTools.Create(Console.Out), Console.Out)
-        .RunAsync(track, lessons, ct, pr.GetValue(forceOpt), CurriculumReader.LoadUnits(layout.CurriculumDir), CurriculumReader.LoadPlacement(layout.CurriculumDir), CurriculumReader.LoadApp(layout.CurriculumDir).FirstOrDefault(u => u.Track == track));
+        .RunAsync(track, lessons, ct, pr.GetValue(forceOpt), CurriculumReader.LoadUnits(layout.CurriculumDir), CurriculumReader.LoadPlacement(layout.CurriculumDir), CurriculumReader.LoadApp(layout.CurriculumDir).FirstOrDefault(u => u.Track == track),
+            CurriculumReader.LoadReviews(layout.CurriculumDir).Where(r => r.Track == track).Select(r => r.Review).ToList());
     return 0;
 }));
 

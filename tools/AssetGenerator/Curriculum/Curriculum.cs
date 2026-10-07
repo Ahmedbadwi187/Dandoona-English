@@ -84,6 +84,17 @@ public class UnitNarration
     public string Title { get; set; } = "";
     public string Welcome { get; set; } = "";
     public string Celebration { get; set; } = "";
+    /// <summary>Extra short lines, keyed kebab-case: a unit's "locked" ("Finish Letters first!"); the app's "coming-soon",
+    /// "puzzle-first", "almost-ready". Optional: a line without audio yet is simply left out of the export.</summary>
+    public Dictionary<string, string> Lines { get; set; } = [];
+}
+
+/// <summary>A review stop on the map: a quick game with the words of [Units]; it sits after the last of them and must be
+/// passed before the next unit opens.</summary>
+public class ReviewDef
+{
+    public string Id { get; set; } = "";
+    public List<string> Units { get; set; } = [];
 }
 
 public class UnitsFile
@@ -94,6 +105,8 @@ public class UnitsFile
     public List<PlacementDef> Placement { get; set; } = [];
     /// <summary>Dandoona's own lines outside any unit: Title = "Who is playing?", Welcome = the first greeting, Celebration = "Welcome back!".</summary>
     public UnitNarration? App { get; set; }
+    /// <summary>Review stops on the map, in path order.</summary>
+    public List<ReviewDef> Reviews { get; set; } = [];
 }
 
 /// <summary>One answer of the placement question: the units that count as done by placement, and where the child starts.</summary>
@@ -229,6 +242,7 @@ public static class CurriculumReader
                     if (!u.Title.ContainsKey("en") || !u.Title.ContainsKey("ar")) errors.Add($"{name}: unit '{u.Id}' needs title.en and title.ar.");
                     if (string.IsNullOrWhiteSpace(u.Narration.Title) || string.IsNullOrWhiteSpace(u.Narration.Celebration)) errors.Add($"{name}: unit '{u.Id}' needs narration.title and narration.celebration.");
                     if (u.Delivery is not ("" or "bundled" or "pack")) errors.Add($"{name}: unit '{u.Id}' delivery must be bundled or pack.");
+                    errors.AddRange(LineErrors(u.Narration.Lines).Select(e => $"{name}: unit '{u.Id}' {e}"));
                     result.Add(u);
                 }
             }
@@ -238,6 +252,44 @@ public static class CurriculumReader
         foreach (var dup in result.GroupBy(u => (u.Track, u.Order)).Where(g => g.Count() > 1)) errors.Add($"Two units share order {dup.Key.Order} in track '{dup.Key.Track}'.");
         if (errors.Count > 0) throw new CurriculumException("Units are invalid:\n" + string.Join("\n", errors));
         return result.OrderBy(u => u.Track).ThenBy(u => u.Order).ToList();
+    }
+
+    private static IEnumerable<string> LineErrors(Dictionary<string, string> lines) =>
+        lines.Where(kv => !System.Text.RegularExpressions.Regex.IsMatch(kv.Key, "^[a-z0-9]+(-[a-z0-9]+)*$") || string.IsNullOrWhiteSpace(kv.Value) || kv.Value.Length > 100)
+            .Select(kv => $"line '{kv.Key}' needs a kebab-case key and 1-100 characters.");
+
+    /// <summary>The review stops of a track, checked against its units: known units, in path order, the same unit in only
+    /// one review.</summary>
+    public static IReadOnlyList<(string Track, ReviewDef Review)> LoadReviews(string curriculumDirectory)
+    {
+        var dir = Path.Combine(curriculumDirectory, "units");
+        if (!Directory.Exists(dir)) return [];
+        var result = new List<(string, ReviewDef)>();
+        var errors = new List<string>();
+        foreach (var path in Directory.EnumerateFiles(dir, "*.yaml").Order(StringComparer.OrdinalIgnoreCase))
+        {
+            var file = Deserializer.Deserialize<UnitsFile>(File.ReadAllText(path));
+            if (file is null) continue;
+            var name = Path.GetFileName(path);
+            var order = file.Units.ToDictionary(u => u.Id, u => u.Order);
+            var seen = new HashSet<string>();
+            foreach (var r in file.Reviews)
+            {
+                if (!System.Text.RegularExpressions.Regex.IsMatch(r.Id, "^[a-z0-9]+(-[a-z0-9]+)*$")) errors.Add($"{name}: review id '{r.Id}' must be lowercase kebab-case.");
+                if (r.Units.Count == 0) errors.Add($"{name}: review '{r.Id}' needs units.");
+                foreach (var u in r.Units)
+                {
+                    if (!order.ContainsKey(u)) errors.Add($"{name}: review '{r.Id}' names unknown unit '{u}'.");
+                    else if (!seen.Add(u)) errors.Add($"{name}: unit '{u}' is in more than one review.");
+                }
+                if (r.Units.Where(order.ContainsKey).Select(u => order[u]).Zip(r.Units.Where(order.ContainsKey).Select(u => order[u]).Skip(1)).Any(p => p.Second <= p.First))
+                    errors.Add($"{name}: review '{r.Id}' must list its units in path order.");
+                result.Add((file.Track, r));
+            }
+            if (file.Reviews.GroupBy(r => r.Id).Any(g => g.Count() > 1)) errors.Add($"{name}: two reviews share an id.");
+        }
+        if (errors.Count > 0) throw new CurriculumException("Reviews are invalid:\n" + string.Join("\n", errors));
+        return result;
     }
 
     /// <summary>Dandoona's app-level lines (curriculum/units/*.yaml `app:`) as one pseudo unit with id "app" (not shown on the map).</summary>
@@ -252,6 +304,7 @@ public static class CurriculumReader
             if (file?.App is not { } app) continue;
             if (string.IsNullOrWhiteSpace(app.Title) || string.IsNullOrWhiteSpace(app.Welcome) || string.IsNullOrWhiteSpace(app.Celebration))
                 throw new CurriculumException($"{Path.GetFileName(path)}: app needs title, welcome and celebration lines.");
+            if (LineErrors(app.Lines).FirstOrDefault() is { } bad) throw new CurriculumException($"{Path.GetFileName(path)}: app {bad}");
             result.Add(new UnitDef { Id = "app", Track = file.Track, Order = 0, Narration = app });
         }
         return result;
@@ -290,7 +343,7 @@ public static class CurriculumReader
         Narration = new Narration
         {
             Intro = string.IsNullOrWhiteSpace(u.Narration.Welcome) ? u.Narration.Title : u.Narration.Welcome,
-            Instructions = new Dictionary<string, string> { ["title"] = u.Narration.Title, ["celebration"] = u.Narration.Celebration },
+            Instructions = new Dictionary<string, string>(u.Narration.Lines) { ["title"] = u.Narration.Title, ["celebration"] = u.Narration.Celebration },
         },
     };
 

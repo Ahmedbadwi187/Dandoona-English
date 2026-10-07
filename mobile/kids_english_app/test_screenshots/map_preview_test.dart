@@ -45,7 +45,7 @@ TrackContent _previewContent({Set<String> fakeDone = const {}}) {
     'opposites': ('Opposites', 'opposites', 'pink'),
     'transport': ('Transport', 'transport', 'green'),
   };
-  for (final e in added.entries) {
+  for (final e in added.entries.where((e) => !units.any((u) => u['id'] == e.key))) {
     units.add({'id': e.key, 'order': 0, 'title': {'en': e.value.$1, 'ar': e.value.$1}, 'icon': e.value.$2, 'color': e.value.$3, 'lessons': []});
   }
   for (final u in units) {
@@ -64,7 +64,7 @@ TrackContent _previewContent({Set<String> fakeDone = const {}}) {
       ];
     }
   }
-  json['reviews'] = [
+  json['reviews'] ??= [
     {'id': 'review-1', 'units': ['letters', 'colors', 'numbers', 'shapes']},
     {'id': 'review-2', 'units': ['animals', 'feelings', 'my-body', 'actions']},
     {'id': 'review-3', 'units': ['food', 'clothes', 'toys']},

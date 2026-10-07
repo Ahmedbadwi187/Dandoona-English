@@ -199,20 +199,24 @@ class PackRef {
 }
 
 class UnitAudio {
-  const UnitAudio({required this.title, required this.celebration, this.welcome, this.locked});
+  const UnitAudio({required this.title, required this.celebration, this.welcome, this.lines = const {}});
 
   final String title;
   final String? welcome;
   final String celebration;
 
-  /// "Finish Letters first!": said when a child taps the unit while it is still closed. Older files have none.
-  final String? locked;
+  /// Short extra lines by key: a unit's "locked" ("Finish Letters first!"); the app's "coming-soon", "puzzle-first",
+  /// "almost-ready". A line whose audio is not made yet is simply missing (the bubble still shows the words).
+  final Map<String, String> lines;
+
+  /// "Finish Letters first!": said when a child taps a closed stop while this unit is the one to finish.
+  String? get locked => lines['locked'];
 
   factory UnitAudio.fromJson(Map<String, dynamic> json) => UnitAudio(
         title: json['title'] as String,
         welcome: json['welcome'] as String?,
         celebration: json['celebration'] as String,
-        locked: json['locked'] as String?,
+        lines: ((json['lines'] as Map<String, dynamic>?) ?? const {}).map((k, v) => MapEntry(k, v as String)),
       );
 }
 

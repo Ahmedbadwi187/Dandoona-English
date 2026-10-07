@@ -14,60 +14,189 @@ placement:
   - { level: 1, key: some-letters, doneUnits: [],        startUnit: letters }
   - { level: 2, key: all-letters,  doneUnits: [letters], startUnit: colors }
   - { level: 3, key: reads-words,  doneUnits: [letters], startUnit: colors }
-# Dandoona's own lines outside any unit: "Who is playing?" (title), the first greeting (welcome) and a welcome back (celebration).
-app: { title: "Who is playing?", welcome: "Hi! I'm Dandoona! Let's learn English together!", celebration: "Welcome back!" }
+# Dandoona's own lines outside any unit: "Who is playing?" (title), the first greeting (welcome) and a welcome back (celebration);
+# `lines` are the map's short sayings (a line without audio yet is left out of the export, the bubble still shows the words).
+app:
+  title: "Who is playing?"
+  welcome: "Hi! I'm Dandoona! Let's learn English together!"
+  celebration: "Welcome back!"
+  lines: { coming-soon: "Coming soon!", puzzle-first: "Play the puzzle first!", almost-ready: "Almost ready!" }
+
+# Review stops on the map: a quick game with the words of these units, after the last of them; passing it opens the next unit.
+# The castle at the end of the path is the final review of every unit, with the track certificate.
+reviews:
+  - { id: review-1, units: [letters, colors, numbers, shapes] }
+  - { id: review-2, units: [animals, feelings, my-body, actions] }
+  - { id: review-3, units: [food, clothes, toys] }
+
+# The path, in order. Each unit is followed on the map by its story (when it has one) and its treasure chest.
+# `lines.locked` is what Dandoona says when a child taps a closed stop while this unit is the one to finish.
 units:
   - id: letters
     order: 1
     title: { en: "Letters", ar: "الحروف" }
     icon: letters
     color: red
-    narration: { title: "Letters", welcome: "Let's learn the letters!", celebration: "You finished the letters! Amazing!" }
+    narration:
+      title: "Letters"
+      welcome: "Let's learn the letters!"
+      celebration: "You finished the letters! Amazing!"
+      lines: { locked: "Finish Letters first!" }
   - id: colors
     order: 2
     title: { en: "Colors", ar: "الألوان" }
     icon: colors
     color: orange
-    narration: { title: "Colors", welcome: "Let's learn the colors!", celebration: "You finished the colors! Wow!" }
+    narration:
+      title: "Colors"
+      welcome: "Let's learn the colors!"
+      celebration: "You finished the colors! Wow!"
+      lines: { locked: "Finish Colors first!" }
   - id: numbers
-    delivery: pack
     order: 3
+    delivery: pack
     title: { en: "Numbers 1-10", ar: "الأرقام ١-١٠" }
     icon: numbers
     color: blue
-    narration: { title: "Numbers", welcome: "Let's count!", celebration: "You finished the numbers! Great counting!" }
+    narration:
+      title: "Numbers"
+      welcome: "Let's count!"
+      celebration: "You finished the numbers! Great counting!"
+      lines: { locked: "Finish Numbers first!" }
   - id: shapes
-    delivery: pack
     order: 4
+    delivery: pack
     title: { en: "Shapes", ar: "الأشكال" }
     icon: shapes
     color: green
-    narration: { title: "Shapes", welcome: "Let's find shapes!", celebration: "You finished the shapes! Fantastic!" }
+    narration:
+      title: "Shapes"
+      welcome: "Let's find shapes!"
+      celebration: "You finished the shapes! Fantastic!"
+      lines: { locked: "Finish Shapes first!" }
   - id: animals
-    delivery: pack
     order: 5
+    delivery: pack
     title: { en: "Animals", ar: "الحيوانات" }
     icon: animals
     color: teal
-    narration: { title: "Animals", welcome: "Let's meet the animals!", celebration: "Hooray! You know the animals!" }
-  - id: my-body
-    delivery: pack
+    narration:
+      title: "Animals"
+      welcome: "Let's meet the animals!"
+      celebration: "Hooray! You know the animals!"
+      lines: { locked: "Finish Animals first!" }
+  - id: feelings
+    # placeholder, content later: happy, sad, angry, scared, surprised, sleepy
     order: 6
+    delivery: pack
+    title: { en: "Feelings", ar: "المشاعر" }
+    icon: feelings
+    color: purple
+    narration:
+      title: "Feelings"
+      welcome: "How do you feel today?"
+      celebration: "You finished the feelings! Super!"
+      lines: { locked: "Finish Feelings first!" }
+  - id: my-body
+    order: 7
+    delivery: pack
     title: { en: "My Body", ar: "جسمي" }
     icon: body
     color: pink
-    narration: { title: "My Body", welcome: "Let's learn about me!", celebration: "You finished My Body! Super!" }
-  - id: food
+    narration:
+      title: "My Body"
+      welcome: "Let's learn about me!"
+      celebration: "You finished My Body! Super!"
+      lines: { locked: "Finish My Body first!" }
+  - id: actions
+    # placeholder, content later: jump, run, clap, sit, stand, wave, dance
+    order: 8
     delivery: pack
-    order: 7
+    title: { en: "Actions", ar: "الأفعال" }
+    icon: actions
+    color: orange
+    narration:
+      title: "Actions"
+      welcome: "Let's move!"
+      celebration: "You finished the actions! Great moves!"
+      lines: { locked: "Finish Actions first!" }
+  - id: food
+    order: 9
+    delivery: pack
     title: { en: "Food", ar: "الطعام" }
     icon: food
     color: yellow
-    narration: { title: "Food", welcome: "Yummy! Let's learn food!", celebration: "You finished the food! Delicious!" }
-  - id: my-family
+    narration:
+      title: "Food"
+      welcome: "Yummy! Let's learn food!"
+      celebration: "You finished the food! Delicious!"
+      lines: { locked: "Finish Food first!" }
+  - id: clothes
+    order: 10
     delivery: pack
-    order: 8
+    title: { en: "Clothes", ar: "الملابس" }
+    icon: clothes
+    color: blue
+    narration:
+      title: "Clothes"
+      welcome: "Let's get dressed!"
+      celebration: "You finished the clothes! Looking good!"
+      lines: { locked: "Finish Clothes first!" }
+  - id: toys
+    order: 11
+    delivery: pack
+    title: { en: "Toys", ar: "الألعاب" }
+    icon: toys
+    color: red
+    narration:
+      title: "Toys"
+      welcome: "Let's play with toys!"
+      celebration: "You finished the toys! Hooray!"
+      lines: { locked: "Finish Toys first!" }
+  - id: my-family
+    order: 12
+    delivery: pack
     title: { en: "My Family", ar: "عائلتي" }
     icon: family
     color: purple
-    narration: { title: "My Family", welcome: "Let's meet the family!", celebration: "You finished My Family! Wonderful!" }
+    narration:
+      title: "My Family"
+      welcome: "Let's meet the family!"
+      celebration: "You finished My Family! Wonderful!"
+      lines: { locked: "Finish My Family first!" }
+  - id: my-home
+    # placeholder, content later: rooms; daily routine: wake up, brush teeth, eat, sleep
+    order: 13
+    delivery: pack
+    title: { en: "My Home", ar: "بيتي" }
+    icon: home
+    color: teal
+    narration:
+      title: "My Home"
+      welcome: "Welcome to my home!"
+      celebration: "You finished My Home! Brilliant!"
+      lines: { locked: "Finish My Home first!" }
+  - id: opposites
+    # placeholder, content later: big/small, hot/cold, up/down, open/closed, fast/slow
+    order: 14
+    delivery: pack
+    title: { en: "Opposites", ar: "الأضداد" }
+    icon: opposites
+    color: pink
+    narration:
+      title: "Opposites"
+      welcome: "Big or small? Let's see!"
+      celebration: "You finished the opposites! Clever!"
+      lines: { locked: "Finish Opposites first!" }
+  - id: transport
+    # placeholder, content later: car, bus, plane, boat, train, bike
+    order: 15
+    delivery: pack
+    title: { en: "Transport", ar: "المواصلات" }
+    icon: transport
+    color: green
+    narration:
+      title: "Transport"
+      welcome: "Beep beep! Let's go!"
+      celebration: "You finished transport! Amazing trip!"
+      lines: { locked: "Finish Transport first!" }

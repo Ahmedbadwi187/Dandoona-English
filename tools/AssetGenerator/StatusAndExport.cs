@@ -60,10 +60,11 @@ public class StatusRunner(Layout layout, VoiceConfig voices, string? fallbackVoi
     }
 }
 
-public record ExportDoc(int SchemaVersion, string Track, DateTime GeneratedAt, string? Mascot, List<ExportUnit> Units, List<ExportPlacement>? Placement = null, ExportUnitAudio? App = null);
+public record ExportDoc(int SchemaVersion, string Track, DateTime GeneratedAt, string? Mascot, List<ExportUnit> Units, List<ExportPlacement>? Placement = null, ExportUnitAudio? App = null, List<ExportReview>? Reviews = null);
+public record ExportReview(string Id, List<string> Units);
 public record ExportPlacement(int Level, string Key, List<string> DoneUnits, string StartUnit);
 public record ExportUnit(string Id, int Order, Dictionary<string, string> Title, string Icon, string Color, ExportUnitAudio? Audio, List<ExportLesson> Lessons, ExportPackRef? Pack = null);
-public record ExportUnitAudio(string Title, string? Welcome, string Celebration);
+public record ExportUnitAudio(string Title, string? Welcome, string Celebration, Dictionary<string, string>? Lines = null);
 public record ExportLesson(string Id, int Order, string Level, string? Letter, string? Phoneme,
     ExportLessonAudio Audio, List<ExportWord> Words, List<string> Activities, ExportColor? Color = null);
 public record ExportLessonAudio(string Intro, string? Phoneme, List<string> Praise, Dictionary<string, string>? Instructions = null, string? ColorName = null);
@@ -77,7 +78,7 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
 {
     public const int SchemaVersion = 2;
 
-    public async Task<ExportResult> RunAsync(string track, IReadOnlyList<Lesson> lessons, CancellationToken ct, bool force = false, IReadOnlyList<UnitDef>? units = null, IReadOnlyList<PlacementDef>? placement = null, UnitDef? app = null)
+    public async Task<ExportResult> RunAsync(string track, IReadOnlyList<Lesson> lessons, CancellationToken ct, bool force = false, IReadOnlyList<UnitDef>? units = null, IReadOnlyList<PlacementDef>? placement = null, UnitDef? app = null, IReadOnlyList<ReviewDef>? reviews = null)
     {
         var exported = new List<(string UnitId, ExportLesson Lesson)>();
         var incomplete = new List<string>();
@@ -172,18 +173,9 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
             ExportUnitAudio? audio = null;
             if (units is { Count: > 0 })
             {
-                var ul = CurriculumReader.UnitAudioLesson(u);
-                if (LessonPlan.Audio(ul).Any(a => layout.AudioForExport(ul, a.Role) is null))
-                    incomplete.Add($"{ul.Id}: unit audio missing (run audio)");
-                else
-                {
-                    foreach (var a in LessonPlan.Audio(ul))
-                        bytes += await EncodeIfNeededAsync(layout.AudioForExport(ul, a.Role)!, Path.Combine(layout.AssetsDir, Layout.ExportAudioRel(ul, a.Role)), audio: true, force, ct);
-                    audio = new ExportUnitAudio(
-                        Layout.ExportAudioRel(ul, LessonPlan.InstructionRole("title")),
-                        string.IsNullOrWhiteSpace(u.Narration.Welcome) ? null : Layout.ExportAudioRel(ul, "intro"),
-                        Layout.ExportAudioRel(ul, LessonPlan.InstructionRole("celebration")));
-                }
+                var (a, why) = await UnitAudioAsync(CurriculumReader.UnitAudioLesson(u), u.Narration.Welcome, force, ct);
+                audio = a;
+                if (why is not null) incomplete.Add(why);
             }
             if (u.IsPack && unitLessons.Count > 0)
             {
@@ -201,18 +193,9 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
         ExportUnitAudio? appAudio = null;
         if (app is not null)
         {
-            var al = CurriculumReader.UnitAudioLesson(app);
-            if (LessonPlan.Audio(al).Any(a => layout.AudioForExport(al, a.Role) is null))
-                incomplete.Add($"{al.Id}: app audio missing (run audio)");
-            else
-            {
-                foreach (var a in LessonPlan.Audio(al))
-                    bytes += await EncodeIfNeededAsync(layout.AudioForExport(al, a.Role)!, Path.Combine(layout.AssetsDir, Layout.ExportAudioRel(al, a.Role)), audio: true, force, ct);
-                appAudio = new ExportUnitAudio(
-                    Layout.ExportAudioRel(al, LessonPlan.InstructionRole("title")),
-                    Layout.ExportAudioRel(al, "intro"),
-                    Layout.ExportAudioRel(al, LessonPlan.InstructionRole("celebration")));
-            }
+            var (a, why) = await UnitAudioAsync(CurriculumReader.UnitAudioLesson(app), app.Narration.Welcome, force, ct);
+            appAudio = a;
+            if (why is not null) incomplete.Add(why);
         }
 
         string? mascot = null;
@@ -243,7 +226,8 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
             jsonPath = Path.Combine(layout.AssetsDir, Layout.ExportJsonRel(track));
             Directory.CreateDirectory(Path.GetDirectoryName(jsonPath)!);
             var json = ConfigLoader.ToJson(new ExportDoc(SchemaVersion, track, (now ?? (() => DateTime.UtcNow))(), mascot, doc,
-                placement?.Where(p => p.Track == track).OrderBy(p => p.Level).Select(p => new ExportPlacement(p.Level, p.Key, p.DoneUnits, p.StartUnit)).ToList() is { Count: > 0 } pl ? pl : null, appAudio));
+                placement?.Where(p => p.Track == track).OrderBy(p => p.Level).Select(p => new ExportPlacement(p.Level, p.Key, p.DoneUnits, p.StartUnit)).ToList() is { Count: > 0 } pl ? pl : null, appAudio,
+                reviews is { Count: > 0 } ? reviews.Select(r => new ExportReview(r.Id, r.Units)).ToList() : null));
             await File.WriteAllTextAsync(jsonPath, json, ct);
             bytes += new FileInfo(jsonPath).Length;
             UpdatePubspec();
@@ -256,6 +240,33 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
     }
 
     private string PackBuildDir(string track, string unit) => PackBuilder.BuildDir(layout, track, unit);
+
+    private static readonly string[] CoreUnitRoles = ["intro", LessonPlan.InstructionRole("title"), LessonPlan.InstructionRole("celebration")];
+
+    /// <summary>A unit's (or the app's) own lines, always bundled. Its name, welcome and celebration must all have audio;
+    /// the extra lines (locked, coming-soon...) are included when their audio exists and simply left out when it does not
+    /// yet, so a new line never silences the ones already made.</summary>
+    private async Task<(ExportUnitAudio? Audio, string? Incomplete)> UnitAudioAsync(Lesson ul, string welcome, bool force, CancellationToken ct)
+    {
+        var plan = LessonPlan.Audio(ul);
+        if (plan.Where(a => CoreUnitRoles.Contains(a.Role)).Any(a => layout.AudioForExport(ul, a.Role) is null))
+            return (null, $"{ul.Id}: unit audio missing (run audio)");
+        var lines = new Dictionary<string, string>();
+        var missing = new List<string>();
+        foreach (var a in plan)
+        {
+            var source = layout.AudioForExport(ul, a.Role);
+            if (source is null) { missing.Add(a.Role); continue; }
+            await EncodeIfNeededAsync(source, Path.Combine(layout.AssetsDir, Layout.ExportAudioRel(ul, a.Role)), audio: true, force, ct);
+            if (!CoreUnitRoles.Contains(a.Role)) lines[a.Role["instr-".Length..]] = Layout.ExportAudioRel(ul, a.Role);
+        }
+        var audio = new ExportUnitAudio(
+            Layout.ExportAudioRel(ul, LessonPlan.InstructionRole("title")),
+            string.IsNullOrWhiteSpace(welcome) && ul.Id != "unit-app" ? null : Layout.ExportAudioRel(ul, "intro"),
+            Layout.ExportAudioRel(ul, LessonPlan.InstructionRole("celebration")),
+            lines.Count == 0 ? null : lines.OrderBy(k => k.Key, StringComparer.Ordinal).ToDictionary());
+        return (audio, missing.Count == 0 ? null : $"{ul.Id}: no audio yet for {string.Join(", ", missing)} (run audio)");
+    }
 
     private async Task<long> CopyIfNeededAsync(string source, string target, bool force)
     {

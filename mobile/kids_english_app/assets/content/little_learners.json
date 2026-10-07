@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "little-learners",
-  "generatedAt": "2026-10-07T11:28:32.5327572Z",
+  "generatedAt": "2026-10-07T15:30:18.4033837Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -1662,8 +1662,19 @@
       "lessons": []
     },
     {
-      "id": "my-body",
+      "id": "feelings",
       "order": 6,
+      "title": {
+        "en": "Feelings",
+        "ar": "المشاعر"
+      },
+      "icon": "feelings",
+      "color": "purple",
+      "lessons": []
+    },
+    {
+      "id": "my-body",
+      "order": 7,
       "title": {
         "en": "My Body",
         "ar": "جسمي"
@@ -1678,8 +1689,19 @@
       "lessons": []
     },
     {
+      "id": "actions",
+      "order": 8,
+      "title": {
+        "en": "Actions",
+        "ar": "الأفعال"
+      },
+      "icon": "actions",
+      "color": "orange",
+      "lessons": []
+    },
+    {
       "id": "food",
-      "order": 7,
+      "order": 9,
       "title": {
         "en": "Food",
         "ar": "الطعام"
@@ -1694,8 +1716,30 @@
       "lessons": []
     },
     {
+      "id": "clothes",
+      "order": 10,
+      "title": {
+        "en": "Clothes",
+        "ar": "الملابس"
+      },
+      "icon": "clothes",
+      "color": "blue",
+      "lessons": []
+    },
+    {
+      "id": "toys",
+      "order": 11,
+      "title": {
+        "en": "Toys",
+        "ar": "الألعاب"
+      },
+      "icon": "toys",
+      "color": "red",
+      "lessons": []
+    },
+    {
       "id": "my-family",
-      "order": 8,
+      "order": 12,
       "title": {
         "en": "My Family",
         "ar": "عائلتي"
@@ -1707,6 +1751,39 @@
         "welcome": "audio/little_learners/unit_my_family/intro.mp3",
         "celebration": "audio/little_learners/unit_my_family/instr_celebration.mp3"
       },
+      "lessons": []
+    },
+    {
+      "id": "my-home",
+      "order": 13,
+      "title": {
+        "en": "My Home",
+        "ar": "بيتي"
+      },
+      "icon": "home",
+      "color": "teal",
+      "lessons": []
+    },
+    {
+      "id": "opposites",
+      "order": 14,
+      "title": {
+        "en": "Opposites",
+        "ar": "الأضداد"
+      },
+      "icon": "opposites",
+      "color": "pink",
+      "lessons": []
+    },
+    {
+      "id": "transport",
+      "order": 15,
+      "title": {
+        "en": "Transport",
+        "ar": "المواصلات"
+      },
+      "icon": "transport",
+      "color": "green",
       "lessons": []
     }
   ],
@@ -1744,5 +1821,33 @@
     "title": "audio/little_learners/unit_app/instr_title.mp3",
     "welcome": "audio/little_learners/unit_app/intro.mp3",
     "celebration": "audio/little_learners/unit_app/instr_celebration.mp3"
-  }
+  },
+  "reviews": [
+    {
+      "id": "review-1",
+      "units": [
+        "letters",
+        "colors",
+        "numbers",
+        "shapes"
+      ]
+    },
+    {
+      "id": "review-2",
+      "units": [
+        "animals",
+        "feelings",
+        "my-body",
+        "actions"
+      ]
+    },
+    {
+      "id": "review-3",
+      "units": [
+        "food",
+        "clothes",
+        "toys"
+      ]
+    }
+  ]
 }

@@ -208,13 +208,16 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
     final blocker = blockingStop(stops);
     final String text;
     String? line;
+    final appLines = widget.track.appAudio?.lines ?? const <String, String>{};
     if (tapped.state == StopState.soon) {
       text = Strings.en('mapComingSoon');
+      line = appLines['coming-soon'];
     } else if (blocker != null && blocker.kind == StopKind.unit) {
       text = Strings.en('mapFinishFirst').replaceAll('{unit}', blocker.unit!.unit.titleFor('en'));
       line = blocker.unit!.unit.audio?.locked;
     } else {
       text = Strings.en('mapPuzzleFirst');
+      line = appLines['puzzle-first'];
     }
     _showBubble(text);
     _revealDandoona();
@@ -237,6 +240,8 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
       // its pack is still on the way: a calm word for the child (the parent area says when it needs internet)
       _showBubble(Strings.en('mapAlmostReady'));
       _revealDandoona();
+      final almost = widget.track.appAudio?.lines['almost-ready'];
+      if (almost != null) unawaited(ref.read(audioServiceProvider).playAsset(almost));
       unawaited(ref.read(packDownloadsProvider.notifier).ensure(unit));
       return;
     }

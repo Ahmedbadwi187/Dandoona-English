@@ -120,10 +120,16 @@ void main() {
   testWidgets('every unit of the content file is on the map, in order, and units without lessons are "coming soon"', (t) async {
     await _openMap(t);
     final map = find.byKey(const Key('unit-map'));
-    for (final id in ['letters', 'colors', 'numbers', 'shapes', 'animals', 'my-body', 'food', 'my-family']) {
-      await t.scrollUntilVisible(find.byKey(Key('unit-title-$id')), 300, scrollable: find.descendant(of: map, matching: find.byType(Scrollable)));
-      expect(find.byKey(Key('unit-title-$id')), findsOneWidget);
+    // the whole path from the content file, with the three reviews and the castle at the end
+    for (final id in [
+      'unit-letters', 'unit-colors', 'unit-numbers', 'unit-shapes', 'stop-review-1', 'unit-animals', 'unit-feelings', 'unit-my-body', //
+      'unit-actions', 'stop-review-2', 'unit-food', 'unit-clothes', 'unit-toys', 'stop-review-3', 'unit-my-family', 'unit-my-home',
+      'unit-opposites', 'unit-transport', 'stop-castle',
+    ]) {
+      await t.scrollUntilVisible(find.byKey(Key(id)), 300, scrollable: find.descendant(of: map, matching: find.byType(Scrollable)));
+      expect(find.byKey(Key(id)), findsOneWidget, reason: id);
     }
+    expect(find.byKey(const Key('unit-soon-transport')), findsOneWidget);
     // not built yet: its own faded picture and a "Soon" ribbon, never an hourglass
     expect(_iconOf(t, 'my-family'), Icons.family_restroom_rounded);
     expect(find.byKey(const Key('unit-soon-my-family')), findsOneWidget);
