@@ -196,7 +196,7 @@ class _ColorTheObjectActivityState extends ConsumerState<ColorTheObjectActivity>
               height: 300,
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Palette.white,
+                color: Palette.cream, // the drawing has a cream background of its own
                 borderRadius: BorderRadius.circular(32),
                 border: Border.all(color: shownHex != null ? Palette.green : Palette.tan, width: 6),
               ),
