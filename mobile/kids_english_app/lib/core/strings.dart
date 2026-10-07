@@ -19,6 +19,19 @@ class Strings {
   /// `s('save')`. A missing key is a bug caught by the parity test; at runtime the key itself is shown.
   String call(String key) => _m[key] ?? key;
 
+  /// A number in the digits of the language (Arabic-Indic for Arabic).
+  String number(int n) => isRtl ? n.toString().split('').map((c) => c == '-' ? c : String.fromCharCode(0x0660 + int.parse(c))).join() : '$n';
+
+  /// `format('pGreeting', {'name': 'Sara'})`: fills the {tokens} of a string; whole numbers use the language's digits.
+  String format(String key, Map<String, Object> args) {
+    var out = call(key);
+    args.forEach((k, v) => out = out.replaceAll('{$k}', v is int ? number(v) : '$v'));
+    return out;
+  }
+
+  /// "4 years" / "٤ سنوات" (with the Arabic singular and dual).
+  String age(int years) => format(years == 1 ? 'ageOne' : years == 2 ? 'ageTwo' : (years <= 10 ? 'ageFew' : 'ageMany'), {'n': years});
+
   static Iterable<String> get arabicKeys => _arabic.keys;
   static Iterable<String> get englishKeys => _english.keys;
 }
@@ -153,6 +166,39 @@ const Map<String, String> _arabic = {
   'whoIsPlaying': 'من سيلعب؟',
   'wardrobeHint': 'اجمع النجوم لفتح إكسسوارات جديدة',
   'thisWeek': 'هذا الأسبوع',
+  // --- parent area redesign ---
+  'ageOne': 'سنة واحدة',
+  'ageTwo': 'سنتان',
+  'ageFew': '{n} سنوات',
+  'ageMany': '{n} سنة',
+  'pGreeting': 'أهلاً، {name}',
+  'pNowLearning': 'يتعلّم الآن: {unit}',
+  'pUnitLessons': '{unit} · {done} من {total} دروس',
+  'pUnitsDone': 'الوحدات المكتملة: {done} من {total}',
+  'pNoActivity': 'لا نشاط هذا الأسبوع بعد. دندونة تنتظر!',
+  'pManageChildren': 'إدارة الأطفال',
+  'pManageHint': 'اضغط على طفل للتعديل أو الحذف',
+  'pAddFirstChild': 'أضف طفلك الأول',
+  'pEditChild': 'تعديل الطفل',
+  'pNickname': 'الاسم المستعار',
+  'pTrack': 'المسار',
+  'pTrackLL': 'المتعلّمون الصغار (٣–٥ سنوات)',
+  'pTrackExplorers': 'المستكشفون (٦–٨ سنوات)',
+  'pTrackChampions': 'الأبطال (٩ سنوات فأكثر)',
+  'pSoon': 'قريباً',
+  'pSuggested': 'مقترح حسب العمر',
+  'pDailyGoal': 'الهدف اليومي',
+  'pReminderTime': 'وقت التذكير',
+  'pReminderOff': 'بدون',
+  'pMinutesShort': '{n} د',
+  'pDiscardTitle': 'تجاهل التغييرات؟',
+  'pDiscardBody': 'لن تُحفظ التعديلات التي أجريتها.',
+  'pDiscard': 'تجاهل',
+  'pKeepEditing': 'متابعة التعديل',
+  'pRerunSetup': 'إعادة إعداد المسار',
+  'pDeleteChild': 'حذف الطفل',
+  'pDeleteTitle': 'حذف {name}؟',
+  'pDeleteBody': 'سيتم حذف كل تقدّم {name} ونجومه وشهاداته من هذا الجهاز ومن حسابك. لا يمكن التراجع عن ذلك.',
   'syncTitle': 'الحساب والمزامنة',
   'deleteAccount': 'حذف الحساب وبياناته',
   'deleteAccountTitle': 'حذف الحساب نهائيًا؟',
@@ -316,6 +362,39 @@ const Map<String, String> _english = {
   'whoIsPlaying': 'Who is playing?',
   'wardrobeHint': 'Collect stars to unlock new accessories',
   'thisWeek': 'This week',
+  // --- parent area redesign ---
+  'ageOne': '1 year',
+  'ageTwo': '2 years',
+  'ageFew': '{n} years',
+  'ageMany': '{n} years',
+  'pGreeting': 'Hi, {name}',
+  'pNowLearning': 'Now learning: {unit}',
+  'pUnitLessons': '{unit} · {done} of {total} lessons',
+  'pUnitsDone': 'Units completed: {done} of {total}',
+  'pNoActivity': 'No activity this week yet. Dandoona is waiting!',
+  'pManageChildren': 'Manage children',
+  'pManageHint': 'Tap a child to edit or delete',
+  'pAddFirstChild': 'Add your first child',
+  'pEditChild': 'Edit child',
+  'pNickname': 'Nickname',
+  'pTrack': 'Track',
+  'pTrackLL': 'Little Learners (ages 3–5)',
+  'pTrackExplorers': 'Explorers (ages 6–8)',
+  'pTrackChampions': 'Champions (ages 9 and up)',
+  'pSoon': 'Soon',
+  'pSuggested': 'Suggested for the age',
+  'pDailyGoal': 'Daily goal',
+  'pReminderTime': 'Reminder time',
+  'pReminderOff': 'Off',
+  'pMinutesShort': '{n} min',
+  'pDiscardTitle': 'Discard changes?',
+  'pDiscardBody': "The changes you made won't be saved.",
+  'pDiscard': 'Discard',
+  'pKeepEditing': 'Keep editing',
+  'pRerunSetup': 'Run the setup again',
+  'pDeleteChild': 'Delete child',
+  'pDeleteTitle': 'Delete {name}?',
+  'pDeleteBody': "All of {name}'s progress, stars and certificates will be deleted from this device and from your account. This can't be undone.",
   'syncTitle': 'Account & sync',
   'deleteAccount': 'Delete account & data',
   'deleteAccountTitle': 'Delete the account permanently?',

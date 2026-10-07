@@ -10,7 +10,7 @@ import 'features/child/profile_picker_screen.dart';
 import 'features/onboarding/account_routes.dart';
 import 'features/onboarding/language_route.dart';
 import 'features/onboarding/setup_flow.dart';
-import 'features/parent/child_form_screen.dart';
+import 'features/parent/edit_child_screen.dart';
 import 'features/rewards/wardrobe_screen.dart';
 import 'features/parent/children_screen.dart';
 import 'features/parent/parent_home_screen.dart';
@@ -84,12 +84,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/parent', builder: (_, _) => const ParentHomeScreen()),
       GoRoute(path: '/parent/settings', builder: (_, _) => const SettingsScreen()),
       GoRoute(path: '/parent/children', builder: (_, _) => const ChildrenScreen()),
-      // 'new' must be declared before ':id'.
-      GoRoute(path: '/parent/children/new', builder: (_, _) => const ChildFormScreen()),
-      GoRoute(
-        path: '/parent/children/:id',
-        builder: (_, state) => ChildFormScreen(childId: state.pathParameters['id']),
-      ),
+      GoRoute(path: '/parent/children/:id', builder: (_, state) => EditChildScreen(childId: state.pathParameters['id']!)),
     ],
   );
 });

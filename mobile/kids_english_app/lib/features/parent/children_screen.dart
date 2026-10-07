@@ -4,11 +4,15 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/palette.dart';
 import '../../core/widgets.dart';
+import '../content/content_models.dart';
+import '../onboarding/onboarding_widgets.dart';
+import '../onboarding/setup_flow.dart';
 import '../profiles/child_profile.dart';
 import '../settings/settings.dart';
-import '../sync/sync_controller.dart';
+import 'parent_data.dart';
+import 'parent_ui.dart';
 
-/// Manage child profiles: add, edit, delete (with confirmation).
+/// Manage children: one row per child (tap to edit or delete) and an "Add child" button that starts the child setup.
 class ChildrenScreen extends ConsumerWidget {
   const ChildrenScreen({super.key});
 
@@ -16,67 +20,101 @@ class ChildrenScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final s = ref.watch(stringsProvider);
     final profiles = ref.watch(profilesProvider);
+    final lang = ref.watch(settingsProvider).languageCode;
+    final now = ref.read(clockProvider)();
+
+    final addButton = OutlinedButton.icon(
+      key: const Key('add-child'),
+      style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(56), side: BorderSide(color: Theme.of(context).colorScheme.primary, width: 1.5), foregroundColor: Theme.of(context).colorScheme.primary),
+      onPressed: () => startChildSetup(context, ref, returnTo: '/parent/children'),
+      icon: const Icon(Icons.add_rounded),
+      label: Text(s('addChild')),
+    );
 
     return Scaffold(
-      appBar: AppBar(title: Text(s('childProfiles'))),
-      floatingActionButton: FloatingActionButton.extended(
-        key: const Key('add-child'),
-        onPressed: () => context.push('/parent/children/new'),
-        icon: const Icon(Icons.add_rounded),
-        label: Text(s('addChild')),
-      ),
-      body: profiles.isEmpty
-          ? Center(child: Text(s('noChildren')))
-          : ListView(
-              padding: const EdgeInsets.fromLTRB(16, 16, 16, 96),
-              children: [
-                for (final p in profiles)
-                  Card(
-                    child: ListTile(
-                      contentPadding: const EdgeInsets.all(12),
-                      leading: AvatarCircle(p.avatarKey, size: 56),
-                      title: Text(p.name, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 18)),
-                      subtitle: Text('${p.birthYear}'),
-                      onTap: () => context.push('/parent/children/${p.id}'),
-                      trailing: IconButton(
-                        key: Key('delete-${p.id}'),
-                        iconSize: 28,
-                        color: Palette.red,
-                        tooltip: s('delete'),
-                        icon: const Icon(Icons.delete_outline_rounded),
-                        onPressed: () => _confirmDelete(context, ref, p),
-                      ),
-                    ),
-                  ),
-              ],
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(4, 8, 16, 8),
+              child: Row(
+                children: [
+                  ParentBack(onPressed: () => context.canPop() ? context.pop() : context.go('/parent')),
+                  const SizedBox(width: 4),
+                  Expanded(child: Text(s('pManageChildren'), key: const Key('manage-title'), style: ParentText.screenTitle)),
+                ],
+              ),
             ),
-    );
-  }
-
-  Future<void> _confirmDelete(BuildContext context, WidgetRef ref, ChildProfile p) async {
-    final s = ref.read(stringsProvider);
-    final ok = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => Directionality(
-        textDirection: s.direction,
-        child: AlertDialog(
-          title: Text(s('deleteChildTitle')),
-          content: Text('${p.name}\n${s('deleteChildBody')}'),
-          actions: [
-            TextButton(onPressed: () => Navigator.pop(ctx, false), child: Text(s('cancel'))),
-            TextButton(
-              key: const Key('confirm-delete'),
-              onPressed: () => Navigator.pop(ctx, true),
-              child: Text(s('delete'), style: const TextStyle(color: Palette.red)),
+            Expanded(
+              child: profiles.isEmpty
+                  ? ListView(
+                      key: const Key('manage-empty'),
+                      padding: const EdgeInsets.all(24),
+                      children: [
+                        const SizedBox(height: 24),
+                        const Center(child: DandoonaView(pose: DandoonaPose.waving, size: 170)),
+                        const SizedBox(height: 12),
+                        Text(s('pAddFirstChild'), textAlign: TextAlign.center, style: ParentText.section),
+                        const SizedBox(height: 20),
+                        addButton,
+                      ],
+                    )
+                  : ListView(
+                      padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
+                      children: [
+                        for (final p in profiles)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 12),
+                            child: ParentCard(
+                              key: Key('child-row-${p.id}'),
+                              onTap: () => context.push('/parent/children/${p.id}'),
+                              child: Row(
+                                children: [
+                                  AvatarCircle(p.avatarKey, size: 56),
+                                  const SizedBox(width: 14),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(p.name, style: ParentText.section),
+                                        const SizedBox(height: 2),
+                                        _Subtitle(child: p, now: now, lang: lang),
+                                      ],
+                                    ),
+                                  ),
+                                  const ParentChevron(),
+                                ],
+                              ),
+                            ),
+                          ),
+                        const SizedBox(height: 4),
+                        addButton,
+                        const SizedBox(height: 12),
+                        Text(s('pManageHint'), key: const Key('manage-hint'), textAlign: TextAlign.center, style: ParentText.caption),
+                      ],
+                    ),
             ),
           ],
         ),
       ),
     );
-    if (ok == true) {
-      await ref.read(profilesProvider.notifier).remove(p.id);
-      // Also hard-delete the child on the server (profile + all progress); queued if offline.
-      await ref.read(syncControllerProvider.notifier).childDeleted(p.id);
-    }
+  }
+}
+
+/// "4 years · Colors": the age and the unit the child is on.
+class _Subtitle extends ConsumerWidget {
+  const _Subtitle({required this.child, required this.now, required this.lang});
+
+  final ChildProfile child;
+  final DateTime now;
+  final String lang;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final s = ref.watch(stringsProvider);
+    final CourseUnit? unit = ref.watch(childOverviewProvider(child.id))?.current?.unit;
+    final age = s.age(child.ageYears(now));
+    return Text(unit == null ? age : '$age · ${unit.titleFor(lang)}', style: ParentText.caption.copyWith(fontSize: 14, color: Palette.ink.withValues(alpha: 0.75)));
   }
 }

@@ -34,6 +34,12 @@ class ChildProfile {
   /// The daily goal in minutes chosen by the parent (5, 10 or 15); null when none was chosen.
   final int? goalMinutes;
 
+  /// Age in whole years (the birth month is used when it is known).
+  int ageYears(DateTime now) {
+    final a = now.year - birthYear - (birthMonth != null && now.month < birthMonth! ? 1 : 0);
+    return a < 0 ? 0 : a;
+  }
+
   /// Accessory id from rewards/accessories.dart currently worn by the mascot for this child (null = none).
   final String? equippedAccessory;
 

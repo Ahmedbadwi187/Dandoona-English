@@ -5,7 +5,6 @@ import 'package:kids_english_app/app.dart';
 import 'package:kids_english_app/core/strings.dart';
 import 'package:kids_english_app/features/onboarding/setup_flow.dart';
 import 'package:kids_english_app/features/profiles/child_profile.dart';
-import 'package:kids_english_app/features/router_state.dart';
 import 'package:kids_english_app/features/settings/settings.dart';
 import 'package:kids_english_app/features/units/unit_meta.dart';
 import 'package:kids_english_app/features/content/content_models.dart';

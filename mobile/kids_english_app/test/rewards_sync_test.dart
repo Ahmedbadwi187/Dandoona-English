@@ -4,7 +4,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:kids_english_app/core/ids.dart';
 import 'package:kids_english_app/features/activities/activity_screen.dart';
 import 'package:kids_english_app/features/audio/audio_service.dart';
-import 'package:kids_english_app/features/parent/children_screen.dart';
+import 'package:go_router/go_router.dart';
+import 'package:kids_english_app/features/parent/edit_child_screen.dart';
 import 'package:kids_english_app/features/parent/settings_screen.dart';
 import 'package:kids_english_app/features/parent/weekly_view.dart';
 import 'package:kids_english_app/features/profiles/child_profile.dart';
@@ -132,6 +133,17 @@ class FakeSyncApi implements SyncApi {
     accountDeleted = true;
   }
 }
+
+/// The edit-child screen with a router, so that deleting can go back to the (placeholder) list.
+Widget _editApp(ProviderContainer container, String childId) => UncontrolledProviderScope(
+      container: container,
+      child: MaterialApp.router(
+        routerConfig: GoRouter(routes: [
+          GoRoute(path: '/', builder: (_, _) => EditChildScreen(childId: childId)),
+          GoRoute(path: '/parent/children', builder: (_, _) => const Scaffold(body: Text('list'))),
+        ]),
+      ),
+    );
 
 void main() {
   pullTests();
@@ -515,7 +527,7 @@ void main() {
       expect(service.pendingDeleteCount, 0);
     });
 
-    testWidgets('children screen: delete + confirm removes locally and on the server', (tester) async {
+    testWidgets('edit child: delete + confirm removes locally and on the server', (tester) async {
       final base = await testOverrides();
       final container = ProviderContainer(overrides: [
         ...base,
@@ -530,9 +542,12 @@ void main() {
       await svc.syncNow(children: [omar], progress: []);
       final serverId = container.read(syncStoreProvider).load().childMap[omar.id]!;
 
-      await tester.pumpWidget(UncontrolledProviderScope(container: container, child: const MaterialApp(home: ChildrenScreen())));
+      tester.view.physicalSize = const Size(1080, 4200); // tall, so the whole form is built
+      tester.view.devicePixelRatio = 1080 / 411;
+      addTearDown(tester.view.reset);
+      await tester.pumpWidget(_editApp(container, omar.id));
       await tester.pump();
-      await tester.tap(find.byKey(Key('delete-${omar.id}')));
+      await tester.tap(find.byKey(const Key('edit-delete')));
       await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('confirm-delete')));
       await tester.pumpAndSettle();
@@ -542,7 +557,7 @@ void main() {
       expect(svc.pendingDeleteCount, 0);
     });
 
-    testWidgets('children screen while offline: the profile is deleted now, the server delete waits and is shown as pending', (tester) async {
+    testWidgets('edit child while offline: the profile is deleted now, the server delete waits and is shown as pending', (tester) async {
       api.offline = true;
       final base = await testOverrides();
       final container = ProviderContainer(overrides: [
@@ -556,9 +571,12 @@ void main() {
       await container.read(syncStoreProvider).save(SyncState(baseUrl: 'http://x', email: 'mom@example.com', childMap: {omar.id: 'server-9'}));
       await tokens.saveRefreshToken('refresh-0');
 
-      await tester.pumpWidget(UncontrolledProviderScope(container: container, child: const MaterialApp(home: ChildrenScreen())));
+      tester.view.physicalSize = const Size(1080, 4200); // tall, so the whole form is built
+      tester.view.devicePixelRatio = 1080 / 411;
+      addTearDown(tester.view.reset);
+      await tester.pumpWidget(_editApp(container, omar.id));
       await tester.pump();
-      await tester.tap(find.byKey(Key('delete-${omar.id}')));
+      await tester.tap(find.byKey(const Key('edit-delete')));
       await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('confirm-delete')));
       await tester.pumpAndSettle();
