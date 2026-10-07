@@ -185,6 +185,11 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
             mascot = Layout.ExportMascotRel;
         }
 
+        // Drawn avatars for the child profile picker.
+        if (Directory.Exists(layout.AvatarsDir))
+            foreach (var svg in Directory.GetFiles(layout.AvatarsDir, "*.svg").Order(StringComparer.Ordinal))
+                bytes += await CopyIfNeededAsync(svg, Path.Combine(layout.AssetsDir, Layout.ExportAvatarRel(Path.GetFileName(svg))), force);
+
         // Dandoona's other poses (onboarding, celebrations).
         if (Directory.Exists(layout.PosesDir))
             foreach (var pose in Directory.GetFiles(layout.PosesDir, "*.webp").Order(StringComparer.Ordinal))

@@ -199,6 +199,26 @@ public class ColorsUnitContentTests
     }
 }
 
+public class AvatarsExportTests
+{
+    [Fact]
+    public async Task Drawn_avatars_are_copied_for_the_profile_picker()
+    {
+        using var repo = new TestRepo();
+        repo.Touch(Path.Combine(repo.Layout.AvatarsDir, "bunny.svg"), "<svg id=\"bunny\"/>");
+        await new ExportRunner(repo.Layout, new GenerationConfig(), new FakeMedia(), new StringWriter()).RunAsync("little-learners", [], default);
+        File.ReadAllText(Path.Combine(repo.Layout.AssetsDir, "images/avatars/bunny.svg")).ShouldContain("bunny");
+    }
+
+    [Fact]
+    public void The_real_repo_has_the_friend_avatars_in_palette_colors()
+    {
+        var layout = Layout.FindFrom(AppContext.BaseDirectory);
+        foreach (var name in new[] { "bunny", "cat", "bear", "owl", "fish", "puppy", "penguin" })
+            File.Exists(Path.Combine(layout.AvatarsDir, name + ".svg")).ShouldBeTrue(name);
+    }
+}
+
 public class PosesExportTests
 {
     [Fact]

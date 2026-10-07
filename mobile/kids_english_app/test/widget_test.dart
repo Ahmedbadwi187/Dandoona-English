@@ -114,7 +114,7 @@ void main() {
       expect(find.text('أدخل اسمًا من حرف إلى 30 حرفًا'), findsOneWidget);
 
       await tester.enterText(find.byKey(const Key('child-name')), 'Omar');
-      await tester.tap(find.byKey(const Key('avatar-rocket')));
+      await tester.tap(find.byKey(const Key('avatar-bunny')));
       await tester.pump();
       await tester.tap(find.byKey(const Key('child-save')));
       await tester.pumpAndSettle();

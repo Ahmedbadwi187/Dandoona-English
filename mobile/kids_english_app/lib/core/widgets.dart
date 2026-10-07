@@ -25,12 +25,28 @@ class AssetPicture extends StatelessWidget {
 
 /// Avatars are plain colored icons: no photos, no personal data.
 class AvatarOption {
-  const AvatarOption(this.key, this.icon, this.color);
+  const AvatarOption(this.key, this.icon, this.color, {this.asset});
   final String key;
   final IconData icon;
   final Color color;
 
-  static const all = [
+  /// A drawn picture (Dandoona or one of her friends) shown instead of the icon. The older icon avatars have none.
+  final String? asset;
+
+  /// The avatars a parent can pick now: Dandoona and six friends. No photos.
+  static const pickable = [
+    AvatarOption('dandoona', Icons.face_rounded, Palette.plum, asset: 'assets/images/mascot/mascot.webp'),
+    AvatarOption('bunny', Icons.pets_rounded, Palette.pink, asset: 'assets/images/avatars/bunny.svg'),
+    AvatarOption('cat', Icons.pets_rounded, Palette.yellow, asset: 'assets/images/avatars/cat.svg'),
+    AvatarOption('bear', Icons.pets_rounded, Palette.tan, asset: 'assets/images/avatars/bear.svg'),
+    AvatarOption('owl', Icons.pets_rounded, Palette.teal, asset: 'assets/images/avatars/owl.svg'),
+    AvatarOption('goldfish', Icons.pets_rounded, Palette.blue, asset: 'assets/images/avatars/fish.svg'),
+    AvatarOption('puppy', Icons.pets_rounded, Palette.green, asset: 'assets/images/avatars/puppy.svg'),
+    AvatarOption('penguin', Icons.pets_rounded, Color(0xFFBDE6FA), asset: 'assets/images/avatars/penguin.svg'),
+  ];
+
+  /// The icon avatars children created before the drawn ones keep using.
+  static const legacy = [
     AvatarOption('star', Icons.star_rounded, Palette.yellow),
     AvatarOption('rocket', Icons.rocket_launch_rounded, Palette.red),
     AvatarOption('flower', Icons.local_florist_rounded, Palette.pink),
@@ -40,6 +56,9 @@ class AvatarOption {
     AvatarOption('cloud', Icons.cloud_rounded, Palette.blue),
     AvatarOption('moon', Icons.nightlight_round, Palette.purple),
   ];
+
+  /// Every avatar a profile can have (so children made earlier still show theirs).
+  static const all = [...pickable, ...legacy];
 
   static AvatarOption byKey(String key) => all.firstWhere((a) => a.key == key, orElse: () => all.first);
 }
@@ -60,7 +79,15 @@ class AvatarCircle extends StatelessWidget {
         shape: BoxShape.circle,
         border: Border.all(color: Palette.ink, width: 3),
       ),
-      child: Icon(a.icon, color: Palette.white, size: size * 0.55),
+      clipBehavior: Clip.antiAlias,
+      child: a.asset == null
+          ? Icon(a.icon, color: Palette.white, size: size * 0.55)
+          : Padding(
+              padding: EdgeInsets.all(size * 0.06),
+              child: a.asset!.endsWith('.svg')
+                  ? SvgPicture.asset(a.asset!, fit: BoxFit.contain)
+                  : Image.asset(a.asset!, fit: BoxFit.contain),
+            ),
     );
   }
 }

@@ -338,7 +338,7 @@ class ChildNameScreen extends StatelessWidget {
             runSpacing: 12,
             alignment: WrapAlignment.center,
             children: [
-              for (final a in AvatarOption.all)
+              for (final a in AvatarOption.pickable)
                 BigTap(
                   key: Key('avatar-${a.key}'),
                   semanticLabel: a.key,

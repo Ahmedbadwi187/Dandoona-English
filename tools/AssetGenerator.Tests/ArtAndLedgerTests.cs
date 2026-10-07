@@ -41,9 +41,10 @@ public class ArtAndLedgerTests
         // Colors lessons also have a swatch and a drawing to color in
         expected.AddRange(lessons.Where(l => l.Color is not null).SelectMany(l => new[] { "swatch", "colorable" }.Select(k => Path.GetFullPath(layout.SvgSource(l, k)))));
         expected.ShouldAllBe(p => File.Exists(p));
-        // accessories/ holds reward art, not lesson words
+        // accessories/ and avatars/ hold reward and profile art, not lesson words
         var actual = Directory.GetFiles(layout.ArtDir, "*.svg", SearchOption.AllDirectories)
-            .Where(f => !f.StartsWith(layout.AccessoriesDir, StringComparison.OrdinalIgnoreCase)).Select(Path.GetFullPath).ToList();
+            .Where(f => !f.StartsWith(layout.AccessoriesDir, StringComparison.OrdinalIgnoreCase) && !f.StartsWith(layout.AvatarsDir, StringComparison.OrdinalIgnoreCase))
+            .Select(Path.GetFullPath).ToList();
         actual.ShouldBe(expected, ignoreOrder: true);
     }
 

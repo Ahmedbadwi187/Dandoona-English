@@ -40,6 +40,8 @@ public sealed class Layout(string root)
 
     public string ArtDir => Path.Combine(Root, "content", "art");
     public string AccessoriesDir => Path.Combine(ArtDir, "accessories");
+    /// <summary>Drawn avatars a parent picks for a child (friends of Dandoona), exported next to the accessories.</summary>
+    public string AvatarsDir => Path.Combine(ArtDir, "avatars");
     /// <summary>Dandoona in other poses (waving, thinking...): the owner's own art, exported next to the mascot.</summary>
     public string PosesDir => Path.Combine(ArtDir, "dandoona");
     public string PalettePath => Path.Combine(StyleDir, "palette.json");
@@ -75,6 +77,7 @@ public sealed class Layout(string root)
     public static string ExportImageRel(Lesson l, string key, bool svg = false) => $"images/{Snake(l.Track)}/{Snake(l.Id)}/{Snake(key)}.{(svg ? "svg" : "webp")}";
     public const string ExportMascotRel = "images/mascot/mascot.webp";
     public static string ExportAccessoryRel(string fileName) => $"images/accessories/{fileName}";
+    public static string ExportAvatarRel(string fileName) => $"images/avatars/{fileName}";
     public static string ExportPoseRel(string name) => $"images/mascot/poses/{name}.webp";
     public static string ExportJsonRel(string track) => $"content/{Snake(track)}.json";
 

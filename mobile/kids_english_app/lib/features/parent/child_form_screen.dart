@@ -33,7 +33,7 @@ class _ChildFormScreenState extends ConsumerState<ChildFormScreen> {
         : ref.read(profilesProvider).where((p) => p.id == widget.childId).firstOrNull;
     _name = TextEditingController(text: existing?.name ?? '');
     _birthYear = existing?.birthYear ?? now.year - 4; // 3-5 track default
-    _avatar = existing?.avatarKey ?? AvatarOption.all.first.key;
+    _avatar = existing?.avatarKey ?? AvatarOption.pickable.first.key;
   }
 
   @override
@@ -102,7 +102,7 @@ class _ChildFormScreenState extends ConsumerState<ChildFormScreen> {
                       spacing: 12,
                       runSpacing: 12,
                       children: [
-                        for (final a in AvatarOption.all)
+                        for (final a in AvatarOption.pickable)
                           InkResponse(
                             key: Key('avatar-${a.key}'),
                             onTap: () => setState(() => _avatar = a.key),
