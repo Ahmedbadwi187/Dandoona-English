@@ -16,4 +16,5 @@ public class Child
 
     public Parent Parent { get; set; } = null!;
     public List<ProgressRecord> Progress { get; set; } = [];
+    public List<ChildAchievement> Achievements { get; set; } = [];
 }

@@ -48,3 +48,15 @@ internal class ProgressRecordConfig : IEntityTypeConfiguration<ProgressRecord>
         b.HasOne(x => x.Child).WithMany(c => c.Progress).HasForeignKey(x => x.ChildId).OnDelete(DeleteBehavior.Cascade);
     }
 }
+
+internal class ChildAchievementConfig : IEntityTypeConfiguration<ChildAchievement>
+{
+    public void Configure(EntityTypeBuilder<ChildAchievement> b)
+    {
+        b.Property(x => x.Kind).HasMaxLength(20);
+        b.Property(x => x.Key).HasMaxLength(100);
+        b.HasIndex(x => new { x.ChildId, x.Kind, x.Key }).IsUnique();
+        // deleted with the child (and so with the account), like progress
+        b.HasOne(x => x.Child).WithMany(c => c.Achievements).HasForeignKey(x => x.ChildId).OnDelete(DeleteBehavior.Cascade);
+    }
+}

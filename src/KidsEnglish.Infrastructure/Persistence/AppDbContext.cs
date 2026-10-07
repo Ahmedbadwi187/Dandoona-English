@@ -14,6 +14,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options)
     public DbSet<Parent> Parents => Set<Parent>();
     public DbSet<Child> Children => Set<Child>();
     public DbSet<ProgressRecord> ProgressRecords => Set<ProgressRecord>();
+    public DbSet<ChildAchievement> ChildAchievements => Set<ChildAchievement>();
     public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
 
     protected override void OnModelCreating(ModelBuilder b)

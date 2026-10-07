@@ -8,6 +8,7 @@ public interface IAppDbContext
     DbSet<Parent> Parents { get; }
     DbSet<Child> Children { get; }
     DbSet<ProgressRecord> ProgressRecords { get; }
+    DbSet<ChildAchievement> ChildAchievements { get; }
     DbSet<RefreshToken> RefreshTokens { get; }
     Task<int> SaveChangesAsync(CancellationToken ct);
 }

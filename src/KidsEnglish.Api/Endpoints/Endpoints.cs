@@ -80,6 +80,12 @@ public static class Endpoints
         children.MapGet("/{id:guid}/summary", async (Guid id, DateOnly? weekStart, ProgressService s, CancellationToken ct) =>
             Results.Ok(await s.WeeklySummaryAsync(id, weekStart, ct)));
 
+        // Certificates, chests, reviews, stories and placement: the union of every phone (idempotent, earliest date kept).
+        children.MapPost("/{id:guid}/achievements", async (Guid id, SubmitAchievementsRequest r, AchievementService s, CancellationToken ct) =>
+            Results.Ok(await s.SubmitAsync(id, r, ct)));
+        children.MapGet("/{id:guid}/achievements", async (Guid id, AchievementService s, CancellationToken ct) =>
+            Results.Ok(await s.ListAsync(id, ct)));
+
         app.MapGet("/api/summary", async (DateOnly? weekStart, ProgressService s, CancellationToken ct) =>
             Results.Ok(await s.WeeklySummariesAsync(weekStart, ct))).WithTags("Progress").RequireAuthorization();
     }
