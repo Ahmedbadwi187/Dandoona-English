@@ -9,7 +9,7 @@ and the privacy laws of the Arab countries you target).
 - **Android release APK:** arm64 21.6 MB, armeabi-v7a 19.4 MB, x86_64 23.1 MB (`flutter build apk --release --split-per-abi`).
   Budget enforced in `azure-pipelines.yml`: arm64 <= 40 MB. About 2.4 MB of that is the bundled lessons (mono,
   loudness-normalised audio and 768 px WebP, re-encoded with ffmpeg).
-- **Permissions in the final manifest:** `RECORD_AUDIO` (record-and-listen only, requested on first use) and `INTERNET`
+- **Permissions in the final manifest:** `RECORD_AUDIO` (record-and-listen only, requested on first use), `INTERNET`, `POST_NOTIFICATIONS` (asked only after the parent taps "Remind me") and `RECEIVE_BOOT_COMPLETED` (the daily reminder survives a restart)
   (optional parent sync only). Nothing else: no advertising ID (`AD_ID`), no location, contacts, camera, storage or phone state.
   Re-check after any dependency change: `apkanalyzer manifest permissions app-arm64-v8a-release.apk`.
 - **SDKs / libraries:** only Flutter, Riverpod, go_router, flutter_svg, shared_preferences, audioplayers, record,
@@ -78,3 +78,13 @@ and the privacy laws of the Arab countries you target).
 - Saving or sharing sits behind the parental gate and uses the system share sheet (`share_plus`): no storage permission, no new Android
   permission (release manifest still has only `RECORD_AUDIO` and `INTERNET`), and the app never sends the picture anywhere itself.
 - The picture contains the nickname the parent chose; the parent decides where it goes. Mention this in the privacy policy text before publishing.
+
+## First-launch flow, reminders and the parent redesign (added later)
+
+- The account is optional: "Start without an account" is the default. Sign-up needs two confirmations (parent or guardian aged 18+, and the
+  privacy policy and terms, both linked), stored with a time on the server. E-mail verification and password reset use a development
+  sender that only logs until a provider is chosen.
+- The reminder is a local notification (`flutter_local_notifications`): no push service, no third-party SDK, no exact-alarm permission,
+  vibrate removed from the manifest. The permission prompt appears only after a parent taps "Remind me" (or saves a time in Edit child).
+- Data collected about a child stays minimal (see privacy-data-map.md). Account deletion sits behind the parental gate in Settings.
+- Dandoona's voice lines and the tap chime are bundled audio; the chime is synthesized by `tools/sounds/make-cheer.ps1` (no license).

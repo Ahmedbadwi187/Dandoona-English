@@ -63,3 +63,21 @@ Nothing below is stored or sent unless a parent signs in under Settings > Accoun
 - A child that was never synced has no server copy, so there is nothing to delete remotely.
 - Deleting the whole account (Settings > Account & sync > Delete account & data) removes every child, all progress and the
   login on the server in one step, and clears the queue.
+
+## First-launch setup and the parent redesign (added later)
+
+Collected only by the parent, only on this phone unless the optional account is used:
+
+| Data | Where | Why | Leaves the device? |
+|---|---|---|---|
+| Child nickname, avatar | `children.v1` | profile | only with an account (sync) |
+| Birth **month and year** (no day) | `children.v1` | age, track | only with an account (server stores the optional month) |
+| Daily goal (5, 10, 15 min) | `children.v1`, `settings.v1` | session timer | with sync (goal stays local) |
+| Starting level answer | `meta.v2.placed` (units counted done) | where the child starts | no |
+| Reminder time (morning/afternoon/evening) | `settings.v1` | one local notification per day | no (local notification, no push service) |
+| Parent first name (optional, sign-up) | `settings.v1` and the account | greeting only | server keeps it with the account |
+| Consent times (guardian 18+, privacy and terms) | server account | proof of consent | stored on the server at sign-up |
+
+Never collected: phone number, address, location, school, the child's full name, photo, gender, interests.
+Deleting a child removes the profile, progress, stars, certificates and the placement from the device and the account.
+Signing out or deleting the account also clears the saved parent first name.

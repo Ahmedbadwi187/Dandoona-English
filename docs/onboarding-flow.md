@@ -65,3 +65,6 @@ Phone number, address, location, school, the child's full name, the child's phot
 3. **Consent on the server**: to prove the two checkboxes I would add `GuardianConfirmedAt` and `TermsAcceptedAt` to the parent account (a database migration). OK?
 4. **Privacy policy and terms links**: the policy exists as a draft HTML page, the terms do not. Until you host them I will show them in the app as simple text pages. Do you want me to write a draft terms page too (for legal review)?
 5. **Birth month**: only the birth year is stored today. Storing the month too (needed for exact age) is a small change to the child profile and the server. OK?
+
+## Status
+Built: language, welcome, account, child setup (name, age, level, goal, reminder, summary, greeting), later launches (one child opens the map). The parent screens and Who is playing were redesigned afterwards (see the parent area tests).
