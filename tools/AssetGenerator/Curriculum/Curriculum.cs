@@ -77,8 +77,17 @@ public class UnitDef
     /// content pack served by our API). The unit's own lines (its name, welcome, celebration) are always bundled.</summary>
     public string Delivery { get; set; } = "";
     public UnitNarration Narration { get; set; } = new();
+    /// <summary>The treasure chest after this unit: an outfit for Dandoona and stickers of this unit's words. Fixed, never random.</summary>
+    public UnitChest? Chest { get; set; }
 
     public bool IsPack => Delivery == "pack";
+}
+
+/// <summary>What a chest holds: the accessory id (an SVG in content/art/accessories) and 3-4 words of its unit that become stickers.</summary>
+public class UnitChest
+{
+    public string Accessory { get; set; } = "";
+    public List<string> Stickers { get; set; } = [];
 }
 
 public class UnitNarration
@@ -212,6 +221,19 @@ public static class CurriculumReader
                 if (lesson.Unit.Length == 0) errors.Add($"{file}: 'unit' is required (units are defined in curriculum/units).");
                 else if (!units.Any(u => u.Track == lesson.Track && u.Id == lesson.Unit)) errors.Add($"{file}: unknown unit '{lesson.Unit}' for track '{lesson.Track}'.");
             }
+
+        // A chest: its accessory is a kebab-case id, it has 3-4 stickers; once a unit has lessons, the stickers are words of those
+        // lessons and the accessory's drawing exists.
+        foreach (var u in units)
+        {
+            if (u.Chest is null) continue; // the real content file gives every unit a chest (tested); older test fixtures have none
+            if (!System.Text.RegularExpressions.Regex.IsMatch(u.Chest.Accessory, "^[a-z0-9]+(-[a-z0-9]+)*$")) errors.Add($"unit '{u.Id}': chest accessory must be a kebab-case id.");
+            if (u.Chest.Stickers.Count is < 3 or > 4) errors.Add($"unit '{u.Id}': a chest has 3 or 4 stickers.");
+            var words = lessons.Where(l => l.Lesson.Track == u.Track && l.Lesson.Unit == u.Id).SelectMany(l => l.Lesson.Words).Select(w => w.Word.Trim().ToLowerInvariant()).ToHashSet();
+            if (words.Count == 0) continue;
+            foreach (var st in u.Chest.Stickers.Where(st => !words.Contains(st.Trim().ToLowerInvariant()))) errors.Add($"unit '{u.Id}': sticker '{st}' is not a word of the unit.");
+            if (!File.Exists(Path.Combine(directory, "..", "art", "accessories", u.Chest.Accessory + ".svg"))) errors.Add($"unit '{u.Id}': the chest accessory '{u.Chest.Accessory}' has no drawing in content/art/accessories.");
+        }
 
         foreach (var dup in lessons.GroupBy(l => l.Lesson.Id).Where(g => g.Count() > 1))
             errors.Add($"Duplicate lesson id '{dup.Key}' in: {string.Join(", ", dup.Select(l => l.File))}");

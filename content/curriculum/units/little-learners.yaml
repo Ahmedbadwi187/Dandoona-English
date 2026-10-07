@@ -37,6 +37,8 @@ units:
     title: { en: "Letters", ar: "الحروف" }
     icon: letters
     color: red
+    # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
+    chest: { accessory: grad-cap, stickers: [apple, ball, cat, dog] }
     narration:
       title: "Letters"
       welcome: "Let's learn the letters!"
@@ -47,6 +49,8 @@ units:
     title: { en: "Colors", ar: "الألوان" }
     icon: colors
     color: orange
+    # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
+    chest: { accessory: beret, stickers: [strawberry, sun, frog, cloud] }
     narration:
       title: "Colors"
       welcome: "Let's learn the colors!"
@@ -58,6 +62,8 @@ units:
     title: { en: "Numbers 1-10", ar: "الأرقام ١-١٠" }
     icon: numbers
     color: blue
+    # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
+    chest: { accessory: top-hat, stickers: [one, three, five, ten] }
     narration:
       title: "Numbers"
       welcome: "Let's count!"
@@ -69,6 +75,8 @@ units:
     title: { en: "Shapes", ar: "الأشكال" }
     icon: shapes
     color: green
+    # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
+    chest: { accessory: star-headband, stickers: [circle, triangle, star, heart] }
     narration:
       title: "Shapes"
       welcome: "Let's find shapes!"
@@ -80,6 +88,8 @@ units:
     title: { en: "Animals", ar: "الحيوانات" }
     icon: animals
     color: teal
+    # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
+    chest: { accessory: animal-ears, stickers: [cat, dog, bird, fish] }
     narration:
       title: "Animals"
       welcome: "Let's meet the animals!"
@@ -92,6 +102,8 @@ units:
     title: { en: "Feelings", ar: "المشاعر" }
     icon: feelings
     color: purple
+    # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
+    chest: { accessory: heart-glasses, stickers: [happy, sad, angry, sleepy] }
     narration:
       title: "Feelings"
       welcome: "How do you feel today?"
@@ -103,6 +115,8 @@ units:
     title: { en: "My Body", ar: "جسمي" }
     icon: body
     color: pink
+    # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
+    chest: { accessory: sweatband, stickers: [hand, foot, eye, nose] }
     narration:
       title: "My Body"
       welcome: "Let's learn about me!"
@@ -115,6 +129,8 @@ units:
     title: { en: "Actions", ar: "الأفعال" }
     icon: actions
     color: orange
+    # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
+    chest: { accessory: hero-mask, stickers: [jump, run, clap, dance] }
     narration:
       title: "Actions"
       welcome: "Let's move!"
@@ -126,6 +142,8 @@ units:
     title: { en: "Food", ar: "الطعام" }
     icon: food
     color: yellow
+    # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
+    chest: { accessory: chef-hat, stickers: [apple, bread, milk, cake] }
     narration:
       title: "Food"
       welcome: "Yummy! Let's learn food!"
@@ -137,6 +155,8 @@ units:
     title: { en: "Clothes", ar: "الملابس" }
     icon: clothes
     color: blue
+    # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
+    chest: { accessory: beanie, stickers: [shirt, shoes, hat, socks] }
     narration:
       title: "Clothes"
       welcome: "Let's get dressed!"
@@ -148,6 +168,8 @@ units:
     title: { en: "Toys", ar: "الألعاب" }
     icon: toys
     color: red
+    # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
+    chest: { accessory: propeller-cap, stickers: [ball, doll, kite, teddy] }
     narration:
       title: "Toys"
       welcome: "Let's play with toys!"
@@ -159,6 +181,8 @@ units:
     title: { en: "My Family", ar: "عائلتي" }
     icon: family
     color: purple
+    # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
+    chest: { accessory: flower-crown, stickers: [mom, dad, baby, grandma] }
     narration:
       title: "My Family"
       welcome: "Let's meet the family!"
@@ -171,6 +195,8 @@ units:
     title: { en: "My Home", ar: "بيتي" }
     icon: home
     color: teal
+    # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
+    chest: { accessory: night-cap, stickers: [bed, door, lamp, window] }
     narration:
       title: "My Home"
       welcome: "Welcome to my home!"
@@ -183,6 +209,8 @@ units:
     title: { en: "Opposites", ar: "الأضداد" }
     icon: opposites
     color: pink
+    # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
+    chest: { accessory: sunglasses, stickers: [big, small, hot, cold] }
     narration:
       title: "Opposites"
       welcome: "Big or small? Let's see!"
@@ -195,8 +223,11 @@ units:
     title: { en: "Transport", ar: "المواصلات" }
     icon: transport
     color: green
+    # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
+    chest: { accessory: pilot-cap, stickers: [car, bus, boat, plane] }
     narration:
       title: "Transport"
       welcome: "Beep beep! Let's go!"
       celebration: "You finished transport! Amazing trip!"
       lines: { locked: "Finish Transport first!" }
+

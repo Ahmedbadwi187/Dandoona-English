@@ -202,10 +202,15 @@ public class AccessoryExportTests
     }
 
     [Fact]
-    public void Repo_has_the_five_accessories_the_app_expects()
+    public void Repo_has_the_five_star_accessories_and_a_drawing_for_every_built_chest()
     {
         var layout = Layout.FindFrom(AppContext.BaseDirectory);
-        Directory.GetFiles(layout.AccessoriesDir, "*.svg").Select(Path.GetFileNameWithoutExtension)
-            .ShouldBe(["bow", "bowtie", "crown", "glasses", "party-hat"], ignoreOrder: true);
+        var have = Directory.GetFiles(layout.AccessoriesDir, "*.svg").Select(Path.GetFileNameWithoutExtension).ToList();
+        have.ShouldContain("bow");
+        have.ShouldContain("bowtie");
+        have.ShouldContain("crown");
+        have.ShouldContain("glasses");
+        have.ShouldContain("party-hat");
+        foreach (var accessory in new[] { "grad-cap", "beret", "top-hat", "star-headband" }) have.ShouldContain(accessory); // Letters, Colors, Numbers, Shapes
     }
 }
