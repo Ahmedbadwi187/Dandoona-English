@@ -29,6 +29,10 @@ Accessory? accessoryById(String? id) {
   return null;
 }
 
+/// Any outfit by id: a star outfit, or one from a treasure chest (those come from the units file; their drawing is
+/// `assets/images/accessories/<id>.svg` and they never unlock by stars, see ChestInventory).
+Accessory? outfitById(String? id) => id == null ? null : (accessoryById(id) ?? Accessory(id, 0));
+
 bool isUnlocked(Accessory a, int totalStars) => totalStars >= a.unlockStars;
 
 /// Accessories whose threshold was crossed when the star total went from [before] to [after].
@@ -48,7 +52,7 @@ class MascotStage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final accessory = accessoryById(accessoryId);
+    final accessory = outfitById(accessoryId);
     return SizedBox(
       width: size,
       height: size,

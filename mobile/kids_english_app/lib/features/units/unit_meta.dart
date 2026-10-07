@@ -179,6 +179,14 @@ class UnitMetaNotifier extends Notifier<UnitMeta> {
     await _save();
   }
 
+  /// The treasure chest after [unitId] was opened. What it held is derived from this (see ChestInventory), never stored twice.
+  Future<void> openChest(String childId, String unitId) async {
+    final meta = state.of(childId);
+    if (meta.chests.contains(unitId)) return;
+    _put(childId, meta.copyWith(chests: {...meta.chests, unitId}));
+    await _save();
+  }
+
   /// Replaces the units counted as done by placement (the parent answered the English-level question again).
   Future<void> setPlaced(String childId, Set<String> unitIds) async {
     _put(childId, state.of(childId).copyWith(placed: unitIds));

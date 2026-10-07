@@ -128,7 +128,11 @@ class CourseUnit {
     this.audio,
     this.hasStory = false,
     this.pack,
+    this.chest,
   });
+
+  /// What the treasure chest after this unit holds (fixed per unit; see docs/chest-rewards.md). Null in older content.
+  final ChestReward? chest;
 
   /// A downloadable unit: its pack (lessons, audio, pictures) comes from our server; [lessons] stay empty until the pack is
   /// on the device. Null for a bundled unit.
@@ -161,7 +165,7 @@ class CourseUnit {
   List<String> get lessonIds => lessons.isNotEmpty ? [for (final l in lessons) l.id] : (pack?.lessonIds ?? const []);
 
   CourseUnit withLessons(List<Lesson> lessons) =>
-      CourseUnit(id: id, order: order, title: title, icon: icon, color: color, audio: audio, hasStory: hasStory, pack: pack, lessons: lessons);
+      CourseUnit(id: id, order: order, title: title, icon: icon, color: color, audio: audio, hasStory: hasStory, pack: pack, chest: chest, lessons: lessons);
 
   String titleFor(String languageCode) => title[languageCode] ?? title['en'] ?? id;
 
@@ -175,7 +179,21 @@ class CourseUnit {
         lessons: _lessons((json['lessons'] as List<dynamic>?) ?? const []),
         hasStory: json['story'] != null,
         pack: json['pack'] == null ? null : PackRef.fromJson(json['pack'] as Map<String, dynamic>),
+        chest: json['chest'] == null ? null : ChestReward.fromJson(json['chest'] as Map<String, dynamic>),
       );
+}
+
+/// A unit's treasure chest: the outfit it gives Dandoona and the words that become stickers.
+class ChestReward {
+  const ChestReward({required this.accessory, required this.stickers});
+
+  /// An accessory id (`assets/images/accessories/<id>.svg`).
+  final String accessory;
+
+  /// Words of the unit, in the order of the Sticker Book.
+  final List<String> stickers;
+
+  factory ChestReward.fromJson(Map<String, dynamic> json) => ChestReward(accessory: json['accessory'] as String, stickers: (json['stickers'] as List<dynamic>).cast<String>());
 }
 
 /// Where a unit's content pack is: its version, the manifest's checksum, its size, the manifest path on the server

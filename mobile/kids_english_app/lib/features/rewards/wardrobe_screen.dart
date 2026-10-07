@@ -11,7 +11,9 @@ import '../content/content_repository.dart';
 import '../profiles/child_profile.dart';
 import '../progress/progress.dart';
 import '../session/session.dart';
+import '../units/map_art.dart';
 import 'accessories.dart';
+import 'chest_rewards.dart';
 
 /// The mascot's wardrobe: accessories unlock with stars; tap an unlocked one to wear it (tap again to take it off).
 class WardrobeScreen extends ConsumerWidget {
@@ -24,6 +26,11 @@ class WardrobeScreen extends ConsumerWidget {
     ref.watch(progressProvider);
     final stars = childId == null ? 0 : ref.read(progressProvider.notifier).totalStars(childId);
     final mascot = ref.watch(contentProvider).maybeWhen(data: (c) => c.mascot, orElse: () => null);
+    final inventory = ref.watch(chestInventoryProvider);
+    final owned = inventory.outfits;
+    void wear(String id) {
+      if (child != null) ref.read(profilesProvider.notifier).equip(child.id, child.equippedAccessory == id ? null : id);
+    }
 
     return ChildScope(
       child: SessionGuard(
@@ -66,6 +73,20 @@ class WardrobeScreen extends ConsumerWidget {
                             ? null
                             : () => ref.read(profilesProvider.notifier).equip(child.id, child.equippedAccessory == a.id ? null : a.id),
                       ),
+                    // the outfits from the treasure chests, one per unit: empty until that chest is opened
+                    for (final u in inventory.units)
+                      if (u.chest != null)
+                        _AccessoryCard(
+                          accessory: Accessory(u.chest!.accessory, 0),
+                          mascotAsset: mascot,
+                          unlocked: owned.contains(u.chest!.accessory),
+                          worn: child?.equippedAccessory == u.chest!.accessory,
+                          lockedBadge: Column(mainAxisSize: MainAxisSize.min, children: [
+                            const CustomPaint(size: Size(48, 48), painter: ChestPainter(open: false, muted: true)),
+                            Text(u.titleFor('en'), maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Palette.gray)),
+                          ]),
+                          onTap: !owned.contains(u.chest!.accessory) ? null : () => wear(u.chest!.accessory),
+                        ),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -80,13 +101,16 @@ class WardrobeScreen extends ConsumerWidget {
 }
 
 class _AccessoryCard extends StatelessWidget {
-  const _AccessoryCard({required this.accessory, required this.mascotAsset, required this.unlocked, required this.worn, required this.onTap});
+  const _AccessoryCard({required this.accessory, required this.mascotAsset, required this.unlocked, required this.worn, required this.onTap, this.lockedBadge});
 
   final Accessory accessory;
   final String? mascotAsset;
   final bool unlocked;
   final bool worn;
   final VoidCallback? onTap;
+
+  /// What a locked card shows instead of the star price (the chest outfits show their chest and unit).
+  final Widget? lockedBadge;
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +132,9 @@ class _AccessoryCard extends StatelessWidget {
                     ? SvgPicture.asset(accessory.assetPath)
                     : MascotStage(mascotAsset: mascotAsset!, size: 96, accessoryId: accessory.id, markWorn: false),
               )
-            : Column(
+            : lockedBadge != null
+                ? Center(child: lockedBadge)
+                : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Icon(Icons.lock_rounded, size: 44, color: Palette.gray),

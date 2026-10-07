@@ -253,7 +253,12 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
       unawaited(_closed(stop, stops));
       return;
     }
-    // The story, review and chest screens come with their content (next step).
+    if (stop.kind == StopKind.chest) {
+      // ready: the opening; done: what was inside (the chest screen tells the two apart)
+      unawaited(context.push('/chest/${stop.unit!.unit.id}'));
+      return;
+    }
+    // The story and review screens come with their content (next step).
   }
 
   Future<void> _openParentArea() async {
@@ -371,6 +376,7 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
                 starBounce: _starBounce,
                 onAvatar: () => context.go('/who'),
                 onWardrobe: () => context.push('/wardrobe'),
+                onStickers: () => context.push('/stickers'),
                 onParent: _openParentArea,
               ),
             ),
@@ -1075,6 +1081,7 @@ class _TopBar extends StatelessWidget {
     required this.starBounce,
     required this.onAvatar,
     required this.onWardrobe,
+    required this.onStickers,
     required this.onParent,
   });
 
@@ -1086,6 +1093,7 @@ class _TopBar extends StatelessWidget {
   final Animation<double> starBounce;
   final VoidCallback onAvatar;
   final VoidCallback onWardrobe;
+  final VoidCallback onStickers;
   final VoidCallback onParent;
 
   @override
@@ -1186,6 +1194,17 @@ class _TopBar extends StatelessWidget {
                           ),
                         ),
                     ],
+                  ),
+                ),
+                BigTap(
+                  key: const Key('open-stickers'),
+                  onTap: onStickers,
+                  semanticLabel: Strings.en('mapStickers'),
+                  child: Container(
+                    width: 54,
+                    height: 54,
+                    decoration: BoxDecoration(color: Palette.white, shape: BoxShape.circle, border: Border.all(color: Palette.nightInk, width: 3)),
+                    child: const Icon(Icons.collections_bookmark_rounded, size: 28, color: Palette.plum),
                   ),
                 ),
                 BigTap(
