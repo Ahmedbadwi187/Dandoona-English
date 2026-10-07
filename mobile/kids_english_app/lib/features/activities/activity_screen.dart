@@ -19,6 +19,7 @@ import '../profiles/child_profile.dart';
 import '../progress/progress.dart';
 import '../rewards/accessories.dart';
 import '../session/session.dart';
+import '../sync/sync_controller.dart';
 import '../units/unit_logic.dart';
 import '../units/unit_meta.dart';
 import 'activity_logic.dart';
@@ -96,6 +97,7 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
           timeSpentSeconds: _stopwatch.elapsed.inSeconds,
           completedAt: ref.read(clockProvider)(),
         ));
+    unawaited(ref.read(syncControllerProvider.notifier).syncQuietly()); // with an account connected, progress goes to the server in the background
     final unit = widget.track.unitOfLesson(widget.lesson.id);
     final firstFinish = unit != null &&
         isUnitFinished(unit, (id) => progress.hasProgress(childId, id)) &&

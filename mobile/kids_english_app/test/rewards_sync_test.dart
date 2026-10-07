@@ -11,6 +11,7 @@ import 'package:kids_english_app/features/profiles/child_profile.dart';
 import 'package:kids_english_app/features/progress/progress.dart';
 import 'package:kids_english_app/features/progress/weekly_summary.dart';
 import 'package:kids_english_app/features/rewards/accessories.dart';
+import 'package:kids_english_app/features/settings/settings.dart';
 import 'package:kids_english_app/features/rewards/wardrobe_screen.dart';
 import 'package:kids_english_app/core/strings.dart';
 import 'package:kids_english_app/features/sync/sync_api.dart';
@@ -28,6 +29,9 @@ ChildProfile kid(String id, [String name = 'Omar']) =>
 
 /// Scriptable server stand-in.
 class FakeSyncApi implements SyncApi {
+  /// What the "server" already holds for this parent (for the sign-in pull): children and their records.
+  final List<ServerChild> serverChildren = [];
+  final Map<String, List<ServerProgress>> serverProgress = {};
   final List<String> createdChildren = [];
   final Map<String, Set<String>> stored = {}; // server child id -> client record guids
   int refreshCalls = 0;
@@ -87,6 +91,18 @@ class FakeSyncApi implements SyncApi {
     return SubmitResult(accepted: accepted, duplicates: items.length - accepted);
   }
 
+  @override
+  Future<List<ServerChild>> listChildren(String accessToken) async {
+    _net();
+    return [...serverChildren];
+  }
+
+  @override
+  Future<List<ServerProgress>> listProgress(String accessToken, String serverChildId) async {
+    _net();
+    return [...?serverProgress[serverChildId]];
+  }
+
   final List<String> deletedChildren = [];
   bool childAlreadyGone = false;
 
@@ -96,6 +112,7 @@ class FakeSyncApi implements SyncApi {
     if (childAlreadyGone) throw const SyncException(SyncErrorKind.notFound, 'Child not found.');
     deletedChildren.add(serverChildId);
     stored.remove(serverChildId); // hard delete: the child's progress goes with it
+    serverChildren.removeWhere((c) => c.id == serverChildId); // and it is no longer listed
   }
 
   bool accountDeleted = false;
@@ -112,6 +129,7 @@ class FakeSyncApi implements SyncApi {
 }
 
 void main() {
+  pullTests();
   group('ids', () {
     test('newUuid is a valid v4 UUID and never repeats', () {
       final ids = {for (var i = 0; i < 500; i++) newUuid()};
@@ -681,3 +699,87 @@ void main() {
 
 /// The stars screen plays a praise line; keep the real audio plugin out of tests.
 final audioServiceOverride = audioServiceProvider.overrideWithValue(FakeAudio());
+
+/// Signing in on a phone brings the account's children and progress from the server.
+void pullTests() {
+  ServerProgress rec(String guid, String lesson, String activity, {int stars = 3}) => ServerProgress(
+      clientRecordId: guid,
+      lessonId: lesson,
+      activity: activity,
+      stars: stars,
+      attempts: 1,
+      timeSpentSeconds: 20,
+      completedAt: DateTime.utc(2026, 9, 1, 10));
+
+  Future<(ProviderContainer, FakeSyncApi)> open() async {
+    final api = FakeSyncApi()
+      ..serverChildren.addAll(const [
+        ServerChild(id: 'srv-sara', name: 'Sara', avatarKey: 'rocket', birthYear: 2021, track: 'little-learners'),
+        ServerChild(id: 'srv-adam', name: 'Adam', avatarKey: 'cloud', birthYear: 2022, track: 'little-learners'),
+      ])
+      ..serverProgress['srv-sara'] = [
+        rec('11111111-1111-4111-8111-111111111111', 'letter-a', 'trace'),
+        rec('22222222-2222-4222-8222-222222222222', 'color-red', 'color-the-object'),
+      ]
+      ..serverProgress['srv-adam'] = [rec('33333333-3333-4333-8333-333333333333', 'letter-a', 'trace', stars: 2)];
+    final base = await testOverrides();
+    final container = ProviderContainer(overrides: [
+      ...base,
+      syncApiFactoryProvider.overrideWithValue((_) => api),
+      tokenStoreProvider.overrideWithValue(MemoryTokenStore()),
+    ]);
+    addTearDown(container.dispose);
+    return (container, api);
+  }
+
+  group('sign-in brings the family\'s data to the device', () {
+    test('children and every progress record arrive, and the app starts past the first-child screen', () async {
+      final (c, _) = await open();
+      await c.read(syncControllerProvider.notifier).signIn('http://x', 'mom@example.com', 'pw');
+
+      final kids = c.read(profilesProvider);
+      expect(kids.map((k) => k.name), ['Sara', 'Adam']);
+      final sara = kids.first;
+      final records = c.read(progressProvider).where((r) => r.childId == sara.id).toList();
+      expect(records.map((r) => '${r.lessonId}/${r.activity}'), ['letter-a/trace', 'color-red/color-the-object']);
+      expect(c.read(settingsProvider).onboarded, isTrue);
+    });
+
+    test('what was just downloaded is not uploaded again, and signing in twice does not duplicate anything', () async {
+      final (c, api) = await open();
+      final n = c.read(syncControllerProvider.notifier);
+      await n.signIn('http://x', 'mom@example.com', 'pw');
+      await n.syncNow();
+      expect(api.createdChildren, isEmpty);
+      expect(api.submitCalls, 0);
+
+      await n.signOut();
+      await n.signIn('http://x', 'mom@example.com', 'pw');
+      expect(c.read(profilesProvider), hasLength(2));
+      expect(c.read(progressProvider), hasLength(3));
+    });
+
+    test('an account with no children changes nothing locally', () async {
+      final (c, api) = await open();
+      api.serverChildren.clear();
+      await c.read(syncControllerProvider.notifier).signIn('http://x', 'mom@example.com', 'pw');
+      expect(c.read(profilesProvider), isEmpty);
+      expect(c.read(settingsProvider).onboarded, isFalse);
+    });
+
+    test('a child deleted here and still waiting to be deleted on the server is not brought back', () async {
+      final (c, api) = await open();
+      final n = c.read(syncControllerProvider.notifier);
+      await n.signIn('http://x', 'mom@example.com', 'pw');
+      final sara = c.read(profilesProvider).first;
+      api.offline = true;
+      await c.read(profilesProvider.notifier).remove(sara.id);
+      await n.childDeleted(sara.id); // queued: the server is unreachable
+      api.offline = false;
+      api.serverChildren.removeWhere((x) => x.id == 'srv-adam'); // keep the fake simple: Sara is the one that stays "on the server"
+      await n.signIn('http://x', 'mom@example.com', 'pw');
+      expect(api.deletedChildren, contains('srv-sara'));
+      expect(c.read(profilesProvider).map((k) => k.name), isNot(contains('Sara')));
+    });
+  });
+}

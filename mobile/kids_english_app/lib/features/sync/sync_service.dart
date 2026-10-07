@@ -122,6 +122,13 @@ class SyncStore {
   Future<void> clear() => _prefs.remove(_key);
 }
 
+/// What the server holds for the signed-in parent: each child with all their progress.
+class PulledChild {
+  const PulledChild({required this.child, required this.progress});
+  final ServerChild child;
+  final List<ServerProgress> progress;
+}
+
 class SyncReport {
   const SyncReport({this.childrenCreated = 0, this.recordsPushed = 0, this.duplicates = 0});
   final int childrenCreated;
@@ -217,6 +224,33 @@ class SyncService {
       done++;
     }
     return done;
+  }
+
+  /// Reads the family's children and progress from the server (used right after sign-in, so a new phone shows the same
+  /// children). Children that were deleted here and are still waiting to be deleted on the server are not brought back.
+  Future<List<PulledChild>> pull() async {
+    final state = store.load();
+    final refreshToken = await tokens.readRefreshToken();
+    if (refreshToken == null || state.baseUrl.isEmpty) throw const SyncException(SyncErrorKind.auth, 'Not signed in');
+    final api = apiFor(state.baseUrl);
+    final auth = await api.refresh(refreshToken);
+    await tokens.saveRefreshToken(auth.refreshToken);
+    await _deletePending(api, auth.accessToken);
+    final result = <PulledChild>[];
+    for (final child in await api.listChildren(auth.accessToken)) {
+      result.add(PulledChild(child: child, progress: await api.listProgress(auth.accessToken, child.id)));
+    }
+    return result;
+  }
+
+  /// Records that a server child now exists on this device as [localChildId], and that the given server records are
+  /// already on the server (so the next sync does not send them again).
+  Future<void> rememberPulled({required String localChildId, required String serverChildId, required Iterable<String> serverRecordGuids}) async {
+    final state = store.load();
+    await store.save(state.copyWith(
+      childMap: {...state.childMap, localChildId: serverChildId},
+      pushed: {...state.pushed, ...serverRecordGuids},
+    ));
   }
 
   Future<bool> isSignedIn() async => (await tokens.readRefreshToken()) != null && store.load().baseUrl.isNotEmpty;

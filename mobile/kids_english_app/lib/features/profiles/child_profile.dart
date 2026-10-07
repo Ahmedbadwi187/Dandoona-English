@@ -93,13 +93,14 @@ class ProfilesNotifier extends Notifier<List<ChildProfile>> {
     return profiles;
   }
 
-  Future<ChildProfile> add({required String name, required String avatarKey, required int birthYear}) async {
+  Future<ChildProfile> add({required String name, required String avatarKey, required int birthYear, String track = 'little-learners'}) async {
     final now = ref.read(clockProvider)();
     final profile = ChildProfile(
       id: '${now.microsecondsSinceEpoch.toRadixString(36)}${Random().nextInt(1 << 20).toRadixString(36)}',
       name: name.trim(),
       avatarKey: avatarKey,
       birthYear: birthYear,
+      track: track,
       createdAt: now,
     );
     state = [...state, profile];

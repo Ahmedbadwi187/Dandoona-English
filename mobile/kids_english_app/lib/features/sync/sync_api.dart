@@ -25,6 +25,36 @@ class SubmitResult {
   final int duplicates;
 }
 
+/// A child as the server stores it.
+class ServerChild {
+  const ServerChild({required this.id, required this.name, required this.avatarKey, required this.birthYear, required this.track});
+  final String id;
+  final String name;
+  final String avatarKey;
+  final int birthYear;
+  final String track;
+}
+
+/// A progress record as the server stores it (the `clientRecordId` is the GUID the app made for it).
+class ServerProgress {
+  const ServerProgress({
+    required this.clientRecordId,
+    required this.lessonId,
+    required this.activity,
+    required this.stars,
+    required this.attempts,
+    required this.timeSpentSeconds,
+    required this.completedAt,
+  });
+  final String clientRecordId;
+  final String lessonId;
+  final String activity;
+  final int stars;
+  final int attempts;
+  final int timeSpentSeconds;
+  final DateTime completedAt;
+}
+
 /// The slice of the Kids English API the app uses. Behind an interface so sync logic is tested without a server.
 abstract class SyncApi {
   Future<AuthTokens> register({required String email, required String password, required String displayName});
@@ -33,6 +63,12 @@ abstract class SyncApi {
   Future<String> createChild(String accessToken,
       {required String name, required String avatarKey, required int birthYear, required String track});
   Future<SubmitResult> submitProgress(String accessToken, String serverChildId, List<Map<String, Object?>> items);
+
+  /// Every child of the signed-in parent (used right after sign-in to bring the family's data to this device).
+  Future<List<ServerChild>> listChildren(String accessToken);
+
+  /// Every progress record of one child.
+  Future<List<ServerProgress>> listProgress(String accessToken, String serverChildId);
 
   /// Permanently deletes the account and all its data on the server (needs the password again).
   Future<void> deleteAccount(String accessToken, String password);
@@ -137,6 +173,38 @@ class HttpSyncApi implements SyncApi {
   Future<SubmitResult> submitProgress(String accessToken, String serverChildId, List<Map<String, Object?>> items) async {
     final json = await _post('api/children/$serverChildId/progress', {'items': items}, token: accessToken);
     return SubmitResult(accepted: json['accepted'] as int, duplicates: json['duplicates'] as int);
+  }
+
+  @override
+  Future<List<ServerChild>> listChildren(String accessToken) async {
+    final json = await _send('GET', 'api/children', null, accessToken) as List<dynamic>;
+    return [
+      for (final e in json.cast<Map<String, dynamic>>())
+        ServerChild(
+          id: e['id'] as String,
+          name: e['name'] as String,
+          avatarKey: e['avatarKey'] as String,
+          birthYear: e['birthYear'] as int,
+          track: (e['track'] as String?) ?? 'little-learners',
+        ),
+    ];
+  }
+
+  @override
+  Future<List<ServerProgress>> listProgress(String accessToken, String serverChildId) async {
+    final json = await _send('GET', 'api/children/$serverChildId/progress', null, accessToken) as List<dynamic>;
+    return [
+      for (final e in json.cast<Map<String, dynamic>>())
+        ServerProgress(
+          clientRecordId: e['clientRecordId'] as String,
+          lessonId: e['lessonId'] as String,
+          activity: e['activity'] as String,
+          stars: e['stars'] as int,
+          attempts: e['attempts'] as int,
+          timeSpentSeconds: e['timeSpentSeconds'] as int,
+          completedAt: DateTime.parse(e['completedAt'] as String),
+        ),
+    ];
   }
 
   @override

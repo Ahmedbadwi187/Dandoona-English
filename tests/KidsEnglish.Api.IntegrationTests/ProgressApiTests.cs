@@ -51,6 +51,20 @@ public class ProgressApiTests(ApiFactory factory)
     }
 
     [Fact]
+    public async Task The_color_the_object_activity_of_the_Colors_unit_is_accepted_and_read_back_by_its_code()
+    {
+        var (c, child) = await ParentWithChildAsync();
+        var id = Guid.NewGuid();
+        var res = await c.PostAsJsonAsync($"/api/children/{child.Id}/progress",
+            new SubmitProgressRequest([Item(DateTime.UtcNow.AddMinutes(-1), "color-red", "color-the-object", id: id)]));
+        res.StatusCode.ShouldBe(HttpStatusCode.OK);
+        (await res.Content.ReadFromJsonAsync<SubmitProgressResponse>()).ShouldBe(new SubmitProgressResponse(1, 0));
+
+        var all = await c.GetFromJsonAsync<List<ProgressItemDto>>($"/api/children/{child.Id}/progress");
+        all!.ShouldContain(x => x.ClientRecordId == id && x.LessonId == "color-red" && x.Activity == "color-the-object");
+    }
+
+    [Fact]
     public async Task Duplicate_ids_inside_one_batch_are_stored_once()
     {
         var (c, child) = await ParentWithChildAsync();

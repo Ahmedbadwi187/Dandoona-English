@@ -70,6 +70,15 @@ class ProgressNotifier extends Notifier<List<ProgressRecord>> {
     await _save();
   }
 
+  /// Adds records that are not here yet (by client record id), e.g. the ones brought from the server after sign-in.
+  Future<void> addAll(Iterable<ProgressRecord> records) async {
+    final known = state.map((r) => r.clientRecordId).toSet();
+    final fresh = [for (final r in records) if (known.add(r.clientRecordId)) r];
+    if (fresh.isEmpty) return;
+    state = [...state, ...fresh];
+    await _save();
+  }
+
   Future<void> removeForChild(String childId) async {
     state = state.where((r) => r.childId != childId).toList();
     await _save();
