@@ -248,6 +248,11 @@ class Lesson {
   /// Numbers unit: each word is a number and its picture shows that many things.
   final bool counting;
 
+  static const _numerals = {'one': '1', 'two': '2', 'three': '3', 'four': '4', 'five': '5', 'six': '6', 'seven': '7', 'eight': '8', 'nine': '9', 'ten': '10'};
+
+  /// A counting lesson's numerals for the big circle: "1 2 3". Unknown words show a question mark.
+  String get digits => words.map((w) => _numerals[w.word.toLowerCase()] ?? '?').join(' ');
+
   /// trace | listen-and-tap | record-and-listen | match-picture | color-the-object
   final List<String> activities;
 

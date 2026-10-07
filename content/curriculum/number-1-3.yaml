@@ -9,7 +9,7 @@ words:
   - { word: two, imagePrompt: "two balloons", source: svg }
   - { word: three, imagePrompt: "three balloons", source: svg }
 narration:
-  intro: "Let's count! One, two, three!"
+  intro: "Let's count! ... One. ... Two. ... Three!"
   phrases: { one: "One balloon.", two: "Two balloons.", three: "Three balloons." }
   praise: ["Great counting!", "Well done!", "You did it!"]
   instructions:

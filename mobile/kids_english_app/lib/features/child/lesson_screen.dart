@@ -98,9 +98,17 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                           alignment: Alignment.center,
                           child: lesson.color != null
                               ? const SizedBox(key: Key('lesson-letter')) // a Colors lesson shows the color itself
-                              : Text(lesson.letter ?? '?',
-                                  key: const Key('lesson-letter'),
-                                  style: const TextStyle(fontSize: 110, fontWeight: FontWeight.w900, color: Palette.white)),
+                              : lesson.counting
+                                  ? Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 18),
+                                      child: FittedBox(
+                                        fit: BoxFit.scaleDown,
+                                        child: Text(lesson.digits, key: const Key('lesson-letter'), style: const TextStyle(fontSize: 90, fontWeight: FontWeight.w900, color: Palette.white)),
+                                      ),
+                                    ) // a Numbers lesson shows its numerals: 1 2 3
+                                  : Text(lesson.letter ?? '?',
+                                      key: const Key('lesson-letter'),
+                                      style: const TextStyle(fontSize: 110, fontWeight: FontWeight.w900, color: Palette.white)),
                         ),
                       ),
                     ),

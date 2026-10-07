@@ -9,7 +9,7 @@ words:
   - { word: five, imagePrompt: "five balloons", source: svg }
   - { word: six, imagePrompt: "six balloons", source: svg }
 narration:
-  intro: "Let's keep counting! Four, five, six!"
+  intro: "Let's keep counting! ... Four. ... Five. ... Six!"
   phrases: { four: "Four balloons.", five: "Five balloons.", six: "Six balloons." }
   praise: ["Great counting!", "Well done!", "You did it!"]
   instructions:

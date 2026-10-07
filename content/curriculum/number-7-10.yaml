@@ -10,7 +10,7 @@ words:
   - { word: nine, imagePrompt: "nine balloons", source: svg }
   - { word: ten, imagePrompt: "ten balloons", source: svg }
 narration:
-  intro: "Almost there! Seven, eight, nine, ten!"
+  intro: "Almost there! ... Seven. ... Eight. ... Nine. ... Ten!"
   phrases: { seven: "Seven balloons.", eight: "Eight balloons.", nine: "Nine balloons.", ten: "Ten balloons." }
   praise: ["Great counting!", "Well done!", "You did it!"]
   instructions:

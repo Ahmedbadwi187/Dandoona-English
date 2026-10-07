@@ -5822,5 +5822,26 @@
     "what": "unit-app/instr-puzzle-first (22 chars)",
     "usd": 0.00176,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T17:57:49.349047Z",
+    "service": "ElevenLabs",
+    "what": "number-1-3/intro (41 chars)",
+    "usd": 0.00328,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T17:57:50.6077245Z",
+    "service": "ElevenLabs",
+    "what": "number-4-6/intro (49 chars)",
+    "usd": 0.00392,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T17:57:51.8535272Z",
+    "service": "ElevenLabs",
+    "what": "number-7-10/intro (54 chars)",
+    "usd": 0.00432,
+    "estimated": false
   }
 ]

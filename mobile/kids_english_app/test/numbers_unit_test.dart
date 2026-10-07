@@ -8,9 +8,15 @@ import 'package:kids_english_app/features/content/content_models.dart';
 
 import 'helpers.dart';
 
-/// The real Numbers pack, as the app downloads it.
+/// The newest real Numbers pack, as the app downloads it (the index says which version that is).
+Directory _packDir() {
+  final index = jsonDecode(File('../../packs/little_learners/index.json').readAsStringSync()) as Map<String, dynamic>;
+  final entry = (index['packs'] as List<dynamic>).cast<Map<String, dynamic>>().firstWhere((p) => p['unit'] == 'numbers');
+  return Directory('../../packs/little_learners/numbers/v${entry['version']}');
+}
+
 List<Lesson> _pack() {
-  final manifest = jsonDecode(File('../../packs/little_learners/numbers/v1/manifest.json').readAsStringSync()) as Map<String, dynamic>;
+  final manifest = jsonDecode(File('${_packDir().path}/manifest.json').readAsStringSync()) as Map<String, dynamic>;
   return [for (final l in manifest['lessons'] as List<dynamic>) Lesson.fromJson(l as Map<String, dynamic>)];
 }
 
@@ -27,7 +33,7 @@ void main() {
   });
 
   test('every picture, word and phrase of the pack is a file in the pack with a matching checksum entry', () {
-    final dir = Directory('../../packs/little_learners/numbers/v1');
+    final dir = _packDir();
     final manifest = jsonDecode(File('${dir.path}/manifest.json').readAsStringSync()) as Map<String, dynamic>;
     final listed = {for (final f in manifest['files'] as List<dynamic>) (f as Map<String, dynamic>)['path'] as String};
     for (final w in _pack().expand((l) => l.words)) {
@@ -58,8 +64,12 @@ void main() {
     }
   });
 
+  test('the numerals of each lesson for the big circle', () {
+    expect(_pack().map((l) => l.digits), ['1 2 3', '4 5 6', '7 8 9 10']);
+  });
+
   test('a lesson without the counting flag reads as before (older content)', () {
-    final json = jsonDecode(File('../../packs/little_learners/numbers/v1/manifest.json').readAsStringSync()) as Map<String, dynamic>;
+    final json = jsonDecode(File('${_packDir().path}/manifest.json').readAsStringSync()) as Map<String, dynamic>;
     final first = Map<String, dynamic>.from((json['lessons'] as List<dynamic>).first as Map<String, dynamic>)..remove('counting');
     expect(Lesson.fromJson(first).counting, isFalse);
   });
