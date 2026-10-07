@@ -7,6 +7,7 @@ import 'features/certificate/unit_celebration_screen.dart';
 import 'features/child/lesson_screen.dart';
 import 'features/child/letter_map_screen.dart';
 import 'features/child/profile_picker_screen.dart';
+import 'features/onboarding/language_route.dart';
 import 'features/parent/child_form_screen.dart';
 import 'features/rewards/wardrobe_screen.dart';
 import 'features/parent/children_screen.dart';
@@ -25,7 +26,10 @@ String? guardRoute({
   required bool hasProfiles,
   required bool parentUnlocked,
   required bool hasActiveChild,
+  bool languageChosen = true,
 }) {
+  // First launch: the language screen comes before anything else.
+  if (!languageChosen && location != '/language') return '/language';
   if (location == '/') return onboarded && hasProfiles ? '/who' : '/onboarding';
   if (location == '/who' && !hasProfiles) return '/onboarding';
   // Parent area is only reachable through the parental gate.
@@ -43,9 +47,11 @@ final routerProvider = Provider<GoRouter>((ref) {
       hasProfiles: ref.read(profilesProvider).isNotEmpty,
       parentUnlocked: ref.read(parentSessionProvider),
       hasActiveChild: ref.read(activeChildIdProvider) != null,
+      languageChosen: ref.read(settingsProvider).languageChosen,
     ),
     routes: [
       GoRoute(path: '/', builder: (_, _) => const OnboardingScreen()), // redirected by guardRoute
+      GoRoute(path: '/language', builder: (_, _) => const LanguageRoute()),
       GoRoute(path: '/onboarding', builder: (_, _) => const OnboardingScreen()),
       GoRoute(path: '/onboarding/child', builder: (_, _) => const ChildFormScreen(firstRun: true)),
       GoRoute(path: '/who', builder: (_, _) => const ProfilePickerScreen()),

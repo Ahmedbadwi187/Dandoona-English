@@ -10,8 +10,13 @@ import 'package:kids_english_app/features/session/session.dart';
 
 import 'helpers.dart';
 
-Future<void> pumpApp(WidgetTester tester, {Map<String, Object> prefs = const {}}) async {
-  final overrides = await testOverrides(prefs: prefs);
+/// Starts the app. Unless [fresh], the language screen was already passed (it is tested in language_test.dart).
+Future<void> pumpApp(WidgetTester tester, {Map<String, Object> prefs = const {}, bool fresh = false}) async {
+  final overrides = await testOverrides(
+    prefs: fresh || prefs.containsKey('settings.v1')
+        ? prefs
+        : {...prefs, 'settings.v1': '{"languageCode":"ar","sessionMinutes":15,"unlockAll":false,"onboarded":false,"languageChosen":true}'},
+  );
   await tester.pumpWidget(ProviderScope(overrides: overrides, child: const KidsEnglishApp()));
   await tester.pumpAndSettle();
 }
