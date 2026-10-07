@@ -33,13 +33,12 @@ Main character: **Dandoona (دندونة)**, the owner's own character.
 - Dandoona's own voice lines: `app:` section in the units yaml (Who is playing?, hello greeting, Welcome back!), generated and exported.
 - Docs: `privacy-data-map.md`, `store-compliance.md`, `licenses.md`, `onboarding-flow.md`, `units-proposal.md`.
 
-## Work on branches (not merged into main; the owner merges)
+## Map v2, content packs and sync (merged into main; this is how they work)
 - `feature/unit-map-v2`: unit map redesign (one Dandoona on the current island, progress ring, 78 dp play button, locked islands
   muted with a lock badge, "Soon" ribbon instead of the hourglass, own colors per unit, drifting clouds, castle at the end,
   sticky top bar with avatar / greeting / stars bounce / wardrobe dot / parent button behind the gate) and the path model
   (story, chest and review stations; `lib/features/units/map_path.dart`). Screenshots: `docs/design-options/unit-map-v2/`
-  (render with `flutter test test_screenshots/map_preview_test.dart --update-goldens`). **Waiting for the owner's approval**
-  before the yaml gets the new units and reviews and before station content (stories, review game, chest outfits) is built.
+  (render with `flutter test test_screenshots/map_preview_test.dart --update-goldens`). The owner approved the map; the stations are being built (see "Stations" below).
 - `feature/content-packs-sync` (on top of the map branch):
   - Content packs: `delivery: pack` in the units yaml; `export` writes `packs/<track>/<unit>/v<version>/` + `index.json`,
     `content/packs.lock.json` keeps versions; the API serves `/packs` statically (`ContentPacks:Root`); the app downloads the
@@ -51,8 +50,22 @@ Main character: **Dandoona (دندونة)**, the owner's own character.
     summaries only, no ids, groups under 5 children hidden.
   - `docs/privacy-data-map.md` lists what is stored, where and for how long; one open decision (inactive accounts).
 
+## Stations on the map (built after the merge)
+- **Treasure chests** (one after every unit): tap to open; shake, sound, the outfit flies to Dandoona, "Got it!" with 3-4 stickers.
+  Rewards are fixed per chest and planned for all 15 chests in `docs/chest-rewards.md`; the config is `chest:` per unit in the units
+  yaml (validated against the unit's words). What a child owns is derived from opened chests (`features/rewards/chest_rewards.dart`).
+  Outfits drawn so far: grad-cap, beret, top-hat, star-headband (Letters, Colors, Numbers, Shapes); preview them with
+  `flutter test test_screenshots/accessories_preview_test.dart --update-goldens`. The other 11 are drawn when their unit is built.
+- **Sticker Book** (top bar): stickers are the unit's own word pictures and voices; tap to hear the word.
+- **Reviews** (after units 4, 8, 11) and the **castle**: a never-failing hear-and-tap game with two words per unit of its group
+  (`features/units/review_screen.dart`); passing opens the next unit. The castle uses every unit.
+- **Stories**: not built (no unit has one yet).
+- Units built with content: Letters, Colors, Numbers (3 lessons), Shapes (4 lessons incl. "Shapes around us"). Numbers and Shapes are
+  downloadable packs; an installed pack is checked once per run for a newer version.
+- Sounds are synthesized by `tools/sounds/*.ps1` (cheer, chest-open); balloon and shape pictures by `tools/art/*.mjs`.
+
 ## Tests (all green at the time of writing)
-- Flutter: `cd mobile/kids_english_app && flutter test` (256 on main, 284 on `feature/content-packs-sync`). `flutter analyze` is clean.
+- Flutter: `cd mobile/kids_english_app && flutter test` (309 at the time of writing). `flutter analyze` is clean.
 - Generator: `cd tools && dotnet test AssetGenerator.slnx` (54 on main, 57 on the packs branch). API integration tests:
   `dotnet test` at the repo root (30 on main, 39 on the packs branch; they start SQL Server in Docker via Testcontainers).
 - Release build: `flutter build apk --release` (about 65 MB); merged permissions: RECORD_AUDIO, INTERNET, POST_NOTIFICATIONS,
@@ -86,6 +99,7 @@ Main character: **Dandoona (دندونة)**, the owner's own character.
 3. Certificate screen: a separate "Save" button next to "Share" (today saving goes through the share sheet).
 4. Real e-mail provider for verification and password reset (not chosen; only the logging sender exists). Show the parent's first name
    after log-in too (today it is stored at sign-up only).
-5. Numbers unit and the rest, only after the owner has tested Colors on a real phone. They will be content packs (see above).
+5. Next units in map order: Animals, Feelings, My Body, Actions, Food, Clothes, Toys, My Family, My Home, Opposites, Transport. Each is
+   a content pack: lessons yaml + pictures + voice (show the cost estimate first), then its chest outfit (drawn) and stickers.
 6. Release signing, privacy policy and terms final text, store listing (see the open items at the end of `store-compliance.md`).
 7. Optional: play the "Welcome back!" line on later launches (it is generated and exported but not used).
