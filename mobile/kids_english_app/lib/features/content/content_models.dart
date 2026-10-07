@@ -2,7 +2,7 @@
 /// schemaVersion 2: the track holds units, each unit holds lessons. schemaVersion 1 (a flat lesson list, before units
 /// existed) still loads, as a single unit named Letters. All paths are relative to `assets/`.
 class TrackContent {
-  const TrackContent({required this.track, required this.units, this.mascot, this.placement = const [], this.appAudio});
+  const TrackContent({required this.track, required this.units, this.mascot, this.placement = const [], this.appAudio, this.reviews = const []});
 
   final String track;
   final String? mascot;
@@ -15,6 +15,9 @@ class TrackContent {
 
   /// Dandoona's own lines: "Who is playing?" (title), the first greeting (welcome), "Welcome back!" (celebration).
   final UnitAudio? appAudio;
+
+  /// Review stops on the map, each after a group of units (in path order). Older content files have none.
+  final List<ReviewStop> reviews;
 
   static const supportedSchemas = {1, 2};
 
@@ -41,7 +44,15 @@ class TrackContent {
         .toList()
       ..sort((a, b) => a.level.compareTo(b.level));
     final app = json['app'];
-    return TrackContent(track: json['track'] as String, mascot: json['mascot'] as String?, units: units, placement: placement, appAudio: app is Map<String, dynamic> ? UnitAudio.fromJson(app) : null);
+    final reviews = ((json['reviews'] as List<dynamic>?) ?? const []).map((e) => ReviewStop.fromJson(e as Map<String, dynamic>)).toList();
+    return TrackContent(
+      track: json['track'] as String,
+      mascot: json['mascot'] as String?,
+      units: units,
+      placement: placement,
+      appAudio: app is Map<String, dynamic> ? UnitAudio.fromJson(app) : null,
+      reviews: reviews,
+    );
   }
 
   Lesson? lessonById(String id) {
@@ -66,6 +77,20 @@ class TrackContent {
     }
     return null;
   }
+}
+
+/// A review on the map: a quick game with the words of [units]; it sits after the last of them and must be passed
+/// before the next unit opens.
+class ReviewStop {
+  const ReviewStop({required this.id, required this.units});
+
+  final String id;
+  final List<String> units;
+
+  String get after => units.last;
+
+  factory ReviewStop.fromJson(Map<String, dynamic> json) =>
+      ReviewStop(id: json['id'] as String, units: (json['units'] as List<dynamic>).cast<String>());
 }
 
 /// One answer of the placement question: the units that count as done by placement, and where the child starts.
@@ -98,10 +123,14 @@ class CourseUnit {
     required this.color,
     required this.lessons,
     this.audio,
+    this.hasStory = false,
   });
 
   final String id;
   final int order;
+
+  /// The unit has a picture story (a book stop after it on the map).
+  final bool hasStory;
 
   /// Title per language code (`en`, `ar`).
   final Map<String, String> title;
@@ -126,20 +155,25 @@ class CourseUnit {
         color: (json['color'] as String?) ?? '',
         audio: json['audio'] == null ? null : UnitAudio.fromJson(json['audio'] as Map<String, dynamic>),
         lessons: _lessons((json['lessons'] as List<dynamic>?) ?? const []),
+        hasStory: json['story'] != null,
       );
 }
 
 class UnitAudio {
-  const UnitAudio({required this.title, required this.celebration, this.welcome});
+  const UnitAudio({required this.title, required this.celebration, this.welcome, this.locked});
 
   final String title;
   final String? welcome;
   final String celebration;
 
+  /// "Finish Letters first!": said when a child taps the unit while it is still closed. Older files have none.
+  final String? locked;
+
   factory UnitAudio.fromJson(Map<String, dynamic> json) => UnitAudio(
         title: json['title'] as String,
         welcome: json['welcome'] as String?,
         celebration: json['celebration'] as String,
+        locked: json['locked'] as String?,
       );
 }
 
