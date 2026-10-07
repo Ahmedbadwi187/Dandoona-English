@@ -1,8 +1,15 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
     <!-- Microphone: only for the record-and-listen activity. The recording is played back on the device and deleted. -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <!-- Network: ONLY for the optional parent account sync (the app is fully usable offline). Release builds need https. -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Daily reminder for the parent, from the phone itself (no push service). The permission is asked only on the reminder screen,
+         after the parent taps "Remind me". RECEIVE_BOOT_COMPLETED lets the reminder be scheduled again after a restart.
+         Exact alarms are NOT used: the reminder may arrive a few minutes late. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- The notification plugin adds VIBRATE; the reminder does not need it. -->
+    <uses-permission android:name="android.permission.VIBRATE" tools:node="remove" />
     <application
         android:label="kids_english_app"
         android:name="${applicationName}"
@@ -34,6 +41,15 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver" />
+        <receiver android:exported="false" android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and

@@ -10,6 +10,7 @@ class AppSettings {
     this.unlockAll = false,
     this.onboarded = false,
     this.languageChosen = false,
+    this.reminderTime,
   });
 
   static const defaultSessionMinutes = 15;
@@ -25,12 +26,16 @@ class AppSettings {
   /// The parent confirmed the language on the first screen. False only on a fresh install.
   final bool languageChosen;
 
-  AppSettings copyWith({String? languageCode, int? sessionMinutes, bool? unlockAll, bool? onboarded, bool? languageChosen}) => AppSettings(
+  /// The parent's daily reminder: `morning`, `afternoon` or `evening`; null = no reminder.
+  final String? reminderTime;
+
+  AppSettings copyWith({String? languageCode, int? sessionMinutes, bool? unlockAll, bool? onboarded, bool? languageChosen, String? reminderTime, bool clearReminder = false}) => AppSettings(
         languageCode: languageCode ?? this.languageCode,
         sessionMinutes: sessionMinutes ?? this.sessionMinutes,
         unlockAll: unlockAll ?? this.unlockAll,
         onboarded: onboarded ?? this.onboarded,
         languageChosen: languageChosen ?? this.languageChosen,
+        reminderTime: clearReminder ? null : (reminderTime ?? this.reminderTime),
       );
 
   Map<String, dynamic> toJson() => {
@@ -39,6 +44,7 @@ class AppSettings {
         'unlockAll': unlockAll,
         'onboarded': onboarded,
         'languageChosen': languageChosen,
+        if (reminderTime != null) 'reminderTime': reminderTime,
       };
 
   factory AppSettings.fromJson(Map<String, dynamic> json) => AppSettings(
@@ -50,6 +56,7 @@ class AppSettings {
         onboarded: (json['onboarded'] as bool?) ?? false,
         // Settings saved before the language screen existed count as already chosen (those parents already picked a language).
         languageChosen: (json['languageChosen'] as bool?) ?? ((json['onboarded'] as bool?) ?? false),
+        reminderTime: json['reminderTime'] as String?,
       );
 }
 
@@ -76,6 +83,9 @@ class SettingsNotifier extends Notifier<AppSettings> {
   Future<void> setUnlockAll(bool value) => _set(state.copyWith(unlockAll: value));
 
   Future<void> completeOnboarding() => _set(state.copyWith(onboarded: true));
+
+  /// Remembers the reminder time (null = no reminder). Scheduling it is the reminder service's job.
+  Future<void> setReminder(String? time) => _set(state.copyWith(reminderTime: time, clearReminder: time == null));
 
   /// The first screen: the parent confirmed this language (it also sets the layout direction everywhere in the parent area).
   Future<void> chooseLanguage(String code) => _set(state.copyWith(languageCode: code == 'en' ? 'en' : 'ar', languageChosen: true));
