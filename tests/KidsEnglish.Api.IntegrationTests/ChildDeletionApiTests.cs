@@ -19,7 +19,7 @@ public class ChildDeletionApiTests(ApiFactory factory)
     {
         var c = factory.CreateClient();
         var auth = (await (await c.PostAsJsonAsync("/api/auth/register",
-            new RegisterRequest($"{Guid.NewGuid():N}@test.com", "Passw0rd!x", "Parent"))).Content.ReadFromJsonAsync<AuthResponse>())!;
+            new RegisterRequest($"{Guid.NewGuid():N}@test.com", "Passw0rd!x", "Parent", true, true))).Content.ReadFromJsonAsync<AuthResponse>())!;
         c.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.AccessToken);
 
         async Task<ChildDto> AddAsync(string name)

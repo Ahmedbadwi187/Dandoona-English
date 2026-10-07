@@ -21,9 +21,16 @@ public class ValidatorTests
     [InlineData("a@b.com", "password1", "Sara", true)]
     [InlineData("not-an-email", "password1", "Sara", false)]
     [InlineData("a@b.com", "short", "Sara", false)]
-    [InlineData("a@b.com", "password1", "", false)]
+    [InlineData("a@b.com", "password1", "", true)] // the first name is optional
     public void Register_validation(string email, string password, string name, bool valid) =>
-        new RegisterRequestValidator().Validate(new RegisterRequest(email, password, name)).IsValid.ShouldBe(valid);
+        new RegisterRequestValidator().Validate(new RegisterRequest(email, password, name, true, true)).IsValid.ShouldBe(valid);
+
+    [Theory]
+    [InlineData(true, false)]
+    [InlineData(false, true)]
+    [InlineData(false, false)]
+    public void Register_needs_both_confirmations(bool guardian, bool terms) =>
+        new RegisterRequestValidator().Validate(new RegisterRequest("a@b.com", "password1", "Sara", guardian, terms)).IsValid.ShouldBeFalse();
 
     [Theory]
     [InlineData(2022, true)]   // age 4

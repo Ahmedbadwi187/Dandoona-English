@@ -14,7 +14,7 @@ public class ProgressApiTests(ApiFactory factory)
     private async Task<(HttpClient Client, ChildDto Child)> ParentWithChildAsync()
     {
         var c = factory.CreateClient();
-        var res = await c.PostAsJsonAsync("/api/auth/register", new RegisterRequest($"{Guid.NewGuid():N}@test.com", "Passw0rd!x", "Parent"));
+        var res = await c.PostAsJsonAsync("/api/auth/register", new RegisterRequest($"{Guid.NewGuid():N}@test.com", "Passw0rd!x", "Parent", true, true));
         var auth = (await res.Content.ReadFromJsonAsync<AuthResponse>())!;
         c.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.AccessToken);
         var created = await c.PostAsJsonAsync("/api/children", new CreateChildRequest("Omar", "star", DateTime.UtcNow.Year - 4, "little-learners"));

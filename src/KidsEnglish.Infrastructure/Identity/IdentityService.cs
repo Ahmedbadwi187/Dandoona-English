@@ -32,6 +32,32 @@ internal class IdentityService(UserManager<ApplicationUser> users) : IIdentitySe
     public async Task<string?> GetEmailAsync(Guid userId, CancellationToken ct) =>
         (await users.FindByIdAsync(userId.ToString()))?.Email;
 
+    public async Task<string?> CreateEmailConfirmationTokenAsync(Guid userId, CancellationToken ct)
+    {
+        var user = await users.FindByIdAsync(userId.ToString());
+        return user is null ? null : await users.GenerateEmailConfirmationTokenAsync(user);
+    }
+
+    public async Task<bool> ConfirmEmailAsync(string email, string token, CancellationToken ct)
+    {
+        var user = await users.FindByEmailAsync(email);
+        return user is not null && (await users.ConfirmEmailAsync(user, token)).Succeeded;
+    }
+
+    public async Task<(Guid UserId, string Token)?> CreatePasswordResetTokenAsync(string email, CancellationToken ct)
+    {
+        var user = await users.FindByEmailAsync(email);
+        return user is null ? null : (user.Id, await users.GeneratePasswordResetTokenAsync(user));
+    }
+
+    public async Task<IdentityResult> ResetPasswordAsync(string email, string token, string newPassword, CancellationToken ct)
+    {
+        var user = await users.FindByEmailAsync(email);
+        if (user is null) return new IdentityResult(false, Guid.Empty, ["The code is not valid."]);
+        var result = await users.ResetPasswordAsync(user, token, newPassword);
+        return new IdentityResult(result.Succeeded, user.Id, result.Errors.Select(e => e.Description).ToList());
+    }
+
     public async Task<bool> DeleteUserAsync(Guid userId, CancellationToken ct)
     {
         var user = await users.FindByIdAsync(userId.ToString());

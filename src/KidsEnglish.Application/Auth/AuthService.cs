@@ -12,10 +12,14 @@ public class AuthService(
     IIdentityService identity,
     ITokenService tokens,
     IClock clock,
+    IEmailSender email,
     IValidator<RegisterRequest> registerValidator,
     IValidator<LoginRequest> loginValidator,
     IValidator<RefreshRequest> refreshValidator,
-    IValidator<LogoutRequest> logoutValidator)
+    IValidator<LogoutRequest> logoutValidator,
+    IValidator<VerifyEmailRequest> verifyValidator,
+    IValidator<ForgotPasswordRequest> forgotValidator,
+    IValidator<ResetPasswordRequest> resetValidator)
 {
     public async Task<AuthResponse> RegisterAsync(RegisterRequest request, CancellationToken ct)
     {
@@ -28,12 +32,59 @@ public class AuthService(
         db.Parents.Add(new Parent
         {
             Id = created.UserId,
-            DisplayName = request.DisplayName.Trim(),
-            CreatedAt = clock.UtcNow
+            DisplayName = string.IsNullOrWhiteSpace(request.DisplayName) ? "Parent" : request.DisplayName.Trim(),
+            CreatedAt = clock.UtcNow,
+            GuardianConfirmedAt = clock.UtcNow,
+            TermsAcceptedAt = clock.UtcNow
         });
         await db.SaveChangesAsync(ct);
 
+        await SendVerificationAsync(created.UserId, request.Email, ct);
+
         return await IssueAsync(created.UserId, request.Email, ct);
+    }
+
+    /// <summary>The account works at once; verifying the e-mail is a courtesy. A failed send never fails the sign-up.</summary>
+    private async Task SendVerificationAsync(Guid userId, string address, CancellationToken ct)
+    {
+        try
+        {
+            var token = await identity.CreateEmailConfirmationTokenAsync(userId, ct);
+            if (token is null) return;
+            await email.SendAsync(new EmailMessage(address, "Verify your email for Dandoona English",
+                $"Welcome to Dandoona English!\n\nYour verification code:\n{token}\n\nIf you did not create this account you can ignore this message."), ct);
+        }
+        catch (Exception)
+        {
+            // not worth failing the registration
+        }
+    }
+
+    public async Task VerifyEmailAsync(VerifyEmailRequest request, CancellationToken ct)
+    {
+        await verifyValidator.ValidateAndThrowAsync(request, ct);
+        if (!await identity.ConfirmEmailAsync(request.Email, request.Token, ct))
+            throw new ValidationException([new ValidationFailure("Token", "The code is not valid.")]);
+    }
+
+    /// <summary>Always succeeds from the caller's point of view, so nobody can find out which e-mails have accounts.</summary>
+    public async Task ForgotPasswordAsync(ForgotPasswordRequest request, CancellationToken ct)
+    {
+        await forgotValidator.ValidateAndThrowAsync(request, ct);
+        var reset = await identity.CreatePasswordResetTokenAsync(request.Email, ct);
+        if (reset is null) return;
+        await email.SendAsync(new EmailMessage(request.Email, "Reset your Dandoona English password",
+            $"Your password reset code:\n{reset.Value.Token}\n\nIf you did not ask for this you can ignore this message; your password stays the same."), ct);
+    }
+
+    public async Task ResetPasswordAsync(ResetPasswordRequest request, CancellationToken ct)
+    {
+        await resetValidator.ValidateAndThrowAsync(request, ct);
+        var result = await identity.ResetPasswordAsync(request.Email, request.Token, request.NewPassword, ct);
+        if (!result.Succeeded)
+            throw new ValidationException(result.Errors.Select(e => new ValidationFailure("Token", e)));
+        // every device signed in with the old password is signed out
+        await RevokeAllAsync(result.UserId, clock.UtcNow, ct);
     }
 
     public async Task<AuthResponse> LoginAsync(LoginRequest request, CancellationToken ct)

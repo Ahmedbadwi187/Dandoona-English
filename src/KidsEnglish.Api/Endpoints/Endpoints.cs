@@ -16,6 +16,21 @@ public static class Endpoints
             Results.Ok(await s.LoginAsync(r, ct)));
         g.MapPost("/refresh", async (RefreshRequest r, AuthService s, CancellationToken ct) =>
             Results.Ok(await s.RefreshAsync(r, ct)));
+        g.MapPost("/verify-email", async (VerifyEmailRequest r, AuthService s, CancellationToken ct) =>
+        {
+            await s.VerifyEmailAsync(r, ct);
+            return Results.NoContent();
+        });
+        g.MapPost("/forgot-password", async (ForgotPasswordRequest r, AuthService s, CancellationToken ct) =>
+        {
+            await s.ForgotPasswordAsync(r, ct);
+            return Results.NoContent();
+        });
+        g.MapPost("/reset-password", async (ResetPasswordRequest r, AuthService s, CancellationToken ct) =>
+        {
+            await s.ResetPasswordAsync(r, ct);
+            return Results.NoContent();
+        });
         g.MapPost("/logout", async (LogoutRequest r, AuthService s, CancellationToken ct) =>
         {
             await s.LogoutAsync(r, ct);

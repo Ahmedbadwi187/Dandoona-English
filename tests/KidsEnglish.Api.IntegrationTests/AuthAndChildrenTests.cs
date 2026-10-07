@@ -15,7 +15,7 @@ public class AuthAndChildrenTests(ApiFactory factory)
     private static async Task<AuthResponse> RegisterAsync(HttpClient c, string? email = null)
     {
         email ??= $"{Guid.NewGuid():N}@test.com";
-        var res = await c.PostAsJsonAsync("/api/auth/register", new RegisterRequest(email, "Passw0rd!x", "Parent"));
+        var res = await c.PostAsJsonAsync("/api/auth/register", new RegisterRequest(email, "Passw0rd!x", "Parent", true, true));
         res.StatusCode.ShouldBe(HttpStatusCode.OK);
         return (await res.Content.ReadFromJsonAsync<AuthResponse>())!;
     }
@@ -45,7 +45,7 @@ public class AuthAndChildrenTests(ApiFactory factory)
         var c = Client();
         var email = $"{Guid.NewGuid():N}@test.com";
         await RegisterAsync(c, email);
-        var res = await c.PostAsJsonAsync("/api/auth/register", new RegisterRequest(email, "Passw0rd!x", "Parent"));
+        var res = await c.PostAsJsonAsync("/api/auth/register", new RegisterRequest(email, "Passw0rd!x", "Parent", true, true));
         res.StatusCode.ShouldBe(HttpStatusCode.BadRequest);
     }
 

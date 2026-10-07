@@ -5,8 +5,19 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace KidsEnglish.Infrastructure;
+
+/// <summary>Development e-mail: writes the whole message to the log instead of sending it.</summary>
+internal class DevEmailSender(Microsoft.Extensions.Logging.ILogger<DevEmailSender> log) : IEmailSender
+{
+    public Task SendAsync(EmailMessage message, CancellationToken ct)
+    {
+        log.LogInformation("EMAIL (not sent, development) to {To} | {Subject}\n{Body}", message.To, message.Subject, message.Body);
+        return Task.CompletedTask;
+    }
+}
 
 internal class SystemClock : IClock { public DateTime UtcNow => DateTime.UtcNow; }
 
@@ -27,7 +38,8 @@ public static class DependencyInjection
                 o.Lockout.AllowedForNewUsers = true;
             })
             .AddRoles<IdentityRole<Guid>>()
-            .AddEntityFrameworkStores<AppDbContext>();
+            .AddEntityFrameworkStores<AppDbContext>()
+            .AddDefaultTokenProviders(); // codes for e-mail verification and password reset
 
         services.AddOptions<JwtOptions>()
             .Bind(config.GetSection(JwtOptions.Section))
@@ -37,6 +49,8 @@ public static class DependencyInjection
         services.AddSingleton<IClock, SystemClock>();
         services.AddScoped<IIdentityService, IdentityService>();
         services.AddScoped<ITokenService, TokenService>();
+        // No e-mail provider is chosen yet: messages are written to the log. Replace this registration when one is.
+        services.AddSingleton<IEmailSender, DevEmailSender>();
         return services;
     }
 }

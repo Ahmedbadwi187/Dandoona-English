@@ -18,7 +18,7 @@ json_field() { sed -n "s/.*\"$1\":\"\([^\"]*\)\".*/\1/p" | head -1; }
 
 echo "Seeding $BASE as $EMAIL"
 reg=$(curl -s -o /tmp/seed_reg.json -w '%{http_code}' -X POST "$BASE/api/auth/register" -H 'Content-Type: application/json' \
-  -d "{\"email\":\"$EMAIL\",\"password\":\"$PASSWORD\",\"displayName\":\"Demo Parent\"}")
+  -d "{\"email\":\"$EMAIL\",\"password\":\"$PASSWORD\",\"displayName\":\"Demo Parent\",\"guardianConfirmed\":true,\"termsAccepted\":true}")
 if [ "$reg" = "200" ]; then token=$(json_field accessToken </tmp/seed_reg.json); echo "  parent created"; else
   token=$(curl -s -X POST "$BASE/api/auth/login" -H 'Content-Type: application/json' -d "{\"email\":\"$EMAIL\",\"password\":\"$PASSWORD\"}" | json_field accessToken)
   echo "  parent already exists, signed in"

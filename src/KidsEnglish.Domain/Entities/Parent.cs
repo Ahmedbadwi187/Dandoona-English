@@ -10,6 +10,10 @@ public class Parent
     public Language PreferredLanguage { get; set; } = Language.Arabic;
     public int SessionLimitMinutes { get; set; } = 15;
     public DateTime CreatedAt { get; set; }
+    /// <summary>When the parent ticked "I am the child's parent or guardian and 18 or older". Null for accounts made before this existed.</summary>
+    public DateTime? GuardianConfirmedAt { get; set; }
+    /// <summary>When the parent accepted the privacy policy and terms.</summary>
+    public DateTime? TermsAcceptedAt { get; set; }
 
     public List<Child> Children { get; set; } = [];
     public List<RefreshToken> RefreshTokens { get; set; } = [];

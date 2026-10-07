@@ -1,8 +1,10 @@
+using KidsEnglish.Application.Abstractions;
 using KidsEnglish.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Testcontainers.MsSql;
 
 namespace KidsEnglish.Api.IntegrationTests;
@@ -17,6 +19,9 @@ public class ApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
     private readonly MsSqlContainer? _sql = ExternalDb is null
         ? new MsSqlBuilder("mcr.microsoft.com/mssql/server:2022-latest").Build()
         : null;
+
+    /// <summary>Every e-mail the API tried to send (the real sender is replaced so tests can read the codes).</summary>
+    public TestEmailSender Emails { get; } = new();
 
     private string ConnectionString => ExternalDb ?? _sql!.GetConnectionString();
 
@@ -41,7 +46,26 @@ public class ApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
         builder.UseSetting("ConnectionStrings:Default", ConnectionString);
         builder.UseSetting("RateLimiting:AuthPermitsPerMinute", "10000");
         builder.UseSetting("Jwt:Key", "integration-tests-only-signing-key-0123456789");
+        builder.ConfigureServices(services =>
+        {
+            services.RemoveAll<IEmailSender>();
+            services.AddSingleton<IEmailSender>(Emails);
+        });
     }
+}
+
+public class TestEmailSender : IEmailSender
+{
+    private readonly List<EmailMessage> _sent = [];
+    public IReadOnlyList<EmailMessage> Sent { get { lock (_sent) return [.._sent]; } }
+    public Task SendAsync(EmailMessage message, CancellationToken ct)
+    {
+        lock (_sent) _sent.Add(message);
+        return Task.CompletedTask;
+    }
+    /// <summary>The code in the last message sent to this address (the line after the one ending with "code:").</summary>
+    public string LastCodeFor(string to) =>
+        Sent.Last(m => m.To == to).Body.Split('\n').SkipWhile(l => !l.TrimEnd().EndsWith("code:")).Skip(1).First().Trim();
 }
 
 [CollectionDefinition("api")]

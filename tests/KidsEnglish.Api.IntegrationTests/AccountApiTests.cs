@@ -21,7 +21,7 @@ public class AccountApiTests(ApiFactory factory)
     {
         var c = factory.CreateClient();
         var email = $"{Guid.NewGuid():N}@test.com";
-        var auth = (await (await c.PostAsJsonAsync("/api/auth/register", new RegisterRequest(email, Password, "Parent"))).Content.ReadFromJsonAsync<AuthResponse>())!;
+        var auth = (await (await c.PostAsJsonAsync("/api/auth/register", new RegisterRequest(email, Password, "Parent", true, true))).Content.ReadFromJsonAsync<AuthResponse>())!;
         c.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", auth.AccessToken);
         var child = (await (await c.PostAsJsonAsync("/api/children", new CreateChildRequest("Omar", "star", DateTime.UtcNow.Year - 4, "little-learners")))
             .Content.ReadFromJsonAsync<ChildDto>())!;
