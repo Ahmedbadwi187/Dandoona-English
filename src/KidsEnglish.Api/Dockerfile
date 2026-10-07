@@ -12,6 +12,9 @@ RUN dotnet publish src/KidsEnglish.Api -c Release -o /out --no-restore
 FROM mcr.microsoft.com/dotnet/aspnet:10.0
 WORKDIR /app
 COPY --from=build /out .
+# Downloadable content packs (written by AssetGenerator export), served at /packs.
+COPY packs/ /app/packs/
+ENV ContentPacks__Root=/app/packs
 USER $APP_UID
 ENV ASPNETCORE_HTTP_PORTS=8080
 EXPOSE 8080

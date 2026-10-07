@@ -62,6 +62,7 @@ var app = builder.Build();
 app.UseSerilogRequestLogging();
 app.UseExceptionHandler();
 app.UseStatusCodePages();
+app.UseContentPacks(); // static, anonymous, before rate limits and auth
 app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();
