@@ -111,7 +111,7 @@ export.SetAction((pr, ct) => Guard(async () =>
     var track = pr.GetValue(trackOpt) ?? throw new CurriculumException("export requires --track.");
     var lessons = CurriculumReader.Select(CurriculumReader.LoadAll(layout.CurriculumDir), null, track);
     await new ExportRunner(layout, ConfigLoader.Generation(layout), MediaTools.Create(Console.Out), Console.Out)
-        .RunAsync(track, lessons, ct, pr.GetValue(forceOpt), CurriculumReader.LoadUnits(layout.CurriculumDir), CurriculumReader.LoadPlacement(layout.CurriculumDir));
+        .RunAsync(track, lessons, ct, pr.GetValue(forceOpt), CurriculumReader.LoadUnits(layout.CurriculumDir), CurriculumReader.LoadPlacement(layout.CurriculumDir), CurriculumReader.LoadApp(layout.CurriculumDir).FirstOrDefault(u => u.Track == track));
     return 0;
 }));
 
@@ -124,7 +124,7 @@ return await root.Parse(args).InvokeAsync();
 
 // With --track, the units' own audio lines (title, welcome, celebration) are generated together with the lessons.
 IReadOnlyList<Lesson> WithUnitAudio(Layout layout, IReadOnlyList<Lesson> lessons, string? track) =>
-    track is null ? lessons : lessons.Concat(CurriculumReader.LoadUnits(layout.CurriculumDir).Where(u => u.Track == track).Select(CurriculumReader.UnitAudioLesson)).ToList();
+    track is null ? lessons : lessons.Concat(CurriculumReader.LoadUnits(layout.CurriculumDir).Where(u => u.Track == track).Concat(CurriculumReader.LoadApp(layout.CurriculumDir).Where(u => u.Track == track)).Select(CurriculumReader.UnitAudioLesson)).ToList();
 
 (Layout, IReadOnlyList<Lesson>) Load(ParseResult pr)
 {

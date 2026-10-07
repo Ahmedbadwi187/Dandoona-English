@@ -5241,5 +5241,26 @@
     "what": "color-white/instr-record-and-listen (20 chars)",
     "usd": 0.0016,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T11:28:26.807914Z",
+    "service": "ElevenLabs",
+    "what": "unit-app/intro (47 chars)",
+    "usd": 0.00376,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T11:28:27.8477126Z",
+    "service": "ElevenLabs",
+    "what": "unit-app/instr-celebration (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T11:28:28.9000617Z",
+    "service": "ElevenLabs",
+    "what": "unit-app/instr-title (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
   }
 ]

@@ -60,7 +60,7 @@ public class StatusRunner(Layout layout, VoiceConfig voices, string? fallbackVoi
     }
 }
 
-public record ExportDoc(int SchemaVersion, string Track, DateTime GeneratedAt, string? Mascot, List<ExportUnit> Units, List<ExportPlacement>? Placement = null);
+public record ExportDoc(int SchemaVersion, string Track, DateTime GeneratedAt, string? Mascot, List<ExportUnit> Units, List<ExportPlacement>? Placement = null, ExportUnitAudio? App = null);
 public record ExportPlacement(int Level, string Key, List<string> DoneUnits, string StartUnit);
 public record ExportUnit(string Id, int Order, Dictionary<string, string> Title, string Icon, string Color, ExportUnitAudio? Audio, List<ExportLesson> Lessons);
 public record ExportUnitAudio(string Title, string? Welcome, string Celebration);
@@ -77,7 +77,7 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
 {
     public const int SchemaVersion = 2;
 
-    public async Task<ExportResult> RunAsync(string track, IReadOnlyList<Lesson> lessons, CancellationToken ct, bool force = false, IReadOnlyList<UnitDef>? units = null, IReadOnlyList<PlacementDef>? placement = null)
+    public async Task<ExportResult> RunAsync(string track, IReadOnlyList<Lesson> lessons, CancellationToken ct, bool force = false, IReadOnlyList<UnitDef>? units = null, IReadOnlyList<PlacementDef>? placement = null, UnitDef? app = null)
     {
         var exported = new List<(string UnitId, ExportLesson Lesson)>();
         var incomplete = new List<string>();
@@ -179,6 +179,24 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
             doc.Add(new ExportUnit(u.Id, u.Order, u.Title, u.Icon, u.Color, audio, unitLessons));
         }
 
+        // Dandoona's app-level lines (Who is playing?, the first greeting, Welcome back): same audio pipeline as a unit's lines.
+        ExportUnitAudio? appAudio = null;
+        if (app is not null)
+        {
+            var al = CurriculumReader.UnitAudioLesson(app);
+            if (LessonPlan.Audio(al).Any(a => layout.AudioForExport(al, a.Role) is null))
+                incomplete.Add($"{al.Id}: app audio missing (run audio)");
+            else
+            {
+                foreach (var a in LessonPlan.Audio(al))
+                    bytes += await EncodeIfNeededAsync(layout.AudioForExport(al, a.Role)!, Path.Combine(layout.AssetsDir, Layout.ExportAudioRel(al, a.Role)), audio: true, force, ct);
+                appAudio = new ExportUnitAudio(
+                    Layout.ExportAudioRel(al, LessonPlan.InstructionRole("title")),
+                    Layout.ExportAudioRel(al, "intro"),
+                    Layout.ExportAudioRel(al, LessonPlan.InstructionRole("celebration")));
+            }
+        }
+
         string? mascot = null;
         if (File.Exists(layout.MascotReference))
         {
@@ -207,7 +225,7 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
             jsonPath = Path.Combine(layout.AssetsDir, Layout.ExportJsonRel(track));
             Directory.CreateDirectory(Path.GetDirectoryName(jsonPath)!);
             var json = ConfigLoader.ToJson(new ExportDoc(SchemaVersion, track, (now ?? (() => DateTime.UtcNow))(), mascot, doc,
-                placement?.Where(p => p.Track == track).OrderBy(p => p.Level).Select(p => new ExportPlacement(p.Level, p.Key, p.DoneUnits, p.StartUnit)).ToList() is { Count: > 0 } pl ? pl : null));
+                placement?.Where(p => p.Track == track).OrderBy(p => p.Level).Select(p => new ExportPlacement(p.Level, p.Key, p.DoneUnits, p.StartUnit)).ToList() is { Count: > 0 } pl ? pl : null, appAudio));
             await File.WriteAllTextAsync(jsonPath, json, ct);
             bytes += new FileInfo(jsonPath).Length;
             UpdatePubspec();

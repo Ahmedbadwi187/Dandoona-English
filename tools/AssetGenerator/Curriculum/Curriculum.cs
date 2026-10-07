@@ -87,6 +87,8 @@ public class UnitsFile
     public List<UnitDef> Units { get; set; } = [];
     /// <summary>What each answer to "how much English does your child know?" means for the starting point.</summary>
     public List<PlacementDef> Placement { get; set; } = [];
+    /// <summary>Dandoona's own lines outside any unit: Title = "Who is playing?", Welcome = the first greeting, Celebration = "Welcome back!".</summary>
+    public UnitNarration? App { get; set; }
 }
 
 /// <summary>One answer of the placement question: the units that count as done by placement, and where the child starts.</summary>
@@ -230,6 +232,23 @@ public static class CurriculumReader
         foreach (var dup in result.GroupBy(u => (u.Track, u.Order)).Where(g => g.Count() > 1)) errors.Add($"Two units share order {dup.Key.Order} in track '{dup.Key.Track}'.");
         if (errors.Count > 0) throw new CurriculumException("Units are invalid:\n" + string.Join("\n", errors));
         return result.OrderBy(u => u.Track).ThenBy(u => u.Order).ToList();
+    }
+
+    /// <summary>Dandoona's app-level lines (curriculum/units/*.yaml `app:`) as one pseudo unit with id "app" (not shown on the map).</summary>
+    public static IReadOnlyList<UnitDef> LoadApp(string curriculumDirectory)
+    {
+        var dir = Path.Combine(curriculumDirectory, "units");
+        if (!Directory.Exists(dir)) return [];
+        var result = new List<UnitDef>();
+        foreach (var path in Directory.EnumerateFiles(dir, "*.yaml").Order(StringComparer.OrdinalIgnoreCase))
+        {
+            var file = Deserializer.Deserialize<UnitsFile>(File.ReadAllText(path));
+            if (file?.App is not { } app) continue;
+            if (string.IsNullOrWhiteSpace(app.Title) || string.IsNullOrWhiteSpace(app.Welcome) || string.IsNullOrWhiteSpace(app.Celebration))
+                throw new CurriculumException($"{Path.GetFileName(path)}: app needs title, welcome and celebration lines.");
+            result.Add(new UnitDef { Id = "app", Track = file.Track, Order = 0, Narration = app });
+        }
+        return result;
     }
 
     /// <summary>The placement answers of a track (curriculum/units/*.yaml), validated against that track's units.</summary>

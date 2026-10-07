@@ -23,7 +23,7 @@ public class UnitsTests
             narration: { title: "Colors", welcome: "Let's learn colors!", celebration: "You finished the colors!" }
         """;
 
-    private const string ColorRed = """
+    internal const string ColorRed = """
         id: color-red
         unit: colors
         track: little-learners
@@ -42,7 +42,7 @@ public class UnitsTests
         activities: [listen-and-tap, match-picture, record-and-listen, color-the-object]
         """;
 
-    private static void WriteUnits(TestRepo repo)
+    internal static void WriteUnits(TestRepo repo)
     {
         repo.Touch(Path.Combine(repo.Layout.CurriculumDir, "units", "little-learners.yaml"), UnitsYaml);
     }
@@ -273,6 +273,52 @@ public class PlacementTests
         using var repo = new TestRepo();
         repo.Touch(Path.Combine(repo.Layout.CurriculumDir, "units", "little-learners.yaml"), Units.Replace("startUnit: colors", "startUnit: nope"));
         Should.Throw<CurriculumException>(() => CurriculumReader.LoadPlacement(repo.Layout.CurriculumDir)).Message.ShouldContain("unknown unit 'nope'");
+    }
+
+    [Fact]
+    public void Dandoonas_app_lines_are_read_as_one_pseudo_unit_and_all_three_lines_are_required()
+    {
+        using var repo = new TestRepo();
+        var withApp = Units + "\napp: { title: \"Who is playing?\", welcome: \"Hi!\", celebration: \"Welcome back!\" }\n";
+        repo.Touch(Path.Combine(repo.Layout.CurriculumDir, "units", "little-learners.yaml"), withApp);
+        var app = CurriculumReader.LoadApp(repo.Layout.CurriculumDir).Single();
+        app.Id.ShouldBe("app");
+        app.Track.ShouldBe("little-learners");
+        var lesson = CurriculumReader.UnitAudioLesson(app);
+        lesson.Id.ShouldBe("unit-app");
+        LessonPlan.Audio(lesson).Select(a => a.Text).ShouldContain("Who is playing?");
+        CurriculumReader.LoadUnits(repo.Layout.CurriculumDir).ShouldNotContain(u => u.Id == "app"); // not an island on the map
+
+        repo.Touch(Path.Combine(repo.Layout.CurriculumDir, "units", "little-learners.yaml"), Units + "\napp: { title: \"Who is playing?\" }\n");
+        Should.Throw<CurriculumException>(() => CurriculumReader.LoadApp(repo.Layout.CurriculumDir)).Message.ShouldContain("app needs");
+    }
+
+    [Fact]
+    public async Task Export_writes_the_app_audio_into_the_lesson_json()
+    {
+        using var repo = new TestRepo();
+        UnitsTests.WriteUnits(repo);
+        var app = new UnitDef { Id = "app", Track = "little-learners", Narration = new UnitNarration { Title = "Who is playing?", Welcome = "Hi!", Celebration = "Welcome back!" } };
+        var al = CurriculumReader.UnitAudioLesson(app);
+        foreach (var a in LessonPlan.Audio(al)) repo.Touch(repo.Layout.AudioGen(al, a.Role), "APP-AUDIO");
+        repo.Touch(Path.Combine(repo.Layout.CurriculumDir, "color-red.yaml"), UnitsTests.ColorRed);
+        var lesson = CurriculumReader.LoadAll(repo.Layout.CurriculumDir).Single();
+        foreach (var a in LessonPlan.Audio(lesson)) repo.Touch(repo.Layout.AudioGen(lesson, a.Role), "AUDIO");
+        repo.Touch(repo.Layout.SvgSource(lesson, "heart"), "<svg/>");
+        repo.Touch(repo.Layout.SvgSource(lesson, "swatch"), "<svg/>");
+        repo.Touch(repo.Layout.SvgSource(lesson, "colorable"), "<svg/>");
+        repo.Touch(repo.Layout.SvgSource(new Lesson { Id = "letter-a", Track = "little-learners" }, "apple"), "<svg/>");
+        var units = CurriculumReader.LoadUnits(repo.Layout.CurriculumDir);
+        foreach (var u in units) { var ul = CurriculumReader.UnitAudioLesson(u); foreach (var a in LessonPlan.Audio(ul)) repo.Touch(repo.Layout.AudioGen(ul, a.Role), "U"); }
+
+        var result = await new ExportRunner(repo.Layout, new GenerationConfig(), new FakeMedia(), new StringWriter()).RunAsync("little-learners", [lesson], default, units: units, app: app);
+
+        using var doc = JsonDocument.Parse(File.ReadAllText(result.JsonPath!));
+        var audio = doc.RootElement.GetProperty("app");
+        audio.GetProperty("title").GetString().ShouldBe("audio/little_learners/unit_app/instr_title.mp3");
+        audio.GetProperty("welcome").GetString().ShouldBe("audio/little_learners/unit_app/intro.mp3");
+        audio.GetProperty("celebration").GetString().ShouldBe("audio/little_learners/unit_app/instr_celebration.mp3");
+        File.Exists(Path.Combine(repo.Layout.AssetsDir, "audio/little_learners/unit_app/intro.mp3")).ShouldBeTrue();
     }
 
     [Fact]

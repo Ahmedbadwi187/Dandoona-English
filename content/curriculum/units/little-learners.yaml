@@ -11,6 +11,8 @@ placement:
   - { level: 1, key: some-letters, doneUnits: [],        startUnit: letters }
   - { level: 2, key: all-letters,  doneUnits: [letters], startUnit: colors }
   - { level: 3, key: reads-words,  doneUnits: [letters], startUnit: colors }
+# Dandoona's own lines outside any unit: "Who is playing?" (title), the first greeting (welcome) and a welcome back (celebration).
+app: { title: "Who is playing?", welcome: "Hi! I'm Dandoona! Let's learn English together!", celebration: "Welcome back!" }
 units:
   - id: letters
     order: 1
