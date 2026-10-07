@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "little-learners",
-  "generatedAt": "2026-10-07T15:30:18.4033837Z",
+  "generatedAt": "2026-10-07T17:46:45.1547838Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -16,7 +16,10 @@
       "audio": {
         "title": "audio/little_learners/unit_letters/instr_title.mp3",
         "welcome": "audio/little_learners/unit_letters/intro.mp3",
-        "celebration": "audio/little_learners/unit_letters/instr_celebration.mp3"
+        "celebration": "audio/little_learners/unit_letters/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_letters/instr_locked.mp3"
+        }
       },
       "lessons": [
         {
@@ -1088,7 +1091,10 @@
       "audio": {
         "title": "audio/little_learners/unit_colors/instr_title.mp3",
         "welcome": "audio/little_learners/unit_colors/intro.mp3",
-        "celebration": "audio/little_learners/unit_colors/instr_celebration.mp3"
+        "celebration": "audio/little_learners/unit_colors/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_colors/instr_locked.mp3"
+        }
       },
       "lessons": [
         {
@@ -1625,9 +1631,23 @@
       "audio": {
         "title": "audio/little_learners/unit_numbers/instr_title.mp3",
         "welcome": "audio/little_learners/unit_numbers/intro.mp3",
-        "celebration": "audio/little_learners/unit_numbers/instr_celebration.mp3"
+        "celebration": "audio/little_learners/unit_numbers/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_numbers/instr_locked.mp3"
+        }
       },
-      "lessons": []
+      "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "b695380c3650cbfaabe0fe2c9a0b10f9998f48dff2bef9857f157a7245d607d5",
+        "bytes": 1111249,
+        "manifest": "numbers/v1/manifest.json",
+        "lessonIds": [
+          "number-1-3",
+          "number-4-6",
+          "number-7-10"
+        ]
+      }
     },
     {
       "id": "shapes",
@@ -1641,7 +1661,10 @@
       "audio": {
         "title": "audio/little_learners/unit_shapes/instr_title.mp3",
         "welcome": "audio/little_learners/unit_shapes/intro.mp3",
-        "celebration": "audio/little_learners/unit_shapes/instr_celebration.mp3"
+        "celebration": "audio/little_learners/unit_shapes/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_shapes/instr_locked.mp3"
+        }
       },
       "lessons": []
     },
@@ -1657,7 +1680,10 @@
       "audio": {
         "title": "audio/little_learners/unit_animals/instr_title.mp3",
         "welcome": "audio/little_learners/unit_animals/intro.mp3",
-        "celebration": "audio/little_learners/unit_animals/instr_celebration.mp3"
+        "celebration": "audio/little_learners/unit_animals/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_animals/instr_locked.mp3"
+        }
       },
       "lessons": []
     },
@@ -1670,6 +1696,14 @@
       },
       "icon": "feelings",
       "color": "purple",
+      "audio": {
+        "title": "audio/little_learners/unit_feelings/instr_title.mp3",
+        "welcome": "audio/little_learners/unit_feelings/intro.mp3",
+        "celebration": "audio/little_learners/unit_feelings/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_feelings/instr_locked.mp3"
+        }
+      },
       "lessons": []
     },
     {
@@ -1684,7 +1718,10 @@
       "audio": {
         "title": "audio/little_learners/unit_my_body/instr_title.mp3",
         "welcome": "audio/little_learners/unit_my_body/intro.mp3",
-        "celebration": "audio/little_learners/unit_my_body/instr_celebration.mp3"
+        "celebration": "audio/little_learners/unit_my_body/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_my_body/instr_locked.mp3"
+        }
       },
       "lessons": []
     },
@@ -1697,6 +1734,14 @@
       },
       "icon": "actions",
       "color": "orange",
+      "audio": {
+        "title": "audio/little_learners/unit_actions/instr_title.mp3",
+        "welcome": "audio/little_learners/unit_actions/intro.mp3",
+        "celebration": "audio/little_learners/unit_actions/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_actions/instr_locked.mp3"
+        }
+      },
       "lessons": []
     },
     {
@@ -1711,7 +1756,10 @@
       "audio": {
         "title": "audio/little_learners/unit_food/instr_title.mp3",
         "welcome": "audio/little_learners/unit_food/intro.mp3",
-        "celebration": "audio/little_learners/unit_food/instr_celebration.mp3"
+        "celebration": "audio/little_learners/unit_food/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_food/instr_locked.mp3"
+        }
       },
       "lessons": []
     },
@@ -1724,6 +1772,14 @@
       },
       "icon": "clothes",
       "color": "blue",
+      "audio": {
+        "title": "audio/little_learners/unit_clothes/instr_title.mp3",
+        "welcome": "audio/little_learners/unit_clothes/intro.mp3",
+        "celebration": "audio/little_learners/unit_clothes/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_clothes/instr_locked.mp3"
+        }
+      },
       "lessons": []
     },
     {
@@ -1735,6 +1791,14 @@
       },
       "icon": "toys",
       "color": "red",
+      "audio": {
+        "title": "audio/little_learners/unit_toys/instr_title.mp3",
+        "welcome": "audio/little_learners/unit_toys/intro.mp3",
+        "celebration": "audio/little_learners/unit_toys/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_toys/instr_locked.mp3"
+        }
+      },
       "lessons": []
     },
     {
@@ -1749,7 +1813,10 @@
       "audio": {
         "title": "audio/little_learners/unit_my_family/instr_title.mp3",
         "welcome": "audio/little_learners/unit_my_family/intro.mp3",
-        "celebration": "audio/little_learners/unit_my_family/instr_celebration.mp3"
+        "celebration": "audio/little_learners/unit_my_family/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_my_family/instr_locked.mp3"
+        }
       },
       "lessons": []
     },
@@ -1762,6 +1829,14 @@
       },
       "icon": "home",
       "color": "teal",
+      "audio": {
+        "title": "audio/little_learners/unit_my_home/instr_title.mp3",
+        "welcome": "audio/little_learners/unit_my_home/intro.mp3",
+        "celebration": "audio/little_learners/unit_my_home/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_my_home/instr_locked.mp3"
+        }
+      },
       "lessons": []
     },
     {
@@ -1773,6 +1848,14 @@
       },
       "icon": "opposites",
       "color": "pink",
+      "audio": {
+        "title": "audio/little_learners/unit_opposites/instr_title.mp3",
+        "welcome": "audio/little_learners/unit_opposites/intro.mp3",
+        "celebration": "audio/little_learners/unit_opposites/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_opposites/instr_locked.mp3"
+        }
+      },
       "lessons": []
     },
     {
@@ -1784,6 +1867,14 @@
       },
       "icon": "transport",
       "color": "green",
+      "audio": {
+        "title": "audio/little_learners/unit_transport/instr_title.mp3",
+        "welcome": "audio/little_learners/unit_transport/intro.mp3",
+        "celebration": "audio/little_learners/unit_transport/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_transport/instr_locked.mp3"
+        }
+      },
       "lessons": []
     }
   ],
@@ -1820,7 +1911,12 @@
   "app": {
     "title": "audio/little_learners/unit_app/instr_title.mp3",
     "welcome": "audio/little_learners/unit_app/intro.mp3",
-    "celebration": "audio/little_learners/unit_app/instr_celebration.mp3"
+    "celebration": "audio/little_learners/unit_app/instr_celebration.mp3",
+    "lines": {
+      "almost-ready": "audio/little_learners/unit_app/instr_almost_ready.mp3",
+      "coming-soon": "audio/little_learners/unit_app/instr_coming_soon.mp3",
+      "puzzle-first": "audio/little_learners/unit_app/instr_puzzle_first.mp3"
+    }
   },
   "reviews": [
     {

@@ -231,6 +231,7 @@ class Lesson {
     this.letter,
     this.phoneme,
     this.color,
+    this.counting = false,
   });
 
   final String id;
@@ -243,6 +244,9 @@ class Lesson {
 
   /// Colors unit only: the color the lesson teaches.
   final LessonColor? color;
+
+  /// Numbers unit: each word is a number and its picture shows that many things.
+  final bool counting;
 
   /// trace | listen-and-tap | record-and-listen | match-picture | color-the-object
   final List<String> activities;
@@ -259,6 +263,7 @@ class Lesson {
             .toList(),
         activities: (json['activities'] as List<dynamic>).cast<String>(),
         color: json['color'] == null ? null : LessonColor.fromJson(json['color'] as Map<String, dynamic>),
+        counting: (json['counting'] as bool?) ?? false,
       );
 }
 

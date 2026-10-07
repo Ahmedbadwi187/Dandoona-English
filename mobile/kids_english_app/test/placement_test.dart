@@ -73,7 +73,8 @@ void main() {
       expect(s[0].state, UnitState.done);
       expect(s[0].placed, isTrue);
       expect(s[1].state, UnitState.current);
-      expect(s[2].state, UnitState.soon);
+      expect(s[2].state, UnitState.locked); // Numbers is built now (a downloadable pack), but waits for Colors
+      expect(s[3].state, UnitState.soon);
     });
 
     test('a placed unit the child also really finished is just done', () {

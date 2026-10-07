@@ -153,8 +153,8 @@ void main() {
 
   testWidgets('tapping a unit that is not built yet: "Coming soon!"', (t) async {
     await _openMap(t, progress: _progress(_letters));
-    await _center(t, 'unit-numbers');
-    await t.tap(find.byKey(const Key('unit-numbers')));
+    await _center(t, 'unit-shapes');
+    await t.tap(find.byKey(const Key('unit-shapes')));
     await t.pump(const Duration(milliseconds: 300));
     expect(find.text('Coming soon!'), findsOneWidget);
     await t.pumpAndSettle();

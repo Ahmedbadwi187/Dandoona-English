@@ -24,7 +24,8 @@ class ChoiceRound {
 /// they are visibly different pictures; if the track is tiny, the lesson's own other words are used.
 List<ChoiceRound> buildChoiceRounds(Lesson lesson, TrackContent track, Random random, {int optionCount = 3}) {
   // A Colors lesson asks for a color, so wrong pictures come only from the unit's other colors (never a same-colored thing).
-  final pool0 = lesson.color != null ? (track.unitOfLesson(lesson.id)?.lessons ?? track.lessons) : track.lessons;
+  // A Numbers lesson asks for a count, so wrong pictures are other counts of the same unit.
+  final pool0 = (lesson.color != null || lesson.counting) ? (track.unitOfLesson(lesson.id)?.lessons ?? track.lessons) : track.lessons;
   final others = [
     for (final l in pool0)
       if (l.id != lesson.id) ...l.words,

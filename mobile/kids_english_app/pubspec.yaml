@@ -127,3 +127,10 @@ flutter:
     - assets/audio/ui/
     - assets/images/avatars/
     - assets/audio/little_learners/unit_app/
+    - assets/audio/little_learners/unit_actions/
+    - assets/audio/little_learners/unit_clothes/
+    - assets/audio/little_learners/unit_feelings/
+    - assets/audio/little_learners/unit_my_home/
+    - assets/audio/little_learners/unit_opposites/
+    - assets/audio/little_learners/unit_toys/
+    - assets/audio/little_learners/unit_transport/
