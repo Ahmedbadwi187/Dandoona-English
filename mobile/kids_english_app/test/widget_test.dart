@@ -108,30 +108,12 @@ void main() {
       await tester.tap(find.byKey(const Key('ob-continue')));
       await tester.pumpAndSettle();
 
-      // empty name is rejected with the Arabic message
-      await tester.tap(find.byKey(const Key('child-save')));
-      await tester.pumpAndSettle();
-      expect(find.text('أدخل اسمًا من حرف إلى 30 حرفًا'), findsOneWidget);
-
-      await tester.enterText(find.byKey(const Key('child-name')), 'Omar');
-      await tester.tap(find.byKey(const Key('avatar-bunny')));
-      await tester.pump();
-      await tester.tap(find.byKey(const Key('child-save')));
-      await tester.pumpAndSettle();
-
-      // child area: English, LTR
-      expect(find.text('Who is playing?'), findsOneWidget);
-      expect(Directionality.of(tester.element(find.text('Who is playing?'))), TextDirection.ltr);
-      expect(find.text('Omar'), findsOneWidget);
+      // the child setup comes next (its own walkthrough is in setup_flow_test.dart)
+      expect(find.byKey(const Key('ob-name')), findsOneWidget);
     });
 
     testWidgets('picking a child opens the 26-letter map; only A is open at first', (tester) async {
-      await pumpApp(tester);
-      await tester.tap(find.byKey(const Key('ob-continue')));
-      await tester.pumpAndSettle();
-      await tester.enterText(find.byKey(const Key('child-name')), 'Omar');
-      await tester.tap(find.byKey(const Key('child-save')));
-      await tester.pumpAndSettle();
+      await pumpApp(tester, prefs: {'settings.v1': '{"languageCode":"ar","sessionMinutes":15,"unlockAll":false,"onboarded":true}', 'children.v1': '[{"id":"c1","name":"Omar","avatarKey":"bunny","birthYear":2022,"track":"little-learners","createdAt":"2026-01-01T00:00:00Z"}]'});
 
       await tester.tap(find.text('Omar'));
       await tester.pumpAndSettle();
@@ -151,12 +133,7 @@ void main() {
     });
 
     testWidgets('parent area is reached through the gate and is Arabic RTL', (tester) async {
-      await pumpApp(tester);
-      await tester.tap(find.byKey(const Key('ob-continue')));
-      await tester.pumpAndSettle();
-      await tester.enterText(find.byKey(const Key('child-name')), 'Omar');
-      await tester.tap(find.byKey(const Key('child-save')));
-      await tester.pumpAndSettle();
+      await pumpApp(tester, prefs: {'settings.v1': '{"languageCode":"ar","sessionMinutes":15,"unlockAll":false,"onboarded":true}', 'children.v1': '[{"id":"c1","name":"Omar","avatarKey":"bunny","birthYear":2022,"track":"little-learners","createdAt":"2026-01-01T00:00:00Z"}]'});
 
       await tester.tap(find.byKey(const Key('open-parent-area')));
       await tester.pump();

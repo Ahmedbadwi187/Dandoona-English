@@ -63,7 +63,7 @@ void main() {
 
       await t.tap(find.byKey(const Key('ob-continue')));
       await t.pumpAndSettle();
-      expect(find.byKey(const Key('child-name')), findsOneWidget);
+      expect(find.byKey(const Key('ob-name')), findsOneWidget);
     });
 
     testWidgets('choosing the account option leads to the sign-up screen, and back returns to the welcome', (t) async {
@@ -123,7 +123,7 @@ void main() {
 
       expect(api.registrations.single, (email: 'mom@example.com', displayName: 'Sara', guardianConfirmed: true, termsAccepted: true));
       expect(await container.read(syncServiceProvider).isSignedIn(), isTrue);
-      expect(find.byKey(const Key('child-name')), findsOneWidget); // new account, no children yet: add the first one
+      expect(find.byKey(const Key('ob-name')), findsOneWidget); // new account, no children yet: add the first one
     });
 
     testWidgets('the privacy policy and the terms open inside the app, in the parent\'s language', (t) async {

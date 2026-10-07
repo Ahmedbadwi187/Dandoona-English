@@ -7,6 +7,7 @@ import 'package:kids_english_app/core/storage.dart';
 import 'package:kids_english_app/features/audio/audio_service.dart';
 import 'package:kids_english_app/features/content/content_models.dart';
 import 'package:kids_english_app/features/content/content_repository.dart';
+import 'package:kids_english_app/features/reminders/reminder_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// 26 small lessons (A-Z) so map/flow tests do not depend on the real asset files.
@@ -38,12 +39,13 @@ Future<SharedPreferences> mockPrefs([Map<String, Object> initial = const {}]) as
 }
 
 /// Overrides every app dependency that touches the platform.
-Future<List<Override>> testOverrides({Map<String, Object> prefs = const {}, TrackContent? content}) async {
+Future<List<Override>> testOverrides({Map<String, Object> prefs = const {}, TrackContent? content, FakeReminders? reminders}) async {
   final p = await mockPrefs(prefs);
   final c = content ?? sampleContent();
   return [
     sharedPreferencesProvider.overrideWithValue(p),
     contentProvider.overrideWith((ref) async => c),
+    reminderServiceProvider.overrideWithValue(reminders ?? FakeReminders()),
   ];
 }
 
@@ -53,6 +55,27 @@ ProviderContainer containerWith(List<Override> overrides) {
 }
 
 // ---- activity test doubles -------------------------------------------------------------------------------
+
+/// Remembers what would have been scheduled instead of touching the notification plugin.
+class FakeReminders implements ReminderService {
+  FakeReminders({this.allow = true});
+  final bool allow;
+  int permissionAsked = 0;
+  ({int hour, int minute, String title, String body})? scheduled;
+  bool cancelled = false;
+
+  @override
+  Future<bool> requestPermission() async {
+    permissionAsked++;
+    return allow;
+  }
+
+  @override
+  Future<void> schedule({required int hour, required int minute, required String title, required String body}) async => scheduled = (hour: hour, minute: minute, title: title, body: body);
+
+  @override
+  Future<void> cancel() async => cancelled = true;
+}
 
 /// Records what would have been played instead of touching the audio plugin.
 class FakeAudio implements AudioService {
