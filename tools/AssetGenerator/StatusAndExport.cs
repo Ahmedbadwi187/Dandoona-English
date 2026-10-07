@@ -185,6 +185,11 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
             mascot = Layout.ExportMascotRel;
         }
 
+        // Dandoona's other poses (onboarding, celebrations).
+        if (Directory.Exists(layout.PosesDir))
+            foreach (var pose in Directory.GetFiles(layout.PosesDir, "*.webp").Order(StringComparer.Ordinal))
+                bytes += await EncodeIfNeededAsync(pose, Path.Combine(layout.AssetsDir, Layout.ExportPoseRel(Path.GetFileNameWithoutExtension(pose))), audio: false, force, ct);
+
         // Self-drawn mascot accessories (rewards) ship with the app too.
         if (Directory.Exists(layout.AccessoriesDir))
             foreach (var svg in Directory.GetFiles(layout.AccessoriesDir, "*.svg").Order(StringComparer.Ordinal))

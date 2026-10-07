@@ -198,3 +198,28 @@ public class ColorsUnitContentTests
                 l.Narration.Instructions.ShouldContainKey(a, $"{l.Id} has no spoken instruction for {a}");
     }
 }
+
+public class PosesExportTests
+{
+    [Fact]
+    public async Task Dandoonas_other_poses_are_exported_next_to_the_mascot()
+    {
+        using var repo = new TestRepo();
+        repo.Touch(Path.Combine(repo.Layout.PosesDir, "waving.webp"), "WAVING");
+        repo.Touch(Path.Combine(repo.Layout.PosesDir, "thinking.webp"), "THINKING");
+        repo.Touch(Path.Combine(repo.Layout.CurriculumDir, "placeholder.txt"));
+
+        await new ExportRunner(repo.Layout, new GenerationConfig(), new FakeMedia(), new StringWriter()).RunAsync("little-learners", [], default);
+
+        File.ReadAllText(Path.Combine(repo.Layout.AssetsDir, "images/mascot/poses/waving.webp")).ShouldBe("WAVING");
+        File.Exists(Path.Combine(repo.Layout.AssetsDir, "images/mascot/poses/thinking.webp")).ShouldBeTrue();
+    }
+
+    [Fact]
+    public void The_real_repo_has_the_five_poses()
+    {
+        var layout = Layout.FindFrom(AppContext.BaseDirectory);
+        foreach (var pose in new[] { "waving", "jumping", "clapping", "thinking", "pointing-up" })
+            File.Exists(Path.Combine(layout.PosesDir, pose + ".webp")).ShouldBeTrue(pose);
+    }
+}

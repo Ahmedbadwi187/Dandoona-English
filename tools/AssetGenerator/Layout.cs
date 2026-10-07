@@ -40,6 +40,8 @@ public sealed class Layout(string root)
 
     public string ArtDir => Path.Combine(Root, "content", "art");
     public string AccessoriesDir => Path.Combine(ArtDir, "accessories");
+    /// <summary>Dandoona in other poses (waving, thinking...): the owner's own art, exported next to the mascot.</summary>
+    public string PosesDir => Path.Combine(ArtDir, "dandoona");
     public string PalettePath => Path.Combine(StyleDir, "palette.json");
     public string SvgSource(Lesson l, string key) => Path.Combine(ArtDir, l.Track, l.Id, $"{key}.svg");
     public string PicksPath => Path.Combine(GeneratedDir, "picks.json");
@@ -73,6 +75,7 @@ public sealed class Layout(string root)
     public static string ExportImageRel(Lesson l, string key, bool svg = false) => $"images/{Snake(l.Track)}/{Snake(l.Id)}/{Snake(key)}.{(svg ? "svg" : "webp")}";
     public const string ExportMascotRel = "images/mascot/mascot.webp";
     public static string ExportAccessoryRel(string fileName) => $"images/accessories/{fileName}";
+    public static string ExportPoseRel(string name) => $"images/mascot/poses/{name}.webp";
     public static string ExportJsonRel(string track) => $"content/{Snake(track)}.json";
 
     /// <summary>Finds the repo root by walking up until content/curriculum exists.</summary>
