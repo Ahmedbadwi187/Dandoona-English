@@ -152,9 +152,10 @@ void main() {
   });
 
   testWidgets('tapping a unit that is not built yet: "Coming soon!"', (t) async {
+    final soon = realContent().units.firstWhere((u) => u.comingSoon).id; // the first unit without content (it moves on as units are built)
     await _openMap(t, progress: _progress(_letters));
-    await _center(t, 'unit-animals');
-    await t.tap(find.byKey(const Key('unit-animals')));
+    await _center(t, 'unit-$soon');
+    await t.tap(find.byKey(Key('unit-$soon')));
     await t.pump(const Duration(milliseconds: 300));
     expect(find.text('Coming soon!'), findsOneWidget);
     await t.pumpAndSettle();

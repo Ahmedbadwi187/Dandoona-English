@@ -73,9 +73,12 @@ void main() {
       expect(s[0].state, UnitState.done);
       expect(s[0].placed, isTrue);
       expect(s[1].state, UnitState.current);
-      expect(s[2].state, UnitState.locked); // Numbers is built now (a downloadable pack), but waits for Colors
-      expect(s[3].state, UnitState.locked); // Shapes is built now too
-      expect(s[4].state, UnitState.soon);
+      // every built unit after Colors waits for it (they are downloadable packs); the first unit without content yet is "soon"
+      final firstSoon = s.indexWhere((x) => x.state == UnitState.soon);
+      expect(firstSoon, greaterThan(2));
+      for (var i = 2; i < firstSoon; i++) {
+        expect(s[i].state, UnitState.locked, reason: s[i].unit.id);
+      }
     });
 
     test('a placed unit the child also really finished is just done', () {

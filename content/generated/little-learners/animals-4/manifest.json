@@ -1,0 +1,56 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "648ccaf2f55a808eef1bc6ea72ae2b83714bc4bcea30bd103995bf9b218c51b9",
+      "generatedAtUtc": "2026-10-07T19:24:58.1073934Z"
+    },
+    "praise-0": {
+      "hash": "3f17576254a4d23d675047cdb42a00fc23e735de5187c4475e6229d58ac2103a",
+      "generatedAtUtc": "2026-10-07T19:24:59.0347072Z"
+    },
+    "praise-1": {
+      "hash": "af7400e4963761c9525874b199970f9e79898504cc9e6cea30d6c6fc8b5a1a27",
+      "generatedAtUtc": "2026-10-07T19:24:59.9438666Z"
+    },
+    "praise-2": {
+      "hash": "c4f8f664ade20e63c8177c60917183c2fe4d39ec6cee838a742e8491bf91b452",
+      "generatedAtUtc": "2026-10-07T19:25:00.8803155Z"
+    },
+    "word-lion": {
+      "hash": "f1cbd873e0354b1ff9e6ed4758bc3797a07476aa5cfc158c3125c86828f212fd",
+      "generatedAtUtc": "2026-10-07T19:25:01.7822182Z"
+    },
+    "word-elephant": {
+      "hash": "b41968234fbcea74e6ef70d3d8b5ccc366506dbbe352af912c08cda21a4a0883",
+      "generatedAtUtc": "2026-10-07T19:25:02.8369134Z"
+    },
+    "word-monkey": {
+      "hash": "0c432b0905180edae5e62b2c9c04c5968fe139ae2897e66fb864c1fd74183fae",
+      "generatedAtUtc": "2026-10-07T19:25:03.8013281Z"
+    },
+    "phrase-lion": {
+      "hash": "384b7af640a27b2384bc1b70057ee4e8d41a377ec4c005217683f7579953bbe7",
+      "generatedAtUtc": "2026-10-07T19:25:04.7617076Z"
+    },
+    "phrase-elephant": {
+      "hash": "44b1b61ba740b52cdcbdbbad1d1fbf9746f9ea5e5217a32611d71f0056457f2c",
+      "generatedAtUtc": "2026-10-07T19:25:05.7056223Z"
+    },
+    "phrase-monkey": {
+      "hash": "3569d472e8a414562d934a0f84385a0248b21da9e9434892b0899bb586edda27",
+      "generatedAtUtc": "2026-10-07T19:25:06.6760126Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "b5370637bf597da72c80588277fc065c549d5d8f2990f79740cc20d37432d273",
+      "generatedAtUtc": "2026-10-07T19:25:07.6741397Z"
+    },
+    "instr-match-picture": {
+      "hash": "3c35b14ef0b7d8f1d3da989cd8483759116c62c83f22cc8005dcfe185c226100",
+      "generatedAtUtc": "2026-10-07T19:25:08.7630268Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "0953488676f25f4555a126d39be8e9df051e56e3a0e4fa67b7931a8e71e72b5a",
+      "generatedAtUtc": "2026-10-07T19:25:09.7421167Z"
+    }
+  }
+}

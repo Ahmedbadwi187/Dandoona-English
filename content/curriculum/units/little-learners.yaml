@@ -89,7 +89,7 @@ units:
     icon: animals
     color: teal
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
-    chest: { accessory: animal-ears, stickers: [cat, dog, bird, fish] }
+    chest: { accessory: animal-ears, stickers: [cat, dog, duck, fish] }
     narration:
       title: "Animals"
       welcome: "Let's meet the animals!"

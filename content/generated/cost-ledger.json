@@ -6207,5 +6207,460 @@
     "what": "shapes-4/instr-record-and-listen (20 chars)",
     "usd": 0.0016,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:19.8867275Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/intro (59 chars)",
+    "usd": 0.00472,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:20.8285631Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:21.8867822Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:22.8190346Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:23.7390913Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/word-cat (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:24.6673616Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/word-dog (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:25.5727739Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/word-rabbit (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:26.4892357Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/phrase-cat (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:27.4780097Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/phrase-dog (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:28.4368602Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/phrase-rabbit (9 chars)",
+    "usd": 0.00072,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:29.4234124Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/instr-listen-and-tap (28 chars)",
+    "usd": 0.00224,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:30.4580318Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/instr-match-picture (30 chars)",
+    "usd": 0.0024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:31.4777598Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:32.687579Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/intro (48 chars)",
+    "usd": 0.00384,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:33.6375641Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:34.6782324Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:35.6683401Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:36.5740051Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/word-cow (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:37.4685578Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/word-pig (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:38.4154567Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/word-horse (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:39.3236535Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/phrase-cow (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:40.2477949Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/phrase-pig (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:41.199191Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/phrase-horse (8 chars)",
+    "usd": 0.00064,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:42.2039288Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/instr-listen-and-tap (28 chars)",
+    "usd": 0.00224,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:43.2170142Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/instr-match-picture (30 chars)",
+    "usd": 0.0024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:44.182656Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:45.3885494Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/intro (57 chars)",
+    "usd": 0.00456,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:46.3213169Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:47.2597804Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:48.1881278Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:49.1054497Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/word-duck (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:49.9990194Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/word-fish (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:51.0022426Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/word-frog (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:51.9357683Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/phrase-duck (7 chars)",
+    "usd": 0.00056,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:52.9221414Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/phrase-fish (7 chars)",
+    "usd": 0.00056,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:53.8523908Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/phrase-frog (7 chars)",
+    "usd": 0.00056,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:54.8646509Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/instr-listen-and-tap (28 chars)",
+    "usd": 0.00224,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:55.8947472Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/instr-match-picture (30 chars)",
+    "usd": 0.0024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:56.918191Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:58.1081178Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/intro (56 chars)",
+    "usd": 0.00448,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:59.0353156Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:24:59.944339Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:00.8811569Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:01.7829736Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/word-lion (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:02.837635Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/word-elephant (8 chars)",
+    "usd": 0.00064,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:03.8019124Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/word-monkey (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:04.7619902Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/phrase-lion (7 chars)",
+    "usd": 0.00056,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:05.7060151Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/phrase-elephant (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:06.6764524Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/phrase-monkey (9 chars)",
+    "usd": 0.00072,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:07.6747773Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/instr-listen-and-tap (28 chars)",
+    "usd": 0.00224,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:08.7635404Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/instr-match-picture (30 chars)",
+    "usd": 0.0024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:09.7428686Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:11.0246335Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/intro (51 chars)",
+    "usd": 0.00408,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:11.9360389Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:12.8582406Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:13.7731688Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:14.8370639Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/word-bear (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:15.7507936Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/word-tiger (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:16.7569137Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/word-zebra (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:17.7178387Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/phrase-bear (7 chars)",
+    "usd": 0.00056,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:18.6802793Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/phrase-tiger (8 chars)",
+    "usd": 0.00064,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:19.6366796Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/phrase-zebra (8 chars)",
+    "usd": 0.00064,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:20.6290552Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/instr-listen-and-tap (28 chars)",
+    "usd": 0.00224,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:21.7180606Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/instr-match-picture (30 chars)",
+    "usd": 0.0024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:25:22.6806344Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
   }
 ]

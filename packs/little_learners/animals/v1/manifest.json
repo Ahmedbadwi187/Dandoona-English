@@ -1,0 +1,626 @@
+{
+  "schemaVersion": 1,
+  "track": "little-learners",
+  "unit": "animals",
+  "version": 1,
+  "contentHash": "8038d567d14350a5d811d062a0ef10d26b5b720c85938764f6d1b818b5214035",
+  "lessons": [
+    {
+      "id": "animals-1",
+      "order": 1,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/animals_1/intro.mp3",
+        "praise": [
+          "audio/little_learners/animals_1/praise_0.mp3",
+          "audio/little_learners/animals_1/praise_1.mp3",
+          "audio/little_learners/animals_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/animals_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/animals_1/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/animals_1/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "cat",
+          "audio": "audio/little_learners/animals_1/word_cat.mp3",
+          "image": "images/little_learners/animals_1/cat.webp",
+          "phrase": "audio/little_learners/animals_1/phrase_cat.mp3"
+        },
+        {
+          "word": "dog",
+          "audio": "audio/little_learners/animals_1/word_dog.mp3",
+          "image": "images/little_learners/animals_1/dog.webp",
+          "phrase": "audio/little_learners/animals_1/phrase_dog.mp3"
+        },
+        {
+          "word": "rabbit",
+          "audio": "audio/little_learners/animals_1/word_rabbit.mp3",
+          "image": "images/little_learners/animals_1/rabbit.webp",
+          "phrase": "audio/little_learners/animals_1/phrase_rabbit.mp3"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "animals-2",
+      "order": 2,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/animals_2/intro.mp3",
+        "praise": [
+          "audio/little_learners/animals_2/praise_0.mp3",
+          "audio/little_learners/animals_2/praise_1.mp3",
+          "audio/little_learners/animals_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/animals_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/animals_2/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/animals_2/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "cow",
+          "audio": "audio/little_learners/animals_2/word_cow.mp3",
+          "image": "images/little_learners/animals_2/cow.webp",
+          "phrase": "audio/little_learners/animals_2/phrase_cow.mp3"
+        },
+        {
+          "word": "pig",
+          "audio": "audio/little_learners/animals_2/word_pig.mp3",
+          "image": "images/little_learners/animals_2/pig.webp",
+          "phrase": "audio/little_learners/animals_2/phrase_pig.mp3"
+        },
+        {
+          "word": "horse",
+          "audio": "audio/little_learners/animals_2/word_horse.mp3",
+          "image": "images/little_learners/animals_2/horse.webp",
+          "phrase": "audio/little_learners/animals_2/phrase_horse.mp3"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "animals-3",
+      "order": 3,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/animals_3/intro.mp3",
+        "praise": [
+          "audio/little_learners/animals_3/praise_0.mp3",
+          "audio/little_learners/animals_3/praise_1.mp3",
+          "audio/little_learners/animals_3/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/animals_3/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/animals_3/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/animals_3/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "duck",
+          "audio": "audio/little_learners/animals_3/word_duck.mp3",
+          "image": "images/little_learners/animals_3/duck.webp",
+          "phrase": "audio/little_learners/animals_3/phrase_duck.mp3"
+        },
+        {
+          "word": "fish",
+          "audio": "audio/little_learners/animals_3/word_fish.mp3",
+          "image": "images/little_learners/animals_3/fish.svg",
+          "phrase": "audio/little_learners/animals_3/phrase_fish.mp3"
+        },
+        {
+          "word": "frog",
+          "audio": "audio/little_learners/animals_3/word_frog.mp3",
+          "image": "images/little_learners/animals_3/frog.webp",
+          "phrase": "audio/little_learners/animals_3/phrase_frog.mp3"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "animals-4",
+      "order": 4,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/animals_4/intro.mp3",
+        "praise": [
+          "audio/little_learners/animals_4/praise_0.mp3",
+          "audio/little_learners/animals_4/praise_1.mp3",
+          "audio/little_learners/animals_4/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/animals_4/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/animals_4/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/animals_4/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "lion",
+          "audio": "audio/little_learners/animals_4/word_lion.mp3",
+          "image": "images/little_learners/animals_4/lion.webp",
+          "phrase": "audio/little_learners/animals_4/phrase_lion.mp3"
+        },
+        {
+          "word": "elephant",
+          "audio": "audio/little_learners/animals_4/word_elephant.mp3",
+          "image": "images/little_learners/animals_4/elephant.webp",
+          "phrase": "audio/little_learners/animals_4/phrase_elephant.mp3"
+        },
+        {
+          "word": "monkey",
+          "audio": "audio/little_learners/animals_4/word_monkey.mp3",
+          "image": "images/little_learners/animals_4/monkey.webp",
+          "phrase": "audio/little_learners/animals_4/phrase_monkey.mp3"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "animals-5",
+      "order": 5,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/animals_5/intro.mp3",
+        "praise": [
+          "audio/little_learners/animals_5/praise_0.mp3",
+          "audio/little_learners/animals_5/praise_1.mp3",
+          "audio/little_learners/animals_5/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/animals_5/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/animals_5/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/animals_5/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "bear",
+          "audio": "audio/little_learners/animals_5/word_bear.mp3",
+          "image": "images/little_learners/animals_5/bear.webp",
+          "phrase": "audio/little_learners/animals_5/phrase_bear.mp3"
+        },
+        {
+          "word": "tiger",
+          "audio": "audio/little_learners/animals_5/word_tiger.mp3",
+          "image": "images/little_learners/animals_5/tiger.webp",
+          "phrase": "audio/little_learners/animals_5/phrase_tiger.mp3"
+        },
+        {
+          "word": "zebra",
+          "audio": "audio/little_learners/animals_5/word_zebra.mp3",
+          "image": "images/little_learners/animals_5/zebra.webp",
+          "phrase": "audio/little_learners/animals_5/phrase_zebra.mp3"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "record-and-listen"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/little_learners/animals_1/instr_listen_and_tap.mp3",
+      "sha256": "6edfb61d3e6c71b7295f07f27f072f4f5b2bc67742472798449b40772bbe20bc",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/little_learners/animals_1/instr_match_picture.mp3",
+      "sha256": "79bad775e6c48880314c3846219a70949c6b08031558344719ae4ed50addbae6",
+      "bytes": 41839
+    },
+    {
+      "path": "audio/little_learners/animals_1/instr_record_and_listen.mp3",
+      "sha256": "710af9b74002093c64c4fd41994aa4c3eff2eba97b77c6d70e346b9f62342793",
+      "bytes": 33062
+    },
+    {
+      "path": "audio/little_learners/animals_1/intro.mp3",
+      "sha256": "bca99b3b5a178e6aa68f8cd475a25d780f310560b9bf21a692bd4f7ad9ab3743",
+      "bytes": 72351
+    },
+    {
+      "path": "audio/little_learners/animals_1/phrase_cat.mp3",
+      "sha256": "f2d1a5bd5ce2b7c3b537c17fb76ff7996708d5ba6aff9bb020395bcb4b50d60b",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/little_learners/animals_1/phrase_dog.mp3",
+      "sha256": "3126c367eedef06dae86cf0225820c3cd9de8a4c1ca3c4de21116af2d5548774",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/little_learners/animals_1/phrase_rabbit.mp3",
+      "sha256": "d23d62ab66a1c902ea08989325abbe7eb445496dd4008121c1b69eb4597d6960",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/animals_1/praise_0.mp3",
+      "sha256": "6a0bd383d9d9b4fa276e92da987c1e8d0200171ccbabbd980c3b76a3368b9f77",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/animals_1/praise_1.mp3",
+      "sha256": "138bb1a7715cb9ebf5bbf9ff86ee1f8357c0f8419b3a5f6fb43de94f5d9851fe",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/animals_1/praise_2.mp3",
+      "sha256": "0eada9a498104c62b6ddd83e980db7f732727af3f2f8d5afa1aa65bdb1b4cf6c",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/animals_1/word_cat.mp3",
+      "sha256": "97ea33a8ba47517d6af7c6e8865a4bccb98f9c8a56e174c7062625993d36f2f9",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/little_learners/animals_1/word_dog.mp3",
+      "sha256": "7d9e02e3fad7b25c0af216d9662e9d517ca445c0e8e393b46fae63f201a0970e",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/little_learners/animals_1/word_rabbit.mp3",
+      "sha256": "77def61f0a8a06a6162dd46aad51ac7d2d78d8bc50775000f10c0d3bcfdebfc2",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/little_learners/animals_2/instr_listen_and_tap.mp3",
+      "sha256": "c3fa1bd58341938fd915ca9884ead914dc6f5a1c85aec6decbfdcfec48251206",
+      "bytes": 33898
+    },
+    {
+      "path": "audio/little_learners/animals_2/instr_match_picture.mp3",
+      "sha256": "dc533dbbf01a191f9a0fa766ed4c8c01c4c14e318481d8699d5b3a9e311aa518",
+      "bytes": 38914
+    },
+    {
+      "path": "audio/little_learners/animals_2/instr_record_and_listen.mp3",
+      "sha256": "73b4322ac4d0e06c49d811c302cbe6e2476de3e61dffe12b6b9e826d371fb844",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/little_learners/animals_2/intro.mp3",
+      "sha256": "53efd0a568293a3474a0c92085e01f139e2f9daaeaec7e6685b1540c9ecfbd83",
+      "bytes": 74022
+    },
+    {
+      "path": "audio/little_learners/animals_2/phrase_cow.mp3",
+      "sha256": "927a01142fe376c602dd021ce7e929eb170a2d8b56285252b069f0f0ebf368a3",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/little_learners/animals_2/phrase_horse.mp3",
+      "sha256": "ec8a42f378021a68abd8a8377a96b3e31dc3cdbaf17486e171b4d2b91298e04d",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/animals_2/phrase_pig.mp3",
+      "sha256": "2c5225f938463cd3920b5b855f175385ff1167a62fafa14710befaed8558f26b",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/little_learners/animals_2/praise_0.mp3",
+      "sha256": "44b796f0286964c863cd887856442311ee3dee67c2d0920e68e3f73fda55f609",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/animals_2/praise_1.mp3",
+      "sha256": "b61bb2b2ebcf889e7a4f8d3bc9f0084f2d7db48043cc7d7c72a6d69bcfb04e07",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/animals_2/praise_2.mp3",
+      "sha256": "c6b7b0d7697081882208897cc36e24acd4850b16bb0641355901da8cecd2e57d",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/animals_2/word_cow.mp3",
+      "sha256": "75981893dd59250a368b1c517d86e59c830af730b7bcc7192bd3a2f7bf18fd75",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/little_learners/animals_2/word_horse.mp3",
+      "sha256": "d77d50906deccece264508fc805fa4c02b4b5764124b94c4cc5a18a2f11ba7f1",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/little_learners/animals_2/word_pig.mp3",
+      "sha256": "3efb78619e91cc3b59ff757ba0157883051d438e9937217d4b3d2ad1ad7b8743",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/little_learners/animals_3/instr_listen_and_tap.mp3",
+      "sha256": "21c8d413f5e5287ba28b924d73f30e1b5a2e3be87775aa9c83bd5ded0a595675",
+      "bytes": 36824
+    },
+    {
+      "path": "audio/little_learners/animals_3/instr_match_picture.mp3",
+      "sha256": "f2aeb847522f549eac86f60f88d95063414829caaa3b0ad4e588e1790eae3abc",
+      "bytes": 37660
+    },
+    {
+      "path": "audio/little_learners/animals_3/instr_record_and_listen.mp3",
+      "sha256": "49f199bcd610cd7026a6c6f0ee7335432a7732e756ada099925691452a789185",
+      "bytes": 32226
+    },
+    {
+      "path": "audio/little_learners/animals_3/intro.mp3",
+      "sha256": "16ea25c1ea095ea757eec7715886e37f1c8c6e986746bea98b29dd1af59fc18a",
+      "bytes": 79038
+    },
+    {
+      "path": "audio/little_learners/animals_3/phrase_duck.mp3",
+      "sha256": "23e830670e93f9c07e8f1aa429393decdc009ad08f7006e6dc6b68802b147c7d",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/little_learners/animals_3/phrase_fish.mp3",
+      "sha256": "4257cd10fb3a67ce7cc076641faac3f3b6b8a2706330094375731003da5f0add",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/little_learners/animals_3/phrase_frog.mp3",
+      "sha256": "751d582f41655ae3f3974c2128c76ac7effa4868a088e286711eb1fe8147c2ed",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/animals_3/praise_0.mp3",
+      "sha256": "32dd1bf583acceda9d1847225e3e60045b9eb14bad0034fcc249581920103cba",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/animals_3/praise_1.mp3",
+      "sha256": "ed9e113d2da929fc58ea05198a85f4d589ca8ae17f8a014868a6ed489a35dbd1",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/little_learners/animals_3/praise_2.mp3",
+      "sha256": "39c287a745147d8292ba4534de956b9ee9c6653f12a925eddc273e913f59c5bc",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/animals_3/word_duck.mp3",
+      "sha256": "76a882a4ea41d8c1c808209039f0b866d4cd5fb088d47bf649d9a823b17e7ec3",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/little_learners/animals_3/word_fish.mp3",
+      "sha256": "dca27038810b464e9caa9830cc0e8461ee3d7e42367acfaf6519dc2962bee675",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/little_learners/animals_3/word_frog.mp3",
+      "sha256": "c1f1b42c44cc6a82bfe6389a3bf83f4adffc073371cea34ba7f68d2b1e4aa5c1",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/little_learners/animals_4/instr_listen_and_tap.mp3",
+      "sha256": "c4f2d90520422c4dd45001628422297b1065cc2d8c3409ae34ca21b0396d2e22",
+      "bytes": 34316
+    },
+    {
+      "path": "audio/little_learners/animals_4/instr_match_picture.mp3",
+      "sha256": "a74e025cc272bab6ca391fb644647f41d805f2fde1644208f50dbf2e97f3ea37",
+      "bytes": 41839
+    },
+    {
+      "path": "audio/little_learners/animals_4/instr_record_and_listen.mp3",
+      "sha256": "c7ce6ea512be15f002d331a3626f353b912eeb706067b654401346b3d0254236",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/little_learners/animals_4/intro.mp3",
+      "sha256": "1e13f1f3ff4dbd8426cc67d3a2629b532245b116bb1a54ae0926192493a88304",
+      "bytes": 79874
+    },
+    {
+      "path": "audio/little_learners/animals_4/phrase_elephant.mp3",
+      "sha256": "92197457ff1f5eec30b8d41f73c9968a6dffe204b403d0b854201e0ed12eda96",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/little_learners/animals_4/phrase_lion.mp3",
+      "sha256": "f2a0fc0ec6ee9294487935774f0183c3a746afd74417bf0c1e48c4b36f0b4584",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/animals_4/phrase_monkey.mp3",
+      "sha256": "c2a1a230ccdf9393ba7c9155d82c548a9ad1bde7f47be63c5848b2cd7d9a52f7",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/animals_4/praise_0.mp3",
+      "sha256": "834cec6cfb5a5d4b997f4cf4f6cf19837cb346a18f3542b354fa53942cb5bd55",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/animals_4/praise_1.mp3",
+      "sha256": "5156b3bf583bcdd157fc68445c046fab41f52ec2d81086915b688411aea46660",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/animals_4/praise_2.mp3",
+      "sha256": "b6c5797caa3a74a4375ce6cc95e123a1361855b94fdc645e8f467cc9d331f7eb",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/animals_4/word_elephant.mp3",
+      "sha256": "0149980bc664aba0019476633f9c6dd5d1f4857b987cccfe5383721b37dace3f",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/little_learners/animals_4/word_lion.mp3",
+      "sha256": "a493194139881891a0aaea495144253fd0fe0e2ace910d8aed6d046725f48798",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/little_learners/animals_4/word_monkey.mp3",
+      "sha256": "d766e96e76982de6d557813a6571cb87b4620527cff570340c609f0d0f074fd9",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/little_learners/animals_5/instr_listen_and_tap.mp3",
+      "sha256": "45b344c3a9a90e8ac63b51279c638c4c7c7618c15223f8df313dc41f669f2e40",
+      "bytes": 35152
+    },
+    {
+      "path": "audio/little_learners/animals_5/instr_match_picture.mp3",
+      "sha256": "e4e9c12f5018400785c338173192750fd2acb768af8c5ebe02ea0df3ab4dc0a2",
+      "bytes": 37660
+    },
+    {
+      "path": "audio/little_learners/animals_5/instr_record_and_listen.mp3",
+      "sha256": "cb182252ec2c33ccebef06382080337b095188786c037d559302a4372c25a399",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/little_learners/animals_5/intro.mp3",
+      "sha256": "31811aa619b31f69b4d6d5cc2370a95c7c65d974d09fe10fa960c929f12d5a27",
+      "bytes": 97846
+    },
+    {
+      "path": "audio/little_learners/animals_5/phrase_bear.mp3",
+      "sha256": "a2d2921fe0cc8d62e5893cb07be8ebf67944724f0424283e5804f6bc8f3f98ba",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/little_learners/animals_5/phrase_tiger.mp3",
+      "sha256": "36c2360ff119fc6c8b8332518d6c67666adc90a8a58a9b8a1d7b564c6e5a18db",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/little_learners/animals_5/phrase_zebra.mp3",
+      "sha256": "1122d88c51f91c1bff4705bab8b67f698a403d757e01c1bfd41879f68d4e859a",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/animals_5/praise_0.mp3",
+      "sha256": "f2d1c282bb51d1aa5f2fa02815d149fba6beebc915c79d0d767df216ac4b52fe",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/animals_5/praise_1.mp3",
+      "sha256": "0c9a92dbe9f2e4d989237ae34e6b664fda046a1ce6a1de98140f12ce30e38701",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/animals_5/praise_2.mp3",
+      "sha256": "9cb6f4df3b66317a1956651a8c4acbb011ed4b3428293b44a3baa2a32ecff7cb",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/animals_5/word_bear.mp3",
+      "sha256": "1f4285ea36b34bb13c0e23877754b90c4372650becbf00c2f696e5af4dfe5354",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/little_learners/animals_5/word_tiger.mp3",
+      "sha256": "30845492ae5ba56b1db3ab182902db6e726017c07da52790c264f75a46c259c1",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/little_learners/animals_5/word_zebra.mp3",
+      "sha256": "44b82dfb068938e64091d01597262bfe34f05a3092d94fc1f80b7a60ea1ed88f",
+      "bytes": 18016
+    },
+    {
+      "path": "images/little_learners/animals_1/cat.webp",
+      "sha256": "b526f4ddbfe8c66fbb063b1b79f324afb77977dd4e996d4fc1abb3c7bb3197d2",
+      "bytes": 66930
+    },
+    {
+      "path": "images/little_learners/animals_1/dog.webp",
+      "sha256": "653120dc03c255bd8d4ed162f98258f3d70a41e48b2f513c20e6a81a840cd35c",
+      "bytes": 66090
+    },
+    {
+      "path": "images/little_learners/animals_1/rabbit.webp",
+      "sha256": "12691c28bf8a38ee709aa5a113e60c00e205321075c6df57c489ec50fb7d1861",
+      "bytes": 64896
+    },
+    {
+      "path": "images/little_learners/animals_2/cow.webp",
+      "sha256": "04d4fb4956e01d418f5fbd7dd5a9fa57699d797ccda0a76839a807b232584997",
+      "bytes": 60162
+    },
+    {
+      "path": "images/little_learners/animals_2/horse.webp",
+      "sha256": "d715fb7541cccbaa30df6c1d24e943a48fe8f67c02069a53b58215b3cbe17cfb",
+      "bytes": 56964
+    },
+    {
+      "path": "images/little_learners/animals_2/pig.webp",
+      "sha256": "d9beed11e22450131f616737ed2ef693ef61a370e13e1cf1a7325b611d822524",
+      "bytes": 59762
+    },
+    {
+      "path": "images/little_learners/animals_3/duck.webp",
+      "sha256": "84987820fd92c2a37fed378bfeef2a7c089a1ccdf18ed0030c95d07fb158eefd",
+      "bytes": 57576
+    },
+    {
+      "path": "images/little_learners/animals_3/fish.svg",
+      "sha256": "ef977ba1745fd87c34621ba8198c96766fe265c85a67104ecf0ea9ecf60a0cb1",
+      "bytes": 675
+    },
+    {
+      "path": "images/little_learners/animals_3/frog.webp",
+      "sha256": "7849aa763009024a35fe167dd7354299750d30a01c9f6090b3f9d2788cc2a084",
+      "bytes": 61094
+    },
+    {
+      "path": "images/little_learners/animals_4/elephant.webp",
+      "sha256": "2afc6381487a12c65947e0b5e097567717e2c26400acf884961165e702078be5",
+      "bytes": 60734
+    },
+    {
+      "path": "images/little_learners/animals_4/lion.webp",
+      "sha256": "ea81944a19e775a4e23ba542bcf5d019e67449683d711e3d5a65f93a097166d6",
+      "bytes": 69114
+    },
+    {
+      "path": "images/little_learners/animals_4/monkey.webp",
+      "sha256": "db4157df4af1f89bbffdd18ef90e79c7e7cf271364cc71f9e27dd4eed9423cab",
+      "bytes": 61608
+    },
+    {
+      "path": "images/little_learners/animals_5/bear.webp",
+      "sha256": "5bd42b335b68121c485a6d6de1d225a7beb880baa62df435c0218d1db170366a",
+      "bytes": 52178
+    },
+    {
+      "path": "images/little_learners/animals_5/tiger.webp",
+      "sha256": "5476a2f757eaeeaebef4f6944b1aa6280eff631076255417858e59c7a38fc449",
+      "bytes": 70450
+    },
+    {
+      "path": "images/little_learners/animals_5/zebra.webp",
+      "sha256": "90e43ee094b0440514334ed06692a69bf79549bfcba8ac9f68feba02db4c6a59",
+      "bytes": 70516
+    }
+  ]
+}

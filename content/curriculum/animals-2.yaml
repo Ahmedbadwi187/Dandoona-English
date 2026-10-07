@@ -1,0 +1,18 @@
+id: animals-2
+unit: animals
+track: little-learners
+level: pre-a1
+order: 2
+words:
+  - { word: cow, reuse: letter-c/cow }
+  - { word: pig, reuse: letter-p/pig }
+  - { word: horse, reuse: letter-h/horse }
+narration:
+  intro: "Farm animals! ... A cow. ... A pig. ... A horse!"
+  phrases: { cow: "A cow.", pig: "A pig.", horse: "A horse." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the animal!"
+    match-picture: "Match each word to its animal!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

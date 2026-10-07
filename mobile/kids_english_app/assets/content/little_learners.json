@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "little-learners",
-  "generatedAt": "2026-10-07T19:18:11.8605827Z",
+  "generatedAt": "2026-10-07T19:25:27.1873105Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -1734,12 +1734,25 @@
         }
       },
       "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "fe9734fdc074f3efa8d7ac01cf99e604aa235b99fdae17458831a6fb3f1ec6a9",
+        "bytes": 2680783,
+        "manifest": "animals/v1/manifest.json",
+        "lessonIds": [
+          "animals-1",
+          "animals-2",
+          "animals-3",
+          "animals-4",
+          "animals-5"
+        ]
+      },
       "chest": {
         "accessory": "animal-ears",
         "stickers": [
           "cat",
           "dog",
-          "bird",
+          "duck",
           "fish"
         ]
       }

@@ -1,0 +1,18 @@
+id: animals-3
+unit: animals
+track: little-learners
+level: pre-a1
+order: 3
+words:
+  - { word: duck, reuse: letter-d/duck }
+  - { word: fish, reuse: letter-f/fish }
+  - { word: frog, reuse: letter-f/frog }
+narration:
+  intro: "Animals by the water! ... A duck. ... A fish. ... A frog!"
+  phrases: { duck: "A duck.", fish: "A fish.", frog: "A frog." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the animal!"
+    match-picture: "Match each word to its animal!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

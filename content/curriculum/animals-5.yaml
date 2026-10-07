@@ -1,0 +1,18 @@
+id: animals-5
+unit: animals
+track: little-learners
+level: pre-a1
+order: 5
+words:
+  - { word: bear, reuse: letter-b/bear }
+  - { word: tiger, reuse: letter-t/tiger }
+  - { word: zebra, reuse: letter-z/zebra }
+narration:
+  intro: "More animals! ... A bear. ... A tiger. ... A zebra!"
+  phrases: { bear: "A bear.", tiger: "A tiger.", zebra: "A zebra." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the animal!"
+    match-picture: "Match each word to its animal!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]
