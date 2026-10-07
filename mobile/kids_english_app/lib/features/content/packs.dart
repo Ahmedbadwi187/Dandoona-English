@@ -145,7 +145,7 @@ class PackRepository {
     await prefs.writeJson(prefsKey, all);
     // older versions are no longer needed
     for (final d in unitDir.listSync().whereType<Directory>()) {
-      if (d.path != target.path) d.deleteSync(recursive: true);
+      if (d.absolute.uri != target.absolute.uri) d.deleteSync(recursive: true); // compared as URIs: Windows lists paths with other separators
     }
     return pack;
   }
@@ -170,7 +170,7 @@ Object? withPackPaths(Object? json, String dir) => switch (json) {
     };
 
 /// Media that came from a pack (an absolute path) rather than from the app bundle.
-bool isPackFile(String path) => path.startsWith('/');
+bool isPackFile(String path) => path.startsWith('/') || RegExp(r'^[A-Za-z]:[\\/]').hasMatch(path); // an absolute path (a drive letter on Windows, where the tests run too)
 
 /// The pack repository, or null when there is no server to download from (a release build without API_BASE_URL).
 final packRepositoryProvider = Provider<PackRepository?>((ref) {
