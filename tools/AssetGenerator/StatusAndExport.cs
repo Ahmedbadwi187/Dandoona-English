@@ -62,7 +62,7 @@ public class StatusRunner(Layout layout, VoiceConfig voices, string? fallbackVoi
 
 public record ExportDoc(int SchemaVersion, string Track, DateTime GeneratedAt, string? Mascot, List<ExportUnit> Units, List<ExportPlacement>? Placement = null, ExportUnitAudio? App = null);
 public record ExportPlacement(int Level, string Key, List<string> DoneUnits, string StartUnit);
-public record ExportUnit(string Id, int Order, Dictionary<string, string> Title, string Icon, string Color, ExportUnitAudio? Audio, List<ExportLesson> Lessons);
+public record ExportUnit(string Id, int Order, Dictionary<string, string> Title, string Icon, string Color, ExportUnitAudio? Audio, List<ExportLesson> Lessons, ExportPackRef? Pack = null);
 public record ExportUnitAudio(string Title, string? Welcome, string Celebration);
 public record ExportLesson(string Id, int Order, string Level, string? Letter, string? Phoneme,
     ExportLessonAudio Audio, List<ExportWord> Words, List<string> Activities, ExportColor? Color = null);
@@ -82,6 +82,10 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
         var exported = new List<(string UnitId, ExportLesson Lesson)>();
         var incomplete = new List<string>();
         long bytes = 0;
+
+        var packUnits = (units ?? []).Where(u => u.Track == track && u.IsPack).Select(u => u.Id).ToHashSet();
+        foreach (var id in packUnits)
+            if (Directory.Exists(PackBuildDir(track, id))) Directory.Delete(PackBuildDir(track, id), recursive: true);
 
         foreach (var l in lessons.Where(x => x.Track == track))
         {
@@ -105,12 +109,15 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
                 continue;
             }
 
+            // A pack unit's lessons go into its pack (built fresh each export), every other lesson into the app's assets.
+            var dir = packUnits.Contains(l.Unit) ? PackBuildDir(track, l.Unit) : layout.AssetsDir;
+
             foreach (var a in LessonPlan.Audio(l))
-                bytes += await EncodeIfNeededAsync(layout.AudioForExport(l, a.Role)!, Path.Combine(layout.AssetsDir, Layout.ExportAudioRel(l, a.Role)), audio: true, force, ct);
+                bytes += await EncodeIfNeededAsync(layout.AudioForExport(l, a.Role)!, Path.Combine(dir, Layout.ExportAudioRel(l, a.Role)), audio: true, force, ct);
             foreach (var i in LessonPlan.Images(l))
                 bytes += i.IsSvg
-                    ? await CopyIfNeededAsync(layout.SvgSource(l, i.Key), Path.Combine(layout.AssetsDir, Layout.ExportImageRel(l, i.Key, svg: true)), force)
-                    : await EncodeIfNeededAsync(layout.ImageApproved(l, i.Key), Path.Combine(layout.AssetsDir, Layout.ExportImageRel(l, i.Key)), audio: false, force, ct);
+                    ? await CopyIfNeededAsync(layout.SvgSource(l, i.Key), Path.Combine(dir, Layout.ExportImageRel(l, i.Key, svg: true)), force)
+                    : await EncodeIfNeededAsync(layout.ImageApproved(l, i.Key), Path.Combine(dir, Layout.ExportImageRel(l, i.Key)), audio: false, force, ct);
 
             // Pictures reused from another lesson are copied into this lesson's folder.
             var reusedSvg = new Dictionary<string, bool>();
@@ -118,15 +125,15 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
             {
                 var src = layout.ReuseSource(l, reuse)!.Value;
                 reusedSvg[key] = src.Svg;
-                var target = Path.Combine(layout.AssetsDir, Layout.ExportImageRel(l, key, src.Svg));
+                var target = Path.Combine(dir, Layout.ExportImageRel(l, key, src.Svg));
                 bytes += src.Svg ? await CopyIfNeededAsync(src.Path, target, force) : await EncodeIfNeededAsync(src.Path, target, audio: false, force, ct);
             }
 
             ExportColor? color = null;
             if (l.Color is not null)
             {
-                bytes += await CopyIfNeededAsync(layout.SvgSource(l, "swatch"), Path.Combine(layout.AssetsDir, Layout.ExportImageRel(l, "swatch", svg: true)), force);
-                bytes += await CopyIfNeededAsync(layout.SvgSource(l, "colorable"), Path.Combine(layout.AssetsDir, Layout.ExportImageRel(l, "colorable", svg: true)), force);
+                bytes += await CopyIfNeededAsync(layout.SvgSource(l, "swatch"), Path.Combine(dir, Layout.ExportImageRel(l, "swatch", svg: true)), force);
+                bytes += await CopyIfNeededAsync(layout.SvgSource(l, "colorable"), Path.Combine(dir, Layout.ExportImageRel(l, "colorable", svg: true)), force);
                 color = new ExportColor(l.Color.Name, l.Color.Hex, Layout.ExportImageRel(l, "swatch", svg: true), Layout.ExportImageRel(l, "colorable", svg: true));
             }
 
@@ -153,6 +160,8 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
 
         // Units: ordered as in the units file. With a units file every unit is listed, even without lessons yet (the app shows it locked).
         var doc = new List<ExportUnit>();
+        var packs = new PackBuilder(layout);
+        var packEntries = new List<PackIndexEntry>();
         var defs = units?.Where(u => u.Track == track).OrderBy(u => u.Order).ToList() ?? [];
         if (defs.Count == 0)
             defs = exported.Select(e => e.UnitId).Distinct().Select((id, n) => new UnitDef { Id = id, Track = track, Order = n + 1, Title = new() { ["en"] = id, ["ar"] = id }, Icon = id }).ToList();
@@ -176,8 +185,17 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
                         Layout.ExportAudioRel(ul, LessonPlan.InstructionRole("celebration")));
                 }
             }
-            doc.Add(new ExportUnit(u.Id, u.Order, u.Title, u.Icon, u.Color, audio, unitLessons));
+            if (u.IsPack && unitLessons.Count > 0)
+            {
+                // The app gets only what it needs to show and fetch the pack; the lessons travel inside the pack.
+                var entry = packs.Build(track, u.Id, unitLessons);
+                packEntries.Add(entry);
+                doc.Add(new ExportUnit(u.Id, u.Order, u.Title, u.Icon, u.Color, audio, [], new ExportPackRef(entry.Version, entry.Sha256, entry.Bytes, entry.Manifest, entry.LessonIds)));
+                output.WriteLine($"  pack {u.Id}: v{entry.Version}, {entry.Bytes / 1024.0:0.0} KB");
+            }
+            else doc.Add(new ExportUnit(u.Id, u.Order, u.Title, u.Icon, u.Color, audio, unitLessons));
         }
+        if (units is { Count: > 0 } && units.Any(u => u.Track == track && u.IsPack)) packs.Save(track, packEntries);
 
         // Dandoona's app-level lines (Who is playing?, the first greeting, Welcome back): same audio pipeline as a unit's lines.
         ExportUnitAudio? appAudio = null;
@@ -236,6 +254,8 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
         output.WriteLine($"Total exported asset size: {bytes / 1024.0:0.0} KB");
         return new ExportResult(exported.Count, incomplete, bytes, jsonPath);
     }
+
+    private string PackBuildDir(string track, string unit) => PackBuilder.BuildDir(layout, track, unit);
 
     private async Task<long> CopyIfNeededAsync(string source, string target, bool force)
     {

@@ -39,6 +39,11 @@ public sealed class Layout(string root)
     public string ImageApproved(Lesson l, string key) => Path.Combine(LessonDir(l), "images", $"{key}.approved.webp");
 
     public string ArtDir => Path.Combine(Root, "content", "art");
+    /// <summary>Downloadable content packs, served as static files by the API (see docs/content-packs.md).</summary>
+    public string PacksDir => Path.Combine(Root, "packs");
+    /// <summary>The version and content hash of every pack, so an unchanged pack keeps its version (committed).</summary>
+    public string PacksLock => Path.Combine(Root, "content", "packs.lock.json");
+    public string PackDir(string track, string unit) => Path.Combine(PacksDir, Snake(track), Snake(unit));
     public string AccessoriesDir => Path.Combine(ArtDir, "accessories");
     /// <summary>Drawn avatars a parent picks for a child (friends of Dandoona), exported next to the accessories.</summary>
     public string AvatarsDir => Path.Combine(ArtDir, "avatars");

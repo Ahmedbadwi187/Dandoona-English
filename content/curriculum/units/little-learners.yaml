@@ -1,6 +1,9 @@
 # Units of the Little Learners track, in the order they open (a unit opens when the previous one is finished).
 # A unit with no lessons yet is shown on the map as "coming soon". To add lessons to a unit, add lesson files with
 # `unit: <id>`; no code change is needed. `icon` is a picture key the app knows (unknown keys show a star); `color` is a palette.json name.
+# `delivery`: Letters and Colors are bundled in the app (they work offline from the first launch). Every later unit is a
+# downloadable content pack (`delivery: pack`): `export` writes it to packs/<track>/<unit>/v<version>/, our API serves it, and the
+# app fetches it when the child is one unit away (see docs/content-packs.md). A unit's own lines (its name) are always bundled.
 track: little-learners
 
 # What each answer to "How much English does your child know?" means. The app reads this from the exported JSON, so changing where a
@@ -27,36 +30,42 @@ units:
     color: orange
     narration: { title: "Colors", welcome: "Let's learn the colors!", celebration: "You finished the colors! Wow!" }
   - id: numbers
+    delivery: pack
     order: 3
     title: { en: "Numbers 1-10", ar: "الأرقام ١-١٠" }
     icon: numbers
     color: blue
     narration: { title: "Numbers", welcome: "Let's count!", celebration: "You finished the numbers! Great counting!" }
   - id: shapes
+    delivery: pack
     order: 4
     title: { en: "Shapes", ar: "الأشكال" }
     icon: shapes
     color: green
     narration: { title: "Shapes", welcome: "Let's find shapes!", celebration: "You finished the shapes! Fantastic!" }
   - id: animals
+    delivery: pack
     order: 5
     title: { en: "Animals", ar: "الحيوانات" }
     icon: animals
     color: teal
     narration: { title: "Animals", welcome: "Let's meet the animals!", celebration: "Hooray! You know the animals!" }
   - id: my-body
+    delivery: pack
     order: 6
     title: { en: "My Body", ar: "جسمي" }
     icon: body
     color: pink
     narration: { title: "My Body", welcome: "Let's learn about me!", celebration: "You finished My Body! Super!" }
   - id: food
+    delivery: pack
     order: 7
     title: { en: "Food", ar: "الطعام" }
     icon: food
     color: yellow
     narration: { title: "Food", welcome: "Yummy! Let's learn food!", celebration: "You finished the food! Delicious!" }
   - id: my-family
+    delivery: pack
     order: 8
     title: { en: "My Family", ar: "عائلتي" }
     icon: family

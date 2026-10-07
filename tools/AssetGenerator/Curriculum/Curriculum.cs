@@ -71,7 +71,12 @@ public class UnitDef
     public string Icon { get; set; } = "";
     /// <summary>Palette color name for the unit tile.</summary>
     public string Color { get; set; } = "";
+    /// <summary>"bundled" (inside the app, works offline from the first launch; the default) or "pack" (a downloadable
+    /// content pack served by our API). The unit's own lines (its name, welcome, celebration) are always bundled.</summary>
+    public string Delivery { get; set; } = "";
     public UnitNarration Narration { get; set; } = new();
+
+    public bool IsPack => Delivery == "pack";
 }
 
 public class UnitNarration
@@ -223,6 +228,7 @@ public static class CurriculumReader
                     if (u.Order <= 0) errors.Add($"{name}: unit '{u.Id}' needs a positive order.");
                     if (!u.Title.ContainsKey("en") || !u.Title.ContainsKey("ar")) errors.Add($"{name}: unit '{u.Id}' needs title.en and title.ar.");
                     if (string.IsNullOrWhiteSpace(u.Narration.Title) || string.IsNullOrWhiteSpace(u.Narration.Celebration)) errors.Add($"{name}: unit '{u.Id}' needs narration.title and narration.celebration.");
+                    if (u.Delivery is not ("" or "bundled" or "pack")) errors.Add($"{name}: unit '{u.Id}' delivery must be bundled or pack.");
                     result.Add(u);
                 }
             }
