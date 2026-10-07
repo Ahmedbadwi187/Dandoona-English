@@ -11,6 +11,18 @@
     "instr-title": {
       "hash": "8cf7ece62228865c2e2b27ddf28b0e107af49f7be2b4c3fb1b24a9508edda783",
       "generatedAtUtc": "2026-10-07T11:28:28.8989448Z"
+    },
+    "instr-almost-ready": {
+      "hash": "5894eb907b3c4708af28ec4b54c03bda75ec7d3f069c83862268985d2ddeb389",
+      "generatedAtUtc": "2026-10-07T17:46:37.3684049Z"
+    },
+    "instr-coming-soon": {
+      "hash": "c724d73e4da36e244e5f0ab5c708917764c9b3315399a76c66eded0432d70b54",
+      "generatedAtUtc": "2026-10-07T17:46:38.3067774Z"
+    },
+    "instr-puzzle-first": {
+      "hash": "ac03808eddd5f5609de86f13439bd06055fbb17582864cee935d4002727e70c3",
+      "generatedAtUtc": "2026-10-07T17:46:39.3262906Z"
     }
   }
 }

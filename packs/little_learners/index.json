@@ -1,5 +1,18 @@
 {
   "schemaVersion": 1,
   "track": "little-learners",
-  "packs": []
+  "packs": [
+    {
+      "unit": "numbers",
+      "version": 1,
+      "sha256": "b695380c3650cbfaabe0fe2c9a0b10f9998f48dff2bef9857f157a7245d607d5",
+      "bytes": 1111249,
+      "manifest": "numbers/v1/manifest.json",
+      "lessonIds": [
+        "number-1-3",
+        "number-4-6",
+        "number-7-10"
+      ]
+    }
+  ]
 }

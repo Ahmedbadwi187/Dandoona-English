@@ -15,6 +15,8 @@ public class Lesson
     public string Unit { get; set; } = "";
     /// <summary>Colors unit only: the color the lesson teaches.</summary>
     public LessonColor? Color { get; set; }
+    /// <summary>Numbers unit: each word is a number and its picture shows that many things; the activities then pick wrong pictures from the unit's other counts.</summary>
+    public bool Counting { get; set; }
     /// <summary>True for the synthetic lesson that carries a unit's own audio (title, welcome, celebration). Never read from YAML files.</summary>
     public bool IsUnit { get; set; }
     public int? Order { get; set; }

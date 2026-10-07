@@ -11,6 +11,10 @@
     "instr-title": {
       "hash": "8b1ecc30d14b8431ad6dc8415af2cc8e13bb2e497ff78601926902de29d0cbac",
       "generatedAtUtc": "2026-10-06T22:38:57.2842958Z"
+    },
+    "instr-locked": {
+      "hash": "465cb3e9839b6dc645bdb7ca909df30c8ed47b81d522c83e81f55eb852f6fd54",
+      "generatedAtUtc": "2026-10-07T17:46:09.9394269Z"
     }
   }
 }

@@ -1,0 +1,19 @@
+id: number-1-3
+unit: numbers
+track: little-learners
+level: pre-a1
+order: 1
+counting: true
+words:
+  - { word: one, imagePrompt: "one balloons", source: svg }
+  - { word: two, imagePrompt: "two balloons", source: svg }
+  - { word: three, imagePrompt: "three balloons", source: svg }
+narration:
+  intro: "Let's count! One, two, three!"
+  phrases: { one: "One balloon.", two: "Two balloons.", three: "Three balloons." }
+  praise: ["Great counting!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap that many balloons!"
+    match-picture: "Match each number to its balloons!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

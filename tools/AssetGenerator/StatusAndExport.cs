@@ -66,7 +66,7 @@ public record ExportPlacement(int Level, string Key, List<string> DoneUnits, str
 public record ExportUnit(string Id, int Order, Dictionary<string, string> Title, string Icon, string Color, ExportUnitAudio? Audio, List<ExportLesson> Lessons, ExportPackRef? Pack = null);
 public record ExportUnitAudio(string Title, string? Welcome, string Celebration, Dictionary<string, string>? Lines = null);
 public record ExportLesson(string Id, int Order, string Level, string? Letter, string? Phoneme,
-    ExportLessonAudio Audio, List<ExportWord> Words, List<string> Activities, ExportColor? Color = null);
+    ExportLessonAudio Audio, List<ExportWord> Words, List<string> Activities, ExportColor? Color = null, bool? Counting = null);
 public record ExportLessonAudio(string Intro, string? Phoneme, List<string> Praise, Dictionary<string, string>? Instructions = null, string? ColorName = null);
 public record ExportWord(string Word, string Audio, string Image, string? Phrase = null);
 public record ExportColor(string Name, string Hex, string Swatch, string Drawing);
@@ -156,7 +156,8 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
                     return new ExportWord(w.Word.Trim(), Layout.ExportAudioRel(l, $"word-{key}"), Layout.ExportImageRel(l, key, svg), PhraseFor(w));
                 }).ToList(),
                 l.Activities.ToList(),
-                color)));
+                color,
+                l.Counting ? true : null)));
         }
 
         // Units: ordered as in the units file. With a units file every unit is listed, even without lessons yet (the app shows it locked).
