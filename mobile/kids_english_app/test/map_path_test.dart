@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:kids_english_app/features/content/content_models.dart';
 import 'package:kids_english_app/features/units/map_path.dart';
 import 'package:kids_english_app/features/units/unit_logic.dart';
+import 'package:kids_english_app/features/units/unit_map_screen.dart';
 import 'package:kids_english_app/features/units/unit_meta.dart';
 
 CourseUnit _unit(String id, int order, {int lessons = 1, bool story = false}) => CourseUnit(
@@ -132,6 +133,22 @@ void main() {
       const m = ChildUnitMeta(reviews: {'review-1'}, chests: {'letters'}, stories: {'letters'});
       expect(ChildUnitMeta.fromJson(m.toJson()).chests, {'letters'});
       expect(const ChildUnitMeta().toJson().keys, ['certificates', 'celebrated']);
+    });
+  });
+
+  group('layout', () {
+    test('islands alternate sides, stations sit between them, the castle is in the middle, and the path only goes down', () {
+      final stops = _path();
+      final l = layoutStops(stops, 400);
+      final islands = [for (var i = 0; i < stops.length; i++) if (stops[i].kind == StopKind.unit) l.centers[i].dx];
+      expect(islands.take(4).map((x) => x.round()), [112, 288, 112, 288]);
+      expect(l.centers.last.dx, 200);
+      for (var i = 1; i < l.centers.length; i++) {
+        expect(l.centers[i].dy, greaterThan(l.centers[i - 1].dy));
+      }
+      // the first station after Letters is between Letters and Colors
+      expect(l.centers[1].dx, inExclusiveRange(112, 288));
+      expect(l.height, greaterThan(l.centers.last.dy));
     });
   });
 }
