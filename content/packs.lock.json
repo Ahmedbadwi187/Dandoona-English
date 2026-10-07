@@ -15,6 +15,10 @@
     "feelings": {
       "version": 1,
       "contentHash": "e1108b7f162d45be329f73c0292477a45b8700aef4056b198923daf30bbb1915"
+    },
+    "my-body": {
+      "version": 1,
+      "contentHash": "f9628064446c464b62290f72cab267051a9c50260250a26f23963daa8a3424fe"
     }
   }
 }

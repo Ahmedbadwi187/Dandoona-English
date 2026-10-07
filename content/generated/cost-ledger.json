@@ -6844,5 +6844,187 @@
     "what": "feelings-2/instr-record-and-listen (20 chars)",
     "usd": 0.0016,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:39:49.1308916Z",
+    "service": "ElevenLabs",
+    "what": "my-body-1/intro (47 chars)",
+    "usd": 0.00376,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:39:50.0692597Z",
+    "service": "ElevenLabs",
+    "what": "my-body-1/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:39:51.0166722Z",
+    "service": "ElevenLabs",
+    "what": "my-body-1/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:39:51.9642236Z",
+    "service": "ElevenLabs",
+    "what": "my-body-1/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:39:52.8902687Z",
+    "service": "ElevenLabs",
+    "what": "my-body-1/word-eye (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:39:53.8136363Z",
+    "service": "ElevenLabs",
+    "what": "my-body-1/word-ear (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:39:54.7626592Z",
+    "service": "ElevenLabs",
+    "what": "my-body-1/word-nose (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:39:55.7978487Z",
+    "service": "ElevenLabs",
+    "what": "my-body-1/phrase-eye (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:39:56.7382879Z",
+    "service": "ElevenLabs",
+    "what": "my-body-1/phrase-ear (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:39:57.7085667Z",
+    "service": "ElevenLabs",
+    "what": "my-body-1/phrase-nose (16 chars)",
+    "usd": 0.00128,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:39:58.8326714Z",
+    "service": "ElevenLabs",
+    "what": "my-body-1/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:39:59.8419261Z",
+    "service": "ElevenLabs",
+    "what": "my-body-1/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:40:00.8204732Z",
+    "service": "ElevenLabs",
+    "what": "my-body-1/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:40:02.0226508Z",
+    "service": "ElevenLabs",
+    "what": "my-body-2/intro (48 chars)",
+    "usd": 0.00384,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:40:02.9923036Z",
+    "service": "ElevenLabs",
+    "what": "my-body-2/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:40:03.9522132Z",
+    "service": "ElevenLabs",
+    "what": "my-body-2/praise-1 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:40:04.924826Z",
+    "service": "ElevenLabs",
+    "what": "my-body-2/praise-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:40:05.8209375Z",
+    "service": "ElevenLabs",
+    "what": "my-body-2/word-mouth (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:40:06.8322845Z",
+    "service": "ElevenLabs",
+    "what": "my-body-2/word-hand (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:40:07.7168704Z",
+    "service": "ElevenLabs",
+    "what": "my-body-2/word-foot (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:40:08.6640312Z",
+    "service": "ElevenLabs",
+    "what": "my-body-2/phrase-mouth (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:40:09.7110843Z",
+    "service": "ElevenLabs",
+    "what": "my-body-2/phrase-hand (16 chars)",
+    "usd": 0.00128,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:40:10.67747Z",
+    "service": "ElevenLabs",
+    "what": "my-body-2/phrase-foot (16 chars)",
+    "usd": 0.00128,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:40:11.6528527Z",
+    "service": "ElevenLabs",
+    "what": "my-body-2/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:40:12.7552518Z",
+    "service": "ElevenLabs",
+    "what": "my-body-2/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-07T19:40:13.7142087Z",
+    "service": "ElevenLabs",
+    "what": "my-body-2/instr-record-and-listen (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
   }
 ]

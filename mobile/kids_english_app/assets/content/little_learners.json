@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "little-learners",
-  "generatedAt": "2026-10-07T19:33:15.8503473Z",
+  "generatedAt": "2026-10-07T19:40:18.7361943Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -1813,6 +1813,16 @@
         }
       },
       "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "f19d2db0e511ba9f2c03614b39ffc04b3ce7ee2368ffc70f06318c8f3983e24d",
+        "bytes": 758231,
+        "manifest": "my_body/v1/manifest.json",
+        "lessonIds": [
+          "my-body-1",
+          "my-body-2"
+        ]
+      },
       "chest": {
         "accessory": "sweatband",
         "stickers": [

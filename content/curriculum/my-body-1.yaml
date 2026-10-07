@@ -1,0 +1,18 @@
+id: my-body-1
+unit: my-body
+track: little-learners
+level: pre-a1
+order: 1
+words:
+  - { word: eye, imagePrompt: "a eye", source: svg }
+  - { word: ear, imagePrompt: "a ear", source: svg }
+  - { word: nose, imagePrompt: "a nose", source: svg }
+narration:
+  intro: "This is me! ... An eye. ... An ear. ... A nose!"
+  phrases: { eye: "This is my eye.", ear: "This is my ear.", nose: "This is my nose." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the picture!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

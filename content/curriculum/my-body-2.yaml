@@ -1,0 +1,18 @@
+id: my-body-2
+unit: my-body
+track: little-learners
+level: pre-a1
+order: 2
+words:
+  - { word: mouth, imagePrompt: "a mouth", source: svg }
+  - { word: hand, imagePrompt: "a hand", source: svg }
+  - { word: foot, imagePrompt: "a foot", source: svg }
+narration:
+  intro: "More of me! ... A mouth. ... A hand. ... A foot!"
+  phrases: { mouth: "This is my mouth.", hand: "This is my hand.", foot: "This is my foot." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the picture!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]
