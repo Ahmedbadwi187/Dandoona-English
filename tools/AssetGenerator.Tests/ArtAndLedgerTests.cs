@@ -211,6 +211,6 @@ public class AccessoryExportTests
         have.ShouldContain("crown");
         have.ShouldContain("glasses");
         have.ShouldContain("party-hat");
-        foreach (var accessory in new[] { "grad-cap", "beret", "top-hat", "star-headband", "animal-ears" }) have.ShouldContain(accessory); // Letters, Colors, Numbers, Shapes, Animals
+        foreach (var accessory in new[] { "grad-cap", "beret", "top-hat", "star-headband", "animal-ears", "heart-glasses" }) have.ShouldContain(accessory); // Letters, Colors, Numbers, Shapes, Animals, Feelings
     }
 }

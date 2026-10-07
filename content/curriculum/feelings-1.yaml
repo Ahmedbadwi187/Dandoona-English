@@ -1,0 +1,18 @@
+id: feelings-1
+unit: feelings
+track: little-learners
+level: pre-a1
+order: 1
+words:
+  - { word: happy, imagePrompt: "a happy face", source: svg }
+  - { word: sad, imagePrompt: "a sad face", source: svg }
+  - { word: angry, imagePrompt: "a angry face", source: svg }
+narration:
+  intro: "How do you feel? ... Happy. ... Sad. ... Angry!"
+  phrases: { happy: "I am happy.", sad: "I am sad.", angry: "I am angry." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the face!"
+    match-picture: "Match each word to its face!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

@@ -40,6 +40,17 @@
         "animals-4",
         "animals-5"
       ]
+    },
+    {
+      "unit": "feelings",
+      "version": 1,
+      "sha256": "c4cdc8a8afe2b36bc6cf593cbb757751dff19627fa67e729e8be1deaddab845d",
+      "bytes": 766192,
+      "manifest": "feelings/v1/manifest.json",
+      "lessonIds": [
+        "feelings-1",
+        "feelings-2"
+      ]
     }
   ]
 }

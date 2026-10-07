@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "little-learners",
-  "generatedAt": "2026-10-07T19:25:27.1873105Z",
+  "generatedAt": "2026-10-07T19:33:15.8503473Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -1775,6 +1775,16 @@
         }
       },
       "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "c4cdc8a8afe2b36bc6cf593cbb757751dff19627fa67e729e8be1deaddab845d",
+        "bytes": 766192,
+        "manifest": "feelings/v1/manifest.json",
+        "lessonIds": [
+          "feelings-1",
+          "feelings-2"
+        ]
+      },
       "chest": {
         "accessory": "heart-glasses",
         "stickers": [

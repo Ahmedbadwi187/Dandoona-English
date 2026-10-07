@@ -20,7 +20,7 @@ The five older outfits (party hat, glasses, bow, crown, bow tie) are still earne
 | 3 | Numbers | `top-hat` (magic top hat with a star) | one, three, five, ten | yes |
 | 4 | Shapes | `star-headband` (star bopper) | circle, triangle, star, heart | yes |
 | 5 | Animals | `animal-ears` (cat ears headband) | cat, dog, duck, fish | yes |
-| 6 | Feelings | `heart-glasses` (heart-shaped glasses) | happy, sad, angry, sleepy | when Feelings is built |
+| 6 | Feelings | `heart-glasses` (heart-shaped glasses) | happy, sad, angry, sleepy | yes |
 | 7 | My Body | `sweatband` (sporty headband) | hand, foot, eye, nose | when My Body is built |
 | 8 | Actions | `hero-mask` (little hero mask) | jump, run, clap, dance | when Actions is built |
 | 9 | Food | `chef-hat` | apple, bread, milk, cake | when Food is built |

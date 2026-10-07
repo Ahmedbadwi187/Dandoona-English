@@ -11,6 +11,10 @@
     "animals": {
       "version": 1,
       "contentHash": "8038d567d14350a5d811d062a0ef10d26b5b720c85938764f6d1b818b5214035"
+    },
+    "feelings": {
+      "version": 1,
+      "contentHash": "e1108b7f162d45be329f73c0292477a45b8700aef4056b198923daf30bbb1915"
     }
   }
 }
