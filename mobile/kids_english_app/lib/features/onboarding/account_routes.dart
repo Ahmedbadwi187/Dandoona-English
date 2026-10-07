@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../core/palette.dart';
 import '../profiles/child_profile.dart';
 import '../settings/settings.dart';
 import '../sync/sync_controller.dart';
@@ -113,7 +112,7 @@ class LegalScreen extends ConsumerWidget {
     return Directionality(
       textDirection: s.direction,
       child: Scaffold(
-        backgroundColor: Palette.cream,
+        backgroundColor: Colors.transparent,
         appBar: AppBar(title: Text(s(doc == 'terms' ? 'obTerms' : 'obPrivacy'))),
         body: FutureBuilder<String>(
           future: rootBundle.loadString(assetFor(doc), cache: false),

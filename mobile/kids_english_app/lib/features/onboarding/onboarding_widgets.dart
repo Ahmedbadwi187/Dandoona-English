@@ -84,7 +84,7 @@ class OnboardingFrame extends StatelessWidget {
     return Directionality(
       textDirection: s.direction,
       child: Scaffold(
-        backgroundColor: Palette.cream,
+        backgroundColor: Colors.transparent,
         body: SafeArea(
           child: Column(
             children: [

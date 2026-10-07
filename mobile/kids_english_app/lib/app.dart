@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'core/sky.dart';
 import 'core/strings.dart';
 import 'core/theme.dart';
 import 'features/settings/settings.dart';
@@ -29,7 +30,7 @@ class KidsEnglishApp extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      builder: (context, child) => DandoonaSplash(enabled: showSplash, child: child ?? const SizedBox.shrink()),
+      builder: (context, child) => DandoonaSplash(enabled: showSplash, child: SkyBackground(calm: true, child: child ?? const SizedBox.shrink())),
       routerConfig: ref.watch(routerProvider),
     );
   }

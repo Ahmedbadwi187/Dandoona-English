@@ -6,9 +6,12 @@ import 'palette.dart';
 
 /// Dandoona's sky: a soft sky gradient with real cloud shapes that drift slowly across it. The child screens live here.
 class SkyBackground extends StatefulWidget {
-  const SkyBackground({super.key, required this.child});
+  const SkyBackground({super.key, required this.child, this.calm = false});
 
   final Widget child;
+
+  /// The quiet version behind every other screen (parent area, setup, settings): paler, fewer and fainter clouds that stand still.
+  final bool calm;
 
   /// Tests turn the drift off (a repeating animation never lets a widget test settle).
   static bool drift = true;
@@ -29,10 +32,17 @@ class _SkyBackgroundState extends State<SkyBackground> with SingleTickerProvider
     _Cloud(y: 0.90, scale: 1.1, speed: 2, phase: 0.15, opacity: 0.9),
   ];
 
+  // Three faint clouds, high and low, for the quiet screens.
+  static const _calmClouds = [
+    _Cloud(y: 0.05, scale: 0.9, speed: 1, phase: 0.1, opacity: 0.55),
+    _Cloud(y: 0.45, scale: 0.7, speed: 1, phase: 0.62, opacity: 0.35),
+    _Cloud(y: 0.86, scale: 1.0, speed: 1, phase: 0.3, opacity: 0.4),
+  ];
+
   @override
   void initState() {
     super.initState();
-    if (SkyBackground.drift) _c.repeat();
+    if (SkyBackground.drift && !widget.calm) _c.repeat();
   }
 
   @override
@@ -44,14 +54,21 @@ class _SkyBackgroundState extends State<SkyBackground> with SingleTickerProvider
   @override
   Widget build(BuildContext context) {
     // People who ask the phone for less motion get still clouds.
-    final still = !SkyBackground.drift || MediaQuery.of(context).disableAnimations;
+    final still = widget.calm || !SkyBackground.drift || MediaQuery.of(context).disableAnimations;
     if (still && _c.isAnimating) _c.stop();
     return DecoratedBox(
-      key: const Key('sky'),
-      decoration: const BoxDecoration(gradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [Color(0xFFBDE6FA), Color(0xFFE9F6FB), Palette.cream])),
+      key: Key(widget.calm ? 'sky-calm' : 'sky'),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: widget.calm ? const [Color(0xFFDCEFF9), Color(0xFFF1F7F0), Palette.cream] : const [Color(0xFFBDE6FA), Color(0xFFE9F6FB), Palette.cream],
+          stops: widget.calm ? const [0, 0.35, 0.8] : null,
+        ),
+      ),
       child: Stack(
         children: [
-          Positioned.fill(child: IgnorePointer(child: RepaintBoundary(child: CustomPaint(key: const Key('clouds'), painter: _CloudPainter(_c, _clouds))))),
+          Positioned.fill(child: IgnorePointer(child: RepaintBoundary(child: CustomPaint(key: Key(widget.calm ? 'clouds-calm' : 'clouds'), painter: _CloudPainter(_c, widget.calm ? _calmClouds : _clouds))))),
           widget.child,
         ],
       ),

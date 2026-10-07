@@ -14,9 +14,10 @@ ThemeData buildTheme() {
   return ThemeData(
     useMaterial3: true,
     colorScheme: scheme,
-    scaffoldBackgroundColor: Palette.cream,
+    // Transparent: the quiet sky behind every screen (see SkyBackground.calm) shows through.
+    scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: const AppBarTheme(
-      backgroundColor: Palette.cream,
+      backgroundColor: Colors.transparent,
       foregroundColor: Palette.ink,
       elevation: 0,
       centerTitle: true,
