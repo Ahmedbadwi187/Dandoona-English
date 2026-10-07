@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "little-learners",
-  "generatedAt": "2026-10-07T17:58:02.5248054Z",
+  "generatedAt": "2026-10-07T18:33:58.4505648Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -1666,7 +1666,18 @@
           "locked": "audio/little_learners/unit_shapes/instr_locked.mp3"
         }
       },
-      "lessons": []
+      "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "acc433de0f9b70021278ad461390521ef6f83771e6e4a9d473b9031d6ccd85c3",
+        "bytes": 1089981,
+        "manifest": "shapes/v1/manifest.json",
+        "lessonIds": [
+          "shapes-1",
+          "shapes-2",
+          "shapes-3"
+        ]
+      }
     },
     {
       "id": "animals",

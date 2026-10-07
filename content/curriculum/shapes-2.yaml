@@ -1,0 +1,18 @@
+id: shapes-2
+unit: shapes
+track: little-learners
+level: pre-a1
+order: 2
+words:
+  - { word: rectangle, imagePrompt: "a rectangle shape", source: svg }
+  - { word: oval, imagePrompt: "a oval shape", source: svg }
+  - { word: diamond, imagePrompt: "a diamond shape", source: svg }
+narration:
+  intro: "More shapes! ... A rectangle. ... An oval. ... A diamond!"
+  phrases: { rectangle: "A rectangle.", oval: "An oval.", diamond: "A diamond." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the shape!"
+    match-picture: "Match each word to its shape!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

@@ -1,0 +1,18 @@
+id: shapes-1
+unit: shapes
+track: little-learners
+level: pre-a1
+order: 1
+words:
+  - { word: circle, imagePrompt: "a circle shape", source: svg }
+  - { word: square, imagePrompt: "a square shape", source: svg }
+  - { word: triangle, imagePrompt: "a triangle shape", source: svg }
+narration:
+  intro: "Let's find shapes! ... A circle. ... A square. ... A triangle!"
+  phrases: { circle: "A circle.", square: "A square.", triangle: "A triangle." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the shape!"
+    match-picture: "Match each word to its shape!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

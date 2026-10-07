@@ -13,6 +13,18 @@
         "number-4-6",
         "number-7-10"
       ]
+    },
+    {
+      "unit": "shapes",
+      "version": 1,
+      "sha256": "acc433de0f9b70021278ad461390521ef6f83771e6e4a9d473b9031d6ccd85c3",
+      "bytes": 1089981,
+      "manifest": "shapes/v1/manifest.json",
+      "lessonIds": [
+        "shapes-1",
+        "shapes-2",
+        "shapes-3"
+      ]
     }
   ]
 }

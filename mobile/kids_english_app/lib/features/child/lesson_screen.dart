@@ -106,9 +106,15 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                                         child: Text(lesson.digits, key: const Key('lesson-letter'), style: const TextStyle(fontSize: 90, fontWeight: FontWeight.w900, color: Palette.white)),
                                       ),
                                     ) // a Numbers lesson shows its numerals: 1 2 3
-                                  : Text(lesson.letter ?? '?',
-                                      key: const Key('lesson-letter'),
-                                      style: const TextStyle(fontSize: 110, fontWeight: FontWeight.w900, color: Palette.white)),
+                                  : lesson.letter == null && lesson.words.isNotEmpty
+                                      ? Padding(
+                                          key: const Key('lesson-letter'),
+                                          padding: const EdgeInsets.all(26),
+                                          child: AssetPicture(lesson.words.first.image, semanticLabel: lesson.words.first.word),
+                                        ) // any other unit (Shapes, Animals...) shows the lesson's first picture
+                                      : Text(lesson.letter ?? '?',
+                                          key: const Key('lesson-letter'),
+                                          style: const TextStyle(fontSize: 110, fontWeight: FontWeight.w900, color: Palette.white)),
                         ),
                       ),
                     ),

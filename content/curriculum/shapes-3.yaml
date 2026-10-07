@@ -1,0 +1,17 @@
+id: shapes-3
+unit: shapes
+track: little-learners
+level: pre-a1
+order: 3
+words:
+  - { word: star, imagePrompt: "a star shape", source: svg }
+  - { word: heart, imagePrompt: "a heart shape", source: svg }
+narration:
+  intro: "Shining shapes! ... A star. ... A heart!"
+  phrases: { star: "A star.", heart: "A heart." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the shape!"
+    match-picture: "Match each word to its shape!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

@@ -25,7 +25,10 @@ class ChoiceRound {
 List<ChoiceRound> buildChoiceRounds(Lesson lesson, TrackContent track, Random random, {int optionCount = 3}) {
   // A Colors lesson asks for a color, so wrong pictures come only from the unit's other colors (never a same-colored thing).
   // A Numbers lesson asks for a count, so wrong pictures are other counts of the same unit.
-  final pool0 = (lesson.color != null || lesson.counting) ? (track.unitOfLesson(lesson.id)?.lessons ?? track.lessons) : track.lessons;
+  // Every other unit than Letters (Shapes, Animals, ...) keeps its wrong pictures inside the unit too: "tap the circle" among other shapes.
+  final unit = track.unitOfLesson(lesson.id);
+  final sameUnit = lesson.color != null || lesson.counting || (unit != null && unit.id != 'letters' && unit.lessons.length > 1);
+  final pool0 = sameUnit ? (unit?.lessons ?? track.lessons) : track.lessons;
   final others = [
     for (final l in pool0)
       if (l.id != lesson.id) ...l.words,
