@@ -33,9 +33,28 @@ Main character: **Dandoona (دندونة)**, the owner's own character.
 - Dandoona's own voice lines: `app:` section in the units yaml (Who is playing?, hello greeting, Welcome back!), generated and exported.
 - Docs: `privacy-data-map.md`, `store-compliance.md`, `licenses.md`, `onboarding-flow.md`, `units-proposal.md`.
 
+## Work on branches (not merged into main; the owner merges)
+- `feature/unit-map-v2`: unit map redesign (one Dandoona on the current island, progress ring, 78 dp play button, locked islands
+  muted with a lock badge, "Soon" ribbon instead of the hourglass, own colors per unit, drifting clouds, castle at the end,
+  sticky top bar with avatar / greeting / stars bounce / wardrobe dot / parent button behind the gate) and the path model
+  (story, chest and review stations; `lib/features/units/map_path.dart`). Screenshots: `docs/design-options/unit-map-v2/`
+  (render with `flutter test test_screenshots/map_preview_test.dart --update-goldens`). **Waiting for the owner's approval**
+  before the yaml gets the new units and reviews and before station content (stories, review game, chest outfits) is built.
+- `feature/content-packs-sync` (on top of the map branch):
+  - Content packs: `delivery: pack` in the units yaml; `export` writes `packs/<track>/<unit>/v<version>/` + `index.json`,
+    `content/packs.lock.json` keeps versions; the API serves `/packs` statically (`ContentPacks:Root`); the app downloads the
+    current and next unit's pack, checks every sha256, caches it, plays it offline. Details: `docs/content-packs.md`.
+  - Sync: new `ChildAchievements` table (migration `ChildAchievements`) for certificates, chests, reviews, stories,
+    placement; the app sends them on every sync and reads progress + achievements back on sign-in, "Sync now" and the first
+    background sync per app start (union, best result per lesson, earliest date).
+  - Anonymous stats: `GET /api/admin/stats/lessons` with `X-Stats-Key` = `Stats:Key` (user-secrets); computed from synced
+    summaries only, no ids, groups under 5 children hidden.
+  - `docs/privacy-data-map.md` lists what is stored, where and for how long; one open decision (inactive accounts).
+
 ## Tests (all green at the time of writing)
-- Flutter: `cd mobile/kids_english_app && flutter test` (256). `flutter analyze` is clean.
-- Generator: `cd tools && dotnet test AssetGenerator.slnx` (54). API integration tests: `dotnet test` at the repo root (30).
+- Flutter: `cd mobile/kids_english_app && flutter test` (256 on main, 284 on `feature/content-packs-sync`). `flutter analyze` is clean.
+- Generator: `cd tools && dotnet test AssetGenerator.slnx` (54 on main, 57 on the packs branch). API integration tests:
+  `dotnet test` at the repo root (30 on main, 39 on the packs branch; they start SQL Server in Docker via Testcontainers).
 - Release build: `flutter build apk --release` (about 65 MB); merged permissions: RECORD_AUDIO, INTERNET, POST_NOTIFICATIONS,
   RECEIVE_BOOT_COMPLETED.
 
@@ -46,6 +65,9 @@ Main character: **Dandoona (دندونة)**, the owner's own character.
 - Seed demo data: `scripts/seed-demo-data.sh` for a child who finished all levels.
 
 ## Gotchas learned the hard way
+- Cloud sessions: the proxy blocks dot.net, so .NET comes from Ubuntu (`apt-get install dotnet-sdk-10.0`, 10.0.1xx). `global.json`
+  pins 10.0.401, so run `dotnet` from a folder outside the repo with absolute paths (do not edit global.json). Flutter: clone the
+  stable branch (the revision in `.metadata`). `dotnet-ef`: `dotnet tool install --global dotnet-ef --version 10.0.12`.
 - The Bash tool breaks on apostrophes inside heredocs and on perl replacements with `$` or `\n` inside quotes: write files with the editor
   tool, or write a perl script file and run it.
 - Widget tests: set a phone-size surface (`t.view.physicalSize = Size(1080, 2400)`, `devicePixelRatio = 1080/411`); a tall surface
@@ -64,6 +86,6 @@ Main character: **Dandoona (دندونة)**, the owner's own character.
 3. Certificate screen: a separate "Save" button next to "Share" (today saving goes through the share sheet).
 4. Real e-mail provider for verification and password reset (not chosen; only the logging sender exists). Show the parent's first name
    after log-in too (today it is stored at sign-up only).
-5. Numbers unit and the rest, only after the owner has tested Colors on a real phone.
+5. Numbers unit and the rest, only after the owner has tested Colors on a real phone. They will be content packs (see above).
 6. Release signing, privacy policy and terms final text, store listing (see the open items at the end of `store-compliance.md`).
 7. Optional: play the "Welcome back!" line on later launches (it is generated and exported but not used).

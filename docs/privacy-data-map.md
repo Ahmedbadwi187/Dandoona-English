@@ -13,7 +13,8 @@ Every field the system stores. Update this file whenever the schema changes.
 | Child | AvatarKey | Avatar choice | Opaque key |
 | Child | BirthYear | Age-appropriate track | Year only, no full date of birth |
 | Child | Track | Learning track code (little-learners, explorers, champions) | |
-| ProgressRecord | LessonId, Activity, Stars, Attempts, TimeSpentSeconds, CompletedAt, ClientRecordId | Progress and parent dashboard | LessonId is a curriculum id like letter-a. No free text |
+| ProgressRecord | LessonId, Activity, Stars, Attempts, TimeSpentSeconds, CompletedAt, ClientRecordId | Progress and parent dashboard | LessonId is a curriculum id like letter-a. No free text. **One summary per finished activity**, never individual taps or raw events |
+| ChildAchievement | Kind (certificate, chest, review, story, placed), Key (a unit or review id), EarnedAt | The child's certificates, opened treasure chests, passed reviews, read stories and starting point follow them to a new phone | Fixed list of kinds, curriculum ids only, no free text. One row per kind and key; the earliest date any phone reported is kept |
 
 ## Not stored
 
@@ -81,3 +82,43 @@ Collected only by the parent, only on this phone unless the optional account is 
 Never collected: phone number, address, location, school, the child's full name, photo, gender, interests.
 Deleting a child removes the profile, progress, stars, certificates and the placement from the device and the account.
 Signing out or deleting the account also clears the saved parent first name.
+
+## Content packs, sync both ways and anonymous stats (added with the content packs)
+
+### What is stored, where, and for how long
+
+| Data | Where | Why | How long |
+|---|---|---|---|
+| Downloaded content packs (lesson pictures, audio, lesson JSON) | Phone: app support folder `packs/<unit>/v<version>/`; `packs.v1` (unit -> version, folder) | Units after Colors play offline after one download | Until a newer version replaces it, the app is uninstalled or the phone clears app data. Contains nothing about the child |
+| `meta.v2` per child: passed reviews, opened chests, read stories (new) | Phone | Map stations | Until the child profile is deleted |
+| Progress summaries (one per finished activity) | Phone (`progress.v1`); server only with an account | Progress, stars, the parent dashboard | Phone: until the child is deleted. Server: until the parent deletes the child or the account |
+| Certificates, chests, reviews, stories, starting point (`ChildAchievements`) | Server, only with an account | Restore on a new phone | Until the parent deletes the child or the account (database cascade, integration-tested) |
+| Refresh token | Phone keystore; server keeps only its SHA-256 hash | Stay signed in | 30 days, rotated on every use; deleted on sign-out or account deletion |
+| Request logs | Server console/hosting logs | Operations | Method, path, status, timing only (no bodies, tokens, passwords). Kept as long as the hosting keeps logs: **set this to 30 days or less when choosing hosting** |
+
+Without an account nothing in this table leaves the phone, except plain pack downloads (below).
+
+### Pack downloads
+- Anonymous file downloads from our own API (`/packs/...`): no account, no child id, no device id, no cookies.
+  The server sees what any web server sees (IP address and the file path) in its request log.
+- Each file is checked against its SHA-256 before it is used; a pack that does not match is thrown away.
+- No connection: nothing is reported anywhere; the parent area shows "Needs internet to download".
+
+### Sync (only with an account)
+- The phone keeps everything locally and works offline. With an account, the server is the source of truth: each sync
+  sends new progress summaries and the achievements above; sign-in, "Sync now" and the first background sync after the
+  app starts also read them back, so the family's other phones get the same results.
+- Conflicts: every per-activity summary is kept, so the **best result per lesson** counts everywhere; achievements are a
+  union (nothing earned is lost), with the earliest date.
+- A new phone restores children, progress and achievements when the parent signs in.
+
+### Anonymous stats for the content owner
+- `GET /api/admin/stats/lessons` (owner's key only): per lesson activity the number of results and children, average
+  tries, stars and time, and the share of one-star results.
+- **Nothing new is collected**: computed on request from the summaries parents with an account already sync; nothing is
+  stored. Phones without an account contribute nothing.
+- No child, parent or record ids, no names, no dates. A row is shown only when **at least 5 different children** are in it.
+
+### Open decision
+- Inactive accounts are not deleted automatically today. A retention period (for example deleting accounts with no
+  sign-in for 24 months, after an e-mail warning) needs the owner's decision and a line in the privacy policy.
