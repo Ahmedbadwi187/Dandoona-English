@@ -57,7 +57,7 @@ class ServerProgress {
 
 /// The slice of the Kids English API the app uses. Behind an interface so sync logic is tested without a server.
 abstract class SyncApi {
-  Future<AuthTokens> register({required String email, required String password, required String displayName});
+  Future<AuthTokens> register({required String email, required String password, required String displayName, bool guardianConfirmed = false, bool termsAccepted = false});
   Future<AuthTokens> login({required String email, required String password});
   Future<AuthTokens> refresh(String refreshToken);
   Future<String> createChild(String accessToken,
@@ -151,8 +151,14 @@ class HttpSyncApi implements SyncApi {
       AuthTokens(accessToken: json['accessToken'] as String, refreshToken: json['refreshToken'] as String);
 
   @override
-  Future<AuthTokens> register({required String email, required String password, required String displayName}) async =>
-      _tokens(await _post('api/auth/register', {'email': email, 'password': password, 'displayName': displayName}));
+  Future<AuthTokens> register({required String email, required String password, required String displayName, bool guardianConfirmed = false, bool termsAccepted = false}) async =>
+      _tokens(await _post('api/auth/register', {
+        'email': email,
+        'password': password,
+        'displayName': displayName,
+        'guardianConfirmed': guardianConfirmed,
+        'termsAccepted': termsAccepted,
+      }));
 
   @override
   Future<AuthTokens> login({required String email, required String password}) async =>

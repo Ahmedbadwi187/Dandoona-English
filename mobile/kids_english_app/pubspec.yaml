@@ -92,6 +92,7 @@ flutter:
     - assets/images/little_learners/letter_z/
     - assets/images/mascot/
     - assets/images/accessories/
+    - assets/legal/
     - assets/audio/little_learners/unit_animals/
     - assets/audio/little_learners/unit_colors/
     - assets/audio/little_learners/unit_food/

@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/palette.dart';
@@ -121,6 +122,10 @@ class AuthScreen extends StatelessWidget {
     this.onBack,
     this.busy = false,
     this.error,
+    this.onPrivacy,
+    this.onTerms,
+    this.serverUrl,
+    this.onServerUrl,
   });
 
   final Strings s;
@@ -134,6 +139,14 @@ class AuthScreen extends StatelessWidget {
   final VoidCallback? onBack;
   final bool busy;
   final String? error;
+
+  /// Open the privacy policy / the terms (the links in the second checkbox).
+  final VoidCallback? onPrivacy;
+  final VoidCallback? onTerms;
+
+  /// Only for development builds: the address of the server to talk to. Null hides the field.
+  final String? serverUrl;
+  final ValueChanged<String>? onServerUrl;
 
   bool get _valid => email.contains('@') && email.contains('.') && password.length >= 8 && (!signup || (guardian && agreed));
 
@@ -151,6 +164,10 @@ class AuthScreen extends StatelessWidget {
       onSecondary: onToggleMode,
       child: Column(
         children: [
+          if (serverUrl != null) ...[
+            _Field(key: const Key('auth-server'), label: s('serverUrl'), value: serverUrl!, onChanged: onServerUrl ?? (_) {}, keyboard: TextInputType.url),
+            const SizedBox(height: 12),
+          ],
           _Field(key: const Key('auth-email'), label: s('obEmail'), value: email, onChanged: onEmail, keyboard: TextInputType.emailAddress),
           const SizedBox(height: 12),
           _Field(key: const Key('auth-password'), label: s('obPassword'), value: password, onChanged: onPassword, obscure: true),
@@ -163,12 +180,7 @@ class AuthScreen extends StatelessWidget {
               key: const Key('auth-agree'),
               value: agreed,
               onChanged: onAgreed,
-              child: Text.rich(TextSpan(style: _checkStyle, children: [
-                TextSpan(text: s('obAgreePre')),
-                TextSpan(text: s('obPrivacy'), style: _linkStyle),
-                TextSpan(text: s('obAnd')),
-                TextSpan(text: s('obTerms'), style: _linkStyle),
-              ])),
+              child: _AgreeText(s: s, onPrivacy: onPrivacy, onTerms: onTerms),
             ),
           ],
           if (error != null) Padding(padding: const EdgeInsets.only(top: 8), child: Text(error!, style: const TextStyle(color: Palette.red, fontSize: 15))),
@@ -180,6 +192,41 @@ class AuthScreen extends StatelessWidget {
 
 const _checkStyle = TextStyle(fontSize: 16, color: Palette.nightInk, height: 1.35);
 final _linkStyle = _checkStyle.copyWith(color: Palette.plum, decoration: TextDecoration.underline, fontWeight: FontWeight.w800);
+
+/// "I agree to the Privacy Policy and Terms" with both names as links.
+class _AgreeText extends StatefulWidget {
+  const _AgreeText({required this.s, this.onPrivacy, this.onTerms});
+
+  final Strings s;
+  final VoidCallback? onPrivacy;
+  final VoidCallback? onTerms;
+
+  @override
+  State<_AgreeText> createState() => _AgreeTextState();
+}
+
+class _AgreeTextState extends State<_AgreeText> {
+  late final TapGestureRecognizer _privacy = TapGestureRecognizer()..onTap = () => widget.onPrivacy?.call();
+  late final TapGestureRecognizer _terms = TapGestureRecognizer()..onTap = () => widget.onTerms?.call();
+
+  @override
+  void dispose() {
+    _privacy.dispose();
+    _terms.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final s = widget.s;
+    return Text.rich(TextSpan(style: _checkStyle, children: [
+      TextSpan(text: s('obAgreePre')),
+      TextSpan(text: s('obPrivacy'), style: _linkStyle, recognizer: _privacy),
+      TextSpan(text: s('obAnd')),
+      TextSpan(text: s('obTerms'), style: _linkStyle, recognizer: _terms),
+    ]));
+  }
+}
 
 class _Field extends StatefulWidget {
   const _Field({super.key, required this.label, required this.value, required this.onChanged, this.obscure = false, this.keyboard});

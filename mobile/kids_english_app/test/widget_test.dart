@@ -101,11 +101,11 @@ void main() {
   group('full flow', () {
     testWidgets('first launch: onboarding in Arabic (RTL) then create the first profile', (tester) async {
       await pumpApp(tester);
-      expect(find.byKey(const Key('onboarding-start')), findsOneWidget);
-      expect(find.text('أهلاً بك!'), findsOneWidget);
-      expect(Directionality.of(tester.element(find.text('أهلاً بك!'))), TextDirection.rtl);
+      expect(find.byKey(const Key('ob-continue')), findsOneWidget);
+      expect(find.text('أهلاً بك في دندونة إنجليش!'), findsOneWidget);
+      expect(Directionality.of(tester.element(find.text('أهلاً بك في دندونة إنجليش!'))), TextDirection.rtl);
 
-      await tester.tap(find.byKey(const Key('onboarding-start')));
+      await tester.tap(find.byKey(const Key('ob-continue')));
       await tester.pumpAndSettle();
 
       // empty name is rejected with the Arabic message
@@ -127,7 +127,7 @@ void main() {
 
     testWidgets('picking a child opens the 26-letter map; only A is open at first', (tester) async {
       await pumpApp(tester);
-      await tester.tap(find.byKey(const Key('onboarding-start')));
+      await tester.tap(find.byKey(const Key('ob-continue')));
       await tester.pumpAndSettle();
       await tester.enterText(find.byKey(const Key('child-name')), 'Omar');
       await tester.tap(find.byKey(const Key('child-save')));
@@ -152,7 +152,7 @@ void main() {
 
     testWidgets('parent area is reached through the gate and is Arabic RTL', (tester) async {
       await pumpApp(tester);
-      await tester.tap(find.byKey(const Key('onboarding-start')));
+      await tester.tap(find.byKey(const Key('ob-continue')));
       await tester.pumpAndSettle();
       await tester.enterText(find.byKey(const Key('child-name')), 'Omar');
       await tester.tap(find.byKey(const Key('child-save')));

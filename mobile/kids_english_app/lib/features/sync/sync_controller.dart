@@ -53,9 +53,9 @@ class SyncController extends Notifier<SyncUiState> {
   }
 
   /// Signs in (or creates the account) and brings the family's children and progress from the server to this device.
-  Future<void> signIn(String baseUrl, String email, String password, {bool register = false}) => _run(() async {
+  Future<void> signIn(String baseUrl, String email, String password, {bool register = false, String firstName = '', bool guardianConfirmed = true, bool termsAccepted = true}) => _run(() async {
         if (register) {
-          await _service.register(baseUrl.trim(), email.trim(), password);
+          await _service.register(baseUrl.trim(), email.trim(), password, firstName: firstName, guardianConfirmed: guardianConfirmed, termsAccepted: termsAccepted);
         } else {
           await _service.login(baseUrl.trim(), email.trim(), password);
         }

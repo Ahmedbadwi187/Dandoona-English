@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../core/palette.dart';
 import 'delete_account_dialog.dart';
 import '../settings/settings.dart';
 import 'sync_controller.dart';
 
-/// Settings section: optional parent account + sync. The app works fully offline without it.
+/// Settings section: the optional parent account. Without one everything stays on the device; creating or logging in to one
+/// happens on its own screen (the same one as in the first-launch flow) and uploads what is already here.
 class SyncSection extends ConsumerStatefulWidget {
   const SyncSection({super.key});
 
@@ -15,25 +17,12 @@ class SyncSection extends ConsumerStatefulWidget {
 }
 
 class _SyncSectionState extends ConsumerState<SyncSection> {
-  late final TextEditingController _url;
-  final _email = TextEditingController();
-  final _password = TextEditingController();
+  late final String _email = ref.read(syncStoreProvider).load().email;
 
   @override
   void initState() {
     super.initState();
-    final saved = ref.read(syncStoreProvider).load();
-    _url = TextEditingController(text: saved.baseUrl.isNotEmpty ? saved.baseUrl : defaultApiBaseUrl);
-    _email.text = saved.email;
     Future.microtask(() => ref.read(syncControllerProvider.notifier).refreshStatus());
-  }
-
-  @override
-  void dispose() {
-    _url.dispose();
-    _email.dispose();
-    _password.dispose();
-    super.dispose();
   }
 
   @override
@@ -55,53 +44,14 @@ class _SyncSectionState extends ConsumerState<SyncSection> {
             Text(s('syncOptional'), style: const TextStyle(fontSize: 13)),
             const SizedBox(height: 12),
             if (!ui.signedIn) ...[
-              TextField(
-                key: const Key('sync-url'),
-                controller: _url,
-                keyboardType: TextInputType.url,
-                textDirection: TextDirection.ltr,
-                decoration: InputDecoration(labelText: s('serverUrl'), hintText: 'https://'),
-              ),
-              const SizedBox(height: 10),
-              TextField(
-                key: const Key('sync-email'),
-                controller: _email,
-                keyboardType: TextInputType.emailAddress,
-                textDirection: TextDirection.ltr,
-                autofillHints: const [AutofillHints.email],
-                decoration: InputDecoration(labelText: s('email')),
-              ),
-              const SizedBox(height: 10),
-              TextField(
-                key: const Key('sync-password'),
-                controller: _password,
-                obscureText: true,
-                textDirection: TextDirection.ltr,
-                autofillHints: const [AutofillHints.password],
-                decoration: InputDecoration(labelText: s('password')),
-              ),
-              const SizedBox(height: 12),
-              Row(
-                children: [
-                  Expanded(
-                    child: FilledButton(
-                      key: const Key('sync-login'),
-                      onPressed: ui.busy ? null : () => controller.signIn(_url.text, _email.text, _password.text),
-                      child: Text(s('login')),
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: OutlinedButton(
-                      key: const Key('sync-register'),
-                      onPressed: ui.busy ? null : () => controller.signIn(_url.text, _email.text, _password.text, register: true),
-                      child: Text(s('register')),
-                    ),
-                  ),
-                ],
+              FilledButton.icon(
+                key: const Key('sync-open-auth'),
+                onPressed: () => context.push('/auth?from=settings'),
+                icon: const Icon(Icons.cloud_sync_rounded),
+                label: Text(s('obAccount')),
               ),
             ] else ...[
-              Text('${s('signedInAs')} ${_email.text}', key: const Key('sync-signed-in')),
+              Text('${s('signedInAs')} $_email', key: const Key('sync-signed-in')),
               if (last != null) Text('${s('lastSync')}: ${last.toLocal().toString().substring(0, 16)}', style: const TextStyle(fontSize: 12)),
               if (ref.read(syncServiceProvider).pendingDeleteCount > 0)
                 Text('${s('pendingDeletes')} ${ref.read(syncServiceProvider).pendingDeleteCount}', key: const Key('pending-deletes'), style: const TextStyle(fontSize: 12)),

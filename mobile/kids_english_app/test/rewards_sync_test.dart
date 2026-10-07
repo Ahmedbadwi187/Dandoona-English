@@ -29,6 +29,8 @@ ChildProfile kid(String id, [String name = 'Omar']) =>
 
 /// Scriptable server stand-in.
 class FakeSyncApi implements SyncApi {
+  /// Every sign-up the app sent (what the server would store about consent).
+  final registrations = <({String email, String displayName, bool guardianConfirmed, bool termsAccepted})>[];
   /// What the "server" already holds for this parent (for the sign-in pull): children and their records.
   final List<ServerChild> serverChildren = [];
   final Map<String, List<ServerProgress>> serverProgress = {};
@@ -48,8 +50,9 @@ class FakeSyncApi implements SyncApi {
   final Set<String> _validRefresh = {};
 
   @override
-  Future<AuthTokens> register({required String email, required String password, required String displayName}) async {
+  Future<AuthTokens> register({required String email, required String password, required String displayName, bool guardianConfirmed = false, bool termsAccepted = false}) async {
     _net();
+    registrations.add((email: email, displayName: displayName, guardianConfirmed: guardianConfirmed, termsAccepted: termsAccepted));
     _validRefresh.add('refresh-0');
     return const AuthTokens(accessToken: 'access-0', refreshToken: 'refresh-0');
   }
@@ -626,7 +629,7 @@ void main() {
       await tester.pumpAndSettle();
       expect(api.accountDeleted, isTrue);
       expect(find.text('تم حذف الحساب'), findsOneWidget);
-      expect(find.byKey(const Key('sync-login')), findsOneWidget);
+      expect(find.byKey(const Key('sync-open-auth')), findsOneWidget);
     });
   });
 
@@ -639,29 +642,35 @@ void main() {
   });
 
   group('settings sync section', () {
-    testWidgets('sign in, sync now, see the result, sign out', (tester) async {
-      final api = FakeSyncApi();
-      final tokens = MemoryTokenStore();
+    Future<ProviderContainer> open(FakeSyncApi api, WidgetTester tester, {bool signedIn = false}) async {
       final base = await testOverrides();
       final container = ProviderContainer(overrides: [
         ...base,
         syncApiFactoryProvider.overrideWithValue((_) => api),
-        tokenStoreProvider.overrideWithValue(tokens),
+        tokenStoreProvider.overrideWithValue(MemoryTokenStore()),
       ]);
       addTearDown(container.dispose);
       await container.read(profilesProvider.notifier).add(name: 'Omar', avatarKey: 'star', birthYear: 2022);
-
+      if (signedIn) await container.read(syncControllerProvider.notifier).signIn('http://x', 'mom@example.com', 'secret');
       await tester.pumpWidget(UncontrolledProviderScope(container: container, child: const MaterialApp(home: SettingsScreen())));
       await tester.pump();
-      await tester.scrollUntilVisible(find.byKey(const Key('sync-url')), 200, scrollable: find.byType(Scrollable).first);
+      await tester.scrollUntilVisible(find.byKey(const Key('sync-section')), 200, scrollable: find.byType(Scrollable).first);
+      return container;
+    }
 
-      await tester.enterText(find.byKey(const Key('sync-url')), 'http://10.0.2.2:5080');
-      await tester.enterText(find.byKey(const Key('sync-email')), 'mom@example.com');
-      await tester.enterText(find.byKey(const Key('sync-password')), 'secret');
-      await tester.tap(find.byKey(const Key('sync-login')));
-      await tester.pumpAndSettle();
+    testWidgets('without an account there is one button (no form here): the account screen is shared with the first-launch flow', (tester) async {
+      await open(FakeSyncApi(), tester);
+      expect(find.byKey(const Key('sync-open-auth')), findsOneWidget);
+      expect(find.byKey(const Key('sync-url')), findsNothing);
+      expect(find.byKey(const Key('sync-email')), findsNothing);
+      expect(find.byKey(const Key('sync-now')), findsNothing);
+    });
+
+    testWidgets('signed in: sync now sends the children, then sign out returns to the button', (tester) async {
+      final api = FakeSyncApi();
+      await open(api, tester, signedIn: true);
+      await tester.pump();
       expect(find.byKey(const Key('sync-signed-in')), findsOneWidget);
-      expect(find.text('تم تسجيل الدخول'), findsOneWidget);
 
       await tester.tap(find.byKey(const Key('sync-now')));
       await tester.pumpAndSettle();
@@ -670,29 +679,7 @@ void main() {
 
       await tester.tap(find.byKey(const Key('sync-signout')));
       await tester.pumpAndSettle();
-      expect(find.byKey(const Key('sync-login')), findsOneWidget);
-    });
-
-    testWidgets('wrong password shows a friendly error and stays signed out', (tester) async {
-      final api = FakeSyncApi()..failLogin = true;
-      final base = await testOverrides();
-      final container = ProviderContainer(overrides: [
-        ...base,
-        syncApiFactoryProvider.overrideWithValue((_) => api),
-        tokenStoreProvider.overrideWithValue(MemoryTokenStore()),
-      ]);
-      addTearDown(container.dispose);
-
-      await tester.pumpWidget(UncontrolledProviderScope(container: container, child: const MaterialApp(home: SettingsScreen())));
-      await tester.pump();
-      await tester.scrollUntilVisible(find.byKey(const Key('sync-url')), 200, scrollable: find.byType(Scrollable).first);
-      await tester.enterText(find.byKey(const Key('sync-url')), 'http://x');
-      await tester.enterText(find.byKey(const Key('sync-email')), 'mom@example.com');
-      await tester.enterText(find.byKey(const Key('sync-password')), 'nope');
-      await tester.tap(find.byKey(const Key('sync-login')));
-      await tester.pumpAndSettle();
-      expect(find.text('البريد أو كلمة المرور غير صحيحة'), findsOneWidget);
-      expect(find.byKey(const Key('sync-signed-in')), findsNothing);
+      expect(find.byKey(const Key('sync-open-auth')), findsOneWidget);
     });
   });
 }

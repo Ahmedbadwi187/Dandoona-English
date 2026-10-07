@@ -1,6 +1,7 @@
 # Privacy policy and account-deletion pages (DRAFT)
 
 Two self-contained static pages, each in English and Arabic (Arabic is right-to-left):
+- `terms.html` (draft terms of use, English and Arabic)
 - `privacy-policy.html`
 - `delete-account.html`
 

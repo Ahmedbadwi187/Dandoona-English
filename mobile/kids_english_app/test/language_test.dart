@@ -59,8 +59,8 @@ void main() {
       await t.tap(find.byKey(const Key('ob-continue')));
       await t.pumpAndSettle();
       expect(c.read(settingsProvider).languageCode, 'en');
-      expect(find.byKey(const Key('onboarding-start')), findsOneWidget); // the next screen
-      expect(Directionality.of(t.element(find.byKey(const Key('onboarding-start')))), TextDirection.ltr);
+      expect(find.byKey(const Key('ob-continue')), findsOneWidget); // the next screen
+      expect(Directionality.of(t.element(find.byKey(const Key('ob-continue')))), TextDirection.ltr);
     });
 
     testWidgets('it is shown on the first launch only: the choice is saved and the next launch skips it', (t) async {

@@ -146,9 +146,16 @@ class SyncService {
   final TokenStore tokens;
   final int batchSize;
 
-  Future<void> register(String baseUrl, String email, String password) async {
+  /// [firstName] is the parent's optional first name; both confirmations (parent or guardian aged 18+, privacy policy and terms) are required by the server.
+  Future<void> register(String baseUrl, String email, String password, {String firstName = '', bool guardianConfirmed = true, bool termsAccepted = true}) async {
     final api = apiFor(baseUrl);
-    final t = await api.register(email: email, password: password, displayName: 'Parent');
+    final t = await api.register(
+      email: email,
+      password: password,
+      displayName: firstName.trim(),
+      guardianConfirmed: guardianConfirmed,
+      termsAccepted: termsAccepted,
+    );
     await _signedIn(baseUrl, email, t);
   }
 

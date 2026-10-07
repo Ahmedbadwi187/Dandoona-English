@@ -7,11 +7,11 @@ import 'features/certificate/unit_celebration_screen.dart';
 import 'features/child/lesson_screen.dart';
 import 'features/child/letter_map_screen.dart';
 import 'features/child/profile_picker_screen.dart';
+import 'features/onboarding/account_routes.dart';
 import 'features/onboarding/language_route.dart';
 import 'features/parent/child_form_screen.dart';
 import 'features/rewards/wardrobe_screen.dart';
 import 'features/parent/children_screen.dart';
-import 'features/parent/onboarding_screen.dart';
 import 'features/parent/parent_home_screen.dart';
 import 'features/parent/settings_screen.dart';
 import 'features/profiles/child_profile.dart';
@@ -50,9 +50,11 @@ final routerProvider = Provider<GoRouter>((ref) {
       languageChosen: ref.read(settingsProvider).languageChosen,
     ),
     routes: [
-      GoRoute(path: '/', builder: (_, _) => const OnboardingScreen()), // redirected by guardRoute
+      GoRoute(path: '/', builder: (_, _) => const ParentWelcomeRoute()), // redirected by guardRoute
       GoRoute(path: '/language', builder: (_, _) => const LanguageRoute()),
-      GoRoute(path: '/onboarding', builder: (_, _) => const OnboardingScreen()),
+      GoRoute(path: '/onboarding', builder: (_, _) => const ParentWelcomeRoute()),
+      GoRoute(path: '/auth', builder: (_, state) => AuthRoute(fromSettings: state.uri.queryParameters['from'] == 'settings')),
+      GoRoute(path: '/legal/:doc', builder: (_, state) => LegalScreen(doc: state.pathParameters['doc']!)),
       GoRoute(path: '/onboarding/child', builder: (_, _) => const ChildFormScreen(firstRun: true)),
       GoRoute(path: '/who', builder: (_, _) => const ProfilePickerScreen()),
       GoRoute(path: '/map', builder: (_, _) => const UnitMapScreen()),
