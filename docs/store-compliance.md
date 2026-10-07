@@ -72,3 +72,9 @@ and the privacy laws of the Arab countries you target).
 3. Build and test on iOS (needs a Mac). Test on a few real low-end Android phones.
 4. Decide the production hosting for the API (https, SQL Server licensing beyond Express limits, backups, monitoring).
 5. Listen to the phoneme clips and sound-out intros flagged in `asset-decisions.md`; record your own where TTS is wrong.
+
+## Unit certificate (added with units)
+- The certificate (child's nickname, unit name, date, Dandoona) is drawn on the device and turned into a PNG there; no service is involved.
+- Saving or sharing sits behind the parental gate and uses the system share sheet (`share_plus`): no storage permission, no new Android
+  permission (release manifest still has only `RECORD_AUDIO` and `INTERNET`), and the app never sends the picture anywhere itself.
+- The picture contains the nickname the parent chose; the parent decides where it goes. Mention this in the privacy policy text before publishing.

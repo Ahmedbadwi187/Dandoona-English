@@ -67,6 +67,7 @@ In use (versions from pubspec.yaml; licenses read from pub.dev on 2026-10-06):
 | http | ^1.5.0 | BSD-3-Clause |
 | crypto | ^3.0.6 | BSD-3-Clause |
 | flutter_secure_storage (+ _darwin, _linux, _platform_interface, _web, _windows) | ^11.2.0 | BSD-3-Clause |
+| share_plus (+ _platform_interface, cross_file, mime) | ^13.3.1 | BSD-3-Clause (opens the system share sheet for the certificate; no permission, no network by itself) |
 | Transitive: ffi_leak_tracker, win32 | resolved in pubspec.lock | BSD-3-Clause |
 | Transitive build/plugin helpers: code_assets, hooks, jni, jni_flutter, jni_util, objective_c, package_config, pub_semver, record_use | resolved in pubspec.lock | BSD-3-Clause |
 | Transitive: synchronized, yaml | resolved in pubspec.lock | MIT |

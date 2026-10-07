@@ -31,6 +31,7 @@ Serilog structured logs must never include passwords, tokens, API keys, request 
 |---|---|---|---|
 | `children.v1` | id, name (nickname, max 30), avatarKey, birthYear, track, createdAt | Child profiles | No photo, email, full name or exact birth date. Deleted with the profile. |
 | `progress.v1` | clientRecordId, childId, lessonId, activity, stars, attempts, timeSpentSeconds, completedAt | Progress and the parent dashboard | Deleted with the child. |
+| `meta.v2` | per child: unit id -> date a certificate was earned, and which unit celebrations were already shown | Show the unit certificates and show each celebration once | Deleted with the child. Written by the one-time migration for children who finished Letters before units existed; `progress.v1` is never rewritten. |
 | `settings.v1` | languageCode, sessionMinutes, unlockAll, onboarded | Parent settings | |
 
 The app collects no analytics, advertising identifiers, location or contacts. The microphone is only used by the

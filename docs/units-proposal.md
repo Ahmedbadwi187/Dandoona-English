@@ -1,6 +1,6 @@
 # Units proposal (for approval, nothing built yet)
 
-Written for the project owner. Covers: content structure, Colors unit, two unit-map designs, certificate, cost, open decisions.
+Written for the project owner. **Status: approved and built (Parts 1-4 committed separately).** Covers: content structure, Colors unit, two unit-map designs, certificate, cost.
 
 ## 1. Content structure
 

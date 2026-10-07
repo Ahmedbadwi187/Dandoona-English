@@ -19,6 +19,8 @@ import '../profiles/child_profile.dart';
 import '../progress/progress.dart';
 import '../rewards/accessories.dart';
 import '../session/session.dart';
+import '../units/unit_logic.dart';
+import '../units/unit_meta.dart';
 import 'activity_logic.dart';
 import 'color_the_object_activity.dart';
 import 'listen_and_tap_activity.dart';
@@ -74,6 +76,9 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
   ActivityResult? _result;
   List<Accessory> _unlocked = const [];
 
+  /// Set when this result finished a unit for the first time: the celebration and certificate come before the map.
+  String? _celebrateUnit;
+
   Future<void> _finished(ActivityResult result) async {
     if (_result != null) return;
     setState(() => _result = result);
@@ -91,7 +96,25 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
           timeSpentSeconds: _stopwatch.elapsed.inSeconds,
           completedAt: ref.read(clockProvider)(),
         ));
-    if (mounted) setState(() => _unlocked = newlyUnlocked(before, progress.totalStars(childId)));
+    final unit = widget.track.unitOfLesson(widget.lesson.id);
+    final firstFinish = unit != null &&
+        isUnitFinished(unit, (id) => progress.hasProgress(childId, id)) &&
+        !ref.read(unitMetaProvider).of(childId).celebrated.contains(unit.id);
+    if (mounted) {
+      setState(() {
+        _unlocked = newlyUnlocked(before, progress.totalStars(childId));
+        if (firstFinish) _celebrateUnit = unit.id;
+      });
+    }
+  }
+
+  void _done() {
+    final celebrate = _celebrateUnit;
+    if (celebrate != null) {
+      context.go('/unit/$celebrate/celebrate');
+    } else {
+      context.go('/unit/${widget.track.unitOfLesson(widget.lesson.id)?.id ?? widget.track.units.first.id}');
+    }
   }
 
   @override
@@ -114,7 +137,7 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
         ),
         Expanded(
           child: result != null
-              ? ActivityResultView(stars: result.stars, lesson: widget.lesson, mascot: widget.track.mascot, unlocked: _unlocked, onDone: () => context.go('/unit/${widget.track.unitOfLesson(widget.lesson.id)?.id ?? widget.track.units.first.id}'))
+              ? ActivityResultView(stars: result.stars, lesson: widget.lesson, mascot: widget.track.mascot, unlocked: _unlocked, onDone: _done)
               : switch (widget.activity) {
                   'listen-and-tap' => ListenAndTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   'match-picture' => MatchPictureActivity(lesson: widget.lesson, onFinished: _finished),

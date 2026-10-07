@@ -2,6 +2,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'features/activities/activity_screen.dart';
+import 'features/certificate/certificate_screen.dart';
+import 'features/certificate/unit_celebration_screen.dart';
 import 'features/child/lesson_screen.dart';
 import 'features/child/letter_map_screen.dart';
 import 'features/child/profile_picker_screen.dart';
@@ -49,6 +51,8 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/who', builder: (_, _) => const ProfilePickerScreen()),
       GoRoute(path: '/map', builder: (_, _) => const UnitMapScreen()),
       GoRoute(path: '/unit/:id', builder: (_, state) => LetterMapScreen(unitId: state.pathParameters['id'])),
+      GoRoute(path: '/unit/:id/celebrate', builder: (_, state) => UnitCelebrationScreen(unitId: state.pathParameters['id']!)),
+      GoRoute(path: '/certificate/:unitId', builder: (_, state) => CertificateScreen(unitId: state.pathParameters['unitId']!)),
       GoRoute(path: '/wardrobe', builder: (_, _) => const WardrobeScreen()),
       GoRoute(
         path: '/lesson/:id',

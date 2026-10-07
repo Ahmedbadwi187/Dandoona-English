@@ -4,6 +4,7 @@
 | ABI | Before ffmpeg export (2026-10-06) | After (2026-10-07) |
 |---|---|---|
 | arm64-v8a (most phones) | 24.7 MB | 21.6 MB |
+| arm64-v8a, after units + Colors + certificate (2026-10-07) | | 27.1 MB (armeabi-v7a 24.8, x86_64 28.5; +2.4 MB of Colors lessons, the rest the share package) |
 | armeabi-v7a (older phones) | 22.4 MB | 19.4 MB |
 | x86_64 | 26.2 MB | 23.1 MB |
 
