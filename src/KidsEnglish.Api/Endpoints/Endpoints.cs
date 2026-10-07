@@ -1,5 +1,7 @@
 using KidsEnglish.Application.Auth;
 using KidsEnglish.Application.Children;
+using System.Security.Cryptography;
+using System.Text;
 using KidsEnglish.Application.Progress;
 
 namespace KidsEnglish.Api.Endpoints;
@@ -88,5 +90,22 @@ public static class Endpoints
 
         app.MapGet("/api/summary", async (DateOnly? weekStart, ProgressService s, CancellationToken ct) =>
             Results.Ok(await s.WeeklySummariesAsync(weekStart, ct))).WithTags("Progress").RequireAuthorization();
+    }
+
+    /// <summary>
+    /// Anonymous lesson stats for the content owner (see <see cref="StatsService"/>). Only with the key from Stats:Key
+    /// (user-secrets or the server's environment, never in the app) in the X-Stats-Key header; without a configured key
+    /// the endpoint answers 404 as if it did not exist.
+    /// </summary>
+    public static void MapStatsEndpoints(this IEndpointRouteBuilder app, IConfiguration config)
+    {
+        app.MapGet("/api/admin/stats/lessons", async (HttpRequest req, DateOnly? from, StatsService s, CancellationToken ct) =>
+        {
+            var key = config["Stats:Key"];
+            if (string.IsNullOrEmpty(key)) return Results.NotFound();
+            var sent = req.Headers["X-Stats-Key"].ToString();
+            if (!CryptographicOperations.FixedTimeEquals(Encoding.UTF8.GetBytes(sent), Encoding.UTF8.GetBytes(key))) return Results.Unauthorized();
+            return Results.Ok(await s.LessonsAsync(from, ct));
+        }).WithTags("Admin").AllowAnonymous().RequireRateLimiting("auth");
     }
 }

@@ -79,6 +79,7 @@ app.MapAuthEndpoints();
 app.MapChildEndpoints();
 app.MapProgressEndpoints();
 app.MapAccountEndpoints();
+app.MapStatsEndpoints(app.Configuration);
 
 app.Run();
 

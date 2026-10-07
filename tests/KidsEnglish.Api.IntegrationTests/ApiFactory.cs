@@ -25,6 +25,8 @@ public class ApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
 
     private string ConnectionString => ExternalDb ?? _sql!.GetConnectionString();
 
+    public const string StatsKey = "test-stats-key-0123456789";
+
     /// <summary>A throwaway packs folder the API serves at /packs (tests write pack files into it).</summary>
     public string PacksRoot { get; } = Directory.CreateTempSubdirectory("packs").FullName;
 
@@ -51,6 +53,7 @@ public class ApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
         builder.UseSetting("RateLimiting:AuthPermitsPerMinute", "10000");
         builder.UseSetting("Jwt:Key", "integration-tests-only-signing-key-0123456789");
         builder.UseSetting("ContentPacks:Root", PacksRoot);
+        builder.UseSetting("Stats:Key", StatsKey);
         builder.ConfigureServices(services =>
         {
             services.RemoveAll<IEmailSender>();

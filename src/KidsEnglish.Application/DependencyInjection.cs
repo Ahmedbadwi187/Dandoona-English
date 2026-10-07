@@ -15,6 +15,7 @@ public static class DependencyInjection
         services.AddScoped<ChildService>();
         services.AddScoped<ProgressService>();
         services.AddScoped<AchievementService>();
+        services.AddScoped<StatsService>();
         services.AddScoped<AccountService>();
         return services;
     }
