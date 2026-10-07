@@ -286,8 +286,6 @@ void main() {
       ));
       await tester.pumpAndSettle();
 
-      await tester.tap(find.text('Omar'));
-      await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('unit-letters'))); // the home screen is the unit map
       await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('node-letter-a')));
@@ -310,8 +308,6 @@ void main() {
         overrides: [...overrides, audioServiceProvider.overrideWithValue(audio), recorderServiceProvider.overrideWithValue(FakeRecorder())],
         child: const KidsEnglishApp(),
       ));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('Omar'));
       await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('unit-letters'))); // the home screen is the unit map
       await tester.pumpAndSettle();

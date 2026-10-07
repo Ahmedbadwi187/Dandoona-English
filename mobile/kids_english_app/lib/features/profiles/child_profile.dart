@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/storage.dart';
 import '../progress/progress.dart';
+import '../settings/settings.dart';
 import '../units/unit_meta.dart';
 
 /// A child profile. A nickname, a drawn avatar, the birth month and year, and the daily goal the parent chose: no photo, no
@@ -161,10 +162,14 @@ class ProfilesNotifier extends Notifier<List<ChildProfile>> {
 
 final profilesProvider = NotifierProvider<ProfilesNotifier, List<ChildProfile>>(ProfilesNotifier.new);
 
-/// The child currently playing (in memory only).
+/// The child currently playing (in memory only). On a returning launch with exactly one child that child is already the
+/// active one, so the app opens straight on their unit map.
 class ActiveChildNotifier extends Notifier<String?> {
   @override
-  String? build() => null;
+  String? build() {
+    final profiles = ref.read(profilesProvider);
+    return profiles.length == 1 && ref.read(settingsProvider).onboarded ? profiles.first.id : null;
+  }
   void select(String? id) => state = id;
 }
 

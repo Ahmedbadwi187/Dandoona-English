@@ -29,10 +29,12 @@ String? guardRoute({
   required bool parentUnlocked,
   required bool hasActiveChild,
   bool languageChosen = true,
+  bool singleChild = false,
 }) {
   // First launch: the language screen comes before anything else.
   if (!languageChosen && location != '/language') return '/language';
-  if (location == '/') return onboarded && hasProfiles ? '/who' : '/onboarding';
+  // Later launches: with exactly one child there is nobody to choose, so the unit map opens for that child.
+  if (location == '/') return onboarded && hasProfiles ? (singleChild ? '/map' : '/who') : '/onboarding';
   if (location == '/who' && !hasProfiles) return '/onboarding';
   // Parent area is only reachable through the parental gate.
   if (location.startsWith('/parent') && !parentUnlocked) return '/who';
@@ -43,14 +45,19 @@ String? guardRoute({
 final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
     initialLocation: '/',
-    redirect: (context, state) => guardRoute(
-      location: state.matchedLocation,
-      onboarded: ref.read(settingsProvider).onboarded,
-      hasProfiles: ref.read(profilesProvider).isNotEmpty,
-      parentUnlocked: ref.read(parentSessionProvider),
-      hasActiveChild: ref.read(activeChildIdProvider) != null,
-      languageChosen: ref.read(settingsProvider).languageChosen,
-    ),
+    redirect: (context, state) {
+      final profiles = ref.read(profilesProvider);
+      final single = profiles.length == 1; // (the active child is already that child: see ActiveChildNotifier)
+      return guardRoute(
+        location: state.matchedLocation,
+        onboarded: ref.read(settingsProvider).onboarded,
+        hasProfiles: profiles.isNotEmpty,
+        parentUnlocked: ref.read(parentSessionProvider),
+        hasActiveChild: ref.read(activeChildIdProvider) != null,
+        languageChosen: ref.read(settingsProvider).languageChosen,
+        singleChild: single,
+      );
+    },
     routes: [
       GoRoute(path: '/', builder: (_, _) => const ParentWelcomeRoute()), // redirected by guardRoute
       GoRoute(path: '/language', builder: (_, _) => const LanguageRoute()),

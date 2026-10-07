@@ -107,8 +107,6 @@ void main() {
       });
       await t.pumpWidget(ProviderScope(overrides: [...overrides, audioServiceProvider.overrideWithValue(FakeAudio())], child: const KidsEnglishApp()));
       await t.pumpAndSettle();
-      await t.tap(find.text('Omar'));
-      await t.pumpAndSettle();
 
       expect(find.byKey(const Key('unit-done-letters')), findsOneWidget);
       expect(find.byKey(const Key('unit-certificate-letters')), findsNothing); // placed, not earned

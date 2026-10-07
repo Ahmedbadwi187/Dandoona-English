@@ -113,7 +113,7 @@ void main() {
     });
 
     testWidgets('picking a child opens the 26-letter map; only A is open at first', (tester) async {
-      await pumpApp(tester, prefs: {'settings.v1': '{"languageCode":"ar","sessionMinutes":15,"unlockAll":false,"onboarded":true}', 'children.v1': '[{"id":"c1","name":"Omar","avatarKey":"bunny","birthYear":2022,"track":"little-learners","createdAt":"2026-01-01T00:00:00Z"}]'});
+      await pumpApp(tester, prefs: {'settings.v1': '{"languageCode":"ar","sessionMinutes":15,"unlockAll":false,"onboarded":true}', 'children.v1': '[{"id":"c1","name":"Omar","avatarKey":"bunny","birthYear":2022,"track":"little-learners","createdAt":"2026-01-01T00:00:00Z"},{"id":"c2","name":"Lina","avatarKey":"cat","birthYear":2022,"track":"little-learners","createdAt":"2026-01-02T00:00:00Z"}]'});
 
       await tester.tap(find.text('Omar'));
       await tester.pumpAndSettle();
@@ -133,7 +133,7 @@ void main() {
     });
 
     testWidgets('parent area is reached through the gate and is Arabic RTL', (tester) async {
-      await pumpApp(tester, prefs: {'settings.v1': '{"languageCode":"ar","sessionMinutes":15,"unlockAll":false,"onboarded":true}', 'children.v1': '[{"id":"c1","name":"Omar","avatarKey":"bunny","birthYear":2022,"track":"little-learners","createdAt":"2026-01-01T00:00:00Z"}]'});
+      await pumpApp(tester, prefs: {'settings.v1': '{"languageCode":"ar","sessionMinutes":15,"unlockAll":false,"onboarded":true}', 'children.v1': '[{"id":"c1","name":"Omar","avatarKey":"bunny","birthYear":2022,"track":"little-learners","createdAt":"2026-01-01T00:00:00Z"},{"id":"c2","name":"Lina","avatarKey":"cat","birthYear":2022,"track":"little-learners","createdAt":"2026-01-02T00:00:00Z"}]'});
 
       await tester.tap(find.byKey(const Key('open-parent-area')));
       await tester.pump();
@@ -157,11 +157,18 @@ void main() {
       expect(find.byKey(const Key('parent-child-c1')), findsOneWidget); // Omar's card
     });
 
-    testWidgets('returning user (already onboarded, has a profile) goes straight to the picker', (tester) async {
-      await pumpApp(tester, prefs: {
-        'settings.v1': '{"languageCode":"ar","sessionMinutes":15,"unlockAll":false,"onboarded":true}',
-        'children.v1': '[{"id":"c1","name":"Omar","avatarKey":"star","birthYear":2022,"track":"little-learners","createdAt":"2026-01-01T00:00:00Z"}]',
-      });
+    const omar = '{"id":"c1","name":"Omar","avatarKey":"star","birthYear":2022,"track":"little-learners","createdAt":"2026-01-01T00:00:00Z"}';
+    const lina = '{"id":"c2","name":"Lina","avatarKey":"cat","birthYear":2022,"track":"little-learners","createdAt":"2026-01-02T00:00:00Z"}';
+    const settings = '{"languageCode":"ar","sessionMinutes":15,"unlockAll":false,"onboarded":true}';
+
+    testWidgets('returning user with one child goes straight to that childs unit map', (tester) async {
+      await pumpApp(tester, prefs: {'settings.v1': settings, 'children.v1': '[$omar]'});
+      expect(find.byKey(const Key('unit-map')), findsOneWidget);
+      expect(find.text('Who is playing?'), findsNothing);
+    });
+
+    testWidgets('returning user with more than one child sees who is playing', (tester) async {
+      await pumpApp(tester, prefs: {'settings.v1': settings, 'children.v1': '[$omar,$lina]'});
       expect(find.text('Who is playing?'), findsOneWidget);
     });
   });

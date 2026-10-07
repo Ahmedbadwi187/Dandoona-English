@@ -42,8 +42,6 @@ Future<(FakeAudio, ProviderContainer)> _openMap(WidgetTester t, {String? progres
   addTearDown(container.dispose);
   await t.pumpWidget(UncontrolledProviderScope(container: container, child: const KidsEnglishApp()));
   await t.pumpAndSettle();
-  await t.tap(find.text('Omar'));
-  await t.pumpAndSettle();
   return (audio, container);
 }
 

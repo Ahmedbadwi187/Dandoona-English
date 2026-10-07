@@ -57,8 +57,6 @@ Future<(FakeAudio, _FakeSharer, ProviderContainer)> _open(WidgetTester t, {requi
   addTearDown(container.dispose);
   await t.pumpWidget(UncontrolledProviderScope(container: container, child: const KidsEnglishApp()));
   await t.pumpAndSettle();
-  await t.tap(find.text('Omar'));
-  await t.pumpAndSettle();
   return (audio, sharer, container);
 }
 

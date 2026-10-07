@@ -68,8 +68,6 @@ void main() {
       child: const KidsEnglishApp(),
     ));
     await t.pumpAndSettle();
-    await t.tap(find.text('Omar'));
-    await t.pumpAndSettle();
     await t.tap(find.byKey(const Key('unit-letters')));
     await t.pumpAndSettle();
     await t.tap(find.byKey(const Key('node-letter-a')));

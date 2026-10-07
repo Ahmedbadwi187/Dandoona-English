@@ -207,6 +207,13 @@ void main() {
       expect(guard('/'), '/who');
     });
 
+    test('a returning launch with exactly one child opens the map of that child; with more it asks who is playing', () {
+      String? root({required bool single}) => guardRoute(location: '/', onboarded: true, hasProfiles: true, parentUnlocked: false, hasActiveChild: single, singleChild: single);
+      expect(root(single: true), '/map');
+      expect(root(single: false), '/who');
+      expect(guardRoute(location: '/', onboarded: false, hasProfiles: false, parentUnlocked: false, hasActiveChild: false, singleChild: false), '/onboarding');
+    });
+
     test('the parent area is unreachable without passing the gate', () {
       for (final path in ['/parent', '/parent/settings', '/parent/children', '/parent/children/new', '/parent/children/abc']) {
         expect(guard(path), '/who', reason: path);
