@@ -78,6 +78,7 @@ class SyncController extends Notifier<SyncUiState> {
         name: p.child.name,
         avatarKey: p.child.avatarKey,
         birthYear: p.child.birthYear,
+        birthMonth: p.child.birthMonth,
         track: p.child.track,
       ))
           .id;

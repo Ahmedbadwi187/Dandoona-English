@@ -35,6 +35,7 @@ class FakeSyncApi implements SyncApi {
   final List<ServerChild> serverChildren = [];
   final Map<String, List<ServerProgress>> serverProgress = {};
   final List<String> createdChildren = [];
+  final List<int?> createdBirthMonths = []; // the birth month each created child was sent with
   final Map<String, Set<String>> stored = {}; // server child id -> client record guids
   int refreshCalls = 0;
   int submitCalls = 0;
@@ -75,9 +76,10 @@ class FakeSyncApi implements SyncApi {
   }
 
   @override
-  Future<String> createChild(String accessToken, {required String name, required String avatarKey, required int birthYear, required String track}) async {
+  Future<String> createChild(String accessToken, {required String name, required String avatarKey, required int birthYear, required String track, int? birthMonth}) async {
     _net();
     final id = 'server-${createdChildren.length}';
+    createdBirthMonths.add(birthMonth);
     createdChildren.add(name);
     stored[id] = {};
     return id;

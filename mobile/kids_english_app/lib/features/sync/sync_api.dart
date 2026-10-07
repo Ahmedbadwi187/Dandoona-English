@@ -27,12 +27,13 @@ class SubmitResult {
 
 /// A child as the server stores it.
 class ServerChild {
-  const ServerChild({required this.id, required this.name, required this.avatarKey, required this.birthYear, required this.track});
+  const ServerChild({required this.id, required this.name, required this.avatarKey, required this.birthYear, required this.track, this.birthMonth});
   final String id;
   final String name;
   final String avatarKey;
   final int birthYear;
   final String track;
+  final int? birthMonth;
 }
 
 /// A progress record as the server stores it (the `clientRecordId` is the GUID the app made for it).
@@ -61,7 +62,7 @@ abstract class SyncApi {
   Future<AuthTokens> login({required String email, required String password});
   Future<AuthTokens> refresh(String refreshToken);
   Future<String> createChild(String accessToken,
-      {required String name, required String avatarKey, required int birthYear, required String track});
+      {required String name, required String avatarKey, required int birthYear, required String track, int? birthMonth});
   Future<SubmitResult> submitProgress(String accessToken, String serverChildId, List<Map<String, Object?>> items);
 
   /// Every child of the signed-in parent (used right after sign-in to bring the family's data to this device).
@@ -170,8 +171,8 @@ class HttpSyncApi implements SyncApi {
 
   @override
   Future<String> createChild(String accessToken,
-      {required String name, required String avatarKey, required int birthYear, required String track}) async {
-    final json = await _post('api/children', {'name': name, 'avatarKey': avatarKey, 'birthYear': birthYear, 'track': track}, token: accessToken);
+      {required String name, required String avatarKey, required int birthYear, required String track, int? birthMonth}) async {
+    final json = await _post('api/children', {'name': name, 'avatarKey': avatarKey, 'birthYear': birthYear, 'track': track, 'birthMonth': ?birthMonth}, token: accessToken);
     return json['id'] as String;
   }
 
@@ -192,6 +193,7 @@ class HttpSyncApi implements SyncApi {
           avatarKey: e['avatarKey'] as String,
           birthYear: e['birthYear'] as int,
           track: (e['track'] as String?) ?? 'little-learners',
+          birthMonth: e['birthMonth'] as int?,
         ),
     ];
   }

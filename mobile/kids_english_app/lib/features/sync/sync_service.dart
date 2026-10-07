@@ -282,7 +282,7 @@ class SyncService {
     for (final child in children) {
       if (childMap.containsKey(child.id)) continue;
       childMap[child.id] = await api.createChild(auth.accessToken,
-          name: child.name, avatarKey: child.avatarKey, birthYear: child.birthYear, track: child.track);
+          name: child.name, avatarKey: child.avatarKey, birthYear: child.birthYear, track: child.track, birthMonth: child.birthMonth);
       created++;
       state = state.copyWith(childMap: Map.of(childMap));
       await store.save(state); // never create the same child twice, even if a later step fails

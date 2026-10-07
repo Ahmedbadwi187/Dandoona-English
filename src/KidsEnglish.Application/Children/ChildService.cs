@@ -13,11 +13,12 @@ public interface IChildInput
     string AvatarKey { get; }
     int BirthYear { get; }
     string Track { get; }
+    int? BirthMonth { get; }
 }
 
-public record CreateChildRequest(string Name, string AvatarKey, int BirthYear, string Track) : IChildInput;
-public record UpdateChildRequest(string Name, string AvatarKey, int BirthYear, string Track) : IChildInput;
-public record ChildDto(Guid Id, string Name, string AvatarKey, int BirthYear, string Track);
+public record CreateChildRequest(string Name, string AvatarKey, int BirthYear, string Track, int? BirthMonth = null) : IChildInput;
+public record UpdateChildRequest(string Name, string AvatarKey, int BirthYear, string Track, int? BirthMonth = null) : IChildInput;
+public record ChildDto(Guid Id, string Name, string AvatarKey, int BirthYear, string Track, int? BirthMonth = null);
 
 public abstract class ChildInputValidator<T> : AbstractValidator<T> where T : IChildInput
 {
@@ -30,6 +31,7 @@ public abstract class ChildInputValidator<T> : AbstractValidator<T> where T : IC
         RuleFor(x => x.BirthYear)
             .Must(y => y >= clock.UtcNow.Year - 13 && y <= clock.UtcNow.Year - 2)
             .WithMessage("Birth year is outside the supported age range.");
+        RuleFor(x => x.BirthMonth).InclusiveBetween(1, 12).When(x => x.BirthMonth.HasValue).WithMessage("Birth month must be 1 to 12.");
     }
 }
 
@@ -47,13 +49,13 @@ public class ChildService(
         await db.Children.AsNoTracking()
             .Where(c => c.ParentId == user.ParentId)
             .OrderBy(c => c.CreatedAt)
-            .Select(c => new ChildDto(c.Id, c.Name, c.AvatarKey, c.BirthYear, c.Track))
+            .Select(c => new ChildDto(c.Id, c.Name, c.AvatarKey, c.BirthYear, c.Track, c.BirthMonth))
             .ToListAsync(ct);
 
     public async Task<ChildDto> GetAsync(Guid id, CancellationToken ct) =>
         await db.Children.AsNoTracking()
             .Where(c => c.Id == id && c.ParentId == user.ParentId)
-            .Select(c => new ChildDto(c.Id, c.Name, c.AvatarKey, c.BirthYear, c.Track))
+            .Select(c => new ChildDto(c.Id, c.Name, c.AvatarKey, c.BirthYear, c.Track, c.BirthMonth))
             .FirstOrDefaultAsync(ct)
         ?? throw new NotFoundException("Child not found.");
 
@@ -69,6 +71,7 @@ public class ChildService(
             Name = request.Name.Trim(),
             AvatarKey = request.AvatarKey,
             BirthYear = request.BirthYear,
+            BirthMonth = request.BirthMonth,
             Track = request.Track,
             CreatedAt = clock.UtcNow
         };
@@ -87,6 +90,7 @@ public class ChildService(
         child.Name = request.Name.Trim();
         child.AvatarKey = request.AvatarKey;
         child.BirthYear = request.BirthYear;
+        child.BirthMonth = request.BirthMonth;
         child.Track = request.Track;
         await db.SaveChangesAsync(ct);
         return await GetAsync(id, ct);

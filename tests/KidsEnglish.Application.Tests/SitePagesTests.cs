@@ -13,7 +13,7 @@ public class SitePagesTests
         return Path.Combine(dir!.FullName, "site");
     }
 
-    public static TheoryData<string> Pages => new() { "privacy-policy.html", "delete-account.html" };
+    public static TheoryData<string> Pages => new() { "privacy-policy.html", "delete-account.html", "terms.html" };
 
     private static string Read(string page) => File.ReadAllText(Path.Combine(SiteDir(), page));
 

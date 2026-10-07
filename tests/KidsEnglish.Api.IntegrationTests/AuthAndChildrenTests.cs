@@ -96,6 +96,29 @@ public class AuthAndChildrenTests(ApiFactory factory)
     }
 
     [Fact]
+    public async Task The_birth_month_is_optional_stored_and_must_be_1_to_12()
+    {
+        var c = Authed(Client(), (await RegisterAsync(Client())).AccessToken);
+        var year = DateTime.UtcNow.Year - 4;
+
+        var without = await c.PostAsJsonAsync("/api/children", new CreateChildRequest("Omar", "bear", year, "little-learners"));
+        (await without.Content.ReadFromJsonAsync<ChildDto>())!.BirthMonth.ShouldBeNull();
+
+        var withMonth = await c.PostAsJsonAsync("/api/children", new CreateChildRequest("Sara", "owl", year, "little-learners", 3));
+        withMonth.StatusCode.ShouldBe(HttpStatusCode.Created);
+        var sara = (await withMonth.Content.ReadFromJsonAsync<ChildDto>())!;
+        sara.BirthMonth.ShouldBe(3);
+
+        var updated = await c.PutAsJsonAsync($"/api/children/{sara.Id}", new UpdateChildRequest("Sara", "owl", year, "little-learners", 11));
+        (await updated.Content.ReadFromJsonAsync<ChildDto>())!.BirthMonth.ShouldBe(11);
+        (await c.GetFromJsonAsync<List<ChildDto>>("/api/children"))!.ShouldContain(x => x.Name == "Sara" && x.BirthMonth == 11);
+
+        foreach (var bad in new[] { 0, 13, -1 })
+            (await c.PostAsJsonAsync("/api/children", new CreateChildRequest("Bad", "owl", year, "little-learners", bad)))
+                .StatusCode.ShouldBe(HttpStatusCode.BadRequest);
+    }
+
+    [Fact]
     public async Task Unknown_track_is_400()
     {
         var c = Authed(Client(), (await RegisterAsync(Client())).AccessToken);
