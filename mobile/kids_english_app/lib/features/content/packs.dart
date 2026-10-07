@@ -193,6 +193,15 @@ class PackDownloadsNotifier extends Notifier<Map<String, PackDownload>> {
   @override
   Map<String, PackDownload> build() => const {};
 
+  final _refreshed = <String>{};
+
+  /// Asks the server once per run whether a pack that is already here has a newer version; if so, it is downloaded quietly and
+  /// replaces the old one (the child keeps playing the old lessons until then).
+  Future<void> refresh(CourseUnit unit) async {
+    if (!_refreshed.add(unit.id)) return;
+    await ensure(unit);
+  }
+
   Future<void> ensure(CourseUnit unit) async {
     final repo = ref.read(packRepositoryProvider);
     final bundled = unit.pack;

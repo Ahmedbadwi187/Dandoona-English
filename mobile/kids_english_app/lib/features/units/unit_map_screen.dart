@@ -266,12 +266,16 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
   /// Fetches the packs of the unit the child is on and the next one, in the background (each once at a time).
   void _prefetch(List<MapStop> stops) {
     final wanted = unitsToPrefetch(stops);
-    if (wanted.isEmpty) return;
+    final refresh = unitsToRefresh(stops); // packs already here: is there a newer version?
+    if (wanted.isEmpty && refresh.isEmpty) return;
     final downloads = ref.read(packDownloadsProvider);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       for (final u in wanted) {
         if (downloads[u.id] != PackDownload.downloading) unawaited(ref.read(packDownloadsProvider.notifier).ensure(u));
+      }
+      for (final u in refresh) {
+        unawaited(ref.read(packDownloadsProvider.notifier).refresh(u));
       }
     });
   }

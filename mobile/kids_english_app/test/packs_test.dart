@@ -137,6 +137,32 @@ void main() {
     expect(computeUnitStatuses([unit], (_) => false).single.state, UnitState.current);
   });
 
+  test('a pack already on the phone is replaced when the server has a newer version, and the server is asked only once per run', () async {
+    final v1 = _numbersPack(version: 1, audio: 'OLD');
+    final v2 = _numbersPack(version: 2, audio: 'NEW');
+    final index = utf8.encode(jsonEncode({
+      'schemaVersion': 1,
+      'track': 'little-learners',
+      'packs': [
+        {'unit': 'numbers', 'version': 2, 'sha256': v2.ref.sha256, 'bytes': 100, 'manifest': v2.ref.manifest, 'lessonIds': ['number-1']},
+      ],
+    }));
+    final fetcher = FakeFetcher({...v1.files, ...v2.files, '$_base/packs/little_learners/index.json': index});
+    final shared = await mockPrefs();
+    final repo = PackRepository(baseUrl: _base, track: 'little-learners', prefs: shared, fetcher: fetcher, root: () async => tmp);
+    await repo.install('numbers', v1.ref);
+    final container = ProviderContainer(overrides: [packRepositoryProvider.overrideWithValue(repo)]);
+    addTearDown(container.dispose);
+    final unit = CourseUnit(id: 'numbers', order: 3, title: const {'en': 'Numbers'}, icon: 'numbers', color: 'blue', lessons: const [], pack: v1.ref);
+
+    final notifier = container.read(packDownloadsProvider.notifier);
+    await notifier.refresh(unit);
+    await notifier.refresh(unit); // a second look at the same map: no second question
+    expect(repo.installed()['numbers']!.version, 2);
+    expect(fetcher.asked.where((u) => u.endsWith('index.json')), hasLength(1));
+    expect(container.read(packDownloadsProvider), isEmpty); // finished, nothing left "downloading"
+  });
+
   group('on the map', () {
     final letters = [for (var i = 0; i < 26; i++) 'letter-${String.fromCharCode(97 + i)}'];
     final colors = ['color-red', 'color-blue', 'color-yellow', 'color-green', 'color-orange', 'color-purple', 'color-pink', 'color-brown', 'color-black', 'color-white'];

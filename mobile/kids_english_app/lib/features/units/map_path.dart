@@ -105,6 +105,15 @@ MapStop? blockingStop(List<MapStop> stops) {
 
 /// The content packs to fetch now: the unit the child is on and the next unit after it ("one unit away"), when their packs
 /// are not on this device yet.
+/// The pack units the child is on and the next one that are already on the phone: asked once per run whether the server has
+/// a newer version (a pack can change without an app release).
+List<CourseUnit> unitsToRefresh(List<MapStop> stops) {
+  final i = currentStopIndex(stops);
+  if (i < 0) return const [];
+  final ahead = [for (final s in stops.skip(i)) if (s.kind == StopKind.unit) s.unit!.unit].take(2);
+  return [for (final u in ahead) if (u.pack != null && !u.needsDownload) u];
+}
+
 List<CourseUnit> unitsToPrefetch(List<MapStop> stops) {
   final i = currentStopIndex(stops);
   if (i < 0) return const [];
