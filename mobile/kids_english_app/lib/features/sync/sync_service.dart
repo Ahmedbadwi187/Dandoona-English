@@ -124,16 +124,20 @@ class SyncStore {
 
 /// What the server holds for the signed-in parent: each child with all their progress.
 class PulledChild {
-  const PulledChild({required this.child, required this.progress});
+  const PulledChild({required this.child, required this.progress, this.achievements = const []});
   final ServerChild child;
   final List<ServerProgress> progress;
+  final List<ServerAchievement> achievements;
 }
 
 class SyncReport {
-  const SyncReport({this.childrenCreated = 0, this.recordsPushed = 0, this.duplicates = 0});
+  const SyncReport({this.childrenCreated = 0, this.recordsPushed = 0, this.duplicates = 0, this.pulled = const {}});
   final int childrenCreated;
   final int recordsPushed;
   final int duplicates;
+
+  /// With `pullBack`: what the server holds for each local child (progress and achievements from every phone).
+  final Map<String, PulledChild> pulled;
 }
 
 /// Pushes local children and progress to the server. Safe to run repeatedly or after a dropped connection:
@@ -245,7 +249,11 @@ class SyncService {
     await _deletePending(api, auth.accessToken);
     final result = <PulledChild>[];
     for (final child in await api.listChildren(auth.accessToken)) {
-      result.add(PulledChild(child: child, progress: await api.listProgress(auth.accessToken, child.id)));
+      result.add(PulledChild(
+        child: child,
+        progress: await api.listProgress(auth.accessToken, child.id),
+        achievements: await api.listAchievements(auth.accessToken, child.id),
+      ));
     }
     return result;
   }
@@ -262,7 +270,14 @@ class SyncService {
 
   Future<bool> isSignedIn() async => (await tokens.readRefreshToken()) != null && store.load().baseUrl.isNotEmpty;
 
-  Future<SyncReport> syncNow({required List<ChildProfile> children, required List<ProgressRecord> progress}) async {
+  /// Sends new children, progress and every child's achievements. With [pullBack] it then reads back what the server holds
+  /// for each child (the server is the source of truth: results from the family's other phones come back this way).
+  Future<SyncReport> syncNow({
+    required List<ChildProfile> children,
+    required List<ProgressRecord> progress,
+    Map<String, List<ServerAchievement>> achievements = const {},
+    bool pullBack = false,
+  }) async {
     var state = store.load();
     final refreshToken = await tokens.readRefreshToken();
     if (refreshToken == null || state.baseUrl.isEmpty) {
@@ -315,7 +330,24 @@ class SyncService {
       }
     }
 
+    for (final child in children) {
+      final items = achievements[child.id];
+      if (items != null && items.isNotEmpty) await api.submitAchievements(auth.accessToken, childMap[child.id]!, items);
+    }
+
+    final pulled = <String, PulledChild>{};
+    if (pullBack) {
+      for (final child in children) {
+        final serverId = childMap[child.id]!;
+        pulled[child.id] = PulledChild(
+          child: ServerChild(id: serverId, name: child.name, avatarKey: child.avatarKey, birthYear: child.birthYear, track: child.track, birthMonth: child.birthMonth),
+          progress: await api.listProgress(auth.accessToken, serverId),
+          achievements: await api.listAchievements(auth.accessToken, serverId),
+        );
+      }
+    }
+
     await store.save(state.copyWith(lastSyncUtc: DateTime.now().toUtc()));
-    return SyncReport(childrenCreated: created, recordsPushed: pushedCount, duplicates: duplicates);
+    return SyncReport(childrenCreated: created, recordsPushed: pushedCount, duplicates: duplicates, pulled: pulled);
   }
 }

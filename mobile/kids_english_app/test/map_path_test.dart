@@ -129,6 +129,24 @@ void main() {
       expect(m.stories, isEmpty);
     });
 
+    test('merging from the server never takes anything away and keeps the earliest certificate date', () {
+      const here = ChildUnitMeta(certificates: {'letters': '2026-09-05'}, chests: {'letters'}, reviews: {'review-1'});
+      final merged = mergeAchievements(here, [
+        (kind: 'certificate', key: 'letters', earnedAt: DateTime.utc(2026, 9, 1)),
+        (kind: 'certificate', key: 'colors', earnedAt: DateTime.utc(2026, 9, 20)),
+        (kind: 'story', key: 'letters', earnedAt: DateTime.utc(2026, 9, 2)),
+      ]);
+      expect(merged.certificates, {'letters': '2026-09-01', 'colors': '2026-09-20'});
+      expect(merged.celebrated, {'letters', 'colors'}); // not celebrated again on this phone
+      expect(merged.chests, {'letters'});
+      expect(merged.reviews, {'review-1'});
+      expect(merged.stories, {'letters'});
+      // and what this phone sends back
+      final out = achievementsOf(merged, DateTime.utc(2026, 10, 1));
+      expect(out.where((a) => a.kind == 'certificate').map((a) => a.earnedAt), [DateTime.utc(2026, 9, 1), DateTime.utc(2026, 9, 20)]);
+      expect(out.map((a) => '${a.kind}:${a.key}'), containsAll(['chest:letters', 'review:review-1', 'story:letters']));
+    });
+
     test('the new sets round-trip, and are left out when empty (older app versions read the same file)', () {
       const m = ChildUnitMeta(reviews: {'review-1'}, chests: {'letters'}, stories: {'letters'});
       expect(ChildUnitMeta.fromJson(m.toJson()).chests, {'letters'});

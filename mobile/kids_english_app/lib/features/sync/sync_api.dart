@@ -56,6 +56,16 @@ class ServerProgress {
   final DateTime completedAt;
 }
 
+/// A certificate, opened chest, passed review, read story or placement, as the server keeps it (union of every phone).
+class ServerAchievement {
+  const ServerAchievement({required this.kind, required this.key, required this.earnedAt});
+  final String kind; // certificate | chest | review | story | placed
+  final String key; // a unit id, review id or "castle"
+  final DateTime earnedAt;
+
+  Map<String, Object?> toJson() => {'kind': kind, 'key': key, 'earnedAt': earnedAt.toUtc().toIso8601String()};
+}
+
 /// The slice of the Kids English API the app uses. Behind an interface so sync logic is tested without a server.
 abstract class SyncApi {
   Future<AuthTokens> register({required String email, required String password, required String displayName, bool guardianConfirmed = false, bool termsAccepted = false});
@@ -70,6 +80,12 @@ abstract class SyncApi {
 
   /// Every progress record of one child.
   Future<List<ServerProgress>> listProgress(String accessToken, String serverChildId);
+
+  /// Sends a child's achievements; the server keeps the union with the earliest date (sending again changes nothing).
+  Future<void> submitAchievements(String accessToken, String serverChildId, List<ServerAchievement> items);
+
+  /// A child's achievements from every phone.
+  Future<List<ServerAchievement>> listAchievements(String accessToken, String serverChildId);
 
   /// Permanently deletes the account and all its data on the server (needs the password again).
   Future<void> deleteAccount(String accessToken, String password);
@@ -212,6 +228,20 @@ class HttpSyncApi implements SyncApi {
           timeSpentSeconds: e['timeSpentSeconds'] as int,
           completedAt: DateTime.parse(e['completedAt'] as String),
         ),
+    ];
+  }
+
+  @override
+  Future<void> submitAchievements(String accessToken, String serverChildId, List<ServerAchievement> items) async {
+    await _post('api/children/$serverChildId/achievements', {'items': [for (final i in items) i.toJson()]}, token: accessToken);
+  }
+
+  @override
+  Future<List<ServerAchievement>> listAchievements(String accessToken, String serverChildId) async {
+    final json = await _send('GET', 'api/children/$serverChildId/achievements', null, accessToken) as List<dynamic>;
+    return [
+      for (final e in json.cast<Map<String, dynamic>>())
+        ServerAchievement(kind: e['kind'] as String, key: e['key'] as String, earnedAt: DateTime.parse(e['earnedAt'] as String)),
     ];
   }
 

@@ -16,6 +16,7 @@ import 'package:kids_english_app/features/settings/settings.dart';
 import 'package:kids_english_app/features/rewards/wardrobe_screen.dart';
 import 'package:kids_english_app/core/strings.dart';
 import 'package:kids_english_app/features/sync/sync_api.dart';
+import 'package:kids_english_app/features/units/unit_meta.dart';
 import 'package:kids_english_app/features/sync/sync_controller.dart';
 import 'package:kids_english_app/features/sync/sync_service.dart';
 import 'package:kids_english_app/router.dart';
@@ -107,6 +108,28 @@ class FakeSyncApi implements SyncApi {
   Future<List<ServerProgress>> listProgress(String accessToken, String serverChildId) async {
     _net();
     return [...?serverProgress[serverChildId]];
+  }
+
+  /// Achievements per server child: (kind|key) -> the one kept (earliest date), like the real server.
+  final Map<String, Map<String, ServerAchievement>> achievements = {};
+  int achievementCalls = 0;
+
+  @override
+  Future<void> submitAchievements(String accessToken, String serverChildId, List<ServerAchievement> items) async {
+    _net();
+    achievementCalls++;
+    final mine = achievements.putIfAbsent(serverChildId, () => {});
+    for (final i in items) {
+      final k = '${i.kind}|${i.key}';
+      final known = mine[k];
+      if (known == null || i.earnedAt.isBefore(known.earnedAt)) mine[k] = i;
+    }
+  }
+
+  @override
+  Future<List<ServerAchievement>> listAchievements(String accessToken, String serverChildId) async {
+    _net();
+    return [...?achievements[serverChildId]?.values];
   }
 
   final List<String> deletedChildren = [];
@@ -764,6 +787,41 @@ void pullTests() {
       await n.signIn('http://x', 'mom@example.com', 'pw');
       expect(c.read(profilesProvider), hasLength(2));
       expect(c.read(progressProvider), hasLength(3));
+    });
+
+
+    test('certificates, chests, reviews and stories come back on a new phone; a certificate from another phone is not celebrated again', () async {
+      final (c, api) = await open();
+      api.achievements['srv-sara'] = {
+        'certificate|letters': ServerAchievement(kind: 'certificate', key: 'letters', earnedAt: DateTime.utc(2026, 9, 1)),
+        'chest|letters': ServerAchievement(kind: 'chest', key: 'letters', earnedAt: DateTime.utc(2026, 9, 1)),
+        'story|letters': ServerAchievement(kind: 'story', key: 'letters', earnedAt: DateTime.utc(2026, 9, 2)),
+      };
+      await c.read(syncControllerProvider.notifier).signIn('http://x', 'mom@example.com', 'pw');
+      final sara = c.read(profilesProvider).first;
+      final meta = c.read(unitMetaProvider).of(sara.id);
+      expect(meta.certificates, {'letters': '2026-09-01'});
+      expect(meta.celebrated, contains('letters'));
+      expect(meta.chests, {'letters'});
+      expect(meta.stories, {'letters'});
+    });
+
+    test('"Sync now" sends this phone\'s achievements and brings back results from the family\'s other phones', () async {
+      final (c, api) = await open();
+      final n = c.read(syncControllerProvider.notifier);
+      await n.signIn('http://x', 'mom@example.com', 'pw');
+      final sara = c.read(profilesProvider).first;
+      await c.read(unitMetaProvider.notifier).merge(sara.id, [(kind: 'chest', key: 'letters', earnedAt: DateTime.utc(2026, 9, 3))]); // opened here
+
+      // meanwhile, another phone played letter-a better and passed a review
+      api.serverProgress['srv-sara'] = [...api.serverProgress['srv-sara']!, rec('44444444-4444-4444-8444-444444444444', 'letter-a', 'trace', stars: 3)];
+      api.achievements['srv-sara'] = {'review|review-1': ServerAchievement(kind: 'review', key: 'review-1', earnedAt: DateTime.utc(2026, 9, 4))};
+
+      await n.syncNow();
+      expect(api.achievements['srv-sara']!.keys, containsAll(['chest|letters', 'review|review-1']));
+      expect(c.read(unitMetaProvider).of(sara.id).reviews, {'review-1'});
+      expect(c.read(progressProvider.notifier).starsFor(sara.id, 'letter-a'), 3); // the best result per lesson wins
+      expect(api.submitCalls, 0); // records that came from the server are not sent back
     });
 
     test('an account with no children changes nothing locally', () async {

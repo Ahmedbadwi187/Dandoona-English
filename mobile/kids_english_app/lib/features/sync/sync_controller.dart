@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/storage.dart';
 import '../profiles/child_profile.dart';
 import '../progress/progress.dart';
+import '../units/unit_meta.dart';
 import '../settings/settings.dart';
 import 'sync_api.dart';
 import 'sync_service.dart';
@@ -68,7 +69,6 @@ class SyncController extends Notifier<SyncUiState> {
   Future<void> _pullIntoLocal() async {
     final pulled = await _service.pull();
     final profiles = ref.read(profilesProvider.notifier);
-    final progress = ref.read(progressProvider.notifier);
     final childMap = ref.read(syncStoreProvider).load().childMap;
     for (final p in pulled) {
       String? localId;
@@ -83,27 +83,62 @@ class SyncController extends Notifier<SyncUiState> {
         track: p.child.track,
       ))
           .id;
-      await progress.addAll([
-        for (final r in p.progress)
-          ProgressRecord(
-            clientRecordId: r.clientRecordId,
-            childId: localId,
-            lessonId: r.lessonId,
-            activity: r.activity,
-            stars: r.stars,
-            attempts: r.attempts,
-            timeSpentSeconds: r.timeSpentSeconds,
-            completedAt: r.completedAt,
-          ),
-      ]);
-      await _service.rememberPulled(localChildId: localId, serverChildId: p.child.id, serverRecordGuids: p.progress.map((r) => r.clientRecordId));
+      await _mergeInto(localId, p);
     }
     // A parent who already has children does not start from the "add your first child" screen.
     if (pulled.isNotEmpty) await ref.read(settingsProvider.notifier).completeOnboarding();
   }
 
+  /// Adds a child's results from the server to this phone: progress records it does not have yet (every per-activity
+  /// summary is kept, so the best result per lesson counts everywhere), and certificates, chests, reviews, stories and
+  /// placement (union, earliest certificate date).
+  Future<void> _mergeInto(String localId, PulledChild p) async {
+    await ref.read(progressProvider.notifier).addAll([
+      for (final r in p.progress)
+        ProgressRecord(
+          clientRecordId: r.clientRecordId,
+          childId: localId,
+          lessonId: r.lessonId,
+          activity: r.activity,
+          stars: r.stars,
+          attempts: r.attempts,
+          timeSpentSeconds: r.timeSpentSeconds,
+          completedAt: r.completedAt,
+        ),
+    ]);
+    await ref.read(unitMetaProvider.notifier).merge(localId, [for (final a in p.achievements) (kind: a.kind, key: a.key, earnedAt: a.earnedAt)]);
+    await _service.rememberPulled(localChildId: localId, serverChildId: p.child.id, serverRecordGuids: p.progress.map((r) => r.clientRecordId));
+  }
+
+  /// Every child's achievements, ready to send.
+  Map<String, List<ServerAchievement>> _achievements() {
+    final meta = ref.read(unitMetaProvider);
+    final now = DateTime.now().toUtc();
+    return {
+      for (final c in ref.read(profilesProvider))
+        c.id: [for (final a in achievementsOf(meta.of(c.id), now)) ServerAchievement(kind: a.kind, key: a.key, earnedAt: a.earnedAt)],
+    };
+  }
+
+  /// Sends, and with [pullBack] also brings back what the family's other phones sent.
+  Future<void> _sync({required bool pullBack}) async {
+    final report = await _service.syncNow(
+      children: ref.read(profilesProvider),
+      progress: ref.read(progressProvider),
+      achievements: _achievements(),
+      pullBack: pullBack,
+    );
+    for (final e in report.pulled.entries) {
+      await _mergeInto(e.key, e.value);
+    }
+    if (pullBack) _pulledThisSession = true;
+  }
+
+  /// The first background sync after the app starts also reads back from the server; later ones only send.
+  bool _pulledThisSession = false;
+
   Future<void> syncNow() => _run(() async {
-        await _service.syncNow(children: ref.read(profilesProvider), progress: ref.read(progressProvider));
+        await _sync(pullBack: true);
         return 'syncDone';
       });
 
@@ -113,7 +148,7 @@ class SyncController extends Notifier<SyncUiState> {
     if (state.busy) return;
     try {
       if (!await _service.isSignedIn()) return;
-      await _service.syncNow(children: ref.read(profilesProvider), progress: ref.read(progressProvider));
+      await _sync(pullBack: !_pulledThisSession);
       state = state.copyWith();
     } on SyncException {
       // offline or session expired: try again next time

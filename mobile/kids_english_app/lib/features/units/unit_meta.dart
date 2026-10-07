@@ -86,6 +86,41 @@ class UnitMeta {
   );
 }
 
+/// What a child has earned, as (kind, key, date) for the server. Certificates carry their date; the other sets are not
+/// dated on the device, so they go with [now] (the server keeps the earliest date any phone sent).
+List<({String kind, String key, DateTime earnedAt})> achievementsOf(ChildUnitMeta m, DateTime now) => [
+      for (final e in m.certificates.entries) (kind: 'certificate', key: e.key, earnedAt: DateTime.tryParse('${e.value}T00:00:00Z') ?? now),
+      for (final k in m.chests) (kind: 'chest', key: k, earnedAt: now),
+      for (final k in m.reviews) (kind: 'review', key: k, earnedAt: now),
+      for (final k in m.stories) (kind: 'story', key: k, earnedAt: now),
+      for (final k in m.placed) (kind: 'placed', key: k, earnedAt: now),
+    ];
+
+/// Adds what the server knows (from any of the family's phones) to this phone's record: nothing is ever taken away, a
+/// certificate keeps the earliest date, and a certificate from another phone is not celebrated again here.
+ChildUnitMeta mergeAchievements(ChildUnitMeta m, Iterable<({String kind, String key, DateTime earnedAt})> items) {
+  final certificates = {...m.certificates};
+  final celebrated = {...m.celebrated}, chests = {...m.chests}, reviews = {...m.reviews}, stories = {...m.stories}, placed = {...m.placed};
+  for (final a in items) {
+    switch (a.kind) {
+      case 'certificate':
+        final date = dateOnly(a.earnedAt.toUtc());
+        final known = certificates[a.key];
+        if (known == null || date.compareTo(known) < 0) certificates[a.key] = date;
+        celebrated.add(a.key);
+      case 'chest':
+        chests.add(a.key);
+      case 'review':
+        reviews.add(a.key);
+      case 'story':
+        stories.add(a.key);
+      case 'placed':
+        placed.add(a.key);
+    }
+  }
+  return m.copyWith(certificates: certificates, celebrated: celebrated, chests: chests, reviews: reviews, stories: stories, placed: placed);
+}
+
 String dateOnly(DateTime d) => '${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
 
 /// Migration for children who used the app before units existed (their progress is `progress.v1`, unchanged):
@@ -154,6 +189,13 @@ class UnitMetaNotifier extends Notifier<UnitMeta> {
     final meta = state.of(childId);
     if (meta.celebrated.contains(unitId)) return;
     _put(childId, meta.copyWith(celebrated: {...meta.celebrated, unitId}));
+    await _save();
+  }
+
+  /// Brings in a child's achievements from the server (see [mergeAchievements]).
+  Future<void> merge(String childId, Iterable<({String kind, String key, DateTime earnedAt})> items) async {
+    final merged = mergeAchievements(state.of(childId), items);
+    _put(childId, merged);
     await _save();
   }
 
