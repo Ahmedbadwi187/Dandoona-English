@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kids_english_app/app.dart';
 import 'package:kids_english_app/core/strings.dart';
+import 'package:kids_english_app/features/audio/audio_service.dart';
 import 'package:kids_english_app/features/onboarding/setup_flow.dart';
 import 'package:kids_english_app/features/profiles/child_profile.dart';
 import 'package:kids_english_app/features/settings/settings.dart';
@@ -17,6 +18,7 @@ import 'helpers.dart';
 
 const _settings = '{"languageCode":"en","sessionMinutes":15,"unlockAll":false,"onboarded":false,"languageChosen":true}';
 final _s = Strings.en;
+FakeAudio audio = FakeAudio();
 
 /// Content with a placement table like the real one: level 2 = "knows all letters" -> Letters done, start at Colors.
 TrackContent _content() {
@@ -42,6 +44,7 @@ TrackContent _content() {
       {'id': 'letters', 'order': 1, 'title': {'en': 'Letters', 'ar': 'الحروف'}, 'icon': 'abc', 'color': 'blue', 'lessons': lessons},
       {'id': 'colors', 'order': 2, 'title': {'en': 'Colors', 'ar': 'الألوان'}, 'icon': 'palette', 'color': 'red', 'lessons': <Map<String, dynamic>>[]},
     ],
+    'app': {'title': 'audio/t.mp3', 'welcome': 'audio/hello.mp3', 'celebration': 'audio/b.mp3'},
     'placement': [
       {'level': 0, 'key': 'none', 'doneUnits': <String>[], 'startUnit': 'letters'},
       {'level': 2, 'key': 'all-letters', 'doneUnits': ['letters'], 'startUnit': 'colors'},
@@ -50,12 +53,13 @@ TrackContent _content() {
 }
 
 Future<(ProviderContainer, FakeReminders)> _start(WidgetTester t, {bool allow = true, Map<String, Object>? prefs}) async {
+  audio = FakeAudio();
   t.view.physicalSize = const Size(1080, 2400);
   t.view.devicePixelRatio = 1080 / 411;
   addTearDown(t.view.reset);
   final reminders = FakeReminders(allow: allow);
   final overrides = await testOverrides(prefs: prefs ?? {'settings.v1': _settings}, content: _content(), reminders: reminders);
-  final container = ProviderContainer(overrides: overrides);
+  final container = ProviderContainer(overrides: [...overrides, audioServiceProvider.overrideWithValue(audio)]);
   addTearDown(container.dispose);
   await t.pumpWidget(UncontrolledProviderScope(container: container, child: const KidsEnglishApp()));
   await t.pumpAndSettle();
@@ -119,6 +123,7 @@ void main() {
     expect(reminders.scheduled?.title, _s('obReminderTitle'));
 
     // Dandoona greets the child in English, then the unit map opens for that child
+    expect(audio.played, ['asset:audio/hello.mp3']); // Dandoona says hello
     expect(find.byKey(const Key('greeting-name')), findsOneWidget);
     expect(find.text('Hi, Omar!'), findsOneWidget);
     expect(c.read(activeChildIdProvider), child.id);

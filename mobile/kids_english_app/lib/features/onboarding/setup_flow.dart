@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/palette.dart';
 import '../../core/strings.dart';
+import '../audio/audio_service.dart';
 import '../content/content_repository.dart';
 import '../profiles/child_profile.dart';
 import '../reminders/reminder_service.dart';
@@ -146,7 +147,7 @@ class SetupRoute extends ConsumerWidget {
           onBack: onBack,
         );
       case 'greeting':
-        return ChildGreetingScreen(name: d.name, onGo: () => context.go('/map'));
+        return _GreetingRoute(name: d.name);
       default:
         return _summary(context, ref, s, d, now);
     }
@@ -242,4 +243,41 @@ class SetupRoute extends ConsumerWidget {
       context.go('/setup/greeting');
     }
   }
+}
+
+/// The greeting: Dandoona says hello in her voice (silent when the line is not in the content), then "Let's go!" opens the map.
+class _GreetingRoute extends ConsumerStatefulWidget {
+  const _GreetingRoute({required this.name});
+
+  final String name;
+
+  @override
+  ConsumerState<_GreetingRoute> createState() => _GreetingRouteState();
+}
+
+class _GreetingRouteState extends ConsumerState<_GreetingRoute> {
+  late final AudioService _audio;
+
+  @override
+  void initState() {
+    super.initState();
+    _audio = ref.read(audioServiceProvider);
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      try {
+        final path = (await ref.read(contentProvider.future)).appAudio?.welcome;
+        if (path != null && mounted) await _audio.playAsset(path);
+      } on Object {
+        // no voice: the words are on the screen
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    unawaited(_audio.stop());
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => ChildGreetingScreen(name: widget.name, onGo: () => context.go('/map'));
 }
