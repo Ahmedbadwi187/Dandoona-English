@@ -1,4 +1,4 @@
-import '../content/content_models.dart' show ReviewStop;
+import '../content/content_models.dart' show CourseUnit, ReviewStop;
 import 'unit_logic.dart';
 import 'unit_meta.dart';
 
@@ -101,4 +101,13 @@ int currentStopIndex(List<MapStop> stops) => stops.indexWhere(
 MapStop? blockingStop(List<MapStop> stops) {
   final i = currentStopIndex(stops);
   return i < 0 ? null : stops[i];
+}
+
+/// The content packs to fetch now: the unit the child is on and the next unit after it ("one unit away"), when their packs
+/// are not on this device yet.
+List<CourseUnit> unitsToPrefetch(List<MapStop> stops) {
+  final i = currentStopIndex(stops);
+  if (i < 0) return const [];
+  final ahead = [for (final s in stops.skip(i)) if (s.kind == StopKind.unit) s.unit!.unit].take(2);
+  return [for (final u in ahead) if (u.needsDownload) u];
 }

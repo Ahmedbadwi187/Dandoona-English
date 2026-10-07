@@ -19,8 +19,9 @@ class UnitStatus {
 
 /// A unit is finished when every lesson has progress: the same rule the lesson path uses to open the next lesson,
 /// so nobody who already worked through a unit loses anything.
+/// A pack unit not downloaded yet is judged by its lesson ids from the catalog.
 bool isUnitFinished(CourseUnit unit, bool Function(String lessonId) hasProgress) =>
-    unit.lessons.isNotEmpty && unit.lessons.every((l) => hasProgress(l.id));
+    unit.lessonIds.isNotEmpty && unit.lessonIds.every(hasProgress);
 
 /// A unit opens only when the previous unit is finished (or the parent turned on "unlock all").
 /// A unit with no lessons yet is "soon" and never counts as finished, so later units stay closed.
@@ -28,8 +29,8 @@ List<UnitStatus> computeUnitStatuses(List<CourseUnit> units, bool Function(Strin
   final result = <UnitStatus>[];
   var previousFinished = true;
   for (final unit in units) {
-    final total = unit.lessons.length;
-    final done = unit.lessons.where((l) => hasProgress(l.id)).length;
+    final total = unit.lessonIds.length;
+    final done = unit.lessonIds.where(hasProgress).length;
     if (unit.comingSoon) {
       result.add(UnitStatus(unit: unit, state: UnitState.soon, done: 0, total: 0));
       previousFinished = false;

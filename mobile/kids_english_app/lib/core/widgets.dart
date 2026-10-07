@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -8,17 +10,26 @@ import 'theme.dart';
 class AssetPicture extends StatelessWidget {
   const AssetPicture(this.assetPath, {super.key, this.size, this.semanticLabel});
 
-  /// Path relative to `assets/`, exactly as written in little_learners.json.
+  /// Path relative to `assets/`, exactly as written in little_learners.json, or an absolute path into a downloaded pack.
   final String assetPath;
   final double? size;
   final String? semanticLabel;
 
   @override
   Widget build(BuildContext context) {
-    final path = 'assets/$assetPath';
-    final child = assetPath.endsWith('.svg')
-        ? SvgPicture.asset(path, width: size, height: size, semanticsLabel: semanticLabel)
-        : Image.asset(path, width: size, height: size, semanticLabel: semanticLabel, fit: BoxFit.contain);
+    final svg = assetPath.endsWith('.svg');
+    final Widget child;
+    if (assetPath.startsWith('/')) {
+      // a picture from a downloaded content pack
+      child = svg
+          ? SvgPicture.file(File(assetPath), width: size, height: size, semanticsLabel: semanticLabel)
+          : Image.file(File(assetPath), width: size, height: size, semanticLabel: semanticLabel, fit: BoxFit.contain);
+    } else {
+      final path = 'assets/$assetPath';
+      child = svg
+          ? SvgPicture.asset(path, width: size, height: size, semanticsLabel: semanticLabel)
+          : Image.asset(path, width: size, height: size, semanticLabel: semanticLabel, fit: BoxFit.contain);
+    }
     return ClipRRect(borderRadius: BorderRadius.circular(20), child: child);
   }
 }

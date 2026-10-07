@@ -24,8 +24,9 @@ class AudioplayersService implements AudioService {
   final AudioPlayer _player = AudioPlayer();
   final ClipGate _gate = ClipGate(); // released when the current clip is replaced or stopped, so its caller stops waiting
 
+  /// Content audio: from the app bundle, or (an absolute path) from a downloaded content pack.
   @override
-  Future<void> playAsset(String assetPath) => _play(AssetSource(assetPath));
+  Future<void> playAsset(String assetPath) => _play(assetPath.startsWith('/') ? DeviceFileSource(assetPath) : AssetSource(assetPath));
 
   @override
   Future<void> playFile(String path) => _play(DeviceFileSource(path));

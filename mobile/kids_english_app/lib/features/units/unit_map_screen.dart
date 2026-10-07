@@ -13,6 +13,7 @@ import '../audio/audio_service.dart';
 import '../child/child_scope.dart';
 import '../content/content_models.dart';
 import '../content/content_repository.dart';
+import '../content/packs.dart';
 import '../gate/parental_gate.dart';
 import '../profiles/child_profile.dart';
 import '../progress/progress.dart';
@@ -232,6 +233,13 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
     final unit = stop.unit!.unit;
     final audio = unit.audio?.title;
     if (audio != null) unawaited(ref.read(audioServiceProvider).playAsset(audio));
+    if (unit.needsDownload) {
+      // its pack is still on the way: a calm word for the child (the parent area says when it needs internet)
+      _showBubble(Strings.en('mapAlmostReady'));
+      _revealDandoona();
+      unawaited(ref.read(packDownloadsProvider.notifier).ensure(unit));
+      return;
+    }
     context.push('/unit/${unit.id}');
   }
 
@@ -248,6 +256,19 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
       ref.read(parentSessionProvider.notifier).unlock();
       context.go('/parent');
     }
+  }
+
+  /// Fetches the packs of the unit the child is on and the next one, in the background (each once at a time).
+  void _prefetch(List<MapStop> stops) {
+    final wanted = unitsToPrefetch(stops);
+    if (wanted.isEmpty) return;
+    final downloads = ref.read(packDownloadsProvider);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      for (final u in wanted) {
+        if (downloads[u.id] != PackDownload.downloading) unawaited(ref.read(packDownloadsProvider.notifier).ensure(u));
+      }
+    });
   }
 
   void _checkStars(String? childId, int stars) {
@@ -283,6 +304,7 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
       placedUnits: meta.placed,
     );
     final stops = buildMapPath(units: statuses, reviews: track.reviews, meta: meta, unlockAll: unlockAll);
+    _prefetch(stops);
     final stars = childId == null ? 0 : progress.totalStars(childId);
     _checkStars(childId, stars);
 
@@ -551,6 +573,7 @@ class _IslandTileState extends State<_IslandTile> with SingleTickerProviderState
     final state = widget.stop.state;
     final title = unit.titleFor('en');
     Widget island(double? glow) => _Island(
+      waiting: unit.needsDownload && (state == StopState.current || state == StopState.done),
       glow: glow,
       color: unitColor(unit.color),
       icon: unitIcon(unit.icon),
@@ -667,7 +690,11 @@ class _Island extends StatelessWidget {
     this.progressText,
     this.dandoona,
     this.glow,
+    this.waiting = false,
   });
+
+  /// Open, but its content pack is not on this device yet: a small cloud badge instead of a lock.
+  final bool waiting;
 
   /// The current island's soft pulsing glow around its badge (0..1), null for no glow.
   final double? glow;
@@ -768,6 +795,12 @@ class _Island extends StatelessWidget {
                 color: Palette.white,
                 child: const Icon(Icons.lock_rounded, size: 18, color: Palette.nightInk),
               ),
+            ),
+          if (waiting)
+            Positioned(
+              top: 44 * s,
+              left: 75 * s + 14 * s,
+              child: _Badge(key: Key('unit-waiting-$id'), color: Palette.white, child: const Icon(Icons.cloud_download_rounded, size: 18, color: Palette.blue)),
             ),
           if (state == StopState.soon)
             Positioned(

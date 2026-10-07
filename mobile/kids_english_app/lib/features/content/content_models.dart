@@ -21,6 +21,9 @@ class TrackContent {
 
   static const supportedSchemas = {1, 2};
 
+  TrackContent withUnits(List<CourseUnit> units) =>
+      TrackContent(track: track, units: units, mascot: mascot, placement: placement, appAudio: appAudio, reviews: reviews);
+
   /// Every lesson of every unit, in unit order then lesson order.
   List<Lesson> get lessons => [for (final u in units) ...u.lessons];
 
@@ -124,7 +127,12 @@ class CourseUnit {
     required this.lessons,
     this.audio,
     this.hasStory = false,
+    this.pack,
   });
+
+  /// A downloadable unit: its pack (lessons, audio, pictures) comes from our server; [lessons] stay empty until the pack is
+  /// on the device. Null for a bundled unit.
+  final PackRef? pack;
 
   final String id;
   final int order;
@@ -143,7 +151,17 @@ class CourseUnit {
   final UnitAudio? audio;
   final List<Lesson> lessons;
 
-  bool get comingSoon => lessons.isEmpty;
+  /// No lessons and no pack yet: shown as "Soon".
+  bool get comingSoon => lessons.isEmpty && pack == null;
+
+  /// A pack unit whose pack is not on this device yet.
+  bool get needsDownload => lessons.isEmpty && pack != null;
+
+  /// The unit's lesson ids, also before its pack is downloaded (so progress made on another phone still counts).
+  List<String> get lessonIds => lessons.isNotEmpty ? [for (final l in lessons) l.id] : (pack?.lessonIds ?? const []);
+
+  CourseUnit withLessons(List<Lesson> lessons) =>
+      CourseUnit(id: id, order: order, title: title, icon: icon, color: color, audio: audio, hasStory: hasStory, pack: pack, lessons: lessons);
 
   String titleFor(String languageCode) => title[languageCode] ?? title['en'] ?? id;
 
@@ -156,6 +174,27 @@ class CourseUnit {
         audio: json['audio'] == null ? null : UnitAudio.fromJson(json['audio'] as Map<String, dynamic>),
         lessons: _lessons((json['lessons'] as List<dynamic>?) ?? const []),
         hasStory: json['story'] != null,
+        pack: json['pack'] == null ? null : PackRef.fromJson(json['pack'] as Map<String, dynamic>),
+      );
+}
+
+/// Where a unit's content pack is: its version, the manifest's checksum, its size, the manifest path on the server
+/// (relative to /packs/<track>/) and the lesson ids inside it.
+class PackRef {
+  const PackRef({required this.version, required this.sha256, required this.bytes, required this.manifest, this.lessonIds = const []});
+
+  final int version;
+  final String sha256;
+  final int bytes;
+  final String manifest;
+  final List<String> lessonIds;
+
+  factory PackRef.fromJson(Map<String, dynamic> json) => PackRef(
+        version: json['version'] as int,
+        sha256: json['sha256'] as String,
+        bytes: (json['bytes'] as num).toInt(),
+        manifest: json['manifest'] as String,
+        lessonIds: ((json['lessonIds'] as List<dynamic>?) ?? const []).cast<String>(),
       );
 }
 

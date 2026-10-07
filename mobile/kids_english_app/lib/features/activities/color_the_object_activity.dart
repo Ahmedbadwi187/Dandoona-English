@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:async';
 import 'dart:math';
 
@@ -11,6 +12,7 @@ import '../audio/activity_speech.dart';
 import '../audio/audio_service.dart';
 import '../content/content_models.dart';
 import '../content/content_repository.dart';
+import '../content/packs.dart' show isPackFile;
 import 'activity_logic.dart';
 
 /// The placeholder in a lesson's `colorable.svg` that the chosen color replaces.
@@ -99,7 +101,8 @@ class _ColorTheObjectActivityState extends ConsumerState<ColorTheObjectActivity>
 
   Future<void> _loadDrawing() async {
     try {
-      final svg = await ref.read(assetBundleProvider).loadString('assets/${_target.drawing}', cache: false);
+      final drawing = _target.drawing;
+      final svg = isPackFile(drawing) ? await File(drawing).readAsString() : await ref.read(assetBundleProvider).loadString('assets/$drawing', cache: false);
       if (mounted) setState(() => _template = svg);
     } on Object catch (e) {
       debugPrint('color-the-object: could not load ${_target.drawing}: $e');

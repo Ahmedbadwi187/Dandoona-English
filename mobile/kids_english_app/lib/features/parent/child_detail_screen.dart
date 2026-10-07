@@ -9,6 +9,7 @@ import '../../core/strings.dart';
 import '../../core/widgets.dart';
 import '../audio/audio_service.dart';
 import '../content/content_models.dart';
+import '../content/packs.dart';
 import '../content/content_repository.dart';
 import '../profiles/child_profile.dart';
 import '../progress/progress.dart';
@@ -319,6 +320,14 @@ class _UnitRow extends ConsumerWidget {
                 children: [
                   Text(unit.titleFor(lang), style: ParentText.body.copyWith(fontWeight: FontWeight.w700)),
                   Text(label, style: ParentText.caption),
+                  // a downloadable unit the child has reached whose pack is not on this phone yet
+                  if (unit.needsDownload && open)
+                    switch (ref.watch(packDownloadsProvider)[unit.id]) {
+                      PackDownload.downloading => Text(s('pPackDownloading'), key: Key('unit-pack-${unit.id}'), style: ParentText.caption),
+                      PackDownload.offline || PackDownload.failed => Text(s('pPackNeedsInternet'),
+                          key: Key('unit-pack-${unit.id}'), style: ParentText.caption.copyWith(color: Palette.blue, fontWeight: FontWeight.w700)),
+                      null => const SizedBox.shrink(),
+                    },
                 ],
               ),
             ),
