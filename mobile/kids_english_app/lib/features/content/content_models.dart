@@ -129,7 +129,11 @@ class CourseUnit {
     this.hasStory = false,
     this.pack,
     this.chest,
+    this.story,
   });
+
+  /// The picture story after this unit (null when it has none yet).
+  final StoryContent? story;
 
   /// What the treasure chest after this unit holds (fixed per unit; see docs/chest-rewards.md). Null in older content.
   final ChestReward? chest;
@@ -165,7 +169,7 @@ class CourseUnit {
   List<String> get lessonIds => lessons.isNotEmpty ? [for (final l in lessons) l.id] : (pack?.lessonIds ?? const []);
 
   CourseUnit withLessons(List<Lesson> lessons) =>
-      CourseUnit(id: id, order: order, title: title, icon: icon, color: color, audio: audio, hasStory: hasStory, pack: pack, chest: chest, lessons: lessons);
+      CourseUnit(id: id, order: order, title: title, icon: icon, color: color, audio: audio, hasStory: hasStory, pack: pack, chest: chest, story: story, lessons: lessons);
 
   String titleFor(String languageCode) => title[languageCode] ?? title['en'] ?? id;
 
@@ -180,6 +184,36 @@ class CourseUnit {
         hasStory: json['story'] != null,
         pack: json['pack'] == null ? null : PackRef.fromJson(json['pack'] as Map<String, dynamic>),
         chest: json['chest'] == null ? null : ChestReward.fromJson(json['chest'] as Map<String, dynamic>),
+        story: json['story'] == null ? null : StoryContent.fromJson(json['story'] as Map<String, dynamic>),
+      );
+}
+
+/// A unit's picture story: pages Dandoona reads, each with some of the unit's pictures.
+class StoryContent {
+  const StoryContent({required this.pages});
+
+  final List<StoryPage> pages;
+
+  factory StoryContent.fromJson(Map<String, dynamic> json) => StoryContent(pages: [for (final p in json['pages'] as List<dynamic>) StoryPage.fromJson(p as Map<String, dynamic>)]);
+}
+
+class StoryPage {
+  const StoryPage({required this.text, required this.audio, this.words = const [], this.pose});
+
+  final String text;
+  final String audio;
+
+  /// Words of the unit whose pictures the page shows.
+  final List<String> words;
+
+  /// waving, jumping, clapping, thinking, pointing-up or base.
+  final String? pose;
+
+  factory StoryPage.fromJson(Map<String, dynamic> json) => StoryPage(
+        text: json['text'] as String,
+        audio: json['audio'] as String,
+        words: ((json['words'] as List<dynamic>?) ?? const []).cast<String>(),
+        pose: json['pose'] as String?,
       );
 }
 

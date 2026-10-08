@@ -15,6 +15,26 @@
     "instr-title": {
       "hash": "48460498db86c9b33a204c2832df542cd78bdf1342b300a449a33695ea0e87b3",
       "generatedAtUtc": "2026-10-07T17:46:22.9680678Z"
+    },
+    "instr-story-1": {
+      "hash": "6a1517cf415d6201516d9b8120e976db1f22a14deb627294c7e6602e996ebed5",
+      "generatedAtUtc": "2026-10-08T08:58:16.7108245Z"
+    },
+    "instr-story-2": {
+      "hash": "e001bbe073239034194552def733ed3e17e8d35ac8b1b8cc59b29164cc498a3c",
+      "generatedAtUtc": "2026-10-08T08:58:17.8394245Z"
+    },
+    "instr-story-3": {
+      "hash": "a02ec7152573436b0b24d1b27a381e67070c39a69dadaa1443112f0192786b1a",
+      "generatedAtUtc": "2026-10-08T08:58:19.0739463Z"
+    },
+    "instr-story-4": {
+      "hash": "e2b6f7f074f59a4f9a8487c780a3cc0ad57360544944f317377f3855cc9a73b8",
+      "generatedAtUtc": "2026-10-08T08:58:20.7171168Z"
+    },
+    "instr-story-5": {
+      "hash": "6e77a8fc88c1d798c2c1ba48a03c5019116fe2d25e86356fa8ada981c5226059",
+      "generatedAtUtc": "2026-10-08T08:58:22.1925532Z"
     }
   }
 }

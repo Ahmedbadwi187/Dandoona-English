@@ -81,8 +81,24 @@ public class UnitDef
     public UnitNarration Narration { get; set; } = new();
     /// <summary>The treasure chest after this unit: an outfit for Dandoona and stickers of this unit's words. Fixed, never random.</summary>
     public UnitChest? Chest { get; set; }
+    /// <summary>The picture story after this unit: a few pages, each a sentence Dandoona reads and some of the unit's own pictures.</summary>
+    public StoryDef? Story { get; set; }
 
     public bool IsPack => Delivery == "pack";
+}
+
+/// <summary>A unit's story: pages in order.</summary>
+public class StoryDef
+{
+    public List<StoryPage> Pages { get; set; } = [];
+}
+
+/// <summary>One page: the sentence (spoken), the unit's words whose pictures are shown, and Dandoona's pose (optional).</summary>
+public class StoryPage
+{
+    public string Text { get; set; } = "";
+    public List<string> Words { get; set; } = [];
+    public string? Pose { get; set; }
 }
 
 /// <summary>What a chest holds: the accessory id (an SVG in content/art/accessories) and 3-4 words of its unit that become stickers.</summary>
@@ -232,6 +248,18 @@ public static class CurriculumReader
             if (!System.Text.RegularExpressions.Regex.IsMatch(u.Chest.Accessory, "^[a-z0-9]+(-[a-z0-9]+)*$")) errors.Add($"unit '{u.Id}': chest accessory must be a kebab-case id.");
             if (u.Chest.Stickers.Count is < 3 or > 4) errors.Add($"unit '{u.Id}': a chest has 3 or 4 stickers.");
             var words = lessons.Where(l => l.Lesson.Track == u.Track && l.Lesson.Unit == u.Id).SelectMany(l => l.Lesson.Words).Select(w => w.Word.Trim().ToLowerInvariant()).ToHashSet();
+            if (u.Story is { } story)
+            {
+                if (story.Pages.Count is < 3 or > 8) errors.Add($"unit '{u.Id}': a story has 3 to 8 pages.");
+                foreach (var (page, n) in story.Pages.Select((p, n) => (p, n + 1)))
+                {
+                    if (page.Text.Trim().Length is 0 or > 140) errors.Add($"unit '{u.Id}': story page {n} needs a sentence of 1-140 characters.");
+                    if (page.Pose is not null and not ("waving" or "jumping" or "clapping" or "thinking" or "pointing-up" or "base")) errors.Add($"unit '{u.Id}': story page {n} has an unknown pose '{page.Pose}'.");
+                    if (page.Words.Count > 3) errors.Add($"unit '{u.Id}': story page {n} shows at most 3 pictures.");
+                    if (words.Count > 0)
+                        foreach (var w in page.Words.Where(w => !words.Contains(w.Trim().ToLowerInvariant()))) errors.Add($"unit '{u.Id}': story page {n} shows '{w}', which is not a word of the unit.");
+                }
+            }
             if (words.Count == 0) continue;
             foreach (var st in u.Chest.Stickers.Where(st => !words.Contains(st.Trim().ToLowerInvariant()))) errors.Add($"unit '{u.Id}': sticker '{st}' is not a word of the unit.");
             if (!File.Exists(Path.Combine(directory, "..", "art", "accessories", u.Chest.Accessory + ".svg"))) errors.Add($"unit '{u.Id}': the chest accessory '{u.Chest.Accessory}' has no drawing in content/art/accessories.");
@@ -369,9 +397,16 @@ public static class CurriculumReader
         Narration = new Narration
         {
             Intro = string.IsNullOrWhiteSpace(u.Narration.Welcome) ? u.Narration.Title : u.Narration.Welcome,
-            Instructions = new Dictionary<string, string>(u.Narration.Lines) { ["title"] = u.Narration.Title, ["celebration"] = u.Narration.Celebration },
+            Instructions = StoryLines(u, new Dictionary<string, string>(u.Narration.Lines) { ["title"] = u.Narration.Title, ["celebration"] = u.Narration.Celebration }),
         },
     };
+
+    /// <summary>The story sentences are spoken like the unit's other lines: `story-1`, `story-2`...</summary>
+    private static Dictionary<string, string> StoryLines(UnitDef u, Dictionary<string, string> lines)
+    {
+        for (var i = 0; i < (u.Story?.Pages.Count ?? 0); i++) lines[$"story-{i + 1}"] = u.Story!.Pages[i].Text.Trim();
+        return lines;
+    }
 
     /// <summary>Selects lessons by --lesson id and/or --track; throws if nothing matches.</summary>
     public static IReadOnlyList<Lesson> Select(IReadOnlyList<Lesson> all, string? lessonId, string? track)

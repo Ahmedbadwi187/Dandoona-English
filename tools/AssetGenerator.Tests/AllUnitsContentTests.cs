@@ -21,6 +21,9 @@ public class AllUnitsContentTests
             var lessons = all.Where(l => l.Unit == u.Id).ToList();
             lessons.Count.ShouldBeGreaterThanOrEqualTo(2, $"{u.Id} has lessons");
             var words = lessons.SelectMany(l => l.Words).Select(w => w.Word.Trim().ToLowerInvariant()).ToHashSet();
+            u.Story.ShouldNotBeNull($"{u.Id} has a story");
+            u.Story!.Pages.Count.ShouldBe(5, $"{u.Id}: five pages");
+            u.Story.Pages.ShouldAllBe(p => p.Text.Trim().Length > 0 && p.Words.All(w => words.Contains(w.Trim().ToLowerInvariant())), $"{u.Id}: every page has a sentence and only words of the unit");
             u.Chest!.Stickers.ShouldAllBe(s => words.Contains(s.Trim().ToLowerInvariant()), $"{u.Id}: stickers are its words");
             File.Exists(Path.Combine(layout.CurriculumDir, "..", "art", "accessories", u.Chest.Accessory + ".svg")).ShouldBeTrue($"{u.Id}: outfit {u.Chest.Accessory} is drawn");
             foreach (var l in lessons.Where(l => l.Id != $"unit-{u.Id}"))

@@ -63,7 +63,9 @@ public class StatusRunner(Layout layout, VoiceConfig voices, string? fallbackVoi
 public record ExportDoc(int SchemaVersion, string Track, DateTime GeneratedAt, string? Mascot, List<ExportUnit> Units, List<ExportPlacement>? Placement = null, ExportUnitAudio? App = null, List<ExportReview>? Reviews = null);
 public record ExportReview(string Id, List<string> Units);
 public record ExportPlacement(int Level, string Key, List<string> DoneUnits, string StartUnit);
-public record ExportUnit(string Id, int Order, Dictionary<string, string> Title, string Icon, string Color, ExportUnitAudio? Audio, List<ExportLesson> Lessons, ExportPackRef? Pack = null, ExportChest? Chest = null);
+public record ExportUnit(string Id, int Order, Dictionary<string, string> Title, string Icon, string Color, ExportUnitAudio? Audio, List<ExportLesson> Lessons, ExportPackRef? Pack = null, ExportChest? Chest = null, ExportStory? Story = null);
+public record ExportStory(List<ExportStoryPage> Pages);
+public record ExportStoryPage(string Text, string Audio, List<string> Words, string? Pose);
 public record ExportChest(string Accessory, List<string> Stickers);
 public record ExportUnitAudio(string Title, string? Welcome, string Celebration, Dictionary<string, string>? Lines = null);
 public record ExportLesson(string Id, int Order, string Level, string? Letter, string? Phoneme,
@@ -185,10 +187,10 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
                 // The app gets only what it needs to show and fetch the pack; the lessons travel inside the pack.
                 var entry = packs.Build(track, u.Id, unitLessons);
                 packEntries.Add(entry);
-                doc.Add(new ExportUnit(u.Id, u.Order, u.Title, u.Icon, u.Color, audio, [], new ExportPackRef(entry.Version, entry.Sha256, entry.Bytes, entry.Manifest, entry.LessonIds), ChestOf(u)));
+                doc.Add(new ExportUnit(u.Id, u.Order, u.Title, u.Icon, u.Color, audio, [], new ExportPackRef(entry.Version, entry.Sha256, entry.Bytes, entry.Manifest, entry.LessonIds), ChestOf(u), StoryOf(u)));
                 output.WriteLine($"  pack {u.Id}: v{entry.Version}, {entry.Bytes / 1024.0:0.0} KB");
             }
-            else doc.Add(new ExportUnit(u.Id, u.Order, u.Title, u.Icon, u.Color, audio, unitLessons, null, ChestOf(u)));
+            else doc.Add(new ExportUnit(u.Id, u.Order, u.Title, u.Icon, u.Color, audio, unitLessons, null, ChestOf(u), StoryOf(u)));
         }
         if (units is { Count: > 0 } && units.Any(u => u.Track == track && u.IsPack)) packs.Save(track, packEntries);
 
@@ -270,6 +272,9 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
             lines.Count == 0 ? null : lines.OrderBy(k => k.Key, StringComparer.Ordinal).ToDictionary());
         return (audio, missing.Count == 0 ? null : $"{ul.Id}: no audio yet for {string.Join(", ", missing)} (run audio)");
     }
+
+    private static ExportStory? StoryOf(UnitDef u) => u.Story is null ? null : new ExportStory(Enumerable.Range(0, u.Story.Pages.Count).Select(i =>
+        new ExportStoryPage(u.Story.Pages[i].Text.Trim(), Layout.ExportAudioRel(CurriculumReader.UnitAudioLesson(u), LessonPlan.InstructionRole($"story-{i + 1}")), u.Story.Pages[i].Words.Select(w => w.Trim()).ToList(), u.Story.Pages[i].Pose)).ToList());
 
     private static ExportChest? ChestOf(UnitDef u) => u.Chest is null ? null : new ExportChest(u.Chest.Accessory, u.Chest.Stickers.Select(s => s.Trim()).ToList());
 

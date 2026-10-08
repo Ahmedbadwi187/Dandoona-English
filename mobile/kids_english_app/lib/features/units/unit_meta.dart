@@ -187,6 +187,14 @@ class UnitMetaNotifier extends Notifier<UnitMeta> {
     await _save();
   }
 
+  /// The story after [unitId] was read to the end.
+  Future<void> readStory(String childId, String unitId) async {
+    final meta = state.of(childId);
+    if (meta.stories.contains(unitId)) return;
+    _put(childId, meta.copyWith(stories: {...meta.stories, unitId}));
+    await _save();
+  }
+
   /// A review (or the castle) on the map was passed: it opens the unit after it.
   Future<void> passReview(String childId, String reviewId) async {
     final meta = state.of(childId);

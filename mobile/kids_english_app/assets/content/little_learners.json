@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "little-learners",
-  "generatedAt": "2026-10-08T07:37:43.8669734Z",
+  "generatedAt": "2026-10-08T08:59:02.937507Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -18,7 +18,12 @@
         "welcome": "audio/little_learners/unit_letters/intro.mp3",
         "celebration": "audio/little_learners/unit_letters/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/little_learners/unit_letters/instr_locked.mp3"
+          "locked": "audio/little_learners/unit_letters/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_letters/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_letters/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_letters/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_letters/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_letters/instr_story_5.mp3"
         }
       },
       "lessons": [
@@ -1086,6 +1091,49 @@
           "cat",
           "dog"
         ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "Dandoona goes to a picnic.",
+            "audio": "audio/little_learners/unit_letters/instr_story_1.mp3",
+            "words": [],
+            "pose": "waving"
+          },
+          {
+            "text": "She brings an apple and a banana.",
+            "audio": "audio/little_learners/unit_letters/instr_story_2.mp3",
+            "words": [
+              "apple",
+              "banana"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "A cat and a dog come too.",
+            "audio": "audio/little_learners/unit_letters/instr_story_3.mp3",
+            "words": [
+              "cat",
+              "dog"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "A duck brings an egg.",
+            "audio": "audio/little_learners/unit_letters/instr_story_4.mp3",
+            "words": [
+              "duck",
+              "egg"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "Yum! What a happy picnic!",
+            "audio": "audio/little_learners/unit_letters/instr_story_5.mp3",
+            "words": [],
+            "pose": "clapping"
+          }
+        ]
       }
     },
     {
@@ -1102,7 +1150,12 @@
         "welcome": "audio/little_learners/unit_colors/intro.mp3",
         "celebration": "audio/little_learners/unit_colors/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/little_learners/unit_colors/instr_locked.mp3"
+          "locked": "audio/little_learners/unit_colors/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_colors/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_colors/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_colors/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_colors/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_colors/instr_story_5.mp3"
         }
       },
       "lessons": [
@@ -1635,6 +1688,51 @@
           "frog",
           "cloud"
         ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "Dandoona wakes up on a sunny day.",
+            "audio": "audio/little_learners/unit_colors/instr_story_1.mp3",
+            "words": [
+              "sun"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "She sees a red apple and a red strawberry.",
+            "audio": "audio/little_learners/unit_colors/instr_story_2.mp3",
+            "words": [
+              "apple",
+              "strawberry"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "A yellow duck swims by a green frog.",
+            "audio": "audio/little_learners/unit_colors/instr_story_3.mp3",
+            "words": [
+              "duck",
+              "frog"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "A blue balloon floats near a blue cloud.",
+            "audio": "audio/little_learners/unit_colors/instr_story_4.mp3",
+            "words": [
+              "balloon",
+              "cloud"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "What a colorful day!",
+            "audio": "audio/little_learners/unit_colors/instr_story_5.mp3",
+            "words": [],
+            "pose": "clapping"
+          }
+        ]
       }
     },
     {
@@ -1651,7 +1749,12 @@
         "welcome": "audio/little_learners/unit_numbers/intro.mp3",
         "celebration": "audio/little_learners/unit_numbers/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/little_learners/unit_numbers/instr_locked.mp3"
+          "locked": "audio/little_learners/unit_numbers/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_numbers/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_numbers/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_numbers/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_numbers/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_numbers/instr_story_5.mp3"
         }
       },
       "lessons": [],
@@ -1674,6 +1777,53 @@
           "five",
           "ten"
         ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "Dandoona has one balloon.",
+            "audio": "audio/little_learners/unit_numbers/instr_story_1.mp3",
+            "words": [
+              "one"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "Then she gets two more. Now she has three!",
+            "audio": "audio/little_learners/unit_numbers/instr_story_2.mp3",
+            "words": [
+              "two",
+              "three"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "Four, five, six balloons fly up.",
+            "audio": "audio/little_learners/unit_numbers/instr_story_3.mp3",
+            "words": [
+              "four",
+              "five",
+              "six"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "Eight, nine, ten balloons float away.",
+            "audio": "audio/little_learners/unit_numbers/instr_story_4.mp3",
+            "words": [
+              "eight",
+              "nine",
+              "ten"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "Wow! So many happy balloons!",
+            "audio": "audio/little_learners/unit_numbers/instr_story_5.mp3",
+            "words": [],
+            "pose": "clapping"
+          }
+        ]
       }
     },
     {
@@ -1690,7 +1840,12 @@
         "welcome": "audio/little_learners/unit_shapes/intro.mp3",
         "celebration": "audio/little_learners/unit_shapes/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/little_learners/unit_shapes/instr_locked.mp3"
+          "locked": "audio/little_learners/unit_shapes/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_shapes/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_shapes/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_shapes/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_shapes/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_shapes/instr_story_5.mp3"
         }
       },
       "lessons": [],
@@ -1714,6 +1869,53 @@
           "star",
           "heart"
         ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "Dandoona finds a ball. It is a circle.",
+            "audio": "audio/little_learners/unit_shapes/instr_story_1.mp3",
+            "words": [
+              "ball",
+              "circle"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "She sees a window. It is a rectangle.",
+            "audio": "audio/little_learners/unit_shapes/instr_story_2.mp3",
+            "words": [
+              "window",
+              "rectangle"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "A kite flies high. It is a diamond.",
+            "audio": "audio/little_learners/unit_shapes/instr_story_3.mp3",
+            "words": [
+              "kite",
+              "diamond"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "An egg is an oval. A heart is a heart.",
+            "audio": "audio/little_learners/unit_shapes/instr_story_4.mp3",
+            "words": [
+              "egg",
+              "oval",
+              "heart"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "Shapes are everywhere!",
+            "audio": "audio/little_learners/unit_shapes/instr_story_5.mp3",
+            "words": [],
+            "pose": "clapping"
+          }
+        ]
       }
     },
     {
@@ -1730,7 +1932,12 @@
         "welcome": "audio/little_learners/unit_animals/intro.mp3",
         "celebration": "audio/little_learners/unit_animals/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/little_learners/unit_animals/instr_locked.mp3"
+          "locked": "audio/little_learners/unit_animals/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_animals/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_animals/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_animals/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_animals/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_animals/instr_story_5.mp3"
         }
       },
       "lessons": [],
@@ -1755,6 +1962,49 @@
           "duck",
           "fish"
         ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "Dandoona visits the farm.",
+            "audio": "audio/little_learners/unit_animals/instr_story_1.mp3",
+            "words": [],
+            "pose": "waving"
+          },
+          {
+            "text": "A cow says moo. A pig says oink.",
+            "audio": "audio/little_learners/unit_animals/instr_story_2.mp3",
+            "words": [
+              "cow",
+              "pig"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "A horse runs and a duck swims.",
+            "audio": "audio/little_learners/unit_animals/instr_story_3.mp3",
+            "words": [
+              "horse",
+              "duck"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "A cat and a dog play together.",
+            "audio": "audio/little_learners/unit_animals/instr_story_4.mp3",
+            "words": [
+              "cat",
+              "dog"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "What a fun day!",
+            "audio": "audio/little_learners/unit_animals/instr_story_5.mp3",
+            "words": [],
+            "pose": "clapping"
+          }
+        ]
       }
     },
     {
@@ -1771,7 +2021,12 @@
         "welcome": "audio/little_learners/unit_feelings/intro.mp3",
         "celebration": "audio/little_learners/unit_feelings/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/little_learners/unit_feelings/instr_locked.mp3"
+          "locked": "audio/little_learners/unit_feelings/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_feelings/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_feelings/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_feelings/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_feelings/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_feelings/instr_story_5.mp3"
         }
       },
       "lessons": [],
@@ -1793,6 +2048,48 @@
           "angry",
           "sleepy"
         ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "Dandoona is happy. She is playing.",
+            "audio": "audio/little_learners/unit_feelings/instr_story_1.mp3",
+            "words": [
+              "happy"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "Her toy falls. Now she is sad.",
+            "audio": "audio/little_learners/unit_feelings/instr_story_2.mp3",
+            "words": [
+              "sad"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "Her friend helps. Dandoona is happy again!",
+            "audio": "audio/little_learners/unit_feelings/instr_story_3.mp3",
+            "words": [
+              "happy"
+            ],
+            "pose": "clapping"
+          },
+          {
+            "text": "It is late. Dandoona is sleepy.",
+            "audio": "audio/little_learners/unit_feelings/instr_story_4.mp3",
+            "words": [
+              "sleepy"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "Good night, Dandoona!",
+            "audio": "audio/little_learners/unit_feelings/instr_story_5.mp3",
+            "words": [],
+            "pose": "base"
+          }
+        ]
       }
     },
     {
@@ -1809,7 +2106,12 @@
         "welcome": "audio/little_learners/unit_my_body/intro.mp3",
         "celebration": "audio/little_learners/unit_my_body/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/little_learners/unit_my_body/instr_locked.mp3"
+          "locked": "audio/little_learners/unit_my_body/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_my_body/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_my_body/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_my_body/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_my_body/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_my_body/instr_story_5.mp3"
         }
       },
       "lessons": [],
@@ -1831,6 +2133,51 @@
           "eye",
           "nose"
         ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "Dandoona wakes up and opens her eyes.",
+            "audio": "audio/little_learners/unit_my_body/instr_story_1.mp3",
+            "words": [
+              "eye"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "She hears a bird with her ear.",
+            "audio": "audio/little_learners/unit_my_body/instr_story_2.mp3",
+            "words": [
+              "ear"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "She smells breakfast with her nose.",
+            "audio": "audio/little_learners/unit_my_body/instr_story_3.mp3",
+            "words": [
+              "nose"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "Yum! She eats with her mouth.",
+            "audio": "audio/little_learners/unit_my_body/instr_story_4.mp3",
+            "words": [
+              "mouth"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "Then she waves her hand and stamps her foot.",
+            "audio": "audio/little_learners/unit_my_body/instr_story_5.mp3",
+            "words": [
+              "hand",
+              "foot"
+            ],
+            "pose": "clapping"
+          }
+        ]
       }
     },
     {
@@ -1847,7 +2194,12 @@
         "welcome": "audio/little_learners/unit_actions/intro.mp3",
         "celebration": "audio/little_learners/unit_actions/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/little_learners/unit_actions/instr_locked.mp3"
+          "locked": "audio/little_learners/unit_actions/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_actions/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_actions/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_actions/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_actions/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_actions/instr_story_5.mp3"
         }
       },
       "lessons": [],
@@ -1870,6 +2222,53 @@
           "clap",
           "dance"
         ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "Dandoona waves hello.",
+            "audio": "audio/little_learners/unit_actions/instr_story_1.mp3",
+            "words": [
+              "wave"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "She jumps and claps.",
+            "audio": "audio/little_learners/unit_actions/instr_story_2.mp3",
+            "words": [
+              "jump",
+              "clap"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "She runs and dances.",
+            "audio": "audio/little_learners/unit_actions/instr_story_3.mp3",
+            "words": [
+              "run",
+              "dance"
+            ],
+            "pose": "clapping"
+          },
+          {
+            "text": "Then she sits and thinks.",
+            "audio": "audio/little_learners/unit_actions/instr_story_4.mp3",
+            "words": [
+              "sit",
+              "think"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "Time to sleep. Good night!",
+            "audio": "audio/little_learners/unit_actions/instr_story_5.mp3",
+            "words": [
+              "sleep"
+            ],
+            "pose": "base"
+          }
+        ]
       }
     },
     {
@@ -1886,7 +2285,12 @@
         "welcome": "audio/little_learners/unit_food/intro.mp3",
         "celebration": "audio/little_learners/unit_food/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/little_learners/unit_food/instr_locked.mp3"
+          "locked": "audio/little_learners/unit_food/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_food/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_food/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_food/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_food/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_food/instr_story_5.mp3"
         }
       },
       "lessons": [],
@@ -1910,6 +2314,49 @@
           "pizza",
           "cupcake"
         ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "Dandoona is hungry.",
+            "audio": "audio/little_learners/unit_food/instr_story_1.mp3",
+            "words": [],
+            "pose": "thinking"
+          },
+          {
+            "text": "She eats pizza and a carrot.",
+            "audio": "audio/little_learners/unit_food/instr_story_2.mp3",
+            "words": [
+              "pizza",
+              "carrot"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "She drinks milk and juice.",
+            "audio": "audio/little_learners/unit_food/instr_story_3.mp3",
+            "words": [
+              "milk",
+              "juice"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "For dessert, ice cream and a cupcake!",
+            "audio": "audio/little_learners/unit_food/instr_story_4.mp3",
+            "words": [
+              "ice cream",
+              "cupcake"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "Yummy! Now she is full.",
+            "audio": "audio/little_learners/unit_food/instr_story_5.mp3",
+            "words": [],
+            "pose": "clapping"
+          }
+        ]
       }
     },
     {
@@ -1926,7 +2373,12 @@
         "welcome": "audio/little_learners/unit_clothes/intro.mp3",
         "celebration": "audio/little_learners/unit_clothes/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/little_learners/unit_clothes/instr_locked.mp3"
+          "locked": "audio/little_learners/unit_clothes/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_clothes/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_clothes/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_clothes/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_clothes/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_clothes/instr_story_5.mp3"
         }
       },
       "lessons": [],
@@ -1949,6 +2401,52 @@
           "hat",
           "socks"
         ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "It is cold today. Dandoona gets dressed.",
+            "audio": "audio/little_learners/unit_clothes/instr_story_1.mp3",
+            "words": [],
+            "pose": "waving"
+          },
+          {
+            "text": "She puts on a shirt and pants.",
+            "audio": "audio/little_learners/unit_clothes/instr_story_2.mp3",
+            "words": [
+              "shirt",
+              "pants"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "She puts on socks and shoes.",
+            "audio": "audio/little_learners/unit_clothes/instr_story_3.mp3",
+            "words": [
+              "socks",
+              "shoes"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "She wears a jacket, a scarf and gloves.",
+            "audio": "audio/little_learners/unit_clothes/instr_story_4.mp3",
+            "words": [
+              "jacket",
+              "scarf",
+              "gloves"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "And a hat! Ready to go!",
+            "audio": "audio/little_learners/unit_clothes/instr_story_5.mp3",
+            "words": [
+              "hat"
+            ],
+            "pose": "clapping"
+          }
+        ]
       }
     },
     {
@@ -1965,7 +2463,12 @@
         "welcome": "audio/little_learners/unit_toys/intro.mp3",
         "celebration": "audio/little_learners/unit_toys/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/little_learners/unit_toys/instr_locked.mp3"
+          "locked": "audio/little_learners/unit_toys/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_toys/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_toys/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_toys/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_toys/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_toys/instr_story_5.mp3"
         }
       },
       "lessons": [],
@@ -1988,6 +2491,51 @@
           "kite",
           "teddy"
         ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "Dandoona opens the toy box.",
+            "audio": "audio/little_learners/unit_toys/instr_story_1.mp3",
+            "words": [],
+            "pose": "waving"
+          },
+          {
+            "text": "She plays with a ball and a car.",
+            "audio": "audio/little_learners/unit_toys/instr_story_2.mp3",
+            "words": [
+              "ball",
+              "car"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "She builds with blocks and plays the drum.",
+            "audio": "audio/little_learners/unit_toys/instr_story_3.mp3",
+            "words": [
+              "blocks",
+              "drum"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "She hugs her teddy and her doll.",
+            "audio": "audio/little_learners/unit_toys/instr_story_4.mp3",
+            "words": [
+              "teddy",
+              "doll"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "Then she flies a kite!",
+            "audio": "audio/little_learners/unit_toys/instr_story_5.mp3",
+            "words": [
+              "kite"
+            ],
+            "pose": "clapping"
+          }
+        ]
       }
     },
     {
@@ -2004,7 +2552,12 @@
         "welcome": "audio/little_learners/unit_my_family/intro.mp3",
         "celebration": "audio/little_learners/unit_my_family/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/little_learners/unit_my_family/instr_locked.mp3"
+          "locked": "audio/little_learners/unit_my_family/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_my_family/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_my_family/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_my_family/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_my_family/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_my_family/instr_story_5.mp3"
         }
       },
       "lessons": [],
@@ -2027,6 +2580,50 @@
           "baby",
           "grandma"
         ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "This is my family.",
+            "audio": "audio/little_learners/unit_my_family/instr_story_1.mp3",
+            "words": [],
+            "pose": "waving"
+          },
+          {
+            "text": "My mom and my dad say hello.",
+            "audio": "audio/little_learners/unit_my_family/instr_story_2.mp3",
+            "words": [
+              "mom",
+              "dad"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "My grandma and my grandpa wave.",
+            "audio": "audio/little_learners/unit_my_family/instr_story_3.mp3",
+            "words": [
+              "grandma",
+              "grandpa"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "My brother, my sister and the baby smile.",
+            "audio": "audio/little_learners/unit_my_family/instr_story_4.mp3",
+            "words": [
+              "brother",
+              "sister",
+              "baby"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "We are a happy family!",
+            "audio": "audio/little_learners/unit_my_family/instr_story_5.mp3",
+            "words": [],
+            "pose": "clapping"
+          }
+        ]
       }
     },
     {
@@ -2043,7 +2640,12 @@
         "welcome": "audio/little_learners/unit_my_home/intro.mp3",
         "celebration": "audio/little_learners/unit_my_home/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/little_learners/unit_my_home/instr_locked.mp3"
+          "locked": "audio/little_learners/unit_my_home/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_my_home/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_my_home/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_my_home/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_my_home/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_my_home/instr_story_5.mp3"
         }
       },
       "lessons": [],
@@ -2066,6 +2668,53 @@
           "lamp",
           "window"
         ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "Dandoona opens the door with a key.",
+            "audio": "audio/little_learners/unit_my_home/instr_story_1.mp3",
+            "words": [
+              "door",
+              "key"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "She sits on the sofa near the window.",
+            "audio": "audio/little_learners/unit_my_home/instr_story_2.mp3",
+            "words": [
+              "sofa",
+              "window"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "A lamp is on the table.",
+            "audio": "audio/little_learners/unit_my_home/instr_story_3.mp3",
+            "words": [
+              "lamp",
+              "table"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "She sits on a chair.",
+            "audio": "audio/little_learners/unit_my_home/instr_story_4.mp3",
+            "words": [
+              "chair"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "Time for bed. Good night!",
+            "audio": "audio/little_learners/unit_my_home/instr_story_5.mp3",
+            "words": [
+              "bed"
+            ],
+            "pose": "base"
+          }
+        ]
       }
     },
     {
@@ -2082,7 +2731,12 @@
         "welcome": "audio/little_learners/unit_opposites/intro.mp3",
         "celebration": "audio/little_learners/unit_opposites/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/little_learners/unit_opposites/instr_locked.mp3"
+          "locked": "audio/little_learners/unit_opposites/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_opposites/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_opposites/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_opposites/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_opposites/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_opposites/instr_story_5.mp3"
         }
       },
       "lessons": [],
@@ -2104,6 +2758,52 @@
           "hot",
           "cold"
         ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "An elephant is big. An ant is small.",
+            "audio": "audio/little_learners/unit_opposites/instr_story_1.mp3",
+            "words": [
+              "big",
+              "small"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "The sun is hot. The snowman is cold.",
+            "audio": "audio/little_learners/unit_opposites/instr_story_2.mp3",
+            "words": [
+              "hot",
+              "cold"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "The arrow goes up and then down.",
+            "audio": "audio/little_learners/unit_opposites/instr_story_3.mp3",
+            "words": [
+              "up",
+              "down"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "A car is fast. A turtle is slow.",
+            "audio": "audio/little_learners/unit_opposites/instr_story_4.mp3",
+            "words": [
+              "fast",
+              "slow"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "Opposites are fun!",
+            "audio": "audio/little_learners/unit_opposites/instr_story_5.mp3",
+            "words": [],
+            "pose": "clapping"
+          }
+        ]
       }
     },
     {
@@ -2120,7 +2820,12 @@
         "welcome": "audio/little_learners/unit_transport/intro.mp3",
         "celebration": "audio/little_learners/unit_transport/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/little_learners/unit_transport/instr_locked.mp3"
+          "locked": "audio/little_learners/unit_transport/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_transport/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_transport/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_transport/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_transport/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_transport/instr_story_5.mp3"
         }
       },
       "lessons": [],
@@ -2142,6 +2847,52 @@
           "bus",
           "boat",
           "plane"
+        ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "Dandoona wants to travel.",
+            "audio": "audio/little_learners/unit_transport/instr_story_1.mp3",
+            "words": [],
+            "pose": "waving"
+          },
+          {
+            "text": "She goes by bike and by bus.",
+            "audio": "audio/little_learners/unit_transport/instr_story_2.mp3",
+            "words": [
+              "bike",
+              "bus"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "She rides a train and a car.",
+            "audio": "audio/little_learners/unit_transport/instr_story_3.mp3",
+            "words": [
+              "train",
+              "car"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "She sails in a boat and flies in a plane.",
+            "audio": "audio/little_learners/unit_transport/instr_story_4.mp3",
+            "words": [
+              "boat",
+              "plane"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "A truck and a van wave goodbye.",
+            "audio": "audio/little_learners/unit_transport/instr_story_5.mp3",
+            "words": [
+              "truck",
+              "van"
+            ],
+            "pose": "clapping"
+          }
         ]
       }
     }

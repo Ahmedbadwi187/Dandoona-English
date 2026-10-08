@@ -262,7 +262,10 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
       unawaited(context.push('/review/${stop.id}')); // ready: the game (passing it opens the next unit); done: play again
       return;
     }
-    // The story screen comes with its content (next step).
+    if (stop.kind == StopKind.story) {
+      unawaited(context.push('/story/${stop.unit!.unit.id}')); // ready: the story (read to the end it is done); done: read it again
+      return;
+    }
   }
 
   Future<void> _openParentArea() async {

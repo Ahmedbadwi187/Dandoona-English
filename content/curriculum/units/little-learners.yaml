@@ -39,6 +39,14 @@ units:
     color: red
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
     chest: { accessory: grad-cap, stickers: [apple, ball, cat, dog] }
+    # The picture story after this unit: Dandoona reads one sentence per page; the pictures are words of the unit.
+    story:
+      pages:
+        - { text: "Dandoona goes to a picnic.", words: [], pose: waving }
+        - { text: "She brings an apple and a banana.", words: [apple, banana], pose: pointing-up }
+        - { text: "A cat and a dog come too.", words: [cat, dog], pose: jumping }
+        - { text: "A duck brings an egg.", words: [duck, egg], pose: thinking }
+        - { text: "Yum! What a happy picnic!", words: [], pose: clapping }
     narration:
       title: "Letters"
       welcome: "Let's learn the letters!"
@@ -51,6 +59,14 @@ units:
     color: orange
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
     chest: { accessory: beret, stickers: [strawberry, sun, frog, cloud] }
+    # The picture story after this unit: Dandoona reads one sentence per page; the pictures are words of the unit.
+    story:
+      pages:
+        - { text: "Dandoona wakes up on a sunny day.", words: [sun], pose: waving }
+        - { text: "She sees a red apple and a red strawberry.", words: [apple, strawberry], pose: pointing-up }
+        - { text: "A yellow duck swims by a green frog.", words: [duck, frog], pose: jumping }
+        - { text: "A blue balloon floats near a blue cloud.", words: [balloon, cloud], pose: thinking }
+        - { text: "What a colorful day!", words: [], pose: clapping }
     narration:
       title: "Colors"
       welcome: "Let's learn the colors!"
@@ -64,6 +80,14 @@ units:
     color: blue
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
     chest: { accessory: top-hat, stickers: [one, three, five, ten] }
+    # The picture story after this unit: Dandoona reads one sentence per page; the pictures are words of the unit.
+    story:
+      pages:
+        - { text: "Dandoona has one balloon.", words: [one], pose: waving }
+        - { text: "Then she gets two more. Now she has three!", words: [two, three], pose: jumping }
+        - { text: "Four, five, six balloons fly up.", words: [four, five, six], pose: pointing-up }
+        - { text: "Eight, nine, ten balloons float away.", words: [eight, nine, ten], pose: thinking }
+        - { text: "Wow! So many happy balloons!", words: [], pose: clapping }
     narration:
       title: "Numbers"
       welcome: "Let's count!"
@@ -77,6 +101,14 @@ units:
     color: green
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
     chest: { accessory: star-headband, stickers: [circle, triangle, star, heart] }
+    # The picture story after this unit: Dandoona reads one sentence per page; the pictures are words of the unit.
+    story:
+      pages:
+        - { text: "Dandoona finds a ball. It is a circle.", words: [ball, circle], pose: waving }
+        - { text: "She sees a window. It is a rectangle.", words: [window, rectangle], pose: pointing-up }
+        - { text: "A kite flies high. It is a diamond.", words: [kite, diamond], pose: jumping }
+        - { text: "An egg is an oval. A heart is a heart.", words: [egg, oval, heart], pose: thinking }
+        - { text: "Shapes are everywhere!", words: [], pose: clapping }
     narration:
       title: "Shapes"
       welcome: "Let's find shapes!"
@@ -90,6 +122,14 @@ units:
     color: teal
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
     chest: { accessory: animal-ears, stickers: [cat, dog, duck, fish] }
+    # The picture story after this unit: Dandoona reads one sentence per page; the pictures are words of the unit.
+    story:
+      pages:
+        - { text: "Dandoona visits the farm.", words: [], pose: waving }
+        - { text: "A cow says moo. A pig says oink.", words: [cow, pig], pose: pointing-up }
+        - { text: "A horse runs and a duck swims.", words: [horse, duck], pose: jumping }
+        - { text: "A cat and a dog play together.", words: [cat, dog], pose: thinking }
+        - { text: "What a fun day!", words: [], pose: clapping }
     narration:
       title: "Animals"
       welcome: "Let's meet the animals!"
@@ -104,6 +144,14 @@ units:
     color: purple
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
     chest: { accessory: heart-glasses, stickers: [happy, sad, angry, sleepy] }
+    # The picture story after this unit: Dandoona reads one sentence per page; the pictures are words of the unit.
+    story:
+      pages:
+        - { text: "Dandoona is happy. She is playing.", words: [happy], pose: jumping }
+        - { text: "Her toy falls. Now she is sad.", words: [sad], pose: thinking }
+        - { text: "Her friend helps. Dandoona is happy again!", words: [happy], pose: clapping }
+        - { text: "It is late. Dandoona is sleepy.", words: [sleepy], pose: waving }
+        - { text: "Good night, Dandoona!", words: [], pose: base }
     narration:
       title: "Feelings"
       welcome: "How do you feel today?"
@@ -117,6 +165,14 @@ units:
     color: pink
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
     chest: { accessory: sweatband, stickers: [hand, foot, eye, nose] }
+    # The picture story after this unit: Dandoona reads one sentence per page; the pictures are words of the unit.
+    story:
+      pages:
+        - { text: "Dandoona wakes up and opens her eyes.", words: [eye], pose: waving }
+        - { text: "She hears a bird with her ear.", words: [ear], pose: pointing-up }
+        - { text: "She smells breakfast with her nose.", words: [nose], pose: thinking }
+        - { text: "Yum! She eats with her mouth.", words: [mouth], pose: jumping }
+        - { text: "Then she waves her hand and stamps her foot.", words: [hand, foot], pose: clapping }
     narration:
       title: "My Body"
       welcome: "Let's learn about me!"
@@ -131,6 +187,14 @@ units:
     color: orange
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
     chest: { accessory: hero-mask, stickers: [jump, run, clap, dance] }
+    # The picture story after this unit: Dandoona reads one sentence per page; the pictures are words of the unit.
+    story:
+      pages:
+        - { text: "Dandoona waves hello.", words: [wave], pose: waving }
+        - { text: "She jumps and claps.", words: [jump, clap], pose: jumping }
+        - { text: "She runs and dances.", words: [run, dance], pose: clapping }
+        - { text: "Then she sits and thinks.", words: [sit, think], pose: thinking }
+        - { text: "Time to sleep. Good night!", words: [sleep], pose: base }
     narration:
       title: "Actions"
       welcome: "Let's move!"
@@ -144,6 +208,14 @@ units:
     color: yellow
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
     chest: { accessory: chef-hat, stickers: [apple, milk, pizza, cupcake] }
+    # The picture story after this unit: Dandoona reads one sentence per page; the pictures are words of the unit.
+    story:
+      pages:
+        - { text: "Dandoona is hungry.", words: [], pose: thinking }
+        - { text: "She eats pizza and a carrot.", words: [pizza, carrot], pose: pointing-up }
+        - { text: "She drinks milk and juice.", words: [milk, juice], pose: waving }
+        - { text: "For dessert, ice cream and a cupcake!", words: [ice cream, cupcake], pose: jumping }
+        - { text: "Yummy! Now she is full.", words: [], pose: clapping }
     narration:
       title: "Food"
       welcome: "Yummy! Let's learn food!"
@@ -157,6 +229,14 @@ units:
     color: blue
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
     chest: { accessory: beanie, stickers: [shirt, shoes, hat, socks] }
+    # The picture story after this unit: Dandoona reads one sentence per page; the pictures are words of the unit.
+    story:
+      pages:
+        - { text: "It is cold today. Dandoona gets dressed.", words: [], pose: waving }
+        - { text: "She puts on a shirt and pants.", words: [shirt, pants], pose: pointing-up }
+        - { text: "She puts on socks and shoes.", words: [socks, shoes], pose: jumping }
+        - { text: "She wears a jacket, a scarf and gloves.", words: [jacket, scarf, gloves], pose: thinking }
+        - { text: "And a hat! Ready to go!", words: [hat], pose: clapping }
     narration:
       title: "Clothes"
       welcome: "Let's get dressed!"
@@ -170,6 +250,14 @@ units:
     color: red
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
     chest: { accessory: propeller-cap, stickers: [ball, doll, kite, teddy] }
+    # The picture story after this unit: Dandoona reads one sentence per page; the pictures are words of the unit.
+    story:
+      pages:
+        - { text: "Dandoona opens the toy box.", words: [], pose: waving }
+        - { text: "She plays with a ball and a car.", words: [ball, car], pose: jumping }
+        - { text: "She builds with blocks and plays the drum.", words: [blocks, drum], pose: pointing-up }
+        - { text: "She hugs her teddy and her doll.", words: [teddy, doll], pose: thinking }
+        - { text: "Then she flies a kite!", words: [kite], pose: clapping }
     narration:
       title: "Toys"
       welcome: "Let's play with toys!"
@@ -183,6 +271,14 @@ units:
     color: purple
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
     chest: { accessory: flower-crown, stickers: [mom, dad, baby, grandma] }
+    # The picture story after this unit: Dandoona reads one sentence per page; the pictures are words of the unit.
+    story:
+      pages:
+        - { text: "This is my family.", words: [], pose: waving }
+        - { text: "My mom and my dad say hello.", words: [mom, dad], pose: pointing-up }
+        - { text: "My grandma and my grandpa wave.", words: [grandma, grandpa], pose: jumping }
+        - { text: "My brother, my sister and the baby smile.", words: [brother, sister, baby], pose: thinking }
+        - { text: "We are a happy family!", words: [], pose: clapping }
     narration:
       title: "My Family"
       welcome: "Let's meet the family!"
@@ -197,6 +293,14 @@ units:
     color: teal
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
     chest: { accessory: night-cap, stickers: [bed, door, lamp, window] }
+    # The picture story after this unit: Dandoona reads one sentence per page; the pictures are words of the unit.
+    story:
+      pages:
+        - { text: "Dandoona opens the door with a key.", words: [door, key], pose: waving }
+        - { text: "She sits on the sofa near the window.", words: [sofa, window], pose: pointing-up }
+        - { text: "A lamp is on the table.", words: [lamp, table], pose: thinking }
+        - { text: "She sits on a chair.", words: [chair], pose: jumping }
+        - { text: "Time for bed. Good night!", words: [bed], pose: base }
     narration:
       title: "My Home"
       welcome: "Welcome to my home!"
@@ -211,6 +315,14 @@ units:
     color: pink
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
     chest: { accessory: sunglasses, stickers: [big, small, hot, cold] }
+    # The picture story after this unit: Dandoona reads one sentence per page; the pictures are words of the unit.
+    story:
+      pages:
+        - { text: "An elephant is big. An ant is small.", words: [big, small], pose: waving }
+        - { text: "The sun is hot. The snowman is cold.", words: [hot, cold], pose: pointing-up }
+        - { text: "The arrow goes up and then down.", words: [up, down], pose: jumping }
+        - { text: "A car is fast. A turtle is slow.", words: [fast, slow], pose: thinking }
+        - { text: "Opposites are fun!", words: [], pose: clapping }
     narration:
       title: "Opposites"
       welcome: "Big or small? Let's see!"
@@ -225,6 +337,14 @@ units:
     color: green
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
     chest: { accessory: pilot-cap, stickers: [car, bus, boat, plane] }
+    # The picture story after this unit: Dandoona reads one sentence per page; the pictures are words of the unit.
+    story:
+      pages:
+        - { text: "Dandoona wants to travel.", words: [], pose: waving }
+        - { text: "She goes by bike and by bus.", words: [bike, bus], pose: pointing-up }
+        - { text: "She rides a train and a car.", words: [train, car], pose: jumping }
+        - { text: "She sails in a boat and flies in a plane.", words: [boat, plane], pose: thinking }
+        - { text: "A truck and a van wave goodbye.", words: [truck, van], pose: clapping }
     narration:
       title: "Transport"
       welcome: "Beep beep! Let's go!"
