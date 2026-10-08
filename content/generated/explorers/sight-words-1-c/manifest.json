@@ -71,6 +71,14 @@
     "instr-sentence-builder": {
       "hash": "74cef28a8c2c5ae3092fdb97efde3b8243986d0fbd9193885b03a8332eede6c2",
       "generatedAtUtc": "2026-10-08T15:31:02.7964691Z"
+    },
+    "instr-sight-word-hunt": {
+      "hash": "8dae498a1a3d2981035d0ded0b47660d8280fb45273ab51c9a0ceee002666fab",
+      "generatedAtUtc": "2026-10-08T18:45:03.120931Z"
+    },
+    "instr-true-or-false": {
+      "hash": "010d363c8c78fd55ad0f2b636085e2fe6a95bb07dc926ea267ada17ea979c4f3",
+      "generatedAtUtc": "2026-10-08T18:45:04.203214Z"
     }
   }
 }

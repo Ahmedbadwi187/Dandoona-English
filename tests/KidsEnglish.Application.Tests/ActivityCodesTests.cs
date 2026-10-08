@@ -10,7 +10,7 @@ public class ActivityCodesTests
     [Fact]
     public void Every_activity_the_app_sends_has_a_code_and_the_codes_round_trip()
     {
-        foreach (var code in new[] { "trace", "trace-small", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "animal-sounds", "habitat", "dandoona-says", "sort", "memory", "odd-one-out", "sentence", "count-along", "mix-colors", "build-picture", "turns", "story-feeling", "sound-tap", "word-builder", "read-and-pick", "find-the-word", "sentence-builder", "fill-the-gap", "spell-it" })
+        foreach (var code in new[] { "trace", "trace-small", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "animal-sounds", "habitat", "dandoona-says", "sort", "memory", "odd-one-out", "sentence", "count-along", "mix-colors", "build-picture", "turns", "story-feeling", "sound-tap", "word-builder", "read-and-pick", "find-the-word", "sentence-builder", "fill-the-gap", "spell-it", "true-or-false", "sight-word-hunt" })
         {
             ActivityCodes.TryParse(code, out var type).ShouldBeTrue(code);
             ActivityCodes.ToCode(type).ShouldBe(code);

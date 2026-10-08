@@ -233,7 +233,7 @@ public class LessonValidator : AbstractValidator<Lesson>
     /// <summary>The key of the sound the grapheme makes (its letters unless given), or "-" when it is silent.</summary>
     public static string GraphemeSound(string g) => g.Contains(':') ? g[(g.IndexOf(':') + 1)..] : g;
 
-    public static readonly string[] ActivityNames = ["trace", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "trace-small", "animal-sounds", "habitat", "dandoona-says", "sort", "memory", "odd-one-out", "sentence", "count-along", "mix-colors", "build-picture", "turns", "story-feeling", "sound-tap", "word-builder", "read-and-pick", "find-the-word", "sentence-builder", "fill-the-gap", "spell-it"];
+    public static readonly string[] ActivityNames = ["trace", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "trace-small", "animal-sounds", "habitat", "dandoona-says", "sort", "memory", "odd-one-out", "sentence", "count-along", "mix-colors", "build-picture", "turns", "story-feeling", "sound-tap", "word-builder", "read-and-pick", "find-the-word", "sentence-builder", "fill-the-gap", "spell-it", "true-or-false", "sight-word-hunt"];
     public static readonly string[] Homes = ["house", "farm", "water", "wild"];
     private static readonly string[] Levels = ["pre-a1", "a1", "a2"];
     private static readonly string[] Tracks = ["little-learners", "explorers", "champions"];
@@ -294,6 +294,8 @@ public class LessonValidator : AbstractValidator<Lesson>
         RuleFor(x => x).Must(l => !l.Activities.Contains("odd-one-out") || l.Odd.Count >= 3).WithMessage("An odd-one-out lesson needs at least three odd words.");
         RuleFor(x => x).Must(l => !l.Activities.Contains("dandoona-says") || l.Words.All(w => w.Says is not null)).WithMessage("Every word of a Dandoona-says lesson needs a `says` line.");
         RuleFor(x => x).Must(l => !l.Activities.Contains("animal-sounds") || l.Words.Count(w => w.Sound is not null) >= 2).WithMessage("An animal-sounds lesson needs at least two words with a sound.");
+        RuleFor(x => x).Must(l => !l.Activities.Contains("true-or-false") || l.Sentences.Count >= 2).WithMessage("true-or-false needs at least 2 sentences.");
+        RuleFor(x => x).Must(l => !l.Activities.Contains("sight-word-hunt") || l.SightWords.Count >= 3).WithMessage("sight-word-hunt needs at least 3 sight words.");
         RuleFor(x => x.Activities).Must(a => a.Distinct().Count() == a.Count).WithMessage("Duplicate activities in lesson.");
 
         // Explorers sight words and sentences

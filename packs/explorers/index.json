@@ -54,10 +54,10 @@
     },
     {
       "unit": "sight-words-1",
-      "version": 1,
-      "sha256": "38f7550458e6c2687db79c029e094a438964fda4e4bf0a0dc30d345eaca8f486",
-      "bytes": 1611157,
-      "manifest": "sight_words_1/v1/manifest.json",
+      "version": 2,
+      "sha256": "b4bd645a593fe182f7524a1d62dbd90e88107be6668836b8570b33f780fb2c17",
+      "bytes": 1897091,
+      "manifest": "sight_words_1/v2/manifest.json",
       "lessonIds": [
         "sight-words-1-a",
         "sight-words-1-b",
@@ -66,10 +66,10 @@
     },
     {
       "unit": "sight-words-2",
-      "version": 2,
-      "sha256": "7fed4dab87f6907dafaf4ec8345b61cf47b6612ecfb9a53d7a9a3da6dea484d3",
-      "bytes": 1495224,
-      "manifest": "sight_words_2/v2/manifest.json",
+      "version": 3,
+      "sha256": "1d4dba40506f8a38590b844485a7994673513457544cc40d621b98549408e882",
+      "bytes": 1776142,
+      "manifest": "sight_words_2/v3/manifest.json",
       "lessonIds": [
         "sight-words-2-a",
         "sight-words-2-b",
@@ -78,10 +78,10 @@
     },
     {
       "unit": "my-sentences",
-      "version": 3,
-      "sha256": "f795e69379ab244c637f9f0567653af95c8a4c046c0b63b42fd9e134460a7cf9",
-      "bytes": 1809068,
-      "manifest": "my_sentences/v3/manifest.json",
+      "version": 4,
+      "sha256": "a274cdc7d4e48dae9d4c94f0c37e31fe2ef3692fad04f5128944c853fa5a9338",
+      "bytes": 1953499,
+      "manifest": "my_sentences/v4/manifest.json",
       "lessonIds": [
         "my-sentences-is-are",
         "my-sentences-a-an",
@@ -105,10 +105,10 @@
     },
     {
       "unit": "everyday-english",
-      "version": 1,
-      "sha256": "5f4ab14fe1b17455ce2961a00a9ef3cee7023a3e49a1b574758d347e6e0631e4",
-      "bytes": 2708438,
-      "manifest": "everyday_english/v1/manifest.json",
+      "version": 2,
+      "sha256": "9b7afb90cc09228cb485a395c250014a036dd3a9c43a570be13a552ed7674ea9",
+      "bytes": 2895076,
+      "manifest": "everyday_english/v2/manifest.json",
       "lessonIds": [
         "everyday-english-school",
         "everyday-english-weather-1",
@@ -144,10 +144,10 @@
     },
     {
       "unit": "grammar-starters",
-      "version": 2,
-      "sha256": "0826cfe06280ba43b111ba4327ba2343b964bf1cb128d3c65c489ed0bdad25c8",
-      "bytes": 2659246,
-      "manifest": "grammar_starters/v2/manifest.json",
+      "version": 3,
+      "sha256": "6142f61276005e40cf41601fc90cc935cc0401863a63358fecc19c1c85d86390",
+      "bytes": 2849632,
+      "manifest": "grammar_starters/v3/manifest.json",
       "lessonIds": [
         "grammar-starters-a-an",
         "grammar-starters-is-are",

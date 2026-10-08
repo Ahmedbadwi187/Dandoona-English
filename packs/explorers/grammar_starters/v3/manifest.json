@@ -1,0 +1,837 @@
+{
+  "schemaVersion": 1,
+  "track": "explorers",
+  "unit": "grammar-starters",
+  "version": 3,
+  "contentHash": "82d021f62923bc32112fd616ea99058b2c485f7967a8ce9e92026120f4b2b2a1",
+  "lessons": [
+    {
+      "id": "grammar-starters-a-an",
+      "order": 1,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/grammar_starters_a_an/intro.mp3",
+        "praise": [
+          "audio/explorers/grammar_starters_a_an/praise_0.mp3",
+          "audio/explorers/grammar_starters_a_an/praise_1.mp3",
+          "audio/explorers/grammar_starters_a_an/praise_2.mp3"
+        ],
+        "instructions": {
+          "fill-the-gap": "audio/explorers/grammar_starters_a_an/instr_fill_the_gap.mp3",
+          "read-and-pick": "audio/explorers/grammar_starters_a_an/instr_read_and_pick.mp3",
+          "sentence-builder": "audio/explorers/grammar_starters_a_an/instr_sentence_builder.mp3",
+          "true-or-false": "audio/explorers/grammar_starters_a_an/instr_true_or_false.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "apple",
+          "audio": "audio/explorers/grammar_starters_a_an/word_apple.mp3",
+          "image": "images/explorers/grammar_starters_a_an/apple.webp"
+        },
+        {
+          "word": "igloo",
+          "audio": "audio/explorers/grammar_starters_a_an/word_igloo.mp3",
+          "image": "images/explorers/grammar_starters_a_an/igloo.svg"
+        },
+        {
+          "word": "umbrella",
+          "audio": "audio/explorers/grammar_starters_a_an/word_umbrella.mp3",
+          "image": "images/explorers/grammar_starters_a_an/umbrella.svg"
+        },
+        {
+          "word": "bed",
+          "audio": "audio/explorers/grammar_starters_a_an/word_bed.mp3",
+          "image": "images/explorers/grammar_starters_a_an/bed.svg"
+        },
+        {
+          "word": "orange",
+          "audio": "audio/explorers/grammar_starters_a_an/word_orange.mp3",
+          "image": "images/explorers/grammar_starters_a_an/orange.svg"
+        }
+      ],
+      "activities": [
+        "fill-the-gap",
+        "sentence-builder",
+        "read-and-pick",
+        "true-or-false"
+      ],
+      "sentences": [
+        {
+          "text": "I see an apple.",
+          "audio": "audio/explorers/grammar_starters_a_an/sentence_1.mp3",
+          "image": "images/explorers/grammar_starters_a_an/apple.webp",
+          "gap": "an",
+          "choices": [
+            "a",
+            "an"
+          ]
+        },
+        {
+          "text": "I see an igloo.",
+          "audio": "audio/explorers/grammar_starters_a_an/sentence_2.mp3",
+          "image": "images/explorers/grammar_starters_a_an/igloo.svg",
+          "gap": "an",
+          "choices": [
+            "a",
+            "an"
+          ]
+        },
+        {
+          "text": "I have an umbrella.",
+          "audio": "audio/explorers/grammar_starters_a_an/sentence_3.mp3",
+          "image": "images/explorers/grammar_starters_a_an/umbrella.svg",
+          "gap": "an",
+          "choices": [
+            "a",
+            "an"
+          ]
+        },
+        {
+          "text": "I see a bed.",
+          "audio": "audio/explorers/grammar_starters_a_an/sentence_4.mp3",
+          "image": "images/explorers/grammar_starters_a_an/bed.svg",
+          "gap": "a",
+          "choices": [
+            "a",
+            "an"
+          ]
+        },
+        {
+          "text": "I have an orange.",
+          "audio": "audio/explorers/grammar_starters_a_an/sentence_5.mp3",
+          "image": "images/explorers/grammar_starters_a_an/orange.svg",
+          "gap": "an",
+          "choices": [
+            "a",
+            "an"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grammar-starters-is-are",
+      "order": 2,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/grammar_starters_is_are/intro.mp3",
+        "praise": [
+          "audio/explorers/grammar_starters_is_are/praise_0.mp3",
+          "audio/explorers/grammar_starters_is_are/praise_1.mp3",
+          "audio/explorers/grammar_starters_is_are/praise_2.mp3"
+        ],
+        "instructions": {
+          "fill-the-gap": "audio/explorers/grammar_starters_is_are/instr_fill_the_gap.mp3",
+          "read-and-pick": "audio/explorers/grammar_starters_is_are/instr_read_and_pick.mp3",
+          "sentence-builder": "audio/explorers/grammar_starters_is_are/instr_sentence_builder.mp3",
+          "true-or-false": "audio/explorers/grammar_starters_is_are/instr_true_or_false.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "duck",
+          "audio": "audio/explorers/grammar_starters_is_are/word_duck.mp3",
+          "image": "images/explorers/grammar_starters_is_are/duck.webp"
+        },
+        {
+          "word": "frog",
+          "audio": "audio/explorers/grammar_starters_is_are/word_frog.mp3",
+          "image": "images/explorers/grammar_starters_is_are/frog.webp"
+        },
+        {
+          "word": "fish",
+          "audio": "audio/explorers/grammar_starters_is_are/word_fish.mp3",
+          "image": "images/explorers/grammar_starters_is_are/fish.svg"
+        }
+      ],
+      "activities": [
+        "fill-the-gap",
+        "sentence-builder",
+        "read-and-pick",
+        "true-or-false"
+      ],
+      "sentences": [
+        {
+          "text": "The duck is big.",
+          "audio": "audio/explorers/grammar_starters_is_are/sentence_1.mp3",
+          "image": "images/explorers/grammar_starters_is_are/duck.webp",
+          "gap": "is",
+          "choices": [
+            "is",
+            "are"
+          ]
+        },
+        {
+          "text": "The ducks are big.",
+          "audio": "audio/explorers/grammar_starters_is_are/sentence_2.mp3",
+          "image": "images/explorers/grammar_starters_is_are/duck.webp",
+          "two": true,
+          "gap": "are",
+          "choices": [
+            "is",
+            "are"
+          ]
+        },
+        {
+          "text": "The frog is wet.",
+          "audio": "audio/explorers/grammar_starters_is_are/sentence_3.mp3",
+          "image": "images/explorers/grammar_starters_is_are/frog.webp",
+          "gap": "is",
+          "choices": [
+            "is",
+            "are"
+          ]
+        },
+        {
+          "text": "The frogs are wet.",
+          "audio": "audio/explorers/grammar_starters_is_are/sentence_4.mp3",
+          "image": "images/explorers/grammar_starters_is_are/frog.webp",
+          "two": true,
+          "gap": "are",
+          "choices": [
+            "is",
+            "are"
+          ]
+        },
+        {
+          "text": "The fish is red.",
+          "audio": "audio/explorers/grammar_starters_is_are/sentence_5.mp3",
+          "image": "images/explorers/grammar_starters_is_are/fish.svg",
+          "gap": "is",
+          "choices": [
+            "is",
+            "are"
+          ]
+        },
+        {
+          "text": "The fish are red.",
+          "audio": "audio/explorers/grammar_starters_is_are/sentence_6.mp3",
+          "image": "images/explorers/grammar_starters_is_are/fish.svg",
+          "two": true,
+          "gap": "are",
+          "choices": [
+            "is",
+            "are"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grammar-starters-has-have",
+      "order": 3,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/grammar_starters_has_have/intro.mp3",
+        "praise": [
+          "audio/explorers/grammar_starters_has_have/praise_0.mp3",
+          "audio/explorers/grammar_starters_has_have/praise_1.mp3",
+          "audio/explorers/grammar_starters_has_have/praise_2.mp3"
+        ],
+        "instructions": {
+          "fill-the-gap": "audio/explorers/grammar_starters_has_have/instr_fill_the_gap.mp3",
+          "read-and-pick": "audio/explorers/grammar_starters_has_have/instr_read_and_pick.mp3",
+          "sentence-builder": "audio/explorers/grammar_starters_has_have/instr_sentence_builder.mp3",
+          "true-or-false": "audio/explorers/grammar_starters_has_have/instr_true_or_false.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "hen",
+          "audio": "audio/explorers/grammar_starters_has_have/word_hen.mp3",
+          "image": "images/explorers/grammar_starters_has_have/hen.svg"
+        },
+        {
+          "word": "pig",
+          "audio": "audio/explorers/grammar_starters_has_have/word_pig.mp3",
+          "image": "images/explorers/grammar_starters_has_have/pig.webp"
+        },
+        {
+          "word": "cat",
+          "audio": "audio/explorers/grammar_starters_has_have/word_cat.mp3",
+          "image": "images/explorers/grammar_starters_has_have/cat.webp"
+        }
+      ],
+      "activities": [
+        "fill-the-gap",
+        "sentence-builder",
+        "read-and-pick",
+        "true-or-false"
+      ],
+      "sentences": [
+        {
+          "text": "The hen has an egg.",
+          "audio": "audio/explorers/grammar_starters_has_have/sentence_1.mp3",
+          "image": "images/explorers/grammar_starters_has_have/hen.svg",
+          "gap": "has",
+          "choices": [
+            "has",
+            "have"
+          ]
+        },
+        {
+          "text": "The hens have eggs.",
+          "audio": "audio/explorers/grammar_starters_has_have/sentence_2.mp3",
+          "image": "images/explorers/grammar_starters_has_have/hen.svg",
+          "two": true,
+          "gap": "have",
+          "choices": [
+            "has",
+            "have"
+          ]
+        },
+        {
+          "text": "The pig has a wig.",
+          "audio": "audio/explorers/grammar_starters_has_have/sentence_3.mp3",
+          "image": "images/explorers/grammar_starters_has_have/pig.webp",
+          "gap": "has",
+          "choices": [
+            "has",
+            "have"
+          ]
+        },
+        {
+          "text": "The pigs have wigs.",
+          "audio": "audio/explorers/grammar_starters_has_have/sentence_4.mp3",
+          "image": "images/explorers/grammar_starters_has_have/pig.webp",
+          "two": true,
+          "gap": "have",
+          "choices": [
+            "has",
+            "have"
+          ]
+        },
+        {
+          "text": "The cat has a hat.",
+          "audio": "audio/explorers/grammar_starters_has_have/sentence_5.mp3",
+          "image": "images/explorers/grammar_starters_has_have/cat.webp",
+          "gap": "has",
+          "choices": [
+            "has",
+            "have"
+          ]
+        },
+        {
+          "text": "The cats have hats.",
+          "audio": "audio/explorers/grammar_starters_has_have/sentence_6.mp3",
+          "image": "images/explorers/grammar_starters_has_have/cat.webp",
+          "two": true,
+          "gap": "have",
+          "choices": [
+            "has",
+            "have"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grammar-starters-can",
+      "order": 4,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/grammar_starters_can/intro.mp3",
+        "praise": [
+          "audio/explorers/grammar_starters_can/praise_0.mp3",
+          "audio/explorers/grammar_starters_can/praise_1.mp3",
+          "audio/explorers/grammar_starters_can/praise_2.mp3"
+        ],
+        "instructions": {
+          "fill-the-gap": "audio/explorers/grammar_starters_can/instr_fill_the_gap.mp3",
+          "read-and-pick": "audio/explorers/grammar_starters_can/instr_read_and_pick.mp3",
+          "sentence-builder": "audio/explorers/grammar_starters_can/instr_sentence_builder.mp3",
+          "true-or-false": "audio/explorers/grammar_starters_can/instr_true_or_false.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "jump",
+          "audio": "audio/explorers/grammar_starters_can/word_jump.mp3",
+          "image": "images/explorers/grammar_starters_can/jump.webp"
+        },
+        {
+          "word": "clap",
+          "audio": "audio/explorers/grammar_starters_can/word_clap.mp3",
+          "image": "images/explorers/grammar_starters_can/clap.webp"
+        },
+        {
+          "word": "run",
+          "audio": "audio/explorers/grammar_starters_can/word_run.mp3",
+          "image": "images/explorers/grammar_starters_can/run.webp"
+        },
+        {
+          "word": "sit",
+          "audio": "audio/explorers/grammar_starters_can/word_sit.mp3",
+          "image": "images/explorers/grammar_starters_can/sit.webp"
+        }
+      ],
+      "activities": [
+        "fill-the-gap",
+        "sentence-builder",
+        "read-and-pick",
+        "true-or-false"
+      ],
+      "sentences": [
+        {
+          "text": "I can jump.",
+          "audio": "audio/explorers/grammar_starters_can/sentence_1.mp3",
+          "image": "images/explorers/grammar_starters_can/jump.webp",
+          "gap": "can",
+          "choices": [
+            "can",
+            "has",
+            "is"
+          ]
+        },
+        {
+          "text": "I can clap.",
+          "audio": "audio/explorers/grammar_starters_can/sentence_2.mp3",
+          "image": "images/explorers/grammar_starters_can/clap.webp",
+          "gap": "can",
+          "choices": [
+            "can",
+            "has",
+            "is"
+          ]
+        },
+        {
+          "text": "I can run.",
+          "audio": "audio/explorers/grammar_starters_can/sentence_3.mp3",
+          "image": "images/explorers/grammar_starters_can/run.webp",
+          "gap": "can",
+          "choices": [
+            "can",
+            "has",
+            "is"
+          ]
+        },
+        {
+          "text": "I can sit.",
+          "audio": "audio/explorers/grammar_starters_can/sentence_4.mp3",
+          "image": "images/explorers/grammar_starters_can/sit.webp",
+          "gap": "can",
+          "choices": [
+            "can",
+            "has",
+            "is"
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/explorers/grammar_starters_a_an/instr_fill_the_gap.mp3",
+      "sha256": "185a716e40dd774d89d05ac6b72bd2dc57251aebbd726edf7243571368dcc1f5",
+      "bytes": 58140
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/instr_read_and_pick.mp3",
+      "sha256": "1c6f7682d896d875df73f43fe1bbe3773529e54815dc0afd49d0c6b8bfa4db12",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/instr_sentence_builder.mp3",
+      "sha256": "9bb24f8c9fd666d9cba43cf9ff50200d714f2dfd5092ab2b1045f6c746a6cc68",
+      "bytes": 44347
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/instr_true_or_false.mp3",
+      "sha256": "f5553caa08d6a94251d8887c580194590e10c984f8ffcdb1ad175c8c4b0f3961",
+      "bytes": 43511
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/intro.mp3",
+      "sha256": "dd3acdb9cadbd23c14767fa0bbcb21e479eee926114ba5d4979b353c6abec1e5",
+      "bytes": 51035
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/praise_0.mp3",
+      "sha256": "32acb13fb36ddebfc92800ac4e78dfd319463b49e5a215c864a7ab73ff419046",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/praise_1.mp3",
+      "sha256": "c95910894928b11f9c9f86e0bcbb31b3d7b9a10c478d6b678b8bb12532da0011",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/praise_2.mp3",
+      "sha256": "ec3130e08c066cd9d021832913efcbc702eb1e7fe06f8756758d77cc03e183b5",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/sentence_1.mp3",
+      "sha256": "0e7859a72cbab4067748dbb3011296b62fe51628907ad87339bd9f355feda472",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/sentence_2.mp3",
+      "sha256": "eacabb35818cbb6b3058ccdf919656f84223d538489fa30b1ecababc84736083",
+      "bytes": 26375
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/sentence_3.mp3",
+      "sha256": "9934b8792451ff0e652bbb4afbf3d563d38a2b7d2dd698a5ea5d527a2fa61c1c",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/sentence_4.mp3",
+      "sha256": "53a0c600f5e729cc0abea26957ef2e3d843cae54768466a18beeaac771f7042f",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/sentence_5.mp3",
+      "sha256": "7e2cf5cf57deb1ccb8cef608fff275b956e73d5cf249ccddd230d234e28392f0",
+      "bytes": 27629
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/word_apple.mp3",
+      "sha256": "b3aaeb32ee6a8c7b28b6d35e37e1f0a37b5010d9bafed036c8cd8844d820b02a",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/word_bed.mp3",
+      "sha256": "f17ce449442280014f869629dfff620caac970eea7e58cf432be3ab56b5a45f9",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/word_igloo.mp3",
+      "sha256": "f7dc379682d18eafeb014ba9ab7125cfdb2e2c576d5839889e14bb19aca3aa56",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/word_orange.mp3",
+      "sha256": "99ad5a9818cb3047dd8e4fa6de59aa9c8f6741bd6ff15360f3e89b7fc59ef38c",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/grammar_starters_a_an/word_umbrella.mp3",
+      "sha256": "ad12b1ca90e1aa5d8288047d62562bf0457992ad7f62ff68cf7c914ecf6977f5",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/instr_fill_the_gap.mp3",
+      "sha256": "eaa89e56524ac9078fd4deac7ec42188ebcf7d5f2dd81f8a5c77f6f3b0416cf5",
+      "bytes": 56886
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/instr_read_and_pick.mp3",
+      "sha256": "c9f867322ad2b2c495123a475cacc2c26c425609994d929a8d41fe6e8c4083cf",
+      "bytes": 47691
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/instr_sentence_builder.mp3",
+      "sha256": "b38f480d255a6b4812561ccef7cdfd4c203e74311b84dd862370abf4bad1bc2b",
+      "bytes": 43511
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/instr_true_or_false.mp3",
+      "sha256": "284866cfc2f941a6ab6ef76d87b6d8bea59db226685a9281aa069b66e2c5dbcc",
+      "bytes": 47691
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/intro.mp3",
+      "sha256": "cd933e61fcabb9906b242f6f6f49e239ed9750de7f7c3a0e961084eb50215ae1",
+      "bytes": 69425
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/praise_0.mp3",
+      "sha256": "40282ff7ae3682268960ccf85cfe4b355ab9dd405b95cab9c5d242527c4a5ac4",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/praise_1.mp3",
+      "sha256": "2301d84ea04d661a86927eee414d888c126c5c26df37b601a4cf7e9a910f9f5a",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/praise_2.mp3",
+      "sha256": "a98f8596b2a07d75b3bc7d3001294bb1723b297ddb415542cbf9657efc27e71f",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/sentence_1.mp3",
+      "sha256": "74383c97c3ccfd1db8dac9ced4e681bb1949cfbe67e330d362791a2b0b9578a7",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/sentence_2.mp3",
+      "sha256": "0bfd918a31439e70a8271ff58e7f4b705d834f6b9acca5484b50cf95e854498e",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/sentence_3.mp3",
+      "sha256": "a5c7c04929e2fb2859f8167a4c8d43b53b24dbdea01dcdd2495303eccc018396",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/sentence_4.mp3",
+      "sha256": "18e9591e1a71b14637604d2cf5e6fd1059ea37561ef7505ae49b10a6c049b260",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/word_clap.mp3",
+      "sha256": "310b179098d5cf8395d47725bdb254e8d40dfbbc0ed42b4a8d9e691435615808",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/word_jump.mp3",
+      "sha256": "e0b73cdba0a8f4647eed56a3afba2da667bb6f7a5265fd4ad1510222ff8fd2cf",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/word_run.mp3",
+      "sha256": "1deee338955535144d7d5dae3ef5c2ce0ec854d71fc850e55cf09e0a468f9481",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/grammar_starters_can/word_sit.mp3",
+      "sha256": "c481d150998ccecd9186334fd99bfa286349b35bf363bc26fc3f341bf6edc58b",
+      "bytes": 13836
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/instr_fill_the_gap.mp3",
+      "sha256": "f04d8bc436dcbbdc6e940f8bc8e9d0701d3d1a678d63f38bc4508a15a1356feb",
+      "bytes": 48527
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/instr_read_and_pick.mp3",
+      "sha256": "37ac34356487f0419d17b8b6ace81ff1f478aea6d7957de5c9619817ffe7f119",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/instr_sentence_builder.mp3",
+      "sha256": "0061873ffcb668176172b72d66cfd7b6f275fecdaa7271eed0b102ca0b446e30",
+      "bytes": 41004
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/instr_true_or_false.mp3",
+      "sha256": "540c75df9e7e0d95fc96c244769502ae53b419251288fe58789d091b4d804926",
+      "bytes": 48527
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/intro.mp3",
+      "sha256": "34756757b847f9905310cb24900aa3bd18019aabbc9d7c24fb5c4a0e817dfbe1",
+      "bytes": 48527
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/praise_0.mp3",
+      "sha256": "df3a355232ece0417fed39fd324795a5cf0a7b1abbf61a81b37bb7e31a9b5979",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/praise_1.mp3",
+      "sha256": "46696c871c2c2870554d0500a20efec348300f3d5e0d4400e5d67efb1f1bf15e",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/praise_2.mp3",
+      "sha256": "6ee287463ef5d9c2c41d4b9a3caf540ba2605d42c9e2060cf63ff6625377449b",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/sentence_1.mp3",
+      "sha256": "1b5bf58c9e8a9237527257302819f9387f90ede23202a8cb12a1ca34a9db9ad2",
+      "bytes": 27629
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/sentence_2.mp3",
+      "sha256": "83e7d2bdf26b2b09ec7db0813fdd6cc2842de2177a7e82fd347547951fd84d57",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/sentence_3.mp3",
+      "sha256": "aa22040683d68c5c7a2823083181158b83d867c1705eceda1b20e877df9ad906",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/sentence_4.mp3",
+      "sha256": "705bf0099f8f36db226499237829ee3167a39b5fc18f63e960b8c634f0adc387",
+      "bytes": 29301
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/sentence_5.mp3",
+      "sha256": "5ca3ab457292703f3c93d00a3d77edce74954f6c302665f5f0ed395b2b2fe184",
+      "bytes": 27629
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/sentence_6.mp3",
+      "sha256": "713dd110438c2ea00e9a345c8f945f3fe34ce3d5673f345c162f4dc08e0aa13e",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/word_cat.mp3",
+      "sha256": "04db1a23335a99cbf7abcc54cea29ccfe7238510604c44f23034c3054934090d",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/word_hen.mp3",
+      "sha256": "1612b19884ac8a8458e2a36c8c228d91d768c9c09796bda5ca7ae806bd607f1d",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/grammar_starters_has_have/word_pig.mp3",
+      "sha256": "c56b7a8feec7dde907307e28d9a8f08ab8e1b5e950b947e5097db4d7b635e119",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/instr_fill_the_gap.mp3",
+      "sha256": "6addb243bfb5bcd0b14920b9c28bd13de17354dd9db9775626691c2b7b510772",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/instr_read_and_pick.mp3",
+      "sha256": "581cb111930fae7198f652bfbfd9e4871e5d1256849b23dbfdca45ad8c82fdec",
+      "bytes": 50199
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/instr_sentence_builder.mp3",
+      "sha256": "b83e3e400c946eb9e7604c43c4d0d41edb2d9d777df7c280360b78985a8a07ef",
+      "bytes": 44347
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/instr_true_or_false.mp3",
+      "sha256": "6203597ddc7c7b26a0f64078d30fd4ea30a9a00e007c71e31adf4bab2411c62c",
+      "bytes": 49363
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/intro.mp3",
+      "sha256": "ab5ed75b05f6b1d3caec2065e461075bbe695f34ea24da0d2c414e06f8f98384",
+      "bytes": 46437
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/praise_0.mp3",
+      "sha256": "24b0df01848ca23c402ed42764dcaae02e2f376824255ab2b4347e3b321bb44b",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/praise_1.mp3",
+      "sha256": "0fbe8d1213b1b3189a8333a3f678da6a5a43dd285a33f24275b621789b8d43d0",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/praise_2.mp3",
+      "sha256": "357597f08065795be31c2b8afb7c79721fdb74c7fa7b1258d5c5b20ebfb799dd",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/sentence_1.mp3",
+      "sha256": "92b9ad05f03ba554c445e44fed15ca6bd84a1e3db3ba508d1257f158cc4c2c1c",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/sentence_2.mp3",
+      "sha256": "93b02622e40ffa51ca2ab0b75abf1c114c24a6281cf6154702f3cc93f172a0f2",
+      "bytes": 26375
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/sentence_3.mp3",
+      "sha256": "a6f8a8f1f19488b35e2167e1050245c9131cc3f739203ce32f6e6d1d448bdbc7",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/sentence_4.mp3",
+      "sha256": "e22b3bc61ab6f2d097378b2a9b30873eb38a216e95c8f8899450ea981f5df06c",
+      "bytes": 26375
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/sentence_5.mp3",
+      "sha256": "057ef201ff5d45525ccae4e229874e9d22fc3b1f1e05dc61830742d35f556447",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/sentence_6.mp3",
+      "sha256": "6dc9d339b3d7345d56f06b05cd81f685215507edc49c3990e016211255d275b3",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/word_duck.mp3",
+      "sha256": "2428c199559d3de5d8cd83a8b0691435acfaefda6d9dc31627ae598192df40ed",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/word_fish.mp3",
+      "sha256": "c9a3698316ae25e2e554e4e0f796ee28b84c1373fa09b82c79a889f32f8f5820",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/grammar_starters_is_are/word_frog.mp3",
+      "sha256": "cf3ef6ce2ce9fa67ac0bd7d13c3b59c06d3c8e874dff68ee4bc59a491ad9ddcf",
+      "bytes": 15926
+    },
+    {
+      "path": "images/explorers/grammar_starters_a_an/apple.webp",
+      "sha256": "b2679f607a1ca4318698b568865a0fc8bc6cc94e3ff1f188397275e38017e9b1",
+      "bytes": 51694
+    },
+    {
+      "path": "images/explorers/grammar_starters_a_an/bed.svg",
+      "sha256": "8fbe2ce2f9f8a6d907bcfc7d39b072eb52e27c9feb051ce52eb1033edf1599da",
+      "bytes": 720
+    },
+    {
+      "path": "images/explorers/grammar_starters_a_an/igloo.svg",
+      "sha256": "ea6bd731036598b8367bc065a32a997b8c187c854ec6062bf0e29c09b75f1a44",
+      "bytes": 504
+    },
+    {
+      "path": "images/explorers/grammar_starters_a_an/orange.svg",
+      "sha256": "3b60f8c47e72ac6a70b03e1c0ff7cdf8345935a80d0a58f4cb53dec93800fc46",
+      "bytes": 482
+    },
+    {
+      "path": "images/explorers/grammar_starters_a_an/umbrella.svg",
+      "sha256": "9d94238587a685d8912bf4f6429bce4ee189d56220183f2d85957bb1161e8a3d",
+      "bytes": 647
+    },
+    {
+      "path": "images/explorers/grammar_starters_can/clap.webp",
+      "sha256": "efc7c4a2f1e91178a05ce5232646c0ac3247f2936f9b635e387c172d079e4b66",
+      "bytes": 136850
+    },
+    {
+      "path": "images/explorers/grammar_starters_can/jump.webp",
+      "sha256": "f8fd4593213c4ed411ee10af5a8f5f0e791d3b25e9ae9dc8800f85cd4cd0b98e",
+      "bytes": 151242
+    },
+    {
+      "path": "images/explorers/grammar_starters_can/run.webp",
+      "sha256": "2a595045f68fc38d3a5751553d3ab81d1bf8745e2f0646d08d2dc510637d1bb0",
+      "bytes": 114392
+    },
+    {
+      "path": "images/explorers/grammar_starters_can/sit.webp",
+      "sha256": "321ed7544c1096394b55f7f131aa12e06539bfc68f2770f508f3eb03ccd86689",
+      "bytes": 126036
+    },
+    {
+      "path": "images/explorers/grammar_starters_has_have/cat.webp",
+      "sha256": "b526f4ddbfe8c66fbb063b1b79f324afb77977dd4e996d4fc1abb3c7bb3197d2",
+      "bytes": 66930
+    },
+    {
+      "path": "images/explorers/grammar_starters_has_have/hen.svg",
+      "sha256": "626c7f8a42b32f8102c5bb2b6b38bead584e6492ec4125a25fadaf769e974958",
+      "bytes": 821
+    },
+    {
+      "path": "images/explorers/grammar_starters_has_have/pig.webp",
+      "sha256": "d9beed11e22450131f616737ed2ef693ef61a370e13e1cf1a7325b611d822524",
+      "bytes": 59762
+    },
+    {
+      "path": "images/explorers/grammar_starters_is_are/duck.webp",
+      "sha256": "84987820fd92c2a37fed378bfeef2a7c089a1ccdf18ed0030c95d07fb158eefd",
+      "bytes": 57576
+    },
+    {
+      "path": "images/explorers/grammar_starters_is_are/fish.svg",
+      "sha256": "ef977ba1745fd87c34621ba8198c96766fe265c85a67104ecf0ea9ecf60a0cb1",
+      "bytes": 675
+    },
+    {
+      "path": "images/explorers/grammar_starters_is_are/frog.webp",
+      "sha256": "7849aa763009024a35fe167dd7354299750d30a01c9f6090b3f9d2788cc2a084",
+      "bytes": 61094
+    }
+  ]
+}

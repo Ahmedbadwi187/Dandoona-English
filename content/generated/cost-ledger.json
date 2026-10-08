@@ -17729,5 +17729,166 @@
     "what": "vowel-teams-oo-ar/word-car (4 chars)",
     "usd": 0.00032,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:44:58.6989141Z",
+    "service": "ElevenLabs",
+    "what": "sight-words-1-a/instr-sight-word-hunt (35 chars)",
+    "usd": 0.00280,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:44:59.9088629Z",
+    "service": "ElevenLabs",
+    "what": "sight-words-1-a/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:00.9593277Z",
+    "service": "ElevenLabs",
+    "what": "sight-words-1-b/instr-sight-word-hunt (35 chars)",
+    "usd": 0.00280,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:02.0526201Z",
+    "service": "ElevenLabs",
+    "what": "sight-words-1-b/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:03.1214697Z",
+    "service": "ElevenLabs",
+    "what": "sight-words-1-c/instr-sight-word-hunt (35 chars)",
+    "usd": 0.00280,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:04.2040899Z",
+    "service": "ElevenLabs",
+    "what": "sight-words-1-c/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:05.2409695Z",
+    "service": "ElevenLabs",
+    "what": "sight-words-2-a/instr-sight-word-hunt (35 chars)",
+    "usd": 0.00280,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:06.3567581Z",
+    "service": "ElevenLabs",
+    "what": "sight-words-2-a/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:07.3857312Z",
+    "service": "ElevenLabs",
+    "what": "sight-words-2-b/instr-sight-word-hunt (35 chars)",
+    "usd": 0.00280,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:08.5072726Z",
+    "service": "ElevenLabs",
+    "what": "sight-words-2-b/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:09.5691903Z",
+    "service": "ElevenLabs",
+    "what": "sight-words-2-c/instr-sight-word-hunt (35 chars)",
+    "usd": 0.00280,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:10.6391486Z",
+    "service": "ElevenLabs",
+    "what": "sight-words-2-c/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:11.7073948Z",
+    "service": "ElevenLabs",
+    "what": "my-sentences-is-are/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:12.7881936Z",
+    "service": "ElevenLabs",
+    "what": "my-sentences-a-an/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:13.8436904Z",
+    "service": "ElevenLabs",
+    "what": "my-sentences-mix/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:14.9001656Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:16.0158428Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:17.1285823Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:18.208029Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:19.2996529Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:20.3934976Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:21.4504234Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:45:22.5137186Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/instr-true-or-false (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
   }
 ]

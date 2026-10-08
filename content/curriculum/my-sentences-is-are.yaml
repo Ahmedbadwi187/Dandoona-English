@@ -22,4 +22,5 @@ narration:
   instructions:
     fill-the-gap: "Read. Then tap the word that fits!"
     sentence-builder: "Listen. Then put the words in order!"
-activities: [fill-the-gap, sentence-builder]
+    true-or-false: "Read the sentence. Does it match the picture?"
+activities: [fill-the-gap, sentence-builder, true-or-false]

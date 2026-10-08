@@ -17,7 +17,7 @@ void main() {
   test('four lessons (a/an, is/are, has/have, can); every sentence has its audio and picture and a gap word among its choices', () {
     expect(lessons.map((l) => l.id), ['grammar-starters-a-an', 'grammar-starters-is-are', 'grammar-starters-has-have', 'grammar-starters-can']);
     for (final l in lessons) {
-      expect(l.activities, ['fill-the-gap', 'sentence-builder', 'read-and-pick'], reason: l.id);
+      expect(l.activities, ['fill-the-gap', 'sentence-builder', 'read-and-pick', 'true-or-false'], reason: l.id);
       for (final a in l.activities) {
         expect(files, contains(l.audio.instructions[a]), reason: '${l.id}/$a');
       }

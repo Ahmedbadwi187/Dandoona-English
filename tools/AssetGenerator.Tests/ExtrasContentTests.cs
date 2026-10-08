@@ -69,6 +69,23 @@ public class ExtrasContentTests
     }
 
     [Fact]
+    public void Every_explorers_lesson_with_sentences_has_true_or_false_and_with_sight_words_the_hunt_each_with_its_instruction()
+    {
+        var explorers = Lessons().Where(l => l.Track == "explorers").ToList();
+        foreach (var l in explorers.Where(l => l.Sentences.Count >= 2))
+        {
+            l.Activities.ShouldContain("true-or-false", l.Id);
+            l.Narration.Instructions.ShouldContainKey("true-or-false", l.Id);
+        }
+        foreach (var l in explorers.Where(l => l.SightWords.Count >= 3))
+        {
+            l.Activities.ShouldContain("sight-word-hunt", l.Id);
+            l.Narration.Instructions.ShouldContainKey("sight-word-hunt", l.Id);
+        }
+        explorers.Count(l => l.Activities.Contains("true-or-false")).ShouldBeGreaterThanOrEqualTo(17);
+    }
+
+    [Fact]
     public void Opposites_are_pairs_of_each_other()
     {
         var words = Lessons().Where(l => l.Unit == "opposites").SelectMany(l => l.Words).ToList();

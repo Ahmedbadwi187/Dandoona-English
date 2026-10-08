@@ -1,0 +1,1047 @@
+{
+  "schemaVersion": 1,
+  "track": "explorers",
+  "unit": "everyday-english",
+  "version": 2,
+  "contentHash": "bd850bdf8950169f4d2e5625b876fda9da7c8d6df7b6354ffda002faca65825f",
+  "lessons": [
+    {
+      "id": "everyday-english-school",
+      "order": 1,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/everyday_english_school/intro.mp3",
+        "praise": [
+          "audio/explorers/everyday_english_school/praise_0.mp3",
+          "audio/explorers/everyday_english_school/praise_1.mp3",
+          "audio/explorers/everyday_english_school/praise_2.mp3"
+        ],
+        "instructions": {
+          "fill-the-gap": "audio/explorers/everyday_english_school/instr_fill_the_gap.mp3",
+          "listen-and-tap": "audio/explorers/everyday_english_school/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/everyday_english_school/instr_match_picture.mp3",
+          "memory": "audio/explorers/everyday_english_school/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/everyday_english_school/instr_read_and_pick.mp3",
+          "sentence-builder": "audio/explorers/everyday_english_school/instr_sentence_builder.mp3",
+          "true-or-false": "audio/explorers/everyday_english_school/instr_true_or_false.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "pencil",
+          "audio": "audio/explorers/everyday_english_school/word_pencil.mp3",
+          "image": "images/explorers/everyday_english_school/pencil.svg"
+        },
+        {
+          "word": "book",
+          "audio": "audio/explorers/everyday_english_school/word_book.mp3",
+          "image": "images/explorers/everyday_english_school/book.svg"
+        },
+        {
+          "word": "bag",
+          "audio": "audio/explorers/everyday_english_school/word_bag.mp3",
+          "image": "images/explorers/everyday_english_school/bag.svg"
+        },
+        {
+          "word": "ruler",
+          "audio": "audio/explorers/everyday_english_school/word_ruler.mp3",
+          "image": "images/explorers/everyday_english_school/ruler.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "fill-the-gap",
+        "sentence-builder",
+        "memory",
+        "true-or-false"
+      ],
+      "sentences": [
+        {
+          "text": "I have a pencil.",
+          "audio": "audio/explorers/everyday_english_school/sentence_1.mp3",
+          "image": "images/explorers/everyday_english_school/pencil.svg",
+          "gap": "pencil",
+          "choices": [
+            "pencil",
+            "book",
+            "bag"
+          ]
+        },
+        {
+          "text": "I see a book.",
+          "audio": "audio/explorers/everyday_english_school/sentence_2.mp3",
+          "image": "images/explorers/everyday_english_school/book.svg",
+          "gap": "book",
+          "choices": [
+            "book",
+            "pencil",
+            "bag"
+          ]
+        },
+        {
+          "text": "I have a bag.",
+          "audio": "audio/explorers/everyday_english_school/sentence_3.mp3",
+          "image": "images/explorers/everyday_english_school/bag.svg",
+          "gap": "bag",
+          "choices": [
+            "bag",
+            "pencil",
+            "book"
+          ]
+        },
+        {
+          "text": "I see a ruler.",
+          "audio": "audio/explorers/everyday_english_school/sentence_4.mp3",
+          "image": "images/explorers/everyday_english_school/ruler.svg",
+          "gap": "ruler",
+          "choices": [
+            "ruler",
+            "pencil",
+            "book"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "everyday-english-weather-1",
+      "order": 2,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/everyday_english_weather_1/intro.mp3",
+        "praise": [
+          "audio/explorers/everyday_english_weather_1/praise_0.mp3",
+          "audio/explorers/everyday_english_weather_1/praise_1.mp3",
+          "audio/explorers/everyday_english_weather_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "fill-the-gap": "audio/explorers/everyday_english_weather_1/instr_fill_the_gap.mp3",
+          "listen-and-tap": "audio/explorers/everyday_english_weather_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/everyday_english_weather_1/instr_match_picture.mp3",
+          "memory": "audio/explorers/everyday_english_weather_1/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/everyday_english_weather_1/instr_read_and_pick.mp3",
+          "sentence-builder": "audio/explorers/everyday_english_weather_1/instr_sentence_builder.mp3",
+          "true-or-false": "audio/explorers/everyday_english_weather_1/instr_true_or_false.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "sunny",
+          "audio": "audio/explorers/everyday_english_weather_1/word_sunny.mp3",
+          "image": "images/explorers/everyday_english_weather_1/sunny.svg"
+        },
+        {
+          "word": "rainy",
+          "audio": "audio/explorers/everyday_english_weather_1/word_rainy.mp3",
+          "image": "images/explorers/everyday_english_weather_1/rainy.svg"
+        },
+        {
+          "word": "cloudy",
+          "audio": "audio/explorers/everyday_english_weather_1/word_cloudy.mp3",
+          "image": "images/explorers/everyday_english_weather_1/cloudy.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "fill-the-gap",
+        "sentence-builder",
+        "memory",
+        "true-or-false"
+      ],
+      "sentences": [
+        {
+          "text": "It is sunny.",
+          "audio": "audio/explorers/everyday_english_weather_1/sentence_1.mp3",
+          "image": "images/explorers/everyday_english_weather_1/sunny.svg",
+          "gap": "sunny",
+          "choices": [
+            "sunny",
+            "rainy",
+            "cloudy"
+          ]
+        },
+        {
+          "text": "It is rainy.",
+          "audio": "audio/explorers/everyday_english_weather_1/sentence_2.mp3",
+          "image": "images/explorers/everyday_english_weather_1/rainy.svg",
+          "gap": "rainy",
+          "choices": [
+            "rainy",
+            "sunny",
+            "cloudy"
+          ]
+        },
+        {
+          "text": "It is cloudy.",
+          "audio": "audio/explorers/everyday_english_weather_1/sentence_3.mp3",
+          "image": "images/explorers/everyday_english_weather_1/cloudy.svg",
+          "gap": "cloudy",
+          "choices": [
+            "cloudy",
+            "sunny",
+            "rainy"
+          ]
+        }
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "everyday-english-weather-2",
+      "order": 3,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/everyday_english_weather_2/intro.mp3",
+        "praise": [
+          "audio/explorers/everyday_english_weather_2/praise_0.mp3",
+          "audio/explorers/everyday_english_weather_2/praise_1.mp3",
+          "audio/explorers/everyday_english_weather_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "fill-the-gap": "audio/explorers/everyday_english_weather_2/instr_fill_the_gap.mp3",
+          "listen-and-tap": "audio/explorers/everyday_english_weather_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/everyday_english_weather_2/instr_match_picture.mp3",
+          "memory": "audio/explorers/everyday_english_weather_2/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/everyday_english_weather_2/instr_read_and_pick.mp3",
+          "sentence-builder": "audio/explorers/everyday_english_weather_2/instr_sentence_builder.mp3",
+          "true-or-false": "audio/explorers/everyday_english_weather_2/instr_true_or_false.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "windy",
+          "audio": "audio/explorers/everyday_english_weather_2/word_windy.mp3",
+          "image": "images/explorers/everyday_english_weather_2/windy.svg"
+        },
+        {
+          "word": "snowy",
+          "audio": "audio/explorers/everyday_english_weather_2/word_snowy.mp3",
+          "image": "images/explorers/everyday_english_weather_2/snowy.svg"
+        },
+        {
+          "word": "stormy",
+          "audio": "audio/explorers/everyday_english_weather_2/word_stormy.mp3",
+          "image": "images/explorers/everyday_english_weather_2/stormy.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "fill-the-gap",
+        "sentence-builder",
+        "memory",
+        "true-or-false"
+      ],
+      "sentences": [
+        {
+          "text": "It is windy.",
+          "audio": "audio/explorers/everyday_english_weather_2/sentence_1.mp3",
+          "image": "images/explorers/everyday_english_weather_2/windy.svg",
+          "gap": "windy",
+          "choices": [
+            "windy",
+            "snowy",
+            "stormy"
+          ]
+        },
+        {
+          "text": "It is snowy.",
+          "audio": "audio/explorers/everyday_english_weather_2/sentence_2.mp3",
+          "image": "images/explorers/everyday_english_weather_2/snowy.svg",
+          "gap": "snowy",
+          "choices": [
+            "snowy",
+            "windy",
+            "stormy"
+          ]
+        },
+        {
+          "text": "It is stormy.",
+          "audio": "audio/explorers/everyday_english_weather_2/sentence_3.mp3",
+          "image": "images/explorers/everyday_english_weather_2/stormy.svg",
+          "gap": "stormy",
+          "choices": [
+            "stormy",
+            "windy",
+            "snowy"
+          ]
+        }
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "everyday-english-town",
+      "order": 4,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/everyday_english_town/intro.mp3",
+        "praise": [
+          "audio/explorers/everyday_english_town/praise_0.mp3",
+          "audio/explorers/everyday_english_town/praise_1.mp3",
+          "audio/explorers/everyday_english_town/praise_2.mp3"
+        ],
+        "instructions": {
+          "fill-the-gap": "audio/explorers/everyday_english_town/instr_fill_the_gap.mp3",
+          "listen-and-tap": "audio/explorers/everyday_english_town/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/everyday_english_town/instr_match_picture.mp3",
+          "memory": "audio/explorers/everyday_english_town/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/everyday_english_town/instr_read_and_pick.mp3",
+          "sentence-builder": "audio/explorers/everyday_english_town/instr_sentence_builder.mp3",
+          "true-or-false": "audio/explorers/everyday_english_town/instr_true_or_false.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "school",
+          "audio": "audio/explorers/everyday_english_town/word_school.mp3",
+          "image": "images/explorers/everyday_english_town/school.svg"
+        },
+        {
+          "word": "park",
+          "audio": "audio/explorers/everyday_english_town/word_park.mp3",
+          "image": "images/explorers/everyday_english_town/park.svg"
+        },
+        {
+          "word": "hospital",
+          "audio": "audio/explorers/everyday_english_town/word_hospital.mp3",
+          "image": "images/explorers/everyday_english_town/hospital.svg"
+        },
+        {
+          "word": "shop",
+          "audio": "audio/explorers/everyday_english_town/word_shop.mp3",
+          "image": "images/explorers/everyday_english_town/shop.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "fill-the-gap",
+        "sentence-builder",
+        "memory",
+        "true-or-false"
+      ],
+      "sentences": [
+        {
+          "text": "I go to school.",
+          "audio": "audio/explorers/everyday_english_town/sentence_1.mp3",
+          "image": "images/explorers/everyday_english_town/school.svg",
+          "gap": "school",
+          "choices": [
+            "school",
+            "park",
+            "hospital"
+          ]
+        },
+        {
+          "text": "I go to the park.",
+          "audio": "audio/explorers/everyday_english_town/sentence_2.mp3",
+          "image": "images/explorers/everyday_english_town/park.svg",
+          "gap": "park",
+          "choices": [
+            "park",
+            "school",
+            "hospital"
+          ]
+        },
+        {
+          "text": "I go to the hospital.",
+          "audio": "audio/explorers/everyday_english_town/sentence_3.mp3",
+          "image": "images/explorers/everyday_english_town/hospital.svg",
+          "gap": "hospital",
+          "choices": [
+            "hospital",
+            "school",
+            "park"
+          ]
+        },
+        {
+          "text": "I see the shop.",
+          "audio": "audio/explorers/everyday_english_town/sentence_4.mp3",
+          "image": "images/explorers/everyday_english_town/shop.svg",
+          "gap": "shop",
+          "choices": [
+            "shop",
+            "school",
+            "park"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "everyday-english-meals",
+      "order": 5,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/everyday_english_meals/intro.mp3",
+        "praise": [
+          "audio/explorers/everyday_english_meals/praise_0.mp3",
+          "audio/explorers/everyday_english_meals/praise_1.mp3",
+          "audio/explorers/everyday_english_meals/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/everyday_english_meals/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/everyday_english_meals/instr_match_picture.mp3",
+          "memory": "audio/explorers/everyday_english_meals/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/everyday_english_meals/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "breakfast",
+          "audio": "audio/explorers/everyday_english_meals/word_breakfast.mp3",
+          "image": "images/explorers/everyday_english_meals/breakfast.svg"
+        },
+        {
+          "word": "lunch",
+          "audio": "audio/explorers/everyday_english_meals/word_lunch.mp3",
+          "image": "images/explorers/everyday_english_meals/lunch.svg"
+        },
+        {
+          "word": "dinner",
+          "audio": "audio/explorers/everyday_english_meals/word_dinner.mp3",
+          "image": "images/explorers/everyday_english_meals/dinner.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "everyday-english-play",
+      "order": 6,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/everyday_english_play/intro.mp3",
+        "praise": [
+          "audio/explorers/everyday_english_play/praise_0.mp3",
+          "audio/explorers/everyday_english_play/praise_1.mp3",
+          "audio/explorers/everyday_english_play/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/everyday_english_play/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/everyday_english_play/instr_match_picture.mp3",
+          "memory": "audio/explorers/everyday_english_play/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/everyday_english_play/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "football",
+          "audio": "audio/explorers/everyday_english_play/word_football.mp3",
+          "image": "images/explorers/everyday_english_play/football.svg"
+        },
+        {
+          "word": "bike",
+          "audio": "audio/explorers/everyday_english_play/word_bike.mp3",
+          "image": "images/explorers/everyday_english_play/bike.svg"
+        },
+        {
+          "word": "paint",
+          "audio": "audio/explorers/everyday_english_play/word_paint.mp3",
+          "image": "images/explorers/everyday_english_play/paint.svg"
+        },
+        {
+          "word": "kite",
+          "audio": "audio/explorers/everyday_english_play/word_kite.mp3",
+          "image": "images/explorers/everyday_english_play/kite.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/explorers/everyday_english_meals/instr_listen_and_tap.mp3",
+      "sha256": "54d4f5dd6e02b8975f98224f6f4bcc9fe5242ac288f7596309e01a9ee24bfdc6",
+      "bytes": 33898
+    },
+    {
+      "path": "audio/explorers/everyday_english_meals/instr_match_picture.mp3",
+      "sha256": "892216605286169862349e4d0ebdd4cc4d059b871cc10f3beb632e59bd581615",
+      "bytes": 38914
+    },
+    {
+      "path": "audio/explorers/everyday_english_meals/instr_memory.mp3",
+      "sha256": "48a227f8535b7e5805559e0f34712dd39c99ea2d9607d4227b084b65f66a4ac8",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/explorers/everyday_english_meals/instr_read_and_pick.mp3",
+      "sha256": "3e160507199995f4277db0c6bc1600328756a859547bd77fcb15b62890b48300",
+      "bytes": 47691
+    },
+    {
+      "path": "audio/explorers/everyday_english_meals/intro.mp3",
+      "sha256": "1a3dceba00a405401ddf02831cbbb6630b4fedf065527213858aa221add18b5f",
+      "bytes": 39750
+    },
+    {
+      "path": "audio/explorers/everyday_english_meals/praise_0.mp3",
+      "sha256": "87f44836bf5059a018295d1820ad099a96dbf403108de2d4e31b8f17d2a7464d",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/everyday_english_meals/praise_1.mp3",
+      "sha256": "346c7641f9665530e5e941d0622c71c332fdf663d66ceec592506a63c7a08839",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/everyday_english_meals/praise_2.mp3",
+      "sha256": "ce3eca70cb7f62a114f0df8104dada86f6157b79d6efaa9f2447ef999b9b9826",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/everyday_english_meals/word_breakfast.mp3",
+      "sha256": "1e8699650086bb7c93d4e47a1ca04707c5842169c5bdfacda99ac98f15edb588",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/everyday_english_meals/word_dinner.mp3",
+      "sha256": "1a108e43b59ef3c293ec3158f039b85699a7f3502665d2ee36c4b5877a6a9d9a",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/everyday_english_meals/word_lunch.mp3",
+      "sha256": "deecf9cc5323f3e72ed156f9ba01388b32516b5dccf45b526ff746f96cc8e804",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/everyday_english_play/instr_listen_and_tap.mp3",
+      "sha256": "3421475f421cad4ea8a466eefb826946f814d3451bbec67eefec00850dcf585e",
+      "bytes": 32226
+    },
+    {
+      "path": "audio/explorers/everyday_english_play/instr_match_picture.mp3",
+      "sha256": "954b4163cd68e88e7f49e678f55eacc445ad86b1be3d1bb0bfae822cab61ec39",
+      "bytes": 40586
+    },
+    {
+      "path": "audio/explorers/everyday_english_play/instr_memory.mp3",
+      "sha256": "3db256b2142bbf756d44b5207e3eacb39b88f63bde6705be882ce15caae8a07c",
+      "bytes": 27629
+    },
+    {
+      "path": "audio/explorers/everyday_english_play/instr_read_and_pick.mp3",
+      "sha256": "301ffe16e5d16d5b38b6cafb5892d45d8174ced786071c6c85862ad8d1634ebf",
+      "bytes": 47691
+    },
+    {
+      "path": "audio/explorers/everyday_english_play/intro.mp3",
+      "sha256": "b75a0c10c6326f2141de8f70c34b662ac271df2872e94df537bb21f9928a0821",
+      "bytes": 63573
+    },
+    {
+      "path": "audio/explorers/everyday_english_play/praise_0.mp3",
+      "sha256": "730709926b95eb8fb7bcf66d552be6ed1bacf4ccedae442a842c477ea79940a7",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/everyday_english_play/praise_1.mp3",
+      "sha256": "4cc451a58c6cb79460c60a45cb3f80ac87d6996ffea2eeacbb5aaa43a98230d4",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/everyday_english_play/praise_2.mp3",
+      "sha256": "af1127259bde7ee2792c593776a2a6fc5ac1bc6075d70ed8422a7338ddb2ab26",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/explorers/everyday_english_play/word_bike.mp3",
+      "sha256": "df230105fb51fd3639151c9af677659def30ec27024ec0d2ab1076bb44775f9e",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/everyday_english_play/word_football.mp3",
+      "sha256": "ac253f8388bfac73f77eb08677ea1be089f4867e644004cb6d30f9dc541f237a",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/everyday_english_play/word_kite.mp3",
+      "sha256": "978cf48f3ac1d3b89b9bf76fa593a62fecb89f297e2f3fe12e11edf2ec28e17e",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/everyday_english_play/word_paint.mp3",
+      "sha256": "9b98351c178dc98b44b229d4c5cb4933367d012ba10aa890b8d647a9907b21d5",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/instr_fill_the_gap.mp3",
+      "sha256": "6c84dfe1c1b22a0f39b55b29d2940cb5db91c8a4897707fc33e2f02cf37eb3c8",
+      "bytes": 53960
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/instr_listen_and_tap.mp3",
+      "sha256": "04a821124dd4aa9b9d0f95d890db4167416e5d3f7dc3b2c8315babf476f8988a",
+      "bytes": 33898
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/instr_match_picture.mp3",
+      "sha256": "faebe65d7fd0fa6ba14ca42454d5eae41ce67bdf405d171b581cb268b8a27646",
+      "bytes": 38914
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/instr_memory.mp3",
+      "sha256": "322f278a9557fb819afe31ab81e0281028fec614623737be7d9a84119330a1de",
+      "bytes": 31391
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/instr_read_and_pick.mp3",
+      "sha256": "b68a059969c27e604493564e86b31c31bb88d0b3dd473b3da1b497c1acde148a",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/instr_sentence_builder.mp3",
+      "sha256": "e4d8263e9d07d8bd8c610cbfeba843d2f4b81ac1d29ab6f8d928d1af3bf6aa91",
+      "bytes": 41004
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/instr_true_or_false.mp3",
+      "sha256": "f2b888a5e1f152d90f7221ab34eaa687363d2c6ccacf149fd9c376acb09e5ac3",
+      "bytes": 41839
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/intro.mp3",
+      "sha256": "8447ca51331a39e21a056665659c05c004a0327fd753d209779a71da59f2feba",
+      "bytes": 56050
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/praise_0.mp3",
+      "sha256": "b740f92a5364fc46249f1ff75e0772161ba39d36e5648954bb56aaf62ee12d9a",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/praise_1.mp3",
+      "sha256": "5da41fe996d4e0e7959513259f847c908b1007c8d53901a67119ff4c67f92ef6",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/praise_2.mp3",
+      "sha256": "b26ba5b72b3358462340feb48394ae8d57e182e06d67ec639394d011191c759a",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/sentence_1.mp3",
+      "sha256": "f0f93aeb4a4391cb11dd7637ab1a7c73f38e2f6b29044837d1dfceedd6198f4f",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/sentence_2.mp3",
+      "sha256": "ed16c1f7b4466b5bf870eee35d6fd9f717ab8203b1c74d9655c680da72df0ae7",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/sentence_3.mp3",
+      "sha256": "c960e199d6bcc9fe49d00218b6df0fcc10c744b0e4d8700a1afa1abae7b37c0d",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/sentence_4.mp3",
+      "sha256": "77cbea04e0fd6be964035d1977079ee427d234601044e5ba638067b2b9c836b4",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/word_bag.mp3",
+      "sha256": "3f9f1da932fe8d3e5f929fd3aba69659666c09270f747fd22f80449e13d16e55",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/word_book.mp3",
+      "sha256": "460a7ba94ccb975a1b4f8117a78a987d5384d4880dc66dd565e5cee182701a41",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/word_pencil.mp3",
+      "sha256": "2a543747076389fa014d9b310a5494fe445f5591bbab57f287789920d9a1316c",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/everyday_english_school/word_ruler.mp3",
+      "sha256": "17e3ca4e65a29fa723846f2fdca5f86e5defae5ee2ce92532677d481fb8509fc",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/instr_fill_the_gap.mp3",
+      "sha256": "afa084437dc2f69458291b23b6b5789c3708f99f8643159466c3c84264dcfc29",
+      "bytes": 50199
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/instr_listen_and_tap.mp3",
+      "sha256": "cdb24747801c2fe8d9008e94cbf60de84376a019652872d76762799818a0bfa1",
+      "bytes": 35988
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/instr_match_picture.mp3",
+      "sha256": "65f6f6c988e092156355497db23607aedc5c5a53aeb67c86def7e2d1c16eff2b",
+      "bytes": 37660
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/instr_memory.mp3",
+      "sha256": "a0e220cf9a855a3d83589f51eb5683b0c3b97532c77151d2511b4e6b5095b322",
+      "bytes": 33062
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/instr_read_and_pick.mp3",
+      "sha256": "0aea817f98ae00c9d3fd0c8e4552b24850697d7ed23a25540feb8ca1f4893e80",
+      "bytes": 47691
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/instr_sentence_builder.mp3",
+      "sha256": "c1063ad80274f9e2937c48c5740ac72735727559424cb531f9fa87b276e3b2d8",
+      "bytes": 44347
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/instr_true_or_false.mp3",
+      "sha256": "d607120bebeb4fd61e4f9018af525bf7a75fbf93cc359f962c39fde8734331c5",
+      "bytes": 47273
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/intro.mp3",
+      "sha256": "0ce93be45e98fcd964cf5640b417314406a9783c92199788bd24574c65eec23d",
+      "bytes": 63573
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/praise_0.mp3",
+      "sha256": "7c435aaa0a322ffbe801c9ff7ec7d940136b5bc4eadc975d16738cedb35c4072",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/praise_1.mp3",
+      "sha256": "244c80359c7f46670cc83c92919a9b7f0fcae6fc311e43817c5b694472294c55",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/praise_2.mp3",
+      "sha256": "40a9986493dfbdcff33d342691069978039da63083022e30b53c2f4f14d537dd",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/sentence_1.mp3",
+      "sha256": "83d00e418739bface2723ed422cf66a18bbe27e10b2df33722a5409777558938",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/sentence_2.mp3",
+      "sha256": "76e6c26b5f883aeecd8ab63608c770b382be84e4f0213b85d283e8436163db12",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/sentence_3.mp3",
+      "sha256": "0ca2052054c95e55c21322b6a7cb784d34fe72d94374f128f7cee73ea20e8a31",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/sentence_4.mp3",
+      "sha256": "6b8863e1a51465c83e07f8e37fc6298dcc8cd82db64a6e094c17cce14c30cb11",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/word_hospital.mp3",
+      "sha256": "c2fb4eca54d7ec9fbadf9e4b86dc8ccd2ea4eee0783032b7f501f86bf0a7d9a4",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/word_park.mp3",
+      "sha256": "fcf7de091a49b453d6cfa418fc2d1465801a32aba2b3cba5a923a5a872056312",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/word_school.mp3",
+      "sha256": "9be7d841fd083c04a363ffc44d1e444b09df8806693c5157444d913e4d42b695",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/everyday_english_town/word_shop.mp3",
+      "sha256": "3b490ff178ea21bd8782cea47478febf1bdae7a81842cc67c14fcceb02705396",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/instr_fill_the_gap.mp3",
+      "sha256": "d14151e56b232bacaea127fbf8a3035c63758c678e487dd5f554a668ee1302e2",
+      "bytes": 52288
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/instr_listen_and_tap.mp3",
+      "sha256": "717519fca492e6e57a34d3e164ba55199cd1cd04c0770f6980347de024c48e54",
+      "bytes": 33898
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/instr_match_picture.mp3",
+      "sha256": "7368b2cabc0908d151a31b2da8c53875dbc3eba83ecc6ae2be546965b6af2966",
+      "bytes": 39750
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/instr_memory.mp3",
+      "sha256": "b7ff8a7fc2d9440b0a9184be9c8e8fc4d40f303684d5ae8cafaddebe4b7083ce",
+      "bytes": 31391
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/instr_read_and_pick.mp3",
+      "sha256": "f44de16207504c6edb04fdbbf3d623734d26f8f5ed11d08b0164dd9ef3d57e90",
+      "bytes": 47273
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/instr_sentence_builder.mp3",
+      "sha256": "59e0bb3421a851c637c6711b1cae3c9726a89107f6ed2f1ca52107713b40787d",
+      "bytes": 42675
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/instr_true_or_false.mp3",
+      "sha256": "73fc5081448782df32d032ae798dda2c9100fc1d9afc0bef513029d383cbfa7d",
+      "bytes": 48527
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/intro.mp3",
+      "sha256": "b615ad19c2a7f3eb05ddb2975f3668b453c2426a36f6b93eeb4bee43c40be402",
+      "bytes": 41004
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/praise_0.mp3",
+      "sha256": "05142caf590a812631fd9dc6b63d8584ffafd85d4297a4d103a3f02a1d01b8ef",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/praise_1.mp3",
+      "sha256": "681acc49b5813cb16508a5c372addae8e3be1731f12eb300ec7b9e77cbf6fcbc",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/praise_2.mp3",
+      "sha256": "03668868f0364d985c57ee05bcb056d11544ffb19b56b9d6ac9377312acd5ffb",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/sentence_1.mp3",
+      "sha256": "58f765acd3f8a5fa397c4e3fc272a285f838b94edcdbe3e11a84997d2cb94e9f",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/sentence_2.mp3",
+      "sha256": "6600243cb96dccfbf45a9091d24d180090d3531049b73c641561817364eb6639",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/sentence_3.mp3",
+      "sha256": "1e297fe0eeee40c47bc8821610b4c07b8ffb187598e55c52b8cef1c8c8d98555",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/word_cloudy.mp3",
+      "sha256": "97cfa8dc52a82642d2483e1a451b401897d881f9fec3f1ff43d9e885cfe6a651",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/word_rainy.mp3",
+      "sha256": "9aac1e2c0eb34478f0c48f841927f2810e960bbfa578a7e7ca3300e24213f0ba",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_1/word_sunny.mp3",
+      "sha256": "c0e2b48e8c208f22f9bde5cedbfa81362a77a35dfc3c7c955ebf0f28fe74b211",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/instr_fill_the_gap.mp3",
+      "sha256": "e427c6b23ec7a408e1dbb6e243ed66dffeeb814c9f5670101892766b4573c22a",
+      "bytes": 49363
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/instr_listen_and_tap.mp3",
+      "sha256": "5218bc66cfd4cee78043ecc93a62a592706f307743514a876216ce3bff04d20e",
+      "bytes": 33898
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/instr_match_picture.mp3",
+      "sha256": "7cb0841f5f8cfdfd2d5957addc883976fa4ea2b66bedf2c7f2b1c484c4c3f255",
+      "bytes": 41004
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/instr_memory.mp3",
+      "sha256": "eabff5c019ee768ad7f0ca3d8f47bb7cc435dac27ab1dc110149a4243e4ab345",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/instr_read_and_pick.mp3",
+      "sha256": "478a87402cb9dd8fb3f84182351ac81844f88cd82dcfd122c2795cfccb3897c3",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/instr_sentence_builder.mp3",
+      "sha256": "5361f8e15f98d9e964efb75ff91dc82bcc4edf683976b98aa534d7435a13a4bc",
+      "bytes": 44347
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/instr_true_or_false.mp3",
+      "sha256": "64d728acd58212623fe8bb141300a03054052573817de18f8216eb0df4f804bd",
+      "bytes": 47691
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/intro.mp3",
+      "sha256": "4cbc4724954ece7c7a2a88e30ab8b06a5dac23e2133b08cc6f3591b7e71fc4e2",
+      "bytes": 59812
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/praise_0.mp3",
+      "sha256": "9cd142ea5829b77369406d23c9760c553db89e7c1952dc0be5747ef74785ae22",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/praise_1.mp3",
+      "sha256": "e1a1f86d60ba967ff953994e51ec9753c35b779c7dc7aacf69063a42f75defc3",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/praise_2.mp3",
+      "sha256": "380bf38915e4cbfc96ac6ea588b42296ca4c7e3ba1327c571089757ff48b5cfe",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/sentence_1.mp3",
+      "sha256": "957bfbb2ddd75db5965bbea4311518cef281ac7ea6d8eaa6ac2abec6f2a023e7",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/sentence_2.mp3",
+      "sha256": "01986f99031f5eb4f8036c2e2082ad563eb8da51e3eea7893a0bf6b2a5c7207f",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/sentence_3.mp3",
+      "sha256": "23b4612e9d2330838a1f1026d3007a0a28c11e128aecb39facca27c26772b847",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/word_snowy.mp3",
+      "sha256": "202a1f56331c237165d791329c62bdf35a23701269aaa8685f79488d27da7886",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/word_stormy.mp3",
+      "sha256": "900e87fd818df62e57656a52ea2d7d106d6aa1cd4dd16b326c7e9b628fe6f275",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/everyday_english_weather_2/word_windy.mp3",
+      "sha256": "c0af54b03b59ea4c095b968d8f402dfedfa8e1ab3d68869d21250abdabea7275",
+      "bytes": 18852
+    },
+    {
+      "path": "images/explorers/everyday_english_meals/breakfast.svg",
+      "sha256": "b40574c5d60d3e2a9f26f606c5ad37c8466cbabca849b5f9746143b8d4a94327",
+      "bytes": 693
+    },
+    {
+      "path": "images/explorers/everyday_english_meals/dinner.svg",
+      "sha256": "969329610c80bb540d42f9d133ffd67beeba60184e0d016b4ccac72d7c2db3d8",
+      "bytes": 661
+    },
+    {
+      "path": "images/explorers/everyday_english_meals/lunch.svg",
+      "sha256": "f60a391e584f0fc21f5d21872ad3b1769182673b63edc131f2ef6d56506bdd78",
+      "bytes": 1024
+    },
+    {
+      "path": "images/explorers/everyday_english_play/bike.svg",
+      "sha256": "4c9f840eef27ee2e5a8e9dc4ecf4bacc1b0fc93367dda7cf59dc47d14c306b5f",
+      "bytes": 684
+    },
+    {
+      "path": "images/explorers/everyday_english_play/football.svg",
+      "sha256": "848cfa75fb2432901e4757b02881e32b1bd674d7225d1b6bf1169257a5b65574",
+      "bytes": 568
+    },
+    {
+      "path": "images/explorers/everyday_english_play/kite.svg",
+      "sha256": "df3972c1152f63111ff15ab12232c3c0c5be6b77f834f7f8fa847698613c8f85",
+      "bytes": 589
+    },
+    {
+      "path": "images/explorers/everyday_english_play/paint.svg",
+      "sha256": "a511ad6d364a094b8e4b7f05e0786eb8719fb7f25eb1bb27d4db88ccb35a78cb",
+      "bytes": 846
+    },
+    {
+      "path": "images/explorers/everyday_english_school/bag.svg",
+      "sha256": "a9aad916d5e2b65c602b7824ef43d4e6fcd36b4f1c5f93470587b1c7d67c5b8f",
+      "bytes": 723
+    },
+    {
+      "path": "images/explorers/everyday_english_school/book.svg",
+      "sha256": "bf587e39bc6f3efd656571fb426942a54c69d4a5e0d68db8c5bbe76ec11310f7",
+      "bytes": 687
+    },
+    {
+      "path": "images/explorers/everyday_english_school/pencil.svg",
+      "sha256": "6bb38d4cfc71b020bfba56020506c00d9fdd2f4d928f944c318e511805c97a78",
+      "bytes": 650
+    },
+    {
+      "path": "images/explorers/everyday_english_school/ruler.svg",
+      "sha256": "19ff59f8adc4261b6d875661a026dbe6aebdb6c8aa64df96156485f90c26048c",
+      "bytes": 543
+    },
+    {
+      "path": "images/explorers/everyday_english_town/hospital.svg",
+      "sha256": "8a9563fbb71d6de2de9827d07acdd5ff8d46c8de9dcba1fb58a74166a40163d1",
+      "bytes": 746
+    },
+    {
+      "path": "images/explorers/everyday_english_town/park.svg",
+      "sha256": "351dd3aa0da25d4fb4463f4074cf3ff1ffddefc0a47e606500206ececbdd6a61",
+      "bytes": 619
+    },
+    {
+      "path": "images/explorers/everyday_english_town/school.svg",
+      "sha256": "9c2c2265ccd746c672aaf79914baade59f2ae4f755a822ec98bf1db1c510df7b",
+      "bytes": 778
+    },
+    {
+      "path": "images/explorers/everyday_english_town/shop.svg",
+      "sha256": "d4a7783bb136436e30c38d1fa73e79dac1276ebad3d812623c4d35300014ca98",
+      "bytes": 1198
+    },
+    {
+      "path": "images/explorers/everyday_english_weather_1/cloudy.svg",
+      "sha256": "26279bf06c1fb9770d3029a255e5406f3b83787afd70fa38e50ea5bc91493644",
+      "bytes": 587
+    },
+    {
+      "path": "images/explorers/everyday_english_weather_1/rainy.svg",
+      "sha256": "7b081c13ee28a63c6951ad2d640745eac920736f51ca7f90638c8c309df16494",
+      "bytes": 921
+    },
+    {
+      "path": "images/explorers/everyday_english_weather_1/sunny.svg",
+      "sha256": "1ab9ff74d2746dff9add14dc81c1f2284d512bdc5e60edec3ba21a89e593e226",
+      "bytes": 1440
+    },
+    {
+      "path": "images/explorers/everyday_english_weather_2/snowy.svg",
+      "sha256": "da279fe893f9527d8a2889279c8cba4271ff63c1da9c81d0749fdeb2884caf63",
+      "bytes": 1430
+    },
+    {
+      "path": "images/explorers/everyday_english_weather_2/stormy.svg",
+      "sha256": "b0f8b66aae6e35f226594894e8a50c70ea9918dddb2ebbd6c409967db1588b73",
+      "bytes": 930
+    },
+    {
+      "path": "images/explorers/everyday_english_weather_2/windy.svg",
+      "sha256": "70c9316e5c4a3c21a068bf7508a573b0e03b612f923f7d816046c9e0dc31d953",
+      "bytes": 732
+    }
+  ]
+}

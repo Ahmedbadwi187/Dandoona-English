@@ -24,4 +24,5 @@ narration:
     read-and-pick: "Read the word. Then tap its picture!"
     fill-the-gap: "Read. Then tap the word that fits!"
     sentence-builder: "Listen. Then put the words in order!"
-activities: [listen-and-tap, read-and-pick, match-picture, fill-the-gap, sentence-builder, memory]
+    true-or-false: "Read the sentence. Does it match the picture?"
+activities: [listen-and-tap, read-and-pick, match-picture, fill-the-gap, sentence-builder, memory, true-or-false]

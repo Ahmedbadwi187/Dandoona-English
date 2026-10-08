@@ -186,6 +186,8 @@ const _activityIcons = {
   'sound-tap': Icons.graphic_eq_rounded,
   'word-builder': Icons.view_week_rounded,
   'spell-it': Icons.spellcheck_rounded,
+  'true-or-false': Icons.rule_rounded,
+  'sight-word-hunt': Icons.bubble_chart_rounded,
   'read-and-pick': Icons.chrome_reader_mode_rounded,
   'find-the-word': Icons.manage_search_rounded,
   'sentence-builder': Icons.wrap_text_rounded,

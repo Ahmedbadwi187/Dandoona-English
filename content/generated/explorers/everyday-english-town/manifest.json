@@ -71,6 +71,10 @@
     "instr-sentence-builder": {
       "hash": "74cef28a8c2c5ae3092fdb97efde3b8243986d0fbd9193885b03a8332eede6c2",
       "generatedAtUtc": "2026-10-08T17:24:01.68543Z"
+    },
+    "instr-true-or-false": {
+      "hash": "010d363c8c78fd55ad0f2b636085e2fe6a95bb07dc926ea267ada17ea979c4f3",
+      "generatedAtUtc": "2026-10-08T18:45:18.2076815Z"
     }
   }
 }

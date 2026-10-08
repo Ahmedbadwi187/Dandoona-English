@@ -21,4 +21,6 @@ narration:
   instructions:
     find-the-word: "Listen. Then tap the word you hear!"
     sentence-builder: "Listen. Then put the words in order!"
-activities: [find-the-word, sentence-builder]
+    true-or-false: "Read the sentence. Does it match the picture?"
+    sight-word-hunt: "Listen. Then tap the word you hear!"
+activities: [find-the-word, sentence-builder, true-or-false, sight-word-hunt]

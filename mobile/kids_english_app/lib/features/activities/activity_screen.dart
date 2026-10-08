@@ -31,6 +31,7 @@ import 'memory_activity.dart';
 import 'mix_colors_activity.dart';
 import 'odd_one_out_activity.dart';
 import 'phonics_activities.dart';
+import 'reading_games.dart';
 import 'sentence_activities.dart';
 import 'sort_activity.dart';
 import 'story_feeling_activity.dart';
@@ -181,6 +182,8 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
                   'habitat' => HabitatActivity(lesson: widget.lesson, onFinished: _finished),
                     'color-the-object' => ColorTheObjectActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   // Explorers phonics
+                  'true-or-false' => TrueOrFalseActivity(lesson: widget.lesson, onFinished: _finished),
+                  'sight-word-hunt' => SightWordHuntActivity(lesson: widget.lesson, onFinished: _finished),
                   'sound-tap' => SoundTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   'spell-it' => WordBuilderActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished, spell: true),
                   'word-builder' => WordBuilderActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),

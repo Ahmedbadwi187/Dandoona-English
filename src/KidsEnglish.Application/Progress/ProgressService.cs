@@ -37,7 +37,9 @@ public static class ActivityCodes
         ["find-the-word"] = ActivityType.FindTheWord,
         ["sentence-builder"] = ActivityType.SentenceBuilder,
         ["fill-the-gap"] = ActivityType.FillTheGap,
-        ["spell-it"] = ActivityType.SpellIt
+        ["spell-it"] = ActivityType.SpellIt,
+        ["true-or-false"] = ActivityType.TrueOrFalse,
+        ["sight-word-hunt"] = ActivityType.SightWordHunt
     };
 
     public static bool TryParse(string? code, out ActivityType type) => Map.TryGetValue(code ?? "", out type);

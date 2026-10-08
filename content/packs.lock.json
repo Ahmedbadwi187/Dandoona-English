@@ -71,16 +71,16 @@
       "contentHash": "4be80f3b4d040f27d0d1b194d69c8ebabb4472f9960258685638f4d7ac70faae"
     },
     "sight-words-1": {
-      "version": 1,
-      "contentHash": "0ca9e3916331469f028c423bc6e17e489c34b6eb2e2cf194ef831241d674a275"
+      "version": 2,
+      "contentHash": "821d76045da1f4178c66edcdeb25424b37c9e7edd722ec1f5cf77909a0610760"
     },
     "sight-words-2": {
-      "version": 2,
-      "contentHash": "8bd47ad81005c39735c53e1a47dd391fe11b39e957c955c5c6941cb656994783"
+      "version": 3,
+      "contentHash": "fb0b4075a5d2d472c6e45d82786c32633ea43d31a020f4bd4ac2963f960fd54d"
     },
     "my-sentences": {
-      "version": 3,
-      "contentHash": "c02a72631877e79e0b27f6fa21053deea01524f37e4bd4cf350144cffe53aed0"
+      "version": 4,
+      "contentHash": "178c0d1294924fe9e8164ce6f26f103e580134fdcc5c54e692cd4d96019730cc"
     },
     "word-families": {
       "version": 1,
@@ -91,12 +91,12 @@
       "contentHash": "e0b36c8a7b350dd4b9ec0cb35dd4fb179ed6ca93d26fa0925a684bc2c1c1d02c"
     },
     "everyday-english": {
-      "version": 1,
-      "contentHash": "6f314f6a561025d609cdfcef93e0cc70fe019bd3d4aaa5d6887b31357410c3c4"
+      "version": 2,
+      "contentHash": "bd850bdf8950169f4d2e5625b876fda9da7c8d6df7b6354ffda002faca65825f"
     },
     "grammar-starters": {
-      "version": 2,
-      "contentHash": "19195c71ea942ed135f6a897c32f65273e1668b5da85abe4c4d0bde6e0b2d7de"
+      "version": 3,
+      "contentHash": "82d021f62923bc32112fd616ea99058b2c485f7967a8ce9e92026120f4b2b2a1"
     }
   }
 }
