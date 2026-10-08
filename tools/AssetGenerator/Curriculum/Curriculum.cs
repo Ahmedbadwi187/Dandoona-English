@@ -25,6 +25,9 @@ public class Lesson
     public List<string> Odd { get; set; } = [];
     /// <summary>True for the synthetic lesson that carries a unit's own audio (title, welcome, celebration). Never read from YAML files.</summary>
     public bool IsUnit { get; set; }
+    /// <summary>Set only on the synthetic "phonemes" lesson of a track (one clip per sound). Never read from lesson files.</summary>
+    [YamlDotNet.Serialization.YamlIgnore]
+    public List<PhonemeDef>? PhonemeSet { get; set; }
     public int? Order { get; set; }
     public string? Letter { get; set; }
     public string? Phoneme { get; set; }
@@ -70,6 +73,19 @@ public class LessonWord
     public string? Lives { get; set; }
     /// <summary>Actions: what Dandoona says for the "Dandoona says" activity ("Dandoona says, jump!").</summary>
     public string? Says { get; set; }
+    /// <summary>Explorers phonics: the word's spelling split into its sounds ([c, a, t]; later [sh, i, p]). Each is a key of the
+    /// track's `phonemes` table, and together they spell the word. Used by Sound Tap and Word Builder.</summary>
+    public List<string>? Graphemes { get; set; }
+}
+
+/// <summary>One sound of a track's phoneme table (content/curriculum/units/&lt;track&gt;.yaml `phonemes`): the grapheme key ("c",
+/// "sh"), its IPA (for people) and the text the voice reads to make the sound alone ("kuh", "sss"). Text-to-speech is
+/// unreliable for lone sounds, so every one is flagged for the owner to listen to, and a recording can override it.</summary>
+public class PhonemeDef
+{
+    public string Key { get; set; } = "";
+    public string Ipa { get; set; } = "";
+    public string Say { get; set; } = "";
 }
 
 public class Narration
@@ -165,6 +181,8 @@ public class UnitsFile
     public UnitNarration? App { get; set; }
     /// <summary>Review stops on the map, in path order.</summary>
     public List<ReviewDef> Reviews { get; set; } = [];
+    /// <summary>The track's phoneme table (Explorers phonics).</summary>
+    public List<PhonemeDef> Phonemes { get; set; } = [];
 }
 
 /// <summary>One answer of the placement question: the units that count as done by placement, and where the child starts.</summary>
@@ -180,7 +198,7 @@ public class PlacementDef
 
 public class LessonValidator : AbstractValidator<Lesson>
 {
-    public static readonly string[] ActivityNames = ["trace", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "trace-small", "animal-sounds", "habitat", "dandoona-says", "sort", "memory", "odd-one-out", "sentence", "count-along", "mix-colors", "build-picture", "turns", "story-feeling"];
+    public static readonly string[] ActivityNames = ["trace", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "trace-small", "animal-sounds", "habitat", "dandoona-says", "sort", "memory", "odd-one-out", "sentence", "count-along", "mix-colors", "build-picture", "turns", "story-feeling", "sound-tap", "word-builder", "read-and-pick"];
     public static readonly string[] Homes = ["house", "farm", "water", "wild"];
     private static readonly string[] Levels = ["pre-a1", "a1", "a2"];
     private static readonly string[] Tracks = ["little-learners", "explorers", "champions"];
@@ -203,7 +221,9 @@ public class LessonValidator : AbstractValidator<Lesson>
         {
             w.RuleFor(i => i.Word).NotEmpty().MaximumLength(30).Matches("^[A-Za-z' -]+$");
             w.RuleFor(i => i.ImagePrompt).NotEmpty().MaximumLength(500).When(i => i.Reuse is null);
-            w.RuleFor(i => i.Reuse).Matches("^[a-z0-9]+(-[a-z0-9]+)*/[a-z0-9-]+$").When(i => i.Reuse is not null).WithMessage("'Reuse' must look like lesson-id/word-key.");
+            w.RuleFor(i => i.Reuse).Matches("^([a-z0-9]+(-[a-z0-9]+)*:)?[a-z0-9]+(-[a-z0-9]+)*/[a-z0-9-]+$").When(i => i.Reuse is not null).WithMessage("'Reuse' must look like lesson-id/word-key (or track:lesson-id/word-key).");
+            w.RuleFor(i => i).Must(i => i.Graphemes is null || (i.Graphemes.Count is >= 2 and <= 8 && i.Graphemes.All(g => System.Text.RegularExpressions.Regex.IsMatch(g, "^[a-z]{1,3}$")) && string.Concat(i.Graphemes) == i.Word.Trim().ToLowerInvariant()))
+                .WithMessage("'graphemes' must be 2-8 lowercase parts that spell the word.");
             w.RuleFor(i => i.Source).Must(s => s is "openai" or "svg").WithMessage("Word source must be openai or svg.");
             w.RuleFor(i => i.Says).MaximumLength(60).Must(s => !string.IsNullOrWhiteSpace(s)).When(i => i.Says is not null);
             w.RuleFor(i => i.Sound).MaximumLength(40).Must(s => !string.IsNullOrWhiteSpace(s)).When(i => i.Sound is not null);
@@ -224,6 +244,9 @@ public class LessonValidator : AbstractValidator<Lesson>
             .WithMessage("Instructions must be keyed by an activity name or 'hint' and be 1-100 characters.");
 
         RuleFor(x => x.Activities).NotEmpty();
+        RuleFor(x => x).Must(l => !l.Activities.Any(a => a is "sound-tap" or "word-builder") || l.Words.All(w => w.Graphemes is not null))
+            .WithMessage("sound-tap and word-builder need 'graphemes' on every word.");
+        RuleFor(x => x).Must(l => !l.Activities.Contains("read-and-pick") || l.Words.Count >= 3).WithMessage("read-and-pick needs at least 3 words.");
         RuleForEach(x => x.Activities).Must(a => ActivityNames.Contains(a))
             .WithMessage("Unknown activity '{PropertyValue}'. Use: " + string.Join(", ", ActivityNames));
         RuleFor(x => x).Must(l => !l.Activities.Contains("habitat") || l.Words.All(w => w.Home is not null)).WithMessage("Every word of a habitat lesson needs a home.");
@@ -305,6 +328,12 @@ public static class CurriculumReader
             foreach (var st in u.Chest.Stickers.Where(st => !words.Contains(st.Trim().ToLowerInvariant()))) errors.Add($"unit '{u.Id}': sticker '{st}' is not a word of the unit.");
             if (!File.Exists(Path.Combine(directory, "..", "art", "accessories", u.Chest.Accessory + ".svg"))) errors.Add($"unit '{u.Id}': the chest accessory '{u.Chest.Accessory}' has no drawing in content/art/accessories.");
         }
+
+        var phonemes = LoadPhonemes(directory);
+        foreach (var (file, lesson) in lessons)
+            foreach (var w in lesson.Words.Where(w => w.Graphemes is not null))
+                foreach (var g in w.Graphemes!.Where(g => !phonemes.Any(p => p.Track == lesson.Track && p.Phoneme.Key == g)))
+                    errors.Add($"{file}: '{w.Word}' uses the sound '{g}', which is not in the {lesson.Track} phoneme table.");
 
         foreach (var dup in lessons.GroupBy(l => l.Lesson.Id).Where(g => g.Count() > 1))
             errors.Add($"Duplicate lesson id '{dup.Key}' in: {string.Join(", ", dup.Select(l => l.File))}");
@@ -395,6 +424,35 @@ public static class CurriculumReader
         if (errors.Count > 0) throw new CurriculumException("Reviews are invalid:\n" + string.Join("\n", errors));
         return result;
     }
+
+    /// <summary>Each track's phoneme table, checked: kebab keys of 1-3 letters, unique, a voice text of 1-30 characters.</summary>
+    public static IReadOnlyList<(string Track, PhonemeDef Phoneme)> LoadPhonemes(string curriculumDirectory)
+    {
+        var dir = Path.Combine(curriculumDirectory, "units");
+        if (!Directory.Exists(dir)) return [];
+        var result = new List<(string, PhonemeDef)>();
+        var errors = new List<string>();
+        foreach (var path in Directory.EnumerateFiles(dir, "*.yaml").Order(StringComparer.OrdinalIgnoreCase))
+        {
+            var file = Deserializer.Deserialize<UnitsFile>(File.ReadAllText(path));
+            if (file is null) continue;
+            foreach (var p in file.Phonemes)
+            {
+                if (!System.Text.RegularExpressions.Regex.IsMatch(p.Key, "^[a-z]{1,3}$")) errors.Add($"{Path.GetFileName(path)}: phoneme key '{p.Key}' must be 1-3 lowercase letters.");
+                if (string.IsNullOrWhiteSpace(p.Say) || p.Say.Length > 30) errors.Add($"{Path.GetFileName(path)}: phoneme '{p.Key}' needs a 'say' text of 1-30 characters.");
+                result.Add((file.Track, p));
+            }
+            if (file.Phonemes.GroupBy(p => p.Key).Any(g => g.Count() > 1)) errors.Add($"{Path.GetFileName(path)}: two phonemes share a key.");
+        }
+        if (errors.Count > 0) throw new CurriculumException("Phonemes are invalid:\n" + string.Join("\n", errors));
+        return result;
+    }
+
+    /// <summary>The synthetic lesson that carries a track's phoneme clips (one per sound), so audio and export treat them like any lesson.</summary>
+    public static Lesson PhonemesLesson(string track, IEnumerable<PhonemeDef> phonemes) => new()
+    {
+        Id = "phonemes", Track = track, Unit = "phonemes", Level = "a1", IsUnit = true, Order = 0, PhonemeSet = phonemes.ToList(),
+    };
 
     /// <summary>Dandoona's app-level lines (curriculum/units/*.yaml `app:`) as one pseudo unit with id "app" (not shown on the map).</summary>
     public static IReadOnlyList<UnitDef> LoadApp(string curriculumDirectory)

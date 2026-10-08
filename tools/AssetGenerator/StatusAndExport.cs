@@ -60,7 +60,7 @@ public class StatusRunner(Layout layout, VoiceConfig voices, string? fallbackVoi
     }
 }
 
-public record ExportDoc(int SchemaVersion, string Track, DateTime GeneratedAt, string? Mascot, List<ExportUnit> Units, List<ExportPlacement>? Placement = null, ExportUnitAudio? App = null, List<ExportReview>? Reviews = null);
+public record ExportDoc(int SchemaVersion, string Track, DateTime GeneratedAt, string? Mascot, List<ExportUnit> Units, List<ExportPlacement>? Placement = null, ExportUnitAudio? App = null, List<ExportReview>? Reviews = null, Dictionary<string, string>? Phonemes = null);
 public record ExportReview(string Id, List<string> Units);
 public record ExportPlacement(int Level, string Key, List<string> DoneUnits, string StartUnit);
 public record ExportUnit(string Id, int Order, Dictionary<string, string> Title, string Icon, string Color, ExportUnitAudio? Audio, List<ExportLesson> Lessons, ExportPackRef? Pack = null, ExportChest? Chest = null, ExportStory? Story = null);
@@ -72,7 +72,7 @@ public record ExportLesson(string Id, int Order, string Level, string? Letter, s
     ExportLessonAudio Audio, List<ExportWord> Words, List<string> Activities, ExportColor? Color = null, bool? Counting = null, bool? OwnWordsOnly = null, List<ExportBin>? Bins = null, List<string>? Odd = null);
 public record ExportBin(string Key, string Icon);
 public record ExportLessonAudio(string Intro, string? Phoneme, List<string> Praise, Dictionary<string, string>? Instructions = null, string? ColorName = null);
-public record ExportWord(string Word, string Audio, string Image, string? Phrase = null, string? Sound = null, string? Lives = null, string? Home = null, string? Says = null, string? Group = null, string? Opposite = null, string? PhraseText = null);
+public record ExportWord(string Word, string Audio, string Image, string? Phrase = null, string? Sound = null, string? Lives = null, string? Home = null, string? Says = null, string? Group = null, string? Opposite = null, string? PhraseText = null, List<string>? Graphemes = null);
 public record ExportColor(string Name, string Hex, string Swatch, string Drawing);
 
 public record ExportResult(int Exported, IReadOnlyList<string> Incomplete, long TotalBytes, string? JsonPath);
@@ -82,7 +82,7 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
 {
     public const int SchemaVersion = 2;
 
-    public async Task<ExportResult> RunAsync(string track, IReadOnlyList<Lesson> lessons, CancellationToken ct, bool force = false, IReadOnlyList<UnitDef>? units = null, IReadOnlyList<PlacementDef>? placement = null, UnitDef? app = null, IReadOnlyList<ReviewDef>? reviews = null, bool sharedArt = true)
+    public async Task<ExportResult> RunAsync(string track, IReadOnlyList<Lesson> lessons, CancellationToken ct, bool force = false, IReadOnlyList<UnitDef>? units = null, IReadOnlyList<PlacementDef>? placement = null, UnitDef? app = null, IReadOnlyList<ReviewDef>? reviews = null, bool sharedArt = true, IReadOnlyList<PhonemeDef>? phonemes = null)
     {
         var exported = new List<(string UnitId, ExportLesson Lesson)>();
         var incomplete = new List<string>();
@@ -165,7 +165,7 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
                 {
                     var key = LessonPlan.Slug(w.Word);
                     var svg = w.Reuse is not null ? reusedSvg[key] : w.Source == "svg";
-                    return new ExportWord(w.Word.Trim(), Layout.ExportAudioRel(l, $"word-{key}"), Layout.ExportImageRel(l, key, svg), PhraseFor(w), w.Sound is null ? null : Layout.ExportAudioRel(l, LessonPlan.SoundRole(w.Word)), w.Lives is null ? null : Layout.ExportAudioRel(l, LessonPlan.LivesRole(w.Word)), w.Home, w.Says is null ? null : Layout.ExportAudioRel(l, LessonPlan.SaysRole(w.Word)), w.Group, w.Opposite, PhraseTextFor(w));
+                    return new ExportWord(w.Word.Trim(), Layout.ExportAudioRel(l, $"word-{key}"), Layout.ExportImageRel(l, key, svg), PhraseFor(w), w.Sound is null ? null : Layout.ExportAudioRel(l, LessonPlan.SoundRole(w.Word)), w.Lives is null ? null : Layout.ExportAudioRel(l, LessonPlan.LivesRole(w.Word)), w.Home, w.Says is null ? null : Layout.ExportAudioRel(l, LessonPlan.SaysRole(w.Word)), w.Group, w.Opposite, PhraseTextFor(w), w.Graphemes);
                 }).ToList(),
                 l.Activities.ToList(),
                 color,
@@ -216,6 +216,23 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
 
         Directory.Delete(scratch, recursive: true);
 
+        // The track's phoneme clips (Explorers): one per sound, bundled; a sound without audio yet is left out and listed.
+        Dictionary<string, string>? phonemeAudio = null;
+        if (phonemes is { Count: > 0 })
+        {
+            var pl = CurriculumReader.PhonemesLesson(track, phonemes);
+            phonemeAudio = [];
+            var missing = new List<string>();
+            foreach (var a in LessonPlan.Audio(pl))
+            {
+                var source = layout.AudioForExport(pl, a.Role);
+                if (source is null) { missing.Add(a.Role); continue; }
+                bytes += await EncodeIfNeededAsync(source, Path.Combine(layout.AssetsDir, Layout.ExportAudioRel(pl, a.Role)), audio: true, force, ct);
+                phonemeAudio[a.Role["phoneme-".Length..]] = Layout.ExportAudioRel(pl, a.Role);
+            }
+            if (missing.Count > 0) incomplete.Add($"phonemes: no audio yet for {string.Join(", ", missing)} (run audio)");
+        }
+
         // The art every track shares (Dandoona, the avatars, her poses) is written by the first track's export only; another
         // track just points at it. Accessories are plain SVG copies, so every track may add its own.
         string? mascot = null;
@@ -248,7 +265,8 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
             Directory.CreateDirectory(Path.GetDirectoryName(jsonPath)!);
             var json = ConfigLoader.ToJson(new ExportDoc(SchemaVersion, track, (now ?? (() => DateTime.UtcNow))(), mascot, doc,
                 placement?.Where(p => p.Track == track).OrderBy(p => p.Level).Select(p => new ExportPlacement(p.Level, p.Key, p.DoneUnits, p.StartUnit)).ToList() is { Count: > 0 } pl ? pl : null, appAudio,
-                reviews is { Count: > 0 } ? reviews.Select(r => new ExportReview(r.Id, r.Units)).ToList() : null));
+                reviews is { Count: > 0 } ? reviews.Select(r => new ExportReview(r.Id, r.Units)).ToList() : null,
+                phonemeAudio is { Count: > 0 } ? phonemeAudio : null));
             await File.WriteAllTextAsync(jsonPath, json, ct);
             bytes += new FileInfo(jsonPath).Length;
             UpdatePubspec();

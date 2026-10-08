@@ -1,0 +1,19 @@
+# Sound Builders, short i: three-sound words (CVC) from everyday themes (animals, food, school, home).
+id: sound-builders-i
+unit: sound-builders
+track: explorers
+level: a1
+order: 3
+words:
+  - { word: pig, graphemes: [p, i, g], reuse: "little-learners:letter-p/pig" }
+  - { word: fig, graphemes: [f, i, g], source: svg, imagePrompt: "a purple fig cut open" }
+  - { word: bin, graphemes: [b, i, n], source: svg, imagePrompt: "a green kitchen bin" }
+  - { word: six, graphemes: [s, i, x], reuse: "little-learners:number-4-6/six" }
+narration:
+  intro: "Short i! Listen: i, i. Let's build words: pig, fig, bin, six."
+  praise: ["Great reading!", "You built it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

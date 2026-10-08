@@ -11,6 +11,30 @@ placement:
   - { level: 2, key: all-letters,  doneUnits: [letters],                startUnit: sound-builders }
   - { level: 3, key: reads-words,  doneUnits: [letters, sound-builders], startUnit: digraphs }
 
+# The phoneme table: one clip per sound, made by ElevenLabs from `say` (text-to-speech cannot read IPA reliably, so `say` is spelled
+# for the voice: "kuh", "sss"). EVERY clip is flagged for the owner to listen to; a recording of your own placed next to the generated
+# file (phoneme-<key>.override.mp3 in content/generated/explorers/phonemes/audio/) always wins. Keys are graphemes (later: sh, ch, th).
+# Short vowels first, then the consonants Sound Builders uses.
+phonemes:
+  - { key: a, ipa: "/æ/", say: "aa" }
+  - { key: e, ipa: "/ɛ/", say: "eh" }
+  - { key: i, ipa: "/ɪ/", say: "ih" }
+  - { key: o, ipa: "/ɒ/", say: "aw" }
+  - { key: u, ipa: "/ʌ/", say: "uh" }
+  - { key: b, ipa: "/b/", say: "buh" }
+  - { key: c, ipa: "/k/", say: "kuh" }
+  - { key: d, ipa: "/d/", say: "duh" }
+  - { key: f, ipa: "/f/", say: "fff" }
+  - { key: g, ipa: "/g/", say: "guh" }
+  - { key: h, ipa: "/h/", say: "huh" }
+  - { key: j, ipa: "/dʒ/", say: "juh" }
+  - { key: m, ipa: "/m/", say: "mmm" }
+  - { key: n, ipa: "/n/", say: "nnn" }
+  - { key: p, ipa: "/p/", say: "puh" }
+  - { key: s, ipa: "/s/", say: "sss" }
+  - { key: t, ipa: "/t/", say: "tuh" }
+  - { key: x, ipa: "/ks/", say: "ks" }
+
 units:
   - id: letters
     from: little-learners
@@ -21,6 +45,15 @@ units:
     title: { en: "Sound Builders", ar: "تركيب الأصوات" }
     icon: sounds
     color: blue
+    chest: { accessory: explorer-hat, stickers: [cat, pig, bus, cup] }
+    # A tiny decodable story with the unit's words (short a, e, i, o, u), one sentence a page.
+    story:
+      pages:
+        - { text: "The cat has a hat.", words: [cat, hat], pose: waving }
+        - { text: "A hen naps on a bed.", words: [hen, bed], pose: thinking }
+        - { text: "The pig has a big fig.", words: [pig, fig], pose: pointing-up }
+        - { text: "The dog sits by the pot.", words: [dog, pot], pose: base }
+        - { text: "A bug is in the cup! Fun!", words: [bug, cup], pose: jumping }
     narration:
       title: "Sound Builders"
       welcome: "Let's build words from sounds!"

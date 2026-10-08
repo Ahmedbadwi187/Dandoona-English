@@ -1,0 +1,19 @@
+# Sound Builders, short o: three-sound words (CVC) from everyday themes (animals, food, school, home).
+id: sound-builders-o
+unit: sound-builders
+track: explorers
+level: a1
+order: 4
+words:
+  - { word: dog, graphemes: [d, o, g], reuse: "little-learners:letter-d/dog" }
+  - { word: pot, graphemes: [p, o, t], source: svg, imagePrompt: "a cooking pot with a lid" }
+  - { word: box, graphemes: [b, o, x], reuse: "little-learners:letter-x/box" }
+  - { word: mop, graphemes: [m, o, p], source: svg, imagePrompt: "a mop for the floor" }
+narration:
+  intro: "Short o! Listen: o, o. Let's build words: dog, pot, box, mop."
+  praise: ["Great reading!", "You built it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

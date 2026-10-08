@@ -10,7 +10,7 @@ public class CurriculumTests
     public void Repo_curriculum_files_are_valid()
     {
         var layout = Layout.FindFrom(AppContext.BaseDirectory);
-        var lessons = CurriculumReader.LoadAll(layout.CurriculumDir);
+        var lessons = CurriculumReader.LoadAll(layout.CurriculumDir).Where(l => l.Track == "little-learners").ToList(); // Little Learners rules (Explorers has its own tests)
         lessons.Count(l => l.Unit == "letters").ShouldBe(26);
         lessons.Count(l => l.Unit == "colors").ShouldBe(10);
         lessons.First().Id.ShouldBe("letter-a");

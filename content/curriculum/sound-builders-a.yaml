@@ -1,0 +1,19 @@
+# Sound Builders, short a: three-sound words (CVC) from everyday themes (animals, food, school, home).
+id: sound-builders-a
+unit: sound-builders
+track: explorers
+level: a1
+order: 1
+words:
+  - { word: cat, graphemes: [c, a, t], reuse: "little-learners:letter-c/cat" }
+  - { word: jam, graphemes: [j, a, m], source: svg, imagePrompt: "a jar of red strawberry jam" }
+  - { word: bag, graphemes: [b, a, g], source: svg, imagePrompt: "a blue school bag" }
+  - { word: hat, graphemes: [h, a, t], reuse: "little-learners:letter-h/hat" }
+narration:
+  intro: "Short a! Listen: a, a. Let's build words: cat, jam, bag, hat."
+  praise: ["Great reading!", "You built it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

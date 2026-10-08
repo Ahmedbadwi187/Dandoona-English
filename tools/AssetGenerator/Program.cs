@@ -126,7 +126,8 @@ export.SetAction((pr, ct) => Guard(async () =>
     await new ExportRunner(layout, ConfigLoader.Generation(layout), MediaTools.Create(Console.Out), Console.Out)
         .RunAsync(track, lessons, ct, pr.GetValue(forceOpt), CurriculumReader.LoadUnits(layout.CurriculumDir), CurriculumReader.LoadPlacement(layout.CurriculumDir), CurriculumReader.LoadApp(layout.CurriculumDir).FirstOrDefault(u => u.Track == track),
             CurriculumReader.LoadReviews(layout.CurriculumDir).Where(r => r.Track == track).Select(r => r.Review).ToList(),
-            sharedArt: track == "little-learners");
+            sharedArt: track == "little-learners",
+            phonemes: CurriculumReader.LoadPhonemes(layout.CurriculumDir).Where(p => p.Track == track).Select(p => p.Phoneme).ToList());
     return 0;
 }));
 
@@ -139,7 +140,10 @@ return await root.Parse(args).InvokeAsync();
 
 // With --track, the units' own audio lines (title, welcome, celebration) are generated together with the lessons.
 IReadOnlyList<Lesson> WithUnitAudio(Layout layout, IReadOnlyList<Lesson> lessons, string? track) =>
-    track is null ? lessons : lessons.Concat(CurriculumReader.LoadUnits(layout.CurriculumDir).Where(u => u.Track == track).Concat(CurriculumReader.LoadApp(layout.CurriculumDir).Where(u => u.Track == track)).Select(CurriculumReader.UnitAudioLesson)).ToList();
+    // a borrowed unit's lines belong to its own track (Explorers' Letters are the Little Learners files): never made again here
+    track is null ? lessons : lessons.Concat(CurriculumReader.LoadUnits(layout.CurriculumDir).Where(u => u.Track == track && u.From.Length == 0).Concat(CurriculumReader.LoadApp(layout.CurriculumDir).Where(u => u.Track == track)).Select(CurriculumReader.UnitAudioLesson))
+        // the track's phoneme clips (Explorers), when it has a table
+        .Concat(CurriculumReader.LoadPhonemes(layout.CurriculumDir).Where(p => p.Track == track).Select(p => p.Phoneme).ToList() is { Count: > 0 } ph ? [CurriculumReader.PhonemesLesson(track, ph)] : []).ToList();
 
 (Layout, IReadOnlyList<Lesson>) Load(ParseResult pr)
 {

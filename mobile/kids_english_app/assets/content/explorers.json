@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "explorers",
-  "generatedAt": "2026-10-08T12:28:13.4803032Z",
+  "generatedAt": "2026-10-08T12:50:56.1289076Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -1249,7 +1249,65 @@
       },
       "icon": "sounds",
       "color": "blue",
-      "lessons": []
+      "lessons": [],
+      "chest": {
+        "accessory": "explorer-hat",
+        "stickers": [
+          "cat",
+          "pig",
+          "bus",
+          "cup"
+        ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "The cat has a hat.",
+            "audio": "audio/explorers/unit_sound_builders/instr_story_1.mp3",
+            "words": [
+              "cat",
+              "hat"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "A hen naps on a bed.",
+            "audio": "audio/explorers/unit_sound_builders/instr_story_2.mp3",
+            "words": [
+              "hen",
+              "bed"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "The pig has a big fig.",
+            "audio": "audio/explorers/unit_sound_builders/instr_story_3.mp3",
+            "words": [
+              "pig",
+              "fig"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "The dog sits by the pot.",
+            "audio": "audio/explorers/unit_sound_builders/instr_story_4.mp3",
+            "words": [
+              "dog",
+              "pot"
+            ],
+            "pose": "base"
+          },
+          {
+            "text": "A bug is in the cup! Fun!",
+            "audio": "audio/explorers/unit_sound_builders/instr_story_5.mp3",
+            "words": [
+              "bug",
+              "cup"
+            ],
+            "pose": "jumping"
+          }
+        ]
+      }
     },
     {
       "id": "digraphs",
