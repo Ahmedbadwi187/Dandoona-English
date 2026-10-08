@@ -6,12 +6,15 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/palette.dart';
 import '../../core/widgets.dart';
+import '../content/content_models.dart';
+import '../content/content_repository.dart';
 import '../onboarding/setup_flow.dart';
 import '../onboarding/track_resolver.dart';
 import '../profiles/child_profile.dart';
 import '../reminders/reminder_service.dart';
 import '../settings/settings.dart';
 import '../sync/sync_controller.dart';
+import '../units/unit_meta.dart';
 import 'parent_ui.dart';
 
 /// Edit one child: nickname, avatar, birth month and year, track, daily goal and reminder; "Save" is on only when
@@ -36,6 +39,9 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
   late String _track;
   late int _goal;
   String? _reminder;
+
+  /// The units counted as done by placement (the "starting point"); null = unchanged.
+  Set<String>? _placed;
   bool _leave = false; // saved, discarded or deleted: leaving needs no question
 
   @override
@@ -66,12 +72,17 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
       _year != _child.birthYear ||
       _track != _child.track ||
       _goal != (_child.goalMinutes ?? 10) ||
-      _reminder != ref.read(settingsProvider).reminderTime;
+      _reminder != ref.read(settingsProvider).reminderTime ||
+      (_placed != null && !_sameSet(_placed!, ref.read(unitMetaProvider).of(_child.id).placed));
+
+  static bool _sameSet(Set<String> a, Set<String> b) => a.length == b.length && a.containsAll(b);
 
   Future<void> _save() async {
     final s = ref.read(stringsProvider);
     final settings = ref.read(settingsProvider.notifier);
     await ref.read(profilesProvider.notifier).update(_child.id, name: _name.text, avatarKey: _avatar, birthYear: _year, birthMonth: _month, goalMinutes: _goal, track: _track);
+    // A new starting point only adds units counted as done; nothing the child did is taken away.
+    if (_placed != null) await ref.read(unitMetaProvider.notifier).setPlaced(_child.id, _placed!);
     await settings.setSessionMinutes(_goal);
     if (_reminder != ref.read(settingsProvider).reminderTime) {
       final reminders = ref.read(reminderServiceProvider);
@@ -155,6 +166,11 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
     ];
     final years = {for (var y = now.year - 2; y >= now.year - 13; y--) y, _year}.toList()..sort((a, b) => b.compareTo(a));
     final suggested = resolveTrack(birthYear: _year, birthMonth: _month, now: now).trackId;
+    // Starting points of the chosen track: one per placement answer with its own start unit.
+    final trackContent = ref.watch(trackContentProvider(_track)).asData?.value;
+    final placed = _placed ?? ref.watch(unitMetaProvider).of(_child.id).placed;
+    final starts = <String, PlacementLevel>{for (final p in trackContent?.placement ?? const <PlacementLevel>[]) p.startUnit: p};
+    final currentStart = starts.values.where((p) => _sameSet(p.doneUnits.toSet(), placed)).firstOrNull?.startUnit ?? starts.keys.firstOrNull;
     final primary = Theme.of(context).colorScheme.primary;
 
     return PopScope(
@@ -252,7 +268,7 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
                           const SizedBox(height: 16),
                           Text(s('pTrack'), style: ParentText.section),
                           const SizedBox(height: 8),
-                          for (final t in const [('little-learners', 'pTrackLL', true), ('explorers', 'pTrackExplorers', false), ('champions', 'pTrackChampions', false)])
+                          for (final t in const [('little-learners', 'pTrackLL', true), ('explorers', 'pTrackExplorers', true), ('champions', 'pTrackChampions', false)])
                             _TrackTile(
                               key: Key('edit-track-${t.$1}'),
                               label: s(t.$2),
@@ -261,6 +277,24 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
                               note: !t.$3 ? s('pSoon') : (suggested == t.$1 ? s('pSuggested') : null),
                               onTap: () => setState(() => _track = t.$1),
                             ),
+                          if (starts.length > 1) ...[
+                            const SizedBox(height: 16),
+                            Text(s('pStartUnit'), style: ParentText.section),
+                            const SizedBox(height: 8),
+                            Wrap(
+                              spacing: 8,
+                              runSpacing: 8,
+                              children: [
+                                for (final e in starts.entries)
+                                  _Pill(
+                                    key: Key('edit-start-${e.key}'),
+                                    label: trackContent!.unitById(e.key)?.titleFor(ref.read(settingsProvider).languageCode) ?? e.key,
+                                    selected: currentStart == e.key,
+                                    onTap: () => setState(() => _placed = e.value.doneUnits.toSet()),
+                                  ),
+                              ],
+                            ),
+                          ],
                         ],
                       ),
                     ),
