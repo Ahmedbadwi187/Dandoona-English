@@ -229,6 +229,15 @@ units:
     title: { en: "Numbers & Time", ar: "الأرقام والوقت" }
     icon: clock
     color: orange
+    chest: { accessory: clock-cap, stickers: [twelve, Monday, May, hundred] }
+    # Numbers to 100, the days, the months and the clock.
+    story:
+      pages:
+        - { text: "It is Monday. I get up at seven o'clock.", words: [Monday, "seven o'clock"], pose: waving }
+        - { text: "I count twelve birds.", words: [twelve], pose: pointing-up }
+        - { text: "School is over at two o'clock.", words: ["two o'clock"], pose: jumping }
+        - { text: "Friday! Time to play!", words: [Friday], pose: clapping }
+        - { text: "In May I am big. I can count to one hundred!", words: [May, hundred], pose: thinking }
     narration: { title: "Numbers and Time", welcome: "What time is it?", celebration: "You can tell the time!", lines: { locked: "Finish Numbers and Time first!" } }
 
   # Reviews and extends what the earlier units showed (-s plurals, a/an, is/are) with new examples: no grammar terms.

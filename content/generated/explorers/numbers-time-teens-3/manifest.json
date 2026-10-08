@@ -1,0 +1,48 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "9e6fd1e80f9d69a0a1f3453760e939f8c3227183c25562634c53e2c875ffdae9",
+      "generatedAtUtc": "2026-10-08T17:14:20.4407532Z"
+    },
+    "praise-0": {
+      "hash": "3f17576254a4d23d675047cdb42a00fc23e735de5187c4475e6229d58ac2103a",
+      "generatedAtUtc": "2026-10-08T17:14:21.3700123Z"
+    },
+    "praise-1": {
+      "hash": "4fdde195ba4158ab58fb8e12fbc4ef1e6aece0d97bf01ff53df9588e43f71369",
+      "generatedAtUtc": "2026-10-08T17:14:22.4133707Z"
+    },
+    "praise-2": {
+      "hash": "6436155ab30ee84cd601145f58e80d1cb5cb45302e48dc98fe272c71b3796c6e",
+      "generatedAtUtc": "2026-10-08T17:14:23.3262415Z"
+    },
+    "word-seventeen": {
+      "hash": "2b0b8d4dc796a5e057a6bcf8037272f7869df06aff614542c953a8206e819aad",
+      "generatedAtUtc": "2026-10-08T17:14:24.2591015Z"
+    },
+    "word-eighteen": {
+      "hash": "38f1fe7edffd157fea38450a5381a73d3cb5923c7375c928eb63680be2e86081",
+      "generatedAtUtc": "2026-10-08T17:14:25.2431187Z"
+    },
+    "word-nineteen": {
+      "hash": "58829e5b40c119983ea7b8772e3cd05ed3b2515ee36829d4e2ef4d7edf074040",
+      "generatedAtUtc": "2026-10-08T17:14:26.1591894Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "98790cf6f85e573168fec3c43e6e1a6bd0ad947bc61947a75122ff7697560cf3",
+      "generatedAtUtc": "2026-10-08T17:14:27.1575007Z"
+    },
+    "instr-match-picture": {
+      "hash": "4237ac943e5cd16f858fd9e037529428731cf994855e70e4786558802020de79",
+      "generatedAtUtc": "2026-10-08T17:14:28.1715011Z"
+    },
+    "instr-memory": {
+      "hash": "52cb2e853f37931bc66ba9192f7638b9d4237547be3bf263dd4f621bc409fe85",
+      "generatedAtUtc": "2026-10-08T17:14:29.2036296Z"
+    },
+    "instr-read-and-pick": {
+      "hash": "6c994a45c30845b30697350dfb70194c68948d4de116e1fa5947697542123127",
+      "generatedAtUtc": "2026-10-08T17:14:30.2436087Z"
+    }
+  }
+}

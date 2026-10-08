@@ -70,7 +70,7 @@ public record ExportChest(string Accessory, List<string> Stickers);
 public record ExportUnitAudio(string Title, string? Welcome, string Celebration, Dictionary<string, string>? Lines = null);
 public record ExportLesson(string Id, int Order, string Level, string? Letter, string? Phoneme,
     ExportLessonAudio Audio, List<ExportWord> Words, List<string> Activities, ExportColor? Color = null, bool? Counting = null, bool? OwnWordsOnly = null, List<ExportBin>? Bins = null, List<string>? Odd = null,
-    List<ExportSightWord>? SightWords = null, List<ExportSentence>? Sentences = null);
+    List<ExportSightWord>? SightWords = null, List<ExportSentence>? Sentences = null, bool? NoArticle = null);
 public record ExportBin(string Key, string Icon);
 public record ExportSightWord(string Word, string Audio);
 public record ExportSentence(string Text, string Audio, string Image, bool? Two = null, string? Gap = null, List<string>? Choices = null);
@@ -190,7 +190,7 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
                     ImageOf(l.Words.First(w => w.Word.Trim().Equals(s.Picture.Trim(), StringComparison.OrdinalIgnoreCase))),
                     s.Two ? true : null,
                     s.Gap?.Trim(),
-                    s.Gap is null ? null : s.Choices.Select(c => c.Trim()).ToList())).ToList())));
+                    s.Gap is null ? null : s.Choices.Select(c => c.Trim()).ToList())).ToList(), l.NoArticle ? true : null)));
         }
 
         // Units: ordered as in the units file. With a units file every unit is listed, even without lessons yet (the app shows it locked).

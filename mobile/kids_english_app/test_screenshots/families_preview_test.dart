@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 /// The drawings of the Word Families unit on one sheet: `flutter test test_screenshots/families_preview_test.dart --update-goldens`.
 void main() {
   testWidgets('word families sheet', (t) async {
-    final files = Directory('../../content/art/explorers').listSync(recursive: true).whereType<File>().where((f) => f.path.contains('word-families') && f.path.endsWith('.svg')).toList()..sort((a, b) => a.path.compareTo(b.path));
+    final files = Directory('../../content/art/explorers').listSync(recursive: true).whereType<File>().where((f) => f.path.contains(const String.fromEnvironment('SHEET', defaultValue: 'word-families')) && f.path.endsWith('.svg')).toList()..sort((a, b) => a.path.compareTo(b.path));
     const cols = 4;
     final rows = (files.length / cols).ceil();
     t.view.physicalSize = Size(cols * 260.0, rows * 290.0);

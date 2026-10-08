@@ -1,0 +1,21 @@
+# Numbers & Time: numbers to 100, the days, the months and the clock. Each picture shows the number, the day or the time.
+id: numbers-time-days-1
+unit: numbers-time
+track: explorers
+level: a1
+order: 7
+noArticle: true
+words:
+  - { word: Monday, source: svg, imagePrompt: "Monday" }
+  - { word: Tuesday, source: svg, imagePrompt: "Tuesday" }
+  - { word: Wednesday, source: svg, imagePrompt: "Wednesday" }
+  - { word: Thursday, source: svg, imagePrompt: "Thursday" }
+narration:
+  intro: "The days of the week! Monday. Tuesday. Wednesday. Thursday!"
+  praise: ["Great job!", "You know it!", "Super!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the picture!"
+    match-picture: "Match each word to its picture!"
+    memory: "Find the matching cards!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [listen-and-tap, read-and-pick, match-picture, memory]

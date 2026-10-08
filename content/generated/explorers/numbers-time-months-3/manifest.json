@@ -1,0 +1,52 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "9e60a1b682501caf5d5c5841e86b184384b323fd77e71dab8b1c6e3342d6ae79",
+      "generatedAtUtc": "2026-10-08T17:15:52.4083238Z"
+    },
+    "praise-0": {
+      "hash": "3f17576254a4d23d675047cdb42a00fc23e735de5187c4475e6229d58ac2103a",
+      "generatedAtUtc": "2026-10-08T17:15:53.3900253Z"
+    },
+    "praise-1": {
+      "hash": "4fdde195ba4158ab58fb8e12fbc4ef1e6aece0d97bf01ff53df9588e43f71369",
+      "generatedAtUtc": "2026-10-08T17:15:54.3114654Z"
+    },
+    "praise-2": {
+      "hash": "6436155ab30ee84cd601145f58e80d1cb5cb45302e48dc98fe272c71b3796c6e",
+      "generatedAtUtc": "2026-10-08T17:15:55.2370147Z"
+    },
+    "word-september": {
+      "hash": "36c0442fb120dbc0807bf853493b929a9483431d0624e57c2d5d9a80e118565b",
+      "generatedAtUtc": "2026-10-08T17:15:56.185296Z"
+    },
+    "word-october": {
+      "hash": "a1249790b4a25b9b28e19f31c59b64f2ed1d8f381b66efccc1709d0db805b36e",
+      "generatedAtUtc": "2026-10-08T17:15:57.210744Z"
+    },
+    "word-november": {
+      "hash": "d413224c2aa3e94667f7646e29b6a4584e44567cfb0457f97964846397c42ad1",
+      "generatedAtUtc": "2026-10-08T17:15:58.6425029Z"
+    },
+    "word-december": {
+      "hash": "8def5c429842ea551dd0639f34416c13920d4a1f8b29437b5765ded2a78773e4",
+      "generatedAtUtc": "2026-10-08T17:15:59.6364328Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "98790cf6f85e573168fec3c43e6e1a6bd0ad947bc61947a75122ff7697560cf3",
+      "generatedAtUtc": "2026-10-08T17:16:00.6782422Z"
+    },
+    "instr-match-picture": {
+      "hash": "4237ac943e5cd16f858fd9e037529428731cf994855e70e4786558802020de79",
+      "generatedAtUtc": "2026-10-08T17:16:01.7230333Z"
+    },
+    "instr-memory": {
+      "hash": "52cb2e853f37931bc66ba9192f7638b9d4237547be3bf263dd4f621bc409fe85",
+      "generatedAtUtc": "2026-10-08T17:16:02.7128429Z"
+    },
+    "instr-read-and-pick": {
+      "hash": "6c994a45c30845b30697350dfb70194c68948d4de116e1fa5947697542123127",
+      "generatedAtUtc": "2026-10-08T17:16:03.8078494Z"
+    }
+  }
+}

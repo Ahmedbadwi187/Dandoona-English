@@ -19,6 +19,8 @@ public class Lesson
     public bool Counting { get; set; }
     /// <summary>The wrong pictures of the listen-and-tap game come only from this lesson's own words (objects that must not be mixed with the unit's plain pictures, like "Shapes around us").</summary>
     public bool OwnWordsOnly { get; set; }
+    /// <summary>Read &amp; Pick shows no "a"/"an" before the words (numbers, days, months, times: "Monday" is not "a Monday").</summary>
+    public bool NoArticle { get; set; }
     /// <summary>Sorting game: the bins (key + icon name the app knows); words with a `group` equal to a bin key belong in it. Words of the whole unit are used.</summary>
     public List<BinDef> Bins { get; set; } = [];
     /// <summary>Odd one out: words of the Letters unit (bundled pictures) that do not belong to this unit's theme.</summary>

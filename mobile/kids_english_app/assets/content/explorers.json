@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "explorers",
-  "generatedAt": "2026-10-08T17:06:18.4051863Z",
+  "generatedAt": "2026-10-08T17:17:08.0060409Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -2425,10 +2425,93 @@
         "welcome": "audio/explorers/unit_numbers_time/intro.mp3",
         "celebration": "audio/explorers/unit_numbers_time/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/explorers/unit_numbers_time/instr_locked.mp3"
+          "locked": "audio/explorers/unit_numbers_time/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_numbers_time/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_numbers_time/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_numbers_time/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_numbers_time/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_numbers_time/instr_story_5.mp3"
         }
       },
-      "lessons": []
+      "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "355cf0205d061af29054ae48a54e396f384e134ecb95e364357b4aa441482266",
+        "bytes": 5191836,
+        "manifest": "numbers_time/v1/manifest.json",
+        "lessonIds": [
+          "numbers-time-teens-1",
+          "numbers-time-teens-2",
+          "numbers-time-teens-3",
+          "numbers-time-tens-1",
+          "numbers-time-tens-2",
+          "numbers-time-tens-3",
+          "numbers-time-days-1",
+          "numbers-time-days-2",
+          "numbers-time-months-1",
+          "numbers-time-months-2",
+          "numbers-time-months-3",
+          "numbers-time-clock-1",
+          "numbers-time-clock-2",
+          "numbers-time-clock-3",
+          "numbers-time-clock-4"
+        ]
+      },
+      "chest": {
+        "accessory": "clock-cap",
+        "stickers": [
+          "twelve",
+          "Monday",
+          "May",
+          "hundred"
+        ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "It is Monday. I get up at seven o'clock.",
+            "audio": "audio/explorers/unit_numbers_time/instr_story_1.mp3",
+            "words": [
+              "Monday",
+              "seven o'clock"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "I count twelve birds.",
+            "audio": "audio/explorers/unit_numbers_time/instr_story_2.mp3",
+            "words": [
+              "twelve"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "School is over at two o'clock.",
+            "audio": "audio/explorers/unit_numbers_time/instr_story_3.mp3",
+            "words": [
+              "two o'clock"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "Friday! Time to play!",
+            "audio": "audio/explorers/unit_numbers_time/instr_story_4.mp3",
+            "words": [
+              "Friday"
+            ],
+            "pose": "clapping"
+          },
+          {
+            "text": "In May I am big. I can count to one hundred!",
+            "audio": "audio/explorers/unit_numbers_time/instr_story_5.mp3",
+            "words": [
+              "May",
+              "hundred"
+            ],
+            "pose": "thinking"
+          }
+        ]
+      }
     },
     {
       "id": "grammar-starters",

@@ -289,6 +289,7 @@ class Lesson {
     this.color,
     this.counting = false,
     this.ownWordsOnly = false,
+    this.noArticle = false,
     this.bins = const [],
     this.odd = const [],
     this.sightWords = const [],
@@ -311,6 +312,9 @@ class Lesson {
 
   /// The wrong pictures of the hear-and-tap game come only from this lesson's own words.
   final bool ownWordsOnly;
+
+  /// Read & Pick shows no "a"/"an" before the words (numbers, days, months, times).
+  final bool noArticle;
 
   /// Sorting game: the bins; a word whose `group` is a bin key belongs in it (words of the whole unit are used).
   final List<LessonBin> bins;
@@ -352,6 +356,7 @@ class Lesson {
         color: json['color'] == null ? null : LessonColor.fromJson(json['color'] as Map<String, dynamic>),
         counting: (json['counting'] as bool?) ?? false,
         ownWordsOnly: (json['ownWordsOnly'] as bool?) ?? false,
+        noArticle: (json['noArticle'] as bool?) ?? false,
         bins: [for (final b in (json['bins'] as List<dynamic>?) ?? const []) LessonBin.fromJson(b as Map<String, dynamic>)],
         odd: ((json['odd'] as List<dynamic>?) ?? const []).cast<String>(),
         sightWords: [for (final w in (json['sightWords'] as List<dynamic>?) ?? const []) SightWord.fromJson(w as Map<String, dynamic>)],

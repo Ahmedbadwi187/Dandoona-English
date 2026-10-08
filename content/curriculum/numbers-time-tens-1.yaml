@@ -1,0 +1,20 @@
+# Numbers & Time: numbers to 100, the days, the months and the clock. Each picture shows the number, the day or the time.
+id: numbers-time-tens-1
+unit: numbers-time
+track: explorers
+level: a1
+order: 4
+noArticle: true
+words:
+  - { word: twenty, source: svg, imagePrompt: "twenty" }
+  - { word: thirty, source: svg, imagePrompt: "thirty" }
+  - { word: forty, source: svg, imagePrompt: "forty" }
+narration:
+  intro: "Count by tens! Twenty. Thirty. Forty!"
+  praise: ["Great job!", "You know it!", "Super!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the picture!"
+    match-picture: "Match each word to its picture!"
+    memory: "Find the matching cards!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [listen-and-tap, read-and-pick, match-picture, memory]

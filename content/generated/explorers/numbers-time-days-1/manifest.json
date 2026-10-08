@@ -1,0 +1,52 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "6513a9c3e793cc12b6bd21d13694159de15676cc9db96f5741ea8621e89ae556",
+      "generatedAtUtc": "2026-10-08T17:15:05.1335142Z"
+    },
+    "praise-0": {
+      "hash": "3f17576254a4d23d675047cdb42a00fc23e735de5187c4475e6229d58ac2103a",
+      "generatedAtUtc": "2026-10-08T17:15:06.0486589Z"
+    },
+    "praise-1": {
+      "hash": "4fdde195ba4158ab58fb8e12fbc4ef1e6aece0d97bf01ff53df9588e43f71369",
+      "generatedAtUtc": "2026-10-08T17:15:06.9727996Z"
+    },
+    "praise-2": {
+      "hash": "6436155ab30ee84cd601145f58e80d1cb5cb45302e48dc98fe272c71b3796c6e",
+      "generatedAtUtc": "2026-10-08T17:15:07.8744286Z"
+    },
+    "word-monday": {
+      "hash": "40c4bb70eea1671490c0170fb1aa19e6e0539dbca154bed3c1b4e5b4a6d4ae28",
+      "generatedAtUtc": "2026-10-08T17:15:08.8913664Z"
+    },
+    "word-tuesday": {
+      "hash": "e53bddf16cf9810064dad7aed39bfc1928316cc7ddf0de93d3c163b62b0340b3",
+      "generatedAtUtc": "2026-10-08T17:15:09.8698969Z"
+    },
+    "word-wednesday": {
+      "hash": "cd2399eab3569a294cddbaa05567b782ddd43decd70d09b13d68132f958c2ed5",
+      "generatedAtUtc": "2026-10-08T17:15:10.8014705Z"
+    },
+    "word-thursday": {
+      "hash": "3544fbcc5e26575c502856374477f1e0066a85ddf02b5a8dda83613b08cbf766",
+      "generatedAtUtc": "2026-10-08T17:15:11.8187277Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "98790cf6f85e573168fec3c43e6e1a6bd0ad947bc61947a75122ff7697560cf3",
+      "generatedAtUtc": "2026-10-08T17:15:12.841355Z"
+    },
+    "instr-match-picture": {
+      "hash": "4237ac943e5cd16f858fd9e037529428731cf994855e70e4786558802020de79",
+      "generatedAtUtc": "2026-10-08T17:15:13.8631254Z"
+    },
+    "instr-memory": {
+      "hash": "52cb2e853f37931bc66ba9192f7638b9d4237547be3bf263dd4f621bc409fe85",
+      "generatedAtUtc": "2026-10-08T17:15:14.8518355Z"
+    },
+    "instr-read-and-pick": {
+      "hash": "6c994a45c30845b30697350dfb70194c68948d4de116e1fa5947697542123127",
+      "generatedAtUtc": "2026-10-08T17:15:15.921863Z"
+    }
+  }
+}

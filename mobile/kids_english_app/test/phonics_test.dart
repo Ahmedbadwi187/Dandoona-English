@@ -179,6 +179,16 @@ void main() {
     });
   });
 
+  group('Read & Pick without articles', () {
+    testWidgets('numbers, days and times are shown without "a" or "an" (a lesson with noArticle)', (t) async {
+      final base = _lesson();
+      final lesson = Lesson(id: base.id, order: 1, level: 'a1', audio: base.audio, words: base.words, activities: base.activities, noArticle: true);
+      await _game(t, (done) => ReadAndPickActivity(lesson: lesson, onFinished: done, random: Random(2)), seen: 'read-and-pick');
+      expect(find.byKey(const Key('read-word')), findsOneWidget);
+      expect(find.byKey(const Key('read-article')), findsNothing);
+    });
+  });
+
   group('Spell It', () {
     testWidgets('the same game with the picture hidden: only the word is heard; the picture shows when the word is built', (t) async {
       final (audio, results, _) = await _game(t, (done) => WordBuilderActivity(lesson: _lesson(), track: _track(), onFinished: done, random: Random(3), spell: true), seen: 'spell-it');

@@ -1,0 +1,20 @@
+# Numbers & Time: numbers to 100, the days, the months and the clock. Each picture shows the number, the day or the time.
+id: numbers-time-teens-3
+unit: numbers-time
+track: explorers
+level: a1
+order: 3
+noArticle: true
+words:
+  - { word: seventeen, source: svg, imagePrompt: "seventeen" }
+  - { word: eighteen, source: svg, imagePrompt: "eighteen" }
+  - { word: nineteen, source: svg, imagePrompt: "nineteen" }
+narration:
+  intro: "Count more! Seventeen. Eighteen. Nineteen!"
+  praise: ["Great job!", "You know it!", "Super!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the picture!"
+    match-picture: "Match each word to its picture!"
+    memory: "Find the matching cards!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [listen-and-tap, read-and-pick, match-picture, memory]

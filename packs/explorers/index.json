@@ -102,6 +102,30 @@
         "word-families-ug",
         "word-families-un"
       ]
+    },
+    {
+      "unit": "numbers-time",
+      "version": 1,
+      "sha256": "355cf0205d061af29054ae48a54e396f384e134ecb95e364357b4aa441482266",
+      "bytes": 5191836,
+      "manifest": "numbers_time/v1/manifest.json",
+      "lessonIds": [
+        "numbers-time-teens-1",
+        "numbers-time-teens-2",
+        "numbers-time-teens-3",
+        "numbers-time-tens-1",
+        "numbers-time-tens-2",
+        "numbers-time-tens-3",
+        "numbers-time-days-1",
+        "numbers-time-days-2",
+        "numbers-time-months-1",
+        "numbers-time-months-2",
+        "numbers-time-months-3",
+        "numbers-time-clock-1",
+        "numbers-time-clock-2",
+        "numbers-time-clock-3",
+        "numbers-time-clock-4"
+      ]
     }
   ]
 }

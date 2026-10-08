@@ -620,7 +620,7 @@ class _ReadAndPickActivityState extends ConsumerState<ReadAndPickActivity> with 
                 textBaseline: TextBaseline.alphabetic,
                 children: [
                   // "a" / "an" before one thing; nothing before a plural
-                  if (!round.plural) ...[
+                  if (!round.plural && !widget.lesson.noArticle) ...[
                     Text(articleFor(round.target.source), key: const Key('read-article'), style: TextStyle(fontSize: 40, fontWeight: FontWeight.w800, color: Palette.nightInk.withValues(alpha: 0.6))),
                     const SizedBox(width: 14),
                   ],

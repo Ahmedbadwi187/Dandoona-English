@@ -1,0 +1,52 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "2962a1107930403aea3fdb215ba878ae48943315fd577823fe7ffd046f9bc99d",
+      "generatedAtUtc": "2026-10-08T17:15:28.1035549Z"
+    },
+    "praise-0": {
+      "hash": "3f17576254a4d23d675047cdb42a00fc23e735de5187c4475e6229d58ac2103a",
+      "generatedAtUtc": "2026-10-08T17:15:29.1239615Z"
+    },
+    "praise-1": {
+      "hash": "4fdde195ba4158ab58fb8e12fbc4ef1e6aece0d97bf01ff53df9588e43f71369",
+      "generatedAtUtc": "2026-10-08T17:15:30.1715711Z"
+    },
+    "praise-2": {
+      "hash": "6436155ab30ee84cd601145f58e80d1cb5cb45302e48dc98fe272c71b3796c6e",
+      "generatedAtUtc": "2026-10-08T17:15:31.0894664Z"
+    },
+    "word-january": {
+      "hash": "eabd4348cc450fbb905b7e0db5d0910376bfac83786d220850fe83b6474cf9de",
+      "generatedAtUtc": "2026-10-08T17:15:32.0079937Z"
+    },
+    "word-february": {
+      "hash": "68a9ba9efe1ca7e839f91288a488f2f2d02de6cc3a98d32502aebb34a3cf2408",
+      "generatedAtUtc": "2026-10-08T17:15:33.0436344Z"
+    },
+    "word-march": {
+      "hash": "0393b83c0c1a1c34a4dcab90aefbc039f431f60b506c88c8b778eade345075c3",
+      "generatedAtUtc": "2026-10-08T17:15:33.9858435Z"
+    },
+    "word-april": {
+      "hash": "3443c472a12ae62341b5b0b5e90b9f3bd20c8ee2c3ed2bb8e0b9111b1489541d",
+      "generatedAtUtc": "2026-10-08T17:15:34.9601985Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "98790cf6f85e573168fec3c43e6e1a6bd0ad947bc61947a75122ff7697560cf3",
+      "generatedAtUtc": "2026-10-08T17:15:35.9643752Z"
+    },
+    "instr-match-picture": {
+      "hash": "4237ac943e5cd16f858fd9e037529428731cf994855e70e4786558802020de79",
+      "generatedAtUtc": "2026-10-08T17:15:36.9861346Z"
+    },
+    "instr-memory": {
+      "hash": "52cb2e853f37931bc66ba9192f7638b9d4237547be3bf263dd4f621bc409fe85",
+      "generatedAtUtc": "2026-10-08T17:15:37.9626944Z"
+    },
+    "instr-read-and-pick": {
+      "hash": "6c994a45c30845b30697350dfb70194c68948d4de116e1fa5947697542123127",
+      "generatedAtUtc": "2026-10-08T17:15:38.9855732Z"
+    }
+  }
+}

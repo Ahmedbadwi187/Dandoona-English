@@ -1,0 +1,20 @@
+# Numbers & Time: numbers to 100, the days, the months and the clock. Each picture shows the number, the day or the time.
+id: numbers-time-clock-2
+unit: numbers-time
+track: explorers
+level: a1
+order: 13
+noArticle: true
+words:
+  - { word: "four o'clock", source: svg, imagePrompt: "four o'clock" }
+  - { word: "five o'clock", source: svg, imagePrompt: "five o'clock" }
+  - { word: "six o'clock", source: svg, imagePrompt: "six o'clock" }
+narration:
+  intro: "What time is it? Four o'clock. Five o'clock. Six o'clock!"
+  praise: ["Great job!", "You know it!", "Super!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the picture!"
+    match-picture: "Match each word to its picture!"
+    memory: "Find the matching cards!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [listen-and-tap, read-and-pick, match-picture, memory]
