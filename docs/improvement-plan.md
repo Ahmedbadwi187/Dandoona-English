@@ -23,7 +23,7 @@ Status: [x] done, [ ] to do, [~] started.
     Family (my family tree, kept on the phone only), Home (which room), Opposites (longer / shorter), Transport (road, water or sky). Built as: Colors `mix-colors`, Shapes `build-picture`, Feelings `story-feeling` (the story sentence is read, choose the face), Body/Food/Clothes/Transport/Home/Family `sort` (head or limbs, fruit/drink/treat, sunny or cold, road/water/sky, which room, grandparents/parents/children), Toys `turns` ("My turn!/Your turn!"), Opposites `memory` with opposite pairs. Nothing is stored for the family game.
 11. [~] The 6-8 track: planned in `docs/explorers-plan.md` (waiting for the owner's review).
 
-Rules that stay: no AI or ads or paid services in the product, free licenses, assets bundled or served by our own API, spend under the $25
+Rules that stay: no AI or ads or paid services in the product, free licenses, assets bundled or served by our own API, spend under the $50 total cap (raised from $25 for the Explorers track)
 cap with a cost estimate first, nothing about a child leaves the phone except through the optional account.
 
 ## Voice
