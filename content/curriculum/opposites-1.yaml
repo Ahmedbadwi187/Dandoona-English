@@ -4,10 +4,10 @@ track: little-learners
 level: pre-a1
 order: 1
 words:
-  - { word: big, reuse: letter-e/elephant }
-  - { word: small, reuse: letter-a/ant }
-  - { word: hot, reuse: letter-s/sun }
-  - { word: cold, reuse: color-white/snowman }
+  - { word: big, reuse: letter-e/elephant, opposite: small }
+  - { word: small, reuse: letter-a/ant, opposite: big }
+  - { word: hot, reuse: letter-s/sun, opposite: cold }
+  - { word: cold, reuse: color-white/snowman, opposite: hot }
 narration:
   intro: "Opposites! ... Big. ... Small. ... Hot. ... Cold!"
   phrases: { big: "The elephant is big.", small: "The ant is small.", hot: "The sun is hot.", cold: "The snowman is cold." }
@@ -16,4 +16,4 @@ narration:
     listen-and-tap: "Listen, then tap the picture!"
     match-picture: "Match each word to its picture!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, record-and-listen]
+activities: [listen-and-tap, match-picture, memory, record-and-listen]

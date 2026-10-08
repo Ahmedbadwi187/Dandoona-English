@@ -1,0 +1,394 @@
+{
+  "schemaVersion": 1,
+  "track": "little-learners",
+  "unit": "transport",
+  "version": 2,
+  "contentHash": "4d8e951f661962f123b6f2c8eccae661f5707428c1be162dd837f32d06e482a2",
+  "lessons": [
+    {
+      "id": "transport-1",
+      "order": 1,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/transport_1/intro.mp3",
+        "praise": [
+          "audio/little_learners/transport_1/praise_0.mp3",
+          "audio/little_learners/transport_1/praise_1.mp3",
+          "audio/little_learners/transport_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/transport_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/transport_1/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/transport_1/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "car",
+          "audio": "audio/little_learners/transport_1/word_car.mp3",
+          "image": "images/little_learners/transport_1/car.svg",
+          "phrase": "audio/little_learners/transport_1/phrase_car.mp3",
+          "group": "road"
+        },
+        {
+          "word": "bus",
+          "audio": "audio/little_learners/transport_1/word_bus.mp3",
+          "image": "images/little_learners/transport_1/bus.svg",
+          "phrase": "audio/little_learners/transport_1/phrase_bus.mp3",
+          "group": "road"
+        },
+        {
+          "word": "train",
+          "audio": "audio/little_learners/transport_1/word_train.mp3",
+          "image": "images/little_learners/transport_1/train.svg",
+          "phrase": "audio/little_learners/transport_1/phrase_train.mp3",
+          "group": "road"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "transport-2",
+      "order": 2,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/transport_2/intro.mp3",
+        "praise": [
+          "audio/little_learners/transport_2/praise_0.mp3",
+          "audio/little_learners/transport_2/praise_1.mp3",
+          "audio/little_learners/transport_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/transport_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/transport_2/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/transport_2/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "boat",
+          "audio": "audio/little_learners/transport_2/word_boat.mp3",
+          "image": "images/little_learners/transport_2/boat.svg",
+          "phrase": "audio/little_learners/transport_2/phrase_boat.mp3",
+          "group": "water"
+        },
+        {
+          "word": "plane",
+          "audio": "audio/little_learners/transport_2/word_plane.mp3",
+          "image": "images/little_learners/transport_2/plane.svg",
+          "phrase": "audio/little_learners/transport_2/phrase_plane.mp3",
+          "group": "sky"
+        },
+        {
+          "word": "bike",
+          "audio": "audio/little_learners/transport_2/word_bike.mp3",
+          "image": "images/little_learners/transport_2/bike.svg",
+          "phrase": "audio/little_learners/transport_2/phrase_bike.mp3",
+          "group": "road"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "odd-one-out",
+        "sentence",
+        "memory",
+        "record-and-listen"
+      ],
+      "odd": [
+        "apple",
+        "cat",
+        "ball",
+        "hat",
+        "key"
+      ]
+    },
+    {
+      "id": "transport-3",
+      "order": 3,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/transport_3/intro.mp3",
+        "praise": [
+          "audio/little_learners/transport_3/praise_0.mp3",
+          "audio/little_learners/transport_3/praise_1.mp3",
+          "audio/little_learners/transport_3/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/transport_3/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/transport_3/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/transport_3/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "van",
+          "audio": "audio/little_learners/transport_3/word_van.mp3",
+          "image": "images/little_learners/transport_3/van.svg",
+          "phrase": "audio/little_learners/transport_3/phrase_van.mp3",
+          "group": "road"
+        },
+        {
+          "word": "truck",
+          "audio": "audio/little_learners/transport_3/word_truck.mp3",
+          "image": "images/little_learners/transport_3/truck.svg",
+          "phrase": "audio/little_learners/transport_3/phrase_truck.mp3",
+          "group": "road"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "sort",
+        "record-and-listen"
+      ],
+      "bins": [
+        {
+          "key": "road",
+          "icon": "road"
+        },
+        {
+          "key": "water",
+          "icon": "water"
+        },
+        {
+          "key": "sky",
+          "icon": "sky"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/little_learners/transport_1/instr_listen_and_tap.mp3",
+      "sha256": "dfb29ff76fc648bb2d41e8824deec02306dc2f558fc7a9eb5b48b2a2ae947569",
+      "bytes": 33062
+    },
+    {
+      "path": "audio/little_learners/transport_1/instr_match_picture.mp3",
+      "sha256": "6abaeb99b3a9db5bbb74f1a0f1989043840e080cde1a7c7a0a02d781000bafe8",
+      "bytes": 39750
+    },
+    {
+      "path": "audio/little_learners/transport_1/instr_record_and_listen.mp3",
+      "sha256": "94bfd2901f14f3075460f862564ded30640cb4eff05ff36f122e0bee1ff7c3d4",
+      "bytes": 29301
+    },
+    {
+      "path": "audio/little_learners/transport_1/intro.mp3",
+      "sha256": "fa0b68dfba99e7c6cf2e4524284d37e1c7a38eab3082a68a2e22b92f9e292e39",
+      "bytes": 60648
+    },
+    {
+      "path": "audio/little_learners/transport_1/phrase_bus.mp3",
+      "sha256": "0ea3d2f31562daeb6644ba8d2d3305b34badf282aa8724e60c830f590a454b10",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/little_learners/transport_1/phrase_car.mp3",
+      "sha256": "db8df7cdf2ed3208f2069bb57434acae8fdd85582601149641fb898be0a4e66b",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/little_learners/transport_1/phrase_train.mp3",
+      "sha256": "25724d045566d5a3ff7259b8878a8c07f08397579d86d2094ce2f6d85fd37455",
+      "bytes": 26375
+    },
+    {
+      "path": "audio/little_learners/transport_1/praise_0.mp3",
+      "sha256": "1500a7d52f8cef1c217995e65b5960b98f9297f8b60f61d7a5f4bf9e1d17b233",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/transport_1/praise_1.mp3",
+      "sha256": "a716a62bb700587edf645b125c973ca117737510217ab609207f99259dd2be70",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/transport_1/praise_2.mp3",
+      "sha256": "c61a0297c1700101955e002e39cb6ffaa2f0971426d1bbbee6ca4cd04d24ba64",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/transport_1/word_bus.mp3",
+      "sha256": "4b13449d1c4a3af9a59d524f497dee3df69a01bb938b2d0efc380db91f6e80a8",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/little_learners/transport_1/word_car.mp3",
+      "sha256": "1e059f2112ebc13c35de2bc34a09b6628ef87219b8109bce44c222becdc3316c",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/little_learners/transport_1/word_train.mp3",
+      "sha256": "6987c841b5127526d230aaa88d739df2ee6c5311ce7a69ad6b11c3f867c169e3",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/little_learners/transport_2/instr_listen_and_tap.mp3",
+      "sha256": "4dac7177a0c41cc77db75e67db36fb567752b504932bf8c1264cddd862f41bb3",
+      "bytes": 35988
+    },
+    {
+      "path": "audio/little_learners/transport_2/instr_match_picture.mp3",
+      "sha256": "dce0e0337be268ee133ce181602d18df264e8546e2fbae4c4205d5d7682f8b42",
+      "bytes": 38914
+    },
+    {
+      "path": "audio/little_learners/transport_2/instr_record_and_listen.mp3",
+      "sha256": "d746aba789ab7aea9254794fa8eab7a5aa76eb2d4122370eb319bd0d41414ccd",
+      "bytes": 31391
+    },
+    {
+      "path": "audio/little_learners/transport_2/intro.mp3",
+      "sha256": "252ba213fa62500e5fc660d9d8e72a08c2b8e7ffcb6782f30c399a50c9bec706",
+      "bytes": 76948
+    },
+    {
+      "path": "audio/little_learners/transport_2/phrase_bike.mp3",
+      "sha256": "fda4c70d4549add7005ed68ed280dda2c1c3457f79003019fa53f9f75dde3e21",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/little_learners/transport_2/phrase_boat.mp3",
+      "sha256": "a1d30ad17ee72ab36bb84a2894e275ecafa225a7c14f066d2059ea80faf34f6e",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/little_learners/transport_2/phrase_plane.mp3",
+      "sha256": "3e95896146698d1d0d2df1f97cae698ba3335ee4afcd93481e60bb3f606f361e",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/little_learners/transport_2/praise_0.mp3",
+      "sha256": "7416cbd5af69bc0c72969e32990b543f7fd1575ef5b73ca19bcef4211ff7f43f",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/transport_2/praise_1.mp3",
+      "sha256": "be7fb4498603f29f19cb2390820c1430900af2b30bbf30e2268a6f9a4ee42861",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/little_learners/transport_2/praise_2.mp3",
+      "sha256": "1b5c81e433b638aa4fb75bacaa05b46504b9842b9a2fc87b402b6aa1a58bb790",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/transport_2/word_bike.mp3",
+      "sha256": "9081909fc55476405170f0a945cd9210bff5038354e2a3ff849d315113dfe301",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/little_learners/transport_2/word_boat.mp3",
+      "sha256": "82ca8f80bda92901dedd3e18f105e7671a6dcb1d7bdc9cbb6aa20ac3c93990b6",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/little_learners/transport_2/word_plane.mp3",
+      "sha256": "db24c38578fb32ef17775de8b5e9f779330e849852b3aef1b58043c502d482b0",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/little_learners/transport_3/instr_listen_and_tap.mp3",
+      "sha256": "d3f530ef62c5a223cf6c968d36eba0898a445121d3993d56a426edbbf6240ef6",
+      "bytes": 34316
+    },
+    {
+      "path": "audio/little_learners/transport_3/instr_match_picture.mp3",
+      "sha256": "26d315ed6f7206b7f7111d9e1e1632dca4bb63f5cec200212d82ea6033bdd46a",
+      "bytes": 39750
+    },
+    {
+      "path": "audio/little_learners/transport_3/instr_record_and_listen.mp3",
+      "sha256": "f5a367be468d6f2ef0ebb12d4afdda37b87eb8e453a6c3b18d52bffa420ffdfd",
+      "bytes": 32226
+    },
+    {
+      "path": "audio/little_learners/transport_3/intro.mp3",
+      "sha256": "028a5a0c8281bb8c259d9b91dc6ae48ede1390babe3ecc2fd5d1cbb42d8ed842",
+      "bytes": 56050
+    },
+    {
+      "path": "audio/little_learners/transport_3/phrase_truck.mp3",
+      "sha256": "53a67a6d148994bf32d8308b4713149d3ea2d6146b168a216cf20b76638cfbb5",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/little_learners/transport_3/phrase_van.mp3",
+      "sha256": "fd2e4686addf7085ab6b75fe670368c157a337eb6bf8e3dd45dd243929e5f8a5",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/little_learners/transport_3/praise_0.mp3",
+      "sha256": "8f0edde96d153eb8ca5dbab59317560e22f7ada01f4153a4ef0a0d3e94c41b8e",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/transport_3/praise_1.mp3",
+      "sha256": "fbef12cb1a80bc960457ddd5852cfb3e9bd31b3c3d3c17c7f4c0056fdbff191f",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/little_learners/transport_3/praise_2.mp3",
+      "sha256": "20f24beb4f6d9e36a072a71bce1ac9765a2c9fe6fd591f5d3b336948e5021b8f",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/transport_3/word_truck.mp3",
+      "sha256": "3d85f3ad789bff92c427eda9fe45f04ac9fa52b00738d55e0e56fd42b6bffbc2",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/little_learners/transport_3/word_van.mp3",
+      "sha256": "85d8e9d909ac2d3a90100556c61b751d2aa6ffe544ca6cde37c2db8c9767b2ae",
+      "bytes": 13836
+    },
+    {
+      "path": "images/little_learners/transport_1/bus.svg",
+      "sha256": "310776b6edc150fa456ef2c6275211cb6d5df413054f983105b3f7c47931dd88",
+      "bytes": 875
+    },
+    {
+      "path": "images/little_learners/transport_1/car.svg",
+      "sha256": "daa26ba93d235c41c82c1a1d36d800c9f0d0e5d58d56d278dd571f30cabbcd80",
+      "bytes": 838
+    },
+    {
+      "path": "images/little_learners/transport_1/train.svg",
+      "sha256": "45295b58291439d47340f1da71b9fbebe73c63bbfa323ece559458cabade730b",
+      "bytes": 1073
+    },
+    {
+      "path": "images/little_learners/transport_2/bike.svg",
+      "sha256": "4c9f840eef27ee2e5a8e9dc4ecf4bacc1b0fc93367dda7cf59dc47d14c306b5f",
+      "bytes": 684
+    },
+    {
+      "path": "images/little_learners/transport_2/boat.svg",
+      "sha256": "564870c5e71d27260cd69b75eb9228703ef008f468f4b8321b5e04d190716fe0",
+      "bytes": 538
+    },
+    {
+      "path": "images/little_learners/transport_2/plane.svg",
+      "sha256": "3ca3d6c2b05c1b5d4ceecc9408ab663b263973fef60d84fd6d997a0422a9c676",
+      "bytes": 750
+    },
+    {
+      "path": "images/little_learners/transport_3/truck.svg",
+      "sha256": "e3fe560307a700275fd558ad8496863e74cfb69c6539c0a36d4fdb5e30775991",
+      "bytes": 811
+    },
+    {
+      "path": "images/little_learners/transport_3/van.svg",
+      "sha256": "9481cd60da3f17c589b4fcc0ce39451fe22518fbc5af4d2018c5652a7516b482",
+      "bytes": 715
+    }
+  ]
+}

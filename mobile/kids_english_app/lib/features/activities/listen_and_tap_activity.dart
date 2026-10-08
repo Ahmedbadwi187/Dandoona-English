@@ -23,6 +23,7 @@ class ListenAndTapActivity extends ConsumerStatefulWidget {
     this.nextDelay = const Duration(milliseconds: 900),
     this.hintAfter = const Duration(seconds: 8),
     this.sounds = false,
+    this.sentences = false,
   });
 
   final Lesson lesson;
@@ -37,13 +38,20 @@ class ListenAndTapActivity extends ConsumerStatefulWidget {
   /// Animals: the prompt is what the animal says ("Meow!") instead of its name; only animals that make a sound are asked.
   final bool sounds;
 
+  /// Sentences: the prompt is the whole phrase ("I like pizza."), shown with a gap where the picture goes; only words with a phrase are asked.
+  final bool sentences;
+
   @override
   ConsumerState<ListenAndTapActivity> createState() => _ListenAndTapActivityState();
 }
 
 class _ListenAndTapActivityState extends ConsumerState<ListenAndTapActivity> {
   late final Random _random = widget.random ?? Random();
-  late final List<ChoiceRound> _rounds = widget.sounds ? buildSoundRounds(widget.lesson, widget.track, _random) : buildChoiceRounds(widget.lesson, widget.track, _random);
+  late final List<ChoiceRound> _rounds = widget.sounds
+      ? buildSoundRounds(widget.lesson, widget.track, _random)
+      : widget.sentences
+          ? buildSentenceRounds(widget.lesson, widget.track, _random)
+          : buildChoiceRounds(widget.lesson, widget.track, _random);
   int _index = 0;
   int _mistakes = 0;
   String? _wrongWord;
@@ -56,10 +64,10 @@ class _ListenAndTapActivityState extends ConsumerState<ListenAndTapActivity> {
 
   ChoiceRound get _round => _rounds[_index];
 
-  String get _activityKey => widget.sounds ? 'animal-sounds' : 'listen-and-tap';
+  String get _activityKey => widget.sounds ? 'animal-sounds' : (widget.sentences ? 'sentence' : 'listen-and-tap');
 
   /// Colors unit: the prompt is the color name ("Red!"), and every picture of the lesson is a right answer; otherwise the word itself.
-  String get _promptAudio => widget.sounds ? _round.target.sound! : (widget.lesson.audio.colorName ?? _round.target.audio);
+  String get _promptAudio => widget.sounds ? _round.target.sound! : widget.sentences ? _round.target.phrase! : (widget.lesson.audio.colorName ?? _round.target.audio);
 
   @override
   void initState() {
@@ -167,6 +175,10 @@ class _ListenAndTapActivityState extends ConsumerState<ListenAndTapActivity> {
               child: const Icon(Icons.volume_up_rounded, size: 64, color: Palette.white),
             ),
           ),
+          if (widget.sentences && sentenceWithGap(_round.target) != null) ...[
+            const SizedBox(height: 20),
+            Text(sentenceWithGap(_round.target)!, key: const Key('sentence-text'), textAlign: TextAlign.center, style: const TextStyle(fontSize: 34, fontWeight: FontWeight.w900, color: Palette.nightInk)),
+          ],
           const SizedBox(height: 28),
           Wrap(
             spacing: 16,

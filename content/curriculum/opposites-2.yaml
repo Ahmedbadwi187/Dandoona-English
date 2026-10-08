@@ -4,10 +4,10 @@ track: little-learners
 level: pre-a1
 order: 2
 words:
-  - { word: up, imagePrompt: "up", source: svg }
-  - { word: down, imagePrompt: "down", source: svg }
-  - { word: fast, reuse: letter-c/car }
-  - { word: slow, imagePrompt: "slow", source: svg }
+  - { word: up, imagePrompt: "up", source: svg, opposite: down }
+  - { word: down, imagePrompt: "down", source: svg, opposite: up }
+  - { word: fast, reuse: letter-c/car, opposite: slow }
+  - { word: slow, imagePrompt: "slow", source: svg, opposite: fast }
 narration:
   intro: "More opposites! ... Up. ... Down. ... Fast. ... Slow!"
   phrases: { up: "The arrow goes up.", down: "The arrow goes down.", fast: "The car is fast.", slow: "The turtle is slow." }
@@ -16,4 +16,4 @@ narration:
     listen-and-tap: "Listen, then tap the picture!"
     match-picture: "Match each word to its picture!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, record-and-listen]
+activities: [listen-and-tap, match-picture, sentence, memory, record-and-listen]

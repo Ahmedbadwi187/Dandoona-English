@@ -174,6 +174,15 @@ const _activityIcons = {
   'animal-sounds': Icons.music_note_rounded,
   'habitat': Icons.home_rounded,
   'dandoona-says': Icons.directions_run_rounded,
+  'sort': Icons.category_rounded,
+  'memory': Icons.grid_view_rounded,
+  'odd-one-out': Icons.search_rounded,
+  'sentence': Icons.short_text_rounded,
+  'count-along': Icons.touch_app_rounded,
+  'mix-colors': Icons.invert_colors_rounded,
+  'build-picture': Icons.extension_outlined,
+  'turns': Icons.swap_horiz_rounded,
+  'story-feeling': Icons.mood_rounded,
 };
 
 /// Icon-only (no reading needed). Tapping opens the activity; the stars show the child's best result.

@@ -160,3 +160,17 @@ TraceScore scoreTrace({required List<bool> glyph, required List<bool> ink, requi
               : 0;
   return TraceScore(coverage: coverage, spill: spill, stars: stars);
 }
+
+/// Sentences: like listen-and-tap, but the prompt is the whole phrase of the word, so only words that have one are asked.
+List<ChoiceRound> buildSentenceRounds(Lesson lesson, TrackContent track, Random random, {int optionCount = 3}) =>
+    [for (final r in buildChoiceRounds(lesson, track, random, optionCount: optionCount)) if (r.target.phrase != null) r];
+
+/// The phrase of [word] with the word itself (or its plural) replaced by a gap: "I like ____." Null when the phrase has no text or
+/// does not contain the word.
+String? sentenceWithGap(LessonWord word) {
+  final text = word.phraseText;
+  if (text == null) return null;
+  final pattern = RegExp('\\b${RegExp.escape(word.word)}(s|es)?\\b', caseSensitive: false);
+  if (!pattern.hasMatch(text)) return null;
+  return text.replaceFirst(pattern, '____');
+}

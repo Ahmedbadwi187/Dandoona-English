@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "track": "little-learners",
+  "unit": "my-body",
+  "version": 2,
+  "contentHash": "c2fe296f964e1ee54e52864232cf60a212fe63b5f46b6d08b160a701f0445f6d",
+  "lessons": [
+    {
+      "id": "my-body-1",
+      "order": 1,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/my_body_1/intro.mp3",
+        "praise": [
+          "audio/little_learners/my_body_1/praise_0.mp3",
+          "audio/little_learners/my_body_1/praise_1.mp3",
+          "audio/little_learners/my_body_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/my_body_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/my_body_1/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/my_body_1/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "eye",
+          "audio": "audio/little_learners/my_body_1/word_eye.mp3",
+          "image": "images/little_learners/my_body_1/eye.svg",
+          "phrase": "audio/little_learners/my_body_1/phrase_eye.mp3",
+          "group": "head"
+        },
+        {
+          "word": "ear",
+          "audio": "audio/little_learners/my_body_1/word_ear.mp3",
+          "image": "images/little_learners/my_body_1/ear.svg",
+          "phrase": "audio/little_learners/my_body_1/phrase_ear.mp3",
+          "group": "head"
+        },
+        {
+          "word": "nose",
+          "audio": "audio/little_learners/my_body_1/word_nose.mp3",
+          "image": "images/little_learners/my_body_1/nose.svg",
+          "phrase": "audio/little_learners/my_body_1/phrase_nose.mp3",
+          "group": "head"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "my-body-2",
+      "order": 2,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/my_body_2/intro.mp3",
+        "praise": [
+          "audio/little_learners/my_body_2/praise_0.mp3",
+          "audio/little_learners/my_body_2/praise_1.mp3",
+          "audio/little_learners/my_body_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/my_body_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/my_body_2/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/my_body_2/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "mouth",
+          "audio": "audio/little_learners/my_body_2/word_mouth.mp3",
+          "image": "images/little_learners/my_body_2/mouth.svg",
+          "phrase": "audio/little_learners/my_body_2/phrase_mouth.mp3",
+          "group": "head"
+        },
+        {
+          "word": "hand",
+          "audio": "audio/little_learners/my_body_2/word_hand.mp3",
+          "image": "images/little_learners/my_body_2/hand.svg",
+          "phrase": "audio/little_learners/my_body_2/phrase_hand.mp3",
+          "group": "limbs"
+        },
+        {
+          "word": "foot",
+          "audio": "audio/little_learners/my_body_2/word_foot.mp3",
+          "image": "images/little_learners/my_body_2/foot.svg",
+          "phrase": "audio/little_learners/my_body_2/phrase_foot.mp3",
+          "group": "limbs"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "odd-one-out",
+        "sentence",
+        "memory",
+        "sort",
+        "record-and-listen"
+      ],
+      "bins": [
+        {
+          "key": "head",
+          "icon": "face"
+        },
+        {
+          "key": "limbs",
+          "icon": "body"
+        }
+      ],
+      "odd": [
+        "apple",
+        "car",
+        "ball",
+        "hat",
+        "tree"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/little_learners/my_body_1/instr_listen_and_tap.mp3",
+      "sha256": "8d1926fa445458f333c44879f71d50399654cd705297dacf21479835889ae915",
+      "bytes": 33898
+    },
+    {
+      "path": "audio/little_learners/my_body_1/instr_match_picture.mp3",
+      "sha256": "66ae4a0729d6a44b104fcad96ac34d38795a8a15bdb13a69fb21dbe748623638",
+      "bytes": 40586
+    },
+    {
+      "path": "audio/little_learners/my_body_1/instr_record_and_listen.mp3",
+      "sha256": "6f1928d0e498a0c33192b6298523d07a71cf407b87cd453ce8efa0778dc42f1b",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/little_learners/my_body_1/intro.mp3",
+      "sha256": "1a2a7828998857813895133797ddd23a9bf0e8c6f2161621646678a638217ff7",
+      "bytes": 76112
+    },
+    {
+      "path": "audio/little_learners/my_body_1/phrase_ear.mp3",
+      "sha256": "4b0561478392ad5445c979abcd97b38ded3190e7fe11a5461872951c62cbc2a0",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/little_learners/my_body_1/phrase_eye.mp3",
+      "sha256": "cf5beac2d03cb5fd89aca23f5c9a9bdd24fa6bef5e2b083a8d258fd29c96e6f1",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/little_learners/my_body_1/phrase_nose.mp3",
+      "sha256": "5f435abb0bfa90bf94cb265630c1dcba6449657ddf36f87099841e6dbd07130d",
+      "bytes": 26375
+    },
+    {
+      "path": "audio/little_learners/my_body_1/praise_0.mp3",
+      "sha256": "e8f2b538e37d22c8e29f6456f4881e83f21693d8cf99dbcdb8e0e596bd3937fe",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/my_body_1/praise_1.mp3",
+      "sha256": "db50600596108eb4f768cec6ed62a038a3f9a5503d34d4ab13b43478586d832f",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/my_body_1/praise_2.mp3",
+      "sha256": "dcf6736a05ded220baeae8f03c61598cff82beab5ba45efd61900f854debb2a8",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/my_body_1/word_ear.mp3",
+      "sha256": "3e2df804bd25fb23a8a7da632c85a4bbf46e90e0f0862e9bdff1303e664e337d",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/little_learners/my_body_1/word_eye.mp3",
+      "sha256": "20731695ea7988595ef9b2a0137646b31d45f1f5fce602ef81a10398d2611262",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/little_learners/my_body_1/word_nose.mp3",
+      "sha256": "e9df5b198900e81139c051f8c92f1614dc6fceec6ee198a322ca4df6c024e105",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/little_learners/my_body_2/instr_listen_and_tap.mp3",
+      "sha256": "6768bca36525f8c16583a89aa4c3ec7d4172a2258952f0579fbf923b93f34d50",
+      "bytes": 34316
+    },
+    {
+      "path": "audio/little_learners/my_body_2/instr_match_picture.mp3",
+      "sha256": "7167246fa2825b3b998e3e6615114d96fce5c8908f4cd90df1abca14ef2028b9",
+      "bytes": 41839
+    },
+    {
+      "path": "audio/little_learners/my_body_2/instr_record_and_listen.mp3",
+      "sha256": "c2c380cec2455473a12caef0a55d56cfe7dd85705fddfe76665caeb3eb402d8c",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/little_learners/my_body_2/intro.mp3",
+      "sha256": "64088f3eb948f19d9bd66fb28f765b5c54e53228d4e09e647cf62fb93ffeb1d4",
+      "bytes": 80710
+    },
+    {
+      "path": "audio/little_learners/my_body_2/phrase_foot.mp3",
+      "sha256": "bdbde0f2d7a50af3444ce17bbaa876a527c0859592af9e59cd8863ce9e36e609",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/little_learners/my_body_2/phrase_hand.mp3",
+      "sha256": "471dbf14a8cf61ce30763657eb6d1e7b2f1d06d0845ad76f298add5113d67f37",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/little_learners/my_body_2/phrase_mouth.mp3",
+      "sha256": "675b3d44c2b0a22d426bab0fec932d9116dc62fcfc22ecc2e7ca06825354c753",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/little_learners/my_body_2/praise_0.mp3",
+      "sha256": "c579a37cd983d4a5d858c2d7934c1c8488d52735f3a6a7abbe9004e317ee818f",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/little_learners/my_body_2/praise_1.mp3",
+      "sha256": "1c938ec6e6a229c97e68bc296e87daf273eb58b8ca15b0c7fff96f212f3a726f",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/little_learners/my_body_2/praise_2.mp3",
+      "sha256": "9a8ddf917768f35436e827106482ba74278e1909573a91323a1277b6ac0313dc",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/little_learners/my_body_2/word_foot.mp3",
+      "sha256": "6b792859e16f354f31470859a6432285f88a58cab90dc2ee8e27b6f38d086c53",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/little_learners/my_body_2/word_hand.mp3",
+      "sha256": "67c89631f348e55b0a35be0f9db482983fc127de616c174af516f9359b6e1ae6",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/little_learners/my_body_2/word_mouth.mp3",
+      "sha256": "563be98b418d5c64ea581c4a56ab9a57120d682f55e2d9e9ecbc502b78a7408f",
+      "bytes": 15926
+    },
+    {
+      "path": "images/little_learners/my_body_1/ear.svg",
+      "sha256": "837d6cb5eb484e096445ded2438870a83ea8ad5af2cd34137adf438c84cf098a",
+      "bytes": 637
+    },
+    {
+      "path": "images/little_learners/my_body_1/eye.svg",
+      "sha256": "766b1ae45e1f3429bb6bde63699386f66b44aa764bad1e09dfa252c9f54a85f6",
+      "bytes": 595
+    },
+    {
+      "path": "images/little_learners/my_body_1/nose.svg",
+      "sha256": "17464a81c199f020c8069b921e7341575127b675ce7599ef6bc7c960dfd445ef",
+      "bytes": 641
+    },
+    {
+      "path": "images/little_learners/my_body_2/foot.svg",
+      "sha256": "23c0ef1805c3cc459f50975a14ba8007043d728599537b12d2fa29d9936ecd62",
+      "bytes": 748
+    },
+    {
+      "path": "images/little_learners/my_body_2/hand.svg",
+      "sha256": "f6af44c8445c5d3874fe045809920e3c79cfb34559685c97dbb75b98dff9de5e",
+      "bytes": 887
+    },
+    {
+      "path": "images/little_learners/my_body_2/mouth.svg",
+      "sha256": "91f440791e09d891fd34bcf6a77e9072e2b7e6417fc9f53830c7a70f146d6b41",
+      "bytes": 641
+    }
+  ]
+}

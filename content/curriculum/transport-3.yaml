@@ -4,8 +4,9 @@ track: little-learners
 level: pre-a1
 order: 3
 words:
-  - { word: van, reuse: letter-v/van }
-  - { word: truck, imagePrompt: "truck", source: svg }
+  - { word: van, reuse: letter-v/van, group: road }
+  - { word: truck, imagePrompt: "truck", source: svg, group: road }
+bins: [{ key: road, icon: road }, { key: water, icon: water }, { key: sky, icon: sky }]
 narration:
   intro: "Big vehicles! ... A van. ... A truck!"
   phrases: { van: "This is a van.", truck: "This is a truck." }
@@ -14,4 +15,4 @@ narration:
     listen-and-tap: "Listen, then tap the vehicle!"
     match-picture: "Match each word to its picture!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, record-and-listen]
+activities: [listen-and-tap, match-picture, memory, sort, record-and-listen]

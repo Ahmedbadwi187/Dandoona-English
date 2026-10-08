@@ -4,8 +4,9 @@ track: little-learners
 level: pre-a1
 order: 2
 words:
-  - { word: grandma, imagePrompt: "a friendly cartoon grandma", source: openai }
-  - { word: grandpa, imagePrompt: "a friendly cartoon grandpa", source: openai }
+  - { word: grandma, imagePrompt: "a friendly cartoon grandma", source: openai, group: grandparents }
+  - { word: grandpa, imagePrompt: "a friendly cartoon grandpa", source: openai, group: grandparents }
+odd: [apple, car, ball, hat, tree]
 narration:
   intro: "Grandparents! ... Grandma. ... Grandpa!"
   phrases: { grandma: "This is my grandma.", grandpa: "This is my grandpa." }
@@ -14,4 +15,4 @@ narration:
     listen-and-tap: "Listen, then tap the person!"
     match-picture: "Match each word to its picture!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, record-and-listen]
+activities: [listen-and-tap, match-picture, odd-one-out, sentence, memory, record-and-listen]

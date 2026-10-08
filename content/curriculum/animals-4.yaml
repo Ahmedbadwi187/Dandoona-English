@@ -17,4 +17,4 @@ narration:
     animal-sounds: "Who says this? Tap the animal!"
     habitat: "Where does it live? Tap its home!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, animal-sounds, habitat, record-and-listen]
+activities: [listen-and-tap, match-picture, memory, animal-sounds, habitat, record-and-listen]

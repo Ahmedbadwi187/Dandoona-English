@@ -4,9 +4,9 @@ track: little-learners
 level: pre-a1
 order: 1
 words:
-  - { word: eye, imagePrompt: "a eye", source: svg }
-  - { word: ear, imagePrompt: "a ear", source: svg }
-  - { word: nose, imagePrompt: "a nose", source: svg }
+  - { word: eye, imagePrompt: "a eye", source: svg, group: head }
+  - { word: ear, imagePrompt: "a ear", source: svg, group: head }
+  - { word: nose, imagePrompt: "a nose", source: svg, group: head }
 narration:
   intro: "This is me! ... An eye. ... An ear. ... A nose!"
   phrases: { eye: "This is my eye.", ear: "This is my ear.", nose: "This is my nose." }
@@ -15,4 +15,4 @@ narration:
     listen-and-tap: "Listen, then tap the picture!"
     match-picture: "Match each word to its picture!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, record-and-listen]
+activities: [listen-and-tap, match-picture, memory, record-and-listen]

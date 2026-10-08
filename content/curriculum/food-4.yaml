@@ -4,9 +4,10 @@ track: little-learners
 level: pre-a1
 order: 4
 words:
-  - { word: pizza, reuse: letter-p/pizza }
-  - { word: ice cream, reuse: letter-i/ice-cream }
-  - { word: cupcake, reuse: color-pink/cupcake }
+  - { word: pizza, reuse: letter-p/pizza, group: treat }
+  - { word: ice cream, reuse: letter-i/ice-cream, group: treat }
+  - { word: cupcake, reuse: color-pink/cupcake, group: treat }
+bins: [{ key: fruit, icon: fruit }, { key: drink, icon: drink }, { key: treat, icon: treat }]
 narration:
   intro: "Tasty treats! ... Pizza. ... Ice cream. ... A cupcake!"
   phrases: { pizza: "I like pizza.", ice cream: "I like ice cream.", cupcake: "I like cupcakes." }
@@ -15,4 +16,4 @@ narration:
     listen-and-tap: "Listen, then tap the food!"
     match-picture: "Match each word to its picture!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, record-and-listen]
+activities: [listen-and-tap, match-picture, memory, sort, record-and-listen]

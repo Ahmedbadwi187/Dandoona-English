@@ -19,6 +19,10 @@ public class Lesson
     public bool Counting { get; set; }
     /// <summary>The wrong pictures of the listen-and-tap game come only from this lesson's own words (objects that must not be mixed with the unit's plain pictures, like "Shapes around us").</summary>
     public bool OwnWordsOnly { get; set; }
+    /// <summary>Sorting game: the bins (key + icon name the app knows); words with a `group` equal to a bin key belong in it. Words of the whole unit are used.</summary>
+    public List<BinDef> Bins { get; set; } = [];
+    /// <summary>Odd one out: words of the Letters unit (bundled pictures) that do not belong to this unit's theme.</summary>
+    public List<string> Odd { get; set; } = [];
     /// <summary>True for the synthetic lesson that carries a unit's own audio (title, welcome, celebration). Never read from YAML files.</summary>
     public bool IsUnit { get; set; }
     public int? Order { get; set; }
@@ -38,8 +42,18 @@ public class LessonColor
     public string Hex { get; set; } = "";
 }
 
+public class BinDef
+{
+    public string Key { get; set; } = "";
+    public string Icon { get; set; } = "";
+}
+
 public class LessonWord
 {
+    /// <summary>Sorting game: the key of the bin this word belongs in.</summary>
+    public string? Group { get; set; }
+    /// <summary>Memory game: the word it is paired with instead of itself (big and small).</summary>
+    public string? Opposite { get; set; }
     public string Word { get; set; } = "";
     /// <summary>"lesson-id/key": use the picture of a word in another lesson (copied at export) instead of drawing or generating one.</summary>
     public string? Reuse { get; set; }
@@ -159,7 +173,7 @@ public class PlacementDef
 
 public class LessonValidator : AbstractValidator<Lesson>
 {
-    public static readonly string[] ActivityNames = ["trace", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "trace-small", "animal-sounds", "habitat", "dandoona-says"];
+    public static readonly string[] ActivityNames = ["trace", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "trace-small", "animal-sounds", "habitat", "dandoona-says", "sort", "memory", "odd-one-out", "sentence", "count-along", "mix-colors", "build-picture", "turns", "story-feeling"];
     public static readonly string[] Homes = ["house", "farm", "water", "wild"];
     private static readonly string[] Levels = ["pre-a1", "a1", "a2"];
     private static readonly string[] Tracks = ["little-learners", "explorers", "champions"];
@@ -206,6 +220,10 @@ public class LessonValidator : AbstractValidator<Lesson>
         RuleForEach(x => x.Activities).Must(a => ActivityNames.Contains(a))
             .WithMessage("Unknown activity '{PropertyValue}'. Use: " + string.Join(", ", ActivityNames));
         RuleFor(x => x).Must(l => !l.Activities.Contains("habitat") || l.Words.All(w => w.Home is not null)).WithMessage("Every word of a habitat lesson needs a home.");
+        RuleForEach(x => x.Bins).ChildRules(b => { b.RuleFor(i => i.Key).NotEmpty().MaximumLength(20); b.RuleFor(i => i.Icon).NotEmpty().MaximumLength(30); });
+        RuleFor(x => x).Must(l => !l.Activities.Contains("sort") || (l.Bins.Count >= 2 && l.Words.Any(w => l.Bins.Any(b => b.Key == w.Group)))).WithMessage("A sort lesson needs at least two bins and words with a group.");
+        RuleFor(x => x).Must(l => l.Words.All(w => w.Group is null || l.Bins.Any(b => b.Key == w.Group)) || l.Bins.Count == 0).WithMessage("A word group must be one of the lesson bins.");
+        RuleFor(x => x).Must(l => !l.Activities.Contains("odd-one-out") || l.Odd.Count >= 3).WithMessage("An odd-one-out lesson needs at least three odd words.");
         RuleFor(x => x).Must(l => !l.Activities.Contains("dandoona-says") || l.Words.All(w => w.Says is not null)).WithMessage("Every word of a Dandoona-says lesson needs a `says` line.");
         RuleFor(x => x).Must(l => !l.Activities.Contains("animal-sounds") || l.Words.Count(w => w.Sound is not null) >= 2).WithMessage("An animal-sounds lesson needs at least two words with a sound.");
         RuleFor(x => x.Activities).Must(a => a.Distinct().Count() == a.Count).WithMessage("Duplicate activities in lesson.");

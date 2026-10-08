@@ -69,9 +69,10 @@ public record ExportStoryPage(string Text, string Audio, List<string> Words, str
 public record ExportChest(string Accessory, List<string> Stickers);
 public record ExportUnitAudio(string Title, string? Welcome, string Celebration, Dictionary<string, string>? Lines = null);
 public record ExportLesson(string Id, int Order, string Level, string? Letter, string? Phoneme,
-    ExportLessonAudio Audio, List<ExportWord> Words, List<string> Activities, ExportColor? Color = null, bool? Counting = null, bool? OwnWordsOnly = null);
+    ExportLessonAudio Audio, List<ExportWord> Words, List<string> Activities, ExportColor? Color = null, bool? Counting = null, bool? OwnWordsOnly = null, List<ExportBin>? Bins = null, List<string>? Odd = null);
+public record ExportBin(string Key, string Icon);
 public record ExportLessonAudio(string Intro, string? Phoneme, List<string> Praise, Dictionary<string, string>? Instructions = null, string? ColorName = null);
-public record ExportWord(string Word, string Audio, string Image, string? Phrase = null, string? Sound = null, string? Lives = null, string? Home = null, string? Says = null);
+public record ExportWord(string Word, string Audio, string Image, string? Phrase = null, string? Sound = null, string? Lives = null, string? Home = null, string? Says = null, string? Group = null, string? Opposite = null, string? PhraseText = null);
 public record ExportColor(string Name, string Hex, string Swatch, string Drawing);
 
 public record ExportResult(int Exported, IReadOnlyList<string> Incomplete, long TotalBytes, string? JsonPath);
@@ -141,6 +142,9 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
                 color = new ExportColor(l.Color.Name, l.Color.Hex, Layout.ExportImageRel(l, "swatch", svg: true), Layout.ExportImageRel(l, "colorable", svg: true));
             }
 
+            string? PhraseTextFor(LessonWord w) =>
+                l.Narration.Phrases.FirstOrDefault(p => p.Key.Trim().Equals(w.Word.Trim(), StringComparison.OrdinalIgnoreCase)) is { Value: { Length: > 0 } text } ? text.Trim() : null;
+
             string? PhraseFor(LessonWord w) =>
                 LessonPlan.Audio(l).Any(a => a.Role == LessonPlan.PhraseRole(w.Word)) ? Layout.ExportAudioRel(l, LessonPlan.PhraseRole(w.Word)) : null;
 
@@ -156,12 +160,14 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
                 {
                     var key = LessonPlan.Slug(w.Word);
                     var svg = w.Reuse is not null ? reusedSvg[key] : w.Source == "svg";
-                    return new ExportWord(w.Word.Trim(), Layout.ExportAudioRel(l, $"word-{key}"), Layout.ExportImageRel(l, key, svg), PhraseFor(w), w.Sound is null ? null : Layout.ExportAudioRel(l, LessonPlan.SoundRole(w.Word)), w.Lives is null ? null : Layout.ExportAudioRel(l, LessonPlan.LivesRole(w.Word)), w.Home, w.Says is null ? null : Layout.ExportAudioRel(l, LessonPlan.SaysRole(w.Word)));
+                    return new ExportWord(w.Word.Trim(), Layout.ExportAudioRel(l, $"word-{key}"), Layout.ExportImageRel(l, key, svg), PhraseFor(w), w.Sound is null ? null : Layout.ExportAudioRel(l, LessonPlan.SoundRole(w.Word)), w.Lives is null ? null : Layout.ExportAudioRel(l, LessonPlan.LivesRole(w.Word)), w.Home, w.Says is null ? null : Layout.ExportAudioRel(l, LessonPlan.SaysRole(w.Word)), w.Group, w.Opposite, PhraseTextFor(w));
                 }).ToList(),
                 l.Activities.ToList(),
                 color,
                 l.Counting ? true : null,
-                l.OwnWordsOnly ? true : null)));
+                l.OwnWordsOnly ? true : null,
+                l.Bins.Count == 0 ? null : l.Bins.Select(b => new ExportBin(b.Key, b.Icon)).ToList(),
+                l.Odd.Count == 0 ? null : l.Odd.ToList())));
         }
 
         // Units: ordered as in the units file. With a units file every unit is listed, even without lessons yet (the app shows it locked).

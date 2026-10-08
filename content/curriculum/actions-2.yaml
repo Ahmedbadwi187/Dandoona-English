@@ -15,4 +15,4 @@ narration:
     listen-and-tap: "Listen, then tap what Dandoona does!"
     match-picture: "Match each word to its picture!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, record-and-listen]
+activities: [listen-and-tap, match-picture, sentence, memory, record-and-listen]

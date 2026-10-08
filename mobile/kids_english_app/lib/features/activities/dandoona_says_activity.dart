@@ -30,7 +30,7 @@ class DandoonaSaysActivity extends ConsumerStatefulWidget {
 class _DandoonaSaysActivityState extends ConsumerState<DandoonaSaysActivity> with SingleTickerProviderStateMixin {
   late final Random _random = widget.random ?? Random();
   late final List<LessonWord> _words = [for (final w in widget.lesson.words) if (w.says != null) w]..shuffle(_random);
-  late final ActivitySpeech _speech = ActivitySpeech(ref.read(audioServiceProvider));
+  late final ActivitySpeech _speech;
   late final AnimationController _ring = AnimationController(vsync: this, duration: widget.turn)..addStatusListener(_ringStatus);
   int _index = 0;
   bool _finished = false;
@@ -40,6 +40,7 @@ class _DandoonaSaysActivityState extends ConsumerState<DandoonaSaysActivity> wit
   @override
   void initState() {
     super.initState();
+    _speech = ActivitySpeech(ref.read(audioServiceProvider));
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) _begin(first: true);
     });

@@ -13,15 +13,22 @@ Status: [x] done, [ ] to do, [~] started.
 3. [x] **Animal sounds and where animals live** (Animals): "a cat says meow" for every animal (voice), and a game that puts each animal in its
    home (house, farm, water, wild). Built: `animal-sounds` (hear "Meow! Meow!", tap the animal; rabbit and zebra are quiet so they are not asked) and `habitat` (put the animal in its home, it says "A cow lives on the farm.").
 4. [~] **"Dandoona says"** (Actions): Dandoona says an action and the child does it for real; a gentle timer, no scores. Built (`dandoona-says`, ring timer, green check, always 3 stars) and live in Actions lesson 1. **Waiting for voice credit**: the ElevenLabs monthly quota ran out (40000 credits), so lessons 2 and 3 (`node tools/art/make-lessons.mjs actions` already writes their `says` lines; then `audio` + `export`; about 20 credits left of need ~50) are not switched on yet.
-5. [ ] **Counting for real and tracing numbers** (Numbers): tap each balloon as it is counted; trace the numeral 1-10.
+5. [x] **Counting for real and tracing numbers** (Numbers): tap each balloon as it is counted; trace the numeral 1-10. Built: `count-along` (touch each balloon, it says the number) and `trace` on the numbers lessons (the numerals one after the other).
 6. [ ] **Printable cards for parents** (all units): one page per unit with 3-4 things to look for at home; a web page, no tracking.
-7. [ ] **More activities on the same content** (all units): odd one out, drag to sort, memory cards.
-8. [ ] **From words to sentences** (all units): "The cat is big": the child completes a sentence by choosing the picture.
+7. [x] **More activities on the same content** (all units): odd one out, drag to sort, memory cards. Built: `odd-one-out` (3 of the unit + 1 Letters picture), `sort` (drag or tap into bins; Body, Food, Clothes, Transport, Home, Family), `memory` (every later lesson; Opposites pair a word with its opposite).
+8. [x] **From words to sentences** (all units): "The cat is big": the child completes a sentence by choosing the picture. Built: `sentence` (hear "I like pizza.", see "I like ____.", tap the picture) on the second lesson of each later unit, using the phrase audio that already existed.
 9. [ ] **Smart review**: the words a child misses come back in a short review before a new lesson, and in "Practice at home" for parents.
-10. [ ] **Unit extras**: Colors (mixing colors), Shapes (build a picture from shapes), Feelings (how does Dandoona feel in a story),
+10. [x] **Unit extras**: Colors (mixing colors), Shapes (build a picture from shapes), Feelings (how does Dandoona feel in a story),
     Body (drag the part to Dandoona), Food (make a meal), Clothes (dress Dandoona for the weather), Toys (my turn / your turn),
-    Family (my family tree, kept on the phone only), Home (which room), Opposites (longer / shorter), Transport (road, water or sky).
+    Family (my family tree, kept on the phone only), Home (which room), Opposites (longer / shorter), Transport (road, water or sky). Built as: Colors `mix-colors`, Shapes `build-picture`, Feelings `story-feeling` (the story sentence is read, choose the face), Body/Food/Clothes/Transport/Home/Family `sort` (head or limbs, fruit/drink/treat, sunny or cold, road/water/sky, which room, grandparents/parents/children), Toys `turns` ("My turn!/Your turn!"), Opposites `memory` with opposite pairs. Nothing is stored for the family game.
 11. [ ] Later and separate: the 6-8 track.
 
 Rules that stay: no AI or ads or paid services in the product, free licenses, assets bundled or served by our own API, spend under the $25
 cap with a cost estimate first, nothing about a child leaves the phone except through the optional account.
+
+## Spoken instructions still missing (ElevenLabs quota ran out, 40000 credits a month)
+
+These games work without a spoken instruction (they speak the words, phrases and story lines that already exist), but each would be
+friendlier with one short line. Add them to the lesson files under `narration.instructions` (keys: count-along, sort, memory,
+odd-one-out, sentence, mix-colors, build-picture, turns, story-feeling, dandoona-says) and run `audio` + `export` once the quota is back.
+Also pending: the `says` lines of Actions lessons 2 and 3 (see item 4).

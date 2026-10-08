@@ -1,0 +1,553 @@
+{
+  "schemaVersion": 1,
+  "track": "little-learners",
+  "unit": "food",
+  "version": 4,
+  "contentHash": "8166204cbdcd2f2dff4c735141d22c80a97c923b5b40688bf26caebe4de8ed98",
+  "lessons": [
+    {
+      "id": "food-1",
+      "order": 1,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/food_1/intro.mp3",
+        "praise": [
+          "audio/little_learners/food_1/praise_0.mp3",
+          "audio/little_learners/food_1/praise_1.mp3",
+          "audio/little_learners/food_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/food_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/food_1/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/food_1/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "apple",
+          "audio": "audio/little_learners/food_1/word_apple.mp3",
+          "image": "images/little_learners/food_1/apple.webp",
+          "phrase": "audio/little_learners/food_1/phrase_apple.mp3",
+          "group": "fruit",
+          "phraseText": "I like apples."
+        },
+        {
+          "word": "banana",
+          "audio": "audio/little_learners/food_1/word_banana.mp3",
+          "image": "images/little_learners/food_1/banana.webp",
+          "phrase": "audio/little_learners/food_1/phrase_banana.mp3",
+          "group": "fruit",
+          "phraseText": "I like bananas."
+        },
+        {
+          "word": "orange",
+          "audio": "audio/little_learners/food_1/word_orange.mp3",
+          "image": "images/little_learners/food_1/orange.svg",
+          "phrase": "audio/little_learners/food_1/phrase_orange.mp3",
+          "group": "fruit",
+          "phraseText": "I like oranges."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "food-2",
+      "order": 2,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/food_2/intro.mp3",
+        "praise": [
+          "audio/little_learners/food_2/praise_0.mp3",
+          "audio/little_learners/food_2/praise_1.mp3",
+          "audio/little_learners/food_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/food_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/food_2/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/food_2/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "strawberry",
+          "audio": "audio/little_learners/food_2/word_strawberry.mp3",
+          "image": "images/little_learners/food_2/strawberry.svg",
+          "phrase": "audio/little_learners/food_2/phrase_strawberry.mp3",
+          "group": "fruit",
+          "phraseText": "I like strawberries."
+        },
+        {
+          "word": "carrot",
+          "audio": "audio/little_learners/food_2/word_carrot.mp3",
+          "image": "images/little_learners/food_2/carrot.svg",
+          "phrase": "audio/little_learners/food_2/phrase_carrot.mp3",
+          "phraseText": "I like carrots."
+        },
+        {
+          "word": "grapes",
+          "audio": "audio/little_learners/food_2/word_grapes.mp3",
+          "image": "images/little_learners/food_2/grapes.svg",
+          "phrase": "audio/little_learners/food_2/phrase_grapes.mp3",
+          "group": "fruit",
+          "phraseText": "I like grapes."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "odd-one-out",
+        "sentence",
+        "memory",
+        "record-and-listen"
+      ],
+      "odd": [
+        "ball",
+        "car",
+        "hat",
+        "key",
+        "cat"
+      ]
+    },
+    {
+      "id": "food-3",
+      "order": 3,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/food_3/intro.mp3",
+        "praise": [
+          "audio/little_learners/food_3/praise_0.mp3",
+          "audio/little_learners/food_3/praise_1.mp3",
+          "audio/little_learners/food_3/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/food_3/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/food_3/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/food_3/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "milk",
+          "audio": "audio/little_learners/food_3/word_milk.mp3",
+          "image": "images/little_learners/food_3/milk.svg",
+          "phrase": "audio/little_learners/food_3/phrase_milk.mp3",
+          "group": "drink",
+          "phraseText": "I like milk."
+        },
+        {
+          "word": "juice",
+          "audio": "audio/little_learners/food_3/word_juice.mp3",
+          "image": "images/little_learners/food_3/juice.svg",
+          "phrase": "audio/little_learners/food_3/phrase_juice.mp3",
+          "group": "drink",
+          "phraseText": "I like juice."
+        },
+        {
+          "word": "egg",
+          "audio": "audio/little_learners/food_3/word_egg.mp3",
+          "image": "images/little_learners/food_3/egg.svg",
+          "phrase": "audio/little_learners/food_3/phrase_egg.mp3",
+          "phraseText": "I like eggs."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "food-4",
+      "order": 4,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/food_4/intro.mp3",
+        "praise": [
+          "audio/little_learners/food_4/praise_0.mp3",
+          "audio/little_learners/food_4/praise_1.mp3",
+          "audio/little_learners/food_4/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/food_4/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/food_4/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/food_4/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "pizza",
+          "audio": "audio/little_learners/food_4/word_pizza.mp3",
+          "image": "images/little_learners/food_4/pizza.svg",
+          "phrase": "audio/little_learners/food_4/phrase_pizza.mp3",
+          "group": "treat",
+          "phraseText": "I like pizza."
+        },
+        {
+          "word": "ice cream",
+          "audio": "audio/little_learners/food_4/word_ice_cream.mp3",
+          "image": "images/little_learners/food_4/ice_cream.svg",
+          "phrase": "audio/little_learners/food_4/phrase_ice_cream.mp3",
+          "group": "treat",
+          "phraseText": "I like ice cream."
+        },
+        {
+          "word": "cupcake",
+          "audio": "audio/little_learners/food_4/word_cupcake.mp3",
+          "image": "images/little_learners/food_4/cupcake.svg",
+          "phrase": "audio/little_learners/food_4/phrase_cupcake.mp3",
+          "group": "treat",
+          "phraseText": "I like cupcakes."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "sort",
+        "record-and-listen"
+      ],
+      "bins": [
+        {
+          "key": "fruit",
+          "icon": "fruit"
+        },
+        {
+          "key": "drink",
+          "icon": "drink"
+        },
+        {
+          "key": "treat",
+          "icon": "treat"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/little_learners/food_1/instr_listen_and_tap.mp3",
+      "sha256": "b0f2356c4b270bbbdb659f4fc853baf78f076dd5cc19627d603d9b3a8416e2d9",
+      "bytes": 31391
+    },
+    {
+      "path": "audio/little_learners/food_1/instr_match_picture.mp3",
+      "sha256": "1d9343f5868d3a7baf4daa7bc7d43a4f2713da1cf585e2b4d0f7566dd88235d6",
+      "bytes": 34316
+    },
+    {
+      "path": "audio/little_learners/food_1/instr_record_and_listen.mp3",
+      "sha256": "412a832b4f3da083c3c1fd70fcca878f2251b642c8f8bc089a8866ffb60370f9",
+      "bytes": 31391
+    },
+    {
+      "path": "audio/little_learners/food_1/intro.mp3",
+      "sha256": "eaf7ee007be303d20101240951da30f7a243e403798732c36c94b2c9e7f12229",
+      "bytes": 91159
+    },
+    {
+      "path": "audio/little_learners/food_1/phrase_apple.mp3",
+      "sha256": "05ccf25bf15f944a6029dfc348592e6871f3fc2f64bda6372832fcc38a9abbbf",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/little_learners/food_1/phrase_banana.mp3",
+      "sha256": "63a3e0b98d33ce9dc2d66d081d208aab8c9691d264cc7f692f9e94e6de93006b",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/little_learners/food_1/phrase_orange.mp3",
+      "sha256": "df07455930449d92253971bf09f7d0a94186440a0e92cfedc2beb5702bb6758e",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/little_learners/food_1/praise_0.mp3",
+      "sha256": "71e5b8fdf853a012cdb8533e657980784f76592850cb884e5f1681be5b108506",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/little_learners/food_1/praise_1.mp3",
+      "sha256": "ec373b1186b0ae72bf6b8890be73cec8db3584dab4eb05cb687cd8c2cb9f53fe",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/food_1/praise_2.mp3",
+      "sha256": "2c1e0f17d6a7b77261f99898caa2a5d66c864400aaaa705062cdbcd788eddcdc",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/little_learners/food_1/word_apple.mp3",
+      "sha256": "f83fe9af4b2fc4f845b1e587bb557bac9c29110c799da9e6be174f060d5c4ac2",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/little_learners/food_1/word_banana.mp3",
+      "sha256": "6d838939a4c5b3ab16d1f06f568527e9348e396abc8e54feff32c414328b4725",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/little_learners/food_1/word_orange.mp3",
+      "sha256": "60aeab3dc327371028c8894ee9c7dd6f8be9ceef5f63d36e8e5a8d95828f468e",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/food_2/instr_listen_and_tap.mp3",
+      "sha256": "a2d13ec354fb2ee5fb5f607fc32594a0127c033474c93b9766448acc4a80e582",
+      "bytes": 33062
+    },
+    {
+      "path": "audio/little_learners/food_2/instr_match_picture.mp3",
+      "sha256": "9b3278b1c8bef65d2e7414032b09e3fdad046ae6087a4693f365e086b5cf17f0",
+      "bytes": 41004
+    },
+    {
+      "path": "audio/little_learners/food_2/instr_record_and_listen.mp3",
+      "sha256": "2a00a334b856987b09c468c57ad5b662b6a503d07371c99dfdea1f969310b52f",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/little_learners/food_2/intro.mp3",
+      "sha256": "6946ae0acae77d12465cb87e1a85becd0974c8c92fcc57d6eb49e2cdf6ea84b5",
+      "bytes": 79038
+    },
+    {
+      "path": "audio/little_learners/food_2/phrase_carrot.mp3",
+      "sha256": "49698cfb6ed07804173db2e047517e6b95aa1b97b4f5cebac9def3d55b873225",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/little_learners/food_2/phrase_grapes.mp3",
+      "sha256": "fd55fbe290b87abbbb46e9d8bd89d454f47138ce6e829065d965e75dd70bc1f5",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/little_learners/food_2/phrase_strawberry.mp3",
+      "sha256": "fad03c67645f412738fba43001d6f538b3f7894bc8beda8f419a1b8247332ca5",
+      "bytes": 27629
+    },
+    {
+      "path": "audio/little_learners/food_2/praise_0.mp3",
+      "sha256": "2217b69107cdfa2a6c98f9b204ef8888f3020f6cb703c89568124f41b09cc8c1",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/food_2/praise_1.mp3",
+      "sha256": "97a2b7f239e77e6565d62e5c34ab0a754331556cdaae56adf5bdcd6405eb2784",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/food_2/praise_2.mp3",
+      "sha256": "ac183dad9fa1f9be69227c4c2ac46c19438b6357a5e3921e5571df224529062d",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/little_learners/food_2/word_carrot.mp3",
+      "sha256": "cb520af21613d823a3f472aa0ca93796c834b9e4d164ffc0611253fd3652ab1c",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/little_learners/food_2/word_grapes.mp3",
+      "sha256": "83ce8dddf2264983611c381002dbe99b86d2c38e89da911254cce83d7964589e",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/little_learners/food_2/word_strawberry.mp3",
+      "sha256": "860be414822b6f93757a0c981c25f4d126eb3caf1b06e3e904984b897e34c702",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/food_3/instr_listen_and_tap.mp3",
+      "sha256": "a72bea13721242708955268022628b3b2779213643998a027bcccce432564116",
+      "bytes": 31391
+    },
+    {
+      "path": "audio/little_learners/food_3/instr_match_picture.mp3",
+      "sha256": "e4e41895bc7a9cd033b030a3cd58b1c01c2e205891b992fab029ce97c1ea7bd7",
+      "bytes": 41004
+    },
+    {
+      "path": "audio/little_learners/food_3/instr_record_and_listen.mp3",
+      "sha256": "d725830abedda68add2f3c8ec8b03fdc5c812bdcbdcc14e9ed94b63f8908f08f",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/little_learners/food_3/intro.mp3",
+      "sha256": "471f0ceb7ad6baf8347bdccd79e96fbecd59f41491be09faeb86d3bb36e12674",
+      "bytes": 107877
+    },
+    {
+      "path": "audio/little_learners/food_3/phrase_egg.mp3",
+      "sha256": "80d9acf2b3924c41473c776191dc66c63feddb08eb01a55b6c4c04dbcd8b13fc",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/little_learners/food_3/phrase_juice.mp3",
+      "sha256": "834015c9a151db202a2cd84cf752aa9badf2ef07b018fb1ac4f03e0ef6ae0a51",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/little_learners/food_3/phrase_milk.mp3",
+      "sha256": "c68509fe88de06fbc7533718df756978ea05caab2abe0651c44c2e9bf86095b1",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/little_learners/food_3/praise_0.mp3",
+      "sha256": "5910dab96b44f6ba061635fd50ecc6e3e232aa37b3e11dd733ffa7b6a0530a08",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/food_3/praise_1.mp3",
+      "sha256": "6960f362df6b8ef260ae32d42deff13776e8c84036307bde7d51e2ace6fc4cce",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/food_3/praise_2.mp3",
+      "sha256": "724ca1c3b0075eacb81c77cb42ef02dbc96cb4061c380ed0e3b883ba70a0f6fb",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/little_learners/food_3/word_egg.mp3",
+      "sha256": "8181bed0d88b2db3f7f7d0380b9834da994ddf2a0eb449dbd551501d5a881972",
+      "bytes": 13836
+    },
+    {
+      "path": "audio/little_learners/food_3/word_juice.mp3",
+      "sha256": "8143becf50ef6feeca1b743f8f2121e39fee199ab0a555f014a2377c6ab6d366",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/little_learners/food_3/word_milk.mp3",
+      "sha256": "9ffc59dfad50b5d8f9035f4712a6cc2edae90b3b346240df2a6ace423e07be64",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/little_learners/food_4/instr_listen_and_tap.mp3",
+      "sha256": "6c880be3d8d1fa4184e5a81f8cc80ca56ff51f0af8c43f40fb4b59fcefe3cb92",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/little_learners/food_4/instr_match_picture.mp3",
+      "sha256": "6da0d4da3de0388da48b129344319de105cfdae673e9cb0b4b2c6a392f0f4788",
+      "bytes": 41839
+    },
+    {
+      "path": "audio/little_learners/food_4/instr_record_and_listen.mp3",
+      "sha256": "c43423d21a0ad246b80a22b2128e9e7480d132faceddfee0e741b2255e9998ae",
+      "bytes": 29301
+    },
+    {
+      "path": "audio/little_learners/food_4/intro.mp3",
+      "sha256": "3ed224d012db399ed72d7d33eb7be2911c8c6caa7e9803ea57491917e9426743",
+      "bytes": 84889
+    },
+    {
+      "path": "audio/little_learners/food_4/phrase_cupcake.mp3",
+      "sha256": "66b294200142f7a88f1d164e6011679488658d06e2dd2260204e5f40071da97d",
+      "bytes": 29301
+    },
+    {
+      "path": "audio/little_learners/food_4/phrase_ice_cream.mp3",
+      "sha256": "9344564e962b5e8ffa5044132ffe37c8153a7295dbff0c9499f8c3e225c0a7f7",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/little_learners/food_4/phrase_pizza.mp3",
+      "sha256": "c3dcb498e9f020a4cecb6cbba118a7ba5dd0906497b616f74a4ebc6b451f867e",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/little_learners/food_4/praise_0.mp3",
+      "sha256": "0b74a22291e92ae5c63cb82ebe7eaedeb734223e91dfd3b4df1fcb90e063318f",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/food_4/praise_1.mp3",
+      "sha256": "4ad665d63a617983d7628cce7671f3aff3c529b50409d52f24040df76d470f2c",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/food_4/praise_2.mp3",
+      "sha256": "1eb2d7ab2dace9fdcb9156d46a08ab41ee45a49431e8006e4f8b2b9133db5a2f",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/little_learners/food_4/word_cupcake.mp3",
+      "sha256": "94237bfca2295f26bca5ab28d32f63d844540fa8ec0cf6cb6ddf8525544e6599",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/food_4/word_ice_cream.mp3",
+      "sha256": "53379b3cf46500fb28c78d3b7ddc374c8c1597080d6b1928bb78597f9b998985",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/little_learners/food_4/word_pizza.mp3",
+      "sha256": "eb7033b4bb657e921e2ceda8a06782e730aa8f92bf05a944f4455c3b465a88b9",
+      "bytes": 16762
+    },
+    {
+      "path": "images/little_learners/food_1/apple.webp",
+      "sha256": "b2679f607a1ca4318698b568865a0fc8bc6cc94e3ff1f188397275e38017e9b1",
+      "bytes": 51694
+    },
+    {
+      "path": "images/little_learners/food_1/banana.webp",
+      "sha256": "86d9608e84f8e31b056bf00401d749f8e9cd3b9ad7cee524a43f530e9d85d4e6",
+      "bytes": 39752
+    },
+    {
+      "path": "images/little_learners/food_1/orange.svg",
+      "sha256": "3b60f8c47e72ac6a70b03e1c0ff7cdf8345935a80d0a58f4cb53dec93800fc46",
+      "bytes": 482
+    },
+    {
+      "path": "images/little_learners/food_2/carrot.svg",
+      "sha256": "b09232d8eff8f1bad09d138ee00ba2848102370795395d84e5680efb6b71a845",
+      "bytes": 633
+    },
+    {
+      "path": "images/little_learners/food_2/grapes.svg",
+      "sha256": "7a90b846ba8ec4d2fa7467273cc90bd7973d90d892d02cfe0b664d853ed047fb",
+      "bytes": 812
+    },
+    {
+      "path": "images/little_learners/food_2/strawberry.svg",
+      "sha256": "7bd4dd1ae623f6e0ad08f98685bbef7185971af87ccd6f839e87d904db952464",
+      "bytes": 1025
+    },
+    {
+      "path": "images/little_learners/food_3/egg.svg",
+      "sha256": "7c9946a629cda6715fd6ccdbfe13e9280de50940372e854defd743c35e238dca",
+      "bytes": 512
+    },
+    {
+      "path": "images/little_learners/food_3/juice.svg",
+      "sha256": "9b0d1873895ab08b11d7106f0c7b7dccf9143852b781ed594d2e3aea3cf99b9a",
+      "bytes": 608
+    },
+    {
+      "path": "images/little_learners/food_3/milk.svg",
+      "sha256": "d3ce554f66368703702dc5829663d87d468efe9475a01e1721b01669a9bbbe82",
+      "bytes": 541
+    },
+    {
+      "path": "images/little_learners/food_4/cupcake.svg",
+      "sha256": "ebb006c39d0633506b254fbcbb79f611a0ca97e504068844421613d965e06cd5",
+      "bytes": 626
+    },
+    {
+      "path": "images/little_learners/food_4/ice_cream.svg",
+      "sha256": "15c0318b0b265f95772aefcd01d8ca9717f6c6fd9fa1a12c0e550df0130b18bc",
+      "bytes": 503
+    },
+    {
+      "path": "images/little_learners/food_4/pizza.svg",
+      "sha256": "c242800395670f07fbac46b42ff6e0bf3bb03be7c475702ec8ea9b1d7f96d6b7",
+      "bytes": 551
+    }
+  ]
+}

@@ -14,4 +14,4 @@ narration:
     listen-and-tap: "Listen, then tap the shape!"
     match-picture: "Match each word to its shape!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, record-and-listen]
+activities: [listen-and-tap, match-picture, memory, build-picture, record-and-listen]

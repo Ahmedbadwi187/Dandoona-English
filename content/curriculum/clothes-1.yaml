@@ -4,9 +4,9 @@ track: little-learners
 level: pre-a1
 order: 1
 words:
-  - { word: shirt, imagePrompt: "shirt", source: svg }
+  - { word: shirt, imagePrompt: "shirt", source: svg, group: warm }
   - { word: pants, imagePrompt: "pants", source: svg }
-  - { word: dress, imagePrompt: "dress", source: svg }
+  - { word: dress, imagePrompt: "dress", source: svg, group: warm }
 narration:
   intro: "Let's get dressed! ... A shirt. ... Pants. ... A dress!"
   phrases: { shirt: "I wear a shirt.", pants: "I wear pants.", dress: "I wear a dress." }
@@ -15,4 +15,4 @@ narration:
     listen-and-tap: "Listen, then tap the clothes!"
     match-picture: "Match each word to its picture!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, record-and-listen]
+activities: [listen-and-tap, match-picture, memory, record-and-listen]

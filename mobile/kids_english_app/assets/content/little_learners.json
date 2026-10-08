@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "little-learners",
-  "generatedAt": "2026-10-08T10:04:34.73142Z",
+  "generatedAt": "2026-10-08T10:31:29.2950288Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -1287,19 +1287,22 @@
               "word": "apple",
               "audio": "audio/little_learners/color_red/word_apple.mp3",
               "image": "images/little_learners/color_red/apple.webp",
-              "phrase": "audio/little_learners/color_red/phrase_apple.mp3"
+              "phrase": "audio/little_learners/color_red/phrase_apple.mp3",
+              "phraseText": "A red apple."
             },
             {
               "word": "strawberry",
               "audio": "audio/little_learners/color_red/word_strawberry.mp3",
               "image": "images/little_learners/color_red/strawberry.svg",
-              "phrase": "audio/little_learners/color_red/phrase_strawberry.mp3"
+              "phrase": "audio/little_learners/color_red/phrase_strawberry.mp3",
+              "phraseText": "A red strawberry."
             },
             {
               "word": "heart",
               "audio": "audio/little_learners/color_red/word_heart.mp3",
               "image": "images/little_learners/color_red/heart.svg",
-              "phrase": "audio/little_learners/color_red/phrase_heart.mp3"
+              "phrase": "audio/little_learners/color_red/phrase_heart.mp3",
+              "phraseText": "A red heart."
             }
           ],
           "activities": [
@@ -1339,19 +1342,22 @@
               "word": "whale",
               "audio": "audio/little_learners/color_blue/word_whale.mp3",
               "image": "images/little_learners/color_blue/whale.webp",
-              "phrase": "audio/little_learners/color_blue/phrase_whale.mp3"
+              "phrase": "audio/little_learners/color_blue/phrase_whale.mp3",
+              "phraseText": "A blue whale."
             },
             {
               "word": "cloud",
               "audio": "audio/little_learners/color_blue/word_cloud.mp3",
               "image": "images/little_learners/color_blue/cloud.svg",
-              "phrase": "audio/little_learners/color_blue/phrase_cloud.mp3"
+              "phrase": "audio/little_learners/color_blue/phrase_cloud.mp3",
+              "phraseText": "A blue cloud."
             },
             {
               "word": "balloon",
               "audio": "audio/little_learners/color_blue/word_balloon.mp3",
               "image": "images/little_learners/color_blue/balloon.svg",
-              "phrase": "audio/little_learners/color_blue/phrase_balloon.mp3"
+              "phrase": "audio/little_learners/color_blue/phrase_balloon.mp3",
+              "phraseText": "A blue balloon."
             }
           ],
           "activities": [
@@ -1391,19 +1397,22 @@
               "word": "banana",
               "audio": "audio/little_learners/color_yellow/word_banana.mp3",
               "image": "images/little_learners/color_yellow/banana.webp",
-              "phrase": "audio/little_learners/color_yellow/phrase_banana.mp3"
+              "phrase": "audio/little_learners/color_yellow/phrase_banana.mp3",
+              "phraseText": "A yellow banana."
             },
             {
               "word": "sun",
               "audio": "audio/little_learners/color_yellow/word_sun.mp3",
               "image": "images/little_learners/color_yellow/sun.svg",
-              "phrase": "audio/little_learners/color_yellow/phrase_sun.mp3"
+              "phrase": "audio/little_learners/color_yellow/phrase_sun.mp3",
+              "phraseText": "A yellow sun."
             },
             {
               "word": "duck",
               "audio": "audio/little_learners/color_yellow/word_duck.mp3",
               "image": "images/little_learners/color_yellow/duck.webp",
-              "phrase": "audio/little_learners/color_yellow/phrase_duck.mp3"
+              "phrase": "audio/little_learners/color_yellow/phrase_duck.mp3",
+              "phraseText": "A yellow duck."
             }
           ],
           "activities": [
@@ -1443,25 +1452,29 @@
               "word": "frog",
               "audio": "audio/little_learners/color_green/word_frog.mp3",
               "image": "images/little_learners/color_green/frog.webp",
-              "phrase": "audio/little_learners/color_green/phrase_frog.mp3"
+              "phrase": "audio/little_learners/color_green/phrase_frog.mp3",
+              "phraseText": "A green frog."
             },
             {
               "word": "leaf",
               "audio": "audio/little_learners/color_green/word_leaf.mp3",
               "image": "images/little_learners/color_green/leaf.svg",
-              "phrase": "audio/little_learners/color_green/phrase_leaf.mp3"
+              "phrase": "audio/little_learners/color_green/phrase_leaf.mp3",
+              "phraseText": "A green leaf."
             },
             {
               "word": "tree",
               "audio": "audio/little_learners/color_green/word_tree.mp3",
               "image": "images/little_learners/color_green/tree.svg",
-              "phrase": "audio/little_learners/color_green/phrase_tree.mp3"
+              "phrase": "audio/little_learners/color_green/phrase_tree.mp3",
+              "phraseText": "A green tree."
             }
           ],
           "activities": [
             "listen-and-tap",
             "match-picture",
             "record-and-listen",
+            "mix-colors",
             "color-the-object"
           ],
           "color": {
@@ -1495,25 +1508,29 @@
               "word": "orange",
               "audio": "audio/little_learners/color_orange/word_orange.mp3",
               "image": "images/little_learners/color_orange/orange.svg",
-              "phrase": "audio/little_learners/color_orange/phrase_orange.mp3"
+              "phrase": "audio/little_learners/color_orange/phrase_orange.mp3",
+              "phraseText": "An orange orange."
             },
             {
               "word": "carrot",
               "audio": "audio/little_learners/color_orange/word_carrot.mp3",
               "image": "images/little_learners/color_orange/carrot.svg",
-              "phrase": "audio/little_learners/color_orange/phrase_carrot.mp3"
+              "phrase": "audio/little_learners/color_orange/phrase_carrot.mp3",
+              "phraseText": "An orange carrot."
             },
             {
               "word": "pumpkin",
               "audio": "audio/little_learners/color_orange/word_pumpkin.mp3",
               "image": "images/little_learners/color_orange/pumpkin.svg",
-              "phrase": "audio/little_learners/color_orange/phrase_pumpkin.mp3"
+              "phrase": "audio/little_learners/color_orange/phrase_pumpkin.mp3",
+              "phraseText": "An orange pumpkin."
             }
           ],
           "activities": [
             "listen-and-tap",
             "match-picture",
             "record-and-listen",
+            "mix-colors",
             "color-the-object"
           ],
           "color": {
@@ -1547,25 +1564,29 @@
               "word": "grapes",
               "audio": "audio/little_learners/color_purple/word_grapes.mp3",
               "image": "images/little_learners/color_purple/grapes.svg",
-              "phrase": "audio/little_learners/color_purple/phrase_grapes.mp3"
+              "phrase": "audio/little_learners/color_purple/phrase_grapes.mp3",
+              "phraseText": "Purple grapes."
             },
             {
               "word": "eggplant",
               "audio": "audio/little_learners/color_purple/word_eggplant.mp3",
               "image": "images/little_learners/color_purple/eggplant.svg",
-              "phrase": "audio/little_learners/color_purple/phrase_eggplant.mp3"
+              "phrase": "audio/little_learners/color_purple/phrase_eggplant.mp3",
+              "phraseText": "A purple eggplant."
             },
             {
               "word": "flower",
               "audio": "audio/little_learners/color_purple/word_flower.mp3",
               "image": "images/little_learners/color_purple/flower.svg",
-              "phrase": "audio/little_learners/color_purple/phrase_flower.mp3"
+              "phrase": "audio/little_learners/color_purple/phrase_flower.mp3",
+              "phraseText": "A purple flower."
             }
           ],
           "activities": [
             "listen-and-tap",
             "match-picture",
             "record-and-listen",
+            "mix-colors",
             "color-the-object"
           ],
           "color": {
@@ -1599,25 +1620,29 @@
               "word": "pig",
               "audio": "audio/little_learners/color_pink/word_pig.mp3",
               "image": "images/little_learners/color_pink/pig.webp",
-              "phrase": "audio/little_learners/color_pink/phrase_pig.mp3"
+              "phrase": "audio/little_learners/color_pink/phrase_pig.mp3",
+              "phraseText": "A pink pig."
             },
             {
               "word": "cupcake",
               "audio": "audio/little_learners/color_pink/word_cupcake.mp3",
               "image": "images/little_learners/color_pink/cupcake.svg",
-              "phrase": "audio/little_learners/color_pink/phrase_cupcake.mp3"
+              "phrase": "audio/little_learners/color_pink/phrase_cupcake.mp3",
+              "phraseText": "A pink cupcake."
             },
             {
               "word": "bow",
               "audio": "audio/little_learners/color_pink/word_bow.mp3",
               "image": "images/little_learners/color_pink/bow.svg",
-              "phrase": "audio/little_learners/color_pink/phrase_bow.mp3"
+              "phrase": "audio/little_learners/color_pink/phrase_bow.mp3",
+              "phraseText": "A pink bow."
             }
           ],
           "activities": [
             "listen-and-tap",
             "match-picture",
             "record-and-listen",
+            "mix-colors",
             "color-the-object"
           ],
           "color": {
@@ -1651,19 +1676,22 @@
               "word": "bear",
               "audio": "audio/little_learners/color_brown/word_bear.mp3",
               "image": "images/little_learners/color_brown/bear.webp",
-              "phrase": "audio/little_learners/color_brown/phrase_bear.mp3"
+              "phrase": "audio/little_learners/color_brown/phrase_bear.mp3",
+              "phraseText": "A brown bear."
             },
             {
               "word": "monkey",
               "audio": "audio/little_learners/color_brown/word_monkey.mp3",
               "image": "images/little_learners/color_brown/monkey.webp",
-              "phrase": "audio/little_learners/color_brown/phrase_monkey.mp3"
+              "phrase": "audio/little_learners/color_brown/phrase_monkey.mp3",
+              "phraseText": "A brown monkey."
             },
             {
               "word": "nut",
               "audio": "audio/little_learners/color_brown/word_nut.mp3",
               "image": "images/little_learners/color_brown/nut.svg",
-              "phrase": "audio/little_learners/color_brown/phrase_nut.mp3"
+              "phrase": "audio/little_learners/color_brown/phrase_nut.mp3",
+              "phraseText": "A brown nut."
             }
           ],
           "activities": [
@@ -1703,19 +1731,22 @@
               "word": "cat",
               "audio": "audio/little_learners/color_black/word_cat.mp3",
               "image": "images/little_learners/color_black/cat.svg",
-              "phrase": "audio/little_learners/color_black/phrase_cat.mp3"
+              "phrase": "audio/little_learners/color_black/phrase_cat.mp3",
+              "phraseText": "A black cat."
             },
             {
               "word": "tire",
               "audio": "audio/little_learners/color_black/word_tire.mp3",
               "image": "images/little_learners/color_black/tire.svg",
-              "phrase": "audio/little_learners/color_black/phrase_tire.mp3"
+              "phrase": "audio/little_learners/color_black/phrase_tire.mp3",
+              "phraseText": "A black tire."
             },
             {
               "word": "spider",
               "audio": "audio/little_learners/color_black/word_spider.mp3",
               "image": "images/little_learners/color_black/spider.svg",
-              "phrase": "audio/little_learners/color_black/phrase_spider.mp3"
+              "phrase": "audio/little_learners/color_black/phrase_spider.mp3",
+              "phraseText": "A black spider."
             }
           ],
           "activities": [
@@ -1755,19 +1786,22 @@
               "word": "egg",
               "audio": "audio/little_learners/color_white/word_egg.mp3",
               "image": "images/little_learners/color_white/egg.svg",
-              "phrase": "audio/little_learners/color_white/phrase_egg.mp3"
+              "phrase": "audio/little_learners/color_white/phrase_egg.mp3",
+              "phraseText": "A white egg."
             },
             {
               "word": "snowman",
               "audio": "audio/little_learners/color_white/word_snowman.mp3",
               "image": "images/little_learners/color_white/snowman.svg",
-              "phrase": "audio/little_learners/color_white/phrase_snowman.mp3"
+              "phrase": "audio/little_learners/color_white/phrase_snowman.mp3",
+              "phraseText": "A white snowman."
             },
             {
               "word": "milk",
               "audio": "audio/little_learners/color_white/word_milk.mp3",
               "image": "images/little_learners/color_white/milk.svg",
-              "phrase": "audio/little_learners/color_white/phrase_milk.mp3"
+              "phrase": "audio/little_learners/color_white/phrase_milk.mp3",
+              "phraseText": "White milk."
             }
           ],
           "activities": [
@@ -1863,10 +1897,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 2,
-        "sha256": "28a12dd8fed8203658fed54a0704eddbf9251f1163ae0ce0d737b77effca0235",
-        "bytes": 1195259,
-        "manifest": "numbers/v2/manifest.json",
+        "version": 4,
+        "sha256": "8512886c37c44580c58a6584a64e39c835d25b9fc5d78b437c07f50bbace4849",
+        "bytes": 1195891,
+        "manifest": "numbers/v4/manifest.json",
         "lessonIds": [
           "number-1-3",
           "number-4-6",
@@ -1954,10 +1988,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 2,
-        "sha256": "b059742bebf06efe35540428409ba0e501917ca1d7ff6cc19253ecd21552e773",
-        "bytes": 1564703,
-        "manifest": "shapes/v2/manifest.json",
+        "version": 4,
+        "sha256": "2c6a6b1a2098d828524ce38cd6d07149025e75070eba4e63be2f25bc180ea52d",
+        "bytes": 1565381,
+        "manifest": "shapes/v4/manifest.json",
         "lessonIds": [
           "shapes-1",
           "shapes-2",
@@ -2046,10 +2080,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 2,
-        "sha256": "eee2169f4d01bd271629d904ae2f41ff01e96b04fe9a35f77e89fc1d1ae5c867",
-        "bytes": 3920166,
-        "manifest": "animals/v2/manifest.json",
+        "version": 4,
+        "sha256": "e852d48a80c28dc1cb2a1fd779d96ada9d75b969b7044257d590d48c33323abe",
+        "bytes": 3920962,
+        "manifest": "animals/v4/manifest.json",
         "lessonIds": [
           "animals-1",
           "animals-2",
@@ -2135,10 +2169,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 1,
-        "sha256": "c4cdc8a8afe2b36bc6cf593cbb757751dff19627fa67e729e8be1deaddab845d",
-        "bytes": 766192,
-        "manifest": "feelings/v1/manifest.json",
+        "version": 3,
+        "sha256": "a35798ece6ef118b3ea2416380a8781d99aed2e1586373af134551b08d5091af",
+        "bytes": 766521,
+        "manifest": "feelings/v3/manifest.json",
         "lessonIds": [
           "feelings-1",
           "feelings-2"
@@ -2220,10 +2254,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 1,
-        "sha256": "f19d2db0e511ba9f2c03614b39ffc04b3ce7ee2368ffc70f06318c8f3983e24d",
-        "bytes": 758231,
-        "manifest": "my_body/v1/manifest.json",
+        "version": 3,
+        "sha256": "802f1ca8acb65060318820b5e33718a31780ad3f7463447fdcbed5672926745f",
+        "bytes": 759056,
+        "manifest": "my_body/v3/manifest.json",
         "lessonIds": [
           "my-body-1",
           "my-body-2"
@@ -2308,10 +2342,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 3,
-        "sha256": "0b07b5779e481665f90bd9d7d13556ae51ebe3b47469be0302f7fa97ed2b1b8b",
-        "bytes": 2308975,
-        "manifest": "actions/v3/manifest.json",
+        "version": 5,
+        "sha256": "3514534111806150bb0d19722af6f61a9d654828a1907f043370402e8eda2bb4",
+        "bytes": 2309415,
+        "manifest": "actions/v5/manifest.json",
         "lessonIds": [
           "actions-1",
           "actions-2",
@@ -2399,10 +2433,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 2,
-        "sha256": "874a388f59b0c5e74c3632f3a16233fc92bd35bcf0c831b385adc53665105d15",
-        "bytes": 1641837,
-        "manifest": "food/v2/manifest.json",
+        "version": 4,
+        "sha256": "78234da66f9de5c2b14d9d0b647e737ee4a259dc8ac8f7b2cf4b9b77ca89cc45",
+        "bytes": 1643152,
+        "manifest": "food/v4/manifest.json",
         "lessonIds": [
           "food-1",
           "food-2",
@@ -2487,10 +2521,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 1,
-        "sha256": "2468a954d202c9da8d429e2326598e1f819c73ab9933caf7cd8d901ea01b1318",
-        "bytes": 1108826,
-        "manifest": "clothes/v1/manifest.json",
+        "version": 3,
+        "sha256": "af371611690e01d17aa5b6e22684242ffbf0f2475c016aa85245959dfb22d792",
+        "bytes": 1109756,
+        "manifest": "clothes/v3/manifest.json",
         "lessonIds": [
           "clothes-1",
           "clothes-2",
@@ -2577,10 +2611,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 1,
-        "sha256": "02a526411205092214ae4177c8da75f2dba9496f9d38539558169bceeb69179a",
-        "bytes": 1281012,
-        "manifest": "toys/v1/manifest.json",
+        "version": 3,
+        "sha256": "ba8941858c2838d5f8aaa4dbc3b77b93c07da6da5c93ae6e8bc1da5b38efa764",
+        "bytes": 1281668,
+        "manifest": "toys/v3/manifest.json",
         "lessonIds": [
           "toys-1",
           "toys-2",
@@ -2666,10 +2700,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 1,
-        "sha256": "295bade6fc1026bf18f3e2b260ccc3ce5a2e7cfcc514855585a76cdf2412dbf1",
-        "bytes": 1452494,
-        "manifest": "my_family/v1/manifest.json",
+        "version": 3,
+        "sha256": "2d3a585de9d4fea7e77d6d15ae74f315b36b26b7a0ff4fe4fa65179ece295c75",
+        "bytes": 1453547,
+        "manifest": "my_family/v3/manifest.json",
         "lessonIds": [
           "my-family-1",
           "my-family-2",
@@ -2754,10 +2788,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 1,
-        "sha256": "7fb311a0c8cedf4995c006e7c461da53785a6b319e6c3f7fa788a7cad30a101d",
-        "bytes": 1056429,
-        "manifest": "my_home/v1/manifest.json",
+        "version": 3,
+        "sha256": "2468e56ee2295bf86217cc2d5d294eddec6f8453de13f693a0c1452a2d1d49ee",
+        "bytes": 1057401,
+        "manifest": "my_home/v3/manifest.json",
         "lessonIds": [
           "my-home-1",
           "my-home-2",
@@ -2845,10 +2879,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 2,
-        "sha256": "56bd926d51f5f6d7366de60f03a674e1d8febde81f5bb6df3c5e4dd28baeedbe",
-        "bytes": 982238,
-        "manifest": "opposites/v2/manifest.json",
+        "version": 4,
+        "sha256": "4d6c9524c51a1cac295127d3ae6c4c1d69f0ad4f7086445291e5e2a354899ce9",
+        "bytes": 982919,
+        "manifest": "opposites/v4/manifest.json",
         "lessonIds": [
           "opposites-1",
           "opposites-2"
@@ -2934,10 +2968,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 1,
-        "sha256": "636b241e62fcf6a6b70c70db2e4ee70b28408b0f6f0a925b9eb137cf39c39563",
-        "bytes": 1040679,
-        "manifest": "transport/v1/manifest.json",
+        "version": 3,
+        "sha256": "a3d4ab5e9f23b8d87fa0f6503dbf5b93246a99b6ce3de6714683ad96eacb8871",
+        "bytes": 1041733,
+        "manifest": "transport/v3/manifest.json",
         "lessonIds": [
           "transport-1",
           "transport-2",

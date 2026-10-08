@@ -7,6 +7,7 @@ words:
   - { word: cow, reuse: letter-c/cow, sound: "Moo! Moo!", home: farm, lives: "A cow lives on the farm." }
   - { word: pig, reuse: letter-p/pig, sound: "Oink! Oink!", home: farm, lives: "A pig lives on the farm." }
   - { word: horse, reuse: letter-h/horse, sound: "Neigh! Neigh!", home: farm, lives: "A horse lives on the farm." }
+odd: [apple, ball, car, hat, key]
 narration:
   intro: "Farm animals! ... A cow. ... A pig. ... A horse!"
   phrases: { cow: "A cow.", pig: "A pig.", horse: "A horse." }
@@ -17,4 +18,4 @@ narration:
     animal-sounds: "Who says this? Tap the animal!"
     habitat: "Where does it live? Tap its home!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, animal-sounds, habitat, record-and-listen]
+activities: [listen-and-tap, match-picture, odd-one-out, sentence, memory, animal-sounds, habitat, record-and-listen]

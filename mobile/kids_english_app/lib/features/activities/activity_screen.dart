@@ -24,6 +24,14 @@ import '../units/unit_logic.dart';
 import '../units/unit_meta.dart';
 import 'activity_logic.dart';
 import 'color_the_object_activity.dart';
+import 'build_picture_activity.dart';
+import 'count_along_activity.dart';
+import 'memory_activity.dart';
+import 'mix_colors_activity.dart';
+import 'odd_one_out_activity.dart';
+import 'sort_activity.dart';
+import 'story_feeling_activity.dart';
+import 'turns_activity.dart';
 import 'dandoona_says_activity.dart';
 import 'habitat_activity.dart';
 import 'listen_and_tap_activity.dart';
@@ -150,7 +158,16 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
                   'record-and-listen' => RecordListenActivity(lesson: widget.lesson, onFinished: _finished),
                   'animal-sounds' => ListenAndTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished, sounds: true),
                   'dandoona-says' => DandoonaSaysActivity(lesson: widget.lesson, onFinished: _finished),
-                    'habitat' => HabitatActivity(lesson: widget.lesson, onFinished: _finished),
+                    'sort' => SortActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
+                  'memory' => MemoryActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
+                  'odd-one-out' => OddOneOutActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
+                  'sentence' => ListenAndTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished, sentences: true),
+                  'count-along' => CountAlongActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
+                  'mix-colors' => MixColorsActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
+                  'build-picture' => BuildPictureActivity(lesson: widget.lesson, onFinished: _finished),
+                  'turns' => TurnsActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
+                  'story-feeling' => StoryFeelingActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
+                  'habitat' => HabitatActivity(lesson: widget.lesson, onFinished: _finished),
                     'color-the-object' => ColorTheObjectActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   _ => Center(child: Text(Strings.en('loadError'))),
                 },

@@ -194,7 +194,7 @@ public class ColorsUnitContentTests
     {
         var layout = Layout.FindFrom(AppContext.BaseDirectory);
         foreach (var l in CurriculumReader.LoadAll(layout.CurriculumDir).Where(l => l.Unit == "colors"))
-            foreach (var a in l.Activities)
+            foreach (var a in l.Activities.Where(a => a != "mix-colors")) // the mixing game speaks only the colors, no instruction of its own
                 l.Narration.Instructions.ShouldContainKey(a, $"{l.Id} has no spoken instruction for {a}");
     }
 }

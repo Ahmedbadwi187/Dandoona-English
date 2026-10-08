@@ -285,6 +285,8 @@ class Lesson {
     this.color,
     this.counting = false,
     this.ownWordsOnly = false,
+    this.bins = const [],
+    this.odd = const [],
   });
 
   final String id;
@@ -303,6 +305,18 @@ class Lesson {
 
   /// The wrong pictures of the hear-and-tap game come only from this lesson's own words.
   final bool ownWordsOnly;
+
+  /// Sorting game: the bins; a word whose `group` is a bin key belongs in it (words of the whole unit are used).
+  final List<LessonBin> bins;
+
+  /// Odd one out: words of the Letters unit that do not belong to this unit's theme.
+  final List<String> odd;
+
+  /// The number a counting word stands for ('three' is 3), or null.
+  static int? numberOf(String word) {
+    final n = _numerals[word.toLowerCase()];
+    return n == null ? null : int.parse(n);
+  }
 
   static const _numerals = {'one': '1', 'two': '2', 'three': '3', 'four': '4', 'five': '5', 'six': '6', 'seven': '7', 'eight': '8', 'nine': '9', 'ten': '10'};
 
@@ -326,7 +340,16 @@ class Lesson {
         color: json['color'] == null ? null : LessonColor.fromJson(json['color'] as Map<String, dynamic>),
         counting: (json['counting'] as bool?) ?? false,
         ownWordsOnly: (json['ownWordsOnly'] as bool?) ?? false,
+        bins: [for (final b in (json['bins'] as List<dynamic>?) ?? const []) LessonBin.fromJson(b as Map<String, dynamic>)],
+        odd: ((json['odd'] as List<dynamic>?) ?? const []).cast<String>(),
       );
+}
+
+class LessonBin {
+  const LessonBin({required this.key, required this.icon});
+  final String key;
+  final String icon;
+  factory LessonBin.fromJson(Map<String, dynamic> json) => LessonBin(key: json['key'] as String, icon: json['icon'] as String);
 }
 
 /// The color a Colors lesson teaches: its name, its #RRGGBB value, the swatch picture and the drawing to color in.
@@ -369,7 +392,7 @@ class LessonAudio {
 }
 
 class LessonWord {
-  const LessonWord({required this.word, required this.audio, required this.image, this.phrase, this.sound, this.lives, this.home, this.says});
+  const LessonWord({required this.word, required this.audio, required this.image, this.phrase, this.sound, this.lives, this.home, this.says, this.group, this.opposite, this.phraseText});
 
   final String word;
   final String audio;
@@ -389,6 +412,15 @@ class LessonWord {
   /// Actions: audio of "Dandoona says, jump!", for the Dandoona-says activity.
   final String? says;
 
+  /// Sorting game: the key of the bin it belongs in.
+  final String? group;
+
+  /// Memory game: the word it is paired with (big and small) instead of itself.
+  final String? opposite;
+
+  /// The words of its phrase ("I like pizza."), shown with a gap in the sentence game.
+  final String? phraseText;
+
   /// `.svg` (self-drawn) or `.webp` (generated); both are rendered by AssetPicture.
   final String image;
 
@@ -401,5 +433,8 @@ class LessonWord {
         lives: json['lives'] as String?,
         home: json['home'] as String?,
         says: json['says'] as String?,
+        group: json['group'] as String?,
+        opposite: json['opposite'] as String?,
+        phraseText: json['phraseText'] as String?,
       );
 }

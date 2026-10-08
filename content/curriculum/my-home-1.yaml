@@ -4,7 +4,7 @@ track: little-learners
 level: pre-a1
 order: 1
 words:
-  - { word: bed, imagePrompt: "bed", source: svg }
+  - { word: bed, imagePrompt: "bed", source: svg, group: bedroom }
   - { word: door, imagePrompt: "door", source: svg }
   - { word: window, reuse: letter-w/window }
 narration:
@@ -15,4 +15,4 @@ narration:
     listen-and-tap: "Listen, then tap the thing!"
     match-picture: "Match each word to its picture!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, record-and-listen]
+activities: [listen-and-tap, match-picture, memory, record-and-listen]

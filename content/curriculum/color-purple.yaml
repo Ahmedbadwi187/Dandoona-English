@@ -18,4 +18,4 @@ narration:
     match-picture: "Match each word to its picture!"
     record-and-listen: "Listen, then say it!"
     color-the-object: "Color the grapes purple!"
-activities: [listen-and-tap, match-picture, record-and-listen, color-the-object]
+activities: [listen-and-tap, match-picture, record-and-listen, mix-colors, color-the-object]

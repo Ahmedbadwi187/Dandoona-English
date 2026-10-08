@@ -88,7 +88,15 @@ class _TraceActivityState extends ConsumerState<TraceActivity> {
   bool _busy = false;
   bool _tryAgain = false;
 
-  String get _letter => widget.small ? (widget.lesson.letter ?? '?').toLowerCase() : (widget.lesson.letter ?? '?');
+  /// A letter lesson traces its letter; a counting lesson traces its numerals one after the other (1, 2, 3).
+  late final List<String> _glyphs = widget.lesson.counting
+      ? [for (final w in widget.lesson.words) if (Lesson.numberOf(w.word) != null) '${Lesson.numberOf(w.word)}']
+      : [widget.small ? (widget.lesson.letter ?? '?').toLowerCase() : (widget.lesson.letter ?? '?')];
+  int _round = 0;
+  int _totalAttempts = 0;
+  final List<int> _stars = [];
+
+  String get _letter => _glyphs[_round];
 
   @override
   void initState() {
@@ -103,7 +111,11 @@ class _TraceActivityState extends ConsumerState<TraceActivity> {
   }
 
   void _sayInstruction() {
-    if (mounted) unawaited(_speech.say(instruction: widget.lesson.audio.instructions[widget.small ? 'trace-small' : 'trace']));
+    if (!mounted) return;
+    // a numeral is said by its own word ("three") after the instruction, when the lesson has no instruction of its own
+    final numbers = [for (final w in widget.lesson.words) if (Lesson.numberOf(w.word) != null) w];
+    final number = widget.lesson.counting && _round < numbers.length ? numbers[_round] : null;
+    unawaited(_speech.say(instruction: widget.lesson.audio.instructions[widget.small ? 'trace-small' : 'trace'], then: number?.audio));
   }
 
   void _clear() => setState(() {
@@ -134,7 +146,22 @@ class _TraceActivityState extends ConsumerState<TraceActivity> {
     _attempts++;
     if (!mounted) return;
     if (score.stars > 0 || _attempts >= 3) {
-      widget.onFinished(ActivityResult(stars: score.stars == 0 ? 1 : score.stars, attempts: _attempts));
+      _stars.add(score.stars == 0 ? 1 : score.stars);
+      if (_round + 1 < _glyphs.length) {
+        // the next numeral (three tries each)
+        _totalAttempts += _attempts;
+        _attempts = 0;
+        setState(() {
+          _round++;
+          _busy = false;
+          _tryAgain = false;
+          _strokes.clear();
+          _version++;
+        });
+        _sayInstruction();
+        return;
+      }
+      widget.onFinished(ActivityResult(stars: _stars.reduce((a, b) => a < b ? a : b), attempts: _totalAttempts + _attempts));
     } else {
       setState(() {
         _busy = false;

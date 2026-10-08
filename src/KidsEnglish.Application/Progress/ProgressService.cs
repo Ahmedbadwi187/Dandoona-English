@@ -20,7 +20,16 @@ public static class ActivityCodes
         ["trace-small"] = ActivityType.TraceSmall,
         ["animal-sounds"] = ActivityType.AnimalSounds,
         ["habitat"] = ActivityType.Habitat,
-        ["dandoona-says"] = ActivityType.DandoonaSays
+        ["dandoona-says"] = ActivityType.DandoonaSays,
+        ["sort"] = ActivityType.Sort,
+        ["memory"] = ActivityType.Memory,
+        ["odd-one-out"] = ActivityType.OddOneOut,
+        ["sentence"] = ActivityType.Sentence,
+        ["count-along"] = ActivityType.CountAlong,
+        ["mix-colors"] = ActivityType.MixColors,
+        ["build-picture"] = ActivityType.BuildPicture,
+        ["turns"] = ActivityType.Turns,
+        ["story-feeling"] = ActivityType.StoryFeeling
     };
 
     public static bool TryParse(string? code, out ActivityType type) => Map.TryGetValue(code ?? "", out type);

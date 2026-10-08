@@ -22,8 +22,8 @@ void main() {
     test('has ten lessons, one per color, each with the four activities and a spoken instruction for each', () {
       expect(colors.lessons.map((l) => l.color!.name), ['red', 'blue', 'yellow', 'green', 'orange', 'purple', 'pink', 'brown', 'black', 'white']);
       for (final l in colors.lessons) {
-        expect(l.activities, ['listen-and-tap', 'match-picture', 'record-and-listen', 'color-the-object'], reason: l.id);
-        for (final a in l.activities) {
+        expect(l.activities.where((a) => a != 'mix-colors'), ['listen-and-tap', 'match-picture', 'record-and-listen', 'color-the-object'], reason: l.id);
+        for (final a in l.activities.where((a) => a != 'mix-colors')) { // the mixing game speaks only the colors
           expect(l.audio.instructions.containsKey(a), isTrue, reason: '${l.id} has no spoken instruction for $a');
         }
         expect(l.words, hasLength(3));

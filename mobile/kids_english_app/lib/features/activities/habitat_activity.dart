@@ -45,7 +45,7 @@ class HabitatActivity extends ConsumerStatefulWidget {
 class _HabitatActivityState extends ConsumerState<HabitatActivity> {
   late final Random _random = widget.random ?? Random();
   late final List<LessonWord> _animals = [for (final w in widget.lesson.words) if (w.home != null) w]..shuffle(_random);
-  late final ActivitySpeech _speech = ActivitySpeech(ref.read(audioServiceProvider));
+  late final ActivitySpeech _speech;
   int _index = 0;
   int _mistakes = 0;
   String? _wrongHome;
@@ -57,6 +57,7 @@ class _HabitatActivityState extends ConsumerState<HabitatActivity> {
   @override
   void initState() {
     super.initState();
+    _speech = ActivitySpeech(ref.read(audioServiceProvider));
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) unawaited(_speech.say(instruction: widget.lesson.audio.instructions['habitat'], then: _animal.audio));
     });

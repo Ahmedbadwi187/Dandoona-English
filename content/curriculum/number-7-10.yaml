@@ -17,4 +17,4 @@ narration:
     listen-and-tap: "Listen, then tap that many balloons!"
     match-picture: "Match each number to its balloons!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, record-and-listen]
+activities: [listen-and-tap, match-picture, memory, count-along, record-and-listen, trace]

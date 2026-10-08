@@ -16,4 +16,4 @@ narration:
     match-picture: "Match each word to its picture!"
     record-and-listen: "Listen, then say it!"
     dandoona-says: "Do what Dandoona says!"
-activities: [listen-and-tap, match-picture, dandoona-says, record-and-listen]
+activities: [listen-and-tap, match-picture, memory, dandoona-says, record-and-listen]
