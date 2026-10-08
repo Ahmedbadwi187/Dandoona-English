@@ -1,0 +1,19 @@
+# Blends with r. Everyday words (animals, food, school, home).
+id: blends-r
+unit: blends
+track: explorers
+level: a1
+order: 2
+words:
+  - { word: frog, graphemes: [f, r, o, g], reuse: "little-learners:letter-f/frog" }
+  - { word: crab, graphemes: [c, r, a, b], source: svg, imagePrompt: "a red crab" }
+  - { word: drum, graphemes: [d, r, u, m], reuse: "little-learners:toys-3/drum" }
+  - { word: truck, graphemes: [t, r, u, "ck:c"], reuse: "little-learners:transport-3/truck" }
+narration:
+  intro: "More blends! f, r, fr. Let's read: frog, crab, drum, truck."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

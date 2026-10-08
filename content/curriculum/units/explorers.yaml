@@ -13,8 +13,9 @@ placement:
 
 # The phoneme table: one clip per sound, made by ElevenLabs from `say` (text-to-speech cannot read IPA reliably, so `say` is spelled
 # for the voice: "kuh", "sss"). EVERY clip is flagged for the owner to listen to; a recording of your own placed next to the generated
-# file (phoneme-<key>.override.mp3 in content/generated/explorers/phonemes/audio/) always wins. Keys are graphemes (later: sh, ch, th).
-# Short vowels first, then the consonants Sound Builders uses.
+# file (phoneme-<key>.override.mp3 in content/generated/explorers/phonemes/audio/) always wins. Keys are graphemes. A word part can
+# borrow another key's sound ("ck:c", "a:ay" in cake) or be silent ("e:-", the magic e), so one clip serves every spelling of a sound.
+# Short vowels first, then the consonants Sound Builders uses, then the sounds of Digraphs, Blends, Magic E and Vowel Teams.
 phonemes:
   - { key: a, ipa: "/æ/", say: "aa" }
   - { key: e, ipa: "/ɛ/", say: "eh" }
@@ -34,6 +35,25 @@ phonemes:
   - { key: s, ipa: "/s/", say: "sss" }
   - { key: t, ipa: "/t/", say: "tuh" }
   - { key: x, ipa: "/ks/", say: "ks" }
+  - { key: l, ipa: "/l/", say: "lll" }
+  - { key: r, ipa: "/r/", say: "rrr" }
+  - { key: v, ipa: "/v/", say: "vvv" }
+  - { key: z, ipa: "/z/", say: "zzz" }
+  - { key: sh, ipa: "/ʃ/", say: "shh" }
+  - { key: ch, ipa: "/tʃ/", say: "chuh" }
+  - { key: th, ipa: "/θ/", say: "thh" }
+  - { key: ay, ipa: "/eɪ/", say: "ay" }
+  - { key: ee, ipa: "/iː/", say: "ee" }
+  - { key: ie, ipa: "/aɪ/", say: "eye" }
+  - { key: oa, ipa: "/oʊ/", say: "oh" }
+  - { key: ue, ipa: "/juː/", say: "you" }
+  - { key: oo, ipa: "/uː/", say: "oo" }
+  - { key: ar, ipa: "/ɑːr/", say: "ar" }
+
+# Review stops on the map: a quick game with the words of these units, after the last of them; passing it opens the next unit.
+reviews:
+  - { id: review-1, units: [sound-builders, digraphs, blends] }
+  - { id: review-2, units: [magic-e, vowel-teams] }
 
 units:
   - id: letters
@@ -66,6 +86,14 @@ units:
     title: { en: "Digraphs", ar: "الحروف المزدوجة" }
     icon: digraphs
     color: purple
+    chest: { accessory: headphones, stickers: [fish, chick, duck, ship] }
+    story:
+      pages:
+        - { text: "A fish is in a dish.", words: [fish, dish], pose: waving }
+        - { text: "The chick has a chip.", words: [chick, chip], pose: thinking }
+        - { text: "A moth sits on the bench.", words: [moth, bench], pose: pointing-up }
+        - { text: "The duck has red socks.", words: [duck, socks], pose: base }
+        - { text: "We run to the ship. Fun!", words: [ship], pose: jumping }
     narration: { title: "Digraphs", welcome: "Two letters, one sound!", celebration: "You know the digraphs! Super!", lines: { locked: "Finish Digraphs first!" } }
 
   - id: blends
@@ -74,6 +102,14 @@ units:
     title: { en: "Blends", ar: "التجمعات" }
     icon: blends
     color: teal
+    chest: { accessory: bandana, stickers: [frog, crab, drum, truck] }
+    story:
+      pages:
+        - { text: "A frog is on a drum.", words: [frog, drum], pose: waving }
+        - { text: "A crab has a flag.", words: [crab, flag], pose: thinking }
+        - { text: "The truck has blocks.", words: [truck, blocks], pose: pointing-up }
+        - { text: "A plum is in my hand.", words: [plum, hand], pose: base }
+        - { text: "A gift! Clap, clap!", words: [gift, clap], pose: clapping }
     narration: { title: "Blends", welcome: "Let's blend sounds!", celebration: "You finished the blends! Great!", lines: { locked: "Finish Blends first!" } }
 
   - id: magic-e
@@ -82,6 +118,14 @@ units:
     title: { en: "Magic E", ar: "الحرف الصامت" }
     icon: magic-e
     color: pink
+    chest: { accessory: wizard-hat, stickers: [cake, kite, bike, rose] }
+    story:
+      pages:
+        - { text: "A snake has a cake.", words: [snake, cake], pose: waving }
+        - { text: "Five kites fly up!", words: [five, kite], pose: pointing-up }
+        - { text: "I ride my bike to the plane.", words: [bike, plane], pose: thinking }
+        - { text: "A rose is on my nose!", words: [rose, nose], pose: base }
+        - { text: "The dog has a bone. Magic!", words: [bone], pose: jumping }
     narration: { title: "Magic E", welcome: "Let's find the magic e!", celebration: "Magic! You did it!", lines: { locked: "Finish Magic E first!" } }
 
   - id: vowel-teams
@@ -90,6 +134,14 @@ units:
     title: { en: "Vowel Teams", ar: "اقتران الحروف" }
     icon: vowel-teams
     color: orange
+    chest: { accessory: team-cap, stickers: [train, bee, goat, moon] }
+    story:
+      pages:
+        - { text: "The rain is on the train.", words: [rain, train], pose: waving }
+        - { text: "A snail is on the tree.", words: [snail, tree], pose: thinking }
+        - { text: "A goat and a sheep in a boat!", words: [goat, sheep, boat], pose: pointing-up }
+        - { text: "A bee sits on the toast.", words: [bee, toast], pose: base }
+        - { text: "The moon and a star. Good night!", words: [moon, star], pose: waving }
     narration: { title: "Vowel Teams", welcome: "Vowels work as a team!", celebration: "Great teamwork!", lines: { locked: "Finish Vowel Teams first!" } }
 
   - id: sight-words-1

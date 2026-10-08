@@ -138,4 +138,28 @@ public class ExplorersPhonicsTests
         units.Chest!.Accessory.ShouldBe("explorer-hat");
         units.Story!.Pages.Count.ShouldBe(5);
     }
+
+    [Fact]
+    public void Phase_two_has_digraphs_blends_magic_e_and_vowel_teams_with_a_chest_a_story_and_two_reviews()
+    {
+        var curriculum = Path.Combine(Layout.Find(null).Root, "content", "curriculum");
+        var lessons = CurriculumReader.LoadAll(curriculum).Where(l => l.Track == "explorers").ToList();
+        var phonemes = CurriculumReader.LoadPhonemes(curriculum).Where(p => p.Track == "explorers").Select(p => p.Phoneme.Key).ToHashSet();
+        foreach (var (unit, count) in new[] { ("digraphs", 4), ("blends", 3), ("magic-e", 3), ("vowel-teams", 4) })
+        {
+            var ls = lessons.Where(l => l.Unit == unit).ToList();
+            ls.Count.ShouldBe(count, unit);
+            ls.ShouldAllBe(l => l.Words.Count == 4 && l.Activities.SequenceEqual(new[] { "sound-tap", "word-builder", "read-and-pick" }));
+            var u = CurriculumReader.LoadUnits(curriculum).Single(x => x.Track == "explorers" && x.Id == unit);
+            u.IsPack.ShouldBeTrue();
+            u.Chest.ShouldNotBeNull();
+            u.Story!.Pages.Count.ShouldBe(5);
+        }
+        // every sound of every word is in the table, and every sound in the table is used
+        var used = lessons.SelectMany(l => l.Words).SelectMany(w => w.Graphemes ?? []).Select(LessonValidator.GraphemeSound).Where(g => g != "-").ToHashSet();
+        used.ShouldBe(phonemes, ignoreOrder: true);
+        // a magic-e word ends in a silent e, and the vowel before it says its name
+        lessons.Where(l => l.Unit == "magic-e").SelectMany(l => l.Words).ShouldAllBe(w => w.Graphemes!.Contains("e:-") && w.Graphemes.Any(g => g.EndsWith(":ay") || g.EndsWith(":ie") || g.EndsWith(":oa") || g.EndsWith(":ue")));
+        CurriculumReader.LoadReviews(curriculum).Where(r => r.Track == "explorers").Select(r => r.Review.Units.Last()).ShouldBe(["blends", "vowel-teams"]);
+    }
 }

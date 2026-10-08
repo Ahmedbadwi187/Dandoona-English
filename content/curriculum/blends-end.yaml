@@ -1,0 +1,19 @@
+# Blends at the end of a word. Everyday words (animals, food, school, home).
+id: blends-end
+unit: blends
+track: explorers
+level: a1
+order: 3
+words:
+  - { word: nest, graphemes: [n, e, s, t], reuse: "little-learners:letter-n/nest" }
+  - { word: hand, graphemes: [h, a, n, d], reuse: "little-learners:my-body-2/hand" }
+  - { word: lamp, graphemes: [l, a, m, p], reuse: "little-learners:my-home-2/lamp" }
+  - { word: gift, graphemes: [g, i, f, t], reuse: "little-learners:letter-g/gift" }
+narration:
+  intro: "Blends at the end! s, t, st. Let's read: nest, hand, lamp, gift."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

@@ -92,6 +92,6 @@ public class LinesAndReviewsTests
             "food", "clothes", "toys", "my-family", "my-home", "opposites", "transport"]);
         units.ShouldAllBe(u => u.Narration.Lines.ContainsKey("locked"));
         units.Where(u => u.Id is not ("letters" or "colors")).ShouldAllBe(u => u.IsPack);
-        CurriculumReader.LoadReviews(curriculum).Select(r => r.Review.Units.Last()).ShouldBe(["shapes", "actions", "toys"]);
+        CurriculumReader.LoadReviews(curriculum).Where(r => r.Track == "little-learners").Select(r => r.Review.Units.Last()).ShouldBe(["shapes", "actions", "toys"]);
     }
 }
