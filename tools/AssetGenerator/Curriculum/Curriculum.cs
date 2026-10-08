@@ -72,6 +72,8 @@ public class BinDef
 
 public class LessonWord
 {
+    /// <summary>What the voice reads for the word clip when the plain spelling is read wrongly ("kyte" for kite). The word itself is shown and used everywhere else.</summary>
+    public string? Say { get; set; }
     /// <summary>Sorting game: the key of the bin this word belongs in.</summary>
     public string? Group { get; set; }
     /// <summary>Memory game: the word it is paired with instead of itself (big and small).</summary>
@@ -229,7 +231,7 @@ public class LessonValidator : AbstractValidator<Lesson>
     /// <summary>The key of the sound the grapheme makes (its letters unless given), or "-" when it is silent.</summary>
     public static string GraphemeSound(string g) => g.Contains(':') ? g[(g.IndexOf(':') + 1)..] : g;
 
-    public static readonly string[] ActivityNames = ["trace", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "trace-small", "animal-sounds", "habitat", "dandoona-says", "sort", "memory", "odd-one-out", "sentence", "count-along", "mix-colors", "build-picture", "turns", "story-feeling", "sound-tap", "word-builder", "read-and-pick", "find-the-word", "sentence-builder", "fill-the-gap"];
+    public static readonly string[] ActivityNames = ["trace", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "trace-small", "animal-sounds", "habitat", "dandoona-says", "sort", "memory", "odd-one-out", "sentence", "count-along", "mix-colors", "build-picture", "turns", "story-feeling", "sound-tap", "word-builder", "read-and-pick", "find-the-word", "sentence-builder", "fill-the-gap", "spell-it"];
     public static readonly string[] Homes = ["house", "farm", "water", "wild"];
     private static readonly string[] Levels = ["pre-a1", "a1", "a2"];
     private static readonly string[] Tracks = ["little-learners", "explorers", "champions"];
@@ -258,6 +260,7 @@ public class LessonValidator : AbstractValidator<Lesson>
             w.RuleFor(i => i.Source).Must(s => s is "openai" or "svg").WithMessage("Word source must be openai or svg.");
             w.RuleFor(i => i).Must(i => i.Plural is null || i.Plural.Trim() == i.Word.Trim().ToLowerInvariant() + "s")
                 .WithMessage("'plural' is the word with -s (cat -> cats).");
+            w.RuleFor(i => i.Say).MaximumLength(40).Must(s => !string.IsNullOrWhiteSpace(s)).When(i => i.Say is not null);
             w.RuleFor(i => i.Says).MaximumLength(60).Must(s => !string.IsNullOrWhiteSpace(s)).When(i => i.Says is not null);
             w.RuleFor(i => i.Sound).MaximumLength(40).Must(s => !string.IsNullOrWhiteSpace(s)).When(i => i.Sound is not null);
             w.RuleFor(i => i.Home).Must(h => Homes.Contains(h!)).When(i => i.Home is not null).WithMessage("Word home must be one of: " + string.Join(", ", Homes));
@@ -277,8 +280,8 @@ public class LessonValidator : AbstractValidator<Lesson>
             .WithMessage("Instructions must be keyed by an activity name or 'hint' and be 1-100 characters.");
 
         RuleFor(x => x.Activities).NotEmpty();
-        RuleFor(x => x).Must(l => !l.Activities.Any(a => a is "sound-tap" or "word-builder") || l.Words.All(w => w.Graphemes is not null))
-            .WithMessage("sound-tap and word-builder need 'graphemes' on every word.");
+        RuleFor(x => x).Must(l => !l.Activities.Any(a => a is "sound-tap" or "word-builder" or "spell-it") || l.Words.All(w => w.Graphemes is not null))
+            .WithMessage("sound-tap, word-builder and spell-it need 'graphemes' on every word.");
         RuleFor(x => x).Must(l => !l.Activities.Contains("read-and-pick") || l.Words.Count >= 3).WithMessage("read-and-pick needs at least 3 words.");
         RuleForEach(x => x.Activities).Must(a => ActivityNames.Contains(a))
             .WithMessage("Unknown activity '{PropertyValue}'. Use: " + string.Join(", ", ActivityNames));

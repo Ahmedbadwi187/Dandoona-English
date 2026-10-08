@@ -7,7 +7,7 @@ ownWordsOnly: true
 words:
   - { word: ball, reuse: letter-b/ball }
   - { word: window, reuse: letter-w/window }
-  - { word: kite, reuse: letter-k/kite }
+  - { word: kite, reuse: letter-k/kite, say: "kyte" }
   - { word: egg, reuse: letter-e/egg }
 narration:
   intro: "Shapes are everywhere! ... A ball. ... A window. ... A kite. ... An egg!"

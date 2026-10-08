@@ -29,10 +29,10 @@
     },
     {
       "unit": "magic-e",
-      "version": 1,
-      "sha256": "c28bb63f74af62415dcba48ea00050f6e829ead94caca5c9fdb23c253281965e",
+      "version": 2,
+      "sha256": "3a762c2ea4f8aa669c4e7fa1cb03654942b921219c47ac87f2feb6438465c590",
       "bytes": 1507935,
-      "manifest": "magic_e/v1/manifest.json",
+      "manifest": "magic_e/v2/manifest.json",
       "lessonIds": [
         "magic-e-a",
         "magic-e-i",
@@ -66,10 +66,10 @@
     },
     {
       "unit": "sight-words-2",
-      "version": 1,
-      "sha256": "245205f81409acb3411c6af75d6c79939a34b5df829dd3cb347e59846baab911",
+      "version": 2,
+      "sha256": "7fed4dab87f6907dafaf4ec8345b61cf47b6612ecfb9a53d7a9a3da6dea484d3",
       "bytes": 1495224,
-      "manifest": "sight_words_2/v1/manifest.json",
+      "manifest": "sight_words_2/v2/manifest.json",
       "lessonIds": [
         "sight-words-2-a",
         "sight-words-2-b",
@@ -78,14 +78,29 @@
     },
     {
       "unit": "my-sentences",
-      "version": 2,
-      "sha256": "4aeb0c88912d4c485e32eb9adc184b6ed61071f6bcf4bb98cbbe0af9f2807a7a",
-      "bytes": 1808232,
-      "manifest": "my_sentences/v2/manifest.json",
+      "version": 3,
+      "sha256": "f795e69379ab244c637f9f0567653af95c8a4c046c0b63b42fd9e134460a7cf9",
+      "bytes": 1809068,
+      "manifest": "my_sentences/v3/manifest.json",
       "lessonIds": [
         "my-sentences-is-are",
         "my-sentences-a-an",
         "my-sentences-mix"
+      ]
+    },
+    {
+      "unit": "word-families",
+      "version": 1,
+      "sha256": "71f06030ecbeae8e0c8f6cdbf6e03d2b9f068f29e6eb1d9a2e81aaf2d329d2aa",
+      "bytes": 2847158,
+      "manifest": "word_families/v1/manifest.json",
+      "lessonIds": [
+        "word-families-at",
+        "word-families-an",
+        "word-families-ig",
+        "word-families-ot",
+        "word-families-ug",
+        "word-families-un"
       ]
     }
   ]

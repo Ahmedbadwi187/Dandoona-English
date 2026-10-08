@@ -1,0 +1,833 @@
+{
+  "schemaVersion": 1,
+  "track": "explorers",
+  "unit": "word-families",
+  "version": 1,
+  "contentHash": "ef9fe441eff473da118d6c97dba2bab0343c36c0ee4e3f54a114a84c9ebbca70",
+  "lessons": [
+    {
+      "id": "word-families-at",
+      "order": 1,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/word_families_at/intro.mp3",
+        "praise": [
+          "audio/explorers/word_families_at/praise_0.mp3",
+          "audio/explorers/word_families_at/praise_1.mp3",
+          "audio/explorers/word_families_at/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/word_families_at/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/word_families_at/instr_sound_tap.mp3",
+          "spell-it": "audio/explorers/word_families_at/instr_spell_it.mp3",
+          "word-builder": "audio/explorers/word_families_at/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "cat",
+          "audio": "audio/explorers/word_families_at/word_cat.mp3",
+          "image": "images/explorers/word_families_at/cat.webp",
+          "graphemes": [
+            "c",
+            "a",
+            "t"
+          ]
+        },
+        {
+          "word": "hat",
+          "audio": "audio/explorers/word_families_at/word_hat.mp3",
+          "image": "images/explorers/word_families_at/hat.svg",
+          "graphemes": [
+            "h",
+            "a",
+            "t"
+          ]
+        },
+        {
+          "word": "rat",
+          "audio": "audio/explorers/word_families_at/word_rat.mp3",
+          "image": "images/explorers/word_families_at/rat.svg",
+          "graphemes": [
+            "r",
+            "a",
+            "t"
+          ]
+        },
+        {
+          "word": "bat",
+          "audio": "audio/explorers/word_families_at/word_bat.mp3",
+          "image": "images/explorers/word_families_at/bat.svg",
+          "graphemes": [
+            "b",
+            "a",
+            "t"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "spell-it",
+        "read-and-pick"
+      ]
+    },
+    {
+      "id": "word-families-an",
+      "order": 2,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/word_families_an/intro.mp3",
+        "praise": [
+          "audio/explorers/word_families_an/praise_0.mp3",
+          "audio/explorers/word_families_an/praise_1.mp3",
+          "audio/explorers/word_families_an/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/word_families_an/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/word_families_an/instr_sound_tap.mp3",
+          "spell-it": "audio/explorers/word_families_an/instr_spell_it.mp3",
+          "word-builder": "audio/explorers/word_families_an/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "van",
+          "audio": "audio/explorers/word_families_an/word_van.mp3",
+          "image": "images/explorers/word_families_an/van.svg",
+          "graphemes": [
+            "v",
+            "a",
+            "n"
+          ]
+        },
+        {
+          "word": "can",
+          "audio": "audio/explorers/word_families_an/word_can.mp3",
+          "image": "images/explorers/word_families_an/can.svg",
+          "graphemes": [
+            "c",
+            "a",
+            "n"
+          ]
+        },
+        {
+          "word": "fan",
+          "audio": "audio/explorers/word_families_an/word_fan.mp3",
+          "image": "images/explorers/word_families_an/fan.svg",
+          "graphemes": [
+            "f",
+            "a",
+            "n"
+          ]
+        },
+        {
+          "word": "pan",
+          "audio": "audio/explorers/word_families_an/word_pan.mp3",
+          "image": "images/explorers/word_families_an/pan.svg",
+          "graphemes": [
+            "p",
+            "a",
+            "n"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "spell-it",
+        "read-and-pick"
+      ]
+    },
+    {
+      "id": "word-families-ig",
+      "order": 3,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/word_families_ig/intro.mp3",
+        "praise": [
+          "audio/explorers/word_families_ig/praise_0.mp3",
+          "audio/explorers/word_families_ig/praise_1.mp3",
+          "audio/explorers/word_families_ig/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/word_families_ig/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/word_families_ig/instr_sound_tap.mp3",
+          "spell-it": "audio/explorers/word_families_ig/instr_spell_it.mp3",
+          "word-builder": "audio/explorers/word_families_ig/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "pig",
+          "audio": "audio/explorers/word_families_ig/word_pig.mp3",
+          "image": "images/explorers/word_families_ig/pig.webp",
+          "graphemes": [
+            "p",
+            "i",
+            "g"
+          ]
+        },
+        {
+          "word": "wig",
+          "audio": "audio/explorers/word_families_ig/word_wig.mp3",
+          "image": "images/explorers/word_families_ig/wig.svg",
+          "graphemes": [
+            "w",
+            "i",
+            "g"
+          ]
+        },
+        {
+          "word": "fig",
+          "audio": "audio/explorers/word_families_ig/word_fig.mp3",
+          "image": "images/explorers/word_families_ig/fig.svg",
+          "graphemes": [
+            "f",
+            "i",
+            "g"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "spell-it",
+        "read-and-pick"
+      ]
+    },
+    {
+      "id": "word-families-ot",
+      "order": 4,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/word_families_ot/intro.mp3",
+        "praise": [
+          "audio/explorers/word_families_ot/praise_0.mp3",
+          "audio/explorers/word_families_ot/praise_1.mp3",
+          "audio/explorers/word_families_ot/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/word_families_ot/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/word_families_ot/instr_sound_tap.mp3",
+          "spell-it": "audio/explorers/word_families_ot/instr_spell_it.mp3",
+          "word-builder": "audio/explorers/word_families_ot/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "pot",
+          "audio": "audio/explorers/word_families_ot/word_pot.mp3",
+          "image": "images/explorers/word_families_ot/pot.svg",
+          "graphemes": [
+            "p",
+            "o",
+            "t"
+          ]
+        },
+        {
+          "word": "dot",
+          "audio": "audio/explorers/word_families_ot/word_dot.mp3",
+          "image": "images/explorers/word_families_ot/dot.svg",
+          "graphemes": [
+            "d",
+            "o",
+            "t"
+          ]
+        },
+        {
+          "word": "hot",
+          "audio": "audio/explorers/word_families_ot/word_hot.mp3",
+          "image": "images/explorers/word_families_ot/hot.svg",
+          "graphemes": [
+            "h",
+            "o",
+            "t"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "spell-it",
+        "read-and-pick"
+      ]
+    },
+    {
+      "id": "word-families-ug",
+      "order": 5,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/word_families_ug/intro.mp3",
+        "praise": [
+          "audio/explorers/word_families_ug/praise_0.mp3",
+          "audio/explorers/word_families_ug/praise_1.mp3",
+          "audio/explorers/word_families_ug/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/word_families_ug/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/word_families_ug/instr_sound_tap.mp3",
+          "spell-it": "audio/explorers/word_families_ug/instr_spell_it.mp3",
+          "word-builder": "audio/explorers/word_families_ug/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "bug",
+          "audio": "audio/explorers/word_families_ug/word_bug.mp3",
+          "image": "images/explorers/word_families_ug/bug.svg",
+          "graphemes": [
+            "b",
+            "u",
+            "g"
+          ]
+        },
+        {
+          "word": "jug",
+          "audio": "audio/explorers/word_families_ug/word_jug.mp3",
+          "image": "images/explorers/word_families_ug/jug.svg",
+          "graphemes": [
+            "j",
+            "u",
+            "g"
+          ]
+        },
+        {
+          "word": "mug",
+          "audio": "audio/explorers/word_families_ug/word_mug.mp3",
+          "image": "images/explorers/word_families_ug/mug.svg",
+          "graphemes": [
+            "m",
+            "u",
+            "g"
+          ]
+        },
+        {
+          "word": "rug",
+          "audio": "audio/explorers/word_families_ug/word_rug.mp3",
+          "image": "images/explorers/word_families_ug/rug.svg",
+          "graphemes": [
+            "r",
+            "u",
+            "g"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "spell-it",
+        "read-and-pick"
+      ]
+    },
+    {
+      "id": "word-families-un",
+      "order": 6,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/word_families_un/intro.mp3",
+        "praise": [
+          "audio/explorers/word_families_un/praise_0.mp3",
+          "audio/explorers/word_families_un/praise_1.mp3",
+          "audio/explorers/word_families_un/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/word_families_un/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/word_families_un/instr_sound_tap.mp3",
+          "spell-it": "audio/explorers/word_families_un/instr_spell_it.mp3",
+          "word-builder": "audio/explorers/word_families_un/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "sun",
+          "audio": "audio/explorers/word_families_un/word_sun.mp3",
+          "image": "images/explorers/word_families_un/sun.svg",
+          "graphemes": [
+            "s",
+            "u",
+            "n"
+          ]
+        },
+        {
+          "word": "bun",
+          "audio": "audio/explorers/word_families_un/word_bun.mp3",
+          "image": "images/explorers/word_families_un/bun.svg",
+          "graphemes": [
+            "b",
+            "u",
+            "n"
+          ]
+        },
+        {
+          "word": "run",
+          "audio": "audio/explorers/word_families_un/word_run.mp3",
+          "image": "images/explorers/word_families_un/run.webp",
+          "graphemes": [
+            "r",
+            "u",
+            "n"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "spell-it",
+        "read-and-pick"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/explorers/word_families_an/instr_read_and_pick.mp3",
+      "sha256": "000956f1b0b13c57c17fc170a0dc36b0c02ad09aec849d206f7f790daa506e8c",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/explorers/word_families_an/instr_sound_tap.mp3",
+      "sha256": "bbb792abf883aa7cd9aa58e14988e9338a2cd86c4fe0c0d2e53081b48d690296",
+      "bytes": 71515
+    },
+    {
+      "path": "audio/explorers/word_families_an/instr_spell_it.mp3",
+      "sha256": "4ac0eebef5578989544b3a91b104f6364ca5c2fef9ae1c02ba6748b94d710573",
+      "bytes": 50199
+    },
+    {
+      "path": "audio/explorers/word_families_an/instr_word_builder.mp3",
+      "sha256": "e9e4ebb33f314321dc8b679198a37c8be2256ffc4d3c4cd4b6ae315d9868e57f",
+      "bytes": 55214
+    },
+    {
+      "path": "audio/explorers/word_families_an/intro.mp3",
+      "sha256": "06b3cdbd40d3fcc082b403090e53a39ca6ece7eda66eb2b66c254ed8a19ffdae",
+      "bytes": 100772
+    },
+    {
+      "path": "audio/explorers/word_families_an/praise_0.mp3",
+      "sha256": "26b56a59926d775db900c9c8e229f2b3cfc0567d9ab7697a0105740fd2c27d8d",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/word_families_an/praise_1.mp3",
+      "sha256": "b5f9b4ec12c5625516d9d4d119ddd1b645ed6eb706ea225ca46f85e46ad54fcf",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/explorers/word_families_an/praise_2.mp3",
+      "sha256": "bb8f6c9e6163fa8b2ce5d0cd8bb4fc4d0f96ec59757b612412dcd339f0d6c758",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/word_families_an/word_can.mp3",
+      "sha256": "7a0cd3250e76250d75a4af197386964da222f2b61f90df5022eadf83e85f6dbe",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/explorers/word_families_an/word_fan.mp3",
+      "sha256": "5ab09c56fce30f7e38c031c9ab10fd03018c9d63e566af922412d5a8932133a8",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/word_families_an/word_pan.mp3",
+      "sha256": "e29acf1a794229bf00d9a110b346faf7f550df681eba297650a814b5977e3095",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/explorers/word_families_an/word_van.mp3",
+      "sha256": "de2d7f25a73f55b771fc879c7d68bd1750e1c2a91c8ea2f96530a30b9136768a",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/word_families_at/instr_read_and_pick.mp3",
+      "sha256": "b3dc803a0726413a0af82e4eee73872176b4f44aede1edbed31e2e4efc0659e9",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/explorers/word_families_at/instr_sound_tap.mp3",
+      "sha256": "cbbfe314f1a6b7b93386c402684f97701ee00182c14b615bc2836ceab0d9b31d",
+      "bytes": 62737
+    },
+    {
+      "path": "audio/explorers/word_families_at/instr_spell_it.mp3",
+      "sha256": "c852f63ba78626f351a7f463e51cecfa6abb65ce365d894e6b507d537863d037",
+      "bytes": 50199
+    },
+    {
+      "path": "audio/explorers/word_families_at/instr_word_builder.mp3",
+      "sha256": "e8150385ca249ecda4f58602e3b3c32fff2b1e0630c08ebb65ecfd686cd6f4ea",
+      "bytes": 51035
+    },
+    {
+      "path": "audio/explorers/word_families_at/intro.mp3",
+      "sha256": "a90b49188b94d99bb35cd16e3554ad51327f0daecee469e7bb6cfc3d280113b0",
+      "bytes": 72351
+    },
+    {
+      "path": "audio/explorers/word_families_at/praise_0.mp3",
+      "sha256": "ba6ee5f2cac786d669741b5f6da413a08d5512bd62064a14c51794345b76f915",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/word_families_at/praise_1.mp3",
+      "sha256": "862605acf7cb154d3984cbd2e3f707d0b015a594db0df638f858f52afdf51eca",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/explorers/word_families_at/praise_2.mp3",
+      "sha256": "bd3f0c2bfb2aadd8d7a7114037aa766bae5cb22972b4c8b9820ae23e6bec053a",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/word_families_at/word_bat.mp3",
+      "sha256": "180651414f31d80b155ced2065b82b1fc695b7eedefbef0f6353097bc398888d",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/word_families_at/word_cat.mp3",
+      "sha256": "a2d6dc142e520b05d0491714445e936c90285a1146d6996ee81ff4f81359f805",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/word_families_at/word_hat.mp3",
+      "sha256": "df853356cd989cb585f7a890b78b997d643a6ff2a0ec643b95fea96e27651998",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/word_families_at/word_rat.mp3",
+      "sha256": "aa3a8a81057947fe91ea20583e53b686faa1b139a6c3040d03a52207d5c250ca",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/word_families_ig/instr_read_and_pick.mp3",
+      "sha256": "df164f1b8b48a313e432247aa7acc92ae3fd3bc2e4024cc0935d6464fcab8019",
+      "bytes": 42675
+    },
+    {
+      "path": "audio/explorers/word_families_ig/instr_sound_tap.mp3",
+      "sha256": "3b7bfa543e90fe5b24456110389348823cd1d56ea8ea6370a511ba1fe4682cc3",
+      "bytes": 66499
+    },
+    {
+      "path": "audio/explorers/word_families_ig/instr_spell_it.mp3",
+      "sha256": "2d1be8b31937fac3ac56048c640d39ce9b8728ded623e4797414a9333cce3493",
+      "bytes": 44765
+    },
+    {
+      "path": "audio/explorers/word_families_ig/instr_word_builder.mp3",
+      "sha256": "cffe59e74f03c28b5075f0cff62c6fb37f4bde1faa9d3c926bcc5d2b1ed1be1e",
+      "bytes": 55214
+    },
+    {
+      "path": "audio/explorers/word_families_ig/intro.mp3",
+      "sha256": "8384146838b49ad6581048c027576e943d7b9decb665bde96b90180988ddc70a",
+      "bytes": 91577
+    },
+    {
+      "path": "audio/explorers/word_families_ig/praise_0.mp3",
+      "sha256": "721734e95f5ee81cde393eae77e8a0bc1e76275037a1df1cc085c5be2e4d84a9",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/word_families_ig/praise_1.mp3",
+      "sha256": "931f3d27deee3e8d6bb79a9d131a421739af873e9663312320df5811368add1a",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/explorers/word_families_ig/praise_2.mp3",
+      "sha256": "49868f8c1a96ec7bac19e3e7179848d8d0e0b88f62f3e777a0ba42be144a55aa",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/word_families_ig/word_fig.mp3",
+      "sha256": "2637bd37a8078c4281c8240c247ea0d71ef4a394c7d57926f89559f60a3c0490",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/word_families_ig/word_pig.mp3",
+      "sha256": "1a04620be81c150a1fe2a4acc1034a40e3bd8bd27eecd3fd57cffd0a8b9d9b93",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/word_families_ig/word_wig.mp3",
+      "sha256": "383a63e4f4e7e4d64c5427e8cd3e6102a7a09d507299d309dda118185dfdb163",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/word_families_ot/instr_read_and_pick.mp3",
+      "sha256": "e5dbad9b0d12087e0435a0c4443056f8b9537dd7c6c4ad45f3d4c62c35933b51",
+      "bytes": 47691
+    },
+    {
+      "path": "audio/explorers/word_families_ot/instr_sound_tap.mp3",
+      "sha256": "42a560eb5870ff681e8ae3314b3fecd93a8460c5f7ef701006d2e3d4c35f9438",
+      "bytes": 71515
+    },
+    {
+      "path": "audio/explorers/word_families_ot/instr_spell_it.mp3",
+      "sha256": "c307181c26ac9908697dbb1c07aa4f0f33577c15fcd5ac36cd1f62c7638ef45a",
+      "bytes": 51035
+    },
+    {
+      "path": "audio/explorers/word_families_ot/instr_word_builder.mp3",
+      "sha256": "2831c5ac5d86edc069304a5d97b0b5152659cd0c7b102755f6decc2d7698d02f",
+      "bytes": 56886
+    },
+    {
+      "path": "audio/explorers/word_families_ot/intro.mp3",
+      "sha256": "6c503efd6def06eafaa4954dbfacbfaf99aa92c79488745c389f287be6c9c245",
+      "bytes": 93248
+    },
+    {
+      "path": "audio/explorers/word_families_ot/praise_0.mp3",
+      "sha256": "0fbc3958be813e21a9c482c084f211f4b184549d901fa8acaf18f61816f061d2",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/word_families_ot/praise_1.mp3",
+      "sha256": "b92ef031876fc1e01f12fc3b29315e9c59cb9ec44a5087b195db49954b33af6c",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/explorers/word_families_ot/praise_2.mp3",
+      "sha256": "37e62404551524d966b67705a554f664e1e4123c75022aee85f8599b6fefbd46",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/word_families_ot/word_dot.mp3",
+      "sha256": "c2ec903aa9b8e9331362df32940f489892b48743afa1ad943b8ed09baa0d7b98",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/word_families_ot/word_hot.mp3",
+      "sha256": "2bc14ca7a2e63f1a11c0a995050dd5aa73b0d2f9cd89ef1547d7549553fc9636",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/word_families_ot/word_pot.mp3",
+      "sha256": "dd0c731ec575114995526103195a6915c2a7022bb9a71a4ecdbdc08419fd6190",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/word_families_ug/instr_read_and_pick.mp3",
+      "sha256": "9d0cd0684e1c46d76e139611c88a18f43888fbc342b582522eb6a57b639c0f73",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/explorers/word_families_ug/instr_sound_tap.mp3",
+      "sha256": "49b2d6bb07526033d46a7c89da2bc08e04d1a516fd16cf1ee2af1e3aef74ae49",
+      "bytes": 64827
+    },
+    {
+      "path": "audio/explorers/word_families_ug/instr_spell_it.mp3",
+      "sha256": "269b98f496b3121e63213b5b82994860243616d847f032d254618efd1f3ecc43",
+      "bytes": 47691
+    },
+    {
+      "path": "audio/explorers/word_families_ug/instr_word_builder.mp3",
+      "sha256": "0666f0537afb239599399a91457e8c7ed6612d1869e61f7daf956ff23330cfe7",
+      "bytes": 58976
+    },
+    {
+      "path": "audio/explorers/word_families_ug/intro.mp3",
+      "sha256": "05cf5f875a06113f65aec78561b9d79a6d646edbf1d42228ea30ee5e04a6dbde",
+      "bytes": 76112
+    },
+    {
+      "path": "audio/explorers/word_families_ug/praise_0.mp3",
+      "sha256": "47948d41b6d953fc1b732f579df00469945b6ee8c4c972ed4fa39fd832497e19",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/word_families_ug/praise_1.mp3",
+      "sha256": "d36ece611f1a78e8e67153eccfdcdca743f898a9b342207b2ae3f267989bddbf",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/explorers/word_families_ug/praise_2.mp3",
+      "sha256": "b53f40b9c6fe8db3acee81c619ecfc8ccf8146a623c9cd027c32756bb5f82d63",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/word_families_ug/word_bug.mp3",
+      "sha256": "9f6bcd1e827bd4efaf15ff366b2c78c9884452b604517e42bc13b8817fd70735",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/word_families_ug/word_jug.mp3",
+      "sha256": "dc48ed14fd80c2f5c4511da777b3dfd5540e2be0cb31e00f4506d124148769aa",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/explorers/word_families_ug/word_mug.mp3",
+      "sha256": "c5dc1f251aacfe800a537db54d047d941ec323387b9be22a767f3a3813aa8e2b",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/word_families_ug/word_rug.mp3",
+      "sha256": "b905d6f07c8126d95027751685c0c07cceb37368c0ad6c032bd2898c6465a494",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/word_families_un/instr_read_and_pick.mp3",
+      "sha256": "e264fd5847fbf3d75721fee2c2f2499e48af98b7b28eb0495f0e8490bcec030e",
+      "bytes": 46437
+    },
+    {
+      "path": "audio/explorers/word_families_un/instr_sound_tap.mp3",
+      "sha256": "664ef443eb687d051ab7673a55aa3de1444258fbadaa4421476185102318c60d",
+      "bytes": 77784
+    },
+    {
+      "path": "audio/explorers/word_families_un/instr_spell_it.mp3",
+      "sha256": "0ae30973980898c575be56627b9514bc6fd4bb3f983e5d59d789c0ac9e58e248",
+      "bytes": 47691
+    },
+    {
+      "path": "audio/explorers/word_families_un/instr_word_builder.mp3",
+      "sha256": "203979cadf7e955e455d16d7e712bc6fe14fbd3ff72441a4379b1d7141ddad26",
+      "bytes": 58976
+    },
+    {
+      "path": "audio/explorers/word_families_un/intro.mp3",
+      "sha256": "a0f58a504394f9c30bfd560771a231afe8bbac6e26b26a41651fe5e8eeb752fe",
+      "bytes": 91159
+    },
+    {
+      "path": "audio/explorers/word_families_un/praise_0.mp3",
+      "sha256": "901d252f136135a69aabb2bf4728348af1a17ca73a6628817a559ec418e60217",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/word_families_un/praise_1.mp3",
+      "sha256": "b3c8be1d82098abe2b403f1583ddd44557dcde5bbe0bebc62f3457465be142ee",
+      "bytes": 26375
+    },
+    {
+      "path": "audio/explorers/word_families_un/praise_2.mp3",
+      "sha256": "cab4e6f4248483fbcb892959731f949a8e2d576c215dc97ca0edbf91e81d6799",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/word_families_un/word_bun.mp3",
+      "sha256": "795d1ccf4c34bd985760c3b3104af2ecc0bb0155b04b2a972d58f59d0aa84044",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/word_families_un/word_run.mp3",
+      "sha256": "f6b3afd9a09f5fbdc62fd9c799c41fa1d6f4a9610342b23cccb4fe1461563be4",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/explorers/word_families_un/word_sun.mp3",
+      "sha256": "fbdfa6fe4a48e01a163ec9e79220a950bb852d81f1a92a2a94285756932e12f8",
+      "bytes": 15090
+    },
+    {
+      "path": "images/explorers/word_families_an/can.svg",
+      "sha256": "e08074b0f00e915d951f7f23e3f58cba010e300565bbd9fa7695ebd0bdaaf366",
+      "bytes": 635
+    },
+    {
+      "path": "images/explorers/word_families_an/fan.svg",
+      "sha256": "602e31eebbf3543b457247bd210f2fc7e88cbba0b829275e2ed001d024a3fcf8",
+      "bytes": 567
+    },
+    {
+      "path": "images/explorers/word_families_an/pan.svg",
+      "sha256": "c208a9a528d584fcc2b0233a72fc7c426d16346907e05f3082d4814fbd19d91f",
+      "bytes": 623
+    },
+    {
+      "path": "images/explorers/word_families_an/van.svg",
+      "sha256": "9481cd60da3f17c589b4fcc0ce39451fe22518fbc5af4d2018c5652a7516b482",
+      "bytes": 715
+    },
+    {
+      "path": "images/explorers/word_families_at/bat.svg",
+      "sha256": "8fded1f73dbe33f2737505824c0d57f5b0f6f0c613c449699a40c7384317fc8f",
+      "bytes": 593
+    },
+    {
+      "path": "images/explorers/word_families_at/cat.webp",
+      "sha256": "b526f4ddbfe8c66fbb063b1b79f324afb77977dd4e996d4fc1abb3c7bb3197d2",
+      "bytes": 66930
+    },
+    {
+      "path": "images/explorers/word_families_at/hat.svg",
+      "sha256": "7bf50e0c21f8630eb2cfa0bd6a5acb4ade329cab12c45cfacb04586dd8f2a8d8",
+      "bytes": 526
+    },
+    {
+      "path": "images/explorers/word_families_at/rat.svg",
+      "sha256": "a220b908050aef099f1eb778de9aeeb12b3f5e8936ce7ed53fc36942b6244ffa",
+      "bytes": 810
+    },
+    {
+      "path": "images/explorers/word_families_ig/fig.svg",
+      "sha256": "6fd4407e27bf02d6693ef1534d0097ae82f5d7af66de6be7685ec75195b21a3d",
+      "bytes": 794
+    },
+    {
+      "path": "images/explorers/word_families_ig/pig.webp",
+      "sha256": "d9beed11e22450131f616737ed2ef693ef61a370e13e1cf1a7325b611d822524",
+      "bytes": 59762
+    },
+    {
+      "path": "images/explorers/word_families_ig/wig.svg",
+      "sha256": "ad7d6ac95504b40d76914a962c538f951efe8b54f73ff9cd12fc09099c364da7",
+      "bytes": 796
+    },
+    {
+      "path": "images/explorers/word_families_ot/dot.svg",
+      "sha256": "9c3f3ac1812f02e1ead980a530554c8e8feabd8ae1399f6fa6dadb945b847ab8",
+      "bytes": 432
+    },
+    {
+      "path": "images/explorers/word_families_ot/hot.svg",
+      "sha256": "7e24dd0553807fe1214c24f8c7954d3bb59eefe86f6ce0bd8f48d888565e4f70",
+      "bytes": 817
+    },
+    {
+      "path": "images/explorers/word_families_ot/pot.svg",
+      "sha256": "850d139169f5c64b601e7f45c81215450f7b0244cef0efcfc694d03f7128d23d",
+      "bytes": 605
+    },
+    {
+      "path": "images/explorers/word_families_ug/bug.svg",
+      "sha256": "f0cd2bd8bf5c3660811b289d28935b6503b1d20290e26c4141ffd9da5304777f",
+      "bytes": 774
+    },
+    {
+      "path": "images/explorers/word_families_ug/jug.svg",
+      "sha256": "8161db97a62175965bc3d5ed3e35273896c636edf9d8bff7528eb72ae00d5552",
+      "bytes": 696
+    },
+    {
+      "path": "images/explorers/word_families_ug/mug.svg",
+      "sha256": "78ed689f6365854b33bac194c975d6d3ce3b043fafd0ccb118bc22d269419119",
+      "bytes": 704
+    },
+    {
+      "path": "images/explorers/word_families_ug/rug.svg",
+      "sha256": "a981a377b9f602cfe63894660e544e75c48e7098c5f72275711cf6c7d5aa9f3a",
+      "bytes": 645
+    },
+    {
+      "path": "images/explorers/word_families_un/bun.svg",
+      "sha256": "14985904a6376ea8c6071b3ed8d6953f672dc32ff6589e582c33592aa164a524",
+      "bytes": 714
+    },
+    {
+      "path": "images/explorers/word_families_un/run.webp",
+      "sha256": "2a595045f68fc38d3a5751553d3ab81d1bf8745e2f0646d08d2dc510637d1bb0",
+      "bytes": 114392
+    },
+    {
+      "path": "images/explorers/word_families_un/sun.svg",
+      "sha256": "7e24dd0553807fe1214c24f8c7954d3bb59eefe86f6ce0bd8f48d888565e4f70",
+      "bytes": 817
+    }
+  ]
+}

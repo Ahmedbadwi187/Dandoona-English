@@ -5,7 +5,7 @@ track: explorers
 level: a1
 order: 1
 words:
-  - { word: kite, reuse: "little-learners:letter-k/kite" }
+  - { word: kite, reuse: "little-learners:letter-k/kite", say: "kyte" }
   - { word: fish, reuse: "little-learners:letter-f/fish" }
   - { word: shop, reuse: "digraphs-sh/shop" }
   - { word: boat, reuse: "little-learners:transport-2/boat" }

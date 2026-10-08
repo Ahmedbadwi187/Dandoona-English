@@ -39,6 +39,7 @@ phonemes:
   - { key: r, ipa: "/r/", say: "rrr" }
   - { key: v, ipa: "/v/", say: "vvv" }
   - { key: z, ipa: "/z/", say: "zzz" }
+  - { key: w, ipa: "/w/", say: "wuh" }
   - { key: sh, ipa: "/ʃ/", say: "shh" }
   - { key: ch, ipa: "/tʃ/", say: "chuh" }
   - { key: th, ipa: "/θ/", say: "thh" }
@@ -203,6 +204,15 @@ units:
     title: { en: "Word Families", ar: "عائلات الكلمات" }
     icon: word-families
     color: purple
+    chest: { accessory: rainbow-band, stickers: [rat, pig, bug, sun] }
+    # Words that end the same sound alike: -at, -an, -ig, -ot, -ug, -un.
+    story:
+      pages:
+        - { text: "The rat has a hat.", words: [rat, hat], pose: waving }
+        - { text: "The pig has a wig.", words: [pig, wig], pose: jumping }
+        - { text: "A bug is on the rug.", words: [bug, rug], pose: pointing-up }
+        - { text: "I run in the sun.", words: [sun], pose: clapping }
+        - { text: "A hot bun in a pan! Yum!", words: [bun, pan], pose: thinking }
     narration: { title: "Word Families", welcome: "Words in a family sound alike!", celebration: "You know the word families!", lines: { locked: "Finish Word Families first!" } }
 
   - id: everyday-english

@@ -5,7 +5,7 @@ track: explorers
 level: a1
 order: 2
 words:
-  - { word: kite, graphemes: ["k:c", "i:ie", t, "e:-"], reuse: "little-learners:letter-k/kite" }
+  - { word: kite, graphemes: ["k:c", "i:ie", t, "e:-"], reuse: "little-learners:letter-k/kite", say: "kyte" }
   - { word: bike, graphemes: [b, "i:ie", "k:c", "e:-"], reuse: "little-learners:transport-2/bike" }
   - { word: five, graphemes: [f, "i:ie", v, "e:-"], reuse: "little-learners:number-4-6/five" }
   - { word: nine, graphemes: [n, "i:ie", n, "e:-"], reuse: "little-learners:number-7-10/nine" }

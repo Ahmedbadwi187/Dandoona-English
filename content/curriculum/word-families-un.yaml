@@ -1,0 +1,19 @@
+# Word Families: words that end the same sound alike. Everyday words (animals, food, school, home).
+id: word-families-un
+unit: word-families
+track: explorers
+level: a1
+order: 6
+words:
+  - { word: sun, graphemes: [s, u, n], reuse: "little-learners:letter-s/sun" }
+  - { word: bun, graphemes: [b, u, n], source: svg, imagePrompt: "a bread bun" }
+  - { word: run, graphemes: [r, u, n], reuse: "little-learners:actions-2/run" }
+narration:
+  intro: "Family -un: sun, bun, run. They all end the same!"
+  praise: ["Great reading!", "You spelled it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    spell-it: "Listen. Then spell the word with the letters!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, spell-it, read-and-pick]

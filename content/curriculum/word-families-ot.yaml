@@ -1,0 +1,19 @@
+# Word Families: words that end the same sound alike. Everyday words (animals, food, school, home).
+id: word-families-ot
+unit: word-families
+track: explorers
+level: a1
+order: 4
+words:
+  - { word: pot, graphemes: [p, o, t], reuse: "sound-builders-o/pot" }
+  - { word: dot, graphemes: [d, o, t], source: svg, imagePrompt: "a red dot on paper" }
+  - { word: hot, graphemes: [h, o, t], reuse: "little-learners:letter-s/sun" }
+narration:
+  intro: "Family -ot: pot, dot, hot. They all end the same!"
+  praise: ["Great reading!", "You spelled it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    spell-it: "Listen. Then spell the word with the letters!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, spell-it, read-and-pick]

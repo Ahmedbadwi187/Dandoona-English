@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "little-learners",
-  "generatedAt": "2026-10-08T16:25:42.751156Z",
+  "generatedAt": "2026-10-08T17:06:05.5871899Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -1992,10 +1992,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 5,
-        "sha256": "6d60a20f7ffc0a06d346b0a9a4f923a1ebd884326eb6030fa6a2139ceeda0005",
-        "bytes": 1834537,
-        "manifest": "shapes/v5/manifest.json",
+        "version": 6,
+        "sha256": "e1508790c68480a1248864263633fa1622944ccd265234ec589c94c5e22b11fd",
+        "bytes": 1836627,
+        "manifest": "shapes/v6/manifest.json",
         "lessonIds": [
           "shapes-1",
           "shapes-2",
@@ -2615,10 +2615,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 5,
-        "sha256": "2c89c485da96dcae942e5b205c8babeb8f78f24de819755b1f9ea9c37d901428",
+        "version": 6,
+        "sha256": "cbf90bed05cdc441c22232d3d6ebb647ed79975385274401536362b4735ab87b",
         "bytes": 1487449,
-        "manifest": "toys/v5/manifest.json",
+        "manifest": "toys/v6/manifest.json",
         "lessonIds": [
           "toys-1",
           "toys-2",

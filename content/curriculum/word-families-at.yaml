@@ -1,0 +1,20 @@
+# Word Families: words that end the same sound alike. Everyday words (animals, food, school, home).
+id: word-families-at
+unit: word-families
+track: explorers
+level: a1
+order: 1
+words:
+  - { word: cat, graphemes: [c, a, t], reuse: "little-learners:letter-c/cat" }
+  - { word: hat, graphemes: [h, a, t], reuse: "little-learners:letter-h/hat" }
+  - { word: rat, graphemes: [r, a, t], source: svg, imagePrompt: "a small gray rat" }
+  - { word: bat, graphemes: [b, a, t], source: svg, imagePrompt: "a baseball bat and ball" }
+narration:
+  intro: "Family -at: cat, hat, rat, bat. They all end the same!"
+  praise: ["Great reading!", "You spelled it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    spell-it: "Listen. Then spell the word with the letters!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, spell-it, read-and-pick]

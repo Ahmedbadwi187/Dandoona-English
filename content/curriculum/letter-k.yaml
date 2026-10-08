@@ -5,7 +5,7 @@ level: pre-a1
 letter: K
 phoneme: "/k/"
 words:
-  - { word: kite, imagePrompt: "a diamond kite with a tail", source: svg }
+  - { word: kite, imagePrompt: "a diamond kite with a tail", source: svg, say: "kyte" }
   - { word: key, imagePrompt: "a golden key", source: svg }
 narration:
   intro: "This is the letter K. K says kuh, kuh, kite!"

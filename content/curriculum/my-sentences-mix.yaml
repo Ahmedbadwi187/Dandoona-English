@@ -6,7 +6,7 @@ level: a1
 order: 3
 words:
   - { word: ship, reuse: "digraphs-sh/ship" }
-  - { word: kite, reuse: "little-learners:letter-k/kite" }
+  - { word: kite, reuse: "little-learners:letter-k/kite", say: "kyte" }
   - { word: frog, reuse: "little-learners:letter-f/frog" }
   - { word: egg, reuse: "little-learners:letter-e/egg" }
   - { word: fish, reuse: "little-learners:letter-f/fish" }

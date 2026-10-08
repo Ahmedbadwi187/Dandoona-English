@@ -6,7 +6,7 @@ order: 1
 words:
   - { word: ball, reuse: letter-b/ball }
   - { word: car, reuse: letter-c/car }
-  - { word: kite, reuse: letter-k/kite }
+  - { word: kite, reuse: letter-k/kite, say: "kyte" }
 narration:
   intro: "Time to play! ... A ball. ... A car. ... A kite!"
   phrases: { ball: "I play with a ball.", car: "I play with a car.", kite: "I play with a kite." }

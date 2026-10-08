@@ -287,13 +287,16 @@ List<String> builderTiles(LessonWord word, Lesson lesson, Random random) {
 /// Word Builder: hear the word and see its picture, then put the letter tiles in order into the empty slots (tap a tile
 /// or drag it). A tile that does not come next shakes and says its sound; the word is said when it is built.
 class WordBuilderActivity extends ConsumerStatefulWidget {
-  const WordBuilderActivity({super.key, required this.lesson, required this.track, required this.onFinished, this.random, this.nextDelay = const Duration(milliseconds: 1200)});
+  const WordBuilderActivity({super.key, required this.lesson, required this.track, required this.onFinished, this.random, this.nextDelay = const Duration(milliseconds: 1200), this.spell = false});
 
   final Lesson lesson;
   final TrackContent track;
   final ValueChanged<ActivityResult> onFinished;
   final Random? random;
   final Duration nextDelay;
+
+  /// Spell It: the same game with the picture hidden (only the word is heard); the picture appears when the word is built.
+  final bool spell;
 
   @override
   ConsumerState<WordBuilderActivity> createState() => _WordBuilderActivityState();
@@ -313,7 +316,7 @@ class _WordBuilderActivityState extends ConsumerState<WordBuilderActivity> with 
   bool _done = false;
 
   @override
-  String get activity => 'word-builder';
+  String get activity => widget.spell ? 'spell-it' : 'word-builder';
   @override
   Lesson get lesson => widget.lesson;
 
@@ -390,7 +393,17 @@ class _WordBuilderActivityState extends ConsumerState<WordBuilderActivity> with 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                AssetPicture(word.image, size: 170, semanticLabel: word.word),
+                if (widget.spell && !_done)
+                  Container(
+                    key: const Key('spell-hidden'),
+                    width: 170,
+                    height: 170,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(color: Palette.cream, borderRadius: BorderRadius.circular(24), border: Border.all(color: Palette.tan, width: 5)),
+                    child: const Icon(Icons.help_outline_rounded, size: 90, color: Palette.tan),
+                  )
+                else
+                  AssetPicture(word.image, size: 170, semanticLabel: word.word),
                 const SizedBox(width: 8),
                 BigTap(
                   key: const Key('builder-hear'),

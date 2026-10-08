@@ -182,6 +182,7 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
                     'color-the-object' => ColorTheObjectActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   // Explorers phonics
                   'sound-tap' => SoundTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
+                  'spell-it' => WordBuilderActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished, spell: true),
                   'word-builder' => WordBuilderActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   'read-and-pick' => ReadAndPickActivity(lesson: widget.lesson, onFinished: _finished),
                   // Explorers sight words and sentences

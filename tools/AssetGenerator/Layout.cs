@@ -117,7 +117,7 @@ public static class LessonPlan
         var items = new List<AudioItem> { new("intro", l.Narration.Intro.Trim(), false) };
         if (!string.IsNullOrWhiteSpace(l.Phoneme)) items.Add(new("phoneme", l.Phoneme.Trim(), true));
         for (var i = 0; i < l.Narration.Praise.Count; i++) items.Add(new($"praise-{i}", l.Narration.Praise[i].Trim(), false));
-        foreach (var w in l.Words) items.Add(new($"word-{Slug(w.Word)}", w.Word.Trim(), false));
+        foreach (var w in l.Words) items.Add(new($"word-{Slug(w.Word)}", (w.Say ?? w.Word).Trim(), false));
         if (!string.IsNullOrWhiteSpace(l.Narration.ColorName)) items.Add(new("color-name", l.Narration.ColorName.Trim(), false));
         foreach (var w in l.Words)
         {

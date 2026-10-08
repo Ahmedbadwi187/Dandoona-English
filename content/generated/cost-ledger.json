@@ -14761,5 +14761,572 @@
     "what": "transport-1/word-car (3 chars)",
     "usd": 0.00024,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T16:59:53.2586609Z",
+    "service": "ElevenLabs",
+    "what": "word-families-at/intro (54 chars)",
+    "usd": 0.00432,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T16:59:54.219709Z",
+    "service": "ElevenLabs",
+    "what": "word-families-at/praise-0 (14 chars)",
+    "usd": 0.00112,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T16:59:55.2100074Z",
+    "service": "ElevenLabs",
+    "what": "word-families-at/praise-1 (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T16:59:56.1980202Z",
+    "service": "ElevenLabs",
+    "what": "word-families-at/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T16:59:57.1475892Z",
+    "service": "ElevenLabs",
+    "what": "word-families-at/word-cat (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T16:59:58.0723522Z",
+    "service": "ElevenLabs",
+    "what": "word-families-at/word-hat (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T16:59:58.9911556Z",
+    "service": "ElevenLabs",
+    "what": "word-families-at/word-rat (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T16:59:59.940994Z",
+    "service": "ElevenLabs",
+    "what": "word-families-at/word-bat (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:00.9815046Z",
+    "service": "ElevenLabs",
+    "what": "word-families-at/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:02.217311Z",
+    "service": "ElevenLabs",
+    "what": "word-families-at/instr-sound-tap (51 chars)",
+    "usd": 0.00408,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:03.3303601Z",
+    "service": "ElevenLabs",
+    "what": "word-families-at/instr-spell-it (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:04.4315028Z",
+    "service": "ElevenLabs",
+    "what": "word-families-at/instr-word-builder (47 chars)",
+    "usd": 0.00376,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:05.9010995Z",
+    "service": "ElevenLabs",
+    "what": "word-families-an/intro (54 chars)",
+    "usd": 0.00432,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:06.9649973Z",
+    "service": "ElevenLabs",
+    "what": "word-families-an/praise-0 (14 chars)",
+    "usd": 0.00112,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:07.940349Z",
+    "service": "ElevenLabs",
+    "what": "word-families-an/praise-1 (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:08.8583309Z",
+    "service": "ElevenLabs",
+    "what": "word-families-an/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:09.8472638Z",
+    "service": "ElevenLabs",
+    "what": "word-families-an/word-van (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:10.8630493Z",
+    "service": "ElevenLabs",
+    "what": "word-families-an/word-can (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:11.7721105Z",
+    "service": "ElevenLabs",
+    "what": "word-families-an/word-fan (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:12.7457394Z",
+    "service": "ElevenLabs",
+    "what": "word-families-an/word-pan (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:13.8368889Z",
+    "service": "ElevenLabs",
+    "what": "word-families-an/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:15.0065548Z",
+    "service": "ElevenLabs",
+    "what": "word-families-an/instr-sound-tap (51 chars)",
+    "usd": 0.00408,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:16.080445Z",
+    "service": "ElevenLabs",
+    "what": "word-families-an/instr-spell-it (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:17.1927243Z",
+    "service": "ElevenLabs",
+    "what": "word-families-an/instr-word-builder (47 chars)",
+    "usd": 0.00376,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:18.5920124Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ig/intro (49 chars)",
+    "usd": 0.00392,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:19.627026Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ig/praise-0 (14 chars)",
+    "usd": 0.00112,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:20.6340009Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ig/praise-1 (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:21.5624175Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ig/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:22.5810472Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ig/word-pig (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:23.5237499Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ig/word-wig (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:24.488589Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ig/word-fig (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:25.5560275Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ig/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:26.699142Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ig/instr-sound-tap (51 chars)",
+    "usd": 0.00408,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:27.7768716Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ig/instr-spell-it (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:28.9309335Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ig/instr-word-builder (47 chars)",
+    "usd": 0.00376,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:30.1996973Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ot/intro (49 chars)",
+    "usd": 0.00392,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:31.2081691Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ot/praise-0 (14 chars)",
+    "usd": 0.00112,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:32.1829576Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ot/praise-1 (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:33.1329731Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ot/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:34.034608Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ot/word-pot (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:34.999302Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ot/word-dot (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:35.9913141Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ot/word-hot (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:37.120184Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ot/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:38.3542413Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ot/instr-sound-tap (51 chars)",
+    "usd": 0.00408,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:39.4743956Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ot/instr-spell-it (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:40.6098738Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ot/instr-word-builder (47 chars)",
+    "usd": 0.00376,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:41.8247558Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ug/intro (54 chars)",
+    "usd": 0.00432,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:42.782883Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ug/praise-0 (14 chars)",
+    "usd": 0.00112,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:43.7433626Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ug/praise-1 (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:44.6908559Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ug/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:45.6873049Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ug/word-bug (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:46.6170769Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ug/word-jug (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:47.5341192Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ug/word-mug (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:48.5669156Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ug/word-rug (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:49.6487033Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ug/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:50.7937897Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ug/instr-sound-tap (51 chars)",
+    "usd": 0.00408,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:51.8600966Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ug/instr-spell-it (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:53.0945386Z",
+    "service": "ElevenLabs",
+    "what": "word-families-ug/instr-word-builder (47 chars)",
+    "usd": 0.00376,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:54.3867505Z",
+    "service": "ElevenLabs",
+    "what": "word-families-un/intro (49 chars)",
+    "usd": 0.00392,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:55.3218812Z",
+    "service": "ElevenLabs",
+    "what": "word-families-un/praise-0 (14 chars)",
+    "usd": 0.00112,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:56.42027Z",
+    "service": "ElevenLabs",
+    "what": "word-families-un/praise-1 (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:57.3528867Z",
+    "service": "ElevenLabs",
+    "what": "word-families-un/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:58.3243138Z",
+    "service": "ElevenLabs",
+    "what": "word-families-un/word-sun (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:00:59.2914546Z",
+    "service": "ElevenLabs",
+    "what": "word-families-un/word-bun (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:01:00.2160128Z",
+    "service": "ElevenLabs",
+    "what": "word-families-un/word-run (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:01:01.2604389Z",
+    "service": "ElevenLabs",
+    "what": "word-families-un/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:01:03.214039Z",
+    "service": "ElevenLabs",
+    "what": "word-families-un/instr-sound-tap (51 chars)",
+    "usd": 0.00408,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:01:04.2693895Z",
+    "service": "ElevenLabs",
+    "what": "word-families-un/instr-spell-it (45 chars)",
+    "usd": 0.00360,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:01:05.4154592Z",
+    "service": "ElevenLabs",
+    "what": "word-families-un/instr-word-builder (47 chars)",
+    "usd": 0.00376,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:01:06.4039801Z",
+    "service": "ElevenLabs",
+    "what": "unit-word-families/instr-story-1 (18 chars)",
+    "usd": 0.00144,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:01:07.3748274Z",
+    "service": "ElevenLabs",
+    "what": "unit-word-families/instr-story-2 (18 chars)",
+    "usd": 0.00144,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:01:08.4056817Z",
+    "service": "ElevenLabs",
+    "what": "unit-word-families/instr-story-3 (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:01:09.3719137Z",
+    "service": "ElevenLabs",
+    "what": "unit-word-families/instr-story-4 (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:01:10.4050126Z",
+    "service": "ElevenLabs",
+    "what": "unit-word-families/instr-story-5 (24 chars)",
+    "usd": 0.00192,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:01:11.3461147Z",
+    "service": "ElevenLabs",
+    "what": "phonemes/phoneme-w (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:05:15.7460282Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/word-kite (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:05:22.5802807Z",
+    "service": "ElevenLabs",
+    "what": "magic-e-i/word-kite (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:05:29.2525461Z",
+    "service": "ElevenLabs",
+    "what": "my-sentences-mix/word-kite (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:05:35.6177998Z",
+    "service": "ElevenLabs",
+    "what": "shapes-4/word-kite (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:05:41.926566Z",
+    "service": "ElevenLabs",
+    "what": "sight-words-2-a/word-kite (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:05:48.1597193Z",
+    "service": "ElevenLabs",
+    "what": "toys-1/word-kite (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
   }
 ]

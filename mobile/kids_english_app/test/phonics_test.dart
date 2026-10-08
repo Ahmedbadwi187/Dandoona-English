@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kids_english_app/core/widgets.dart';
 import 'package:kids_english_app/features/activities/activity_logic.dart';
 import 'package:kids_english_app/features/activities/hand_demo.dart';
 import 'package:kids_english_app/features/activities/phonics_activities.dart';
@@ -175,6 +176,32 @@ void main() {
       await t.pump(const Duration(milliseconds: 300));
       expect(find.byKey(const Key('demo-hand')), findsOneWidget);
       await t.pumpAndSettle();
+    });
+  });
+
+  group('Spell It', () {
+    testWidgets('the same game with the picture hidden: only the word is heard; the picture shows when the word is built', (t) async {
+      final (audio, results, _) = await _game(t, (done) => WordBuilderActivity(lesson: _lesson(), track: _track(), onFinished: done, random: Random(3), spell: true), seen: 'spell-it');
+      expect(audio.played, contains('asset:audio/x/word_cat.mp3'));
+      expect(find.byKey(const Key('spell-hidden')), findsOneWidget);
+      expect(find.byType(AssetPicture), findsNothing);
+      final word = _lesson().words.firstWhere((w) => 'asset:${w.audio}' == audio.played.last);
+      final tiles = [for (var i = 0; i < 5; i++) t.widget<GraphemeTile>(find.descendant(of: find.byKey(Key('builder-tile-$i')), matching: find.byType(GraphemeTile))).text];
+      for (final g in word.word.split('')) {
+        await _tap(t, 'builder-tile-${tiles.indexOf(g)}');
+      }
+      await t.pump(const Duration(milliseconds: 600));
+      expect(find.byKey(const Key('spell-hidden')), findsNothing); // built: the picture is shown
+      expect(find.byType(AssetPicture), findsOneWidget);
+      await t.pump(const Duration(seconds: 2));
+      await t.pumpAndSettle();
+      expect(results, isEmpty); // two more words
+    });
+
+    testWidgets('the demo of Spell It is its own (seen once per child, by its own name)', (t) async {
+      final (_, _, c) = await _game(t, (done) => WordBuilderActivity(lesson: _lesson(), track: _track(), onFinished: done, random: Random(3), spell: true));
+      expect(find.byType(HandDemo), findsOneWidget);
+      expect(c.read(profilesProvider), isNotEmpty);
     });
   });
 

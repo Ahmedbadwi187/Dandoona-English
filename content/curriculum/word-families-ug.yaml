@@ -1,0 +1,20 @@
+# Word Families: words that end the same sound alike. Everyday words (animals, food, school, home).
+id: word-families-ug
+unit: word-families
+track: explorers
+level: a1
+order: 5
+words:
+  - { word: bug, graphemes: [b, u, g], reuse: "sound-builders-u/bug" }
+  - { word: jug, graphemes: [j, u, g], source: svg, imagePrompt: "a blue jug" }
+  - { word: mug, graphemes: [m, u, g], source: svg, imagePrompt: "an orange mug" }
+  - { word: rug, graphemes: [r, u, g], source: svg, imagePrompt: "a round colorful rug" }
+narration:
+  intro: "Family -ug: bug, jug, mug, rug. They all end the same!"
+  praise: ["Great reading!", "You spelled it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    spell-it: "Listen. Then spell the word with the letters!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, spell-it, read-and-pick]

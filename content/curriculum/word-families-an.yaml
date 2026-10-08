@@ -1,0 +1,20 @@
+# Word Families: words that end the same sound alike. Everyday words (animals, food, school, home).
+id: word-families-an
+unit: word-families
+track: explorers
+level: a1
+order: 2
+words:
+  - { word: van, graphemes: [v, a, n], reuse: "little-learners:letter-v/van" }
+  - { word: can, graphemes: [c, a, n], source: svg, imagePrompt: "a tin can" }
+  - { word: fan, graphemes: [f, a, n], source: svg, imagePrompt: "a pink folding hand fan" }
+  - { word: pan, graphemes: [p, a, n], source: svg, imagePrompt: "a frying pan with an egg" }
+narration:
+  intro: "Family -an: van, can, fan, pan. They all end the same!"
+  praise: ["Great reading!", "You spelled it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    spell-it: "Listen. Then spell the word with the letters!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, spell-it, read-and-pick]

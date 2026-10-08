@@ -127,6 +127,10 @@
     "phoneme-ar": {
       "hash": "627727c7fae1a5ea68ae5e120fd97c616d925974b6d1679aeb7bb5a5552710cc",
       "generatedAtUtc": "2026-10-08T15:44:42.4425412Z"
+    },
+    "phoneme-w": {
+      "hash": "dc8526cda8d49fed52f43e3b69290d809dba66e491022c33daaac294fde7d9b4",
+      "generatedAtUtc": "2026-10-08T17:01:11.3447687Z"
     }
   }
 }
