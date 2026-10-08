@@ -19,7 +19,7 @@ public class TracksTests
             narration: { title: "Letters", welcome: "Let's learn letters!", celebration: "Done!" }
         """;
 
-    private const string Explorers = """
+    private static readonly string Explorers = """
         track: explorers
         placement:
           - { level: 0, key: none, doneUnits: [], startUnit: letters }
@@ -32,7 +32,7 @@ public class TracksTests
             order: 2
             title: { en: "Sound Builders", ar: "تركيب الأصوات" }
             narration: { title: "Sound Builders", welcome: "Let's build words!", celebration: "Great!" }
-        """;
+        """.Replace("\r\n", "\n");
 
     private static TestRepo Repo()
     {

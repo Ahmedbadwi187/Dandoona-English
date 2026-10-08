@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "explorers",
-  "generatedAt": "2026-10-08T14:57:08.9206869Z",
+  "generatedAt": "2026-10-08T15:54:38.3046682Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -1249,7 +1249,355 @@
       },
       "icon": "sounds",
       "color": "blue",
-      "lessons": [],
+      "audio": {
+        "title": "audio/explorers/unit_sound_builders/instr_title.mp3",
+        "welcome": "audio/explorers/unit_sound_builders/intro.mp3",
+        "celebration": "audio/explorers/unit_sound_builders/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_sound_builders/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_sound_builders/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_sound_builders/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_sound_builders/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_sound_builders/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_sound_builders/instr_story_5.mp3"
+        }
+      },
+      "lessons": [
+        {
+          "id": "sound-builders-a",
+          "order": 1,
+          "level": "a1",
+          "audio": {
+            "intro": "audio/explorers/sound_builders_a/intro.mp3",
+            "praise": [
+              "audio/explorers/sound_builders_a/praise_0.mp3",
+              "audio/explorers/sound_builders_a/praise_1.mp3",
+              "audio/explorers/sound_builders_a/praise_2.mp3"
+            ],
+            "instructions": {
+              "read-and-pick": "audio/explorers/sound_builders_a/instr_read_and_pick.mp3",
+              "sound-tap": "audio/explorers/sound_builders_a/instr_sound_tap.mp3",
+              "word-builder": "audio/explorers/sound_builders_a/instr_word_builder.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "cat",
+              "audio": "audio/explorers/sound_builders_a/word_cat.mp3",
+              "image": "images/explorers/sound_builders_a/cat.webp",
+              "graphemes": [
+                "c",
+                "a",
+                "t"
+              ],
+              "plural": "cats",
+              "pluralAudio": "audio/explorers/sound_builders_a/plural_cat.mp3"
+            },
+            {
+              "word": "jam",
+              "audio": "audio/explorers/sound_builders_a/word_jam.mp3",
+              "image": "images/explorers/sound_builders_a/jam.svg",
+              "graphemes": [
+                "j",
+                "a",
+                "m"
+              ]
+            },
+            {
+              "word": "ant",
+              "audio": "audio/explorers/sound_builders_a/word_ant.mp3",
+              "image": "images/explorers/sound_builders_a/ant.webp",
+              "graphemes": [
+                "a",
+                "n",
+                "t"
+              ]
+            },
+            {
+              "word": "hat",
+              "audio": "audio/explorers/sound_builders_a/word_hat.mp3",
+              "image": "images/explorers/sound_builders_a/hat.svg",
+              "graphemes": [
+                "h",
+                "a",
+                "t"
+              ]
+            }
+          ],
+          "activities": [
+            "sound-tap",
+            "word-builder",
+            "read-and-pick"
+          ]
+        },
+        {
+          "id": "sound-builders-e",
+          "order": 2,
+          "level": "a1",
+          "audio": {
+            "intro": "audio/explorers/sound_builders_e/intro.mp3",
+            "praise": [
+              "audio/explorers/sound_builders_e/praise_0.mp3",
+              "audio/explorers/sound_builders_e/praise_1.mp3",
+              "audio/explorers/sound_builders_e/praise_2.mp3"
+            ],
+            "instructions": {
+              "read-and-pick": "audio/explorers/sound_builders_e/instr_read_and_pick.mp3",
+              "sound-tap": "audio/explorers/sound_builders_e/instr_sound_tap.mp3",
+              "word-builder": "audio/explorers/sound_builders_e/instr_word_builder.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "hen",
+              "audio": "audio/explorers/sound_builders_e/word_hen.mp3",
+              "image": "images/explorers/sound_builders_e/hen.svg",
+              "graphemes": [
+                "h",
+                "e",
+                "n"
+              ],
+              "plural": "hens",
+              "pluralAudio": "audio/explorers/sound_builders_e/plural_hen.mp3"
+            },
+            {
+              "word": "bed",
+              "audio": "audio/explorers/sound_builders_e/word_bed.mp3",
+              "image": "images/explorers/sound_builders_e/bed.svg",
+              "graphemes": [
+                "b",
+                "e",
+                "d"
+              ]
+            },
+            {
+              "word": "egg",
+              "audio": "audio/explorers/sound_builders_e/word_egg.mp3",
+              "image": "images/explorers/sound_builders_e/egg.svg",
+              "graphemes": [
+                "e",
+                "gg:g"
+              ]
+            },
+            {
+              "word": "ten",
+              "audio": "audio/explorers/sound_builders_e/word_ten.mp3",
+              "image": "images/explorers/sound_builders_e/ten.svg",
+              "graphemes": [
+                "t",
+                "e",
+                "n"
+              ]
+            }
+          ],
+          "activities": [
+            "sound-tap",
+            "word-builder",
+            "read-and-pick"
+          ]
+        },
+        {
+          "id": "sound-builders-i",
+          "order": 3,
+          "level": "a1",
+          "audio": {
+            "intro": "audio/explorers/sound_builders_i/intro.mp3",
+            "praise": [
+              "audio/explorers/sound_builders_i/praise_0.mp3",
+              "audio/explorers/sound_builders_i/praise_1.mp3",
+              "audio/explorers/sound_builders_i/praise_2.mp3"
+            ],
+            "instructions": {
+              "read-and-pick": "audio/explorers/sound_builders_i/instr_read_and_pick.mp3",
+              "sound-tap": "audio/explorers/sound_builders_i/instr_sound_tap.mp3",
+              "word-builder": "audio/explorers/sound_builders_i/instr_word_builder.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "pig",
+              "audio": "audio/explorers/sound_builders_i/word_pig.mp3",
+              "image": "images/explorers/sound_builders_i/pig.webp",
+              "graphemes": [
+                "p",
+                "i",
+                "g"
+              ],
+              "plural": "pigs",
+              "pluralAudio": "audio/explorers/sound_builders_i/plural_pig.mp3"
+            },
+            {
+              "word": "fig",
+              "audio": "audio/explorers/sound_builders_i/word_fig.mp3",
+              "image": "images/explorers/sound_builders_i/fig.svg",
+              "graphemes": [
+                "f",
+                "i",
+                "g"
+              ]
+            },
+            {
+              "word": "bin",
+              "audio": "audio/explorers/sound_builders_i/word_bin.mp3",
+              "image": "images/explorers/sound_builders_i/bin.svg",
+              "graphemes": [
+                "b",
+                "i",
+                "n"
+              ]
+            },
+            {
+              "word": "six",
+              "audio": "audio/explorers/sound_builders_i/word_six.mp3",
+              "image": "images/explorers/sound_builders_i/six.svg",
+              "graphemes": [
+                "s",
+                "i",
+                "x"
+              ]
+            }
+          ],
+          "activities": [
+            "sound-tap",
+            "word-builder",
+            "read-and-pick"
+          ]
+        },
+        {
+          "id": "sound-builders-o",
+          "order": 4,
+          "level": "a1",
+          "audio": {
+            "intro": "audio/explorers/sound_builders_o/intro.mp3",
+            "praise": [
+              "audio/explorers/sound_builders_o/praise_0.mp3",
+              "audio/explorers/sound_builders_o/praise_1.mp3",
+              "audio/explorers/sound_builders_o/praise_2.mp3"
+            ],
+            "instructions": {
+              "read-and-pick": "audio/explorers/sound_builders_o/instr_read_and_pick.mp3",
+              "sound-tap": "audio/explorers/sound_builders_o/instr_sound_tap.mp3",
+              "word-builder": "audio/explorers/sound_builders_o/instr_word_builder.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "dog",
+              "audio": "audio/explorers/sound_builders_o/word_dog.mp3",
+              "image": "images/explorers/sound_builders_o/dog.webp",
+              "graphemes": [
+                "d",
+                "o",
+                "g"
+              ],
+              "plural": "dogs",
+              "pluralAudio": "audio/explorers/sound_builders_o/plural_dog.mp3"
+            },
+            {
+              "word": "pot",
+              "audio": "audio/explorers/sound_builders_o/word_pot.mp3",
+              "image": "images/explorers/sound_builders_o/pot.svg",
+              "graphemes": [
+                "p",
+                "o",
+                "t"
+              ]
+            },
+            {
+              "word": "box",
+              "audio": "audio/explorers/sound_builders_o/word_box.mp3",
+              "image": "images/explorers/sound_builders_o/box.svg",
+              "graphemes": [
+                "b",
+                "o",
+                "x"
+              ]
+            },
+            {
+              "word": "mop",
+              "audio": "audio/explorers/sound_builders_o/word_mop.mp3",
+              "image": "images/explorers/sound_builders_o/mop.svg",
+              "graphemes": [
+                "m",
+                "o",
+                "p"
+              ]
+            }
+          ],
+          "activities": [
+            "sound-tap",
+            "word-builder",
+            "read-and-pick"
+          ]
+        },
+        {
+          "id": "sound-builders-u",
+          "order": 5,
+          "level": "a1",
+          "audio": {
+            "intro": "audio/explorers/sound_builders_u/intro.mp3",
+            "praise": [
+              "audio/explorers/sound_builders_u/praise_0.mp3",
+              "audio/explorers/sound_builders_u/praise_1.mp3",
+              "audio/explorers/sound_builders_u/praise_2.mp3"
+            ],
+            "instructions": {
+              "read-and-pick": "audio/explorers/sound_builders_u/instr_read_and_pick.mp3",
+              "sound-tap": "audio/explorers/sound_builders_u/instr_sound_tap.mp3",
+              "word-builder": "audio/explorers/sound_builders_u/instr_word_builder.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "bug",
+              "audio": "audio/explorers/sound_builders_u/word_bug.mp3",
+              "image": "images/explorers/sound_builders_u/bug.svg",
+              "graphemes": [
+                "b",
+                "u",
+                "g"
+              ],
+              "plural": "bugs",
+              "pluralAudio": "audio/explorers/sound_builders_u/plural_bug.mp3"
+            },
+            {
+              "word": "nut",
+              "audio": "audio/explorers/sound_builders_u/word_nut.mp3",
+              "image": "images/explorers/sound_builders_u/nut.svg",
+              "graphemes": [
+                "n",
+                "u",
+                "t"
+              ]
+            },
+            {
+              "word": "bus",
+              "audio": "audio/explorers/sound_builders_u/word_bus.mp3",
+              "image": "images/explorers/sound_builders_u/bus.svg",
+              "graphemes": [
+                "b",
+                "u",
+                "s"
+              ]
+            },
+            {
+              "word": "cup",
+              "audio": "audio/explorers/sound_builders_u/word_cup.mp3",
+              "image": "images/explorers/sound_builders_u/cup.svg",
+              "graphemes": [
+                "c",
+                "u",
+                "p"
+              ]
+            }
+          ],
+          "activities": [
+            "sound-tap",
+            "word-builder",
+            "read-and-pick"
+          ]
+        }
+      ],
       "chest": {
         "accessory": "explorer-hat",
         "stickers": [
@@ -1318,7 +1666,32 @@
       },
       "icon": "digraphs",
       "color": "purple",
+      "audio": {
+        "title": "audio/explorers/unit_digraphs/instr_title.mp3",
+        "welcome": "audio/explorers/unit_digraphs/intro.mp3",
+        "celebration": "audio/explorers/unit_digraphs/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_digraphs/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_digraphs/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_digraphs/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_digraphs/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_digraphs/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_digraphs/instr_story_5.mp3"
+        }
+      },
       "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "055e96fbb27590fa3969d15b920691d1f6e0e1e1d6e75162bb788cdeaa918f1c",
+        "bytes": 1724925,
+        "manifest": "digraphs/v1/manifest.json",
+        "lessonIds": [
+          "digraphs-sh",
+          "digraphs-ch",
+          "digraphs-th",
+          "digraphs-ck"
+        ]
+      },
       "chest": {
         "accessory": "headphones",
         "stickers": [
@@ -1386,7 +1759,31 @@
       },
       "icon": "blends",
       "color": "teal",
+      "audio": {
+        "title": "audio/explorers/unit_blends/instr_title.mp3",
+        "welcome": "audio/explorers/unit_blends/intro.mp3",
+        "celebration": "audio/explorers/unit_blends/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_blends/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_blends/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_blends/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_blends/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_blends/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_blends/instr_story_5.mp3"
+        }
+      },
       "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "eecaa3d6b18965514990baf9c6ac344c5d90b157b2b47f1bb70cb9ff750def62",
+        "bytes": 1523464,
+        "manifest": "blends/v1/manifest.json",
+        "lessonIds": [
+          "blends-l",
+          "blends-r",
+          "blends-end"
+        ]
+      },
       "chest": {
         "accessory": "bandana",
         "stickers": [
@@ -1455,7 +1852,31 @@
       },
       "icon": "magic-e",
       "color": "pink",
+      "audio": {
+        "title": "audio/explorers/unit_magic_e/instr_title.mp3",
+        "welcome": "audio/explorers/unit_magic_e/intro.mp3",
+        "celebration": "audio/explorers/unit_magic_e/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_magic_e/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_magic_e/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_magic_e/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_magic_e/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_magic_e/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_magic_e/instr_story_5.mp3"
+        }
+      },
       "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "c28bb63f74af62415dcba48ea00050f6e829ead94caca5c9fdb23c253281965e",
+        "bytes": 1507935,
+        "manifest": "magic_e/v1/manifest.json",
+        "lessonIds": [
+          "magic-e-a",
+          "magic-e-i",
+          "magic-e-o-u"
+        ]
+      },
       "chest": {
         "accessory": "wizard-hat",
         "stickers": [
@@ -1523,7 +1944,32 @@
       },
       "icon": "vowel-teams",
       "color": "orange",
+      "audio": {
+        "title": "audio/explorers/unit_vowel_teams/instr_title.mp3",
+        "welcome": "audio/explorers/unit_vowel_teams/intro.mp3",
+        "celebration": "audio/explorers/unit_vowel_teams/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_vowel_teams/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_vowel_teams/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_vowel_teams/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_vowel_teams/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_vowel_teams/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_vowel_teams/instr_story_5.mp3"
+        }
+      },
       "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "e71e6725a478959618eb1270ac02a7e64e36acc6bba91edbc0960620c20ec5f0",
+        "bytes": 1781492,
+        "manifest": "vowel_teams/v1/manifest.json",
+        "lessonIds": [
+          "vowel-teams-ai",
+          "vowel-teams-ee",
+          "vowel-teams-oa",
+          "vowel-teams-oo-ar"
+        ]
+      },
       "chest": {
         "accessory": "team-cap",
         "stickers": [
@@ -1593,7 +2039,31 @@
       },
       "icon": "sight-words",
       "color": "green",
+      "audio": {
+        "title": "audio/explorers/unit_sight_words_1/instr_title.mp3",
+        "welcome": "audio/explorers/unit_sight_words_1/intro.mp3",
+        "celebration": "audio/explorers/unit_sight_words_1/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_sight_words_1/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_sight_words_1/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_sight_words_1/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_sight_words_1/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_sight_words_1/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_sight_words_1/instr_story_5.mp3"
+        }
+      },
       "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "38f7550458e6c2687db79c029e094a438964fda4e4bf0a0dc30d345eaca8f486",
+        "bytes": 1611157,
+        "manifest": "sight_words_1/v1/manifest.json",
+        "lessonIds": [
+          "sight-words-1-a",
+          "sight-words-1-b",
+          "sight-words-1-c"
+        ]
+      },
       "chest": {
         "accessory": "book-hat",
         "stickers": [
@@ -1660,7 +2130,31 @@
       },
       "icon": "sight-words",
       "color": "red",
+      "audio": {
+        "title": "audio/explorers/unit_sight_words_2/instr_title.mp3",
+        "welcome": "audio/explorers/unit_sight_words_2/intro.mp3",
+        "celebration": "audio/explorers/unit_sight_words_2/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_sight_words_2/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_sight_words_2/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_sight_words_2/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_sight_words_2/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_sight_words_2/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_sight_words_2/instr_story_5.mp3"
+        }
+      },
       "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "245205f81409acb3411c6af75d6c79939a34b5df829dd3cb347e59846baab911",
+        "bytes": 1495224,
+        "manifest": "sight_words_2/v1/manifest.json",
+        "lessonIds": [
+          "sight-words-2-a",
+          "sight-words-2-b",
+          "sight-words-2-c"
+        ]
+      },
       "chest": {
         "accessory": "detective-cap",
         "stickers": [
@@ -1724,7 +2218,31 @@
       },
       "icon": "sentences",
       "color": "blue",
+      "audio": {
+        "title": "audio/explorers/unit_my_sentences/instr_title.mp3",
+        "welcome": "audio/explorers/unit_my_sentences/intro.mp3",
+        "celebration": "audio/explorers/unit_my_sentences/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_my_sentences/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_my_sentences/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_my_sentences/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_my_sentences/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_my_sentences/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_my_sentences/instr_story_5.mp3"
+        }
+      },
       "lessons": [],
+      "pack": {
+        "version": 2,
+        "sha256": "4aeb0c88912d4c485e32eb9adc184b6ed61071f6bcf4bb98cbbe0af9f2807a7a",
+        "bytes": 1808232,
+        "manifest": "my_sentences/v2/manifest.json",
+        "lessonIds": [
+          "my-sentences-is-are",
+          "my-sentences-a-an",
+          "my-sentences-mix"
+        ]
+      },
       "chest": {
         "accessory": "pencil-band",
         "stickers": [
@@ -1788,6 +2306,14 @@
       },
       "icon": "word-families",
       "color": "purple",
+      "audio": {
+        "title": "audio/explorers/unit_word_families/instr_title.mp3",
+        "welcome": "audio/explorers/unit_word_families/intro.mp3",
+        "celebration": "audio/explorers/unit_word_families/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_word_families/instr_locked.mp3"
+        }
+      },
       "lessons": []
     },
     {
@@ -1799,6 +2325,14 @@
       },
       "icon": "everyday",
       "color": "teal",
+      "audio": {
+        "title": "audio/explorers/unit_everyday_english/instr_title.mp3",
+        "welcome": "audio/explorers/unit_everyday_english/intro.mp3",
+        "celebration": "audio/explorers/unit_everyday_english/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_everyday_english/instr_locked.mp3"
+        }
+      },
       "lessons": []
     },
     {
@@ -1810,6 +2344,14 @@
       },
       "icon": "clock",
       "color": "orange",
+      "audio": {
+        "title": "audio/explorers/unit_numbers_time/instr_title.mp3",
+        "welcome": "audio/explorers/unit_numbers_time/intro.mp3",
+        "celebration": "audio/explorers/unit_numbers_time/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_numbers_time/instr_locked.mp3"
+        }
+      },
       "lessons": []
     },
     {
@@ -1821,6 +2363,14 @@
       },
       "icon": "grammar",
       "color": "green",
+      "audio": {
+        "title": "audio/explorers/unit_grammar_starters/instr_title.mp3",
+        "welcome": "audio/explorers/unit_grammar_starters/intro.mp3",
+        "celebration": "audio/explorers/unit_grammar_starters/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_grammar_starters/instr_locked.mp3"
+        }
+      },
       "lessons": []
     }
   ],
@@ -1879,5 +2429,39 @@
         "my-sentences"
       ]
     }
-  ]
+  ],
+  "phonemes": {
+    "a": "audio/explorers/phonemes/phoneme_a.mp3",
+    "e": "audio/explorers/phonemes/phoneme_e.mp3",
+    "i": "audio/explorers/phonemes/phoneme_i.mp3",
+    "o": "audio/explorers/phonemes/phoneme_o.mp3",
+    "u": "audio/explorers/phonemes/phoneme_u.mp3",
+    "b": "audio/explorers/phonemes/phoneme_b.mp3",
+    "c": "audio/explorers/phonemes/phoneme_c.mp3",
+    "d": "audio/explorers/phonemes/phoneme_d.mp3",
+    "f": "audio/explorers/phonemes/phoneme_f.mp3",
+    "g": "audio/explorers/phonemes/phoneme_g.mp3",
+    "h": "audio/explorers/phonemes/phoneme_h.mp3",
+    "j": "audio/explorers/phonemes/phoneme_j.mp3",
+    "m": "audio/explorers/phonemes/phoneme_m.mp3",
+    "n": "audio/explorers/phonemes/phoneme_n.mp3",
+    "p": "audio/explorers/phonemes/phoneme_p.mp3",
+    "s": "audio/explorers/phonemes/phoneme_s.mp3",
+    "t": "audio/explorers/phonemes/phoneme_t.mp3",
+    "x": "audio/explorers/phonemes/phoneme_x.mp3",
+    "l": "audio/explorers/phonemes/phoneme_l.mp3",
+    "r": "audio/explorers/phonemes/phoneme_r.mp3",
+    "v": "audio/explorers/phonemes/phoneme_v.mp3",
+    "z": "audio/explorers/phonemes/phoneme_z.mp3",
+    "sh": "audio/explorers/phonemes/phoneme_sh.mp3",
+    "ch": "audio/explorers/phonemes/phoneme_ch.mp3",
+    "th": "audio/explorers/phonemes/phoneme_th.mp3",
+    "ay": "audio/explorers/phonemes/phoneme_ay.mp3",
+    "ee": "audio/explorers/phonemes/phoneme_ee.mp3",
+    "ie": "audio/explorers/phonemes/phoneme_ie.mp3",
+    "oa": "audio/explorers/phonemes/phoneme_oa.mp3",
+    "ue": "audio/explorers/phonemes/phoneme_ue.mp3",
+    "oo": "audio/explorers/phonemes/phoneme_oo.mp3",
+    "ar": "audio/explorers/phonemes/phoneme_ar.mp3"
+  }
 }

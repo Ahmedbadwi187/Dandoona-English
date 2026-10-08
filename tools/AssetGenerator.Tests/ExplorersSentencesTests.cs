@@ -17,7 +17,7 @@ public class ExplorersSentencesTests
             narration: { title: "My Sentences", welcome: "Let's read!", celebration: "Great!" }
         """;
 
-    private const string Lesson = """
+    private static readonly string Lesson = """
         id: my-sentences-1
         unit: my-sentences
         track: explorers
@@ -35,13 +35,13 @@ public class ExplorersSentencesTests
           praise: ["Great!"]
           instructions: { find-the-word: "Listen. Tap the word!", sentence-builder: "Build the sentence!", fill-the-gap: "Which word fits?" }
         activities: [find-the-word, sentence-builder, fill-the-gap]
-        """;
+        """.Replace("\r\n", "\n");
 
-    private static TestRepo Repo(string lesson = Lesson)
+    private static TestRepo Repo(string? lesson = null)
     {
         var repo = new TestRepo();
         repo.Touch(Path.Combine(repo.Layout.CurriculumDir, "units", "explorers.yaml"), Units);
-        repo.Touch(Path.Combine(repo.Layout.CurriculumDir, "my-sentences-1.yaml"), lesson);
+        repo.Touch(Path.Combine(repo.Layout.CurriculumDir, "my-sentences-1.yaml"), lesson ?? Lesson);
         return repo;
     }
 

@@ -1,0 +1,76 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "bc530bb5f05ef2aa473bc2cb0611e6e0aad5eeac4914de3a2fa67ddec7f72209",
+      "generatedAtUtc": "2026-10-08T15:32:07.9840187Z"
+    },
+    "praise-0": {
+      "hash": "b1ece7d3b6f55486c80845651ea15cf82cd1600acddeb26fe8c1ec4074866243",
+      "generatedAtUtc": "2026-10-08T15:32:09.0314117Z"
+    },
+    "praise-1": {
+      "hash": "46eb7b81f183e0e98e8ce54a9f933b96adedb1d26269b74c4a02a5d43227ad58",
+      "generatedAtUtc": "2026-10-08T15:32:14.0903859Z"
+    },
+    "praise-2": {
+      "hash": "6436155ab30ee84cd601145f58e80d1cb5cb45302e48dc98fe272c71b3796c6e",
+      "generatedAtUtc": "2026-10-08T15:32:16.2387654Z"
+    },
+    "word-goat": {
+      "hash": "ad9add513a74551b97ff967e21d4d3f51e529d46dc29778fb3e8deab168d4934",
+      "generatedAtUtc": "2026-10-08T15:32:19.5137044Z"
+    },
+    "word-bee": {
+      "hash": "5f02d51a55c478dd96cc231b63884adb0bc7b725ac08f23ceaac232575c1d875",
+      "generatedAtUtc": "2026-10-08T15:32:22.105607Z"
+    },
+    "word-toast": {
+      "hash": "f2435b2fd7f7c8ba0e65421df494e06c4c6850d84850c0bbac9c9e498ea19ae4",
+      "generatedAtUtc": "2026-10-08T15:32:23.501893Z"
+    },
+    "word-star": {
+      "hash": "2c86bf0fa8740072da910c479a85b5375b562d1c0d9707f35de3d115dc5b2300",
+      "generatedAtUtc": "2026-10-08T15:32:25.4031933Z"
+    },
+    "sight-like": {
+      "hash": "1db155e9a2d383e0d9fc4e30274e7b360bc42b927d207832789dcb34de9c5fb5",
+      "generatedAtUtc": "2026-10-08T15:32:27.4698039Z"
+    },
+    "sight-have": {
+      "hash": "2e802f7f583369bd3609415bbc6900d5c074f1771c9770e1ab8238fc058a062d",
+      "generatedAtUtc": "2026-10-08T15:32:28.8499203Z"
+    },
+    "sight-they": {
+      "hash": "f5cdfc433053298e4a53ec7563c275620a8134645930a58ba544b633f390e183",
+      "generatedAtUtc": "2026-10-08T15:32:33.2562689Z"
+    },
+    "sight-are": {
+      "hash": "d7e4bd86320a1cef7e3255494424a131227faa33e7a215e5de35414e48b84104",
+      "generatedAtUtc": "2026-10-08T15:32:34.4811504Z"
+    },
+    "sentence-1": {
+      "hash": "b8d3a5e2506459baf70383e7563fd07afd11ee6ab07344e215d62732614b0a77",
+      "generatedAtUtc": "2026-10-08T15:32:35.7811425Z"
+    },
+    "sentence-2": {
+      "hash": "acf9dd887a3b9d5afe842adb8b355cb2f3c7471f93e64c86d4952bac97753a4f",
+      "generatedAtUtc": "2026-10-08T15:32:37.378962Z"
+    },
+    "sentence-3": {
+      "hash": "35087d5f8ff496f562e72e79a10d7aa66ee3889567d88ec8d37dc792c9d838e8",
+      "generatedAtUtc": "2026-10-08T15:32:40.4476673Z"
+    },
+    "sentence-4": {
+      "hash": "14d496924bb99432e673e3be33773ca932897aa4bc10a42a98bb7791a58babb9",
+      "generatedAtUtc": "2026-10-08T15:32:46.0973183Z"
+    },
+    "instr-find-the-word": {
+      "hash": "8dae498a1a3d2981035d0ded0b47660d8280fb45273ab51c9a0ceee002666fab",
+      "generatedAtUtc": "2026-10-08T15:32:47.7654288Z"
+    },
+    "instr-sentence-builder": {
+      "hash": "74cef28a8c2c5ae3092fdb97efde3b8243986d0fbd9193885b03a8332eede6c2",
+      "generatedAtUtc": "2026-10-08T15:32:49.6325003Z"
+    }
+  }
+}

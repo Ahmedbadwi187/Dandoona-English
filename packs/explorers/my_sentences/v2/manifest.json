@@ -1,0 +1,661 @@
+{
+  "schemaVersion": 1,
+  "track": "explorers",
+  "unit": "my-sentences",
+  "version": 2,
+  "contentHash": "45710b6ec7912778c61f3db590c7af3e01c9724ed85816780d8cb5a1f5225cd7",
+  "lessons": [
+    {
+      "id": "my-sentences-is-are",
+      "order": 1,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/my_sentences_is_are/intro.mp3",
+        "praise": [
+          "audio/explorers/my_sentences_is_are/praise_0.mp3",
+          "audio/explorers/my_sentences_is_are/praise_1.mp3",
+          "audio/explorers/my_sentences_is_are/praise_2.mp3"
+        ],
+        "instructions": {
+          "fill-the-gap": "audio/explorers/my_sentences_is_are/instr_fill_the_gap.mp3",
+          "sentence-builder": "audio/explorers/my_sentences_is_are/instr_sentence_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "cat",
+          "audio": "audio/explorers/my_sentences_is_are/word_cat.mp3",
+          "image": "images/explorers/my_sentences_is_are/cat.webp"
+        },
+        {
+          "word": "pig",
+          "audio": "audio/explorers/my_sentences_is_are/word_pig.mp3",
+          "image": "images/explorers/my_sentences_is_are/pig.webp"
+        },
+        {
+          "word": "duck",
+          "audio": "audio/explorers/my_sentences_is_are/word_duck.mp3",
+          "image": "images/explorers/my_sentences_is_are/duck.webp"
+        },
+        {
+          "word": "dog",
+          "audio": "audio/explorers/my_sentences_is_are/word_dog.mp3",
+          "image": "images/explorers/my_sentences_is_are/dog.webp"
+        }
+      ],
+      "activities": [
+        "fill-the-gap",
+        "sentence-builder"
+      ],
+      "sentences": [
+        {
+          "text": "The cat is big.",
+          "audio": "audio/explorers/my_sentences_is_are/sentence_1.mp3",
+          "image": "images/explorers/my_sentences_is_are/cat.webp",
+          "gap": "is",
+          "choices": [
+            "is",
+            "are"
+          ]
+        },
+        {
+          "text": "The cats are big.",
+          "audio": "audio/explorers/my_sentences_is_are/sentence_2.mp3",
+          "image": "images/explorers/my_sentences_is_are/cat.webp",
+          "two": true,
+          "gap": "are",
+          "choices": [
+            "is",
+            "are"
+          ]
+        },
+        {
+          "text": "The pig is pink.",
+          "audio": "audio/explorers/my_sentences_is_are/sentence_3.mp3",
+          "image": "images/explorers/my_sentences_is_are/pig.webp",
+          "gap": "is",
+          "choices": [
+            "is",
+            "are"
+          ]
+        },
+        {
+          "text": "The pigs are pink.",
+          "audio": "audio/explorers/my_sentences_is_are/sentence_4.mp3",
+          "image": "images/explorers/my_sentences_is_are/pig.webp",
+          "two": true,
+          "gap": "are",
+          "choices": [
+            "is",
+            "are"
+          ]
+        },
+        {
+          "text": "The duck is wet.",
+          "audio": "audio/explorers/my_sentences_is_are/sentence_5.mp3",
+          "image": "images/explorers/my_sentences_is_are/duck.webp",
+          "gap": "is",
+          "choices": [
+            "is",
+            "are"
+          ]
+        },
+        {
+          "text": "The dogs are on the bed.",
+          "audio": "audio/explorers/my_sentences_is_are/sentence_6.mp3",
+          "image": "images/explorers/my_sentences_is_are/dog.webp",
+          "two": true,
+          "gap": "are",
+          "choices": [
+            "is",
+            "are"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "my-sentences-a-an",
+      "order": 2,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/my_sentences_a_an/intro.mp3",
+        "praise": [
+          "audio/explorers/my_sentences_a_an/praise_0.mp3",
+          "audio/explorers/my_sentences_a_an/praise_1.mp3",
+          "audio/explorers/my_sentences_a_an/praise_2.mp3"
+        ],
+        "instructions": {
+          "fill-the-gap": "audio/explorers/my_sentences_a_an/instr_fill_the_gap.mp3",
+          "sentence-builder": "audio/explorers/my_sentences_a_an/instr_sentence_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "ant",
+          "audio": "audio/explorers/my_sentences_a_an/word_ant.mp3",
+          "image": "images/explorers/my_sentences_a_an/ant.webp"
+        },
+        {
+          "word": "egg",
+          "audio": "audio/explorers/my_sentences_a_an/word_egg.mp3",
+          "image": "images/explorers/my_sentences_a_an/egg.svg"
+        },
+        {
+          "word": "apple",
+          "audio": "audio/explorers/my_sentences_a_an/word_apple.mp3",
+          "image": "images/explorers/my_sentences_a_an/apple.webp"
+        },
+        {
+          "word": "hen",
+          "audio": "audio/explorers/my_sentences_a_an/word_hen.mp3",
+          "image": "images/explorers/my_sentences_a_an/hen.svg"
+        },
+        {
+          "word": "cake",
+          "audio": "audio/explorers/my_sentences_a_an/word_cake.mp3",
+          "image": "images/explorers/my_sentences_a_an/cake.svg"
+        },
+        {
+          "word": "bus",
+          "audio": "audio/explorers/my_sentences_a_an/word_bus.mp3",
+          "image": "images/explorers/my_sentences_a_an/bus.svg"
+        }
+      ],
+      "activities": [
+        "fill-the-gap",
+        "sentence-builder"
+      ],
+      "sentences": [
+        {
+          "text": "I see an ant.",
+          "audio": "audio/explorers/my_sentences_a_an/sentence_1.mp3",
+          "image": "images/explorers/my_sentences_a_an/ant.webp",
+          "gap": "an",
+          "choices": [
+            "a",
+            "an"
+          ]
+        },
+        {
+          "text": "I have an egg.",
+          "audio": "audio/explorers/my_sentences_a_an/sentence_2.mp3",
+          "image": "images/explorers/my_sentences_a_an/egg.svg",
+          "gap": "an",
+          "choices": [
+            "a",
+            "an"
+          ]
+        },
+        {
+          "text": "I have an apple.",
+          "audio": "audio/explorers/my_sentences_a_an/sentence_3.mp3",
+          "image": "images/explorers/my_sentences_a_an/apple.webp",
+          "gap": "an",
+          "choices": [
+            "a",
+            "an"
+          ]
+        },
+        {
+          "text": "I see a hen.",
+          "audio": "audio/explorers/my_sentences_a_an/sentence_4.mp3",
+          "image": "images/explorers/my_sentences_a_an/hen.svg",
+          "gap": "a",
+          "choices": [
+            "a",
+            "an"
+          ]
+        },
+        {
+          "text": "I have a cake.",
+          "audio": "audio/explorers/my_sentences_a_an/sentence_5.mp3",
+          "image": "images/explorers/my_sentences_a_an/cake.svg",
+          "gap": "a",
+          "choices": [
+            "a",
+            "an"
+          ]
+        },
+        {
+          "text": "It is a bus.",
+          "audio": "audio/explorers/my_sentences_a_an/sentence_6.mp3",
+          "image": "images/explorers/my_sentences_a_an/bus.svg",
+          "gap": "a",
+          "choices": [
+            "a",
+            "an"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "my-sentences-mix",
+      "order": 3,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/my_sentences_mix/intro.mp3",
+        "praise": [
+          "audio/explorers/my_sentences_mix/praise_0.mp3",
+          "audio/explorers/my_sentences_mix/praise_1.mp3",
+          "audio/explorers/my_sentences_mix/praise_2.mp3"
+        ],
+        "instructions": {
+          "fill-the-gap": "audio/explorers/my_sentences_mix/instr_fill_the_gap.mp3",
+          "sentence-builder": "audio/explorers/my_sentences_mix/instr_sentence_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "ship",
+          "audio": "audio/explorers/my_sentences_mix/word_ship.mp3",
+          "image": "images/explorers/my_sentences_mix/ship.svg"
+        },
+        {
+          "word": "kite",
+          "audio": "audio/explorers/my_sentences_mix/word_kite.mp3",
+          "image": "images/explorers/my_sentences_mix/kite.svg"
+        },
+        {
+          "word": "frog",
+          "audio": "audio/explorers/my_sentences_mix/word_frog.mp3",
+          "image": "images/explorers/my_sentences_mix/frog.webp"
+        },
+        {
+          "word": "egg",
+          "audio": "audio/explorers/my_sentences_mix/word_egg.mp3",
+          "image": "images/explorers/my_sentences_mix/egg.svg"
+        },
+        {
+          "word": "fish",
+          "audio": "audio/explorers/my_sentences_mix/word_fish.mp3",
+          "image": "images/explorers/my_sentences_mix/fish.svg"
+        }
+      ],
+      "activities": [
+        "fill-the-gap",
+        "sentence-builder"
+      ],
+      "sentences": [
+        {
+          "text": "The ship is red.",
+          "audio": "audio/explorers/my_sentences_mix/sentence_1.mp3",
+          "image": "images/explorers/my_sentences_mix/ship.svg",
+          "gap": "is",
+          "choices": [
+            "is",
+            "are"
+          ]
+        },
+        {
+          "text": "The kites are up.",
+          "audio": "audio/explorers/my_sentences_mix/sentence_2.mp3",
+          "image": "images/explorers/my_sentences_mix/kite.svg",
+          "two": true,
+          "gap": "are",
+          "choices": [
+            "is",
+            "are"
+          ]
+        },
+        {
+          "text": "The frogs are on a rock.",
+          "audio": "audio/explorers/my_sentences_mix/sentence_3.mp3",
+          "image": "images/explorers/my_sentences_mix/frog.webp",
+          "two": true,
+          "gap": "are",
+          "choices": [
+            "is",
+            "are"
+          ]
+        },
+        {
+          "text": "It is an egg.",
+          "audio": "audio/explorers/my_sentences_mix/sentence_4.mp3",
+          "image": "images/explorers/my_sentences_mix/egg.svg",
+          "gap": "an",
+          "choices": [
+            "a",
+            "an"
+          ]
+        },
+        {
+          "text": "A fish is in the dish.",
+          "audio": "audio/explorers/my_sentences_mix/sentence_5.mp3",
+          "image": "images/explorers/my_sentences_mix/fish.svg",
+          "gap": "A",
+          "choices": [
+            "A",
+            "An"
+          ]
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/explorers/my_sentences_a_an/instr_fill_the_gap.mp3",
+      "sha256": "79823f3483d6d8ef6ffb1dcae2d3044d1f0e6d2c51bdde79d00b7bbd2767945b",
+      "bytes": 56050
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/instr_sentence_builder.mp3",
+      "sha256": "9bed290d8afa227be9195372fbc38f34af25c1c6a970ef9f5e7398561c89a486",
+      "bytes": 42675
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/intro.mp3",
+      "sha256": "280d4dc3b069c9060c59b22c01ec0be00cebce7665ba218c3d14129b63cd62be",
+      "bytes": 75276
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/praise_0.mp3",
+      "sha256": "c8fa288c87145817eaa1ca1f3e340de8772285631d9f9cde2834f35b116d8faa",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/praise_1.mp3",
+      "sha256": "5b9d3292b96392477e529971073946f265468b95ef8bfbee73eb681546a3ccd0",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/praise_2.mp3",
+      "sha256": "aa6ca4a1a4a20ef17dd163a039a1cf7f3edde00e3db240b51edefc99322228fa",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/sentence_1.mp3",
+      "sha256": "6981a078a914aaee7c828b721df2bb23cad6f090fd9f7c313c52e2fcaf2129af",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/sentence_2.mp3",
+      "sha256": "edd09ca587da953756a0e56fe6c7791cec7f03763e652f13cd022d6e00f4f993",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/sentence_3.mp3",
+      "sha256": "46c6bde2bba7deb9872d35aa3757dffc9ddc56bbe1a55e093fab6adf32118866",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/sentence_4.mp3",
+      "sha256": "41bf201d421f8c04990230fc8260bde74ce9f2fce3fd34edc30af0c512a5b92b",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/sentence_5.mp3",
+      "sha256": "23adf3e076b2590bef7b773d9d43cbbccb240b8eb94f27d4e10f50cb6cca288f",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/sentence_6.mp3",
+      "sha256": "d73a4ddfb15d48b5bafe3b9af0fec7baacdd045e678d7c3c40ebd0f57f32ad70",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/word_ant.mp3",
+      "sha256": "acd2bcd22ad33454d2df4e55a6ccc17929fc1143f8371c9c521b9a6eac57b7da",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/word_apple.mp3",
+      "sha256": "81a954c97b7d50d03a83356e516f6e90ff6cf50f39d2b2032e6f6117743de964",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/word_bus.mp3",
+      "sha256": "a6018e2d8404841f850376bf931a3da126261567950c13b988a1d02025335614",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/word_cake.mp3",
+      "sha256": "49d2f58b72ad46ea48354c4e75e5d46463e01888f9b6c2cf31a9049fb6a389ba",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/word_egg.mp3",
+      "sha256": "29bd31200e51056b673273185c8417c3bb2a9928f855d7d18597d0341c4acb21",
+      "bytes": 13836
+    },
+    {
+      "path": "audio/explorers/my_sentences_a_an/word_hen.mp3",
+      "sha256": "cdacb03cedc8080f733cd6fbd677344937853d9e9ee1ebb4343683b4dda137ca",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/instr_fill_the_gap.mp3",
+      "sha256": "64e811dec61f97137f52a49ded1cd369edf9f96f286f00df2e99618b5342c817",
+      "bytes": 51453
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/instr_sentence_builder.mp3",
+      "sha256": "8ccb3abab5d3d639a7657eb54fa43fe3f4b80af17796926e21961f981f8012f4",
+      "bytes": 42675
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/intro.mp3",
+      "sha256": "c7555a989e93569190dfe3f0ba5949f335b4c3f3405adff4c4ae3ab074379357",
+      "bytes": 68589
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/praise_0.mp3",
+      "sha256": "cea9f4c4682311c19705c7435c7ebe5bdd3da92be8a42f0d29f35bee4d148fd4",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/praise_1.mp3",
+      "sha256": "74d6652c5d388701adac6bb4c5f7d75b8b617ee2b651009e956dc116bce057bd",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/praise_2.mp3",
+      "sha256": "d552177807ef3917403733748e035761a7384b237cbb8a470c255be96cbd2719",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/sentence_1.mp3",
+      "sha256": "7d9e16fcb765b7e0b2631034df2a7b10f75a1dbe667e16bb25b6819a76cd3671",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/sentence_2.mp3",
+      "sha256": "2fd3b0ff5829b8cbac9d55dc948120fc06f634d34d7de9876ea8a7143aa334b6",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/sentence_3.mp3",
+      "sha256": "6b991abca2940726320bd353c898e2c1274f10060435dde585324c79fa0f129a",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/sentence_4.mp3",
+      "sha256": "2a2e268e3ed294e5d6fa3ae78eb73ee302e55aaee1fe51c57023b767dcd19008",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/sentence_5.mp3",
+      "sha256": "8a7656f0c4ec2405679b0c713480cb973b25e6fd4590ea6a4f9efcbd5bc8011d",
+      "bytes": 27629
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/sentence_6.mp3",
+      "sha256": "4a08a8cbd024d458737458a896b7d2615f026438ab83faa1f0ceca6e0a382c9c",
+      "bytes": 29301
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/word_cat.mp3",
+      "sha256": "c69d0bf73043c3ff77d2f73acc30a5fb5551055de805237594be214afb07abd4",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/word_dog.mp3",
+      "sha256": "3b4a11f227326964908bcc4914010bbb1a5e8321668a758fc3844bc6f125a876",
+      "bytes": 13836
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/word_duck.mp3",
+      "sha256": "e6d41e6c2f363d0025d1fb85e442f6326ba479972e0f76e0ea80bbd7fa99e27f",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/my_sentences_is_are/word_pig.mp3",
+      "sha256": "f8465c5f2a7d60e88925b495ec8d2b0528a0205d70da89f5c8ae48b629a16d44",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/instr_fill_the_gap.mp3",
+      "sha256": "b86d3615dc892990bfb7421398b3cbc8391f92b40893db00db800bd27a37bf47",
+      "bytes": 44765
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/instr_sentence_builder.mp3",
+      "sha256": "a41abddd99d796112c73aba9c7d0c24806421d816566c96ed88a9439194890ef",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/intro.mp3",
+      "sha256": "652a48d36fe51b03d8830a7952e824e67a931e7d7b92f89d169aaac46b88b2ce",
+      "bytes": 74440
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/praise_0.mp3",
+      "sha256": "8a04da1ce0643df032a8352dbc9e89129da30c6a7ec45ddc6f6a039bfcb96912",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/praise_1.mp3",
+      "sha256": "35db7cc9e27717db0a6abbc3653a27fdbc96a4066cc96c59eb30a4f9a1bc613b",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/praise_2.mp3",
+      "sha256": "78759d80f8c9429f638c7a43385cc31b01041cc7c453cac26741414ae3461a57",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/sentence_1.mp3",
+      "sha256": "b37b46912b8ef576c59b97c9a06e42765e9a3bb5f9a5680353664aefefda55de",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/sentence_2.mp3",
+      "sha256": "309ffdbeabbe1e78847380c4272a17cded0708b1b8e246a98b3f900255e65dc2",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/sentence_3.mp3",
+      "sha256": "8219899df9bdbd414ef80c441906c9bafc0ceaa6b7727e361c1e3f6a13b033f1",
+      "bytes": 32226
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/sentence_4.mp3",
+      "sha256": "7d6ac1753904bce5739a115d7fe10d0284da628206d1fcb40558300eacd97d00",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/sentence_5.mp3",
+      "sha256": "602287a7f4f982f8c06d9bd958f91bb51ae2cdd9da63cc06b4c8a5337a6cd354",
+      "bytes": 29301
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/word_egg.mp3",
+      "sha256": "95a4b9f279c0a130615e18f49227dea1f5a1d654b0f11641e319b04a096c13c8",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/word_fish.mp3",
+      "sha256": "a6385daa53dc4c4749fa225210bc71a5f0c63ca2b79269dabbf50f1158e811d3",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/word_frog.mp3",
+      "sha256": "5e6a3d12a3759d68a450e972d790753eb032f44e71d08802b49836e680bb982e",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/word_kite.mp3",
+      "sha256": "e0f79d6de69095a8d9b031747f32dbbf66a959a0d7173f811a8b4987820d6aa5",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/my_sentences_mix/word_ship.mp3",
+      "sha256": "f596124d3e0473fd4b77396ef49effc8f8fb8cb8e6548612b9233790abdc7242",
+      "bytes": 14254
+    },
+    {
+      "path": "images/explorers/my_sentences_a_an/ant.webp",
+      "sha256": "51d4d352858e421600b3676beeed9cff0a16f39a85eaa0f1601460f07ff64562",
+      "bytes": 56330
+    },
+    {
+      "path": "images/explorers/my_sentences_a_an/apple.webp",
+      "sha256": "b2679f607a1ca4318698b568865a0fc8bc6cc94e3ff1f188397275e38017e9b1",
+      "bytes": 51694
+    },
+    {
+      "path": "images/explorers/my_sentences_a_an/bus.svg",
+      "sha256": "310776b6edc150fa456ef2c6275211cb6d5df413054f983105b3f7c47931dd88",
+      "bytes": 875
+    },
+    {
+      "path": "images/explorers/my_sentences_a_an/cake.svg",
+      "sha256": "f471a8d0daad58c1fd31250738aa8fabc6d973536639dd12271f5807d8cdff56",
+      "bytes": 1378
+    },
+    {
+      "path": "images/explorers/my_sentences_a_an/egg.svg",
+      "sha256": "7c9946a629cda6715fd6ccdbfe13e9280de50940372e854defd743c35e238dca",
+      "bytes": 512
+    },
+    {
+      "path": "images/explorers/my_sentences_a_an/hen.svg",
+      "sha256": "626c7f8a42b32f8102c5bb2b6b38bead584e6492ec4125a25fadaf769e974958",
+      "bytes": 821
+    },
+    {
+      "path": "images/explorers/my_sentences_is_are/cat.webp",
+      "sha256": "b526f4ddbfe8c66fbb063b1b79f324afb77977dd4e996d4fc1abb3c7bb3197d2",
+      "bytes": 66930
+    },
+    {
+      "path": "images/explorers/my_sentences_is_are/dog.webp",
+      "sha256": "653120dc03c255bd8d4ed162f98258f3d70a41e48b2f513c20e6a81a840cd35c",
+      "bytes": 66090
+    },
+    {
+      "path": "images/explorers/my_sentences_is_are/duck.webp",
+      "sha256": "84987820fd92c2a37fed378bfeef2a7c089a1ccdf18ed0030c95d07fb158eefd",
+      "bytes": 57576
+    },
+    {
+      "path": "images/explorers/my_sentences_is_are/pig.webp",
+      "sha256": "d9beed11e22450131f616737ed2ef693ef61a370e13e1cf1a7325b611d822524",
+      "bytes": 59762
+    },
+    {
+      "path": "images/explorers/my_sentences_mix/egg.svg",
+      "sha256": "7c9946a629cda6715fd6ccdbfe13e9280de50940372e854defd743c35e238dca",
+      "bytes": 512
+    },
+    {
+      "path": "images/explorers/my_sentences_mix/fish.svg",
+      "sha256": "ef977ba1745fd87c34621ba8198c96766fe265c85a67104ecf0ea9ecf60a0cb1",
+      "bytes": 675
+    },
+    {
+      "path": "images/explorers/my_sentences_mix/frog.webp",
+      "sha256": "7849aa763009024a35fe167dd7354299750d30a01c9f6090b3f9d2788cc2a084",
+      "bytes": 61094
+    },
+    {
+      "path": "images/explorers/my_sentences_mix/kite.svg",
+      "sha256": "df3972c1152f63111ff15ab12232c3c0c5be6b77f834f7f8fa847698613c8f85",
+      "bytes": 589
+    },
+    {
+      "path": "images/explorers/my_sentences_mix/ship.svg",
+      "sha256": "f711091f2f3618603f876dc81d37ee572df54abd2c228cc82268218c1132030a",
+      "bytes": 938
+    }
+  ]
+}

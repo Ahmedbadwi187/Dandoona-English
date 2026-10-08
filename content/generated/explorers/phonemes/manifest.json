@@ -1,0 +1,132 @@
+{
+  "audio": {
+    "phoneme-a": {
+      "hash": "ca33c4f51eb974521a09bf14a00e41abde622bc7926ea66cd9161c4521076507",
+      "generatedAtUtc": "2026-10-08T15:44:11.8130785Z"
+    },
+    "phoneme-e": {
+      "hash": "d5dd28159be1bf4e0c4072a4aae4e8d3c2a3e346a96d0e9070d02f3a26146011",
+      "generatedAtUtc": "2026-10-08T15:44:12.8771519Z"
+    },
+    "phoneme-i": {
+      "hash": "cf0ae083d18d14ce39d9e6d82022a2941ddd8775c2aa239b3a5f6ed360b8f9c7",
+      "generatedAtUtc": "2026-10-08T15:44:13.9150734Z"
+    },
+    "phoneme-o": {
+      "hash": "b129f03c764eacc4db7fc9ef8235f218d1eedd0d7cebbe7b384997847c2f358b",
+      "generatedAtUtc": "2026-10-08T15:44:14.8503943Z"
+    },
+    "phoneme-u": {
+      "hash": "85c3d966df397cdac886482b825fc6413f006303d515e63d3b1bec57292b25ef",
+      "generatedAtUtc": "2026-10-08T15:44:15.7764198Z"
+    },
+    "phoneme-b": {
+      "hash": "08bcaa0fe9593a3635c249f41f38596d782d0221a75a85d346d0d74a0a1a148a",
+      "generatedAtUtc": "2026-10-08T15:44:16.7344656Z"
+    },
+    "phoneme-c": {
+      "hash": "6ea08e177b39872814463fbb3cca7d9a8537fdfe7b3731f51656b63f5cd0cde7",
+      "generatedAtUtc": "2026-10-08T15:44:17.7386259Z"
+    },
+    "phoneme-d": {
+      "hash": "d3018104734f48206cbe1d14438a7294585e13014f81840af3e96ee7a263273d",
+      "generatedAtUtc": "2026-10-08T15:44:18.8714326Z"
+    },
+    "phoneme-f": {
+      "hash": "0a6f7f64c8fc05afdbcc86400c204afc48a669dabd4b7bbe7c2b40d6d4ef92cc",
+      "generatedAtUtc": "2026-10-08T15:44:19.7953782Z"
+    },
+    "phoneme-g": {
+      "hash": "056537e26d7d4c4d95dd47d4202114b1b3218be510a3aa02cce595294292bdbd",
+      "generatedAtUtc": "2026-10-08T15:44:20.7619035Z"
+    },
+    "phoneme-h": {
+      "hash": "b588b3102b99d4617b8d2fb06a4c1d2909599d6d5bdbfd0e731752f551a8835a",
+      "generatedAtUtc": "2026-10-08T15:44:21.8209461Z"
+    },
+    "phoneme-j": {
+      "hash": "dac2c8b1478cd5c3ddd0dbf5edda9a9dc7347391d398705920405974f137f930",
+      "generatedAtUtc": "2026-10-08T15:44:22.8060129Z"
+    },
+    "phoneme-m": {
+      "hash": "9937975d10fea4f9c9c8434adc1922b44aaefabed0eafdfe86388b9ecb7e423d",
+      "generatedAtUtc": "2026-10-08T15:44:23.7606416Z"
+    },
+    "phoneme-n": {
+      "hash": "188f408e714a98fc3c06d5fc13c52e9f177ad23680d7f67d7411c7f76929df8a",
+      "generatedAtUtc": "2026-10-08T15:44:25.0003868Z"
+    },
+    "phoneme-p": {
+      "hash": "d78cff28e4c5203dd62a99dbc37441eb485c0e7cb8773266dfa46a6a99799203",
+      "generatedAtUtc": "2026-10-08T15:44:25.9428384Z"
+    },
+    "phoneme-s": {
+      "hash": "53e583e110f5326901ca97f9ef29cce4d8101c6cedcf4466007a31f3fa589245",
+      "generatedAtUtc": "2026-10-08T15:44:26.9066592Z"
+    },
+    "phoneme-t": {
+      "hash": "8aa3b3f8dd8bef5b9474a9278335b13ae079cd4406f32e10778fc927efbf5339",
+      "generatedAtUtc": "2026-10-08T15:44:27.8731718Z"
+    },
+    "phoneme-x": {
+      "hash": "5e26693c5fa586fba602c1e7eb681303d958ff5f9467865ac7738fd97b6c31a1",
+      "generatedAtUtc": "2026-10-08T15:44:28.8063949Z"
+    },
+    "phoneme-l": {
+      "hash": "f9d00cfbd3ddc27f79b0b0aab7c20008399dd07f06149322513dbb3932590e2f",
+      "generatedAtUtc": "2026-10-08T15:44:29.7380277Z"
+    },
+    "phoneme-r": {
+      "hash": "8bc90d553e468197390d3bceedfb24edfadf565d52b3128f196c19580b39cc92",
+      "generatedAtUtc": "2026-10-08T15:44:30.6792798Z"
+    },
+    "phoneme-v": {
+      "hash": "91f45568a7a6d5557803f50650244007973eb0835b41c338a11cce25b65c8b71",
+      "generatedAtUtc": "2026-10-08T15:44:31.6229093Z"
+    },
+    "phoneme-z": {
+      "hash": "435c39ab485c774930930eda5a22bc69ebd464b0df00d5762eb14a3fd3b6c93e",
+      "generatedAtUtc": "2026-10-08T15:44:32.5497726Z"
+    },
+    "phoneme-sh": {
+      "hash": "0f5a4f33df052b0d3640e19ed32cce042999d1c6fa2605128481d2c3a4998b43",
+      "generatedAtUtc": "2026-10-08T15:44:33.5196633Z"
+    },
+    "phoneme-ch": {
+      "hash": "777ada264aecfdd17841f6377a78c9c677a75c19776d26a0a678f71df4bed799",
+      "generatedAtUtc": "2026-10-08T15:44:34.5616422Z"
+    },
+    "phoneme-th": {
+      "hash": "db1b3358e520a189637784cb347527bd83b2b908ad42701c77ce72aa75f3b29f",
+      "generatedAtUtc": "2026-10-08T15:44:35.504151Z"
+    },
+    "phoneme-ay": {
+      "hash": "a25340ca1cc73dd01e5c5612a51a48b37b07b558f69d1d2456dce54b706f663c",
+      "generatedAtUtc": "2026-10-08T15:44:36.4349624Z"
+    },
+    "phoneme-ee": {
+      "hash": "42852ec9a82201243304032df21453fef79dfa5ab159021240b366aa4576ee5d",
+      "generatedAtUtc": "2026-10-08T15:44:37.4143437Z"
+    },
+    "phoneme-ie": {
+      "hash": "d58c4045a4dba2ec553df901550bdec3a6230f8d2c0a4b9079e2f7bda8ebc850",
+      "generatedAtUtc": "2026-10-08T15:44:38.3856608Z"
+    },
+    "phoneme-oa": {
+      "hash": "9d681abbf88a295d910287c4a975467c714d08040401e22b3df0838ce8afced7",
+      "generatedAtUtc": "2026-10-08T15:44:39.330312Z"
+    },
+    "phoneme-ue": {
+      "hash": "86527efec9de5f6d2d08c4aa02c52f95010b7697082566dbb8e7e9ce8e537316",
+      "generatedAtUtc": "2026-10-08T15:44:40.3902788Z"
+    },
+    "phoneme-oo": {
+      "hash": "fe7ce9849fd395af64124717177fa3ff3223640fd6b5acd65b7ffe0c6c961602",
+      "generatedAtUtc": "2026-10-08T15:44:41.4536932Z"
+    },
+    "phoneme-ar": {
+      "hash": "627727c7fae1a5ea68ae5e120fd97c616d925974b6d1679aeb7bb5a5552710cc",
+      "generatedAtUtc": "2026-10-08T15:44:42.4425412Z"
+    }
+  }
+}

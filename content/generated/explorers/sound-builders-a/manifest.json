@@ -1,0 +1,52 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "6a7e45d63641b5a34c9da5cb690c6fbce48c6008028e8e8860d2bf696755c904",
+      "generatedAtUtc": "2026-10-08T15:25:50.0994256Z"
+    },
+    "praise-0": {
+      "hash": "b1ece7d3b6f55486c80845651ea15cf82cd1600acddeb26fe8c1ec4074866243",
+      "generatedAtUtc": "2026-10-08T15:25:51.0753642Z"
+    },
+    "praise-1": {
+      "hash": "a704490b77532897780b2adbda09f14c358f198d9232e3aac0fa0c9858a55cd9",
+      "generatedAtUtc": "2026-10-08T15:25:52.0591698Z"
+    },
+    "praise-2": {
+      "hash": "6436155ab30ee84cd601145f58e80d1cb5cb45302e48dc98fe272c71b3796c6e",
+      "generatedAtUtc": "2026-10-08T15:25:53.0168809Z"
+    },
+    "word-cat": {
+      "hash": "44554b5ee66cd4aded23f1368b6348b39b11ce180e1baafd2c86e7b38c7b8cf8",
+      "generatedAtUtc": "2026-10-08T15:25:53.9870346Z"
+    },
+    "word-jam": {
+      "hash": "0db7ef8432ec062ad3265f2d10b348252f2e79cc133e314a2484921ed0d7df87",
+      "generatedAtUtc": "2026-10-08T15:25:55.0450053Z"
+    },
+    "word-ant": {
+      "hash": "cd5e6bc88afff9c32f9386c3f9d6cefc981056c56cf53515699d1eb70853be36",
+      "generatedAtUtc": "2026-10-08T15:53:49.5480843Z"
+    },
+    "word-hat": {
+      "hash": "3e18c7a1dc362a5d0c0dc36d02a55ccab30ae9e3f9e005ef4b57bfa539aa5a78",
+      "generatedAtUtc": "2026-10-08T15:25:56.8928096Z"
+    },
+    "plural-cat": {
+      "hash": "41a5c0806f3af6fefac990b4d66baf0a716efe6f0b530207b5babf91c2c8fd2e",
+      "generatedAtUtc": "2026-10-08T15:25:57.914679Z"
+    },
+    "instr-read-and-pick": {
+      "hash": "6c994a45c30845b30697350dfb70194c68948d4de116e1fa5947697542123127",
+      "generatedAtUtc": "2026-10-08T15:25:59.1060023Z"
+    },
+    "instr-sound-tap": {
+      "hash": "5ce6b557d035b0e5909604c6f50e338b2982ab996b7b48024f463743bf592cc4",
+      "generatedAtUtc": "2026-10-08T15:26:00.2797563Z"
+    },
+    "instr-word-builder": {
+      "hash": "76fd3ccc7cf71d6b0736c8364a1f56764d846b7ab071adb493e7e315a2102e39",
+      "generatedAtUtc": "2026-10-08T15:26:01.8743177Z"
+    }
+  }
+}

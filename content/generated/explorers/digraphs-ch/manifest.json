@@ -1,0 +1,48 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "cc15c91287b4cf3d2a4f88dc63427e0ab7900f3b2416c895dd24fcf12fbcfda1",
+      "generatedAtUtc": "2026-10-08T15:27:19.5523765Z"
+    },
+    "praise-0": {
+      "hash": "b1ece7d3b6f55486c80845651ea15cf82cd1600acddeb26fe8c1ec4074866243",
+      "generatedAtUtc": "2026-10-08T15:27:20.4798059Z"
+    },
+    "praise-1": {
+      "hash": "46eb7b81f183e0e98e8ce54a9f933b96adedb1d26269b74c4a02a5d43227ad58",
+      "generatedAtUtc": "2026-10-08T15:27:21.4476641Z"
+    },
+    "praise-2": {
+      "hash": "6436155ab30ee84cd601145f58e80d1cb5cb45302e48dc98fe272c71b3796c6e",
+      "generatedAtUtc": "2026-10-08T15:27:22.5968384Z"
+    },
+    "word-chick": {
+      "hash": "318df204538ee0e7fa94bd2452a522d31dfd21008971eb13c41f990a8b8671c3",
+      "generatedAtUtc": "2026-10-08T15:27:23.5262655Z"
+    },
+    "word-chip": {
+      "hash": "8b3972fb735c8846674c8d6bd268247a58895cf7a40f8b5373c5a547131b8686",
+      "generatedAtUtc": "2026-10-08T15:27:24.5322824Z"
+    },
+    "word-bench": {
+      "hash": "446dd3d0d710582058b334760df8050025563d371077ffa895b89b2eb360e540",
+      "generatedAtUtc": "2026-10-08T15:27:25.4529427Z"
+    },
+    "word-lunch": {
+      "hash": "77b3b635183188e1c2c861c43824afb13e7490651a6e28e40d112c31174449ad",
+      "generatedAtUtc": "2026-10-08T15:27:26.387368Z"
+    },
+    "instr-read-and-pick": {
+      "hash": "6c994a45c30845b30697350dfb70194c68948d4de116e1fa5947697542123127",
+      "generatedAtUtc": "2026-10-08T15:27:27.5699633Z"
+    },
+    "instr-sound-tap": {
+      "hash": "5ce6b557d035b0e5909604c6f50e338b2982ab996b7b48024f463743bf592cc4",
+      "generatedAtUtc": "2026-10-08T15:27:28.7255574Z"
+    },
+    "instr-word-builder": {
+      "hash": "76fd3ccc7cf71d6b0736c8364a1f56764d846b7ab071adb493e7e315a2102e39",
+      "generatedAtUtc": "2026-10-08T15:27:29.963636Z"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "a98c6942214e91b7a373f0b18eb8ed00968fb2383a9a7ecdf53a6cbe32327f8c",
+      "generatedAtUtc": "2026-10-08T15:28:46.3538016Z"
+    },
+    "praise-0": {
+      "hash": "b1ece7d3b6f55486c80845651ea15cf82cd1600acddeb26fe8c1ec4074866243",
+      "generatedAtUtc": "2026-10-08T15:28:47.4906761Z"
+    },
+    "praise-1": {
+      "hash": "46eb7b81f183e0e98e8ce54a9f933b96adedb1d26269b74c4a02a5d43227ad58",
+      "generatedAtUtc": "2026-10-08T15:28:48.4653712Z"
+    },
+    "praise-2": {
+      "hash": "6436155ab30ee84cd601145f58e80d1cb5cb45302e48dc98fe272c71b3796c6e",
+      "generatedAtUtc": "2026-10-08T15:28:49.5045969Z"
+    },
+    "word-kite": {
+      "hash": "f4ba1ebd6d9766bf97f5cc18ff7b33f4150af773ae28624293e26e4b9022ebcb",
+      "generatedAtUtc": "2026-10-08T15:28:50.5973941Z"
+    },
+    "word-bike": {
+      "hash": "6432853823df656bd730fbb060f88eeac404c90295758eb7509dcbee53f1fa38",
+      "generatedAtUtc": "2026-10-08T15:28:51.5419549Z"
+    },
+    "word-five": {
+      "hash": "208038eae48d6a8475a089d68a3bc10876771b4e5c77712a4413ca6efae60338",
+      "generatedAtUtc": "2026-10-08T15:28:52.4633034Z"
+    },
+    "word-nine": {
+      "hash": "7d64e4763b9071decb0e19c55f273e344d514f707c2a9874ab81ff0c4fa41bb7",
+      "generatedAtUtc": "2026-10-08T15:28:53.4378631Z"
+    },
+    "instr-read-and-pick": {
+      "hash": "6c994a45c30845b30697350dfb70194c68948d4de116e1fa5947697542123127",
+      "generatedAtUtc": "2026-10-08T15:28:54.5624475Z"
+    },
+    "instr-sound-tap": {
+      "hash": "5ce6b557d035b0e5909604c6f50e338b2982ab996b7b48024f463743bf592cc4",
+      "generatedAtUtc": "2026-10-08T15:28:55.741574Z"
+    },
+    "instr-word-builder": {
+      "hash": "76fd3ccc7cf71d6b0736c8364a1f56764d846b7ab071adb493e7e315a2102e39",
+      "generatedAtUtc": "2026-10-08T15:28:56.8586066Z"
+    }
+  }
+}

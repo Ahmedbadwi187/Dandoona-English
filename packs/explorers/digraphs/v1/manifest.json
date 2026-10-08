@@ -1,0 +1,574 @@
+{
+  "schemaVersion": 1,
+  "track": "explorers",
+  "unit": "digraphs",
+  "version": 1,
+  "contentHash": "3c8a883da742a7e9949d68b2912473d54371a0c754c5f78288c44a6590c557d6",
+  "lessons": [
+    {
+      "id": "digraphs-sh",
+      "order": 1,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/digraphs_sh/intro.mp3",
+        "praise": [
+          "audio/explorers/digraphs_sh/praise_0.mp3",
+          "audio/explorers/digraphs_sh/praise_1.mp3",
+          "audio/explorers/digraphs_sh/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/digraphs_sh/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/digraphs_sh/instr_sound_tap.mp3",
+          "word-builder": "audio/explorers/digraphs_sh/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "fish",
+          "audio": "audio/explorers/digraphs_sh/word_fish.mp3",
+          "image": "images/explorers/digraphs_sh/fish.svg",
+          "graphemes": [
+            "f",
+            "i",
+            "sh"
+          ]
+        },
+        {
+          "word": "ship",
+          "audio": "audio/explorers/digraphs_sh/word_ship.mp3",
+          "image": "images/explorers/digraphs_sh/ship.svg",
+          "graphemes": [
+            "sh",
+            "i",
+            "p"
+          ]
+        },
+        {
+          "word": "shop",
+          "audio": "audio/explorers/digraphs_sh/word_shop.mp3",
+          "image": "images/explorers/digraphs_sh/shop.svg",
+          "graphemes": [
+            "sh",
+            "o",
+            "p"
+          ]
+        },
+        {
+          "word": "dish",
+          "audio": "audio/explorers/digraphs_sh/word_dish.mp3",
+          "image": "images/explorers/digraphs_sh/dish.svg",
+          "graphemes": [
+            "d",
+            "i",
+            "sh"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "read-and-pick"
+      ]
+    },
+    {
+      "id": "digraphs-ch",
+      "order": 2,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/digraphs_ch/intro.mp3",
+        "praise": [
+          "audio/explorers/digraphs_ch/praise_0.mp3",
+          "audio/explorers/digraphs_ch/praise_1.mp3",
+          "audio/explorers/digraphs_ch/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/digraphs_ch/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/digraphs_ch/instr_sound_tap.mp3",
+          "word-builder": "audio/explorers/digraphs_ch/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "chick",
+          "audio": "audio/explorers/digraphs_ch/word_chick.mp3",
+          "image": "images/explorers/digraphs_ch/chick.svg",
+          "graphemes": [
+            "ch",
+            "i",
+            "ck:c"
+          ]
+        },
+        {
+          "word": "chip",
+          "audio": "audio/explorers/digraphs_ch/word_chip.mp3",
+          "image": "images/explorers/digraphs_ch/chip.svg",
+          "graphemes": [
+            "ch",
+            "i",
+            "p"
+          ]
+        },
+        {
+          "word": "bench",
+          "audio": "audio/explorers/digraphs_ch/word_bench.mp3",
+          "image": "images/explorers/digraphs_ch/bench.svg",
+          "graphemes": [
+            "b",
+            "e",
+            "n",
+            "ch"
+          ]
+        },
+        {
+          "word": "lunch",
+          "audio": "audio/explorers/digraphs_ch/word_lunch.mp3",
+          "image": "images/explorers/digraphs_ch/lunch.svg",
+          "graphemes": [
+            "l",
+            "u",
+            "n",
+            "ch"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "read-and-pick"
+      ]
+    },
+    {
+      "id": "digraphs-th",
+      "order": 3,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/digraphs_th/intro.mp3",
+        "praise": [
+          "audio/explorers/digraphs_th/praise_0.mp3",
+          "audio/explorers/digraphs_th/praise_1.mp3",
+          "audio/explorers/digraphs_th/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/digraphs_th/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/digraphs_th/instr_sound_tap.mp3",
+          "word-builder": "audio/explorers/digraphs_th/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "bath",
+          "audio": "audio/explorers/digraphs_th/word_bath.mp3",
+          "image": "images/explorers/digraphs_th/bath.svg",
+          "graphemes": [
+            "b",
+            "a",
+            "th"
+          ]
+        },
+        {
+          "word": "moth",
+          "audio": "audio/explorers/digraphs_th/word_moth.mp3",
+          "image": "images/explorers/digraphs_th/moth.svg",
+          "graphemes": [
+            "m",
+            "o",
+            "th"
+          ]
+        },
+        {
+          "word": "math",
+          "audio": "audio/explorers/digraphs_th/word_math.mp3",
+          "image": "images/explorers/digraphs_th/math.svg",
+          "graphemes": [
+            "m",
+            "a",
+            "th"
+          ]
+        },
+        {
+          "word": "path",
+          "audio": "audio/explorers/digraphs_th/word_path.mp3",
+          "image": "images/explorers/digraphs_th/path.svg",
+          "graphemes": [
+            "p",
+            "a",
+            "th"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "read-and-pick"
+      ]
+    },
+    {
+      "id": "digraphs-ck",
+      "order": 4,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/digraphs_ck/intro.mp3",
+        "praise": [
+          "audio/explorers/digraphs_ck/praise_0.mp3",
+          "audio/explorers/digraphs_ck/praise_1.mp3",
+          "audio/explorers/digraphs_ck/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/digraphs_ck/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/digraphs_ck/instr_sound_tap.mp3",
+          "word-builder": "audio/explorers/digraphs_ck/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "duck",
+          "audio": "audio/explorers/digraphs_ck/word_duck.mp3",
+          "image": "images/explorers/digraphs_ck/duck.webp",
+          "graphemes": [
+            "d",
+            "u",
+            "ck:c"
+          ]
+        },
+        {
+          "word": "socks",
+          "audio": "audio/explorers/digraphs_ck/word_socks.mp3",
+          "image": "images/explorers/digraphs_ck/socks.svg",
+          "graphemes": [
+            "s",
+            "o",
+            "ck:c",
+            "s"
+          ]
+        },
+        {
+          "word": "rock",
+          "audio": "audio/explorers/digraphs_ck/word_rock.mp3",
+          "image": "images/explorers/digraphs_ck/rock.svg",
+          "graphemes": [
+            "r",
+            "o",
+            "ck:c"
+          ]
+        },
+        {
+          "word": "kick",
+          "audio": "audio/explorers/digraphs_ck/word_kick.mp3",
+          "image": "images/explorers/digraphs_ck/kick.svg",
+          "graphemes": [
+            "k:c",
+            "i",
+            "ck:c"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "read-and-pick"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/explorers/digraphs_ch/instr_read_and_pick.mp3",
+      "sha256": "50c177fb75448690f6aad65588259615c6ad6acc3ba6fc2925a44aac6e8817d8",
+      "bytes": 46437
+    },
+    {
+      "path": "audio/explorers/digraphs_ch/instr_sound_tap.mp3",
+      "sha256": "f8d2ab4e451043f3f53a02eeb669b93a19e1faaff003a0a4dfc9aacd165fa332",
+      "bytes": 69425
+    },
+    {
+      "path": "audio/explorers/digraphs_ch/instr_word_builder.mp3",
+      "sha256": "fd54a1f449552459378709f0b794244481b8b38b81f7954ce7599a2ac816f296",
+      "bytes": 51453
+    },
+    {
+      "path": "audio/explorers/digraphs_ch/intro.mp3",
+      "sha256": "d126af30f069b88f1b82c3e7faa99631246f1ab2f4ce4167b463dadbac69727e",
+      "bytes": 91577
+    },
+    {
+      "path": "audio/explorers/digraphs_ch/praise_0.mp3",
+      "sha256": "3d538a0dd459ad651f1a8b18c93ce29bea87039a8a0085c6bb5da3d15c834786",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/digraphs_ch/praise_1.mp3",
+      "sha256": "ade7f6cd7bf87ddc040a69a444f2e129bb77b64743950e11c76e8d98da3ed37a",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/digraphs_ch/praise_2.mp3",
+      "sha256": "4b1574e9d4ae155f03825e7ed5ff870ad955f3df2b4d7a265b4ea9db44efd888",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/digraphs_ch/word_bench.mp3",
+      "sha256": "007707ea9bd39c184f1e0ef5d62ce5d721676f0af5e06f45f0cfcc83107850fd",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/digraphs_ch/word_chick.mp3",
+      "sha256": "997850e3b05ae10600ceaee554049a86806c58497d99617edbb9922547de0953",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/digraphs_ch/word_chip.mp3",
+      "sha256": "94c23aeed86db294598068f149a1eddb3b7f57c31347d011681365a90c14895b",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/digraphs_ch/word_lunch.mp3",
+      "sha256": "4c42846e2fecd666f53231a8067960f5febf30789047e3d14fe1ec29c9679a6a",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/digraphs_ck/instr_read_and_pick.mp3",
+      "sha256": "bd52099f9356a9884f02bd1a73398cd367e65c4078f3544086fe833e4b7d6fb1",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/explorers/digraphs_ck/instr_sound_tap.mp3",
+      "sha256": "522482b69e985b4e311f18567fe07d49407d05944cf3f9644186b253ac5f9558",
+      "bytes": 64409
+    },
+    {
+      "path": "audio/explorers/digraphs_ck/instr_word_builder.mp3",
+      "sha256": "9572c352f1af249468604cd5a137b4834e65a7eb9edcd4d19686f5704af62613",
+      "bytes": 56886
+    },
+    {
+      "path": "audio/explorers/digraphs_ck/intro.mp3",
+      "sha256": "4fa6e818aee36ff246169e556001dfab5592c0b85603aa8f7cefc5198c85a3c8",
+      "bytes": 125013
+    },
+    {
+      "path": "audio/explorers/digraphs_ck/praise_0.mp3",
+      "sha256": "10689a0e8b5684476682aff24dcdecfc002c2478266b14ee9f495c3a1144ec7c",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/digraphs_ck/praise_1.mp3",
+      "sha256": "324652ff971922653ed2bcf2ee4098e45c55a685e83f02bba60c980edd110383",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/digraphs_ck/praise_2.mp3",
+      "sha256": "0934ed442f95c1565b3e84736677660e4da29fcfdb68fb51bf454a000289f04e",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/digraphs_ck/word_duck.mp3",
+      "sha256": "d428b8e32774aa69c104731ae853dcc53c089efb2bbc7911340fc81e1f119bd7",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/explorers/digraphs_ck/word_kick.mp3",
+      "sha256": "9112dbf6de61acb0dd9f1bd35912102729037e2ea5a43d6787db5c19002a85d5",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/digraphs_ck/word_rock.mp3",
+      "sha256": "b427ab4fe5d6a3f9b282d6c6424a3e10e6cfce26cd6cc6628b45c982d94cf31a",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/digraphs_ck/word_socks.mp3",
+      "sha256": "b246266151f8b62e77a92384e6542fbb4bc3c5a0d298df10f6fd145efb1698d1",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/digraphs_sh/instr_read_and_pick.mp3",
+      "sha256": "163edeb6522733e3774bb73a9504f1b3d9025f8ae8293025402bbb54c2085fe6",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/explorers/digraphs_sh/instr_sound_tap.mp3",
+      "sha256": "bacb7dadc7b802341dc36ad8180a749198bd5df9de4637253faadd40a57ec369",
+      "bytes": 69425
+    },
+    {
+      "path": "audio/explorers/digraphs_sh/instr_word_builder.mp3",
+      "sha256": "e3f4727cc7435f0de4f4b4b9402b3d2010dd1a13df86dd27a396d9875eb11749",
+      "bytes": 58140
+    },
+    {
+      "path": "audio/explorers/digraphs_sh/intro.mp3",
+      "sha256": "6852d0daa3c2d58896c58a990a89ba9f0ba19efd3c0b932c0a13dd8aa933a1db",
+      "bytes": 122924
+    },
+    {
+      "path": "audio/explorers/digraphs_sh/praise_0.mp3",
+      "sha256": "ed41d2cb13e1f8d636b1d4d6e0f5f1e6f9c0db38e93e7161230534ff4be86be8",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/digraphs_sh/praise_1.mp3",
+      "sha256": "e2d448d61a363639cef50be768b18465053fcba5e2dfa8a268959fd6c63c65fc",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/digraphs_sh/praise_2.mp3",
+      "sha256": "0602e7b9691c239c7fb1db83b401b4ff75bda0a08ed1b9dff76960296002332f",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/digraphs_sh/word_dish.mp3",
+      "sha256": "300e724249bed43e2487d69880b31255b4a9ce85951f60665a58306b26078d2b",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/digraphs_sh/word_fish.mp3",
+      "sha256": "d578aaa0453a5a81771a40d866db37e58879de445a0f6bae38e7a66193aa8aab",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/digraphs_sh/word_ship.mp3",
+      "sha256": "790efab792f67f9639c4edf4cf42ca49357bd42044315715a8684faa48d6959a",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/digraphs_sh/word_shop.mp3",
+      "sha256": "a078ea4175fdd50c6b028ca121368c3faa6858938b79876e57f0a6ed2231c723",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/digraphs_th/instr_read_and_pick.mp3",
+      "sha256": "864a3e7fe64be438713a439d4cc3f1b21515b1567ac4167f293ee7a1128119cc",
+      "bytes": 44347
+    },
+    {
+      "path": "audio/explorers/digraphs_th/instr_sound_tap.mp3",
+      "sha256": "641dad1646613839ad86915d19b4d0de08375113f4844b00cd6d0df410110007",
+      "bytes": 63573
+    },
+    {
+      "path": "audio/explorers/digraphs_th/instr_word_builder.mp3",
+      "sha256": "a984584a701951d020ac5bdfb768fb261c18c3edf089998873bf17409c666c8b",
+      "bytes": 54378
+    },
+    {
+      "path": "audio/explorers/digraphs_th/intro.mp3",
+      "sha256": "58e3b3fc0ec2026c4dcfd72a9528024c6cc03368fe2e6f62baa511dd2cac7c9f",
+      "bytes": 122088
+    },
+    {
+      "path": "audio/explorers/digraphs_th/praise_0.mp3",
+      "sha256": "84ed54ff53dc7b9640b78e3808193b3260658262d855d7a8e26af8cf2ae7c05d",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/digraphs_th/praise_1.mp3",
+      "sha256": "7837607201b1d0c7e1e19b9522d67bfd0f89e9e293c171cc67f4a5b0eb10e848",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/explorers/digraphs_th/praise_2.mp3",
+      "sha256": "b6f1a605c3d587ba484a5bd18467d9b4fc06536fb609e7114511f0022e2288b9",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/digraphs_th/word_bath.mp3",
+      "sha256": "8e03a87c386aba286dff6a366c8835df2546ca4478b22154c7eb035d96bda8e9",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/digraphs_th/word_math.mp3",
+      "sha256": "b2168890283d92dacac141dffa3ef70b4526f74deb766dda8afb98ee7105b0d0",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/digraphs_th/word_moth.mp3",
+      "sha256": "e3c4110d4520b45916731617be64954fe6196a5e14cdd65aa347e18e54a76366",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/digraphs_th/word_path.mp3",
+      "sha256": "fef8d140b53a4e8d6ad943aab2362607dc93c3827a8c092bf5593643f3966605",
+      "bytes": 16762
+    },
+    {
+      "path": "images/explorers/digraphs_ch/bench.svg",
+      "sha256": "b7836ff2131533120b1f1341cb56b61e470e583589f82f375fa2d3ff44f9d07b",
+      "bytes": 778
+    },
+    {
+      "path": "images/explorers/digraphs_ch/chick.svg",
+      "sha256": "1bcc48b8e6e07d9115a170daa2c725a31677fbac84febda068eb187e31b43993",
+      "bytes": 1222
+    },
+    {
+      "path": "images/explorers/digraphs_ch/chip.svg",
+      "sha256": "7aa31e065243e7aa9103ae2805a26900647d2b7580a7cda9d0503b21881160d9",
+      "bytes": 798
+    },
+    {
+      "path": "images/explorers/digraphs_ch/lunch.svg",
+      "sha256": "f60a391e584f0fc21f5d21872ad3b1769182673b63edc131f2ef6d56506bdd78",
+      "bytes": 1024
+    },
+    {
+      "path": "images/explorers/digraphs_ck/duck.webp",
+      "sha256": "84987820fd92c2a37fed378bfeef2a7c089a1ccdf18ed0030c95d07fb158eefd",
+      "bytes": 57576
+    },
+    {
+      "path": "images/explorers/digraphs_ck/kick.svg",
+      "sha256": "2c0687e9a9e74613a147e98dacd45a1f0aa2d2699353ccbd40eb5127cc8739ad",
+      "bytes": 1052
+    },
+    {
+      "path": "images/explorers/digraphs_ck/rock.svg",
+      "sha256": "5da75e3312865b7b84d6a6c33ba011d16b71b9d807f0299701556e65a36c7c59",
+      "bytes": 616
+    },
+    {
+      "path": "images/explorers/digraphs_ck/socks.svg",
+      "sha256": "e471f7c0649bd14c287757f9244743328704c0ab9aa5cc417feada38e8e39a36",
+      "bytes": 828
+    },
+    {
+      "path": "images/explorers/digraphs_sh/dish.svg",
+      "sha256": "bafdb4b384e5a57d3c81f0bedc7dd1bac7274b7e47d9472e6d3db2d0a305f22d",
+      "bytes": 796
+    },
+    {
+      "path": "images/explorers/digraphs_sh/fish.svg",
+      "sha256": "ef977ba1745fd87c34621ba8198c96766fe265c85a67104ecf0ea9ecf60a0cb1",
+      "bytes": 675
+    },
+    {
+      "path": "images/explorers/digraphs_sh/ship.svg",
+      "sha256": "f711091f2f3618603f876dc81d37ee572df54abd2c228cc82268218c1132030a",
+      "bytes": 938
+    },
+    {
+      "path": "images/explorers/digraphs_sh/shop.svg",
+      "sha256": "d4a7783bb136436e30c38d1fa73e79dac1276ebad3d812623c4d35300014ca98",
+      "bytes": 1198
+    },
+    {
+      "path": "images/explorers/digraphs_th/bath.svg",
+      "sha256": "0d4230f38e66add41c0008ae79e57ae25a33527dd12eb7a7d0a76b4918e31b91",
+      "bytes": 1066
+    },
+    {
+      "path": "images/explorers/digraphs_th/math.svg",
+      "sha256": "a2baa309f6af145e19fbe0a2aa4065202f931329bf024478ace7a5c8e3dee6d0",
+      "bytes": 1111
+    },
+    {
+      "path": "images/explorers/digraphs_th/moth.svg",
+      "sha256": "e88d44985a20016873de80957e8647420be6feb18abe8dda0fb59d3667d3cd6d",
+      "bytes": 1159
+    },
+    {
+      "path": "images/explorers/digraphs_th/path.svg",
+      "sha256": "3ddc2bf19752a6e96ec22db922e9e5ca599c30a1227dd8537fe4ec4e13193d06",
+      "bytes": 1005
+    }
+  ]
+}
