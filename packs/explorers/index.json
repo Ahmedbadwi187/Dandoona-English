@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "track": "explorers",
+  "packs": [
+    {
+      "unit": "digraphs",
+      "version": 1,
+      "sha256": "055e96fbb27590fa3969d15b920691d1f6e0e1e1d6e75162bb788cdeaa918f1c",
+      "bytes": 1724925,
+      "manifest": "digraphs/v1/manifest.json",
+      "lessonIds": [
+        "digraphs-sh",
+        "digraphs-ch",
+        "digraphs-th",
+        "digraphs-ck"
+      ]
+    },
+    {
+      "unit": "blends",
+      "version": 1,
+      "sha256": "eecaa3d6b18965514990baf9c6ac344c5d90b157b2b47f1bb70cb9ff750def62",
+      "bytes": 1523464,
+      "manifest": "blends/v1/manifest.json",
+      "lessonIds": [
+        "blends-l",
+        "blends-r",
+        "blends-end"
+      ]
+    },
+    {
+      "unit": "magic-e",
+      "version": 1,
+      "sha256": "c28bb63f74af62415dcba48ea00050f6e829ead94caca5c9fdb23c253281965e",
+      "bytes": 1507935,
+      "manifest": "magic_e/v1/manifest.json",
+      "lessonIds": [
+        "magic-e-a",
+        "magic-e-i",
+        "magic-e-o-u"
+      ]
+    },
+    {
+      "unit": "vowel-teams",
+      "version": 1,
+      "sha256": "e71e6725a478959618eb1270ac02a7e64e36acc6bba91edbc0960620c20ec5f0",
+      "bytes": 1781492,
+      "manifest": "vowel_teams/v1/manifest.json",
+      "lessonIds": [
+        "vowel-teams-ai",
+        "vowel-teams-ee",
+        "vowel-teams-oa",
+        "vowel-teams-oo-ar"
+      ]
+    },
+    {
+      "unit": "sight-words-1",
+      "version": 1,
+      "sha256": "38f7550458e6c2687db79c029e094a438964fda4e4bf0a0dc30d345eaca8f486",
+      "bytes": 1611157,
+      "manifest": "sight_words_1/v1/manifest.json",
+      "lessonIds": [
+        "sight-words-1-a",
+        "sight-words-1-b",
+        "sight-words-1-c"
+      ]
+    },
+    {
+      "unit": "sight-words-2",
+      "version": 1,
+      "sha256": "245205f81409acb3411c6af75d6c79939a34b5df829dd3cb347e59846baab911",
+      "bytes": 1495224,
+      "manifest": "sight_words_2/v1/manifest.json",
+      "lessonIds": [
+        "sight-words-2-a",
+        "sight-words-2-b",
+        "sight-words-2-c"
+      ]
+    },
+    {
+      "unit": "my-sentences",
+      "version": 2,
+      "sha256": "4aeb0c88912d4c485e32eb9adc184b6ed61071f6bcf4bb98cbbe0af9f2807a7a",
+      "bytes": 1808232,
+      "manifest": "my_sentences/v2/manifest.json",
+      "lessonIds": [
+        "my-sentences-is-are",
+        "my-sentences-a-an",
+        "my-sentences-mix"
+      ]
+    }
+  ]
+}

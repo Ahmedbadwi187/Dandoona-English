@@ -1,0 +1,19 @@
+# Magic E with a: the e at the end is silent and makes the a say its name. Everyday words (animals, food, school, home).
+id: magic-e-a
+unit: magic-e
+track: explorers
+level: a1
+order: 1
+words:
+  - { word: cake, graphemes: [c, "a:ay", "k:c", "e:-"], source: svg, imagePrompt: "a birthday cake with candles" }
+  - { word: snake, graphemes: [s, n, "a:ay", "k:c", "e:-"], reuse: "little-learners:letter-s/snake" }
+  - { word: plane, graphemes: [p, l, "a:ay", n, "e:-"], reuse: "little-learners:transport-2/plane" }
+  - { word: grapes, graphemes: [g, r, "a:ay", p, "e:-", s], reuse: "little-learners:color-purple/grapes" }
+narration:
+  intro: "Magic e! The e is quiet, and a says its name: ay. Let's read: cake, snake, plane, grapes."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

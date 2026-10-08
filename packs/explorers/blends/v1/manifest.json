@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 1,
+  "track": "explorers",
+  "unit": "blends",
+  "version": 1,
+  "contentHash": "75aa45f5d78e52b5fb7f91b413c573e2f45a2cc77725e32c71e6e3a909a60694",
+  "lessons": [
+    {
+      "id": "blends-l",
+      "order": 1,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/blends_l/intro.mp3",
+        "praise": [
+          "audio/explorers/blends_l/praise_0.mp3",
+          "audio/explorers/blends_l/praise_1.mp3",
+          "audio/explorers/blends_l/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/blends_l/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/blends_l/instr_sound_tap.mp3",
+          "word-builder": "audio/explorers/blends_l/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "flag",
+          "audio": "audio/explorers/blends_l/word_flag.mp3",
+          "image": "images/explorers/blends_l/flag.svg",
+          "graphemes": [
+            "f",
+            "l",
+            "a",
+            "g"
+          ]
+        },
+        {
+          "word": "clap",
+          "audio": "audio/explorers/blends_l/word_clap.mp3",
+          "image": "images/explorers/blends_l/clap.webp",
+          "graphemes": [
+            "c",
+            "l",
+            "a",
+            "p"
+          ]
+        },
+        {
+          "word": "plum",
+          "audio": "audio/explorers/blends_l/word_plum.mp3",
+          "image": "images/explorers/blends_l/plum.svg",
+          "graphemes": [
+            "p",
+            "l",
+            "u",
+            "m"
+          ]
+        },
+        {
+          "word": "blocks",
+          "audio": "audio/explorers/blends_l/word_blocks.mp3",
+          "image": "images/explorers/blends_l/blocks.svg",
+          "graphemes": [
+            "b",
+            "l",
+            "o",
+            "ck:c",
+            "s"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "read-and-pick"
+      ]
+    },
+    {
+      "id": "blends-r",
+      "order": 2,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/blends_r/intro.mp3",
+        "praise": [
+          "audio/explorers/blends_r/praise_0.mp3",
+          "audio/explorers/blends_r/praise_1.mp3",
+          "audio/explorers/blends_r/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/blends_r/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/blends_r/instr_sound_tap.mp3",
+          "word-builder": "audio/explorers/blends_r/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "frog",
+          "audio": "audio/explorers/blends_r/word_frog.mp3",
+          "image": "images/explorers/blends_r/frog.webp",
+          "graphemes": [
+            "f",
+            "r",
+            "o",
+            "g"
+          ]
+        },
+        {
+          "word": "crab",
+          "audio": "audio/explorers/blends_r/word_crab.mp3",
+          "image": "images/explorers/blends_r/crab.svg",
+          "graphemes": [
+            "c",
+            "r",
+            "a",
+            "b"
+          ]
+        },
+        {
+          "word": "drum",
+          "audio": "audio/explorers/blends_r/word_drum.mp3",
+          "image": "images/explorers/blends_r/drum.svg",
+          "graphemes": [
+            "d",
+            "r",
+            "u",
+            "m"
+          ]
+        },
+        {
+          "word": "truck",
+          "audio": "audio/explorers/blends_r/word_truck.mp3",
+          "image": "images/explorers/blends_r/truck.svg",
+          "graphemes": [
+            "t",
+            "r",
+            "u",
+            "ck:c"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "read-and-pick"
+      ]
+    },
+    {
+      "id": "blends-end",
+      "order": 3,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/blends_end/intro.mp3",
+        "praise": [
+          "audio/explorers/blends_end/praise_0.mp3",
+          "audio/explorers/blends_end/praise_1.mp3",
+          "audio/explorers/blends_end/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/blends_end/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/blends_end/instr_sound_tap.mp3",
+          "word-builder": "audio/explorers/blends_end/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "nest",
+          "audio": "audio/explorers/blends_end/word_nest.mp3",
+          "image": "images/explorers/blends_end/nest.svg",
+          "graphemes": [
+            "n",
+            "e",
+            "s",
+            "t"
+          ]
+        },
+        {
+          "word": "hand",
+          "audio": "audio/explorers/blends_end/word_hand.mp3",
+          "image": "images/explorers/blends_end/hand.svg",
+          "graphemes": [
+            "h",
+            "a",
+            "n",
+            "d"
+          ]
+        },
+        {
+          "word": "lamp",
+          "audio": "audio/explorers/blends_end/word_lamp.mp3",
+          "image": "images/explorers/blends_end/lamp.svg",
+          "graphemes": [
+            "l",
+            "a",
+            "m",
+            "p"
+          ]
+        },
+        {
+          "word": "gift",
+          "audio": "audio/explorers/blends_end/word_gift.mp3",
+          "image": "images/explorers/blends_end/gift.svg",
+          "graphemes": [
+            "g",
+            "i",
+            "f",
+            "t"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "read-and-pick"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/explorers/blends_end/instr_read_and_pick.mp3",
+      "sha256": "955a06bf727051bd45b4ac61696737a6fd1967aa0aa2bfeda3848ba106e8eeb9",
+      "bytes": 50199
+    },
+    {
+      "path": "audio/explorers/blends_end/instr_sound_tap.mp3",
+      "sha256": "c2cb94e35ff317574c8da3309b920b78d09597816e6fa24cff773229f6234e83",
+      "bytes": 77784
+    },
+    {
+      "path": "audio/explorers/blends_end/instr_word_builder.mp3",
+      "sha256": "d894753e8397f2fe00f93c01d494c44e53d4a9d2847ac6ee6ccf7a104d8cddf3",
+      "bytes": 56050
+    },
+    {
+      "path": "audio/explorers/blends_end/intro.mp3",
+      "sha256": "738c507976e18441ffe2008abef3549b567ddd56f88b1899221357fc2c41a8a0",
+      "bytes": 132537
+    },
+    {
+      "path": "audio/explorers/blends_end/praise_0.mp3",
+      "sha256": "74f8eb6f06765f1d4aa29e6993eb85d4e5f334cdd063b4e140ddf4736dca3c09",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/blends_end/praise_1.mp3",
+      "sha256": "3e11e04836cc0c98c53123c9879b8b2ea2bb201c7128c553764e8dd269895e31",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/blends_end/praise_2.mp3",
+      "sha256": "3c7117c793db303e648985c94337316236379427a19751c3744723cf1401f6d4",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/blends_end/word_gift.mp3",
+      "sha256": "819d42fc10d520ae65602e6cebb827d40debf299b7d81f7799611d7af3086a11",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/blends_end/word_hand.mp3",
+      "sha256": "0667a8b6a9244b6ffb850d189424cd818aff5e313cf43270951492ff43c2c12a",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/blends_end/word_lamp.mp3",
+      "sha256": "0c1a2db6833b580fad984488c4f520a57d156132983ea598b48d2148ddae3304",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/blends_end/word_nest.mp3",
+      "sha256": "7d49882c46b1e8a725e991532145db8f06cf8b4881044ddae4fb25fd5a18811c",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/blends_l/instr_read_and_pick.mp3",
+      "sha256": "9ab81afe3dcbd69e8c57ad84636f2963dff219e6fe05f53bb0f5ce5c71cf9cdb",
+      "bytes": 46437
+    },
+    {
+      "path": "audio/explorers/blends_l/instr_sound_tap.mp3",
+      "sha256": "e7d3b70715b2aa20f1f2b113de5d03d403f1ffe981f03feb30c30d958235e103",
+      "bytes": 64409
+    },
+    {
+      "path": "audio/explorers/blends_l/instr_word_builder.mp3",
+      "sha256": "b427451608eb3a509e21b8b31da2f4449409a7cc1991adac65016372c7488ce7",
+      "bytes": 58140
+    },
+    {
+      "path": "audio/explorers/blends_l/intro.mp3",
+      "sha256": "b8fda2280e08a7ddf781c4b8d0b7935dc95ef663bb5a6fe5bc8df85dfc8c7f42",
+      "bytes": 152599
+    },
+    {
+      "path": "audio/explorers/blends_l/praise_0.mp3",
+      "sha256": "a731c22d48721fb99fbb32f2045e2406d0cda94704077ca12ad2f6872c6c66af",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/explorers/blends_l/praise_1.mp3",
+      "sha256": "e01774a7f14a5591676497b88c0fe6028129fa421f195dec056d2f39861d4a1b",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/blends_l/praise_2.mp3",
+      "sha256": "e57105a0d6ff96ee69126a5532371b5678923e77a5df1e02d93bd98178fe5f0b",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/blends_l/word_blocks.mp3",
+      "sha256": "112562a90acdc1cabf2e867b8f37545a0c6aa4757e2480b345f40b2fb07101d4",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/blends_l/word_clap.mp3",
+      "sha256": "b22a3802c8993a8585d8946dcb963c03ea3b6954d6140902f8e00526c4351ca7",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/blends_l/word_flag.mp3",
+      "sha256": "9f33e37254af1e6c2f2606afb180a207771d5e7991ab1ee7b6ef80cb0e930b5a",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/blends_l/word_plum.mp3",
+      "sha256": "fcf22260b758645ff304cc04b33f41e73982f3b586da59764ac00103bc012da5",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/blends_r/instr_read_and_pick.mp3",
+      "sha256": "c92e8ddd696e0c348bb58ea84ce85774dbf7fe1d63c34b78bd8198670cbb7931",
+      "bytes": 47691
+    },
+    {
+      "path": "audio/explorers/blends_r/instr_sound_tap.mp3",
+      "sha256": "a8ea7d7d739188bf20d4da2ed099a7caa6a9e5e3022b91f9fe5d221966fc3e78",
+      "bytes": 65663
+    },
+    {
+      "path": "audio/explorers/blends_r/instr_word_builder.mp3",
+      "sha256": "72a782779225cf1f7de82021b45c9e6a74db33ddec53ae2614ee9322370e0023",
+      "bytes": 47691
+    },
+    {
+      "path": "audio/explorers/blends_r/intro.mp3",
+      "sha256": "0e77a2444e4a0498ce18843d84388a7afb94fa41c212db3dcab036f97e8db1d9",
+      "bytes": 124595
+    },
+    {
+      "path": "audio/explorers/blends_r/praise_0.mp3",
+      "sha256": "406817faf17927bac6b12e5a18c0216506f997b8d9c650ed69be65fb6628e4a9",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/blends_r/praise_1.mp3",
+      "sha256": "c4a1a5d53f9d4d9279400dee32db0756ecc35fa5461edf765db3038649cc609e",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/blends_r/praise_2.mp3",
+      "sha256": "ae5cbcd2bfec9c0875b92ab532767b6e8fde2eab032f086f7c7a9560e3277d72",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/blends_r/word_crab.mp3",
+      "sha256": "a27d37eb043eff0bdbd8ee68e5fc7fcb8fdc452ef1f58b9783f88e582786d4d0",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/blends_r/word_drum.mp3",
+      "sha256": "93fc3ff2b6a877cedb7aa8b5ec1887a857f8bf5bedfd1729a42febc49a18d712",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/explorers/blends_r/word_frog.mp3",
+      "sha256": "7fc32b655d4b546c6191b9fb5c5a6c3104b2261733378e34af50a6ae9c38479f",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/blends_r/word_truck.mp3",
+      "sha256": "e3eb1aac54ee6e7cae6b565b9fc28aa997fba835569d20f44b5bdc619f15c37f",
+      "bytes": 15090
+    },
+    {
+      "path": "images/explorers/blends_end/gift.svg",
+      "sha256": "f2c3c9b0c63419f79b7782eca68ed9f3217e2fe07980d47cf6edc88b9eb74339",
+      "bytes": 657
+    },
+    {
+      "path": "images/explorers/blends_end/hand.svg",
+      "sha256": "f6af44c8445c5d3874fe045809920e3c79cfb34559685c97dbb75b98dff9de5e",
+      "bytes": 887
+    },
+    {
+      "path": "images/explorers/blends_end/lamp.svg",
+      "sha256": "16f7e6c202e8d1571a585b24a3c2f25f0715731e29547255b09e8a9273c81007",
+      "bytes": 569
+    },
+    {
+      "path": "images/explorers/blends_end/nest.svg",
+      "sha256": "a0b47e92dce41d81c1d55f8c4338ac283847606fcaff402ce60502027cc7aebc",
+      "bytes": 595
+    },
+    {
+      "path": "images/explorers/blends_l/blocks.svg",
+      "sha256": "4cc000e907ff1a9480dc16f6c86ba094cc83b9ddc7acf947333359a47aa5a965",
+      "bytes": 609
+    },
+    {
+      "path": "images/explorers/blends_l/clap.webp",
+      "sha256": "efc7c4a2f1e91178a05ce5232646c0ac3247f2936f9b635e387c172d079e4b66",
+      "bytes": 136850
+    },
+    {
+      "path": "images/explorers/blends_l/flag.svg",
+      "sha256": "902ed777c960e7befdff7645c30baae966d8c261cededa851624776a44b9a772",
+      "bytes": 708
+    },
+    {
+      "path": "images/explorers/blends_l/plum.svg",
+      "sha256": "650fd340e4de2f9ac178380a3fca92f72f50b3861a331b28526ba11b25ab3d68",
+      "bytes": 694
+    },
+    {
+      "path": "images/explorers/blends_r/crab.svg",
+      "sha256": "64a341a75e4108eb6561f000463956929d5378f16509ef9ca7be5664629347a2",
+      "bytes": 1193
+    },
+    {
+      "path": "images/explorers/blends_r/drum.svg",
+      "sha256": "c64c43883ea14b02fa2647dbbeb190c5448565b45ef23fe50b083c5a297e9e4d",
+      "bytes": 602
+    },
+    {
+      "path": "images/explorers/blends_r/frog.webp",
+      "sha256": "7849aa763009024a35fe167dd7354299750d30a01c9f6090b3f9d2788cc2a084",
+      "bytes": 61094
+    },
+    {
+      "path": "images/explorers/blends_r/truck.svg",
+      "sha256": "e3fe560307a700275fd558ad8496863e74cfb69c6539c0a36d4fdb5e30775991",
+      "bytes": 811
+    }
+  ]
+}

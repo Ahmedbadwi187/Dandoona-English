@@ -1,0 +1,24 @@
+# Sight Words 2: you, look, here, to.
+id: sight-words-2-a
+unit: sight-words-2
+track: explorers
+level: a1
+order: 1
+words:
+  - { word: kite, reuse: "little-learners:letter-k/kite" }
+  - { word: fish, reuse: "little-learners:letter-f/fish" }
+  - { word: shop, reuse: "digraphs-sh/shop" }
+  - { word: boat, reuse: "little-learners:transport-2/boat" }
+sightWords: [you, look, here, to]
+sentences:
+  - { text: "Look at the kite!", picture: kite }
+  - { text: "Here is a fish.", picture: fish }
+  - { text: "You can go to the shop.", picture: shop }
+  - { text: "Look, here is a boat!", picture: boat }
+narration:
+  intro: "New words we just know: you, look, here, to. Let's read!"
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    find-the-word: "Listen. Then tap the word you hear!"
+    sentence-builder: "Listen. Then put the words in order!"
+activities: [find-the-word, sentence-builder]

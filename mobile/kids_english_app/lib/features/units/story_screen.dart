@@ -67,7 +67,7 @@ class _StoryScreenState extends ConsumerState<StoryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final track = ref.watch(contentProvider).asData?.value;
+    final track = ref.watch(activeContentProvider).asData?.value;
     final unit = track?.unitById(widget.unitId);
     final story = unit?.story;
 

@@ -64,8 +64,11 @@ public sealed class Layout(string root)
     /// <summary>Where a reused picture lives: another lesson's self-drawn SVG, else its approved image. Null when neither exists.</summary>
     public (string Path, bool Svg)? ReuseSource(Lesson l, string reuse)
     {
+        // "lesson/key" in the same track, or "track:lesson/key" from another one (Explorers reuses Little Learners pictures)
+        var track = l.Track;
+        if (reuse.Contains(':')) { track = reuse[..reuse.IndexOf(':')]; reuse = reuse[(reuse.IndexOf(':') + 1)..]; }
         var parts = reuse.Split('/');
-        var other = new Lesson { Id = parts[0], Track = l.Track };
+        var other = new Lesson { Id = parts[0], Track = track };
         if (File.Exists(SvgSource(other, parts[1]))) return (SvgSource(other, parts[1]), true);
         if (File.Exists(ImageApproved(other, parts[1]))) return (ImageApproved(other, parts[1]), false);
         return null;
@@ -109,6 +112,8 @@ public static class LessonPlan
 {
     public static IReadOnlyList<AudioItem> Audio(Lesson l)
     {
+        // a track's phoneme table: one clip per sound, every one flagged as a phoneme to listen to
+        if (l.PhonemeSet is not null) return l.PhonemeSet.Select(p => new AudioItem(PhonemeRole(p.Key), p.Say.Trim(), true)).ToList();
         var items = new List<AudioItem> { new("intro", l.Narration.Intro.Trim(), false) };
         if (!string.IsNullOrWhiteSpace(l.Phoneme)) items.Add(new("phoneme", l.Phoneme.Trim(), true));
         for (var i = 0; i < l.Narration.Praise.Count; i++) items.Add(new($"praise-{i}", l.Narration.Praise[i].Trim(), false));
@@ -119,10 +124,13 @@ public static class LessonPlan
             if (!string.IsNullOrWhiteSpace(w.Sound)) items.Add(new(SoundRole(w.Word), w.Sound.Trim(), false));
             if (!string.IsNullOrWhiteSpace(w.Lives)) items.Add(new(LivesRole(w.Word), w.Lives.Trim(), false));
             if (!string.IsNullOrWhiteSpace(w.Says)) items.Add(new(SaysRole(w.Word), w.Says.Trim(), false));
+            if (!string.IsNullOrWhiteSpace(w.Plural)) items.Add(new(PluralRole(w.Word), PluralLine(w), false));
         }
         foreach (var w in l.Words)
             if (l.Narration.Phrases.FirstOrDefault(p => p.Key.Trim().Equals(w.Word.Trim(), StringComparison.OrdinalIgnoreCase)) is { Value: { Length: > 0 } phrase })
                 items.Add(new(PhraseRole(w.Word), phrase.Trim(), false));
+        foreach (var w in l.SightWords) items.Add(new(SightRole(w), w.Trim(), false));
+        for (var i = 0; i < l.Sentences.Count; i++) items.Add(new(SentenceRole(i), l.Sentences[i].Text.Trim(), false));
         foreach (var (key, text) in l.Narration.Instructions.OrderBy(k => k.Key, StringComparer.Ordinal)) items.Add(new(InstructionRole(key), text.Trim(), false));
         return items;
     }
@@ -132,10 +140,17 @@ public static class LessonPlan
         l.Words.Where(w => w.Reuse is null).Select(w => new ImageItem(Slug(w.Word), w.ImagePrompt.Trim(), w.Mascot, w.Source == "svg")).ToList();
 
     public static string InstructionRole(string key) => $"instr-{key}";
+    public static string PhonemeRole(string key) => $"phoneme-{key}";
     public static string SoundRole(string word) => $"sound-{Slug(word)}";
     public static string SaysRole(string word) => $"says-{Slug(word)}";
     public static string LivesRole(string word) => $"lives-{Slug(word)}";
     public static string PhraseRole(string word) => $"phrase-{Slug(word)}";
+    public static string PluralRole(string word) => $"plural-{Slug(word)}";
+    public static string SightRole(string word) => $"sight-{Slug(word)}";
+    public static string SentenceRole(int index) => $"sentence-{index + 1}";
+
+    /// <summary>The line that shows a plural: "One cat. Two cats!"</summary>
+    public static string PluralLine(LessonWord w) => $"One {w.Word.Trim()}. Two {w.Plural!.Trim()}!";
 
     /// <summary>Words that reuse a picture from another lesson: (word key, "lesson-id/key").</summary>
     public static IReadOnlyList<(string Key, string Reuse)> Reused(Lesson l) =>

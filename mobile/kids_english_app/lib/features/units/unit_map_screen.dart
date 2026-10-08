@@ -16,6 +16,7 @@ import '../content/content_repository.dart';
 import '../content/packs.dart';
 import '../gate/parental_gate.dart';
 import '../profiles/child_profile.dart';
+import '../progress/active_days.dart';
 import '../progress/progress.dart';
 import '../rewards/accessories.dart';
 import '../router_state.dart';
@@ -104,7 +105,7 @@ class UnitMapScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final content = ref.watch(contentProvider);
+    final content = ref.watch(activeContentProvider);
     return ChildScope(
       child: SessionGuard(
         child: Scaffold(
@@ -117,7 +118,12 @@ class UnitMapScreen extends ConsumerWidget {
                   children: [
                     Text(Strings.en('loadError'), style: const TextStyle(fontSize: 22)),
                     const SizedBox(height: 12),
-                    FilledButton(onPressed: () => ref.invalidate(contentProvider), child: Text(Strings.en('retry'))),
+                    FilledButton(
+                      onPressed: () => ref
+                        ..invalidate(contentProvider)
+                        ..invalidate(explorersContentProvider),
+                      child: Text(Strings.en('retry')),
+                    ),
                   ],
                 ),
               ),
@@ -353,61 +359,78 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
           });
         }
         final motion = _ambientMotion(context);
-        return Stack(
-          children: [
-            const Positioned.fill(child: SkyBackground(child: SizedBox.expand())),
-            Positioned.fill(
-              child: SingleChildScrollView(
-                key: const Key('unit-map'),
-                controller: _scroll,
-                child: SizedBox(
-                  width: width,
-                  height: layout.height + safeBottom,
-                  child: Stack(
-                    clipBehavior: Clip.none,
-                    children: [
-                      Positioned.fill(child: CustomPaint(painter: SkyPathPainter(layout.centers))),
-                      for (var i = 0; i < stops.length; i++)
-                        _positioned(stops, i, layout.centers[i], current == i ? _dandoona(track.mascot, child, motion) : null, motion),
-                    ],
+        return MapLook(
+          mature: track.track == explorersTrack,
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: SkyBackground(mature: track.track == explorersTrack, child: const SizedBox.expand()),
+              ),
+              Positioned.fill(
+                child: SingleChildScrollView(
+                  key: const Key('unit-map'),
+                  controller: _scroll,
+                  child: SizedBox(
+                    width: width,
+                    height: layout.height + safeBottom,
+                    child: Stack(
+                      clipBehavior: Clip.none,
+                      children: [
+                        Positioned.fill(child: CustomPaint(painter: SkyPathPainter(layout.centers))),
+                        for (var i = 0; i < stops.length; i++)
+                          _positioned(stops, i, layout.centers[i], current == i ? _dandoona(track.mascot, child, motion) : null, motion),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: _TopBar(
-                avatarKey: child?.avatarKey ?? 'dandoona',
-                name: child?.name ?? '',
-                stars: stars,
-                greeting: _greeting,
-                newOutfit: stops.any((s) => s.kind == StopKind.chest && s.state == StopState.ready),
-                starBounce: _starBounce,
-                onAvatar: () => context.go('/who'),
-                onWardrobe: () => context.push('/wardrobe'),
-                onStickers: () => context.push('/stickers'),
-                onParent: _openParentArea,
-              ),
-            ),
-            if (practiceWords > 0)
               Positioned(
-                right: 16,
-                bottom: safeBottom + 16,
-                child: BigTap(
-                  key: const Key('open-practice'),
-                  onTap: () => context.push('/practice'),
-                  semanticLabel: 'Practice',
-                  child: Container(
-                    width: 64,
-                    height: 64,
-                    decoration: BoxDecoration(color: Palette.orange, shape: BoxShape.circle, border: Border.all(color: Palette.nightInk, width: 3), boxShadow: [BoxShadow(color: Palette.nightInk.withValues(alpha: 0.25), blurRadius: 8, offset: const Offset(0, 3))]),
-                    child: const Icon(Icons.replay_rounded, size: 38, color: Palette.white),
-                  ),
+                top: 0,
+                left: 0,
+                right: 0,
+                child: _TopBar(
+                  avatarKey: child?.avatarKey ?? 'dandoona',
+                  name: child?.name ?? '',
+                  stars: stars,
+                  greeting: _greeting,
+                  newOutfit: stops.any((s) => s.kind == StopKind.chest && s.state == StopState.ready),
+                  starBounce: _starBounce,
+                  onAvatar: () => context.go('/who'),
+                  onWardrobe: () => context.push('/wardrobe'),
+                  onStickers: () => context.push('/stickers'),
+                  onParent: _openParentArea,
                 ),
               ),
-          ],
+              // Explorers: the active days, celebrated, never reset (the Little Learners map stays as it was)
+              if (track.track == explorersTrack && childId != null)
+                Positioned(
+                  left: 12,
+                  top: safeTop + mapBarHeight + 10,
+                  child: ActiveDaysBadge(key: ValueKey('days-$childId'), childId: childId),
+                ),
+              if (practiceWords > 0)
+                Positioned(
+                  right: 16,
+                  bottom: safeBottom + 16,
+                  child: BigTap(
+                    key: const Key('open-practice'),
+                    onTap: () => context.push('/practice'),
+                    semanticLabel: 'Practice',
+                    child: Container(
+                      width: 64,
+                      height: 64,
+                      decoration: BoxDecoration(
+                        color: Palette.orange,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: Palette.nightInk, width: 3),
+                        boxShadow: [BoxShadow(color: Palette.nightInk.withValues(alpha: 0.25), blurRadius: 8, offset: const Offset(0, 3))],
+                      ),
+                      child: const Icon(Icons.replay_rounded, size: 38, color: Palette.white),
+                    ),
+                  ),
+                ),
+            ],
+          ),
         );
       },
     );
@@ -753,8 +776,8 @@ class _Island extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final closed = state == StopState.locked || state == StopState.soon;
-    final grass = closed ? mutedTint(color, amount: 0.6) : softTint(color);
-    final soil = closed ? mutedTint(Palette.brown, amount: 0.5) : Palette.brown;
+    final grass = closed ? mutedTint(color, amount: 0.6) : MapLook.grass(context, color);
+    final soil = closed ? mutedTint(Palette.brown, amount: 0.5) : MapLook.soil(context);
     final badge = closed ? mutedTint(color, amount: 0.35) : color;
     final s = scale;
     final ring = progress != null;
@@ -842,7 +865,11 @@ class _Island extends StatelessWidget {
             Positioned(
               top: 44 * s,
               left: 75 * s + 14 * s,
-              child: _Badge(key: Key('unit-waiting-$id'), color: Palette.white, child: const Icon(Icons.cloud_download_rounded, size: 18, color: Palette.blue)),
+              child: _Badge(
+                key: Key('unit-waiting-$id'),
+                color: Palette.white,
+                child: const Icon(Icons.cloud_download_rounded, size: 18, color: Palette.blue),
+              ),
             ),
           if (state == StopState.soon)
             Positioned(
@@ -1230,7 +1257,11 @@ class _TopBar extends StatelessWidget {
                   child: Container(
                     width: 54,
                     height: 54,
-                    decoration: BoxDecoration(color: Palette.white, shape: BoxShape.circle, border: Border.all(color: Palette.nightInk, width: 3)),
+                    decoration: BoxDecoration(
+                      color: Palette.white,
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Palette.nightInk, width: 3),
+                    ),
                     child: const Icon(Icons.collections_bookmark_rounded, size: 28, color: Palette.plum),
                   ),
                 ),

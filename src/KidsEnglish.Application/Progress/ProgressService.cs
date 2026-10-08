@@ -29,7 +29,14 @@ public static class ActivityCodes
         ["mix-colors"] = ActivityType.MixColors,
         ["build-picture"] = ActivityType.BuildPicture,
         ["turns"] = ActivityType.Turns,
-        ["story-feeling"] = ActivityType.StoryFeeling
+        ["story-feeling"] = ActivityType.StoryFeeling,
+        // Explorers phonics (stored by name, so no migration)
+        ["sound-tap"] = ActivityType.SoundTap,
+        ["word-builder"] = ActivityType.WordBuilder,
+        ["read-and-pick"] = ActivityType.ReadAndPick,
+        ["find-the-word"] = ActivityType.FindTheWord,
+        ["sentence-builder"] = ActivityType.SentenceBuilder,
+        ["fill-the-gap"] = ActivityType.FillTheGap
     };
 
     public static bool TryParse(string? code, out ActivityType type) => Map.TryGetValue(code ?? "", out type);

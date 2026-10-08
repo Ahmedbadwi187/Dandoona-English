@@ -56,7 +56,7 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final track = ref.watch(contentProvider).asData?.value;
+    final track = ref.watch(activeContentProvider).asData?.value;
     if (track != null) _prepare(track);
     final lesson = _lesson;
 

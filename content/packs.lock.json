@@ -52,5 +52,35 @@
       "version": 4,
       "contentHash": "15b372fc3efd1842130d5c419dcd5c15a38f3721c5131befc690b6b54a961e65"
     }
+  },
+  "explorers": {
+    "digraphs": {
+      "version": 1,
+      "contentHash": "3c8a883da742a7e9949d68b2912473d54371a0c754c5f78288c44a6590c557d6"
+    },
+    "blends": {
+      "version": 1,
+      "contentHash": "75aa45f5d78e52b5fb7f91b413c573e2f45a2cc77725e32c71e6e3a909a60694"
+    },
+    "magic-e": {
+      "version": 1,
+      "contentHash": "0ec827e88ba0a840bd6815bb80be0f3934cbd06610a14bba9c9095503075421d"
+    },
+    "vowel-teams": {
+      "version": 1,
+      "contentHash": "f910df5db6411655320f51985225bfcad77d7305e8ef3f650e551e60cefb1ad7"
+    },
+    "sight-words-1": {
+      "version": 1,
+      "contentHash": "0ca9e3916331469f028c423bc6e17e489c34b6eb2e2cf194ef831241d674a275"
+    },
+    "sight-words-2": {
+      "version": 1,
+      "contentHash": "66342bfaf5c1403f648e4a0342d7375bb8103e1fcc8fcc0d51be2dd5c1686a2b"
+    },
+    "my-sentences": {
+      "version": 2,
+      "contentHash": "45710b6ec7912778c61f3db590c7af3e01c9724ed85816780d8cb5a1f5225cd7"
+    }
   }
 }

@@ -1,0 +1,48 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "b412f2327d3fda4573588fed467d5003b66f6d72d2237d1842e599c643365366",
+      "generatedAtUtc": "2026-10-08T15:27:46.043195Z"
+    },
+    "praise-0": {
+      "hash": "b1ece7d3b6f55486c80845651ea15cf82cd1600acddeb26fe8c1ec4074866243",
+      "generatedAtUtc": "2026-10-08T15:27:46.9816539Z"
+    },
+    "praise-1": {
+      "hash": "46eb7b81f183e0e98e8ce54a9f933b96adedb1d26269b74c4a02a5d43227ad58",
+      "generatedAtUtc": "2026-10-08T15:27:47.9444022Z"
+    },
+    "praise-2": {
+      "hash": "6436155ab30ee84cd601145f58e80d1cb5cb45302e48dc98fe272c71b3796c6e",
+      "generatedAtUtc": "2026-10-08T15:27:48.882802Z"
+    },
+    "word-duck": {
+      "hash": "be638e5847ba41d99c2b3d12ab999eeb6cc8031279eff7c8fa21ce88b7d23213",
+      "generatedAtUtc": "2026-10-08T15:27:50.4046441Z"
+    },
+    "word-socks": {
+      "hash": "1a7e72f67229ba802c19b0ae9559efd5c00084c37db7ad3b954b7fc245588d73",
+      "generatedAtUtc": "2026-10-08T15:27:51.4645628Z"
+    },
+    "word-rock": {
+      "hash": "2fbf22e72ed33eff18cde239dacb3422ca6b09a585737499ef16034fe655e1da",
+      "generatedAtUtc": "2026-10-08T15:27:52.3913892Z"
+    },
+    "word-kick": {
+      "hash": "293bbdb6d25df1926f866408038ff2d6d25911dfbe165fada252b3a41dfb3b00",
+      "generatedAtUtc": "2026-10-08T15:27:53.3172488Z"
+    },
+    "instr-read-and-pick": {
+      "hash": "6c994a45c30845b30697350dfb70194c68948d4de116e1fa5947697542123127",
+      "generatedAtUtc": "2026-10-08T15:27:54.4387282Z"
+    },
+    "instr-sound-tap": {
+      "hash": "5ce6b557d035b0e5909604c6f50e338b2982ab996b7b48024f463743bf592cc4",
+      "generatedAtUtc": "2026-10-08T15:27:55.6853738Z"
+    },
+    "instr-word-builder": {
+      "hash": "76fd3ccc7cf71d6b0736c8364a1f56764d846b7ab071adb493e7e315a2102e39",
+      "generatedAtUtc": "2026-10-08T15:27:56.9114529Z"
+    }
+  }
+}

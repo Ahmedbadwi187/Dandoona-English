@@ -1,0 +1,25 @@
+# My Sentences: is or are, a or an, together.
+id: my-sentences-mix
+unit: my-sentences
+track: explorers
+level: a1
+order: 3
+words:
+  - { word: ship, reuse: "digraphs-sh/ship" }
+  - { word: kite, reuse: "little-learners:letter-k/kite" }
+  - { word: frog, reuse: "little-learners:letter-f/frog" }
+  - { word: egg, reuse: "little-learners:letter-e/egg" }
+  - { word: fish, reuse: "little-learners:letter-f/fish" }
+sentences:
+  - { text: "The ship is red.", picture: ship, gap: is, choices: [is, are] }
+  - { text: "The kites are up.", picture: kite, two: true, gap: are, choices: [is, are] }
+  - { text: "The frogs are on a rock.", picture: frog, two: true, gap: are, choices: [is, are] }
+  - { text: "It is an egg.", picture: egg, gap: an, choices: [a, an] }
+  - { text: "A fish is in the dish.", picture: fish, gap: A, choices: [A, An] }
+narration:
+  intro: "Look at the picture. Is it one, or two? Then read!"
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    fill-the-gap: "Read. Then tap the word that fits!"
+    sentence-builder: "Listen. Then put the words in order!"
+activities: [fill-the-gap, sentence-builder]

@@ -1,0 +1,19 @@
+# Vowel teams, ee. Everyday words (animals, food, school, home).
+id: vowel-teams-ee
+unit: vowel-teams
+track: explorers
+level: a1
+order: 2
+words:
+  - { word: tree, graphemes: [t, r, ee], reuse: "little-learners:letter-t/tree" }
+  - { word: bee, graphemes: [b, ee], source: svg, imagePrompt: "a bee" }
+  - { word: sheep, graphemes: [sh, ee, p], source: svg, imagePrompt: "a white sheep" }
+  - { word: feet, graphemes: [f, ee, t], source: svg, imagePrompt: "two bare feet" }
+narration:
+  intro: "e and e say ee together. Let's read: tree, bee, sheep, feet."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

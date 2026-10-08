@@ -1,0 +1,19 @@
+# Sound Builders, short e: short words (CVC, and "egg" that starts with the vowel) from everyday themes (animals, food, school, home).
+id: sound-builders-e
+unit: sound-builders
+track: explorers
+level: a1
+order: 2
+words:
+  - { word: hen, plural: hens, graphemes: [h, e, n], source: svg, imagePrompt: "a brown farm hen" }
+  - { word: bed, graphemes: [b, e, d], reuse: "little-learners:my-home-1/bed" }
+  - { word: egg, graphemes: [e, "gg:g"], reuse: "little-learners:letter-e/egg" }
+  - { word: ten, graphemes: [t, e, n], reuse: "little-learners:number-7-10/ten" }
+narration:
+  intro: "Short e! Listen: e, e. Let's build words: hen, bed, egg, ten."
+  praise: ["Great reading!", "You built it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

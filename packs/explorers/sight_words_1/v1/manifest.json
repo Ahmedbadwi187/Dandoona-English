@@ -1,0 +1,590 @@
+{
+  "schemaVersion": 1,
+  "track": "explorers",
+  "unit": "sight-words-1",
+  "version": 1,
+  "contentHash": "0ca9e3916331469f028c423bc6e17e489c34b6eb2e2cf194ef831241d674a275",
+  "lessons": [
+    {
+      "id": "sight-words-1-a",
+      "order": 1,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/sight_words_1_a/intro.mp3",
+        "praise": [
+          "audio/explorers/sight_words_1_a/praise_0.mp3",
+          "audio/explorers/sight_words_1_a/praise_1.mp3",
+          "audio/explorers/sight_words_1_a/praise_2.mp3"
+        ],
+        "instructions": {
+          "find-the-word": "audio/explorers/sight_words_1_a/instr_find_the_word.mp3",
+          "sentence-builder": "audio/explorers/sight_words_1_a/instr_sentence_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "cat",
+          "audio": "audio/explorers/sight_words_1_a/word_cat.mp3",
+          "image": "images/explorers/sight_words_1_a/cat.webp"
+        },
+        {
+          "word": "hat",
+          "audio": "audio/explorers/sight_words_1_a/word_hat.mp3",
+          "image": "images/explorers/sight_words_1_a/hat.svg"
+        },
+        {
+          "word": "dog",
+          "audio": "audio/explorers/sight_words_1_a/word_dog.mp3",
+          "image": "images/explorers/sight_words_1_a/dog.webp"
+        },
+        {
+          "word": "bed",
+          "audio": "audio/explorers/sight_words_1_a/word_bed.mp3",
+          "image": "images/explorers/sight_words_1_a/bed.svg"
+        }
+      ],
+      "activities": [
+        "find-the-word",
+        "sentence-builder"
+      ],
+      "sightWords": [
+        {
+          "word": "I",
+          "audio": "audio/explorers/sight_words_1_a/sight_i.mp3"
+        },
+        {
+          "word": "see",
+          "audio": "audio/explorers/sight_words_1_a/sight_see.mp3"
+        },
+        {
+          "word": "the",
+          "audio": "audio/explorers/sight_words_1_a/sight_the.mp3"
+        },
+        {
+          "word": "my",
+          "audio": "audio/explorers/sight_words_1_a/sight_my.mp3"
+        }
+      ],
+      "sentences": [
+        {
+          "text": "I see the cat.",
+          "audio": "audio/explorers/sight_words_1_a/sentence_1.mp3",
+          "image": "images/explorers/sight_words_1_a/cat.webp"
+        },
+        {
+          "text": "I see my hat.",
+          "audio": "audio/explorers/sight_words_1_a/sentence_2.mp3",
+          "image": "images/explorers/sight_words_1_a/hat.svg"
+        },
+        {
+          "text": "I see the dog.",
+          "audio": "audio/explorers/sight_words_1_a/sentence_3.mp3",
+          "image": "images/explorers/sight_words_1_a/dog.webp"
+        },
+        {
+          "text": "I see my bed.",
+          "audio": "audio/explorers/sight_words_1_a/sentence_4.mp3",
+          "image": "images/explorers/sight_words_1_a/bed.svg"
+        }
+      ]
+    },
+    {
+      "id": "sight-words-1-b",
+      "order": 2,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/sight_words_1_b/intro.mp3",
+        "praise": [
+          "audio/explorers/sight_words_1_b/praise_0.mp3",
+          "audio/explorers/sight_words_1_b/praise_1.mp3",
+          "audio/explorers/sight_words_1_b/praise_2.mp3"
+        ],
+        "instructions": {
+          "find-the-word": "audio/explorers/sight_words_1_b/instr_find_the_word.mp3",
+          "sentence-builder": "audio/explorers/sight_words_1_b/instr_sentence_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "pig",
+          "audio": "audio/explorers/sight_words_1_b/word_pig.mp3",
+          "image": "images/explorers/sight_words_1_b/pig.webp"
+        },
+        {
+          "word": "cup",
+          "audio": "audio/explorers/sight_words_1_b/word_cup.mp3",
+          "image": "images/explorers/sight_words_1_b/cup.svg"
+        },
+        {
+          "word": "sun",
+          "audio": "audio/explorers/sight_words_1_b/word_sun.mp3",
+          "image": "images/explorers/sight_words_1_b/sun.svg"
+        },
+        {
+          "word": "bug",
+          "audio": "audio/explorers/sight_words_1_b/word_bug.mp3",
+          "image": "images/explorers/sight_words_1_b/bug.svg"
+        }
+      ],
+      "activities": [
+        "find-the-word",
+        "sentence-builder"
+      ],
+      "sightWords": [
+        {
+          "word": "is",
+          "audio": "audio/explorers/sight_words_1_b/sight_is.mp3"
+        },
+        {
+          "word": "it",
+          "audio": "audio/explorers/sight_words_1_b/sight_it.mp3"
+        },
+        {
+          "word": "in",
+          "audio": "audio/explorers/sight_words_1_b/sight_in.mp3"
+        },
+        {
+          "word": "on",
+          "audio": "audio/explorers/sight_words_1_b/sight_on.mp3"
+        }
+      ],
+      "sentences": [
+        {
+          "text": "It is a pig.",
+          "audio": "audio/explorers/sight_words_1_b/sentence_1.mp3",
+          "image": "images/explorers/sight_words_1_b/pig.webp"
+        },
+        {
+          "text": "The bug is in the cup.",
+          "audio": "audio/explorers/sight_words_1_b/sentence_2.mp3",
+          "image": "images/explorers/sight_words_1_b/cup.svg"
+        },
+        {
+          "text": "The sun is hot.",
+          "audio": "audio/explorers/sight_words_1_b/sentence_3.mp3",
+          "image": "images/explorers/sight_words_1_b/sun.svg"
+        },
+        {
+          "text": "The bug is on the cup.",
+          "audio": "audio/explorers/sight_words_1_b/sentence_4.mp3",
+          "image": "images/explorers/sight_words_1_b/bug.svg"
+        }
+      ]
+    },
+    {
+      "id": "sight-words-1-c",
+      "order": 3,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/sight_words_1_c/intro.mp3",
+        "praise": [
+          "audio/explorers/sight_words_1_c/praise_0.mp3",
+          "audio/explorers/sight_words_1_c/praise_1.mp3",
+          "audio/explorers/sight_words_1_c/praise_2.mp3"
+        ],
+        "instructions": {
+          "find-the-word": "audio/explorers/sight_words_1_c/instr_find_the_word.mp3",
+          "sentence-builder": "audio/explorers/sight_words_1_c/instr_sentence_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "bus",
+          "audio": "audio/explorers/sight_words_1_c/word_bus.mp3",
+          "image": "images/explorers/sight_words_1_c/bus.svg"
+        },
+        {
+          "word": "ship",
+          "audio": "audio/explorers/sight_words_1_c/word_ship.mp3",
+          "image": "images/explorers/sight_words_1_c/ship.svg"
+        },
+        {
+          "word": "duck",
+          "audio": "audio/explorers/sight_words_1_c/word_duck.mp3",
+          "image": "images/explorers/sight_words_1_c/duck.webp"
+        },
+        {
+          "word": "hen",
+          "audio": "audio/explorers/sight_words_1_c/word_hen.mp3",
+          "image": "images/explorers/sight_words_1_c/hen.svg"
+        }
+      ],
+      "activities": [
+        "find-the-word",
+        "sentence-builder"
+      ],
+      "sightWords": [
+        {
+          "word": "we",
+          "audio": "audio/explorers/sight_words_1_c/sight_we.mp3"
+        },
+        {
+          "word": "can",
+          "audio": "audio/explorers/sight_words_1_c/sight_can.mp3"
+        },
+        {
+          "word": "go",
+          "audio": "audio/explorers/sight_words_1_c/sight_go.mp3"
+        },
+        {
+          "word": "and",
+          "audio": "audio/explorers/sight_words_1_c/sight_and.mp3"
+        }
+      ],
+      "sentences": [
+        {
+          "text": "We can go on the bus.",
+          "audio": "audio/explorers/sight_words_1_c/sentence_1.mp3",
+          "image": "images/explorers/sight_words_1_c/bus.svg"
+        },
+        {
+          "text": "We can see a ship.",
+          "audio": "audio/explorers/sight_words_1_c/sentence_2.mp3",
+          "image": "images/explorers/sight_words_1_c/ship.svg"
+        },
+        {
+          "text": "I can see a duck.",
+          "audio": "audio/explorers/sight_words_1_c/sentence_3.mp3",
+          "image": "images/explorers/sight_words_1_c/duck.webp"
+        },
+        {
+          "text": "A hen and a duck.",
+          "audio": "audio/explorers/sight_words_1_c/sentence_4.mp3",
+          "image": "images/explorers/sight_words_1_c/hen.svg"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/explorers/sight_words_1_a/instr_find_the_word.mp3",
+      "sha256": "00f360508eb0f60c1e32b3a39e13dfa91530f0c6ba386ae8bc531489a4352480",
+      "bytes": 47273
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/instr_sentence_builder.mp3",
+      "sha256": "bbade705773654264733f7088caf5e397a3deaf11fca1978714fa9c4219e1d4b",
+      "bytes": 40586
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/intro.mp3",
+      "sha256": "68bc3084305c60dc6664237a1cb98eb866b39b1c317d1802d863d129d9ae7d2e",
+      "bytes": 79874
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/praise_0.mp3",
+      "sha256": "03ee75d0485a68041d832d543a991fb68480c33d020d15ded8a3d58f574c7229",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/praise_1.mp3",
+      "sha256": "b2e06b34c4fdb94244dd8c297df1ae9bc9043a4c1086851f66b6cf299b194001",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/praise_2.mp3",
+      "sha256": "10c0e6c2dede7ffadc6249f1e36cba16ac60ba5e85dd39058f5b785425143e3b",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/sentence_1.mp3",
+      "sha256": "5a755b75a74e2817208f444d454e7171e820265d5faeacc5c4374be5c37c018e",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/sentence_2.mp3",
+      "sha256": "dbdc806245f2236d9b5c7adfc9b50da7055eed803b2b41e468fa5dcd6c4e1de5",
+      "bytes": 26375
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/sentence_3.mp3",
+      "sha256": "7fbb6a28109d3eb716536037da45bddda24d6baa7f44c2bd57393745174757d2",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/sentence_4.mp3",
+      "sha256": "eed88f0f4cecb392234f899b4faea6320851a82836fe07461fb6e488d9e26fcd",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/sight_i.mp3",
+      "sha256": "96114b75e9f07137a81c51af993e25f7c579c8fb5691ecf189dd2c3acf1d38a3",
+      "bytes": 10075
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/sight_my.mp3",
+      "sha256": "8f3eabc061cb98c641849bd8ad65e9a6fafeb56b513994494703d0c83519a63b",
+      "bytes": 13836
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/sight_see.mp3",
+      "sha256": "87990f0db5360dace0a9ad7cc8fa693ac7ceeb47ad154afd9f3fc3e4208a9b4e",
+      "bytes": 13836
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/sight_the.mp3",
+      "sha256": "8c78c63ca5433ee09b448fe50cf47a123eaa0914d1aada61a3534615920ee7a8",
+      "bytes": 13000
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/word_bed.mp3",
+      "sha256": "3dfe2792e553dafa9f7c4439538667d8fceec29a24a281384960f0b9633bfd79",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/word_cat.mp3",
+      "sha256": "d2c82fb4cade0866e1300ebd77718a7ba9ef27ed986c6e2537c6d26aa16194e6",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/word_dog.mp3",
+      "sha256": "66b8acbe846b397bc0e27a7216441ec98287e0ed9559624f39df87acb05a9fad",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/sight_words_1_a/word_hat.mp3",
+      "sha256": "4902634cef8ae5602520238a231b3a77676e44c6b997014b09b6c3f67d612ec8",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/instr_find_the_word.mp3",
+      "sha256": "6fba5df819baead938b4704adfd6b3c46e89a8a0c998513e6884f159d1e06eeb",
+      "bytes": 44765
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/instr_sentence_builder.mp3",
+      "sha256": "f1cbe7a6624ed64739b07a8961afccc768f1ef6452223ddcd14a680849e1bc44",
+      "bytes": 44347
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/intro.mp3",
+      "sha256": "af9988ba7f9ce0752a6ae54ce56caffcfc3f3f5e2f9fad20e2f15741529086fa",
+      "bytes": 84471
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/praise_0.mp3",
+      "sha256": "c21140648ea24dafa0da9779e4e93c1fca2904d8cb54e5102b6e9c4e88f9f929",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/praise_1.mp3",
+      "sha256": "86158dff2a4404541ec4fa0a5033d9febccc1b9a867dfe47fe8baa3b040013ee",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/praise_2.mp3",
+      "sha256": "aeec861c860eb11abcde451267c3229aa6572606b7cd634caef27c40b9100059",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/sentence_1.mp3",
+      "sha256": "5f7161439456d15a1cccc4b3299f1684c6cbde13cd67201750ba09ccf04b6e93",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/sentence_2.mp3",
+      "sha256": "9017fe39f16c6b4a137c16898d51f698fab49d914c3037dc7a9da32fb268e303",
+      "bytes": 28465
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/sentence_3.mp3",
+      "sha256": "85eb8a64f87d71bb39e6dd13ecfe1b2eb081c769508fc7f5e5926dc4d2a48976",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/sentence_4.mp3",
+      "sha256": "f22a2c3ecff35de3178e257f649c7dcfbdb043a77438141742f095454760f9a5",
+      "bytes": 27629
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/sight_in.mp3",
+      "sha256": "4615a25951e45f05fcfb1c1ec5e1241737e80e2b15238cbe5372bf129c832404",
+      "bytes": 12164
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/sight_is.mp3",
+      "sha256": "9485e7d8af3b120324bb63160617b7ddecd28018a26c2d1be8895548c84de241",
+      "bytes": 13000
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/sight_it.mp3",
+      "sha256": "e891bc275d09f5bf95cf4fcd5e77debc030408baf9d684da1ffc95115b19fd79",
+      "bytes": 12164
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/sight_on.mp3",
+      "sha256": "13ad2a87e0fcc0c0105d31e69395e1b77593c8f5bc7e48a4b789254488744b55",
+      "bytes": 13000
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/word_bug.mp3",
+      "sha256": "04dd110a06109f7d3663444d819007ae518ca36f4ceeb92f31813a8acb1fa32e",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/word_cup.mp3",
+      "sha256": "031acae7bd7e15a7bb20eda40507460b7b390c5c1654e6ee25ef092a65bdd163",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/word_pig.mp3",
+      "sha256": "b5c41114f38e83f6310287f15bc98e8f689537251ba3b6317d4652974d7a45ed",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/sight_words_1_b/word_sun.mp3",
+      "sha256": "5778e05d589275add0be848f40686e5cfb1ff9dcd246696fd8f81b0cec5c759c",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/instr_find_the_word.mp3",
+      "sha256": "7a2381ea27dc37acf16a1c7d8a0f3ca7deb4a930d5017a45ab706de9f97cf526",
+      "bytes": 38914
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/instr_sentence_builder.mp3",
+      "sha256": "fd1355b4dc434b65b58e0dee5e44faaf80a711e0b4d4b5db8fc943e197c9e77b",
+      "bytes": 42675
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/intro.mp3",
+      "sha256": "3df0d6910cb21ed1dcae12c6faa0ae578b961d446bf3e0662866fb9358824304",
+      "bytes": 74022
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/praise_0.mp3",
+      "sha256": "647ef68134ec3acd9289bfc29a027d06306770ab592392cb3f52ad99276e52af",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/praise_1.mp3",
+      "sha256": "f0f375e601dbba46e3d731412427deb6ebd5bad7058f69498214fec4d4319430",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/praise_2.mp3",
+      "sha256": "a5909ea1535de64821e40b22074c775452d19d1e5d385bfef2e1d493904cd274",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/sentence_1.mp3",
+      "sha256": "1a9910e0e27600dae6693a9ba3a1e4162debc3e03631750b8d19a3b605fe38bf",
+      "bytes": 29301
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/sentence_2.mp3",
+      "sha256": "b1a41620c350014ffdb57fd9327f83a61fd8d3b6416e6cc2ea1aa94d1cf5a16e",
+      "bytes": 29301
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/sentence_3.mp3",
+      "sha256": "ae5b70daea23fa4b8804c49590a18ce60109c7fd554654144ba22e9de12a886c",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/sentence_4.mp3",
+      "sha256": "f47fb30e9199000ce7080b36c1721485c4c5b782ee02dfcc332ba2bce8714211",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/sight_and.mp3",
+      "sha256": "b10d17b49c84d79a5e223d231850cb225f796762c699e898b80b5ffde07a3c85",
+      "bytes": 13836
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/sight_can.mp3",
+      "sha256": "7e2149b39ea5217b554c72f8abb74f969c843b8754f29c03d335d571496129b5",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/sight_go.mp3",
+      "sha256": "e62a679cf9d630874921f2c988a9cdd473771fbd43f93083006bf83103f070c9",
+      "bytes": 13836
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/sight_we.mp3",
+      "sha256": "9643ffeb90db499c4ab53f0db72c25bd193159bafdf98b40df9536c988eef5c8",
+      "bytes": 12164
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/word_bus.mp3",
+      "sha256": "656b21a965e199e03d3b98f48b5e6528a8c000bad5d4afabe7f03ee5594c8465",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/word_duck.mp3",
+      "sha256": "ad58b821f522eb6e0a3e6bdfeb4ae6687e3ca2c893a2fdcae8edd8203b97d0f2",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/word_hen.mp3",
+      "sha256": "d3398f3ff357bf56756e31fac973f18b877501029805b24c4a295efed662a7ec",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/explorers/sight_words_1_c/word_ship.mp3",
+      "sha256": "9e6e96c6b860a55e61463692258bfd7d34d1e38231fe3ba447f7e2bc368aa997",
+      "bytes": 15090
+    },
+    {
+      "path": "images/explorers/sight_words_1_a/bed.svg",
+      "sha256": "8fbe2ce2f9f8a6d907bcfc7d39b072eb52e27c9feb051ce52eb1033edf1599da",
+      "bytes": 720
+    },
+    {
+      "path": "images/explorers/sight_words_1_a/cat.webp",
+      "sha256": "b526f4ddbfe8c66fbb063b1b79f324afb77977dd4e996d4fc1abb3c7bb3197d2",
+      "bytes": 66930
+    },
+    {
+      "path": "images/explorers/sight_words_1_a/dog.webp",
+      "sha256": "653120dc03c255bd8d4ed162f98258f3d70a41e48b2f513c20e6a81a840cd35c",
+      "bytes": 66090
+    },
+    {
+      "path": "images/explorers/sight_words_1_a/hat.svg",
+      "sha256": "7bf50e0c21f8630eb2cfa0bd6a5acb4ade329cab12c45cfacb04586dd8f2a8d8",
+      "bytes": 526
+    },
+    {
+      "path": "images/explorers/sight_words_1_b/bug.svg",
+      "sha256": "f0cd2bd8bf5c3660811b289d28935b6503b1d20290e26c4141ffd9da5304777f",
+      "bytes": 774
+    },
+    {
+      "path": "images/explorers/sight_words_1_b/cup.svg",
+      "sha256": "9cf34de20394a95445c745cb46e53b07ff68927a2bea079598383c17c03ac8fc",
+      "bytes": 641
+    },
+    {
+      "path": "images/explorers/sight_words_1_b/pig.webp",
+      "sha256": "d9beed11e22450131f616737ed2ef693ef61a370e13e1cf1a7325b611d822524",
+      "bytes": 59762
+    },
+    {
+      "path": "images/explorers/sight_words_1_b/sun.svg",
+      "sha256": "7e24dd0553807fe1214c24f8c7954d3bb59eefe86f6ce0bd8f48d888565e4f70",
+      "bytes": 817
+    },
+    {
+      "path": "images/explorers/sight_words_1_c/bus.svg",
+      "sha256": "310776b6edc150fa456ef2c6275211cb6d5df413054f983105b3f7c47931dd88",
+      "bytes": 875
+    },
+    {
+      "path": "images/explorers/sight_words_1_c/duck.webp",
+      "sha256": "84987820fd92c2a37fed378bfeef2a7c089a1ccdf18ed0030c95d07fb158eefd",
+      "bytes": 57576
+    },
+    {
+      "path": "images/explorers/sight_words_1_c/hen.svg",
+      "sha256": "626c7f8a42b32f8102c5bb2b6b38bead584e6492ec4125a25fadaf769e974958",
+      "bytes": 821
+    },
+    {
+      "path": "images/explorers/sight_words_1_c/ship.svg",
+      "sha256": "f711091f2f3618603f876dc81d37ee572df54abd2c228cc82268218c1132030a",
+      "bytes": 938
+    }
+  ]
+}

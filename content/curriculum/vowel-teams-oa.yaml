@@ -1,0 +1,19 @@
+# Vowel teams, oa. Everyday words (animals, food, school, home).
+id: vowel-teams-oa
+unit: vowel-teams
+track: explorers
+level: a1
+order: 3
+words:
+  - { word: boat, graphemes: [b, oa, t], reuse: "little-learners:transport-2/boat" }
+  - { word: goat, graphemes: [g, oa, t], reuse: "little-learners:letter-g/goat" }
+  - { word: soap, graphemes: [s, oa, p], source: svg, imagePrompt: "a bar of soap with bubbles" }
+  - { word: toast, graphemes: [t, oa, s, t], source: svg, imagePrompt: "a slice of toast" }
+narration:
+  intro: "o and a say oh together. Let's read: boat, goat, soap, toast."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

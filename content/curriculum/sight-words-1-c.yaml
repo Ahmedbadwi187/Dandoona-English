@@ -1,0 +1,24 @@
+# Sight Words 1: we, can, go, and.
+id: sight-words-1-c
+unit: sight-words-1
+track: explorers
+level: a1
+order: 3
+words:
+  - { word: bus, reuse: "little-learners:transport-1/bus" }
+  - { word: ship, reuse: "digraphs-sh/ship" }
+  - { word: duck, reuse: "little-learners:letter-d/duck" }
+  - { word: hen, reuse: "sound-builders-e/hen" }
+sightWords: [we, can, go, and]
+sentences:
+  - { text: "We can go on the bus.", picture: bus }
+  - { text: "We can see a ship.", picture: ship }
+  - { text: "I can see a duck.", picture: duck }
+  - { text: "A hen and a duck.", picture: hen }
+narration:
+  intro: "More words we just know: we, can, go, and. Let's read!"
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    find-the-word: "Listen. Then tap the word you hear!"
+    sentence-builder: "Listen. Then put the words in order!"
+activities: [find-the-word, sentence-builder]

@@ -12,6 +12,7 @@ import '../router_state.dart';
 import '../settings/settings.dart';
 import '../units/unit_style.dart';
 import 'parent_data.dart';
+import 'parent_prompts.dart';
 import 'parent_ui.dart';
 import 'weekly_view.dart';
 
@@ -72,8 +73,10 @@ class ParentHomeScreen extends ConsumerWidget {
                   : ListView(
                       padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
                       children: [
-                        for (final child in profiles)
+                        for (final child in profiles) ...[
+                          ParentPrompts(child: child), // asked once: the birth month, the Explorers offer
                           Padding(padding: const EdgeInsets.only(bottom: 12), child: _ChildCard(child: child)),
+                        ],
                       ],
                     ),
             ),

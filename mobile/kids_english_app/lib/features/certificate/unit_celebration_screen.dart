@@ -34,7 +34,7 @@ class _UnitCelebrationScreenState extends ConsumerState<UnitCelebrationScreen> w
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      final track = await ref.read(contentProvider.future);
+      final track = await ref.read(activeContentProvider.future);
       final childId = ref.read(activeChildIdProvider);
       final unit = track.unitById(widget.unitId);
       if (!mounted || unit == null) return;
@@ -56,7 +56,7 @@ class _UnitCelebrationScreenState extends ConsumerState<UnitCelebrationScreen> w
 
   @override
   Widget build(BuildContext context) {
-    final content = ref.watch(contentProvider);
+    final content = ref.watch(activeContentProvider);
     return ChildScope(
       child: SessionGuard(
         child: Scaffold(

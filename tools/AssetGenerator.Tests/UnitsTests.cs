@@ -325,7 +325,7 @@ public class PlacementTests
     public void The_real_content_maps_all_four_answers_and_letters_known_means_start_at_colors()
     {
         var layout = Layout.FindFrom(AppContext.BaseDirectory);
-        var placement = CurriculumReader.LoadPlacement(layout.CurriculumDir);
+        var placement = CurriculumReader.LoadPlacement(layout.CurriculumDir).Where(p => p.Track == "little-learners").ToList(); // Little Learners placement
         placement.Select(p => p.Level).ShouldBe([0, 1, 2, 3]);
         placement.Single(p => p.Key == "all-letters").DoneUnits.ShouldBe(["letters"]);
         placement.Single(p => p.Key == "all-letters").StartUnit.ShouldBe("colors");

@@ -1,0 +1,19 @@
+# Magic E with o and u. Everyday words (animals, food, school, home).
+id: magic-e-o-u
+unit: magic-e
+track: explorers
+level: a1
+order: 3
+words:
+  - { word: bone, graphemes: [b, "o:oa", n, "e:-"], source: svg, imagePrompt: "a dog bone" }
+  - { word: nose, graphemes: [n, "o:oa", "s:z", "e:-"], reuse: "little-learners:my-body-1/nose" }
+  - { word: rose, graphemes: [r, "o:oa", "s:z", "e:-"], source: svg, imagePrompt: "a red rose" }
+  - { word: cube, graphemes: [c, "u:ue", b, "e:-"], source: svg, imagePrompt: "a toy cube" }
+narration:
+  intro: "Magic e! o says its name: oh. u says its name: you. Let's read: bone, nose, rose, cube."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

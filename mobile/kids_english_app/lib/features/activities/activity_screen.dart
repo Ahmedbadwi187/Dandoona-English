@@ -30,6 +30,8 @@ import 'count_along_activity.dart';
 import 'memory_activity.dart';
 import 'mix_colors_activity.dart';
 import 'odd_one_out_activity.dart';
+import 'phonics_activities.dart';
+import 'sentence_activities.dart';
 import 'sort_activity.dart';
 import 'story_feeling_activity.dart';
 import 'turns_activity.dart';
@@ -49,7 +51,7 @@ class ActivityScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final content = ref.watch(contentProvider);
+    final content = ref.watch(activeContentProvider);
     return ChildScope(
       child: SessionGuard(
         child: Scaffold(
@@ -178,6 +180,14 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
                   'story-feeling' => StoryFeelingActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   'habitat' => HabitatActivity(lesson: widget.lesson, onFinished: _finished),
                     'color-the-object' => ColorTheObjectActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
+                  // Explorers phonics
+                  'sound-tap' => SoundTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
+                  'word-builder' => WordBuilderActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
+                  'read-and-pick' => ReadAndPickActivity(lesson: widget.lesson, onFinished: _finished),
+                  // Explorers sight words and sentences
+                  'find-the-word' => FindTheWordActivity(lesson: widget.lesson, onFinished: _finished),
+                  'sentence-builder' => SentenceBuilderActivity(lesson: widget.lesson, onFinished: _finished),
+                  'fill-the-gap' => FillTheGapActivity(lesson: widget.lesson, onFinished: _finished),
                   _ => Center(child: Text(Strings.en('loadError'))),
                 },
         ),

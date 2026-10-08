@@ -10,7 +10,7 @@ public class ChestTests
     public void Every_unit_in_the_real_content_has_a_chest_with_an_accessory_and_three_or_four_stickers_and_no_accessory_repeats()
     {
         var layout = Layout.FindFrom(AppContext.BaseDirectory);
-        var units = CurriculumReader.LoadUnits(layout.CurriculumDir);
+        var units = CurriculumReader.LoadUnits(layout.CurriculumDir).Where(u => u.Track == "little-learners").ToList(); // Little Learners chests
         units.Count.ShouldBeGreaterThanOrEqualTo(15);
         foreach (var u in units)
         {

@@ -1,0 +1,40 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "749149e44550d18038a0c083abd34545dd9e9b4a38791f3745eff7bfaa382b7b",
+      "generatedAtUtc": "2026-10-08T15:37:40.2344086Z"
+    },
+    "instr-celebration": {
+      "hash": "786541181b4172826b23f5a30cc907c509f0822bd6be564c8327587c30cd3e33",
+      "generatedAtUtc": "2026-10-08T15:37:42.1170662Z"
+    },
+    "instr-locked": {
+      "hash": "158cca72bb1963ba9a7742b61ad8f9bf9d8afa471ec6cf45945c4c51e7af0df9",
+      "generatedAtUtc": "2026-10-08T15:37:46.0244699Z"
+    },
+    "instr-story-1": {
+      "hash": "5fb82457e6f063fe0e29b2c6ca554f33a3e287cf0a2c08090402851aa3866d75",
+      "generatedAtUtc": "2026-10-08T15:38:30.0861431Z"
+    },
+    "instr-story-2": {
+      "hash": "be7a82eb1f99622e278e8c2f3bec4a5b2a6ed4558a6bb81e9cf1ba45fd5138fb",
+      "generatedAtUtc": "2026-10-08T15:38:32.0239519Z"
+    },
+    "instr-story-3": {
+      "hash": "7155086a26844fba201d2e2544e7d4c46e81a2b99240d9997b6ac1ecd03c02f2",
+      "generatedAtUtc": "2026-10-08T15:38:34.2494988Z"
+    },
+    "instr-story-4": {
+      "hash": "45f7259c8be4ee96522cdd2c9b4d470a3aefab506fdfb8e06fca0f21bf66a12d",
+      "generatedAtUtc": "2026-10-08T15:38:36.7918598Z"
+    },
+    "instr-story-5": {
+      "hash": "16d3ce24ea7790cb409a55b9ddbacd8b88a4336221d6216ea4db9c9a7d4a9e7d",
+      "generatedAtUtc": "2026-10-08T15:38:38.1742147Z"
+    },
+    "instr-title": {
+      "hash": "b4cacf0064d0a88d4ba6ee753a3d35ca066e01cdc1a629966349bcfa5f15da27",
+      "generatedAtUtc": "2026-10-08T15:38:39.5969825Z"
+    }
+  }
+}

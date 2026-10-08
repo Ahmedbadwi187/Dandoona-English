@@ -74,7 +74,7 @@ class _ChildDetailScreenState extends ConsumerState<ChildDetailScreen> {
     final child = ref.watch(profilesProvider).where((p) => p.id == widget.childId).firstOrNull;
     if (child == null) return const Scaffold(); // deleted while open
     final now = ref.read(clockProvider)();
-    final track = ref.watch(contentProvider).asData?.value;
+    final track = ref.watch(trackContentProvider(child.track)).asData?.value;
     final overview = ref.watch(childOverviewProvider(child.id));
     final records = ref.watch(progressProvider);
     final progress = ref.read(progressProvider.notifier);

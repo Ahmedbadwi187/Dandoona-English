@@ -1,0 +1,19 @@
+# Digraphs, ck: c and k together make one sound, at the end of a word. Everyday words (animals, food, school, home).
+id: digraphs-ck
+unit: digraphs
+track: explorers
+level: a1
+order: 4
+words:
+  - { word: duck, graphemes: [d, u, "ck:c"], reuse: "little-learners:letter-d/duck" }
+  - { word: socks, graphemes: [s, o, "ck:c", s], reuse: "little-learners:clothes-2/socks" }
+  - { word: rock, graphemes: [r, o, "ck:c"], source: svg, imagePrompt: "a gray rock" }
+  - { word: kick, graphemes: ["k:c", i, "ck:c"], source: svg, imagePrompt: "a foot kicking a ball" }
+narration:
+  intro: "ck! c and k together say one sound: k, k. Let's read: duck, socks, rock, kick."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

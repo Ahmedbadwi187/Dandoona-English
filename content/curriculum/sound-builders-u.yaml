@@ -1,0 +1,19 @@
+# Sound Builders, short u: three-sound words (CVC) from everyday themes (animals, food, school, home).
+id: sound-builders-u
+unit: sound-builders
+track: explorers
+level: a1
+order: 5
+words:
+  - { word: bug, plural: bugs, graphemes: [b, u, g], source: svg, imagePrompt: "a small friendly ladybug" }
+  - { word: nut, graphemes: [n, u, t], reuse: "little-learners:letter-n/nut" }
+  - { word: bus, graphemes: [b, u, s], reuse: "little-learners:transport-1/bus" }
+  - { word: cup, graphemes: [c, u, p], source: svg, imagePrompt: "a cup of tea" }
+narration:
+  intro: "Short u! Listen: u, u. Let's build words: bug, nut, bus, cup."
+  praise: ["Great reading!", "You built it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

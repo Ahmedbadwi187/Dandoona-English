@@ -41,7 +41,7 @@ class _CertificateScreenState extends ConsumerState<CertificateScreen> {
     super.initState();
     // A finished unit always has its certificate on record (it is dated today if nothing was recorded yet).
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      final track = await ref.read(contentProvider.future);
+      final track = await ref.read(activeContentProvider.future);
       final childId = ref.read(activeChildIdProvider);
       final unit = track.unitById(widget.unitId);
       if (!mounted || childId == null || unit == null) return;
@@ -71,7 +71,7 @@ class _CertificateScreenState extends ConsumerState<CertificateScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final content = ref.watch(contentProvider);
+    final content = ref.watch(activeContentProvider);
     final childId = ref.watch(activeChildIdProvider);
     final child = ref.watch(profilesProvider).where((p) => p.id == childId).firstOrNull;
     final meta = ref.watch(unitMetaProvider);

@@ -1,0 +1,19 @@
+# Magic E with i. Everyday words (animals, food, school, home).
+id: magic-e-i
+unit: magic-e
+track: explorers
+level: a1
+order: 2
+words:
+  - { word: kite, graphemes: ["k:c", "i:ie", t, "e:-"], reuse: "little-learners:letter-k/kite" }
+  - { word: bike, graphemes: [b, "i:ie", "k:c", "e:-"], reuse: "little-learners:transport-2/bike" }
+  - { word: five, graphemes: [f, "i:ie", v, "e:-"], reuse: "little-learners:number-4-6/five" }
+  - { word: nine, graphemes: [n, "i:ie", n, "e:-"], reuse: "little-learners:number-7-10/nine" }
+narration:
+  intro: "Magic e! The e is quiet, and i says its name: eye. Let's read: kite, bike, five, nine."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

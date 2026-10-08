@@ -1,0 +1,19 @@
+# Vowel teams, oo, and ar. Everyday words (animals, food, school, home).
+id: vowel-teams-oo-ar
+unit: vowel-teams
+track: explorers
+level: a1
+order: 4
+words:
+  - { word: moon, graphemes: [m, oo, n], reuse: "little-learners:letter-m/moon" }
+  - { word: spoon, graphemes: [s, p, oo, n], source: svg, imagePrompt: "a spoon" }
+  - { word: car, graphemes: [c, ar], reuse: "little-learners:letter-c/car" }
+  - { word: star, graphemes: [s, t, ar], reuse: "little-learners:shapes-3/star" }
+narration:
+  intro: "o and o say oo. a and r say ar. Let's read: moon, spoon, car, star."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

@@ -1,0 +1,19 @@
+# Vowel teams, ai: two vowels, one sound (the name of the first). Everyday words (animals, food, school, home).
+id: vowel-teams-ai
+unit: vowel-teams
+track: explorers
+level: a1
+order: 1
+words:
+  - { word: rain, graphemes: [r, "ai:ay", n], source: svg, imagePrompt: "a cloud with rain drops" }
+  - { word: snail, graphemes: [s, n, "ai:ay", l], source: svg, imagePrompt: "a snail with a shell" }
+  - { word: train, graphemes: [t, r, "ai:ay", n], reuse: "little-learners:transport-1/train" }
+  - { word: paint, graphemes: [p, "ai:ay", n, t], source: svg, imagePrompt: "a paint pot and a brush" }
+narration:
+  intro: "Vowel teams! a and i say ay together. Let's read: rain, snail, train, paint."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

@@ -134,3 +134,26 @@ flutter:
     - assets/audio/little_learners/unit_opposites/
     - assets/audio/little_learners/unit_toys/
     - assets/audio/little_learners/unit_transport/
+    - assets/audio/explorers/sound_builders_a/
+    - assets/audio/explorers/sound_builders_e/
+    - assets/audio/explorers/sound_builders_i/
+    - assets/audio/explorers/sound_builders_o/
+    - assets/audio/explorers/sound_builders_u/
+    - assets/images/explorers/sound_builders_a/
+    - assets/images/explorers/sound_builders_e/
+    - assets/images/explorers/sound_builders_i/
+    - assets/images/explorers/sound_builders_o/
+    - assets/images/explorers/sound_builders_u/
+    - assets/audio/explorers/phonemes/
+    - assets/audio/explorers/unit_blends/
+    - assets/audio/explorers/unit_digraphs/
+    - assets/audio/explorers/unit_everyday_english/
+    - assets/audio/explorers/unit_grammar_starters/
+    - assets/audio/explorers/unit_magic_e/
+    - assets/audio/explorers/unit_my_sentences/
+    - assets/audio/explorers/unit_numbers_time/
+    - assets/audio/explorers/unit_sight_words_1/
+    - assets/audio/explorers/unit_sight_words_2/
+    - assets/audio/explorers/unit_sound_builders/
+    - assets/audio/explorers/unit_vowel_teams/
+    - assets/audio/explorers/unit_word_families/

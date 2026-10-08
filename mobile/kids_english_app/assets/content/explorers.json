@@ -1,0 +1,2467 @@
+{
+  "schemaVersion": 2,
+  "track": "explorers",
+  "generatedAt": "2026-10-08T15:54:38.3046682Z",
+  "mascot": "images/mascot/mascot.webp",
+  "units": [
+    {
+      "id": "letters",
+      "order": 1,
+      "title": {
+        "en": "Letters",
+        "ar": "الحروف"
+      },
+      "icon": "letters",
+      "color": "red",
+      "audio": {
+        "title": "audio/little_learners/unit_letters/instr_title.mp3",
+        "welcome": "audio/little_learners/unit_letters/intro.mp3",
+        "celebration": "audio/little_learners/unit_letters/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/little_learners/unit_letters/instr_locked.mp3",
+          "story-1": "audio/little_learners/unit_letters/instr_story_1.mp3",
+          "story-2": "audio/little_learners/unit_letters/instr_story_2.mp3",
+          "story-3": "audio/little_learners/unit_letters/instr_story_3.mp3",
+          "story-4": "audio/little_learners/unit_letters/instr_story_4.mp3",
+          "story-5": "audio/little_learners/unit_letters/instr_story_5.mp3"
+        }
+      },
+      "lessons": [
+        {
+          "id": "letter-a",
+          "order": 1,
+          "level": "pre-a1",
+          "letter": "A",
+          "phoneme": "/æ/",
+          "audio": {
+            "intro": "audio/little_learners/letter_a/intro.mp3",
+            "phoneme": "audio/little_learners/letter_a/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_a/praise_0.mp3",
+              "audio/little_learners/letter_a/praise_1.mp3",
+              "audio/little_learners/letter_a/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_a/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_a/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_a/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_a/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_a/instr_small.mp3",
+              "trace": "audio/little_learners/letter_a/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_a/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "apple",
+              "audio": "audio/little_learners/letter_a/word_apple.mp3",
+              "image": "images/little_learners/letter_a/apple.webp"
+            },
+            {
+              "word": "ant",
+              "audio": "audio/little_learners/letter_a/word_ant.mp3",
+              "image": "images/little_learners/letter_a/ant.webp"
+            },
+            {
+              "word": "alligator",
+              "audio": "audio/little_learners/letter_a/word_alligator.mp3",
+              "image": "images/little_learners/letter_a/alligator.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-b",
+          "order": 2,
+          "level": "pre-a1",
+          "letter": "B",
+          "phoneme": "/b/",
+          "audio": {
+            "intro": "audio/little_learners/letter_b/intro.mp3",
+            "phoneme": "audio/little_learners/letter_b/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_b/praise_0.mp3",
+              "audio/little_learners/letter_b/praise_1.mp3",
+              "audio/little_learners/letter_b/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_b/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_b/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_b/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_b/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_b/instr_small.mp3",
+              "trace": "audio/little_learners/letter_b/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_b/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "ball",
+              "audio": "audio/little_learners/letter_b/word_ball.mp3",
+              "image": "images/little_learners/letter_b/ball.svg"
+            },
+            {
+              "word": "bear",
+              "audio": "audio/little_learners/letter_b/word_bear.mp3",
+              "image": "images/little_learners/letter_b/bear.webp"
+            },
+            {
+              "word": "banana",
+              "audio": "audio/little_learners/letter_b/word_banana.mp3",
+              "image": "images/little_learners/letter_b/banana.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-c",
+          "order": 3,
+          "level": "pre-a1",
+          "letter": "C",
+          "phoneme": "/k/",
+          "audio": {
+            "intro": "audio/little_learners/letter_c/intro.mp3",
+            "phoneme": "audio/little_learners/letter_c/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_c/praise_0.mp3",
+              "audio/little_learners/letter_c/praise_1.mp3",
+              "audio/little_learners/letter_c/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_c/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_c/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_c/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_c/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_c/instr_small.mp3",
+              "trace": "audio/little_learners/letter_c/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_c/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "cat",
+              "audio": "audio/little_learners/letter_c/word_cat.mp3",
+              "image": "images/little_learners/letter_c/cat.webp"
+            },
+            {
+              "word": "car",
+              "audio": "audio/little_learners/letter_c/word_car.mp3",
+              "image": "images/little_learners/letter_c/car.svg"
+            },
+            {
+              "word": "cow",
+              "audio": "audio/little_learners/letter_c/word_cow.mp3",
+              "image": "images/little_learners/letter_c/cow.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-d",
+          "order": 4,
+          "level": "pre-a1",
+          "letter": "D",
+          "phoneme": "/d/",
+          "audio": {
+            "intro": "audio/little_learners/letter_d/intro.mp3",
+            "phoneme": "audio/little_learners/letter_d/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_d/praise_0.mp3",
+              "audio/little_learners/letter_d/praise_1.mp3",
+              "audio/little_learners/letter_d/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_d/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_d/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_d/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_d/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_d/instr_small.mp3",
+              "trace": "audio/little_learners/letter_d/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_d/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "dog",
+              "audio": "audio/little_learners/letter_d/word_dog.mp3",
+              "image": "images/little_learners/letter_d/dog.webp"
+            },
+            {
+              "word": "duck",
+              "audio": "audio/little_learners/letter_d/word_duck.mp3",
+              "image": "images/little_learners/letter_d/duck.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-e",
+          "order": 5,
+          "level": "pre-a1",
+          "letter": "E",
+          "phoneme": "/ɛ/",
+          "audio": {
+            "intro": "audio/little_learners/letter_e/intro.mp3",
+            "phoneme": "audio/little_learners/letter_e/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_e/praise_0.mp3",
+              "audio/little_learners/letter_e/praise_1.mp3",
+              "audio/little_learners/letter_e/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_e/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_e/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_e/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_e/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_e/instr_small.mp3",
+              "trace": "audio/little_learners/letter_e/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_e/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "egg",
+              "audio": "audio/little_learners/letter_e/word_egg.mp3",
+              "image": "images/little_learners/letter_e/egg.svg"
+            },
+            {
+              "word": "elephant",
+              "audio": "audio/little_learners/letter_e/word_elephant.mp3",
+              "image": "images/little_learners/letter_e/elephant.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-f",
+          "order": 6,
+          "level": "pre-a1",
+          "letter": "F",
+          "phoneme": "/f/",
+          "audio": {
+            "intro": "audio/little_learners/letter_f/intro.mp3",
+            "phoneme": "audio/little_learners/letter_f/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_f/praise_0.mp3",
+              "audio/little_learners/letter_f/praise_1.mp3",
+              "audio/little_learners/letter_f/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_f/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_f/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_f/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_f/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_f/instr_small.mp3",
+              "trace": "audio/little_learners/letter_f/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_f/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "fish",
+              "audio": "audio/little_learners/letter_f/word_fish.mp3",
+              "image": "images/little_learners/letter_f/fish.svg"
+            },
+            {
+              "word": "frog",
+              "audio": "audio/little_learners/letter_f/word_frog.mp3",
+              "image": "images/little_learners/letter_f/frog.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-g",
+          "order": 7,
+          "level": "pre-a1",
+          "letter": "G",
+          "phoneme": "/g/",
+          "audio": {
+            "intro": "audio/little_learners/letter_g/intro.mp3",
+            "phoneme": "audio/little_learners/letter_g/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_g/praise_0.mp3",
+              "audio/little_learners/letter_g/praise_1.mp3",
+              "audio/little_learners/letter_g/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_g/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_g/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_g/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_g/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_g/instr_small.mp3",
+              "trace": "audio/little_learners/letter_g/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_g/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "gift",
+              "audio": "audio/little_learners/letter_g/word_gift.mp3",
+              "image": "images/little_learners/letter_g/gift.svg"
+            },
+            {
+              "word": "goat",
+              "audio": "audio/little_learners/letter_g/word_goat.mp3",
+              "image": "images/little_learners/letter_g/goat.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-h",
+          "order": 8,
+          "level": "pre-a1",
+          "letter": "H",
+          "phoneme": "/h/",
+          "audio": {
+            "intro": "audio/little_learners/letter_h/intro.mp3",
+            "phoneme": "audio/little_learners/letter_h/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_h/praise_0.mp3",
+              "audio/little_learners/letter_h/praise_1.mp3",
+              "audio/little_learners/letter_h/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_h/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_h/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_h/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_h/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_h/instr_small.mp3",
+              "trace": "audio/little_learners/letter_h/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_h/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "hat",
+              "audio": "audio/little_learners/letter_h/word_hat.mp3",
+              "image": "images/little_learners/letter_h/hat.svg"
+            },
+            {
+              "word": "horse",
+              "audio": "audio/little_learners/letter_h/word_horse.mp3",
+              "image": "images/little_learners/letter_h/horse.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-i",
+          "order": 9,
+          "level": "pre-a1",
+          "letter": "I",
+          "phoneme": "/ɪ/",
+          "audio": {
+            "intro": "audio/little_learners/letter_i/intro.mp3",
+            "phoneme": "audio/little_learners/letter_i/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_i/praise_0.mp3",
+              "audio/little_learners/letter_i/praise_1.mp3",
+              "audio/little_learners/letter_i/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_i/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_i/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_i/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_i/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_i/instr_small.mp3",
+              "trace": "audio/little_learners/letter_i/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_i/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "ice cream",
+              "audio": "audio/little_learners/letter_i/word_ice_cream.mp3",
+              "image": "images/little_learners/letter_i/ice_cream.svg"
+            },
+            {
+              "word": "igloo",
+              "audio": "audio/little_learners/letter_i/word_igloo.mp3",
+              "image": "images/little_learners/letter_i/igloo.svg"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-j",
+          "order": 10,
+          "level": "pre-a1",
+          "letter": "J",
+          "phoneme": "/dʒ/",
+          "audio": {
+            "intro": "audio/little_learners/letter_j/intro.mp3",
+            "phoneme": "audio/little_learners/letter_j/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_j/praise_0.mp3",
+              "audio/little_learners/letter_j/praise_1.mp3",
+              "audio/little_learners/letter_j/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_j/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_j/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_j/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_j/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_j/instr_small.mp3",
+              "trace": "audio/little_learners/letter_j/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_j/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "jar",
+              "audio": "audio/little_learners/letter_j/word_jar.mp3",
+              "image": "images/little_learners/letter_j/jar.svg"
+            },
+            {
+              "word": "juice",
+              "audio": "audio/little_learners/letter_j/word_juice.mp3",
+              "image": "images/little_learners/letter_j/juice.svg"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-k",
+          "order": 11,
+          "level": "pre-a1",
+          "letter": "K",
+          "phoneme": "/k/",
+          "audio": {
+            "intro": "audio/little_learners/letter_k/intro.mp3",
+            "phoneme": "audio/little_learners/letter_k/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_k/praise_0.mp3",
+              "audio/little_learners/letter_k/praise_1.mp3",
+              "audio/little_learners/letter_k/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_k/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_k/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_k/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_k/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_k/instr_small.mp3",
+              "trace": "audio/little_learners/letter_k/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_k/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "kite",
+              "audio": "audio/little_learners/letter_k/word_kite.mp3",
+              "image": "images/little_learners/letter_k/kite.svg"
+            },
+            {
+              "word": "key",
+              "audio": "audio/little_learners/letter_k/word_key.mp3",
+              "image": "images/little_learners/letter_k/key.svg"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-l",
+          "order": 12,
+          "level": "pre-a1",
+          "letter": "L",
+          "phoneme": "/l/",
+          "audio": {
+            "intro": "audio/little_learners/letter_l/intro.mp3",
+            "phoneme": "audio/little_learners/letter_l/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_l/praise_0.mp3",
+              "audio/little_learners/letter_l/praise_1.mp3",
+              "audio/little_learners/letter_l/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_l/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_l/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_l/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_l/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_l/instr_small.mp3",
+              "trace": "audio/little_learners/letter_l/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_l/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "lion",
+              "audio": "audio/little_learners/letter_l/word_lion.mp3",
+              "image": "images/little_learners/letter_l/lion.webp"
+            },
+            {
+              "word": "leaf",
+              "audio": "audio/little_learners/letter_l/word_leaf.mp3",
+              "image": "images/little_learners/letter_l/leaf.svg"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-m",
+          "order": 13,
+          "level": "pre-a1",
+          "letter": "M",
+          "phoneme": "/m/",
+          "audio": {
+            "intro": "audio/little_learners/letter_m/intro.mp3",
+            "phoneme": "audio/little_learners/letter_m/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_m/praise_0.mp3",
+              "audio/little_learners/letter_m/praise_1.mp3",
+              "audio/little_learners/letter_m/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_m/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_m/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_m/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_m/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_m/instr_small.mp3",
+              "trace": "audio/little_learners/letter_m/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_m/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "moon",
+              "audio": "audio/little_learners/letter_m/word_moon.mp3",
+              "image": "images/little_learners/letter_m/moon.svg"
+            },
+            {
+              "word": "monkey",
+              "audio": "audio/little_learners/letter_m/word_monkey.mp3",
+              "image": "images/little_learners/letter_m/monkey.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-n",
+          "order": 14,
+          "level": "pre-a1",
+          "letter": "N",
+          "phoneme": "/n/",
+          "audio": {
+            "intro": "audio/little_learners/letter_n/intro.mp3",
+            "phoneme": "audio/little_learners/letter_n/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_n/praise_0.mp3",
+              "audio/little_learners/letter_n/praise_1.mp3",
+              "audio/little_learners/letter_n/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_n/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_n/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_n/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_n/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_n/instr_small.mp3",
+              "trace": "audio/little_learners/letter_n/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_n/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "nest",
+              "audio": "audio/little_learners/letter_n/word_nest.mp3",
+              "image": "images/little_learners/letter_n/nest.svg"
+            },
+            {
+              "word": "nut",
+              "audio": "audio/little_learners/letter_n/word_nut.mp3",
+              "image": "images/little_learners/letter_n/nut.svg"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-o",
+          "order": 15,
+          "level": "pre-a1",
+          "letter": "O",
+          "phoneme": "/ɒ/",
+          "audio": {
+            "intro": "audio/little_learners/letter_o/intro.mp3",
+            "phoneme": "audio/little_learners/letter_o/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_o/praise_0.mp3",
+              "audio/little_learners/letter_o/praise_1.mp3",
+              "audio/little_learners/letter_o/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_o/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_o/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_o/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_o/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_o/instr_small.mp3",
+              "trace": "audio/little_learners/letter_o/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_o/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "orange",
+              "audio": "audio/little_learners/letter_o/word_orange.mp3",
+              "image": "images/little_learners/letter_o/orange.svg"
+            },
+            {
+              "word": "octopus",
+              "audio": "audio/little_learners/letter_o/word_octopus.mp3",
+              "image": "images/little_learners/letter_o/octopus.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-p",
+          "order": 16,
+          "level": "pre-a1",
+          "letter": "P",
+          "phoneme": "/p/",
+          "audio": {
+            "intro": "audio/little_learners/letter_p/intro.mp3",
+            "phoneme": "audio/little_learners/letter_p/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_p/praise_0.mp3",
+              "audio/little_learners/letter_p/praise_1.mp3",
+              "audio/little_learners/letter_p/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_p/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_p/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_p/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_p/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_p/instr_small.mp3",
+              "trace": "audio/little_learners/letter_p/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_p/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "pig",
+              "audio": "audio/little_learners/letter_p/word_pig.mp3",
+              "image": "images/little_learners/letter_p/pig.webp"
+            },
+            {
+              "word": "pizza",
+              "audio": "audio/little_learners/letter_p/word_pizza.mp3",
+              "image": "images/little_learners/letter_p/pizza.svg"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-q",
+          "order": 17,
+          "level": "pre-a1",
+          "letter": "Q",
+          "phoneme": "/kw/",
+          "audio": {
+            "intro": "audio/little_learners/letter_q/intro.mp3",
+            "phoneme": "audio/little_learners/letter_q/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_q/praise_0.mp3",
+              "audio/little_learners/letter_q/praise_1.mp3",
+              "audio/little_learners/letter_q/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_q/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_q/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_q/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_q/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_q/instr_small.mp3",
+              "trace": "audio/little_learners/letter_q/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_q/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "queen",
+              "audio": "audio/little_learners/letter_q/word_queen.mp3",
+              "image": "images/little_learners/letter_q/queen.webp"
+            },
+            {
+              "word": "quilt",
+              "audio": "audio/little_learners/letter_q/word_quilt.mp3",
+              "image": "images/little_learners/letter_q/quilt.svg"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-r",
+          "order": 18,
+          "level": "pre-a1",
+          "letter": "R",
+          "phoneme": "/r/",
+          "audio": {
+            "intro": "audio/little_learners/letter_r/intro.mp3",
+            "phoneme": "audio/little_learners/letter_r/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_r/praise_0.mp3",
+              "audio/little_learners/letter_r/praise_1.mp3",
+              "audio/little_learners/letter_r/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_r/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_r/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_r/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_r/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_r/instr_small.mp3",
+              "trace": "audio/little_learners/letter_r/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_r/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "rainbow",
+              "audio": "audio/little_learners/letter_r/word_rainbow.mp3",
+              "image": "images/little_learners/letter_r/rainbow.svg"
+            },
+            {
+              "word": "rabbit",
+              "audio": "audio/little_learners/letter_r/word_rabbit.mp3",
+              "image": "images/little_learners/letter_r/rabbit.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-s",
+          "order": 19,
+          "level": "pre-a1",
+          "letter": "S",
+          "phoneme": "/s/",
+          "audio": {
+            "intro": "audio/little_learners/letter_s/intro.mp3",
+            "phoneme": "audio/little_learners/letter_s/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_s/praise_0.mp3",
+              "audio/little_learners/letter_s/praise_1.mp3",
+              "audio/little_learners/letter_s/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_s/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_s/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_s/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_s/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_s/instr_small.mp3",
+              "trace": "audio/little_learners/letter_s/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_s/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "sun",
+              "audio": "audio/little_learners/letter_s/word_sun.mp3",
+              "image": "images/little_learners/letter_s/sun.svg"
+            },
+            {
+              "word": "snake",
+              "audio": "audio/little_learners/letter_s/word_snake.mp3",
+              "image": "images/little_learners/letter_s/snake.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-t",
+          "order": 20,
+          "level": "pre-a1",
+          "letter": "T",
+          "phoneme": "/t/",
+          "audio": {
+            "intro": "audio/little_learners/letter_t/intro.mp3",
+            "phoneme": "audio/little_learners/letter_t/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_t/praise_0.mp3",
+              "audio/little_learners/letter_t/praise_1.mp3",
+              "audio/little_learners/letter_t/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_t/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_t/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_t/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_t/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_t/instr_small.mp3",
+              "trace": "audio/little_learners/letter_t/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_t/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "tree",
+              "audio": "audio/little_learners/letter_t/word_tree.mp3",
+              "image": "images/little_learners/letter_t/tree.svg"
+            },
+            {
+              "word": "tiger",
+              "audio": "audio/little_learners/letter_t/word_tiger.mp3",
+              "image": "images/little_learners/letter_t/tiger.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-u",
+          "order": 21,
+          "level": "pre-a1",
+          "letter": "U",
+          "phoneme": "/ʌ/",
+          "audio": {
+            "intro": "audio/little_learners/letter_u/intro.mp3",
+            "phoneme": "audio/little_learners/letter_u/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_u/praise_0.mp3",
+              "audio/little_learners/letter_u/praise_1.mp3",
+              "audio/little_learners/letter_u/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_u/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_u/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_u/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_u/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_u/instr_small.mp3",
+              "trace": "audio/little_learners/letter_u/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_u/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "umbrella",
+              "audio": "audio/little_learners/letter_u/word_umbrella.mp3",
+              "image": "images/little_learners/letter_u/umbrella.svg"
+            },
+            {
+              "word": "unicorn",
+              "audio": "audio/little_learners/letter_u/word_unicorn.mp3",
+              "image": "images/little_learners/letter_u/unicorn.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-v",
+          "order": 22,
+          "level": "pre-a1",
+          "letter": "V",
+          "phoneme": "/v/",
+          "audio": {
+            "intro": "audio/little_learners/letter_v/intro.mp3",
+            "phoneme": "audio/little_learners/letter_v/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_v/praise_0.mp3",
+              "audio/little_learners/letter_v/praise_1.mp3",
+              "audio/little_learners/letter_v/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_v/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_v/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_v/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_v/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_v/instr_small.mp3",
+              "trace": "audio/little_learners/letter_v/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_v/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "van",
+              "audio": "audio/little_learners/letter_v/word_van.mp3",
+              "image": "images/little_learners/letter_v/van.svg"
+            },
+            {
+              "word": "violin",
+              "audio": "audio/little_learners/letter_v/word_violin.mp3",
+              "image": "images/little_learners/letter_v/violin.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-w",
+          "order": 23,
+          "level": "pre-a1",
+          "letter": "W",
+          "phoneme": "/w/",
+          "audio": {
+            "intro": "audio/little_learners/letter_w/intro.mp3",
+            "phoneme": "audio/little_learners/letter_w/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_w/praise_0.mp3",
+              "audio/little_learners/letter_w/praise_1.mp3",
+              "audio/little_learners/letter_w/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_w/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_w/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_w/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_w/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_w/instr_small.mp3",
+              "trace": "audio/little_learners/letter_w/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_w/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "whale",
+              "audio": "audio/little_learners/letter_w/word_whale.mp3",
+              "image": "images/little_learners/letter_w/whale.webp"
+            },
+            {
+              "word": "window",
+              "audio": "audio/little_learners/letter_w/word_window.mp3",
+              "image": "images/little_learners/letter_w/window.svg"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-x",
+          "order": 24,
+          "level": "pre-a1",
+          "letter": "X",
+          "phoneme": "/ks/",
+          "audio": {
+            "intro": "audio/little_learners/letter_x/intro.mp3",
+            "phoneme": "audio/little_learners/letter_x/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_x/praise_0.mp3",
+              "audio/little_learners/letter_x/praise_1.mp3",
+              "audio/little_learners/letter_x/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_x/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_x/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_x/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_x/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_x/instr_small.mp3",
+              "trace": "audio/little_learners/letter_x/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_x/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "box",
+              "audio": "audio/little_learners/letter_x/word_box.mp3",
+              "image": "images/little_learners/letter_x/box.svg"
+            },
+            {
+              "word": "xylophone",
+              "audio": "audio/little_learners/letter_x/word_xylophone.mp3",
+              "image": "images/little_learners/letter_x/xylophone.svg"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-y",
+          "order": 25,
+          "level": "pre-a1",
+          "letter": "Y",
+          "phoneme": "/j/",
+          "audio": {
+            "intro": "audio/little_learners/letter_y/intro.mp3",
+            "phoneme": "audio/little_learners/letter_y/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_y/praise_0.mp3",
+              "audio/little_learners/letter_y/praise_1.mp3",
+              "audio/little_learners/letter_y/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_y/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_y/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_y/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_y/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_y/instr_small.mp3",
+              "trace": "audio/little_learners/letter_y/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_y/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "yo-yo",
+              "audio": "audio/little_learners/letter_y/word_yo_yo.mp3",
+              "image": "images/little_learners/letter_y/yo_yo.svg"
+            },
+            {
+              "word": "yak",
+              "audio": "audio/little_learners/letter_y/word_yak.mp3",
+              "image": "images/little_learners/letter_y/yak.webp"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        },
+        {
+          "id": "letter-z",
+          "order": 26,
+          "level": "pre-a1",
+          "letter": "Z",
+          "phoneme": "/z/",
+          "audio": {
+            "intro": "audio/little_learners/letter_z/intro.mp3",
+            "phoneme": "audio/little_learners/letter_z/phoneme.mp3",
+            "praise": [
+              "audio/little_learners/letter_z/praise_0.mp3",
+              "audio/little_learners/letter_z/praise_1.mp3",
+              "audio/little_learners/letter_z/praise_2.mp3"
+            ],
+            "instructions": {
+              "capital": "audio/little_learners/letter_z/instr_capital.mp3",
+              "listen-and-tap": "audio/little_learners/letter_z/instr_listen_and_tap.mp3",
+              "match-picture": "audio/little_learners/letter_z/instr_match_picture.mp3",
+              "record-and-listen": "audio/little_learners/letter_z/instr_record_and_listen.mp3",
+              "small": "audio/little_learners/letter_z/instr_small.mp3",
+              "trace": "audio/little_learners/letter_z/instr_trace.mp3",
+              "trace-small": "audio/little_learners/letter_z/instr_trace_small.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "zebra",
+              "audio": "audio/little_learners/letter_z/word_zebra.mp3",
+              "image": "images/little_learners/letter_z/zebra.webp"
+            },
+            {
+              "word": "zip",
+              "audio": "audio/little_learners/letter_z/word_zip.mp3",
+              "image": "images/little_learners/letter_z/zip.svg"
+            }
+          ],
+          "activities": [
+            "trace",
+            "trace-small",
+            "listen-and-tap",
+            "record-and-listen",
+            "match-picture"
+          ]
+        }
+      ],
+      "chest": {
+        "accessory": "grad-cap",
+        "stickers": [
+          "apple",
+          "ball",
+          "cat",
+          "dog"
+        ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "Dandoona goes to a picnic.",
+            "audio": "audio/little_learners/unit_letters/instr_story_1.mp3",
+            "words": [],
+            "pose": "waving"
+          },
+          {
+            "text": "She brings an apple and a banana.",
+            "audio": "audio/little_learners/unit_letters/instr_story_2.mp3",
+            "words": [
+              "apple",
+              "banana"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "A cat and a dog come too.",
+            "audio": "audio/little_learners/unit_letters/instr_story_3.mp3",
+            "words": [
+              "cat",
+              "dog"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "A duck brings an egg.",
+            "audio": "audio/little_learners/unit_letters/instr_story_4.mp3",
+            "words": [
+              "duck",
+              "egg"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "Yum! What a happy picnic!",
+            "audio": "audio/little_learners/unit_letters/instr_story_5.mp3",
+            "words": [],
+            "pose": "clapping"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sound-builders",
+      "order": 2,
+      "title": {
+        "en": "Sound Builders",
+        "ar": "تركيب الأصوات"
+      },
+      "icon": "sounds",
+      "color": "blue",
+      "audio": {
+        "title": "audio/explorers/unit_sound_builders/instr_title.mp3",
+        "welcome": "audio/explorers/unit_sound_builders/intro.mp3",
+        "celebration": "audio/explorers/unit_sound_builders/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_sound_builders/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_sound_builders/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_sound_builders/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_sound_builders/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_sound_builders/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_sound_builders/instr_story_5.mp3"
+        }
+      },
+      "lessons": [
+        {
+          "id": "sound-builders-a",
+          "order": 1,
+          "level": "a1",
+          "audio": {
+            "intro": "audio/explorers/sound_builders_a/intro.mp3",
+            "praise": [
+              "audio/explorers/sound_builders_a/praise_0.mp3",
+              "audio/explorers/sound_builders_a/praise_1.mp3",
+              "audio/explorers/sound_builders_a/praise_2.mp3"
+            ],
+            "instructions": {
+              "read-and-pick": "audio/explorers/sound_builders_a/instr_read_and_pick.mp3",
+              "sound-tap": "audio/explorers/sound_builders_a/instr_sound_tap.mp3",
+              "word-builder": "audio/explorers/sound_builders_a/instr_word_builder.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "cat",
+              "audio": "audio/explorers/sound_builders_a/word_cat.mp3",
+              "image": "images/explorers/sound_builders_a/cat.webp",
+              "graphemes": [
+                "c",
+                "a",
+                "t"
+              ],
+              "plural": "cats",
+              "pluralAudio": "audio/explorers/sound_builders_a/plural_cat.mp3"
+            },
+            {
+              "word": "jam",
+              "audio": "audio/explorers/sound_builders_a/word_jam.mp3",
+              "image": "images/explorers/sound_builders_a/jam.svg",
+              "graphemes": [
+                "j",
+                "a",
+                "m"
+              ]
+            },
+            {
+              "word": "ant",
+              "audio": "audio/explorers/sound_builders_a/word_ant.mp3",
+              "image": "images/explorers/sound_builders_a/ant.webp",
+              "graphemes": [
+                "a",
+                "n",
+                "t"
+              ]
+            },
+            {
+              "word": "hat",
+              "audio": "audio/explorers/sound_builders_a/word_hat.mp3",
+              "image": "images/explorers/sound_builders_a/hat.svg",
+              "graphemes": [
+                "h",
+                "a",
+                "t"
+              ]
+            }
+          ],
+          "activities": [
+            "sound-tap",
+            "word-builder",
+            "read-and-pick"
+          ]
+        },
+        {
+          "id": "sound-builders-e",
+          "order": 2,
+          "level": "a1",
+          "audio": {
+            "intro": "audio/explorers/sound_builders_e/intro.mp3",
+            "praise": [
+              "audio/explorers/sound_builders_e/praise_0.mp3",
+              "audio/explorers/sound_builders_e/praise_1.mp3",
+              "audio/explorers/sound_builders_e/praise_2.mp3"
+            ],
+            "instructions": {
+              "read-and-pick": "audio/explorers/sound_builders_e/instr_read_and_pick.mp3",
+              "sound-tap": "audio/explorers/sound_builders_e/instr_sound_tap.mp3",
+              "word-builder": "audio/explorers/sound_builders_e/instr_word_builder.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "hen",
+              "audio": "audio/explorers/sound_builders_e/word_hen.mp3",
+              "image": "images/explorers/sound_builders_e/hen.svg",
+              "graphemes": [
+                "h",
+                "e",
+                "n"
+              ],
+              "plural": "hens",
+              "pluralAudio": "audio/explorers/sound_builders_e/plural_hen.mp3"
+            },
+            {
+              "word": "bed",
+              "audio": "audio/explorers/sound_builders_e/word_bed.mp3",
+              "image": "images/explorers/sound_builders_e/bed.svg",
+              "graphemes": [
+                "b",
+                "e",
+                "d"
+              ]
+            },
+            {
+              "word": "egg",
+              "audio": "audio/explorers/sound_builders_e/word_egg.mp3",
+              "image": "images/explorers/sound_builders_e/egg.svg",
+              "graphemes": [
+                "e",
+                "gg:g"
+              ]
+            },
+            {
+              "word": "ten",
+              "audio": "audio/explorers/sound_builders_e/word_ten.mp3",
+              "image": "images/explorers/sound_builders_e/ten.svg",
+              "graphemes": [
+                "t",
+                "e",
+                "n"
+              ]
+            }
+          ],
+          "activities": [
+            "sound-tap",
+            "word-builder",
+            "read-and-pick"
+          ]
+        },
+        {
+          "id": "sound-builders-i",
+          "order": 3,
+          "level": "a1",
+          "audio": {
+            "intro": "audio/explorers/sound_builders_i/intro.mp3",
+            "praise": [
+              "audio/explorers/sound_builders_i/praise_0.mp3",
+              "audio/explorers/sound_builders_i/praise_1.mp3",
+              "audio/explorers/sound_builders_i/praise_2.mp3"
+            ],
+            "instructions": {
+              "read-and-pick": "audio/explorers/sound_builders_i/instr_read_and_pick.mp3",
+              "sound-tap": "audio/explorers/sound_builders_i/instr_sound_tap.mp3",
+              "word-builder": "audio/explorers/sound_builders_i/instr_word_builder.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "pig",
+              "audio": "audio/explorers/sound_builders_i/word_pig.mp3",
+              "image": "images/explorers/sound_builders_i/pig.webp",
+              "graphemes": [
+                "p",
+                "i",
+                "g"
+              ],
+              "plural": "pigs",
+              "pluralAudio": "audio/explorers/sound_builders_i/plural_pig.mp3"
+            },
+            {
+              "word": "fig",
+              "audio": "audio/explorers/sound_builders_i/word_fig.mp3",
+              "image": "images/explorers/sound_builders_i/fig.svg",
+              "graphemes": [
+                "f",
+                "i",
+                "g"
+              ]
+            },
+            {
+              "word": "bin",
+              "audio": "audio/explorers/sound_builders_i/word_bin.mp3",
+              "image": "images/explorers/sound_builders_i/bin.svg",
+              "graphemes": [
+                "b",
+                "i",
+                "n"
+              ]
+            },
+            {
+              "word": "six",
+              "audio": "audio/explorers/sound_builders_i/word_six.mp3",
+              "image": "images/explorers/sound_builders_i/six.svg",
+              "graphemes": [
+                "s",
+                "i",
+                "x"
+              ]
+            }
+          ],
+          "activities": [
+            "sound-tap",
+            "word-builder",
+            "read-and-pick"
+          ]
+        },
+        {
+          "id": "sound-builders-o",
+          "order": 4,
+          "level": "a1",
+          "audio": {
+            "intro": "audio/explorers/sound_builders_o/intro.mp3",
+            "praise": [
+              "audio/explorers/sound_builders_o/praise_0.mp3",
+              "audio/explorers/sound_builders_o/praise_1.mp3",
+              "audio/explorers/sound_builders_o/praise_2.mp3"
+            ],
+            "instructions": {
+              "read-and-pick": "audio/explorers/sound_builders_o/instr_read_and_pick.mp3",
+              "sound-tap": "audio/explorers/sound_builders_o/instr_sound_tap.mp3",
+              "word-builder": "audio/explorers/sound_builders_o/instr_word_builder.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "dog",
+              "audio": "audio/explorers/sound_builders_o/word_dog.mp3",
+              "image": "images/explorers/sound_builders_o/dog.webp",
+              "graphemes": [
+                "d",
+                "o",
+                "g"
+              ],
+              "plural": "dogs",
+              "pluralAudio": "audio/explorers/sound_builders_o/plural_dog.mp3"
+            },
+            {
+              "word": "pot",
+              "audio": "audio/explorers/sound_builders_o/word_pot.mp3",
+              "image": "images/explorers/sound_builders_o/pot.svg",
+              "graphemes": [
+                "p",
+                "o",
+                "t"
+              ]
+            },
+            {
+              "word": "box",
+              "audio": "audio/explorers/sound_builders_o/word_box.mp3",
+              "image": "images/explorers/sound_builders_o/box.svg",
+              "graphemes": [
+                "b",
+                "o",
+                "x"
+              ]
+            },
+            {
+              "word": "mop",
+              "audio": "audio/explorers/sound_builders_o/word_mop.mp3",
+              "image": "images/explorers/sound_builders_o/mop.svg",
+              "graphemes": [
+                "m",
+                "o",
+                "p"
+              ]
+            }
+          ],
+          "activities": [
+            "sound-tap",
+            "word-builder",
+            "read-and-pick"
+          ]
+        },
+        {
+          "id": "sound-builders-u",
+          "order": 5,
+          "level": "a1",
+          "audio": {
+            "intro": "audio/explorers/sound_builders_u/intro.mp3",
+            "praise": [
+              "audio/explorers/sound_builders_u/praise_0.mp3",
+              "audio/explorers/sound_builders_u/praise_1.mp3",
+              "audio/explorers/sound_builders_u/praise_2.mp3"
+            ],
+            "instructions": {
+              "read-and-pick": "audio/explorers/sound_builders_u/instr_read_and_pick.mp3",
+              "sound-tap": "audio/explorers/sound_builders_u/instr_sound_tap.mp3",
+              "word-builder": "audio/explorers/sound_builders_u/instr_word_builder.mp3"
+            }
+          },
+          "words": [
+            {
+              "word": "bug",
+              "audio": "audio/explorers/sound_builders_u/word_bug.mp3",
+              "image": "images/explorers/sound_builders_u/bug.svg",
+              "graphemes": [
+                "b",
+                "u",
+                "g"
+              ],
+              "plural": "bugs",
+              "pluralAudio": "audio/explorers/sound_builders_u/plural_bug.mp3"
+            },
+            {
+              "word": "nut",
+              "audio": "audio/explorers/sound_builders_u/word_nut.mp3",
+              "image": "images/explorers/sound_builders_u/nut.svg",
+              "graphemes": [
+                "n",
+                "u",
+                "t"
+              ]
+            },
+            {
+              "word": "bus",
+              "audio": "audio/explorers/sound_builders_u/word_bus.mp3",
+              "image": "images/explorers/sound_builders_u/bus.svg",
+              "graphemes": [
+                "b",
+                "u",
+                "s"
+              ]
+            },
+            {
+              "word": "cup",
+              "audio": "audio/explorers/sound_builders_u/word_cup.mp3",
+              "image": "images/explorers/sound_builders_u/cup.svg",
+              "graphemes": [
+                "c",
+                "u",
+                "p"
+              ]
+            }
+          ],
+          "activities": [
+            "sound-tap",
+            "word-builder",
+            "read-and-pick"
+          ]
+        }
+      ],
+      "chest": {
+        "accessory": "explorer-hat",
+        "stickers": [
+          "cat",
+          "pig",
+          "bus",
+          "cup"
+        ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "The cat has a hat.",
+            "audio": "audio/explorers/unit_sound_builders/instr_story_1.mp3",
+            "words": [
+              "cat",
+              "hat"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "A hen naps on a bed.",
+            "audio": "audio/explorers/unit_sound_builders/instr_story_2.mp3",
+            "words": [
+              "hen",
+              "bed"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "The pig has a big fig.",
+            "audio": "audio/explorers/unit_sound_builders/instr_story_3.mp3",
+            "words": [
+              "pig",
+              "fig"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "The dog sits by the pot.",
+            "audio": "audio/explorers/unit_sound_builders/instr_story_4.mp3",
+            "words": [
+              "dog",
+              "pot"
+            ],
+            "pose": "base"
+          },
+          {
+            "text": "A bug is in the cup! Fun!",
+            "audio": "audio/explorers/unit_sound_builders/instr_story_5.mp3",
+            "words": [
+              "bug",
+              "cup"
+            ],
+            "pose": "jumping"
+          }
+        ]
+      }
+    },
+    {
+      "id": "digraphs",
+      "order": 3,
+      "title": {
+        "en": "Digraphs",
+        "ar": "الحروف المزدوجة"
+      },
+      "icon": "digraphs",
+      "color": "purple",
+      "audio": {
+        "title": "audio/explorers/unit_digraphs/instr_title.mp3",
+        "welcome": "audio/explorers/unit_digraphs/intro.mp3",
+        "celebration": "audio/explorers/unit_digraphs/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_digraphs/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_digraphs/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_digraphs/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_digraphs/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_digraphs/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_digraphs/instr_story_5.mp3"
+        }
+      },
+      "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "055e96fbb27590fa3969d15b920691d1f6e0e1e1d6e75162bb788cdeaa918f1c",
+        "bytes": 1724925,
+        "manifest": "digraphs/v1/manifest.json",
+        "lessonIds": [
+          "digraphs-sh",
+          "digraphs-ch",
+          "digraphs-th",
+          "digraphs-ck"
+        ]
+      },
+      "chest": {
+        "accessory": "headphones",
+        "stickers": [
+          "fish",
+          "chick",
+          "duck",
+          "ship"
+        ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "A fish is in a dish.",
+            "audio": "audio/explorers/unit_digraphs/instr_story_1.mp3",
+            "words": [
+              "fish",
+              "dish"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "The chick has a chip.",
+            "audio": "audio/explorers/unit_digraphs/instr_story_2.mp3",
+            "words": [
+              "chick",
+              "chip"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "A moth sits on the bench.",
+            "audio": "audio/explorers/unit_digraphs/instr_story_3.mp3",
+            "words": [
+              "moth",
+              "bench"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "The duck has red socks.",
+            "audio": "audio/explorers/unit_digraphs/instr_story_4.mp3",
+            "words": [
+              "duck",
+              "socks"
+            ],
+            "pose": "base"
+          },
+          {
+            "text": "We run to the ship. Fun!",
+            "audio": "audio/explorers/unit_digraphs/instr_story_5.mp3",
+            "words": [
+              "ship"
+            ],
+            "pose": "jumping"
+          }
+        ]
+      }
+    },
+    {
+      "id": "blends",
+      "order": 4,
+      "title": {
+        "en": "Blends",
+        "ar": "التجمعات"
+      },
+      "icon": "blends",
+      "color": "teal",
+      "audio": {
+        "title": "audio/explorers/unit_blends/instr_title.mp3",
+        "welcome": "audio/explorers/unit_blends/intro.mp3",
+        "celebration": "audio/explorers/unit_blends/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_blends/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_blends/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_blends/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_blends/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_blends/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_blends/instr_story_5.mp3"
+        }
+      },
+      "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "eecaa3d6b18965514990baf9c6ac344c5d90b157b2b47f1bb70cb9ff750def62",
+        "bytes": 1523464,
+        "manifest": "blends/v1/manifest.json",
+        "lessonIds": [
+          "blends-l",
+          "blends-r",
+          "blends-end"
+        ]
+      },
+      "chest": {
+        "accessory": "bandana",
+        "stickers": [
+          "frog",
+          "crab",
+          "drum",
+          "truck"
+        ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "A frog is on a drum.",
+            "audio": "audio/explorers/unit_blends/instr_story_1.mp3",
+            "words": [
+              "frog",
+              "drum"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "A crab has a flag.",
+            "audio": "audio/explorers/unit_blends/instr_story_2.mp3",
+            "words": [
+              "crab",
+              "flag"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "The truck has blocks.",
+            "audio": "audio/explorers/unit_blends/instr_story_3.mp3",
+            "words": [
+              "truck",
+              "blocks"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "A plum is in my hand.",
+            "audio": "audio/explorers/unit_blends/instr_story_4.mp3",
+            "words": [
+              "plum",
+              "hand"
+            ],
+            "pose": "base"
+          },
+          {
+            "text": "A gift! Clap, clap!",
+            "audio": "audio/explorers/unit_blends/instr_story_5.mp3",
+            "words": [
+              "gift",
+              "clap"
+            ],
+            "pose": "clapping"
+          }
+        ]
+      }
+    },
+    {
+      "id": "magic-e",
+      "order": 5,
+      "title": {
+        "en": "Magic E",
+        "ar": "الحرف الصامت"
+      },
+      "icon": "magic-e",
+      "color": "pink",
+      "audio": {
+        "title": "audio/explorers/unit_magic_e/instr_title.mp3",
+        "welcome": "audio/explorers/unit_magic_e/intro.mp3",
+        "celebration": "audio/explorers/unit_magic_e/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_magic_e/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_magic_e/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_magic_e/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_magic_e/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_magic_e/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_magic_e/instr_story_5.mp3"
+        }
+      },
+      "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "c28bb63f74af62415dcba48ea00050f6e829ead94caca5c9fdb23c253281965e",
+        "bytes": 1507935,
+        "manifest": "magic_e/v1/manifest.json",
+        "lessonIds": [
+          "magic-e-a",
+          "magic-e-i",
+          "magic-e-o-u"
+        ]
+      },
+      "chest": {
+        "accessory": "wizard-hat",
+        "stickers": [
+          "cake",
+          "kite",
+          "bike",
+          "rose"
+        ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "A snake has a cake.",
+            "audio": "audio/explorers/unit_magic_e/instr_story_1.mp3",
+            "words": [
+              "snake",
+              "cake"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "Five kites fly up!",
+            "audio": "audio/explorers/unit_magic_e/instr_story_2.mp3",
+            "words": [
+              "five",
+              "kite"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "I ride my bike to the plane.",
+            "audio": "audio/explorers/unit_magic_e/instr_story_3.mp3",
+            "words": [
+              "bike",
+              "plane"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "A rose is on my nose!",
+            "audio": "audio/explorers/unit_magic_e/instr_story_4.mp3",
+            "words": [
+              "rose",
+              "nose"
+            ],
+            "pose": "base"
+          },
+          {
+            "text": "The dog has a bone. Magic!",
+            "audio": "audio/explorers/unit_magic_e/instr_story_5.mp3",
+            "words": [
+              "bone"
+            ],
+            "pose": "jumping"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vowel-teams",
+      "order": 6,
+      "title": {
+        "en": "Vowel Teams",
+        "ar": "اقتران الحروف"
+      },
+      "icon": "vowel-teams",
+      "color": "orange",
+      "audio": {
+        "title": "audio/explorers/unit_vowel_teams/instr_title.mp3",
+        "welcome": "audio/explorers/unit_vowel_teams/intro.mp3",
+        "celebration": "audio/explorers/unit_vowel_teams/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_vowel_teams/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_vowel_teams/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_vowel_teams/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_vowel_teams/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_vowel_teams/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_vowel_teams/instr_story_5.mp3"
+        }
+      },
+      "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "e71e6725a478959618eb1270ac02a7e64e36acc6bba91edbc0960620c20ec5f0",
+        "bytes": 1781492,
+        "manifest": "vowel_teams/v1/manifest.json",
+        "lessonIds": [
+          "vowel-teams-ai",
+          "vowel-teams-ee",
+          "vowel-teams-oa",
+          "vowel-teams-oo-ar"
+        ]
+      },
+      "chest": {
+        "accessory": "team-cap",
+        "stickers": [
+          "train",
+          "bee",
+          "goat",
+          "moon"
+        ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "The rain is on the train.",
+            "audio": "audio/explorers/unit_vowel_teams/instr_story_1.mp3",
+            "words": [
+              "rain",
+              "train"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "A snail is on the tree.",
+            "audio": "audio/explorers/unit_vowel_teams/instr_story_2.mp3",
+            "words": [
+              "snail",
+              "tree"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "A goat and a sheep in a boat!",
+            "audio": "audio/explorers/unit_vowel_teams/instr_story_3.mp3",
+            "words": [
+              "goat",
+              "sheep",
+              "boat"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "A bee sits on the toast.",
+            "audio": "audio/explorers/unit_vowel_teams/instr_story_4.mp3",
+            "words": [
+              "bee",
+              "toast"
+            ],
+            "pose": "base"
+          },
+          {
+            "text": "The moon and a star. Good night!",
+            "audio": "audio/explorers/unit_vowel_teams/instr_story_5.mp3",
+            "words": [
+              "moon",
+              "star"
+            ],
+            "pose": "waving"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sight-words-1",
+      "order": 7,
+      "title": {
+        "en": "Sight Words 1",
+        "ar": "كلمات شائعة ١"
+      },
+      "icon": "sight-words",
+      "color": "green",
+      "audio": {
+        "title": "audio/explorers/unit_sight_words_1/instr_title.mp3",
+        "welcome": "audio/explorers/unit_sight_words_1/intro.mp3",
+        "celebration": "audio/explorers/unit_sight_words_1/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_sight_words_1/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_sight_words_1/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_sight_words_1/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_sight_words_1/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_sight_words_1/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_sight_words_1/instr_story_5.mp3"
+        }
+      },
+      "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "38f7550458e6c2687db79c029e094a438964fda4e4bf0a0dc30d345eaca8f486",
+        "bytes": 1611157,
+        "manifest": "sight_words_1/v1/manifest.json",
+        "lessonIds": [
+          "sight-words-1-a",
+          "sight-words-1-b",
+          "sight-words-1-c"
+        ]
+      },
+      "chest": {
+        "accessory": "book-hat",
+        "stickers": [
+          "cat",
+          "dog",
+          "bus",
+          "duck"
+        ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "I see the cat.",
+            "audio": "audio/explorers/unit_sight_words_1/instr_story_1.mp3",
+            "words": [
+              "cat"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "My dog is on the bed.",
+            "audio": "audio/explorers/unit_sight_words_1/instr_story_2.mp3",
+            "words": [
+              "dog",
+              "bed"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "The bug is in the cup.",
+            "audio": "audio/explorers/unit_sight_words_1/instr_story_3.mp3",
+            "words": [
+              "bug",
+              "cup"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "We can go on the bus.",
+            "audio": "audio/explorers/unit_sight_words_1/instr_story_4.mp3",
+            "words": [
+              "bus"
+            ],
+            "pose": "base"
+          },
+          {
+            "text": "A hen and a duck! Fun!",
+            "audio": "audio/explorers/unit_sight_words_1/instr_story_5.mp3",
+            "words": [
+              "hen",
+              "duck"
+            ],
+            "pose": "jumping"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sight-words-2",
+      "order": 8,
+      "title": {
+        "en": "Sight Words 2",
+        "ar": "كلمات شائعة ٢"
+      },
+      "icon": "sight-words",
+      "color": "red",
+      "audio": {
+        "title": "audio/explorers/unit_sight_words_2/instr_title.mp3",
+        "welcome": "audio/explorers/unit_sight_words_2/intro.mp3",
+        "celebration": "audio/explorers/unit_sight_words_2/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_sight_words_2/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_sight_words_2/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_sight_words_2/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_sight_words_2/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_sight_words_2/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_sight_words_2/instr_story_5.mp3"
+        }
+      },
+      "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "245205f81409acb3411c6af75d6c79939a34b5df829dd3cb347e59846baab911",
+        "bytes": 1495224,
+        "manifest": "sight_words_2/v1/manifest.json",
+        "lessonIds": [
+          "sight-words-2-a",
+          "sight-words-2-b",
+          "sight-words-2-c"
+        ]
+      },
+      "chest": {
+        "accessory": "detective-cap",
+        "stickers": [
+          "kite",
+          "fish",
+          "frog",
+          "goat"
+        ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "Look at the kite!",
+            "audio": "audio/explorers/unit_sight_words_2/instr_story_1.mp3",
+            "words": [
+              "kite"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "Here is a fish.",
+            "audio": "audio/explorers/unit_sight_words_2/instr_story_2.mp3",
+            "words": [
+              "fish"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "He was in the bath.",
+            "audio": "audio/explorers/unit_sight_words_2/instr_story_3.mp3",
+            "words": [
+              "bath"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "She has a cake.",
+            "audio": "audio/explorers/unit_sight_words_2/instr_story_4.mp3",
+            "words": [
+              "cake"
+            ],
+            "pose": "base"
+          },
+          {
+            "text": "They are bees! Buzz!",
+            "audio": "audio/explorers/unit_sight_words_2/instr_story_5.mp3",
+            "words": [
+              "bee"
+            ],
+            "pose": "jumping"
+          }
+        ]
+      }
+    },
+    {
+      "id": "my-sentences",
+      "order": 9,
+      "title": {
+        "en": "My Sentences",
+        "ar": "جملي"
+      },
+      "icon": "sentences",
+      "color": "blue",
+      "audio": {
+        "title": "audio/explorers/unit_my_sentences/instr_title.mp3",
+        "welcome": "audio/explorers/unit_my_sentences/intro.mp3",
+        "celebration": "audio/explorers/unit_my_sentences/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_my_sentences/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_my_sentences/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_my_sentences/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_my_sentences/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_my_sentences/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_my_sentences/instr_story_5.mp3"
+        }
+      },
+      "lessons": [],
+      "pack": {
+        "version": 2,
+        "sha256": "4aeb0c88912d4c485e32eb9adc184b6ed61071f6bcf4bb98cbbe0af9f2807a7a",
+        "bytes": 1808232,
+        "manifest": "my_sentences/v2/manifest.json",
+        "lessonIds": [
+          "my-sentences-is-are",
+          "my-sentences-a-an",
+          "my-sentences-mix"
+        ]
+      },
+      "chest": {
+        "accessory": "pencil-band",
+        "stickers": [
+          "cat",
+          "ant",
+          "egg",
+          "ship"
+        ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "The cat is big.",
+            "audio": "audio/explorers/unit_my_sentences/instr_story_1.mp3",
+            "words": [
+              "cat"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "The pigs are pink.",
+            "audio": "audio/explorers/unit_my_sentences/instr_story_2.mp3",
+            "words": [
+              "pig"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "I have an egg.",
+            "audio": "audio/explorers/unit_my_sentences/instr_story_3.mp3",
+            "words": [
+              "egg"
+            ],
+            "pose": "base"
+          },
+          {
+            "text": "I see an ant.",
+            "audio": "audio/explorers/unit_my_sentences/instr_story_4.mp3",
+            "words": [
+              "ant"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "The kites are up! Hooray!",
+            "audio": "audio/explorers/unit_my_sentences/instr_story_5.mp3",
+            "words": [
+              "kite"
+            ],
+            "pose": "clapping"
+          }
+        ]
+      }
+    },
+    {
+      "id": "word-families",
+      "order": 10,
+      "title": {
+        "en": "Word Families",
+        "ar": "عائلات الكلمات"
+      },
+      "icon": "word-families",
+      "color": "purple",
+      "audio": {
+        "title": "audio/explorers/unit_word_families/instr_title.mp3",
+        "welcome": "audio/explorers/unit_word_families/intro.mp3",
+        "celebration": "audio/explorers/unit_word_families/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_word_families/instr_locked.mp3"
+        }
+      },
+      "lessons": []
+    },
+    {
+      "id": "everyday-english",
+      "order": 11,
+      "title": {
+        "en": "Everyday English",
+        "ar": "مفردات الحياة"
+      },
+      "icon": "everyday",
+      "color": "teal",
+      "audio": {
+        "title": "audio/explorers/unit_everyday_english/instr_title.mp3",
+        "welcome": "audio/explorers/unit_everyday_english/intro.mp3",
+        "celebration": "audio/explorers/unit_everyday_english/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_everyday_english/instr_locked.mp3"
+        }
+      },
+      "lessons": []
+    },
+    {
+      "id": "numbers-time",
+      "order": 12,
+      "title": {
+        "en": "Numbers & Time",
+        "ar": "الأرقام والوقت"
+      },
+      "icon": "clock",
+      "color": "orange",
+      "audio": {
+        "title": "audio/explorers/unit_numbers_time/instr_title.mp3",
+        "welcome": "audio/explorers/unit_numbers_time/intro.mp3",
+        "celebration": "audio/explorers/unit_numbers_time/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_numbers_time/instr_locked.mp3"
+        }
+      },
+      "lessons": []
+    },
+    {
+      "id": "grammar-starters",
+      "order": 13,
+      "title": {
+        "en": "Grammar Starters",
+        "ar": "بدايات القواعد"
+      },
+      "icon": "grammar",
+      "color": "green",
+      "audio": {
+        "title": "audio/explorers/unit_grammar_starters/instr_title.mp3",
+        "welcome": "audio/explorers/unit_grammar_starters/intro.mp3",
+        "celebration": "audio/explorers/unit_grammar_starters/instr_celebration.mp3",
+        "lines": {
+          "locked": "audio/explorers/unit_grammar_starters/instr_locked.mp3"
+        }
+      },
+      "lessons": []
+    }
+  ],
+  "placement": [
+    {
+      "level": 0,
+      "key": "none",
+      "doneUnits": [],
+      "startUnit": "letters"
+    },
+    {
+      "level": 1,
+      "key": "some-letters",
+      "doneUnits": [],
+      "startUnit": "letters"
+    },
+    {
+      "level": 2,
+      "key": "all-letters",
+      "doneUnits": [
+        "letters"
+      ],
+      "startUnit": "sound-builders"
+    },
+    {
+      "level": 3,
+      "key": "reads-words",
+      "doneUnits": [
+        "letters",
+        "sound-builders"
+      ],
+      "startUnit": "digraphs"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review-1",
+      "units": [
+        "sound-builders",
+        "digraphs",
+        "blends"
+      ]
+    },
+    {
+      "id": "review-2",
+      "units": [
+        "magic-e",
+        "vowel-teams"
+      ]
+    },
+    {
+      "id": "review-3",
+      "units": [
+        "sight-words-1",
+        "sight-words-2",
+        "my-sentences"
+      ]
+    }
+  ],
+  "phonemes": {
+    "a": "audio/explorers/phonemes/phoneme_a.mp3",
+    "e": "audio/explorers/phonemes/phoneme_e.mp3",
+    "i": "audio/explorers/phonemes/phoneme_i.mp3",
+    "o": "audio/explorers/phonemes/phoneme_o.mp3",
+    "u": "audio/explorers/phonemes/phoneme_u.mp3",
+    "b": "audio/explorers/phonemes/phoneme_b.mp3",
+    "c": "audio/explorers/phonemes/phoneme_c.mp3",
+    "d": "audio/explorers/phonemes/phoneme_d.mp3",
+    "f": "audio/explorers/phonemes/phoneme_f.mp3",
+    "g": "audio/explorers/phonemes/phoneme_g.mp3",
+    "h": "audio/explorers/phonemes/phoneme_h.mp3",
+    "j": "audio/explorers/phonemes/phoneme_j.mp3",
+    "m": "audio/explorers/phonemes/phoneme_m.mp3",
+    "n": "audio/explorers/phonemes/phoneme_n.mp3",
+    "p": "audio/explorers/phonemes/phoneme_p.mp3",
+    "s": "audio/explorers/phonemes/phoneme_s.mp3",
+    "t": "audio/explorers/phonemes/phoneme_t.mp3",
+    "x": "audio/explorers/phonemes/phoneme_x.mp3",
+    "l": "audio/explorers/phonemes/phoneme_l.mp3",
+    "r": "audio/explorers/phonemes/phoneme_r.mp3",
+    "v": "audio/explorers/phonemes/phoneme_v.mp3",
+    "z": "audio/explorers/phonemes/phoneme_z.mp3",
+    "sh": "audio/explorers/phonemes/phoneme_sh.mp3",
+    "ch": "audio/explorers/phonemes/phoneme_ch.mp3",
+    "th": "audio/explorers/phonemes/phoneme_th.mp3",
+    "ay": "audio/explorers/phonemes/phoneme_ay.mp3",
+    "ee": "audio/explorers/phonemes/phoneme_ee.mp3",
+    "ie": "audio/explorers/phonemes/phoneme_ie.mp3",
+    "oa": "audio/explorers/phonemes/phoneme_oa.mp3",
+    "ue": "audio/explorers/phonemes/phoneme_ue.mp3",
+    "oo": "audio/explorers/phonemes/phoneme_oo.mp3",
+    "ar": "audio/explorers/phonemes/phoneme_ar.mp3"
+  }
+}

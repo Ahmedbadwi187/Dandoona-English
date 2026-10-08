@@ -1,0 +1,19 @@
+# Digraphs, th. Everyday words (animals, food, school, home).
+id: digraphs-th
+unit: digraphs
+track: explorers
+level: a1
+order: 3
+words:
+  - { word: bath, graphemes: [b, a, th], source: svg, imagePrompt: "a bath tub with bubbles" }
+  - { word: moth, graphemes: [m, o, th], source: svg, imagePrompt: "a friendly moth" }
+  - { word: math, graphemes: [m, a, th], source: svg, imagePrompt: "a board with 1 + 2 = 3" }
+  - { word: path, graphemes: [p, a, th], source: svg, imagePrompt: "a garden path with stepping stones" }
+narration:
+  intro: "th! Put your tongue out a little: th, th. Let's read: bath, moth, math, path."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

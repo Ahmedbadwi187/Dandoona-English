@@ -693,3 +693,47 @@ class ChildGreetingScreen extends StatelessWidget {
     );
   }
 }
+
+// ----------------------------------------------------------------------------------------------------------- track
+/// The track, chosen from the age; the parent may change it here (from the summary). Little Learners 3-5, Explorers 6-8.
+class ChildTrackScreen extends StatelessWidget {
+  const ChildTrackScreen({super.key, required this.s, required this.track, required this.onTrack, required this.onContinue, this.onBack});
+
+  final Strings s;
+  final String track;
+  final ValueChanged<String> onTrack;
+  final VoidCallback onContinue;
+  final VoidCallback? onBack;
+
+  @override
+  Widget build(BuildContext context) {
+    return OnboardingFrame(
+      s: s,
+      pose: DandoonaPose.pointingUp,
+      poseSize: 130,
+      title: s('obTrackTitle'),
+      progress: 1,
+      onBack: onBack,
+      onContinue: onContinue,
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(bottom: 8),
+            child: Text(s('obTrackAuto'), textAlign: TextAlign.center, style: const TextStyle(fontSize: 16, color: Palette.ink)),
+          ),
+          for (final (id, label, icon, color) in const [
+            ('little-learners', 'obTrackLL', Icons.child_care_rounded, Palette.green),
+            ('explorers', 'obTrackExplorers', Icons.explore_rounded, Palette.blue),
+          ])
+            ChoiceCard(
+              key: Key('track-$id'),
+              title: s(label),
+              leading: _RoundIcon(icon, color),
+              selected: track == id,
+              onTap: () => onTrack(id),
+            ),
+        ],
+      ),
+    );
+  }
+}

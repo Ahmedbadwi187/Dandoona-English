@@ -2,7 +2,10 @@
 /// schemaVersion 2: the track holds units, each unit holds lessons. schemaVersion 1 (a flat lesson list, before units
 /// existed) still loads, as a single unit named Letters. All paths are relative to `assets/`.
 class TrackContent {
-  const TrackContent({required this.track, required this.units, this.mascot, this.placement = const [], this.appAudio, this.reviews = const []});
+  const TrackContent({required this.track, required this.units, this.mascot, this.placement = const [], this.appAudio, this.reviews = const [], this.phonemes = const {}});
+
+  /// Explorers phonics: the audio of each sound, by grapheme ("c" -> its clip). A sound without audio yet is missing.
+  final Map<String, String> phonemes;
 
   final String track;
   final String? mascot;
@@ -22,7 +25,7 @@ class TrackContent {
   static const supportedSchemas = {1, 2};
 
   TrackContent withUnits(List<CourseUnit> units) =>
-      TrackContent(track: track, units: units, mascot: mascot, placement: placement, appAudio: appAudio, reviews: reviews);
+      TrackContent(track: track, units: units, mascot: mascot, placement: placement, appAudio: appAudio, reviews: reviews, phonemes: phonemes);
 
   /// Every lesson of every unit, in unit order then lesson order.
   List<Lesson> get lessons => [for (final u in units) ...u.lessons];
@@ -55,6 +58,7 @@ class TrackContent {
       placement: placement,
       appAudio: app is Map<String, dynamic> ? UnitAudio.fromJson(app) : null,
       reviews: reviews,
+      phonemes: ((json['phonemes'] as Map<String, dynamic>?) ?? const {}).map((k, v) => MapEntry(k, v as String)),
     );
   }
 
@@ -287,6 +291,8 @@ class Lesson {
     this.ownWordsOnly = false,
     this.bins = const [],
     this.odd = const [],
+    this.sightWords = const [],
+    this.sentences = const [],
   });
 
   final String id;
@@ -311,6 +317,12 @@ class Lesson {
 
   /// Odd one out: words of the Letters unit that do not belong to this unit's theme.
   final List<String> odd;
+
+  /// Explorers: words read by sight, with no picture ("the", "said"); Find the Word asks them.
+  final List<SightWord> sightWords;
+
+  /// Explorers: sentences with a picture; Sentence Builder and Fill the Gap use them.
+  final List<LessonSentence> sentences;
 
   /// The number a counting word stands for ('three' is 3), or null.
   static int? numberOf(String word) {
@@ -342,6 +354,43 @@ class Lesson {
         ownWordsOnly: (json['ownWordsOnly'] as bool?) ?? false,
         bins: [for (final b in (json['bins'] as List<dynamic>?) ?? const []) LessonBin.fromJson(b as Map<String, dynamic>)],
         odd: ((json['odd'] as List<dynamic>?) ?? const []).cast<String>(),
+        sightWords: [for (final w in (json['sightWords'] as List<dynamic>?) ?? const []) SightWord.fromJson(w as Map<String, dynamic>)],
+        sentences: [for (final x in (json['sentences'] as List<dynamic>?) ?? const []) LessonSentence.fromJson(x as Map<String, dynamic>)],
+      );
+}
+
+/// A word read by sight, and its clip.
+class SightWord {
+  const SightWord({required this.word, required this.audio});
+  final String word;
+  final String audio;
+  factory SightWord.fromJson(Map<String, dynamic> json) => SightWord(word: json['word'] as String, audio: json['audio'] as String);
+}
+
+/// A sentence to read: "The cats are big." with its picture (shown twice when [two]); [gap] is the word Fill the Gap hides
+/// and [choices] the words offered for it.
+class LessonSentence {
+  const LessonSentence({required this.text, required this.audio, required this.image, this.two = false, this.gap, this.choices = const []});
+  final String text;
+  final String audio;
+  final String image;
+  final bool two;
+  final String? gap;
+  final List<String> choices;
+
+  /// The words as tiles, without the closing mark: ["The", "cats", "are", "big"].
+  List<String> get tokens => text.trim().replaceAll(RegExp(r'[.!?]$'), '').split(' ').where((t) => t.isNotEmpty).toList();
+
+  /// The closing mark: ".", "!" or "?".
+  String get mark => RegExp(r'[.!?]$').firstMatch(text.trim())?.group(0) ?? '';
+
+  factory LessonSentence.fromJson(Map<String, dynamic> json) => LessonSentence(
+        text: json['text'] as String,
+        audio: json['audio'] as String,
+        image: json['image'] as String,
+        two: (json['two'] as bool?) ?? false,
+        gap: json['gap'] as String?,
+        choices: ((json['choices'] as List<dynamic>?) ?? const []).cast<String>(),
       );
 }
 
@@ -392,7 +441,15 @@ class LessonAudio {
 }
 
 class LessonWord {
-  const LessonWord({required this.word, required this.audio, required this.image, this.phrase, this.sound, this.lives, this.home, this.says, this.group, this.opposite, this.phraseText});
+  const LessonWord({required this.word, required this.audio, required this.image, this.phrase, this.sound, this.lives, this.home, this.says, this.group, this.opposite, this.phraseText, this.graphemes = const [], this.plural, this.pluralAudio});
+
+  /// Explorers phonics: the word split into its sounds ([c, a, t]), each a key of the track's phonemes. A part can name
+  /// the sound its letters make here ("a:ay" in cake) or be silent ("e:-"); see [graphemeText] and [graphemeSound].
+  final List<String> graphemes;
+
+  /// Explorers: the word for more than one ("cats"), and the line that shows it ("One cat. Two cats!"); used by Read & Pick.
+  final String? plural;
+  final String? pluralAudio;
 
   final String word;
   final String audio;
@@ -436,5 +493,21 @@ class LessonWord {
         group: json['group'] as String?,
         opposite: json['opposite'] as String?,
         phraseText: json['phraseText'] as String?,
+        graphemes: ((json['graphemes'] as List<dynamic>?) ?? const []).cast<String>(),
+        plural: json['plural'] as String?,
+        pluralAudio: json['pluralAudio'] as String?,
       );
+}
+
+/// The letters of a grapheme as written in the word: "a:ay" → "a".
+String graphemeText(String g) {
+  final i = g.indexOf(':');
+  return i < 0 ? g : g.substring(0, i);
+}
+
+/// The phoneme key of a grapheme ("sh" → "sh", "a:ay" → "ay"), or null when the letter is silent ("e:-").
+String? graphemeSound(String g) {
+  final i = g.indexOf(':');
+  final key = i < 0 ? g : g.substring(i + 1);
+  return key == '-' ? null : key;
 }

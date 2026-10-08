@@ -1,0 +1,19 @@
+# Digraphs, ch. Everyday words (animals, food, school, home).
+id: digraphs-ch
+unit: digraphs
+track: explorers
+level: a1
+order: 2
+words:
+  - { word: chick, graphemes: [ch, i, "ck:c"], source: svg, imagePrompt: "a small yellow chick" }
+  - { word: chip, graphemes: [ch, i, p], source: svg, imagePrompt: "a potato chip" }
+  - { word: bench, graphemes: [b, e, n, ch], source: svg, imagePrompt: "a wooden park bench" }
+  - { word: lunch, graphemes: [l, u, n, ch], source: svg, imagePrompt: "a lunch box with a sandwich and an apple" }
+narration:
+  intro: "ch! Two letters, one sound: ch, ch. Let's read: chick, chip, bench, lunch."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

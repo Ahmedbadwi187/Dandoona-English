@@ -1,0 +1,19 @@
+# Blends with l: two sounds side by side, both heard. Everyday words (animals, food, school, home).
+id: blends-l
+unit: blends
+track: explorers
+level: a1
+order: 1
+words:
+  - { word: flag, graphemes: [f, l, a, g], source: svg, imagePrompt: "a flag on a pole" }
+  - { word: clap, graphemes: [c, l, a, p], reuse: "little-learners:actions-1/clap" }
+  - { word: plum, graphemes: [p, l, u, m], source: svg, imagePrompt: "a purple plum with a leaf" }
+  - { word: blocks, graphemes: [b, l, o, "ck:c", s], reuse: "little-learners:toys-3/blocks" }
+narration:
+  intro: "Blends! Say both sounds: f, l, fl. Let's read: flag, clap, plum, blocks."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    sound-tap: "Tap each box to hear its sound. Then read the word!"
+    word-builder: "Listen. Then tap the letters to build the word!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [sound-tap, word-builder, read-and-pick]

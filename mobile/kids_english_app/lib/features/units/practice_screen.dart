@@ -47,7 +47,7 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final track = ref.watch(contentProvider).asData?.value;
+    final track = ref.watch(activeContentProvider).asData?.value;
     final childId = ref.watch(activeChildIdProvider);
     Widget body = const Center(child: CircularProgressIndicator());
     if (track != null && childId != null) {
