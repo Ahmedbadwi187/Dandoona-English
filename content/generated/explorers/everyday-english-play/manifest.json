@@ -1,0 +1,52 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "1219fd3b78435540f90d7fcf7cfa1c023023880b22d73b18ccee1a18ae1189de",
+      "generatedAtUtc": "2026-10-08T17:24:13.8528091Z"
+    },
+    "praise-0": {
+      "hash": "3f17576254a4d23d675047cdb42a00fc23e735de5187c4475e6229d58ac2103a",
+      "generatedAtUtc": "2026-10-08T17:24:14.781553Z"
+    },
+    "praise-1": {
+      "hash": "4fdde195ba4158ab58fb8e12fbc4ef1e6aece0d97bf01ff53df9588e43f71369",
+      "generatedAtUtc": "2026-10-08T17:24:15.9165762Z"
+    },
+    "praise-2": {
+      "hash": "6436155ab30ee84cd601145f58e80d1cb5cb45302e48dc98fe272c71b3796c6e",
+      "generatedAtUtc": "2026-10-08T17:24:16.9636831Z"
+    },
+    "word-football": {
+      "hash": "bd412e252bae8a0d7a92315d72ec81d5f98c159db5ddc1c55c957e4d40e03eff",
+      "generatedAtUtc": "2026-10-08T17:24:17.9228865Z"
+    },
+    "word-bike": {
+      "hash": "6432853823df656bd730fbb060f88eeac404c90295758eb7509dcbee53f1fa38",
+      "generatedAtUtc": "2026-10-08T17:24:18.8457832Z"
+    },
+    "word-paint": {
+      "hash": "0c45077efabd1ceba0a061223a7ebfc7c65de46e7eefb952c0334ae8f7f767a7",
+      "generatedAtUtc": "2026-10-08T17:24:19.7765185Z"
+    },
+    "word-kite": {
+      "hash": "5b3bc9f1e29fb1f0e1237851b7bd4d371d082e6e3d16db9d773282ae20b97537",
+      "generatedAtUtc": "2026-10-08T17:24:20.6948796Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "98790cf6f85e573168fec3c43e6e1a6bd0ad947bc61947a75122ff7697560cf3",
+      "generatedAtUtc": "2026-10-08T17:24:21.6962816Z"
+    },
+    "instr-match-picture": {
+      "hash": "4237ac943e5cd16f858fd9e037529428731cf994855e70e4786558802020de79",
+      "generatedAtUtc": "2026-10-08T17:24:22.7228622Z"
+    },
+    "instr-memory": {
+      "hash": "52cb2e853f37931bc66ba9192f7638b9d4237547be3bf263dd4f621bc409fe85",
+      "generatedAtUtc": "2026-10-08T17:24:23.6831236Z"
+    },
+    "instr-read-and-pick": {
+      "hash": "6c994a45c30845b30697350dfb70194c68948d4de116e1fa5947697542123127",
+      "generatedAtUtc": "2026-10-08T17:24:24.7410924Z"
+    }
+  }
+}

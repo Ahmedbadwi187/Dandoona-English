@@ -16546,5 +16546,677 @@
     "what": "unit-numbers-time/instr-story-5 (44 chars)",
     "usd": 0.00352,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:22:53.9121077Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/intro (44 chars)",
+    "usd": 0.00352,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:22:54.8662778Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:22:55.8340455Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/praise-1 (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:22:56.7702975Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:22:57.7173709Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/word-pencil (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:22:58.6387701Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/word-book (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:22:59.6819262Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/word-bag (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:00.6020053Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/word-ruler (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:01.5902923Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/sentence-1 (16 chars)",
+    "usd": 0.00128,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:02.5666913Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/sentence-2 (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:03.4952559Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/sentence-3 (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:04.4680655Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/sentence-4 (14 chars)",
+    "usd": 0.00112,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:05.6023449Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/instr-fill-the-gap (34 chars)",
+    "usd": 0.00272,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:06.636529Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:07.6629682Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:08.6760547Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/instr-memory (24 chars)",
+    "usd": 0.00192,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:09.7464828Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:10.7903326Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-school/instr-sentence-builder (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:11.8862658Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/intro (34 chars)",
+    "usd": 0.00272,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:12.8462794Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:13.8007333Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/praise-1 (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:14.7350972Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:15.63744Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/word-sunny (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:16.5569954Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/word-rainy (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:17.487771Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/word-cloudy (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:18.4682749Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/sentence-1 (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:19.4057212Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/sentence-2 (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:20.3643943Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/sentence-3 (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:21.4528651Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/instr-fill-the-gap (34 chars)",
+    "usd": 0.00272,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:22.4682162Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:23.5854352Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:24.682034Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/instr-memory (24 chars)",
+    "usd": 0.00192,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:25.7762539Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:26.8106954Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-1/instr-sentence-builder (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:27.9869964Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/intro (35 chars)",
+    "usd": 0.00280,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:28.9762596Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:29.924437Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/praise-1 (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:30.882748Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:31.803062Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/word-windy (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:32.7736219Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/word-snowy (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:33.6948222Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/word-stormy (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:34.6698068Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/sentence-1 (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:35.6256341Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/sentence-2 (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:36.577025Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/sentence-3 (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:37.7768233Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/instr-fill-the-gap (34 chars)",
+    "usd": 0.00272,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:38.8309023Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:39.865011Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:40.8842696Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/instr-memory (24 chars)",
+    "usd": 0.00192,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:42.0058556Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:43.1242966Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-weather-2/instr-sentence-builder (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:44.277237Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/intro (46 chars)",
+    "usd": 0.00368,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:45.2216609Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:46.2061706Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/praise-1 (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:47.1440568Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:48.0676655Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/word-school (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:49.0152256Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/word-park (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:49.9769404Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/word-hospital (8 chars)",
+    "usd": 0.00064,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:50.894079Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/word-shop (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:51.9620602Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/sentence-1 (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:52.9536747Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/sentence-2 (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:53.9489067Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/sentence-3 (21 chars)",
+    "usd": 0.00168,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:54.9616077Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/sentence-4 (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:56.0872495Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/instr-fill-the-gap (34 chars)",
+    "usd": 0.00272,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:57.2075686Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:58.3278224Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:23:59.4451092Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/instr-memory (24 chars)",
+    "usd": 0.00192,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:00.5731836Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:01.6861127Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-town/instr-sentence-builder (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:02.8063433Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-meals/intro (32 chars)",
+    "usd": 0.00256,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:03.7588577Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-meals/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:04.7185Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-meals/praise-1 (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:05.6816413Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-meals/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:06.6436708Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-meals/word-breakfast (9 chars)",
+    "usd": 0.00072,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:07.6329451Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-meals/word-lunch (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:08.5385343Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-meals/word-dinner (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:09.5394531Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-meals/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:10.6573556Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-meals/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:11.6354278Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-meals/instr-memory (24 chars)",
+    "usd": 0.00192,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:12.7216192Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-meals/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:13.8540016Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-play/intro (48 chars)",
+    "usd": 0.00384,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:14.7820836Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-play/praise-0 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:15.9171432Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-play/praise-1 (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:16.964853Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-play/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:17.9239247Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-play/word-football (8 chars)",
+    "usd": 0.00064,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:18.8465637Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-play/word-bike (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:19.7773699Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-play/word-paint (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:20.7004591Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-play/word-kite (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:21.6972602Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-play/instr-listen-and-tap (29 chars)",
+    "usd": 0.00232,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:22.7241326Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-play/instr-match-picture (31 chars)",
+    "usd": 0.00248,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:23.6856567Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-play/instr-memory (24 chars)",
+    "usd": 0.00192,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:24.7438333Z",
+    "service": "ElevenLabs",
+    "what": "everyday-english-play/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:25.7651701Z",
+    "service": "ElevenLabs",
+    "what": "unit-everyday-english/instr-story-1 (28 chars)",
+    "usd": 0.00224,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:26.9805143Z",
+    "service": "ElevenLabs",
+    "what": "unit-everyday-english/instr-story-2 (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:27.9606037Z",
+    "service": "ElevenLabs",
+    "what": "unit-everyday-english/instr-story-3 (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:29.0442884Z",
+    "service": "ElevenLabs",
+    "what": "unit-everyday-english/instr-story-4 (26 chars)",
+    "usd": 0.00208,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:24:30.1134686Z",
+    "service": "ElevenLabs",
+    "what": "unit-everyday-english/instr-story-5 (21 chars)",
+    "usd": 0.00168,
+    "estimated": false
   }
 ]

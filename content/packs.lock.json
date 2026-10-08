@@ -89,6 +89,10 @@
     "numbers-time": {
       "version": 2,
       "contentHash": "e0b36c8a7b350dd4b9ec0cb35dd4fb179ed6ca93d26fa0925a684bc2c1c1d02c"
+    },
+    "everyday-english": {
+      "version": 1,
+      "contentHash": "6f314f6a561025d609cdfcef93e0cc70fe019bd3d4aaa5d6887b31357410c3c4"
     }
   }
 }

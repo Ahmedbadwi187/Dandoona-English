@@ -1,0 +1,27 @@
+# Everyday English: words for the day (school, weather, town, meals, play).
+id: everyday-english-school
+unit: everyday-english
+track: explorers
+level: a1
+order: 1
+words:
+  - { word: pencil, source: svg, imagePrompt: "a yellow pencil" }
+  - { word: book, source: svg, imagePrompt: "a blue book" }
+  - { word: bag, source: svg, imagePrompt: "a red school bag" }
+  - { word: ruler, source: svg, imagePrompt: "a yellow ruler" }
+sentences:
+  - { text: "I have a pencil.", picture: pencil, gap: pencil, choices: [pencil, book, bag] }
+  - { text: "I see a book.", picture: book, gap: book, choices: [book, pencil, bag] }
+  - { text: "I have a bag.", picture: bag, gap: bag, choices: [bag, pencil, book] }
+  - { text: "I see a ruler.", picture: ruler, gap: ruler, choices: [ruler, pencil, book] }
+narration:
+  intro: "At school! A pencil. A book. A bag. A ruler!"
+  praise: ["Great job!", "You know it!", "Super!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the picture!"
+    match-picture: "Match each word to its picture!"
+    memory: "Find the matching cards!"
+    read-and-pick: "Read the word. Then tap its picture!"
+    fill-the-gap: "Read. Then tap the word that fits!"
+    sentence-builder: "Listen. Then put the words in order!"
+activities: [listen-and-tap, read-and-pick, match-picture, fill-the-gap, sentence-builder, memory]

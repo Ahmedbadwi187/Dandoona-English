@@ -104,6 +104,21 @@
       ]
     },
     {
+      "unit": "everyday-english",
+      "version": 1,
+      "sha256": "5f4ab14fe1b17455ce2961a00a9ef3cee7023a3e49a1b574758d347e6e0631e4",
+      "bytes": 2708438,
+      "manifest": "everyday_english/v1/manifest.json",
+      "lessonIds": [
+        "everyday-english-school",
+        "everyday-english-weather-1",
+        "everyday-english-weather-2",
+        "everyday-english-town",
+        "everyday-english-meals",
+        "everyday-english-play"
+      ]
+    },
+    {
       "unit": "numbers-time",
       "version": 2,
       "sha256": "0848f95cadefbf49dcde7d88e67655a59c60db4c7c698ad974b119c00daeffca",

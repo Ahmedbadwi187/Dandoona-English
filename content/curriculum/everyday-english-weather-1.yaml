@@ -1,0 +1,26 @@
+# Everyday English: words for the day (school, weather, town, meals, play).
+id: everyday-english-weather-1
+unit: everyday-english
+track: explorers
+level: a1
+order: 2
+noArticle: true
+words:
+  - { word: sunny, source: svg, imagePrompt: "a sunny day" }
+  - { word: rainy, source: svg, imagePrompt: "a rainy day" }
+  - { word: cloudy, source: svg, imagePrompt: "a cloudy day" }
+sentences:
+  - { text: "It is sunny.", picture: sunny, gap: sunny, choices: [sunny, rainy, cloudy] }
+  - { text: "It is rainy.", picture: rainy, gap: rainy, choices: [rainy, sunny, cloudy] }
+  - { text: "It is cloudy.", picture: cloudy, gap: cloudy, choices: [cloudy, sunny, rainy] }
+narration:
+  intro: "The weather! Sunny. Rainy. Cloudy!"
+  praise: ["Great job!", "You know it!", "Super!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the picture!"
+    match-picture: "Match each word to its picture!"
+    memory: "Find the matching cards!"
+    read-and-pick: "Read the word. Then tap its picture!"
+    fill-the-gap: "Read. Then tap the word that fits!"
+    sentence-builder: "Listen. Then put the words in order!"
+activities: [listen-and-tap, read-and-pick, match-picture, fill-the-gap, sentence-builder, memory]

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "explorers",
-  "generatedAt": "2026-10-08T17:20:11.9175946Z",
+  "generatedAt": "2026-10-08T17:28:57.7092169Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -2406,10 +2406,85 @@
         "welcome": "audio/explorers/unit_everyday_english/intro.mp3",
         "celebration": "audio/explorers/unit_everyday_english/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/explorers/unit_everyday_english/instr_locked.mp3"
+          "locked": "audio/explorers/unit_everyday_english/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_everyday_english/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_everyday_english/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_everyday_english/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_everyday_english/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_everyday_english/instr_story_5.mp3"
         }
       },
-      "lessons": []
+      "lessons": [],
+      "pack": {
+        "version": 1,
+        "sha256": "5f4ab14fe1b17455ce2961a00a9ef3cee7023a3e49a1b574758d347e6e0631e4",
+        "bytes": 2708438,
+        "manifest": "everyday_english/v1/manifest.json",
+        "lessonIds": [
+          "everyday-english-school",
+          "everyday-english-weather-1",
+          "everyday-english-weather-2",
+          "everyday-english-town",
+          "everyday-english-meals",
+          "everyday-english-play"
+        ]
+      },
+      "chest": {
+        "accessory": "sun-visor",
+        "stickers": [
+          "pencil",
+          "sunny",
+          "park",
+          "football"
+        ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "It is sunny. I go to school.",
+            "audio": "audio/explorers/unit_everyday_english/instr_story_1.mp3",
+            "words": [
+              "sunny",
+              "school"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "I have a pencil and a book.",
+            "audio": "audio/explorers/unit_everyday_english/instr_story_2.mp3",
+            "words": [
+              "pencil",
+              "book"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "I go to the park.",
+            "audio": "audio/explorers/unit_everyday_english/instr_story_3.mp3",
+            "words": [
+              "park"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "It is rainy. I see my bag.",
+            "audio": "audio/explorers/unit_everyday_english/instr_story_4.mp3",
+            "words": [
+              "rainy",
+              "bag"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "I play football. Fun!",
+            "audio": "audio/explorers/unit_everyday_english/instr_story_5.mp3",
+            "words": [
+              "football"
+            ],
+            "pose": "clapping"
+          }
+        ]
+      }
     },
     {
       "id": "numbers-time",

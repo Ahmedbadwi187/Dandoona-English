@@ -1,0 +1,27 @@
+# Everyday English: words for the day (school, weather, town, meals, play).
+id: everyday-english-town
+unit: everyday-english
+track: explorers
+level: a1
+order: 4
+words:
+  - { word: school, source: svg, imagePrompt: "a school building" }
+  - { word: park, source: svg, imagePrompt: "a park with a tree and a bench" }
+  - { word: hospital, source: svg, imagePrompt: "a hospital building" }
+  - { word: shop, reuse: "digraphs-sh/shop" }
+sentences:
+  - { text: "I go to school.", picture: school, gap: school, choices: [school, park, hospital] }
+  - { text: "I go to the park.", picture: park, gap: park, choices: [park, school, hospital] }
+  - { text: "I go to the hospital.", picture: hospital, gap: hospital, choices: [hospital, school, park] }
+  - { text: "I see the shop.", picture: shop, gap: shop, choices: [shop, school, park] }
+narration:
+  intro: "In town! A school. A park. A hospital. A shop!"
+  praise: ["Great job!", "You know it!", "Super!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the picture!"
+    match-picture: "Match each word to its picture!"
+    memory: "Find the matching cards!"
+    read-and-pick: "Read the word. Then tap its picture!"
+    fill-the-gap: "Read. Then tap the word that fits!"
+    sentence-builder: "Listen. Then put the words in order!"
+activities: [listen-and-tap, read-and-pick, match-picture, fill-the-gap, sentence-builder, memory]

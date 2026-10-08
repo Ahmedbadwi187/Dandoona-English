@@ -221,6 +221,15 @@ units:
     title: { en: "Everyday English", ar: "مفردات الحياة" }
     icon: everyday
     color: teal
+    chest: { accessory: sun-visor, stickers: [pencil, sunny, park, football] }
+    # Words for the day: school, weather, town, meals and play.
+    story:
+      pages:
+        - { text: "It is sunny. I go to school.", words: [sunny, school], pose: waving }
+        - { text: "I have a pencil and a book.", words: [pencil, book], pose: pointing-up }
+        - { text: "I go to the park.", words: [park], pose: jumping }
+        - { text: "It is rainy. I see my bag.", words: [rainy, bag], pose: thinking }
+        - { text: "I play football. Fun!", words: [football], pose: clapping }
     narration: { title: "Everyday English", welcome: "Let's talk about our day!", celebration: "Great everyday English!", lines: { locked: "Finish Everyday English first!" } }
 
   - id: numbers-time
