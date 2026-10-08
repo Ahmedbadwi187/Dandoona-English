@@ -32,10 +32,29 @@ public class Lesson
     public string? Letter { get; set; }
     public string? Phoneme { get; set; }
     public List<LessonWord> Words { get; set; } = [];
+    /// <summary>Explorers: words read by sight, with no picture ("the", "said"). Each is said aloud (`sight-&lt;word&gt;`); Find the
+    /// Word asks them.</summary>
+    public List<string> SightWords { get; set; } = [];
+    /// <summary>Explorers: sentences to read, each with the picture of one of the lesson's words (shown twice for "two").</summary>
+    public List<SentenceDef> Sentences { get; set; } = [];
     public Narration Narration { get; set; } = new();
     public List<string> Activities { get; set; } = [];
 
     public int ResolvedOrder => Order ?? (Letter is { Length: 1 } l ? l[0] - 'A' + 1 : int.MaxValue);
+}
+
+/// <summary>A sentence of an Explorers lesson: "The cats are big." with the picture of the lesson word `picture` (twice when
+/// `two`). Sentence Builder builds it from its words; Fill the Gap hides `gap` and offers `choices` ("is" / "are").</summary>
+public class SentenceDef
+{
+    public string Text { get; set; } = "";
+    public string Picture { get; set; } = "";
+    public bool Two { get; set; }
+    public string? Gap { get; set; }
+    public List<string> Choices { get; set; } = [];
+
+    /// <summary>The words of the sentence as tiles, without the closing punctuation: ["The", "cats", "are", "big"].</summary>
+    public IReadOnlyList<string> Tokens() => Text.Trim().TrimEnd('.', '!', '?').Split(' ', StringSplitOptions.RemoveEmptyEntries);
 }
 
 public class LessonColor
@@ -210,7 +229,7 @@ public class LessonValidator : AbstractValidator<Lesson>
     /// <summary>The key of the sound the grapheme makes (its letters unless given), or "-" when it is silent.</summary>
     public static string GraphemeSound(string g) => g.Contains(':') ? g[(g.IndexOf(':') + 1)..] : g;
 
-    public static readonly string[] ActivityNames = ["trace", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "trace-small", "animal-sounds", "habitat", "dandoona-says", "sort", "memory", "odd-one-out", "sentence", "count-along", "mix-colors", "build-picture", "turns", "story-feeling", "sound-tap", "word-builder", "read-and-pick"];
+    public static readonly string[] ActivityNames = ["trace", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "trace-small", "animal-sounds", "habitat", "dandoona-says", "sort", "memory", "odd-one-out", "sentence", "count-along", "mix-colors", "build-picture", "turns", "story-feeling", "sound-tap", "word-builder", "read-and-pick", "find-the-word", "sentence-builder", "fill-the-gap"];
     public static readonly string[] Homes = ["house", "farm", "water", "wild"];
     private static readonly string[] Levels = ["pre-a1", "a1", "a2"];
     private static readonly string[] Tracks = ["little-learners", "explorers", "champions"];
@@ -271,6 +290,24 @@ public class LessonValidator : AbstractValidator<Lesson>
         RuleFor(x => x).Must(l => !l.Activities.Contains("dandoona-says") || l.Words.All(w => w.Says is not null)).WithMessage("Every word of a Dandoona-says lesson needs a `says` line.");
         RuleFor(x => x).Must(l => !l.Activities.Contains("animal-sounds") || l.Words.Count(w => w.Sound is not null) >= 2).WithMessage("An animal-sounds lesson needs at least two words with a sound.");
         RuleFor(x => x.Activities).Must(a => a.Distinct().Count() == a.Count).WithMessage("Duplicate activities in lesson.");
+
+        // Explorers sight words and sentences
+        RuleForEach(x => x.SightWords).Matches("^[A-Za-z']{1,12}$").WithMessage("A sight word is one word of 1-12 letters.");
+        RuleFor(x => x.SightWords).Must(ws => ws.Select(w => w.ToLowerInvariant()).Distinct().Count() == ws.Count).WithMessage("Duplicate sight words in lesson.");
+        RuleForEach(x => x.Sentences).ChildRules(s =>
+        {
+            s.RuleFor(i => i.Text).NotEmpty().MaximumLength(60).Matches(@"^[A-Z][A-Za-z' ,]*[a-z][.!?]$").WithMessage("A sentence starts with a capital letter and ends with . ! or ?");
+            s.RuleFor(i => i).Must(i => i.Tokens().Count is >= 2 and <= 7).WithMessage("A sentence has 2 to 7 words.");
+            s.RuleFor(i => i).Must(i => i.Gap is null || i.Tokens().Any(t => t.Trim(',').Equals(i.Gap, StringComparison.OrdinalIgnoreCase)))
+                .WithMessage("A sentence's 'gap' must be one of its words.");
+            s.RuleFor(i => i).Must(i => i.Gap is null ? i.Choices.Count == 0 : i.Choices.Count is 2 or 3 && i.Choices.Distinct().Count() == i.Choices.Count && i.Choices.Contains(i.Gap))
+                .WithMessage("A sentence with a 'gap' has 2-3 different 'choices', one of them the gap (and none without a gap).");
+        });
+        RuleFor(x => x).Must(l => l.Sentences.All(s => l.Words.Any(w => w.Word.Trim().Equals(s.Picture.Trim(), StringComparison.OrdinalIgnoreCase))))
+            .WithMessage("A sentence's 'picture' must be one of the lesson's words.");
+        RuleFor(x => x).Must(l => !l.Activities.Contains("find-the-word") || l.SightWords.Count >= 3).WithMessage("find-the-word needs at least 3 sight words.");
+        RuleFor(x => x).Must(l => !l.Activities.Contains("sentence-builder") || l.Sentences.Count >= 2).WithMessage("sentence-builder needs at least 2 sentences.");
+        RuleFor(x => x).Must(l => !l.Activities.Contains("fill-the-gap") || (l.Sentences.Count >= 2 && l.Sentences.All(s => s.Gap is not null))).WithMessage("fill-the-gap needs at least 2 sentences, each with a gap.");
     }
 }
 

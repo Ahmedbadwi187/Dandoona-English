@@ -129,6 +129,8 @@ public static class LessonPlan
         foreach (var w in l.Words)
             if (l.Narration.Phrases.FirstOrDefault(p => p.Key.Trim().Equals(w.Word.Trim(), StringComparison.OrdinalIgnoreCase)) is { Value: { Length: > 0 } phrase })
                 items.Add(new(PhraseRole(w.Word), phrase.Trim(), false));
+        foreach (var w in l.SightWords) items.Add(new(SightRole(w), w.Trim(), false));
+        for (var i = 0; i < l.Sentences.Count; i++) items.Add(new(SentenceRole(i), l.Sentences[i].Text.Trim(), false));
         foreach (var (key, text) in l.Narration.Instructions.OrderBy(k => k.Key, StringComparer.Ordinal)) items.Add(new(InstructionRole(key), text.Trim(), false));
         return items;
     }
@@ -144,6 +146,8 @@ public static class LessonPlan
     public static string LivesRole(string word) => $"lives-{Slug(word)}";
     public static string PhraseRole(string word) => $"phrase-{Slug(word)}";
     public static string PluralRole(string word) => $"plural-{Slug(word)}";
+    public static string SightRole(string word) => $"sight-{Slug(word)}";
+    public static string SentenceRole(int index) => $"sentence-{index + 1}";
 
     /// <summary>The line that shows a plural: "One cat. Two cats!"</summary>
     public static string PluralLine(LessonWord w) => $"One {w.Word.Trim()}. Two {w.Plural!.Trim()}!";
