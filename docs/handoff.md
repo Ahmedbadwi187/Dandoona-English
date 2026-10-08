@@ -148,11 +148,28 @@ What is built (each part its own commit on `explorers`):
 - **Explorers map look**: deeper colors and sky (`MapLook` in `unit_style.dart`); Little Learners renders exactly as on main.
 - Screenshots: `docs/design-options/explorers/sheet.png` (`flutter test test_screenshots/explorers_preview_test.dart --update-goldens`).
 
+**Phase 2 on branch `explorers-phase-2`** (made from `explorers`; not merged):
+- **Digraphs** (sh, ch, th, ck), **Blends** (l-, r-, end), **Magic E** (a, i, o/u), **Vowel Teams** (ai, ee, oa, oo/ar): 14 lessons
+  (`content/curriculum/{digraphs,blends,magic-e,vowel-teams}-*.yaml`), 56 everyday words, same three games. 29 new self-drawn
+  pictures (`content/art/explorers/<lesson>/`), 27 reused from Little Learners. All four units are packs.
+- A word part can borrow another sound or be silent: `"ck:c"`, `"a:ay"`, `"e:-"` (generator checks the key against the table and
+  the letters against the word; the app shows the letters, plays the sound, shows a silent letter quieter, and Word Builder never
+  offers two tiles that look the same). 14 new phonemes (32 in all).
+- Each unit: a chest with a new outfit (`headphones`, `bandana`, `wizard-hat`, `team-cap` in `content/art/accessories`) and a
+  5-page decodable story. Two review stops on the Explorers map: after Blends and after Vowel Teams.
+- Screenshots: `docs/design-options/explorers/phase-2/` (`flutter test test_screenshots/explorers_phase2_test.dart --update-goldens`;
+  run one test at a time with `--plain-name` if a run stalls: a picture read from a file can stall the test clock).
+- Look at: "five" and "nine" reuse the Little Learners counting pictures (balloons), so in Read & Pick the child counts; "kick",
+  "math" and "path" are the hardest new drawings to read at a glance.
+
 **To do on the owner's PC (in this order):**
-1. `dotnet run --project tools/AssetGenerator -- audio --track explorers --dry-run` (estimate: 2,388 characters, about **$0.19**;
+1. `dotnet run --project tools/AssetGenerator -- audio --track explorers --dry-run` (estimate with Phase 2: 6,467 characters, about
+   **$0.52** (Phase 1 alone: 2,388, $0.19);
    check the remaining ElevenLabs credits first), then without `--dry-run`, then `export --track explorers`. Until then the Sound
-   Builders lessons stay out of the catalog (its island shows "Soon") and the 11 later Explorers unit names have no voice.
-2. Listen to every phoneme: `docs/explorers-phonemes.md` (18 sounds; fix `say` or record overrides).
+   Builders and Phase 2 lessons stay out of the catalog (their islands show "Soon") and the Explorers unit names have no voice.
+   `export` then writes the four Phase 2 packs to `packs/explorers/`; publish them as for Little Learners (`docs/content-packs.md`).
+2. Listen to every phoneme: `docs/explorers-phonemes.md` (32 sounds; fix `say` or record overrides).
 3. Run the app on the emulator with an Explorers child (6-8, or accept the offer for a Little Learner) and look at the games.
-Spend: **about $5.51 of $50** (nothing was spent in the cloud session; Phase 1 adds about $0.19 when generated).
-Tests on `explorers`: Flutter 415, generator 98, application 36 (API integration tests need Docker + SQL Server; not run there).
+Spend: **about $5.51 of $50** (nothing was spent in the cloud sessions; Phases 1+2 add about $0.52 of audio when generated; no images).
+Tests on `explorers`: Flutter 415, generator 98, application 36. On `explorers-phase-2`: Flutter 421, generator 102, application 36
+(API integration tests need Docker + SQL Server; not run there).
