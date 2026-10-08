@@ -1,0 +1,18 @@
+id: actions-1
+unit: actions
+track: little-learners
+level: pre-a1
+order: 1
+words:
+  - { word: wave, imagePrompt: "Dandoona wave", source: openai }
+  - { word: jump, imagePrompt: "Dandoona jump", source: openai }
+  - { word: clap, imagePrompt: "Dandoona clap", source: openai }
+narration:
+  intro: "Let's move! ... Wave. ... Jump. ... Clap!"
+  phrases: { wave: "I can wave.", jump: "I can jump.", clap: "I can clap." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap what Dandoona does!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

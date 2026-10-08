@@ -1,0 +1,18 @@
+id: food-3
+unit: food
+track: little-learners
+level: pre-a1
+order: 3
+words:
+  - { word: milk, reuse: color-white/milk }
+  - { word: juice, reuse: letter-j/juice }
+  - { word: egg, reuse: letter-e/egg }
+narration:
+  intro: "Time to drink and eat! ... Milk. ... Juice. ... An egg!"
+  phrases: { milk: "I like milk.", juice: "I like juice.", egg: "I like eggs." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the food!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

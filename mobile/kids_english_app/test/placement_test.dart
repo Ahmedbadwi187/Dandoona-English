@@ -73,10 +73,8 @@ void main() {
       expect(s[0].state, UnitState.done);
       expect(s[0].placed, isTrue);
       expect(s[1].state, UnitState.current);
-      // every built unit after Colors waits for it (they are downloadable packs); the first unit without content yet is "soon"
-      final firstSoon = s.indexWhere((x) => x.state == UnitState.soon);
-      expect(firstSoon, greaterThan(2));
-      for (var i = 2; i < firstSoon; i++) {
+      // every unit after Colors waits for it (they are downloadable packs)
+      for (var i = 2; i < s.length; i++) {
         expect(s[i].state, UnitState.locked, reason: s[i].unit.id);
       }
     });

@@ -1,0 +1,17 @@
+id: my-home-3
+unit: my-home
+track: little-learners
+level: pre-a1
+order: 3
+words:
+  - { word: sofa, imagePrompt: "sofa", source: svg }
+  - { word: key, reuse: letter-k/key }
+narration:
+  intro: "More things! ... A sofa. ... A key!"
+  phrases: { sofa: "This is a sofa.", key: "This is a key." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the thing!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

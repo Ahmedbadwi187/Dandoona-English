@@ -1,0 +1,18 @@
+id: food-1
+unit: food
+track: little-learners
+level: pre-a1
+order: 1
+words:
+  - { word: apple, reuse: letter-a/apple }
+  - { word: banana, reuse: letter-b/banana }
+  - { word: orange, reuse: letter-o/orange }
+narration:
+  intro: "Yummy food! ... An apple. ... A banana. ... An orange!"
+  phrases: { apple: "I like apples.", banana: "I like bananas.", orange: "I like oranges." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the food!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

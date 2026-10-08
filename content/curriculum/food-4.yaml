@@ -1,0 +1,18 @@
+id: food-4
+unit: food
+track: little-learners
+level: pre-a1
+order: 4
+words:
+  - { word: pizza, reuse: letter-p/pizza }
+  - { word: ice cream, reuse: letter-i/ice-cream }
+  - { word: cupcake, reuse: color-pink/cupcake }
+narration:
+  intro: "Tasty treats! ... Pizza. ... Ice cream. ... A cupcake!"
+  phrases: { pizza: "I like pizza.", ice cream: "I like ice cream.", cupcake: "I like cupcakes." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the food!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

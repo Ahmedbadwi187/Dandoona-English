@@ -1,0 +1,17 @@
+id: transport-3
+unit: transport
+track: little-learners
+level: pre-a1
+order: 3
+words:
+  - { word: van, reuse: letter-v/van }
+  - { word: truck, imagePrompt: "truck", source: svg }
+narration:
+  intro: "Big vehicles! ... A van. ... A truck!"
+  phrases: { van: "This is a van.", truck: "This is a truck." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the vehicle!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

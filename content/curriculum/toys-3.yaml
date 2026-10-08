@@ -1,0 +1,18 @@
+id: toys-3
+unit: toys
+track: little-learners
+level: pre-a1
+order: 3
+words:
+  - { word: doll, imagePrompt: "a friendly cartoon doll", source: openai }
+  - { word: blocks, imagePrompt: "blocks", source: svg }
+  - { word: drum, imagePrompt: "drum", source: svg }
+narration:
+  intro: "Even more toys! ... A doll. ... Blocks. ... A drum!"
+  phrases: { doll: "I play with a doll.", blocks: "I play with blocks.", drum: "I play the drum." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the toy!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

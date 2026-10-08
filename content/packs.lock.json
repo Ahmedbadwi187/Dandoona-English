@@ -19,6 +19,38 @@
     "my-body": {
       "version": 1,
       "contentHash": "f9628064446c464b62290f72cab267051a9c50260250a26f23963daa8a3424fe"
+    },
+    "actions": {
+      "version": 1,
+      "contentHash": "409543dfc28614b8a37ad0548f7c844a95e801d52cabafcc69905cd256e77f6d"
+    },
+    "food": {
+      "version": 2,
+      "contentHash": "dab58d6d9778c3f47b72d3308a9870d7d6c41d79048cadae31133d83132255b6"
+    },
+    "clothes": {
+      "version": 1,
+      "contentHash": "590a4688492aba42657b5726d1b686e14b87e233ea4e1f2ad0b4323da9f0a3ec"
+    },
+    "toys": {
+      "version": 1,
+      "contentHash": "32bb82787f257c4e1b3eaa770627491dfe8b64898b7bbc48bd211fb3d03b5960"
+    },
+    "my-family": {
+      "version": 1,
+      "contentHash": "2cbf4e2713fcf3f8c63bb97b6235b3ab5210262afcda6665b5566a47323d367f"
+    },
+    "my-home": {
+      "version": 1,
+      "contentHash": "83066adb300c89bb314eebee03e6a1ef8eda917b920331655c54c483c5e0f267"
+    },
+    "opposites": {
+      "version": 2,
+      "contentHash": "ca971ce22a31f79a0a8a3d2f6657d81ebef63429629ad07baef8c0dd9c377a4d"
+    },
+    "transport": {
+      "version": 1,
+      "contentHash": "0c30fa3b095fbafbe619d4b7dda6e124a23836cf1999ee9128db674a27738034"
     }
   }
 }

@@ -1,5 +1,37 @@
 [
   {
+    "lesson": "actions-2",
+    "key": "run",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Dandoona clearly running, speed lines",
+    "decidedAtUtc": "2026-10-08T07:28:35.5733456Z"
+  },
+  {
+    "lesson": "actions-3",
+    "key": "dance",
+    "source": "OpenAI",
+    "variant": "v2",
+    "reason": "Dandoona dancing with music notes around",
+    "decidedAtUtc": "2026-10-08T07:28:37.5803473Z"
+  },
+  {
+    "lesson": "actions-3",
+    "key": "sit",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Dandoona sitting, clear and simple",
+    "decidedAtUtc": "2026-10-08T07:28:40.9790751Z"
+  },
+  {
+    "lesson": "actions-3",
+    "key": "sleep",
+    "source": "OpenAI",
+    "variant": "v2",
+    "reason": "Dandoona asleep in bed with a blanket and Zs",
+    "decidedAtUtc": "2026-10-08T07:28:45.0003066Z"
+  },
+  {
     "lesson": "letter-a",
     "key": "alligator",
     "source": "OpenAI",
@@ -214,5 +246,77 @@
     "variant": "dandoona-cutout",
     "reason": "Dandoona (دندونة) is the owner's own original character from their YouTube channel; copied from the channel's artwork (dandoona-cutout.png, padded to a transparent square) so the app matches the channel brand",
     "decidedAtUtc": "2026-10-06T18:25:32.688855Z"
+  },
+  {
+    "lesson": "my-family-1",
+    "key": "baby",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Smiling baby sitting",
+    "decidedAtUtc": "2026-10-08T07:29:03.5735396Z"
+  },
+  {
+    "lesson": "my-family-1",
+    "key": "dad",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Dad standing alone, clear",
+    "decidedAtUtc": "2026-10-08T07:29:01.1618349Z"
+  },
+  {
+    "lesson": "my-family-1",
+    "key": "mom",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Mom sitting with a plush, clear",
+    "decidedAtUtc": "2026-10-08T07:28:57.7463547Z"
+  },
+  {
+    "lesson": "my-family-2",
+    "key": "grandma",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Grandma with flower basket, alone",
+    "decidedAtUtc": "2026-10-08T07:29:06.7869458Z"
+  },
+  {
+    "lesson": "my-family-2",
+    "key": "grandpa",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Grandpa waving, alone",
+    "decidedAtUtc": "2026-10-08T07:29:10.5966318Z"
+  },
+  {
+    "lesson": "my-family-3",
+    "key": "brother",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Boy waving, alone",
+    "decidedAtUtc": "2026-10-08T07:29:14.4634724Z"
+  },
+  {
+    "lesson": "my-family-3",
+    "key": "sister",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Girl waving, alone",
+    "decidedAtUtc": "2026-10-08T07:29:18.7830102Z"
+  },
+  {
+    "lesson": "toys-2",
+    "key": "teddy",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Full-body teddy bear, friendly",
+    "decidedAtUtc": "2026-10-08T07:28:48.867631Z"
+  },
+  {
+    "lesson": "toys-3",
+    "key": "doll",
+    "source": "OpenAI",
+    "variant": "v1",
+    "reason": "Smiling doll with a yellow bow",
+    "decidedAtUtc": "2026-10-08T07:28:53.2993439Z"
   }
 ]

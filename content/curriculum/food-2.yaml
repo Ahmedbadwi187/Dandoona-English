@@ -1,0 +1,18 @@
+id: food-2
+unit: food
+track: little-learners
+level: pre-a1
+order: 2
+words:
+  - { word: strawberry, reuse: color-red/strawberry }
+  - { word: carrot, reuse: color-orange/carrot }
+  - { word: grapes, reuse: color-purple/grapes }
+narration:
+  intro: "More food! ... A strawberry. ... A carrot. ... Grapes!"
+  phrases: { strawberry: "I like strawberries.", carrot: "I like carrots.", grapes: "I like grapes." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the food!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

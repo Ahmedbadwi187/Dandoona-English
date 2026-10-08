@@ -1,0 +1,18 @@
+id: my-home-2
+unit: my-home
+track: little-learners
+level: pre-a1
+order: 2
+words:
+  - { word: lamp, imagePrompt: "lamp", source: svg }
+  - { word: table, imagePrompt: "table", source: svg }
+  - { word: chair, imagePrompt: "chair", source: svg }
+narration:
+  intro: "Inside the house! ... A lamp. ... A table. ... A chair!"
+  phrases: { lamp: "This is a lamp.", table: "This is a table.", chair: "This is a chair." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the thing!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

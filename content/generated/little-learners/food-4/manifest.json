@@ -1,0 +1,56 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "013be119a94aad4b5d580097a3fe6c8b0f3a9e8cfc90439fe40285719c717647",
+      "generatedAtUtc": "2026-10-08T07:31:30.8084778Z"
+    },
+    "praise-0": {
+      "hash": "3f17576254a4d23d675047cdb42a00fc23e735de5187c4475e6229d58ac2103a",
+      "generatedAtUtc": "2026-10-08T07:31:31.8321657Z"
+    },
+    "praise-1": {
+      "hash": "af7400e4963761c9525874b199970f9e79898504cc9e6cea30d6c6fc8b5a1a27",
+      "generatedAtUtc": "2026-10-08T07:31:32.9992888Z"
+    },
+    "praise-2": {
+      "hash": "c4f8f664ade20e63c8177c60917183c2fe4d39ec6cee838a742e8491bf91b452",
+      "generatedAtUtc": "2026-10-08T07:31:34.0294337Z"
+    },
+    "word-pizza": {
+      "hash": "36cb48f6f1b1370aee3daa69900d5a0a4163f88fd88b25b4bd1f72907ce07a8e",
+      "generatedAtUtc": "2026-10-08T07:31:35.1707861Z"
+    },
+    "word-ice-cream": {
+      "hash": "6121b6b53abc8b2ea170e2f904e5ac99209be3c73f1fcd69a4fa844efda2623e",
+      "generatedAtUtc": "2026-10-08T07:31:36.2757203Z"
+    },
+    "word-cupcake": {
+      "hash": "a4f756bfe92253d99bc22d628937ea4972bc666723ae577abf9c8f9a4461f0b2",
+      "generatedAtUtc": "2026-10-08T07:31:37.3809255Z"
+    },
+    "phrase-pizza": {
+      "hash": "80aa0e0e7735de53fc9ca2043fa86741d6fc952e64fd49cbe63ae87fd0d315ae",
+      "generatedAtUtc": "2026-10-08T07:31:38.4840279Z"
+    },
+    "phrase-ice-cream": {
+      "hash": "86e3d9b463be333b2d8b8e9490ab19bf046093227f65d2d5e86af2c3a675c322",
+      "generatedAtUtc": "2026-10-08T07:31:39.5313524Z"
+    },
+    "phrase-cupcake": {
+      "hash": "11b4cece062d202ecdbc18d0dfb94b043f59c55a89a393158c4f356ea70574fa",
+      "generatedAtUtc": "2026-10-08T07:31:40.5897234Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "faa41b51e758772f37ed8974297b329b7867a8f5cb4823eabf370654d0c92fe0",
+      "generatedAtUtc": "2026-10-08T07:31:41.6852595Z"
+    },
+    "instr-match-picture": {
+      "hash": "4237ac943e5cd16f858fd9e037529428731cf994855e70e4786558802020de79",
+      "generatedAtUtc": "2026-10-08T07:31:42.820448Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "0953488676f25f4555a126d39be8e9df051e56e3a0e4fa67b7931a8e71e72b5a",
+      "generatedAtUtc": "2026-10-08T07:31:43.9499509Z"
+    }
+  }
+}

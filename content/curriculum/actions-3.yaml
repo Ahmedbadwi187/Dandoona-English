@@ -1,0 +1,18 @@
+id: actions-3
+unit: actions
+track: little-learners
+level: pre-a1
+order: 3
+words:
+  - { word: dance, imagePrompt: "Dandoona dance", mascot: true, source: openai }
+  - { word: sit, imagePrompt: "Dandoona sit", mascot: true, source: openai }
+  - { word: sleep, imagePrompt: "Dandoona sleep", mascot: true, source: openai }
+narration:
+  intro: "Last actions! ... Dance. ... Sit. ... Sleep!"
+  phrases: { dance: "I can dance.", sit: "I can sit.", sleep: "I can sleep." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap what Dandoona does!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

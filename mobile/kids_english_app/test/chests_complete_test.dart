@@ -14,8 +14,8 @@ void main() {
       if (u.lessons.isNotEmpty) u else if (u.pack != null && hasPack(u.id)) u.withLessons(packLessons(u.id)),
   ];
 
-  test('the units with content are Letters, Colors, Numbers, Shapes, Animals, Feelings and My Body (update this list when a unit is built)', () {
-    expect(built.map((u) => u.id), ['letters', 'colors', 'numbers', 'shapes', 'animals', 'feelings', 'my-body']);
+  test('the units with content are all fifteen (update this list if a unit is added)', () {
+    expect(built.map((u) => u.id), ['letters', 'colors', 'numbers', 'shapes', 'animals', 'feelings', 'my-body', 'actions', 'food', 'clothes', 'toys', 'my-family', 'my-home', 'opposites', 'transport']);
   });
 
   test('every built unit has a complete chest: its outfit is drawn and every sticker has a picture and a voice', () {

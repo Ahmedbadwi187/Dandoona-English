@@ -1,0 +1,18 @@
+id: my-family-1
+unit: my-family
+track: little-learners
+level: pre-a1
+order: 1
+words:
+  - { word: mom, imagePrompt: "a friendly cartoon mom", source: openai }
+  - { word: dad, imagePrompt: "a friendly cartoon dad", source: openai }
+  - { word: baby, imagePrompt: "a friendly cartoon baby", source: openai }
+narration:
+  intro: "This is my family! ... Mom. ... Dad. ... Baby!"
+  phrases: { mom: "This is my mom.", dad: "This is my dad.", baby: "This is my baby." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the person!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

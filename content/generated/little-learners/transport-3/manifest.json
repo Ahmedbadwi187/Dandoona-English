@@ -1,0 +1,48 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "901fa76134ea58fda5f328d3dc7ad8cc7275ab386352510db12db20f82a8a434",
+      "generatedAtUtc": "2026-10-08T07:35:36.1865162Z"
+    },
+    "praise-0": {
+      "hash": "3f17576254a4d23d675047cdb42a00fc23e735de5187c4475e6229d58ac2103a",
+      "generatedAtUtc": "2026-10-08T07:35:37.2141326Z"
+    },
+    "praise-1": {
+      "hash": "af7400e4963761c9525874b199970f9e79898504cc9e6cea30d6c6fc8b5a1a27",
+      "generatedAtUtc": "2026-10-08T07:35:38.2074516Z"
+    },
+    "praise-2": {
+      "hash": "c4f8f664ade20e63c8177c60917183c2fe4d39ec6cee838a742e8491bf91b452",
+      "generatedAtUtc": "2026-10-08T07:35:39.2245753Z"
+    },
+    "word-van": {
+      "hash": "67f13c19c18a97b613109276e1d7888437ab8f8b5f4fbb78a54aad7ebf740103",
+      "generatedAtUtc": "2026-10-08T07:35:40.3835754Z"
+    },
+    "word-truck": {
+      "hash": "3aa221c7c51d1e70b8b33571ec5c5fbdd1f49a59e94b905578714742afb9c07e",
+      "generatedAtUtc": "2026-10-08T07:35:41.3581944Z"
+    },
+    "phrase-van": {
+      "hash": "3128545360043c80c21c4dd7766367d765028c607bb0934e349f6d30ca9f4f03",
+      "generatedAtUtc": "2026-10-08T07:35:42.4138902Z"
+    },
+    "phrase-truck": {
+      "hash": "1bbe94e1b47bac5dbfd9f3449d9abffae89b7123878145d4dfa8c9d349d8289b",
+      "generatedAtUtc": "2026-10-08T07:35:43.4888386Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "a4a85749f475395d919a1dc40c0d41c01bd7537d37c4b015e29161897d33ddf3",
+      "generatedAtUtc": "2026-10-08T07:35:44.606114Z"
+    },
+    "instr-match-picture": {
+      "hash": "4237ac943e5cd16f858fd9e037529428731cf994855e70e4786558802020de79",
+      "generatedAtUtc": "2026-10-08T07:35:45.724326Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "0953488676f25f4555a126d39be8e9df051e56e3a0e4fa67b7931a8e71e72b5a",
+      "generatedAtUtc": "2026-10-08T07:35:46.8115888Z"
+    }
+  }
+}

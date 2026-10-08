@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "track": "little-learners",
+  "unit": "opposites",
+  "version": 1,
+  "contentHash": "a22441b9118f0e68500efa7ac8f9c387c27e22122cd35b721181d9c02624fe31",
+  "lessons": [
+    {
+      "id": "opposites-2",
+      "order": 2,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/opposites_2/intro.mp3",
+        "praise": [
+          "audio/little_learners/opposites_2/praise_0.mp3",
+          "audio/little_learners/opposites_2/praise_1.mp3",
+          "audio/little_learners/opposites_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/opposites_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/opposites_2/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/opposites_2/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "up",
+          "audio": "audio/little_learners/opposites_2/word_up.mp3",
+          "image": "images/little_learners/opposites_2/up.svg",
+          "phrase": "audio/little_learners/opposites_2/phrase_up.mp3"
+        },
+        {
+          "word": "down",
+          "audio": "audio/little_learners/opposites_2/word_down.mp3",
+          "image": "images/little_learners/opposites_2/down.svg",
+          "phrase": "audio/little_learners/opposites_2/phrase_down.mp3"
+        },
+        {
+          "word": "fast",
+          "audio": "audio/little_learners/opposites_2/word_fast.mp3",
+          "image": "images/little_learners/opposites_2/fast.svg",
+          "phrase": "audio/little_learners/opposites_2/phrase_fast.mp3"
+        },
+        {
+          "word": "slow",
+          "audio": "audio/little_learners/opposites_2/word_slow.mp3",
+          "image": "images/little_learners/opposites_2/slow.svg",
+          "phrase": "audio/little_learners/opposites_2/phrase_slow.mp3"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "record-and-listen"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/little_learners/opposites_2/instr_listen_and_tap.mp3",
+      "sha256": "871cc250f6ee06918eb3d520a1999b0476b5ad0274a7ef1ba02ead843dab0685",
+      "bytes": 33898
+    },
+    {
+      "path": "audio/little_learners/opposites_2/instr_match_picture.mp3",
+      "sha256": "e70db2fd63f3d719e9fcd53f11b30472e2236c467b7a26825f7167a289819d00",
+      "bytes": 39750
+    },
+    {
+      "path": "audio/little_learners/opposites_2/instr_record_and_listen.mp3",
+      "sha256": "85e0c58e3dfedc0383a95bcf18fe9df8171ec5147f1eda42b853024879e40247",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/little_learners/opposites_2/intro.mp3",
+      "sha256": "8586b80036f573beb116d6e3ecb2a8e0e41eff97a43a7966730b0f861336b6f2",
+      "bytes": 71097
+    },
+    {
+      "path": "audio/little_learners/opposites_2/phrase_down.mp3",
+      "sha256": "0d9c72e967b76e9ae54e079b57da5b19d42f95e7e585e3cc47f186bf516a6341",
+      "bytes": 29301
+    },
+    {
+      "path": "audio/little_learners/opposites_2/phrase_fast.mp3",
+      "sha256": "e1b0eb1925036d6b92341b2a1c9e32e7eb059232b977ef279bba7ed6529df548",
+      "bytes": 27629
+    },
+    {
+      "path": "audio/little_learners/opposites_2/phrase_slow.mp3",
+      "sha256": "dc41efb061f3480d59fc1fa8213e0b9af88d4552ba68a646dd5371c2014b7cd2",
+      "bytes": 27629
+    },
+    {
+      "path": "audio/little_learners/opposites_2/phrase_up.mp3",
+      "sha256": "53b7513296e2c3c36bbb92d7c049af4508c108c3de28d0872399e69085744494",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/little_learners/opposites_2/praise_0.mp3",
+      "sha256": "80b96a9da4dc8992ab9932c118e2404c5f544d08ed092ea25ba7162d98f239c0",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/little_learners/opposites_2/praise_1.mp3",
+      "sha256": "c7c7c1ef5ee3ac8e3da564c289281ec5a8906718a6e0ef757ec031c8be7b6f80",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/opposites_2/praise_2.mp3",
+      "sha256": "963fbf427ca197b10fab30c84c37d7b4ac7be019f2e11840a059d1b49c89dbe1",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/little_learners/opposites_2/word_down.mp3",
+      "sha256": "4863b9dade6518a6acfa3117a4016c38dfa67ff9f4a4591fccd9ae5ee79c8c6e",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/little_learners/opposites_2/word_fast.mp3",
+      "sha256": "3b88fd8856fbdd35644f595ed0c3ebec11a61ed5798b4baf16ad480482f99add",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/little_learners/opposites_2/word_slow.mp3",
+      "sha256": "04ed26bf912037d005a7ee13973cdcbaf1598b73e7b0624755fa178d81960997",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/little_learners/opposites_2/word_up.mp3",
+      "sha256": "a7d8cf10efa365e176ed8864b572c0da8a78767012fc9acae881cad509c0a58a",
+      "bytes": 11328
+    },
+    {
+      "path": "images/little_learners/opposites_2/down.svg",
+      "sha256": "75d0ce5437ca403581409b445826c806163ea67ecddaa4ae1b471ac7e7e167f5",
+      "bytes": 362
+    },
+    {
+      "path": "images/little_learners/opposites_2/fast.svg",
+      "sha256": "daa26ba93d235c41c82c1a1d36d800c9f0d0e5d58d56d278dd571f30cabbcd80",
+      "bytes": 838
+    },
+    {
+      "path": "images/little_learners/opposites_2/slow.svg",
+      "sha256": "19ff31987beb45bd5da07f8f75eaf5316fc98893d9f0dce60659dc267ab7d8b4",
+      "bytes": 888
+    },
+    {
+      "path": "images/little_learners/opposites_2/up.svg",
+      "sha256": "9b8090754a60b225c6754966d9967200c2a82f0a90e0171280f01231e21a8757",
+      "bytes": 363
+    }
+  ]
+}

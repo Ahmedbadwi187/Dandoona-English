@@ -1,0 +1,48 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "eaa5a874632855bf7934e8b2783993a7b1f19c31519206f237aa4f95fb55ca38",
+      "generatedAtUtc": "2026-10-08T07:33:27.32272Z"
+    },
+    "praise-0": {
+      "hash": "3f17576254a4d23d675047cdb42a00fc23e735de5187c4475e6229d58ac2103a",
+      "generatedAtUtc": "2026-10-08T07:33:28.4340356Z"
+    },
+    "praise-1": {
+      "hash": "af7400e4963761c9525874b199970f9e79898504cc9e6cea30d6c6fc8b5a1a27",
+      "generatedAtUtc": "2026-10-08T07:33:29.5237951Z"
+    },
+    "praise-2": {
+      "hash": "c4f8f664ade20e63c8177c60917183c2fe4d39ec6cee838a742e8491bf91b452",
+      "generatedAtUtc": "2026-10-08T07:33:30.5348258Z"
+    },
+    "word-grandma": {
+      "hash": "af7eda3dfb2e7ba4b3be9cf815f3e9660c04e47f42e6ddb3097e9cec42538c5b",
+      "generatedAtUtc": "2026-10-08T07:33:31.5568152Z"
+    },
+    "word-grandpa": {
+      "hash": "c6e40357b0a1293060899852b1531759b6e39c53f0079082084e7306c833f578",
+      "generatedAtUtc": "2026-10-08T07:33:32.5911349Z"
+    },
+    "phrase-grandma": {
+      "hash": "e56786c6e31e70cdeb425b9f8e5cfb3e98958454504efed1a885b4d99e578c99",
+      "generatedAtUtc": "2026-10-08T07:33:33.7062926Z"
+    },
+    "phrase-grandpa": {
+      "hash": "11edbed09daa67e4c97f9531f2f1fa71b0247e4f5642c10dfda85fcf04a5772f",
+      "generatedAtUtc": "2026-10-08T07:33:34.7942849Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "3cc63d06fccef1c250a2e7f41e047c05685c071e7cff81f44eec9878e112cee1",
+      "generatedAtUtc": "2026-10-08T07:33:35.8832638Z"
+    },
+    "instr-match-picture": {
+      "hash": "4237ac943e5cd16f858fd9e037529428731cf994855e70e4786558802020de79",
+      "generatedAtUtc": "2026-10-08T07:33:37.0051563Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "0953488676f25f4555a126d39be8e9df051e56e3a0e4fa67b7931a8e71e72b5a",
+      "generatedAtUtc": "2026-10-08T07:33:38.0744495Z"
+    }
+  }
+}

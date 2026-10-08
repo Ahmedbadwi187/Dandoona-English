@@ -1,0 +1,18 @@
+id: transport-2
+unit: transport
+track: little-learners
+level: pre-a1
+order: 2
+words:
+  - { word: boat, imagePrompt: "boat", source: svg }
+  - { word: plane, imagePrompt: "plane", source: svg }
+  - { word: bike, imagePrompt: "bike", source: svg }
+narration:
+  intro: "Water, sky and road! ... A boat. ... A plane. ... A bike!"
+  phrases: { boat: "This is a boat.", plane: "This is a plane.", bike: "This is a bike." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the vehicle!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

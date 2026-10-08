@@ -23,7 +23,7 @@ The five older outfits (party hat, glasses, bow, crown, bow tie) are still earne
 | 6 | Feelings | `heart-glasses` (heart-shaped glasses) | happy, sad, angry, sleepy | yes |
 | 7 | My Body | `sweatband` (sporty headband) | hand, foot, eye, nose | yes |
 | 8 | Actions | `hero-mask` (little hero mask) | jump, run, clap, dance | when Actions is built |
-| 9 | Food | `chef-hat` | apple, bread, milk, cake | when Food is built |
+| 9 | Food | `chef-hat` | apple, milk, pizza, cupcake | yes |
 | 10 | Clothes | `beanie` (woolly hat) | shirt, shoes, hat, socks | when Clothes is built |
 | 11 | Toys | `propeller-cap` | ball, doll, kite, teddy | when Toys is built |
 | 12 | My Family | `flower-crown` | mom, dad, baby, grandma | when My Family is built |

@@ -1,0 +1,64 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "0ac4b8fcfd397077a2646c927d7ef9fe703a82b49711a311fe9b7ffcb74a99b8",
+      "generatedAtUtc": "2026-10-08T07:34:51.6746165Z"
+    },
+    "praise-0": {
+      "hash": "3f17576254a4d23d675047cdb42a00fc23e735de5187c4475e6229d58ac2103a",
+      "generatedAtUtc": "2026-10-08T07:34:52.7111637Z"
+    },
+    "praise-1": {
+      "hash": "af7400e4963761c9525874b199970f9e79898504cc9e6cea30d6c6fc8b5a1a27",
+      "generatedAtUtc": "2026-10-08T07:34:53.7494108Z"
+    },
+    "praise-2": {
+      "hash": "c4f8f664ade20e63c8177c60917183c2fe4d39ec6cee838a742e8491bf91b452",
+      "generatedAtUtc": "2026-10-08T07:34:54.7937679Z"
+    },
+    "word-up": {
+      "hash": "50b92c2df88d8bcfda5936ffd99eaaa60e801c1825753fbe2e1bc99b7300b21f",
+      "generatedAtUtc": "2026-10-08T07:34:55.7487773Z"
+    },
+    "word-down": {
+      "hash": "db56b336b843cd23e4f4e83c2e0af877a23168009b408cac3c72f26e69364024",
+      "generatedAtUtc": "2026-10-08T07:34:56.74579Z"
+    },
+    "word-fast": {
+      "hash": "7d5d61e9b166bd51e480dd3c1b7700afae1373f9b17a7c175bff1ac91d4e776d",
+      "generatedAtUtc": "2026-10-08T07:34:57.7815563Z"
+    },
+    "word-slow": {
+      "hash": "7b4fe2adeab5be3c83862af3e872b5d1c0a927c16e514e5837fa3c486aaacd87",
+      "generatedAtUtc": "2026-10-08T07:34:58.7950406Z"
+    },
+    "phrase-up": {
+      "hash": "b15e48e01adb2448a24fa52571ef083e184630cfa9c86e4d89eb9e49e34935fb",
+      "generatedAtUtc": "2026-10-08T07:34:59.9833766Z"
+    },
+    "phrase-down": {
+      "hash": "b0ae2a49fe64c1e438a637b14d350359b30458bfaa07a32da2897ccdbd11eec2",
+      "generatedAtUtc": "2026-10-08T07:35:01.0526315Z"
+    },
+    "phrase-fast": {
+      "hash": "6a32bd3f9dd76de1aac628415baa1186afce5b187eecaae370471084c4aaffe6",
+      "generatedAtUtc": "2026-10-08T07:35:02.1740478Z"
+    },
+    "phrase-slow": {
+      "hash": "4e20197c92a20606294a2dc34e854a3891604417f1e72239a5a6186402095a88",
+      "generatedAtUtc": "2026-10-08T07:35:03.2679829Z"
+    },
+    "instr-listen-and-tap": {
+      "hash": "98790cf6f85e573168fec3c43e6e1a6bd0ad947bc61947a75122ff7697560cf3",
+      "generatedAtUtc": "2026-10-08T07:35:04.355164Z"
+    },
+    "instr-match-picture": {
+      "hash": "4237ac943e5cd16f858fd9e037529428731cf994855e70e4786558802020de79",
+      "generatedAtUtc": "2026-10-08T07:35:05.4569582Z"
+    },
+    "instr-record-and-listen": {
+      "hash": "0953488676f25f4555a126d39be8e9df051e56e3a0e4fa67b7931a8e71e72b5a",
+      "generatedAtUtc": "2026-10-08T07:35:06.5207763Z"
+    }
+  }
+}

@@ -62,6 +62,102 @@
         "my-body-1",
         "my-body-2"
       ]
+    },
+    {
+      "unit": "actions",
+      "version": 1,
+      "sha256": "0dfd321e58c37959d46afd4c14300f2b763fb7562b74ca6393fb06a81de7ee02",
+      "bytes": 2184013,
+      "manifest": "actions/v1/manifest.json",
+      "lessonIds": [
+        "actions-1",
+        "actions-2",
+        "actions-3"
+      ]
+    },
+    {
+      "unit": "food",
+      "version": 2,
+      "sha256": "874a388f59b0c5e74c3632f3a16233fc92bd35bcf0c831b385adc53665105d15",
+      "bytes": 1641837,
+      "manifest": "food/v2/manifest.json",
+      "lessonIds": [
+        "food-1",
+        "food-2",
+        "food-3",
+        "food-4"
+      ]
+    },
+    {
+      "unit": "clothes",
+      "version": 1,
+      "sha256": "2468a954d202c9da8d429e2326598e1f819c73ab9933caf7cd8d901ea01b1318",
+      "bytes": 1108826,
+      "manifest": "clothes/v1/manifest.json",
+      "lessonIds": [
+        "clothes-1",
+        "clothes-2",
+        "clothes-3"
+      ]
+    },
+    {
+      "unit": "toys",
+      "version": 1,
+      "sha256": "02a526411205092214ae4177c8da75f2dba9496f9d38539558169bceeb69179a",
+      "bytes": 1281012,
+      "manifest": "toys/v1/manifest.json",
+      "lessonIds": [
+        "toys-1",
+        "toys-2",
+        "toys-3"
+      ]
+    },
+    {
+      "unit": "my-family",
+      "version": 1,
+      "sha256": "295bade6fc1026bf18f3e2b260ccc3ce5a2e7cfcc514855585a76cdf2412dbf1",
+      "bytes": 1452494,
+      "manifest": "my_family/v1/manifest.json",
+      "lessonIds": [
+        "my-family-1",
+        "my-family-2",
+        "my-family-3"
+      ]
+    },
+    {
+      "unit": "my-home",
+      "version": 1,
+      "sha256": "7fb311a0c8cedf4995c006e7c461da53785a6b319e6c3f7fa788a7cad30a101d",
+      "bytes": 1056429,
+      "manifest": "my_home/v1/manifest.json",
+      "lessonIds": [
+        "my-home-1",
+        "my-home-2",
+        "my-home-3"
+      ]
+    },
+    {
+      "unit": "opposites",
+      "version": 2,
+      "sha256": "56bd926d51f5f6d7366de60f03a674e1d8febde81f5bb6df3c5e4dd28baeedbe",
+      "bytes": 982238,
+      "manifest": "opposites/v2/manifest.json",
+      "lessonIds": [
+        "opposites-1",
+        "opposites-2"
+      ]
+    },
+    {
+      "unit": "transport",
+      "version": 1,
+      "sha256": "636b241e62fcf6a6b70c70db2e4ee70b28408b0f6f0a925b9eb137cf39c39563",
+      "bytes": 1040679,
+      "manifest": "transport/v1/manifest.json",
+      "lessonIds": [
+        "transport-1",
+        "transport-2",
+        "transport-3"
+      ]
     }
   ]
 }

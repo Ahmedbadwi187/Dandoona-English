@@ -143,7 +143,7 @@ units:
     icon: food
     color: yellow
     # The treasure chest after this unit: one outfit for Dandoona and stickers of this unit's words (fixed, never random).
-    chest: { accessory: chef-hat, stickers: [apple, bread, milk, cake] }
+    chest: { accessory: chef-hat, stickers: [apple, milk, pizza, cupcake] }
     narration:
       title: "Food"
       welcome: "Yummy! Let's learn food!"

@@ -1,0 +1,18 @@
+id: toys-2
+unit: toys
+track: little-learners
+level: pre-a1
+order: 2
+words:
+  - { word: balloon, reuse: color-blue/balloon }
+  - { word: yo-yo, reuse: letter-y/yo-yo }
+  - { word: teddy, imagePrompt: "a friendly cartoon teddy", source: openai }
+narration:
+  intro: "More toys! ... A balloon. ... A yo-yo. ... A teddy!"
+  phrases: { balloon: "I play with a balloon.", yo-yo: "I play with a yo-yo.", teddy: "I hug my teddy." }
+  praise: ["Great job!", "Well done!", "You did it!"]
+  instructions:
+    listen-and-tap: "Listen, then tap the toy!"
+    match-picture: "Match each word to its picture!"
+    record-and-listen: "Listen, then say it!"
+activities: [listen-and-tap, match-picture, record-and-listen]

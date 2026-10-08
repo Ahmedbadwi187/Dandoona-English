@@ -1,0 +1,380 @@
+{
+  "schemaVersion": 1,
+  "track": "little-learners",
+  "unit": "actions",
+  "version": 1,
+  "contentHash": "409543dfc28614b8a37ad0548f7c844a95e801d52cabafcc69905cd256e77f6d",
+  "lessons": [
+    {
+      "id": "actions-1",
+      "order": 1,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/actions_1/intro.mp3",
+        "praise": [
+          "audio/little_learners/actions_1/praise_0.mp3",
+          "audio/little_learners/actions_1/praise_1.mp3",
+          "audio/little_learners/actions_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/actions_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/actions_1/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/actions_1/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "wave",
+          "audio": "audio/little_learners/actions_1/word_wave.mp3",
+          "image": "images/little_learners/actions_1/wave.webp",
+          "phrase": "audio/little_learners/actions_1/phrase_wave.mp3"
+        },
+        {
+          "word": "jump",
+          "audio": "audio/little_learners/actions_1/word_jump.mp3",
+          "image": "images/little_learners/actions_1/jump.webp",
+          "phrase": "audio/little_learners/actions_1/phrase_jump.mp3"
+        },
+        {
+          "word": "clap",
+          "audio": "audio/little_learners/actions_1/word_clap.mp3",
+          "image": "images/little_learners/actions_1/clap.webp",
+          "phrase": "audio/little_learners/actions_1/phrase_clap.mp3"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "actions-2",
+      "order": 2,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/actions_2/intro.mp3",
+        "praise": [
+          "audio/little_learners/actions_2/praise_0.mp3",
+          "audio/little_learners/actions_2/praise_1.mp3",
+          "audio/little_learners/actions_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/actions_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/actions_2/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/actions_2/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "point",
+          "audio": "audio/little_learners/actions_2/word_point.mp3",
+          "image": "images/little_learners/actions_2/point.webp",
+          "phrase": "audio/little_learners/actions_2/phrase_point.mp3"
+        },
+        {
+          "word": "think",
+          "audio": "audio/little_learners/actions_2/word_think.mp3",
+          "image": "images/little_learners/actions_2/think.webp",
+          "phrase": "audio/little_learners/actions_2/phrase_think.mp3"
+        },
+        {
+          "word": "run",
+          "audio": "audio/little_learners/actions_2/word_run.mp3",
+          "image": "images/little_learners/actions_2/run.webp",
+          "phrase": "audio/little_learners/actions_2/phrase_run.mp3"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "actions-3",
+      "order": 3,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/actions_3/intro.mp3",
+        "praise": [
+          "audio/little_learners/actions_3/praise_0.mp3",
+          "audio/little_learners/actions_3/praise_1.mp3",
+          "audio/little_learners/actions_3/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/actions_3/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/actions_3/instr_match_picture.mp3",
+          "record-and-listen": "audio/little_learners/actions_3/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "dance",
+          "audio": "audio/little_learners/actions_3/word_dance.mp3",
+          "image": "images/little_learners/actions_3/dance.webp",
+          "phrase": "audio/little_learners/actions_3/phrase_dance.mp3"
+        },
+        {
+          "word": "sit",
+          "audio": "audio/little_learners/actions_3/word_sit.mp3",
+          "image": "images/little_learners/actions_3/sit.webp",
+          "phrase": "audio/little_learners/actions_3/phrase_sit.mp3"
+        },
+        {
+          "word": "sleep",
+          "audio": "audio/little_learners/actions_3/word_sleep.mp3",
+          "image": "images/little_learners/actions_3/sleep.webp",
+          "phrase": "audio/little_learners/actions_3/phrase_sleep.mp3"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "record-and-listen"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/little_learners/actions_1/instr_listen_and_tap.mp3",
+      "sha256": "4d50476eb0f2c82596dce74351e3c63633bb47848ff62a852cdc84624acdd2e0",
+      "bytes": 49363
+    },
+    {
+      "path": "audio/little_learners/actions_1/instr_match_picture.mp3",
+      "sha256": "4f158b72fd4b4078fd2319f682184fe95eeb23fff550f395eb66fc432cb3e107",
+      "bytes": 39750
+    },
+    {
+      "path": "audio/little_learners/actions_1/instr_record_and_listen.mp3",
+      "sha256": "96f44571e987ca4e4e981cd6ba4103449773dc8486e8bde25d147e16db2609c5",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/little_learners/actions_1/intro.mp3",
+      "sha256": "fd40f1716d61a76b670fb128c2150c51be422577974797c6873ea0618bc13148",
+      "bytes": 59812
+    },
+    {
+      "path": "audio/little_learners/actions_1/phrase_clap.mp3",
+      "sha256": "3217ae97920b07040e8d10fafc9a8b26c94a2e840830147b93ad59e193d6d500",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/actions_1/phrase_jump.mp3",
+      "sha256": "132fcd91043cd312355e03faa3cb265b5b4ea3613490f7d18649113512db028c",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/actions_1/phrase_wave.mp3",
+      "sha256": "3e075342c549b4191a798d4765859b0ec3866d15eee35fc4493d6c34761a4a07",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/little_learners/actions_1/praise_0.mp3",
+      "sha256": "dc179dd7bbd4e15f30a554f39fdfc9b4181f46b9c5e38d9572ff09ec3024edbb",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/actions_1/praise_1.mp3",
+      "sha256": "565cf720bf1315343ede46039d242c635d087e959c01aae43ae60c5087f17fb2",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/actions_1/praise_2.mp3",
+      "sha256": "1916a330ddce57892757c4c0c0bc256d322ceaa784eba8ef9593335f0404b3bc",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/actions_1/word_clap.mp3",
+      "sha256": "7bedf4799f13c4f841e2683c97471ec747acb8308e4bd3ab529b4f13960b84a8",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/little_learners/actions_1/word_jump.mp3",
+      "sha256": "99dbce473dea26630b11b0f2affd2189074385fa7d141e1101a431cd26889785",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/little_learners/actions_1/word_wave.mp3",
+      "sha256": "0fbd15a01db62dc76154afd77e7a40af0f2722a7819a591a0993fdd979a7e927",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/little_learners/actions_2/instr_listen_and_tap.mp3",
+      "sha256": "24c34f0c4967318aeba504f284dc8f7dcda943c9d2a148d2a66847ad77687df0",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/little_learners/actions_2/instr_match_picture.mp3",
+      "sha256": "a7f29e914348fb308ab1a60d8a7548b9462790dacb79b9da28b7f417a0721110",
+      "bytes": 38914
+    },
+    {
+      "path": "audio/little_learners/actions_2/instr_record_and_listen.mp3",
+      "sha256": "4b83f0156551f659454a00e1602b0335c51e5e3004570253227295b4c411049e",
+      "bytes": 27629
+    },
+    {
+      "path": "audio/little_learners/actions_2/intro.mp3",
+      "sha256": "f0ea98b3574ab08c5c53b4b7d2dbbb77a0adf7833aec229f81be2cc760c79fa9",
+      "bytes": 59812
+    },
+    {
+      "path": "audio/little_learners/actions_2/phrase_point.mp3",
+      "sha256": "b39ddc548a4c842c3c560d3a48e9fcc3e761d64c12a9e280d79bd3fd00a1afc4",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/actions_2/phrase_run.mp3",
+      "sha256": "25527bff2486fe1be653d0cb6ed31a189d39804e170460c85534d0022e0bcc83",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/actions_2/phrase_think.mp3",
+      "sha256": "505161afab8c9d8f8d06d2599fd5627bf4e87a881b8cfe1b21c4617ba326d97e",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/actions_2/praise_0.mp3",
+      "sha256": "a00743e985967f6416358f4e6150694fe8c7dc43538d03143d2670a34e0b0201",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/actions_2/praise_1.mp3",
+      "sha256": "707ad3b9990c7f8dcfc4d5201e3f9b8dec47cc04fcecc00fbb610d4793b62f57",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/actions_2/praise_2.mp3",
+      "sha256": "cb7eead7788edc95967a55e81a0c955c72cf8a464ea498ebe071604ae9179470",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/little_learners/actions_2/word_point.mp3",
+      "sha256": "6bf69ead71dd54a2d2c8684b5426a71957db9ec608f92d8eb3921c82a8864bee",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/little_learners/actions_2/word_run.mp3",
+      "sha256": "eea7a0d6bbaf1915946b037e8f65c3a655dc7febb2d277dabf980b401f0fa103",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/little_learners/actions_2/word_think.mp3",
+      "sha256": "a152ebf96dd96451f9ea930050a8484c73ba5588a4624098ceccd6208f36ef15",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/little_learners/actions_3/instr_listen_and_tap.mp3",
+      "sha256": "f613690daf1a060715e4947f68ccf9144aedbdcad52751de0891caac30ba8865",
+      "bytes": 47691
+    },
+    {
+      "path": "audio/little_learners/actions_3/instr_match_picture.mp3",
+      "sha256": "9ce809215805e8cd75e82176ba1a5273a945db77401c4ce460ae7776e2b1399f",
+      "bytes": 38914
+    },
+    {
+      "path": "audio/little_learners/actions_3/instr_record_and_listen.mp3",
+      "sha256": "4eea14a5d30a82f153952d4e575f0a1602bd325063420072bf64657120165e44",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/little_learners/actions_3/intro.mp3",
+      "sha256": "bc9b4ac93c8e1750e7ab2cf105c41aa7c45e01d1a8806958ee5c909151ce1449",
+      "bytes": 64409
+    },
+    {
+      "path": "audio/little_learners/actions_3/phrase_dance.mp3",
+      "sha256": "719d13f1623e6757ce981f453e71b8cccf77a6fb9acae033e2fbae39312fc83d",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/actions_3/phrase_sit.mp3",
+      "sha256": "d911e36b3ad175cc38b7cf5029029b48e1d9a05e8fde95cb049bd87a6d4a7f9f",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/little_learners/actions_3/phrase_sleep.mp3",
+      "sha256": "719184303dd287cfc88c98f7ae2ffbb86f32db84e8798d9c1e64bef7709f9c4e",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/little_learners/actions_3/praise_0.mp3",
+      "sha256": "fb34bd5eb1d2f56ac78916002e5a540be891041b7c553b4a8489d20b4df7be97",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/actions_3/praise_1.mp3",
+      "sha256": "b17c5ed92f3efe5fbbe528746673f327cdd168bdc6dc4f792432fd28dc672a3c",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/actions_3/praise_2.mp3",
+      "sha256": "c36f8aa1ff9b005fcfa7cf128c653d827f6c241e37fcab66c350cffc7857fc41",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/actions_3/word_dance.mp3",
+      "sha256": "eb254033c74579899be5e7e4e8718d283055c15772fddfa80b5c0a10626354f6",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/little_learners/actions_3/word_sit.mp3",
+      "sha256": "51ab019dcadcc8a1f448ad4a909b15d937284949fdf80d3fc6f178c4a751fcd2",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/little_learners/actions_3/word_sleep.mp3",
+      "sha256": "b3c6500499e551c1e922b86186f5dd5ef7e8233914a6cac0b5e85ccca20f76e5",
+      "bytes": 17598
+    },
+    {
+      "path": "images/little_learners/actions_1/clap.webp",
+      "sha256": "efc7c4a2f1e91178a05ce5232646c0ac3247f2936f9b635e387c172d079e4b66",
+      "bytes": 136850
+    },
+    {
+      "path": "images/little_learners/actions_1/jump.webp",
+      "sha256": "f8fd4593213c4ed411ee10af5a8f5f0e791d3b25e9ae9dc8800f85cd4cd0b98e",
+      "bytes": 151242
+    },
+    {
+      "path": "images/little_learners/actions_1/wave.webp",
+      "sha256": "32d2f5f0e611f8d82c704e59dc626733cf815afed5e6095cb451a5c8bea7c5de",
+      "bytes": 154104
+    },
+    {
+      "path": "images/little_learners/actions_2/point.webp",
+      "sha256": "ffb1ae95035fb582040bc2716997484d6484aeb4e2510252ce5548608fbd97e4",
+      "bytes": 125266
+    },
+    {
+      "path": "images/little_learners/actions_2/run.webp",
+      "sha256": "2a595045f68fc38d3a5751553d3ab81d1bf8745e2f0646d08d2dc510637d1bb0",
+      "bytes": 114392
+    },
+    {
+      "path": "images/little_learners/actions_2/think.webp",
+      "sha256": "251afc07145b000a29d729597bebef128713bcf847fec7b9bb60fbe2408acdf7",
+      "bytes": 133544
+    },
+    {
+      "path": "images/little_learners/actions_3/dance.webp",
+      "sha256": "948bcdfd81b55790e4e9c005d7b8e4ac5dc5092af5aba0b5b6fd2f0cb7d3e0fe",
+      "bytes": 89906
+    },
+    {
+      "path": "images/little_learners/actions_3/sit.webp",
+      "sha256": "321ed7544c1096394b55f7f131aa12e06539bfc68f2770f508f3eb03ccd86689",
+      "bytes": 126036
+    },
+    {
+      "path": "images/little_learners/actions_3/sleep.webp",
+      "sha256": "14293d3db455189f8dd5dfd3ae27a07e9703169947ab37c3fae1011649c83cad",
+      "bytes": 81150
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import 'package:kids_english_app/app.dart';
 import 'package:kids_english_app/core/storage.dart';
 import 'package:kids_english_app/core/widgets.dart';
 import 'package:kids_english_app/features/audio/audio_service.dart';
+import 'package:kids_english_app/features/content/content_models.dart';
 import 'package:kids_english_app/features/progress/progress.dart';
 import 'package:kids_english_app/router.dart';
 
@@ -32,9 +33,15 @@ String _progress(Iterable<String> lessons, {String child = 'c1'}) => jsonEncode(
 
 final _letters = [for (var i = 0; i < 26; i++) 'letter-${String.fromCharCode(97 + i)}'];
 
-Future<(FakeAudio, ProviderContainer)> _openMap(WidgetTester t, {String? progress, bool unlockAll = false}) async {
+/// The real content with the last unit (Transport) not built: for the "Soon" behaviour, which no real unit shows once all are built.
+TrackContent withTransportSoon() => realContent().withUnits([
+      for (final u in realContent().units)
+        if (u.id == 'transport') CourseUnit(id: u.id, order: u.order, title: u.title, icon: u.icon, color: u.color, audio: u.audio, chest: u.chest, lessons: const []) else u,
+    ]);
+
+Future<(FakeAudio, ProviderContainer)> _openMap(WidgetTester t, {String? progress, bool unlockAll = false, TrackContent? content}) async {
   final audio = FakeAudio();
-  final overrides = await testOverrides(content: realContent(), prefs: {
+  final overrides = await testOverrides(content: content ?? realContent(), prefs: {
     'settings.v1': _settings(unlockAll: unlockAll),
     'children.v1': _child,
     'progress.v1': ?progress,
@@ -118,7 +125,7 @@ void main() {
   });
 
   testWidgets('every unit of the content file is on the map, in order, and units without lessons are "coming soon"', (t) async {
-    await _openMap(t);
+    await _openMap(t, content: withTransportSoon());
     final map = find.byKey(const Key('unit-map'));
     // the whole path from the content file, with the three reviews and the castle at the end
     for (final id in [
@@ -131,8 +138,7 @@ void main() {
     }
     expect(find.byKey(const Key('unit-soon-transport')), findsOneWidget);
     // not built yet: its own faded picture and a "Soon" ribbon, never an hourglass
-    expect(_iconOf(t, 'my-family'), Icons.family_restroom_rounded);
-    expect(find.byKey(const Key('unit-soon-my-family')), findsOneWidget);
+    expect(find.byKey(const Key('unit-soon-my-family')), findsNothing); // built units show no ribbon
     expect(find.byIcon(Icons.hourglass_top_rounded), findsNothing);
   });
 
@@ -152,10 +158,10 @@ void main() {
   });
 
   testWidgets('tapping a unit that is not built yet: "Coming soon!"', (t) async {
-    final soon = realContent().units.firstWhere((u) => u.comingSoon).id; // the first unit without content (it moves on as units are built)
-    await _openMap(t, progress: _progress(_letters));
+    const soon = 'transport'; // the one unit made "not built" for this test
+    await _openMap(t, progress: _progress(_letters), content: withTransportSoon());
     await _center(t, 'unit-$soon');
-    await t.tap(find.byKey(Key('unit-$soon')));
+    await t.tap(find.byKey(const Key('unit-$soon')));
     await t.pump(const Duration(milliseconds: 300));
     expect(find.text('Coming soon!'), findsOneWidget);
     await t.pumpAndSettle();
