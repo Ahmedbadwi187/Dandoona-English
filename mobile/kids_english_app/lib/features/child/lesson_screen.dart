@@ -183,6 +183,9 @@ const _activityIcons = {
   'build-picture': Icons.extension_outlined,
   'turns': Icons.swap_horiz_rounded,
   'story-feeling': Icons.mood_rounded,
+  'sound-tap': Icons.graphic_eq_rounded,
+  'word-builder': Icons.view_week_rounded,
+  'read-and-pick': Icons.chrome_reader_mode_rounded,
 };
 
 /// Icon-only (no reading needed). Tapping opens the activity; the stars show the child's best result.

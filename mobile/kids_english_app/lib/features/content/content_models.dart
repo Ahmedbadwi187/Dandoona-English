@@ -2,7 +2,10 @@
 /// schemaVersion 2: the track holds units, each unit holds lessons. schemaVersion 1 (a flat lesson list, before units
 /// existed) still loads, as a single unit named Letters. All paths are relative to `assets/`.
 class TrackContent {
-  const TrackContent({required this.track, required this.units, this.mascot, this.placement = const [], this.appAudio, this.reviews = const []});
+  const TrackContent({required this.track, required this.units, this.mascot, this.placement = const [], this.appAudio, this.reviews = const [], this.phonemes = const {}});
+
+  /// Explorers phonics: the audio of each sound, by grapheme ("c" -> its clip). A sound without audio yet is missing.
+  final Map<String, String> phonemes;
 
   final String track;
   final String? mascot;
@@ -22,7 +25,7 @@ class TrackContent {
   static const supportedSchemas = {1, 2};
 
   TrackContent withUnits(List<CourseUnit> units) =>
-      TrackContent(track: track, units: units, mascot: mascot, placement: placement, appAudio: appAudio, reviews: reviews);
+      TrackContent(track: track, units: units, mascot: mascot, placement: placement, appAudio: appAudio, reviews: reviews, phonemes: phonemes);
 
   /// Every lesson of every unit, in unit order then lesson order.
   List<Lesson> get lessons => [for (final u in units) ...u.lessons];
@@ -55,6 +58,7 @@ class TrackContent {
       placement: placement,
       appAudio: app is Map<String, dynamic> ? UnitAudio.fromJson(app) : null,
       reviews: reviews,
+      phonemes: ((json['phonemes'] as Map<String, dynamic>?) ?? const {}).map((k, v) => MapEntry(k, v as String)),
     );
   }
 
@@ -392,7 +396,10 @@ class LessonAudio {
 }
 
 class LessonWord {
-  const LessonWord({required this.word, required this.audio, required this.image, this.phrase, this.sound, this.lives, this.home, this.says, this.group, this.opposite, this.phraseText});
+  const LessonWord({required this.word, required this.audio, required this.image, this.phrase, this.sound, this.lives, this.home, this.says, this.group, this.opposite, this.phraseText, this.graphemes = const []});
+
+  /// Explorers phonics: the word split into its sounds ([c, a, t]), each a key of the track's phonemes.
+  final List<String> graphemes;
 
   final String word;
   final String audio;
@@ -436,5 +443,6 @@ class LessonWord {
         group: json['group'] as String?,
         opposite: json['opposite'] as String?,
         phraseText: json['phraseText'] as String?,
+        graphemes: ((json['graphemes'] as List<dynamic>?) ?? const []).cast<String>(),
       );
 }
