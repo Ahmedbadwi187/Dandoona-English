@@ -68,9 +68,12 @@ app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();
 
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment()) app.MapOpenApi();
+
+// The database schema is created/updated at start-up in development, and on a host when Database:MigrateOnStartup is true
+// (appsettings.Production.json). It is off by default so that a normal production deployment never changes a database by surprise.
+if (app.Environment.IsDevelopment() || app.Configuration.GetValue<bool>("Database:MigrateOnStartup"))
 {
-    app.MapOpenApi();
     using var scope = app.Services.CreateScope();
     await scope.ServiceProvider.GetRequiredService<AppDbContext>().Database.MigrateAsync();
 }
