@@ -177,6 +177,6 @@ public class ExplorersPhonicsTests
         used.ShouldBe(phonemes, ignoreOrder: true);
         // a magic-e word ends in a silent e, and the vowel before it says its name
         lessons.Where(l => l.Unit == "magic-e").SelectMany(l => l.Words).ShouldAllBe(w => w.Graphemes!.Contains("e:-") && w.Graphemes.Any(g => g.EndsWith(":ay") || g.EndsWith(":ie") || g.EndsWith(":oa") || g.EndsWith(":ue")));
-        CurriculumReader.LoadReviews(curriculum).Where(r => r.Track == "explorers").Select(r => r.Review.Units.Last()).ShouldBe(["blends", "vowel-teams"]);
+        CurriculumReader.LoadReviews(curriculum).Where(r => r.Track == "explorers").Select(r => r.Review.Units.Last()).ShouldBe(["blends", "vowel-teams", "my-sentences"]);
     }
 }

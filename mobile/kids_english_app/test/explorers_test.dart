@@ -95,17 +95,17 @@ void main() {
     expect(c.read(chestInventoryProvider).outfits, {'grad-cap'}); // only Little Learners chests count for a Little Learner
   });
 
-  testWidgets('phase 2: the Explorers map has a review after Blends and one after Vowel Teams', (t) async {
+  testWidgets('the Explorers map has a review after Blends, after Vowel Teams and after My Sentences', (t) async {
     final c = await _open(t, children: '[${_child('e1', 'Lina', 'explorers')}]');
     final track = await c.read(activeContentProvider.future);
-    expect([for (final r in track.reviews) r.units.last], ['blends', 'vowel-teams']);
-    expect(find.byKey(const Key('stop-review-1'), skipOffstage: false), findsOneWidget);
-    expect(find.byKey(const Key('stop-review-2'), skipOffstage: false), findsOneWidget);
-    expect(find.byKey(const Key('stop-review-3'), skipOffstage: false), findsNothing); // Little Learners' reviews stay on its map
+    expect([for (final r in track.reviews) r.units.last], ['blends', 'vowel-teams', 'my-sentences']);
+    for (final r in ['review-1', 'review-2', 'review-3']) {
+      expect(find.byKey(Key('stop-$r'), skipOffstage: false), findsOneWidget);
+    }
   });
 
-  test('phase 2: each new unit has its own outfit in its chest', () async {
-    final meta = '{"schema":2,"children":{"e1":{"certificates":{},"celebrated":[],"chests":["digraphs","blends","magic-e","vowel-teams"]}}}';
+  test('phases 2 and 3: each new unit has its own outfit in its chest', () async {
+    final meta = '{"schema":2,"children":{"e1":{"certificates":{},"celebrated":[],"chests":["digraphs","blends","magic-e","vowel-teams","sight-words-1","sight-words-2","my-sentences"]}}}';
     final overrides = await testOverrides(content: realContent(), explorers: realExplorersContent(), prefs: {
       'children.v1': '[${_child('e1', 'Lina', 'explorers')}]',
       'meta.v2': meta,
@@ -115,6 +115,6 @@ void main() {
     await c.read(contentProvider.future);
     await c.read(explorersContentProvider.future);
     c.read(activeChildIdProvider.notifier).select('e1');
-    expect(c.read(chestInventoryProvider).outfits, containsAll(['headphones', 'bandana', 'wizard-hat', 'team-cap']));
+    expect(c.read(chestInventoryProvider).outfits, containsAll(['headphones', 'bandana', 'wizard-hat', 'team-cap', 'book-hat', 'detective-cap', 'pencil-band']));
   });
 }

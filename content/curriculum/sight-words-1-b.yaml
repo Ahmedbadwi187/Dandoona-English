@@ -1,0 +1,24 @@
+# Sight Words 1: is, it, in, on.
+id: sight-words-1-b
+unit: sight-words-1
+track: explorers
+level: a1
+order: 2
+words:
+  - { word: pig, reuse: "little-learners:letter-p/pig" }
+  - { word: cup, reuse: "sound-builders-u/cup" }
+  - { word: sun, reuse: "little-learners:letter-s/sun" }
+  - { word: bug, reuse: "sound-builders-u/bug" }
+sightWords: [is, it, in, on]
+sentences:
+  - { text: "It is a pig.", picture: pig }
+  - { text: "The bug is in the cup.", picture: cup }
+  - { text: "The sun is hot.", picture: sun }
+  - { text: "The bug is on the cup.", picture: bug }
+narration:
+  intro: "More words we just know: is, it, in, on. Let's read!"
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    find-the-word: "Listen. Then tap the word you hear!"
+    sentence-builder: "Listen. Then put the words in order!"
+activities: [find-the-word, sentence-builder]

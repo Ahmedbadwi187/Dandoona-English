@@ -1,0 +1,24 @@
+# Sight Words 2: he, she, was, said.
+id: sight-words-2-b
+unit: sight-words-2
+track: explorers
+level: a1
+order: 2
+words:
+  - { word: bath, reuse: "digraphs-th/bath" }
+  - { word: bike, reuse: "little-learners:transport-2/bike" }
+  - { word: cake, reuse: "magic-e-a/cake" }
+  - { word: frog, reuse: "little-learners:letter-f/frog" }
+sightWords: [he, she, was, said]
+sentences:
+  - { text: "He was in the bath.", picture: bath }
+  - { text: "She has a red bike.", picture: bike }
+  - { text: "She has a cake.", picture: cake }
+  - { text: "Hop, said the frog!", picture: frog }
+narration:
+  intro: "New words we just know: he, she, was, said. Let's read!"
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    find-the-word: "Listen. Then tap the word you hear!"
+    sentence-builder: "Listen. Then put the words in order!"
+activities: [find-the-word, sentence-builder]

@@ -1,0 +1,24 @@
+# Sight Words 1: words we see a lot and read at a glance (I, see, the, my), in sentences with pictures.
+id: sight-words-1-a
+unit: sight-words-1
+track: explorers
+level: a1
+order: 1
+words:
+  - { word: cat, reuse: "little-learners:letter-c/cat" }
+  - { word: hat, reuse: "little-learners:letter-h/hat" }
+  - { word: dog, reuse: "little-learners:letter-d/dog" }
+  - { word: bed, reuse: "little-learners:my-home-1/bed" }
+sightWords: [I, see, the, my]
+sentences:
+  - { text: "I see the cat.", picture: cat }
+  - { text: "I see my hat.", picture: hat }
+  - { text: "I see the dog.", picture: dog }
+  - { text: "I see my bed.", picture: bed }
+narration:
+  intro: "Some words we just know! I, see, the, my. Let's read them!"
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    find-the-word: "Listen. Then tap the word you hear!"
+    sentence-builder: "Listen. Then put the words in order!"
+activities: [find-the-word, sentence-builder]

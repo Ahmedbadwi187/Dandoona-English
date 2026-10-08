@@ -1,0 +1,25 @@
+# My Sentences: one thing is, two things are. The picture shows which; the word is never named.
+id: my-sentences-is-are
+unit: my-sentences
+track: explorers
+level: a1
+order: 1
+words:
+  - { word: cat, reuse: "little-learners:letter-c/cat" }
+  - { word: pig, reuse: "little-learners:letter-p/pig" }
+  - { word: duck, reuse: "little-learners:letter-d/duck" }
+  - { word: dog, reuse: "little-learners:letter-d/dog" }
+sentences:
+  - { text: "The cat is big.", picture: cat, gap: is, choices: [is, are] }
+  - { text: "The cats are big.", picture: cat, two: true, gap: are, choices: [is, are] }
+  - { text: "The pig is pink.", picture: pig, gap: is, choices: [is, are] }
+  - { text: "The pigs are pink.", picture: pig, two: true, gap: are, choices: [is, are] }
+  - { text: "The duck is wet.", picture: duck, gap: is, choices: [is, are] }
+  - { text: "The dogs are on the bed.", picture: dog, two: true, gap: are, choices: [is, are] }
+narration:
+  intro: "One cat is. Two cats are! Look at the picture, then read."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    fill-the-gap: "Read. Then tap the word that fits!"
+    sentence-builder: "Listen. Then put the words in order!"
+activities: [fill-the-gap, sentence-builder]

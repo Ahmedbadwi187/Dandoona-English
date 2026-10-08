@@ -1,0 +1,24 @@
+# Sight Words 2: like, have, they, are.
+id: sight-words-2-c
+unit: sight-words-2
+track: explorers
+level: a1
+order: 3
+words:
+  - { word: goat, reuse: "little-learners:letter-g/goat" }
+  - { word: bee, reuse: "vowel-teams-ee/bee" }
+  - { word: toast, reuse: "vowel-teams-oa/toast" }
+  - { word: star, reuse: "little-learners:shapes-3/star" }
+sightWords: [like, have, they, are]
+sentences:
+  - { text: "I like toast.", picture: toast }
+  - { text: "We have a goat.", picture: goat }
+  - { text: "They are bees.", picture: bee, two: true }
+  - { text: "I like the stars.", picture: star, two: true }
+narration:
+  intro: "New words we just know: like, have, they, are. Let's read!"
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    find-the-word: "Listen. Then tap the word you hear!"
+    sentence-builder: "Listen. Then put the words in order!"
+activities: [find-the-word, sentence-builder]

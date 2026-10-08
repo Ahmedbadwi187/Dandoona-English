@@ -54,6 +54,7 @@ phonemes:
 reviews:
   - { id: review-1, units: [sound-builders, digraphs, blends] }
   - { id: review-2, units: [magic-e, vowel-teams] }
+  - { id: review-3, units: [sight-words-1, sight-words-2, my-sentences] }
 
 units:
   - id: letters
@@ -150,6 +151,14 @@ units:
     title: { en: "Sight Words 1", ar: "كلمات شائعة ١" }
     icon: sight-words
     color: green
+    chest: { accessory: book-hat, stickers: [cat, dog, bus, duck] }
+    story:
+      pages:
+        - { text: "I see the cat.", words: [cat], pose: waving }
+        - { text: "My dog is on the bed.", words: [dog, bed], pose: thinking }
+        - { text: "The bug is in the cup.", words: [bug, cup], pose: pointing-up }
+        - { text: "We can go on the bus.", words: [bus], pose: base }
+        - { text: "A hen and a duck! Fun!", words: [hen, duck], pose: jumping }
     narration: { title: "Sight Words", welcome: "Let's learn words we see a lot!", celebration: "You know your sight words!", lines: { locked: "Finish Sight Words first!" } }
 
   - id: sight-words-2
@@ -158,6 +167,14 @@ units:
     title: { en: "Sight Words 2", ar: "كلمات شائعة ٢" }
     icon: sight-words
     color: red
+    chest: { accessory: detective-cap, stickers: [kite, fish, frog, goat] }
+    story:
+      pages:
+        - { text: "Look at the kite!", words: [kite], pose: pointing-up }
+        - { text: "Here is a fish.", words: [fish], pose: waving }
+        - { text: "He was in the bath.", words: [bath], pose: thinking }
+        - { text: "She has a cake.", words: [cake], pose: base }
+        - { text: "They are bees! Buzz!", words: [bee], pose: jumping }
     narration: { title: "More Sight Words", welcome: "More words we see a lot!", celebration: "Wonderful reading!", lines: { locked: "Finish Sight Words first!" } }
 
   # Grammar comes early, inside the units, always through examples and pictures and never by its name: plurals with -s in
@@ -170,6 +187,14 @@ units:
     title: { en: "My Sentences", ar: "جملي" }
     icon: sentences
     color: blue
+    chest: { accessory: pencil-band, stickers: [cat, ant, egg, ship] }
+    story:
+      pages:
+        - { text: "The cat is big.", words: [cat], pose: waving }
+        - { text: "The pigs are pink.", words: [pig], pose: thinking }
+        - { text: "I have an egg.", words: [egg], pose: base }
+        - { text: "I see an ant.", words: [ant], pose: pointing-up }
+        - { text: "The kites are up! Hooray!", words: [kite], pose: clapping }
     narration: { title: "My Sentences", welcome: "Let's read sentences!", celebration: "You can read sentences!", lines: { locked: "Finish My Sentences first!" } }
 
   - id: word-families

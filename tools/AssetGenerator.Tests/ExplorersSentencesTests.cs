@@ -98,4 +98,43 @@ public class ExplorersSentencesTests
         l.GetProperty("sentences")[2].GetProperty("image").GetString().ShouldBe("images/explorers/my_sentences_1/hen.svg");
         l.GetProperty("sentences")[0].TryGetProperty("two", out _).ShouldBeFalse();
     }
+
+    [Fact]
+    public void Phase_three_reads_only_taught_words_and_shows_is_are_and_a_an_by_the_picture()
+    {
+        var curriculum = Path.Combine(Layout.Find(null).Root, "content", "curriculum");
+        var all = CurriculumReader.LoadAll(curriculum).Where(l => l.Track == "explorers").ToList();
+        var order = CurriculumReader.LoadUnits(curriculum).Where(u => u.Track == "explorers").ToDictionary(u => u.Id, u => u.Order);
+        var ordered = all.OrderBy(l => order[l.Unit]).ThenBy(l => l.ResolvedOrder).ToList();
+        foreach (var (unit, count) in new[] { ("sight-words-1", 3), ("sight-words-2", 3), ("my-sentences", 3) })
+        {
+            ordered.Count(l => l.Unit == unit).ShouldBe(count, unit);
+            var u = CurriculumReader.LoadUnits(curriculum).Single(x => x.Track == "explorers" && x.Id == unit);
+            u.IsPack.ShouldBeTrue();
+            u.Chest.ShouldNotBeNull();
+            u.Story!.Pages.Count.ShouldBe(5);
+        }
+
+        // Every word of every sentence was met before or in its lesson: a sight word, or a word of an Explorers lesson (read by
+        // its sounds), or an ending of one (-s). A few joining words are decodable on their own.
+        var decodable = new HashSet<string> { "a", "an", "at", "has", "big", "hot", "red", "up", "hop", "pink", "wet", "yum", "fun", "rock", "dish", "mom" };
+        var known = new HashSet<string>(decodable);
+        foreach (var l in ordered)
+        {
+            foreach (var w in l.Words) { known.Add(w.Word.ToLowerInvariant()); if (w.Plural is not null) known.Add(w.Plural); }
+            foreach (var w in l.SightWords) known.Add(w.ToLowerInvariant());
+            foreach (var s in l.Sentences)
+                foreach (var t in s.Tokens().Select(t => t.Trim(',').ToLowerInvariant()))
+                    (known.Contains(t) || known.Contains(t.TrimEnd('s'))).ShouldBeTrue($"{l.Id}: '{t}' in \"{s.Text}\" is not taught yet");
+        }
+
+        // is/are: one thing with "is", two with "are"; a/an: "an" before a vowel sound
+        var ms = ordered.Where(l => l.Unit == "my-sentences").SelectMany(l => l.Sentences).ToList();
+        ms.ShouldAllBe(s => s.Gap != null);
+        ms.Where(s => s.Gap == "is").ShouldAllBe(s => !s.Two);
+        ms.Where(s => s.Gap == "are").ShouldAllBe(s => s.Two);
+        ms.Where(s => s.Gap!.ToLowerInvariant() is "a" or "an").ShouldAllBe(s =>
+            (s.Gap!.ToLowerInvariant() == "an") == "aeiou".Contains(s.Tokens()[s.Tokens().ToList().FindIndex(t => t.Equals(s.Gap, StringComparison.OrdinalIgnoreCase)) + 1].ToLowerInvariant()[0]));
+        CurriculumReader.LoadReviews(curriculum).Where(r => r.Track == "explorers").Select(r => r.Review.Id).ShouldContain("review-3");
+    }
 }

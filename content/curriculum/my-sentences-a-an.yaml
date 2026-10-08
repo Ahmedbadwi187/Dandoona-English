@@ -1,0 +1,27 @@
+# My Sentences: a hen, an egg. "an" before a word that starts with a, e, i, o, u sounds.
+id: my-sentences-a-an
+unit: my-sentences
+track: explorers
+level: a1
+order: 2
+words:
+  - { word: ant, reuse: "little-learners:letter-a/ant" }
+  - { word: egg, reuse: "little-learners:letter-e/egg" }
+  - { word: apple, reuse: "little-learners:letter-a/apple" }
+  - { word: hen, reuse: "sound-builders-e/hen" }
+  - { word: cake, reuse: "magic-e-a/cake" }
+  - { word: bus, reuse: "little-learners:transport-1/bus" }
+sentences:
+  - { text: "I see an ant.", picture: ant, gap: an, choices: [a, an] }
+  - { text: "I have an egg.", picture: egg, gap: an, choices: [a, an] }
+  - { text: "I have an apple.", picture: apple, gap: an, choices: [a, an] }
+  - { text: "I see a hen.", picture: hen, gap: a, choices: [a, an] }
+  - { text: "I have a cake.", picture: cake, gap: a, choices: [a, an] }
+  - { text: "It is a bus.", picture: bus, gap: a, choices: [a, an] }
+narration:
+  intro: "A hen. An egg! Listen to the first sound, then read."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    fill-the-gap: "Read. Then tap the word that fits!"
+    sentence-builder: "Listen. Then put the words in order!"
+activities: [fill-the-gap, sentence-builder]
