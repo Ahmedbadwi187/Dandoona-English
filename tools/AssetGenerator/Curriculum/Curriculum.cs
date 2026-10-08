@@ -151,7 +151,7 @@ public class PlacementDef
 
 public class LessonValidator : AbstractValidator<Lesson>
 {
-    public static readonly string[] ActivityNames = ["trace", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object"];
+    public static readonly string[] ActivityNames = ["trace", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "trace-small"];
     private static readonly string[] Levels = ["pre-a1", "a1", "a2"];
     private static readonly string[] Tracks = ["little-learners", "explorers", "champions"];
 
@@ -186,7 +186,7 @@ public class LessonValidator : AbstractValidator<Lesson>
         RuleFor(x => x.Narration.ColorName).MaximumLength(30);
         RuleFor(x => x).Must(l => l.Narration.Phrases.Keys.All(k => l.Words.Any(w => w.Word.Trim().Equals(k, StringComparison.OrdinalIgnoreCase))))
             .WithMessage("Every key of narration.phrases must be one of the lesson's words.");
-        RuleForEach(x => x.Narration.Instructions).Must(kv => (ActivityNames.Contains(kv.Key) || kv.Key == "hint") && !string.IsNullOrWhiteSpace(kv.Value) && kv.Value.Length <= 100)
+        RuleForEach(x => x.Narration.Instructions).Must(kv => (ActivityNames.Contains(kv.Key) || kv.Key is "hint" or "capital" or "small") && !string.IsNullOrWhiteSpace(kv.Value) && kv.Value.Length <= 100)
             .WithMessage("Instructions must be keyed by an activity name or 'hint' and be 1-100 characters.");
 
         RuleFor(x => x.Activities).NotEmpty();

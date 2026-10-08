@@ -12,7 +12,10 @@ narration:
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter I!"
+    trace-small: "Now trace the small letter!"
+    capital: "Capital letter I."
+    small: "Small letter I."
     listen-and-tap: "Listen, then tap the picture!"
     record-and-listen: "Listen, then say it!"
     match-picture: "Match each sound to its picture!"
-activities: [trace, listen-and-tap, record-and-listen, match-picture]
+activities: [trace, trace-small, listen-and-tap, record-and-listen, match-picture]

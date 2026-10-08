@@ -47,6 +47,18 @@
     "instr-trace": {
       "hash": "2a0268117ee54d285122bc7eb69356dac1e466489d3595cf15fe4ac84b76f430",
       "generatedAtUtc": "2026-10-06T22:15:59.3153353Z"
+    },
+    "instr-capital": {
+      "hash": "b736c08c4df3fd0ad637cfe2d8e350334cda213bc1947946910250285cda4f50",
+      "generatedAtUtc": "2026-10-08T09:30:13.39701Z"
+    },
+    "instr-small": {
+      "hash": "fa11977023bdd2bf50c9be2d4d7fc746621c327331388320de83cfe52251da01",
+      "generatedAtUtc": "2026-10-08T09:30:14.44627Z"
+    },
+    "instr-trace-small": {
+      "hash": "1279b243c73062dce819715c59d6bc74a7176aaa9de2efa3c862090145b7af3b",
+      "generatedAtUtc": "2026-10-08T09:30:15.5479135Z"
     }
   }
 }

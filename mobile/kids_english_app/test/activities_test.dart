@@ -314,7 +314,7 @@ void main() {
       await tester.tap(find.byKey(const Key('node-letter-a')));
       await tester.pumpAndSettle();
 
-      expect(find.byKey(const Key('speaker-badge')), findsNWidgets(4)); // the letter and its 3 pictures show that they can be pressed
+      expect(find.byKey(const Key('speaker-badge')), findsNWidgets(5)); // the capital and the small letter and the 3 pictures show that they can be pressed
       expect(audio.played.last, 'asset:audio/little_learners/letter_a/intro.mp3'); // the letter introduces itself when the lesson opens (after the unit's title was said on the map)
       audio.played.clear();
 
@@ -326,7 +326,9 @@ void main() {
       await tester.ensureVisible(find.byKey(const Key('lesson-letter-tap')));
       await tester.tap(find.byKey(const Key('lesson-letter-tap')));
       await tester.pump();
-      expect(audio.played.length, 2);
+      // "Capital letter A." and then its sound
+      expect(audio.played.length, 3);
+      expect(audio.played.last, 'asset:audio/little_learners/letter_a/phoneme.mp3');
     });
   });
 }

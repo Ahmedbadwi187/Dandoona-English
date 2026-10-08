@@ -45,7 +45,7 @@ items() {
   local n=${N0:-0} out=""
   for lesson in "$@"; do
     case "$lesson" in
-      letter-*) acts="trace listen-and-tap record-and-listen match-picture" ;;
+      letter-*) acts="trace trace-small listen-and-tap record-and-listen match-picture" ;;
       color-*)  acts="listen-and-tap match-picture record-and-listen color-the-object" ;;
       *)        acts="listen-and-tap match-picture record-and-listen" ;;
     esac

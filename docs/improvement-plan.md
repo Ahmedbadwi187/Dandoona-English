@@ -8,7 +8,7 @@ Status: [x] done, [ ] to do, [~] started.
 
 1. [x] **Stories**: a five-page picture story after every unit (Dandoona reads one sentence per page, the pictures are the unit's own words,
    tap a picture for its word). The story stop on the map opens it; reading to the end marks it.
-2. [ ] **Capital and small letters** (owner's addition): every letter lesson shows the capital and the small letter together ("Aa"); Dandoona
+2. [x] **Capital and small letters** (owner's addition): every letter lesson shows the capital and the small letter together ("Aa"); Dandoona
    says "capital A" and "small a" when each is tapped; the small letter is traced as well as the capital.
 3. [ ] **Animal sounds and where animals live** (Animals): "a cat says meow" for every animal (voice), and a game that puts each animal in its
    home (farm, water, jungle).

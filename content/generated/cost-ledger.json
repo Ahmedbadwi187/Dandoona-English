@@ -9798,5 +9798,551 @@
     "what": "unit-transport/instr-story-5 (31 chars)",
     "usd": 0.00248,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:05.510787Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:07.4215885Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:08.5913494Z",
+    "service": "ElevenLabs",
+    "what": "letter-a/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:09.8717016Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:10.9729212Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:12.2212254Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:13.3992963Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:14.4471345Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:15.5487601Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:16.6583739Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:17.7023557Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:18.8549462Z",
+    "service": "ElevenLabs",
+    "what": "letter-d/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:19.9616659Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:21.0225889Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:22.142979Z",
+    "service": "ElevenLabs",
+    "what": "letter-e/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:23.2124452Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:24.2918999Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:25.3800764Z",
+    "service": "ElevenLabs",
+    "what": "letter-f/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:26.48355Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:27.5385785Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:28.6300603Z",
+    "service": "ElevenLabs",
+    "what": "letter-g/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:29.7920447Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:30.8941816Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:31.9816808Z",
+    "service": "ElevenLabs",
+    "what": "letter-h/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:33.0644824Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:34.1048408Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:35.2041977Z",
+    "service": "ElevenLabs",
+    "what": "letter-i/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:38.4479789Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:39.528588Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:40.6657728Z",
+    "service": "ElevenLabs",
+    "what": "letter-j/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:41.8171771Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:42.8792955Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:43.9851513Z",
+    "service": "ElevenLabs",
+    "what": "letter-k/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:45.0610336Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:46.1200303Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:47.2651392Z",
+    "service": "ElevenLabs",
+    "what": "letter-l/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:48.3672574Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:49.4300519Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:50.6191326Z",
+    "service": "ElevenLabs",
+    "what": "letter-m/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:51.7912668Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:52.848155Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:30:54.2162582Z",
+    "service": "ElevenLabs",
+    "what": "letter-n/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:02.4110767Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:03.458697Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:04.5534897Z",
+    "service": "ElevenLabs",
+    "what": "letter-o/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:05.6336972Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:06.7171853Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:07.8031595Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:08.8777107Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:09.931617Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:11.0900465Z",
+    "service": "ElevenLabs",
+    "what": "letter-q/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:12.3507095Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:13.4149999Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:14.5637519Z",
+    "service": "ElevenLabs",
+    "what": "letter-r/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:15.6630159Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:16.7475856Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:17.8583938Z",
+    "service": "ElevenLabs",
+    "what": "letter-s/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:18.9419868Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:19.9891415Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:21.1673732Z",
+    "service": "ElevenLabs",
+    "what": "letter-t/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:22.2522115Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:23.3878325Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:24.4985394Z",
+    "service": "ElevenLabs",
+    "what": "letter-u/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:25.5723631Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:26.6229705Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:27.7112303Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:28.8336128Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:30.0050849Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:31.0893272Z",
+    "service": "ElevenLabs",
+    "what": "letter-w/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:32.1636125Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:33.2195907Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:34.326397Z",
+    "service": "ElevenLabs",
+    "what": "letter-x/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:35.4432657Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:36.492184Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:37.5862973Z",
+    "service": "ElevenLabs",
+    "what": "letter-y/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:38.6577838Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/instr-capital (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:39.6922599Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/instr-small (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:31:40.7764495Z",
+    "service": "ElevenLabs",
+    "what": "letter-z/instr-trace-small (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
   }
 ]

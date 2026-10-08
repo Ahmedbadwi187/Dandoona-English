@@ -81,7 +81,10 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                         icon: const Icon(Icons.arrow_back_rounded),
                       ),
                     ),
-                    Center(
+                    if (lesson.letter != null)
+                      _LetterPair(lesson: lesson) // a letter lesson shows the capital and the small letter, and says which is which
+                    else
+                      Center(
                       child: TapToHear(
                         badgeInset: 14,
                         key: const Key('lesson-letter-tap'),
@@ -163,6 +166,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
 
 const _activityIcons = {
   'trace': Icons.gesture_rounded,
+  'trace-small': Icons.draw_rounded,
   'listen-and-tap': Icons.hearing_rounded,
   'record-and-listen': Icons.mic_rounded,
   'match-picture': Icons.extension_rounded,
@@ -216,4 +220,57 @@ int _bestStars(WidgetRef ref, String lessonId, String activity) {
     if (r.childId == childId && r.lessonId == lessonId && r.activity == activity && r.stars > best) best = r.stars;
   }
   return best;
+}
+
+/// The capital and the small letter side by side. Tapping one says "Capital letter A." or "Small letter A." and then the letter's sound.
+class _LetterPair extends ConsumerWidget {
+  const _LetterPair({required this.lesson});
+
+  final Lesson lesson;
+
+  void _say(WidgetRef ref, String key) {
+    final audio = ref.read(audioServiceProvider);
+    final line = lesson.audio.instructions[key];
+    final sound = lesson.audio.phoneme ?? lesson.audio.intro;
+    unawaited(() async {
+      if (line != null) await audio.playAsset(line);
+      await audio.playAsset(sound);
+    }());
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final letter = lesson.letter!;
+    final color = Palette.nodeColors[(lesson.order - 1) % Palette.nodeColors.length];
+    Widget bubble({required Key tapKey, required Key textKey, required String text, required double size, required String caption, required String key}) => Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TapToHear(
+              badgeInset: 10,
+              key: tapKey,
+              semanticLabel: caption,
+              onTap: () => _say(ref, key),
+              child: Container(
+                width: size,
+                height: size,
+                decoration: BoxDecoration(color: color, shape: BoxShape.circle, border: Border.all(color: Palette.ink, width: 6)),
+                alignment: Alignment.center,
+                child: Text(text, key: textKey, style: TextStyle(fontSize: size * 0.61, fontWeight: FontWeight.w900, color: Palette.white)),
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(caption, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: Palette.ink)),
+          ],
+        );
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        bubble(tapKey: const Key('lesson-letter-tap'), textKey: const Key('lesson-letter'), text: letter, size: 170, caption: Strings.en('letterCapital'), key: 'capital'),
+        const SizedBox(width: 22),
+        bubble(tapKey: const Key('lesson-letter-small-tap'), textKey: const Key('lesson-letter-small'), text: letter.toLowerCase(), size: 130, caption: Strings.en('letterSmall'), key: 'small'),
+      ],
+    );
+  }
 }

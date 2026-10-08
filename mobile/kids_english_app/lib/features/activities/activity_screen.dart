@@ -144,6 +144,7 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
                   'listen-and-tap' => ListenAndTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   'match-picture' => MatchPictureActivity(lesson: widget.lesson, onFinished: _finished),
                   'trace' => TraceActivity(lesson: widget.lesson, onFinished: _finished),
+                  'trace-small' => TraceActivity(lesson: widget.lesson, onFinished: _finished, small: true),
                   'record-and-listen' => RecordListenActivity(lesson: widget.lesson, onFinished: _finished),
                   'color-the-object' => ColorTheObjectActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   _ => Center(child: Text(Strings.en('loadError'))),

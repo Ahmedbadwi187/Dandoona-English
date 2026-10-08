@@ -68,10 +68,13 @@ class _InkPainter extends CustomPainter {
 /// Trace the big letter with a finger. The letter and the drawing are rasterised and compared (coverage of the
 /// letter vs. ink far away from it). Too little ink: the board clears for another try; after 3 tries it gives 1 star.
 class TraceActivity extends ConsumerStatefulWidget {
-  const TraceActivity({super.key, required this.lesson, required this.onFinished});
+  const TraceActivity({super.key, required this.lesson, required this.onFinished, this.small = false});
 
   final Lesson lesson;
   final ValueChanged<ActivityResult> onFinished;
+
+  /// Trace the small letter (a, b, c) instead of the capital (A, B, C).
+  final bool small;
 
   @override
   ConsumerState<TraceActivity> createState() => _TraceActivityState();
@@ -85,7 +88,7 @@ class _TraceActivityState extends ConsumerState<TraceActivity> {
   bool _busy = false;
   bool _tryAgain = false;
 
-  String get _letter => widget.lesson.letter ?? '?';
+  String get _letter => widget.small ? (widget.lesson.letter ?? '?').toLowerCase() : (widget.lesson.letter ?? '?');
 
   @override
   void initState() {
@@ -100,7 +103,7 @@ class _TraceActivityState extends ConsumerState<TraceActivity> {
   }
 
   void _sayInstruction() {
-    if (mounted) unawaited(_speech.say(instruction: widget.lesson.audio.instructions['trace']));
+    if (mounted) unawaited(_speech.say(instruction: widget.lesson.audio.instructions[widget.small ? 'trace-small' : 'trace']));
   }
 
   void _clear() => setState(() {
