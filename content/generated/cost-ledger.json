@@ -17218,5 +17218,488 @@
     "what": "unit-everyday-english/instr-story-5 (21 chars)",
     "usd": 0.00168,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:42.1738707Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/intro (35 chars)",
+    "usd": 0.00280,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:43.1872068Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/praise-0 (14 chars)",
+    "usd": 0.00112,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:44.1606177Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/praise-1 (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:45.222655Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:46.1544134Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/word-apple (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:47.1136882Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/word-igloo (5 chars)",
+    "usd": 0.00040,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:48.0510701Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/word-umbrella (8 chars)",
+    "usd": 0.00064,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:49.0663975Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/word-bed (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:50.0068833Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/word-orange (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:51.0303831Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/sentence-1 (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:52.0432025Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/sentence-2 (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:53.0373667Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/sentence-3 (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:54.022365Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/sentence-4 (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:55.0277967Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/sentence-5 (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:56.1836766Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/instr-fill-the-gap (34 chars)",
+    "usd": 0.00272,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:57.2469436Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:58.3446729Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-a-an/instr-sentence-builder (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:30:59.4237911Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/intro (38 chars)",
+    "usd": 0.00304,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:00.3732982Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/praise-0 (14 chars)",
+    "usd": 0.00112,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:01.4712781Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/praise-1 (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:02.4343186Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:03.363631Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/word-duck (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:04.3486423Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/word-frog (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:05.3814688Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/word-fish (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:06.3896422Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/sentence-1 (16 chars)",
+    "usd": 0.00128,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:07.365108Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/sentence-2 (18 chars)",
+    "usd": 0.00144,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:08.4374208Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/sentence-3 (16 chars)",
+    "usd": 0.00128,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:09.4290934Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/sentence-4 (18 chars)",
+    "usd": 0.00144,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:10.3983933Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/sentence-5 (16 chars)",
+    "usd": 0.00128,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:11.3605418Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/sentence-6 (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:12.6042935Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/instr-fill-the-gap (34 chars)",
+    "usd": 0.00272,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:13.7163351Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:14.7997866Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-is-are/instr-sentence-builder (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:15.8665336Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/intro (40 chars)",
+    "usd": 0.0032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:16.9359035Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/praise-0 (14 chars)",
+    "usd": 0.00112,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:17.8925858Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/praise-1 (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:18.8122001Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:19.7321519Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/word-hen (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:20.7981386Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/word-pig (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:21.7645005Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/word-cat (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:22.7395955Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/sentence-1 (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:24.308167Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/sentence-2 (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:25.3061604Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/sentence-3 (18 chars)",
+    "usd": 0.00144,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:26.3404215Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/sentence-4 (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:27.3605656Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/sentence-5 (18 chars)",
+    "usd": 0.00144,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:28.4857468Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/sentence-6 (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:29.5467375Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/instr-fill-the-gap (34 chars)",
+    "usd": 0.00272,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:30.5879463Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:31.6610035Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-has-have/instr-sentence-builder (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:32.9724318Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/intro (62 chars)",
+    "usd": 0.00496,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:34.0677683Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/praise-0 (14 chars)",
+    "usd": 0.00112,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:35.5841623Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/praise-1 (12 chars)",
+    "usd": 0.00096,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:36.5046601Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/praise-2 (6 chars)",
+    "usd": 0.00048,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:37.5192798Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/word-jump (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:38.5076248Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/word-clap (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:39.4786006Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/word-run (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:40.4104884Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/word-sit (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:41.400479Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/sentence-1 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:42.3650081Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/sentence-2 (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:43.3602779Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/sentence-3 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:44.4265869Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/sentence-4 (10 chars)",
+    "usd": 0.0008,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:45.5402381Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/instr-fill-the-gap (34 chars)",
+    "usd": 0.00272,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:46.658711Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/instr-read-and-pick (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:47.7886705Z",
+    "service": "ElevenLabs",
+    "what": "grammar-starters-can/instr-sentence-builder (36 chars)",
+    "usd": 0.00288,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:48.7758624Z",
+    "service": "ElevenLabs",
+    "what": "unit-grammar-starters/instr-story-1 (16 chars)",
+    "usd": 0.00128,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:49.7935048Z",
+    "service": "ElevenLabs",
+    "what": "unit-grammar-starters/instr-story-2 (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:50.7622033Z",
+    "service": "ElevenLabs",
+    "what": "unit-grammar-starters/instr-story-3 (18 chars)",
+    "usd": 0.00144,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:51.7470334Z",
+    "service": "ElevenLabs",
+    "what": "unit-grammar-starters/instr-story-4 (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T17:31:52.7777894Z",
+    "service": "ElevenLabs",
+    "what": "unit-grammar-starters/instr-story-5 (18 chars)",
+    "usd": 0.00144,
+    "estimated": false
   }
 ]

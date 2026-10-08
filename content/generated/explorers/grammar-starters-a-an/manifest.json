@@ -1,0 +1,72 @@
+{
+  "audio": {
+    "intro": {
+      "hash": "2884d4d4f9be85a111c394c31603028e8d4e929aee0914443143a155cc85aeff",
+      "generatedAtUtc": "2026-10-08T17:30:42.1681652Z"
+    },
+    "praise-0": {
+      "hash": "b1ece7d3b6f55486c80845651ea15cf82cd1600acddeb26fe8c1ec4074866243",
+      "generatedAtUtc": "2026-10-08T17:30:43.1863936Z"
+    },
+    "praise-1": {
+      "hash": "46eb7b81f183e0e98e8ce54a9f933b96adedb1d26269b74c4a02a5d43227ad58",
+      "generatedAtUtc": "2026-10-08T17:30:44.1596763Z"
+    },
+    "praise-2": {
+      "hash": "6436155ab30ee84cd601145f58e80d1cb5cb45302e48dc98fe272c71b3796c6e",
+      "generatedAtUtc": "2026-10-08T17:30:45.2214086Z"
+    },
+    "word-apple": {
+      "hash": "6b6849fc373b6b33a452402608c4f6d5a0f417eff9669428dd5b3f50172c5853",
+      "generatedAtUtc": "2026-10-08T17:30:46.1532738Z"
+    },
+    "word-igloo": {
+      "hash": "25dd43e584fb1d61a55b20ae8278a28d328cab863aabb6551406a779bfa6fdae",
+      "generatedAtUtc": "2026-10-08T17:30:47.1114117Z"
+    },
+    "word-umbrella": {
+      "hash": "9523cf8781d84daf0665cd085de183e7579fbc20c1eca1f60a633c690044530b",
+      "generatedAtUtc": "2026-10-08T17:30:48.0486521Z"
+    },
+    "word-bed": {
+      "hash": "748c51db88d10a082833765ce7dafa21b24fb89cb9450b438c58abc2cbb11a48",
+      "generatedAtUtc": "2026-10-08T17:30:49.064961Z"
+    },
+    "word-orange": {
+      "hash": "f53a3b3cad20a89ca888427d98e66719a7dbcab0191a56e4f8c678f6c8a9c139",
+      "generatedAtUtc": "2026-10-08T17:30:50.0052275Z"
+    },
+    "sentence-1": {
+      "hash": "dc5dd4d64455491e40256b6356cda8926609217de3572436c3dd4d0150e4ccdf",
+      "generatedAtUtc": "2026-10-08T17:30:51.0279657Z"
+    },
+    "sentence-2": {
+      "hash": "49ac5c5c18ade1f08d8d787641a7c2ac7ba74b5166b154b3ab02bd92a814fc07",
+      "generatedAtUtc": "2026-10-08T17:30:52.0425926Z"
+    },
+    "sentence-3": {
+      "hash": "b05e367625d7148f7437baf2a73e49145e07995cb1cf3b5cf080077d02da2ab2",
+      "generatedAtUtc": "2026-10-08T17:30:53.0312451Z"
+    },
+    "sentence-4": {
+      "hash": "71efae250575f42115a90a732d2752d0a7b86d1f670d12b223598eef61e7b348",
+      "generatedAtUtc": "2026-10-08T17:30:54.0212413Z"
+    },
+    "sentence-5": {
+      "hash": "963ce5cd355275a96a59b3abf0a3050cf51ffb45e504897951c7271eb9395262",
+      "generatedAtUtc": "2026-10-08T17:30:55.0271275Z"
+    },
+    "instr-fill-the-gap": {
+      "hash": "de67534a8410963316ac22f527501c4d48d5a5b885f577e510d7a634bd654e59",
+      "generatedAtUtc": "2026-10-08T17:30:56.182237Z"
+    },
+    "instr-read-and-pick": {
+      "hash": "6c994a45c30845b30697350dfb70194c68948d4de116e1fa5947697542123127",
+      "generatedAtUtc": "2026-10-08T17:30:57.2462766Z"
+    },
+    "instr-sentence-builder": {
+      "hash": "74cef28a8c2c5ae3092fdb97efde3b8243986d0fbd9193885b03a8332eede6c2",
+      "generatedAtUtc": "2026-10-08T17:30:58.3435051Z"
+    }
+  }
+}

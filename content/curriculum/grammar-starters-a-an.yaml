@@ -1,0 +1,26 @@
+# Grammar Starters: patterns met by picture, never named. The word to choose is the one that fits the picture.
+id: grammar-starters-a-an
+unit: grammar-starters
+track: explorers
+level: a1
+order: 1
+words:
+  - { word: apple, reuse: "little-learners:letter-a/apple" }
+  - { word: igloo, reuse: "little-learners:letter-i/igloo" }
+  - { word: umbrella, reuse: "little-learners:letter-u/umbrella" }
+  - { word: bed, reuse: "little-learners:my-home-1/bed" }
+  - { word: orange, reuse: "little-learners:letter-o/orange" }
+sentences:
+  - { text: "I see an apple.", picture: apple, gap: an, choices: [a, an] }
+  - { text: "I see an igloo.", picture: igloo, gap: an, choices: [a, an] }
+  - { text: "I have an umbrella.", picture: umbrella, gap: an, choices: [a, an] }
+  - { text: "I see a bed.", picture: bed, gap: a, choices: [a, an] }
+  - { text: "I have an orange.", picture: orange, gap: an, choices: [a, an] }
+narration:
+  intro: "A or an? Listen to the first sound!"
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    fill-the-gap: "Read. Then tap the word that fits!"
+    sentence-builder: "Listen. Then put the words in order!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [fill-the-gap, sentence-builder, read-and-pick]

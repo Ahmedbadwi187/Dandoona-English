@@ -56,6 +56,7 @@ reviews:
   - { id: review-1, units: [sound-builders, digraphs, blends] }
   - { id: review-2, units: [magic-e, vowel-teams] }
   - { id: review-3, units: [sight-words-1, sight-words-2, my-sentences] }
+  - { id: review-4, units: [word-families, everyday-english, numbers-time, grammar-starters] }
 
 units:
   - id: letters
@@ -256,4 +257,13 @@ units:
     title: { en: "Grammar Starters", ar: "بدايات القواعد" }
     icon: grammar
     color: green
+    chest: { accessory: quill-hat, stickers: [apple, hen, duck, run] }
+    # a/an and is/are again with new examples, then has/have and can: always by picture.
+    story:
+      pages:
+        - { text: "I have an apple.", words: [apple], pose: waving }
+        - { text: "The hen has an egg.", words: [hen], pose: pointing-up }
+        - { text: "The ducks are big.", words: [duck], pose: thinking }
+        - { text: "I can jump and clap!", words: [jump, clap], pose: jumping }
+        - { text: "I can run! Hooray!", words: [run], pose: clapping }
     narration: { title: "Grammar Starters", welcome: "Let's put words together!", celebration: "You are a word expert!", lines: { locked: "Finish Grammar Starters first!" } }

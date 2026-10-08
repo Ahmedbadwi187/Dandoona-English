@@ -1,0 +1,24 @@
+# Grammar Starters: patterns met by picture, never named. The word to choose is the one that fits the picture.
+id: grammar-starters-can
+unit: grammar-starters
+track: explorers
+level: a1
+order: 4
+words:
+  - { word: jump, reuse: "little-learners:actions-1/jump" }
+  - { word: clap, reuse: "little-learners:actions-1/clap" }
+  - { word: run, reuse: "little-learners:actions-2/run" }
+  - { word: sit, reuse: "little-learners:actions-3/sit" }
+sentences:
+  - { text: "I can jump.", picture: jump, gap: can, choices: [can, has, is] }
+  - { text: "I can clap.", picture: clap, gap: can, choices: [can, has, is] }
+  - { text: "I can run.", picture: run, gap: can, choices: [can, has, is] }
+  - { text: "I can sit.", picture: sit, gap: can, choices: [can, has, is] }
+narration:
+  intro: "What can you do? I can jump. I can clap. I can run. I can sit!"
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    fill-the-gap: "Read. Then tap the word that fits!"
+    sentence-builder: "Listen. Then put the words in order!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [fill-the-gap, sentence-builder, read-and-pick]

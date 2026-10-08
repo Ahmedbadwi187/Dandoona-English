@@ -93,6 +93,10 @@
     "everyday-english": {
       "version": 1,
       "contentHash": "6f314f6a561025d609cdfcef93e0cc70fe019bd3d4aaa5d6887b31357410c3c4"
+    },
+    "grammar-starters": {
+      "version": 2,
+      "contentHash": "19195c71ea942ed135f6a897c32f65273e1668b5da85abe4c4d0bde6e0b2d7de"
     }
   }
 }

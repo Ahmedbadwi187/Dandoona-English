@@ -1,0 +1,25 @@
+# Grammar Starters: patterns met by picture, never named. The word to choose is the one that fits the picture.
+id: grammar-starters-is-are
+unit: grammar-starters
+track: explorers
+level: a1
+order: 2
+words:
+  - { word: duck, reuse: "little-learners:letter-d/duck" }
+  - { word: frog, reuse: "little-learners:letter-f/frog" }
+  - { word: fish, reuse: "little-learners:letter-f/fish" }
+sentences:
+  - { text: "The duck is big.", picture: duck, gap: is, choices: [is, are] }
+  - { text: "The ducks are big.", picture: duck, two: true, gap: are, choices: [is, are] }
+  - { text: "The frog is wet.", picture: frog, gap: is, choices: [is, are] }
+  - { text: "The frogs are wet.", picture: frog, two: true, gap: are, choices: [is, are] }
+  - { text: "The fish is red.", picture: fish, gap: is, choices: [is, are] }
+  - { text: "The fish are red.", picture: fish, two: true, gap: are, choices: [is, are] }
+narration:
+  intro: "One is. Two are! Look at the pictures."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    fill-the-gap: "Read. Then tap the word that fits!"
+    sentence-builder: "Listen. Then put the words in order!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [fill-the-gap, sentence-builder, read-and-pick]

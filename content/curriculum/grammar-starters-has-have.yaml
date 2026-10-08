@@ -1,0 +1,25 @@
+# Grammar Starters: patterns met by picture, never named. The word to choose is the one that fits the picture.
+id: grammar-starters-has-have
+unit: grammar-starters
+track: explorers
+level: a1
+order: 3
+words:
+  - { word: hen, reuse: "sound-builders-e/hen" }
+  - { word: pig, reuse: "little-learners:letter-p/pig" }
+  - { word: cat, reuse: "little-learners:letter-c/cat" }
+sentences:
+  - { text: "The hen has an egg.", picture: hen, gap: has, choices: [has, have] }
+  - { text: "The hens have eggs.", picture: hen, two: true, gap: have, choices: [has, have] }
+  - { text: "The pig has a wig.", picture: pig, gap: has, choices: [has, have] }
+  - { text: "The pigs have wigs.", picture: pig, two: true, gap: have, choices: [has, have] }
+  - { text: "The cat has a hat.", picture: cat, gap: has, choices: [has, have] }
+  - { text: "The cats have hats.", picture: cat, two: true, gap: have, choices: [has, have] }
+narration:
+  intro: "One has. Two have! Look at the pictures."
+  praise: ["Great reading!", "You read it!", "Super!"]
+  instructions:
+    fill-the-gap: "Read. Then tap the word that fits!"
+    sentence-builder: "Listen. Then put the words in order!"
+    read-and-pick: "Read the word. Then tap its picture!"
+activities: [fill-the-gap, sentence-builder, read-and-pick]

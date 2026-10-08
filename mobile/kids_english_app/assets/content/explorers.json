@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "explorers",
-  "generatedAt": "2026-10-08T17:28:57.7092169Z",
+  "generatedAt": "2026-10-08T17:35:00.4380276Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -2602,10 +2602,81 @@
         "welcome": "audio/explorers/unit_grammar_starters/intro.mp3",
         "celebration": "audio/explorers/unit_grammar_starters/instr_celebration.mp3",
         "lines": {
-          "locked": "audio/explorers/unit_grammar_starters/instr_locked.mp3"
+          "locked": "audio/explorers/unit_grammar_starters/instr_locked.mp3",
+          "story-1": "audio/explorers/unit_grammar_starters/instr_story_1.mp3",
+          "story-2": "audio/explorers/unit_grammar_starters/instr_story_2.mp3",
+          "story-3": "audio/explorers/unit_grammar_starters/instr_story_3.mp3",
+          "story-4": "audio/explorers/unit_grammar_starters/instr_story_4.mp3",
+          "story-5": "audio/explorers/unit_grammar_starters/instr_story_5.mp3"
         }
       },
-      "lessons": []
+      "lessons": [],
+      "pack": {
+        "version": 2,
+        "sha256": "0826cfe06280ba43b111ba4327ba2343b964bf1cb128d3c65c489ed0bdad25c8",
+        "bytes": 2659246,
+        "manifest": "grammar_starters/v2/manifest.json",
+        "lessonIds": [
+          "grammar-starters-a-an",
+          "grammar-starters-is-are",
+          "grammar-starters-has-have",
+          "grammar-starters-can"
+        ]
+      },
+      "chest": {
+        "accessory": "quill-hat",
+        "stickers": [
+          "apple",
+          "hen",
+          "duck",
+          "run"
+        ]
+      },
+      "story": {
+        "pages": [
+          {
+            "text": "I have an apple.",
+            "audio": "audio/explorers/unit_grammar_starters/instr_story_1.mp3",
+            "words": [
+              "apple"
+            ],
+            "pose": "waving"
+          },
+          {
+            "text": "The hen has an egg.",
+            "audio": "audio/explorers/unit_grammar_starters/instr_story_2.mp3",
+            "words": [
+              "hen"
+            ],
+            "pose": "pointing-up"
+          },
+          {
+            "text": "The ducks are big.",
+            "audio": "audio/explorers/unit_grammar_starters/instr_story_3.mp3",
+            "words": [
+              "duck"
+            ],
+            "pose": "thinking"
+          },
+          {
+            "text": "I can jump and clap!",
+            "audio": "audio/explorers/unit_grammar_starters/instr_story_4.mp3",
+            "words": [
+              "jump",
+              "clap"
+            ],
+            "pose": "jumping"
+          },
+          {
+            "text": "I can run! Hooray!",
+            "audio": "audio/explorers/unit_grammar_starters/instr_story_5.mp3",
+            "words": [
+              "run"
+            ],
+            "pose": "clapping"
+          }
+        ]
+      }
     }
   ],
   "placement": [
@@ -2661,6 +2732,15 @@
         "sight-words-1",
         "sight-words-2",
         "my-sentences"
+      ]
+    },
+    {
+      "id": "review-4",
+      "units": [
+        "word-families",
+        "everyday-english",
+        "numbers-time",
+        "grammar-starters"
       ]
     }
   ],

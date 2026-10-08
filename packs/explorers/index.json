@@ -141,6 +141,19 @@
         "numbers-time-clock-3",
         "numbers-time-clock-4"
       ]
+    },
+    {
+      "unit": "grammar-starters",
+      "version": 2,
+      "sha256": "0826cfe06280ba43b111ba4327ba2343b964bf1cb128d3c65c489ed0bdad25c8",
+      "bytes": 2659246,
+      "manifest": "grammar_starters/v2/manifest.json",
+      "lessonIds": [
+        "grammar-starters-a-an",
+        "grammar-starters-is-are",
+        "grammar-starters-has-have",
+        "grammar-starters-can"
+      ]
     }
   ]
 }
