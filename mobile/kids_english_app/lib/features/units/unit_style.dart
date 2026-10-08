@@ -56,3 +56,22 @@ Color mutedTint(Color c, {double amount = 0.55}) {
   final hsl = HSLColor.fromColor(c);
   return Color.lerp(hsl.withSaturation(hsl.saturation * 0.7).toColor(), Palette.white, amount)!;
 }
+
+/// How the map looks for a track. Little Learners (the default) is soft and light; Explorers (6-8) is the same world with
+/// deeper, fuller colors, so an older child feels they have grown without the world changing.
+class MapLook extends InheritedWidget {
+  const MapLook({super.key, required this.mature, required super.child});
+
+  final bool mature;
+
+  static bool matureOf(BuildContext context) => context.dependOnInheritedWidgetOfExactType<MapLook>()?.mature ?? false;
+
+  /// The island's grass: a soft tint (Little Learners) or the full color, a touch deeper (Explorers).
+  static Color grass(BuildContext context, Color c) => matureOf(context) ? Color.lerp(c, Palette.nightInk, 0.10)! : softTint(c);
+
+  /// The island's soil.
+  static Color soil(BuildContext context) => matureOf(context) ? Color.lerp(Palette.brown, Palette.nightInk, 0.25)! : Palette.brown;
+
+  @override
+  bool updateShouldNotify(MapLook old) => old.mature != mature;
+}

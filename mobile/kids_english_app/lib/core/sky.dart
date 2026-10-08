@@ -6,7 +6,10 @@ import 'palette.dart';
 
 /// Dandoona's sky: a soft sky gradient with real cloud shapes that drift slowly across it. The child screens live here.
 class SkyBackground extends StatefulWidget {
-  const SkyBackground({super.key, required this.child, this.calm = false});
+  const SkyBackground({super.key, required this.child, this.calm = false, this.mature = false});
+
+  /// The Explorers (6-8) sky: the same world, a little deeper in color. Little Learners keeps the default.
+  final bool mature;
 
   final Widget child;
 
@@ -62,7 +65,11 @@ class _SkyBackgroundState extends State<SkyBackground> with SingleTickerProvider
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: widget.calm ? const [Color(0xFFDCEFF9), Color(0xFFF1F7F0), Palette.cream] : const [Color(0xFFBDE6FA), Color(0xFFE9F6FB), Palette.cream],
+          colors: widget.calm
+              ? const [Color(0xFFDCEFF9), Color(0xFFF1F7F0), Palette.cream]
+              : widget.mature
+                  ? const [Color(0xFF8CC6E6), Color(0xFFCDE7F3), Color(0xFFF4EED6)]
+                  : const [Color(0xFFBDE6FA), Color(0xFFE9F6FB), Palette.cream],
           stops: widget.calm ? const [0, 0.35, 0.8] : null,
         ),
       ),
