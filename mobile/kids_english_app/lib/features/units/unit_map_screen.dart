@@ -104,7 +104,7 @@ class UnitMapScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final content = ref.watch(contentProvider);
+    final content = ref.watch(activeContentProvider);
     return ChildScope(
       child: SessionGuard(
         child: Scaffold(
@@ -117,7 +117,7 @@ class UnitMapScreen extends ConsumerWidget {
                   children: [
                     Text(Strings.en('loadError'), style: const TextStyle(fontSize: 22)),
                     const SizedBox(height: 12),
-                    FilledButton(onPressed: () => ref.invalidate(contentProvider), child: Text(Strings.en('retry'))),
+                    FilledButton(onPressed: () => ref..invalidate(contentProvider)..invalidate(explorersContentProvider), child: Text(Strings.en('retry'))),
                   ],
                 ),
               ),

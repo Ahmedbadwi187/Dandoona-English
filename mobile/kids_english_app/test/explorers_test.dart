@@ -1,0 +1,79 @@
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:kids_english_app/app.dart';
+import 'package:kids_english_app/features/audio/audio_service.dart';
+import 'package:kids_english_app/features/content/content_repository.dart';
+import 'package:kids_english_app/features/parent/parent_data.dart';
+import 'package:kids_english_app/features/progress/progress.dart';
+import 'package:kids_english_app/features/units/unit_logic.dart';
+
+import 'helpers.dart';
+
+String _child(String id, String name, String track) =>
+    '{"id":"$id","name":"$name","avatarKey":"star","birthYear":2019,"birthMonth":3,"track":"$track","createdAt":"2026-01-01T00:00:00Z"}';
+
+String _progress(Iterable<String> lessons, String child) => jsonEncode([
+      for (final l in lessons)
+        ProgressRecord(clientRecordId: 'r-$child-$l', childId: child, lessonId: l, activity: 'listen-and-tap', stars: 3, attempts: 1, timeSpentSeconds: 10, completedAt: DateTime.utc(2026, 9, 1)).toJson(),
+    ]);
+
+final _letters = [for (var i = 0; i < 26; i++) 'letter-${String.fromCharCode(97 + i)}'];
+
+Future<ProviderContainer> _open(WidgetTester t, {required String children, String? progress}) async {
+  t.view.physicalSize = const Size(1080, 2400);
+  t.view.devicePixelRatio = 1080 / 411;
+  addTearDown(t.view.reset);
+  final overrides = await testOverrides(content: realContent(), explorers: realExplorersContent(), prefs: {
+    'settings.v1': '{"languageCode":"en","sessionMinutes":15,"unlockAll":false,"onboarded":true}',
+    'children.v1': children,
+    'progress.v1': ?progress,
+  });
+  final container = ProviderContainer(overrides: [...overrides, audioServiceProvider.overrideWithValue(FakeAudio()), recorderServiceProvider.overrideWithValue(FakeRecorder())]);
+  addTearDown(container.dispose);
+  await t.pumpWidget(UncontrolledProviderScope(container: container, child: const KidsEnglishApp()));
+  await t.pumpAndSettle();
+  return container;
+}
+
+void main() {
+  testWidgets('an Explorers child sees the Explorers map: Letters first, then Sound Builders', (t) async {
+    final c = await _open(t, children: '[${_child('e1', 'Lina', 'explorers')}]');
+    expect(c.read(activeTrackProvider), explorersTrack);
+    expect(find.byKey(const Key('unit-letters')), findsOneWidget);
+    expect(find.byKey(const Key('unit-title-sound-builders')), findsOneWidget);
+    expect(find.byKey(const Key('unit-colors')), findsNothing); // no Little Learners units on this map
+  });
+
+  testWidgets('Letters done in Little Learners counts in Explorers: the same lessons, so Sound Builders is next', (t) async {
+    final c = await _open(t, children: '[${_child('e1', 'Lina', 'explorers')}]', progress: _progress(_letters, 'e1'));
+    final track = await c.read(activeContentProvider.future);
+    expect(track.track, explorersTrack);
+    expect(find.byKey(const Key('unit-done-letters')), findsOneWidget);
+  });
+
+  testWidgets('a Little Learners child still gets the Little Learners catalog', (t) async {
+    final c = await _open(t, children: '[${_child('c1', 'Omar', 'little-learners')}]');
+    expect(c.read(activeTrackProvider), littleLearnersTrack);
+    expect((await c.read(activeContentProvider.future)).track, 'little-learners');
+    expect(find.byKey(const Key('unit-title-colors')), findsOneWidget);
+  });
+
+  test('the parent area reads each child\'s own track', () async {
+    final overrides = await testOverrides(content: realContent(), explorers: realExplorersContent(), prefs: {
+      'children.v1': '[${_child('c1', 'Omar', 'little-learners')},${_child('e1', 'Lina', 'explorers')}]',
+    });
+    final c = ProviderContainer(overrides: overrides);
+    addTearDown(c.dispose);
+    await c.read(trackContentProvider(littleLearnersTrack).future);
+    await c.read(trackContentProvider(explorersTrack).future);
+    final omar = c.read(childOverviewProvider('c1'))!;
+    final lina = c.read(childOverviewProvider('e1'))!;
+    expect(omar.statuses.map((s) => s.unit.id), contains('colors'));
+    expect(lina.statuses.map((s) => s.unit.id).take(2), ['letters', 'sound-builders']);
+    expect(lina.current!.unit.id, 'letters');
+    expect(lina.statuses[1].state, isNot(UnitState.current)); // waits for Letters
+  });
+}

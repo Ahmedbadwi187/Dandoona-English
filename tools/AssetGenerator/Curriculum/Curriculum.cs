@@ -106,7 +106,14 @@ public class UnitDef
     /// <summary>The picture story after this unit: a few pages, each a sentence Dandoona reads and some of the unit's own pictures.</summary>
     public StoryDef? Story { get; set; }
 
+    /// <summary>Another track whose unit with the same id is used here unchanged (title, lines, chest, lessons and their
+    /// files): Explorers starts with the Little Learners Letters unit. Empty for a unit of its own.</summary>
+    public string From { get; set; } = "";
+
     public bool IsPack => Delivery == "pack";
+
+    /// <summary>The track whose lessons and files this unit uses.</summary>
+    public string ContentTrack => From.Length > 0 ? From : Track;
 }
 
 /// <summary>A unit's story: pages in order.</summary>
@@ -281,7 +288,7 @@ public static class CurriculumReader
             if (u.Chest is null) continue; // the real content file gives every unit a chest (tested); older test fixtures have none
             if (!System.Text.RegularExpressions.Regex.IsMatch(u.Chest.Accessory, "^[a-z0-9]+(-[a-z0-9]+)*$")) errors.Add($"unit '{u.Id}': chest accessory must be a kebab-case id.");
             if (u.Chest.Stickers.Count is < 3 or > 4) errors.Add($"unit '{u.Id}': a chest has 3 or 4 stickers.");
-            var words = lessons.Where(l => l.Lesson.Track == u.Track && l.Lesson.Unit == u.Id).SelectMany(l => l.Lesson.Words).Select(w => w.Word.Trim().ToLowerInvariant()).ToHashSet();
+            var words = lessons.Where(l => l.Lesson.Track == u.ContentTrack && l.Lesson.Unit == u.Id).SelectMany(l => l.Lesson.Words).Select(w => w.Word.Trim().ToLowerInvariant()).ToHashSet();
             if (u.Story is { } story)
             {
                 if (story.Pages.Count is < 3 or > 8) errors.Add($"unit '{u.Id}': a story has 3 to 8 pages.");
@@ -327,6 +334,7 @@ public static class CurriculumReader
                     u.Track = file.Track;
                     if (!System.Text.RegularExpressions.Regex.IsMatch(u.Id, "^[a-z0-9]+(-[a-z0-9]+)*$")) errors.Add($"{name}: unit id '{u.Id}' must be lowercase kebab-case.");
                     if (u.Order <= 0) errors.Add($"{name}: unit '{u.Id}' needs a positive order.");
+                    if (u.From.Length > 0) { result.Add(u); continue; } // filled from its own track below
                     if (!u.Title.ContainsKey("en") || !u.Title.ContainsKey("ar")) errors.Add($"{name}: unit '{u.Id}' needs title.en and title.ar.");
                     if (string.IsNullOrWhiteSpace(u.Narration.Title) || string.IsNullOrWhiteSpace(u.Narration.Celebration)) errors.Add($"{name}: unit '{u.Id}' needs narration.title and narration.celebration.");
                     if (u.Delivery is not ("" or "bundled" or "pack")) errors.Add($"{name}: unit '{u.Id}' delivery must be bundled or pack.");
@@ -335,6 +343,14 @@ public static class CurriculumReader
                 }
             }
             catch (YamlException ex) { errors.Add($"{name}: {ex.Message}"); }
+        }
+        // A unit borrowed from another track takes everything from there (its own order stays).
+        foreach (var u in result.Where(u => u.From.Length > 0))
+        {
+            var source = result.FirstOrDefault(x => x.Track == u.From && x.Id == u.Id && x.From.Length == 0);
+            if (source is null) { errors.Add($"unit '{u.Id}' of track '{u.Track}' comes from '{u.From}', which has no unit '{u.Id}'."); continue; }
+            u.Title = source.Title; u.Icon = source.Icon; u.Color = source.Color; u.Delivery = source.Delivery;
+            u.Narration = source.Narration; u.Chest = source.Chest; u.Story = source.Story;
         }
         foreach (var dup in result.GroupBy(u => (u.Track, u.Id)).Where(g => g.Count() > 1)) errors.Add($"Duplicate unit '{dup.Key.Id}' in track '{dup.Key.Track}'.");
         foreach (var dup in result.GroupBy(u => (u.Track, u.Order)).Where(g => g.Count() > 1)) errors.Add($"Two units share order {dup.Key.Order} in track '{dup.Key.Track}'.");
@@ -427,7 +443,7 @@ public static class CurriculumReader
     /// <summary>The synthetic lesson that carries a unit's own audio lines so the audio runner and export treat them like any lesson.</summary>
     public static Lesson UnitAudioLesson(UnitDef u) => new()
     {
-        Id = $"unit-{u.Id}", Track = u.Track, Unit = u.Id, Level = "pre-a1", IsUnit = true, Order = u.Order,
+        Id = $"unit-{u.Id}", Track = u.ContentTrack, Unit = u.Id, Level = "pre-a1", IsUnit = true, Order = u.Order,
         Narration = new Narration
         {
             Intro = string.IsNullOrWhiteSpace(u.Narration.Welcome) ? u.Narration.Title : u.Narration.Welcome,

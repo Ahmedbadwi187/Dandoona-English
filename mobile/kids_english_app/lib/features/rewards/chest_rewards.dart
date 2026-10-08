@@ -63,7 +63,10 @@ class ChestInventory {
 
 /// The active child's chest inventory (empty when nobody is selected or the content is still loading).
 final chestInventoryProvider = Provider<ChestInventory>((ref) {
-  final units = ref.watch(contentProvider).asData?.value.units ?? const <CourseUnit>[];
+  // An Explorers child keeps every Little Learners chest and outfit, and adds the Explorers ones.
+  final little = ref.watch(contentProvider).asData?.value.units ?? const <CourseUnit>[];
+  final explorers = ref.watch(activeTrackProvider) == explorersTrack ? (ref.watch(explorersContentProvider).asData?.value.units ?? const <CourseUnit>[]) : const <CourseUnit>[];
+  final units = [...little, for (final u in explorers) if (!little.any((l) => l.id == u.id)) u];
   final childId = ref.watch(activeChildIdProvider);
   final opened = childId == null ? const <String>{} : ref.watch(unitMetaProvider).of(childId).chests;
   return ChestInventory(units: units, opened: opened);

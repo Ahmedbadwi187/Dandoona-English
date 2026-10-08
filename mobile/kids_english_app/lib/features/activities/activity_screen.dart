@@ -49,7 +49,7 @@ class ActivityScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final content = ref.watch(contentProvider);
+    final content = ref.watch(activeContentProvider);
     return ChildScope(
       child: SessionGuard(
         child: Scaffold(

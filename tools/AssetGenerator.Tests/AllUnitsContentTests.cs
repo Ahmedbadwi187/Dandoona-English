@@ -14,7 +14,7 @@ public class AllUnitsContentTests
     {
         var layout = Layout.FindFrom(AppContext.BaseDirectory);
         var all = CurriculumReader.LoadAll(layout.CurriculumDir);
-        var units = CurriculumReader.LoadUnits(layout.CurriculumDir);
+        var units = CurriculumReader.LoadUnits(layout.CurriculumDir).Where(u => u.Track == "little-learners").ToList(); // this checks Little Learners (Explorers has its own tests)
         units.Select(u => u.Id).ShouldBe(Units);
         foreach (var u in units)
         {

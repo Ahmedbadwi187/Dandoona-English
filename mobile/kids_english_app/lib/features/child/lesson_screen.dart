@@ -36,7 +36,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
   void initState() {
     super.initState();
     // The letter introduces itself as soon as the lesson opens (when the lesson data is there).
-    ref.listenManual(contentProvider, (_, next) => _playIntro(next.value), fireImmediately: true);
+    ref.listenManual(activeContentProvider, (_, next) => _playIntro(next.value), fireImmediately: true);
   }
 
   void _playIntro(TrackContent? track) {
@@ -57,7 +57,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
   @override
   Widget build(BuildContext context) {
     final lessonId = widget.lessonId;
-    final content = ref.watch(contentProvider);
+    final content = ref.watch(activeContentProvider);
     return ChildScope(
       child: SessionGuard(
         child: Scaffold(

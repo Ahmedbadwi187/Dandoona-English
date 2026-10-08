@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../content/content_repository.dart';
+import '../profiles/child_profile.dart';
 import '../progress/progress.dart';
 import '../settings/settings.dart';
 import '../units/unit_logic.dart';
@@ -22,7 +23,8 @@ class ChildOverview {
 
 /// The unit statuses of [childId], computed the same way as the child's own unit map. Null while the lessons load.
 final childOverviewProvider = Provider.family<ChildOverview?, String>((ref, childId) {
-  final track = ref.watch(contentProvider).asData?.value;
+  final child = ref.watch(profilesProvider).where((p) => p.id == childId).firstOrNull;
+  final track = ref.watch(trackContentProvider(child?.track ?? littleLearnersTrack)).asData?.value;
   if (track == null) return null;
   ref.watch(progressProvider);
   final progress = ref.read(progressProvider.notifier);

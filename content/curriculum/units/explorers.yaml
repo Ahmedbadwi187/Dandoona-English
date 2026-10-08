@@ -1,0 +1,116 @@
+# Units of the Explorers track (ages 6-8), in the order they open. Plan: docs/explorers-plan.md (sections 11 and 12).
+# Letters is the Little Learners unit itself (`from: little-learners`): same lessons, files and progress, so a child of 6+ who does not
+# know the letters starts there without moving to another track. Sound Builders is bundled; the later units will be content packs.
+# A unit with no lessons yet shows "Soon" on the map.
+track: explorers
+
+# Where a child starts, from the parent's answer to "How much English does your child know?" (docs/explorers-plan.md, section 11).
+placement:
+  - { level: 0, key: none,         doneUnits: [],                       startUnit: letters }
+  - { level: 1, key: some-letters, doneUnits: [],                       startUnit: letters }
+  - { level: 2, key: all-letters,  doneUnits: [letters],                startUnit: sound-builders }
+  - { level: 3, key: reads-words,  doneUnits: [letters, sound-builders], startUnit: digraphs }
+
+units:
+  - id: letters
+    from: little-learners
+    order: 1
+
+  - id: sound-builders
+    order: 2
+    title: { en: "Sound Builders", ar: "تركيب الأصوات" }
+    icon: sounds
+    color: blue
+    narration:
+      title: "Sound Builders"
+      welcome: "Let's build words from sounds!"
+      celebration: "You built so many words! Amazing!"
+      lines: { locked: "Finish Sound Builders first!" }
+
+  - id: digraphs
+    order: 3
+    delivery: pack
+    title: { en: "Digraphs", ar: "الحروف المزدوجة" }
+    icon: digraphs
+    color: purple
+    narration: { title: "Digraphs", welcome: "Two letters, one sound!", celebration: "You know the digraphs! Super!", lines: { locked: "Finish Digraphs first!" } }
+
+  - id: blends
+    order: 4
+    delivery: pack
+    title: { en: "Blends", ar: "التجمعات" }
+    icon: blends
+    color: teal
+    narration: { title: "Blends", welcome: "Let's blend sounds!", celebration: "You finished the blends! Great!", lines: { locked: "Finish Blends first!" } }
+
+  - id: magic-e
+    order: 5
+    delivery: pack
+    title: { en: "Magic E", ar: "الحرف الصامت" }
+    icon: magic-e
+    color: pink
+    narration: { title: "Magic E", welcome: "Let's find the magic e!", celebration: "Magic! You did it!", lines: { locked: "Finish Magic E first!" } }
+
+  - id: vowel-teams
+    order: 6
+    delivery: pack
+    title: { en: "Vowel Teams", ar: "اقتران الحروف" }
+    icon: vowel-teams
+    color: orange
+    narration: { title: "Vowel Teams", welcome: "Vowels work as a team!", celebration: "Great teamwork!", lines: { locked: "Finish Vowel Teams first!" } }
+
+  - id: sight-words-1
+    order: 7
+    delivery: pack
+    title: { en: "Sight Words 1", ar: "كلمات شائعة ١" }
+    icon: sight-words
+    color: green
+    narration: { title: "Sight Words", welcome: "Let's learn words we see a lot!", celebration: "You know your sight words!", lines: { locked: "Finish Sight Words first!" } }
+
+  - id: sight-words-2
+    order: 8
+    delivery: pack
+    title: { en: "Sight Words 2", ar: "كلمات شائعة ٢" }
+    icon: sight-words
+    color: red
+    narration: { title: "More Sight Words", welcome: "More words we see a lot!", celebration: "Wonderful reading!", lines: { locked: "Finish Sight Words first!" } }
+
+  - id: my-sentences
+    order: 9
+    delivery: pack
+    title: { en: "My Sentences", ar: "جملي" }
+    icon: sentences
+    color: blue
+    narration: { title: "My Sentences", welcome: "Let's read sentences!", celebration: "You can read sentences!", lines: { locked: "Finish My Sentences first!" } }
+
+  - id: word-families
+    order: 10
+    delivery: pack
+    title: { en: "Word Families", ar: "عائلات الكلمات" }
+    icon: word-families
+    color: purple
+    narration: { title: "Word Families", welcome: "Words in a family sound alike!", celebration: "You know the word families!", lines: { locked: "Finish Word Families first!" } }
+
+  - id: everyday-english
+    order: 11
+    delivery: pack
+    title: { en: "Everyday English", ar: "مفردات الحياة" }
+    icon: everyday
+    color: teal
+    narration: { title: "Everyday English", welcome: "Let's talk about our day!", celebration: "Great everyday English!", lines: { locked: "Finish Everyday English first!" } }
+
+  - id: numbers-time
+    order: 12
+    delivery: pack
+    title: { en: "Numbers & Time", ar: "الأرقام والوقت" }
+    icon: clock
+    color: orange
+    narration: { title: "Numbers and Time", welcome: "What time is it?", celebration: "You can tell the time!", lines: { locked: "Finish Numbers and Time first!" } }
+
+  - id: grammar-starters
+    order: 13
+    delivery: pack
+    title: { en: "Grammar Starters", ar: "بدايات القواعد" }
+    icon: grammar
+    color: green
+    narration: { title: "Grammar Starters", welcome: "Let's put words together!", celebration: "You are a word expert!", lines: { locked: "Finish Grammar Starters first!" } }

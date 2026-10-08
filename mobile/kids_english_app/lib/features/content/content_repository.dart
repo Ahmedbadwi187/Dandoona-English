@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'content_models.dart';
 import 'packs.dart';
+import '../profiles/child_profile.dart';
 
 const littleLearnersAsset = 'assets/content/little_learners.json';
 
@@ -35,3 +36,33 @@ CourseUnit? _loadPack(PackRepository repo, CourseUnit unit) {
     return null; // a damaged pack reads as "not downloaded": it is fetched again
   }
 }
+
+// ---- Tracks ---------------------------------------------------------------------------------------------------------
+// Little Learners (3-5) is [contentProvider], unchanged. Explorers (6-8) has its own catalog; a child uses the catalog of
+// their track. Screens in the child area read [activeContentProvider]; the parent area, which shows several children,
+// reads [trackContentProvider] with each child's track.
+
+const littleLearnersTrack = 'little-learners';
+const explorersTrack = 'explorers';
+const explorersAsset = 'assets/content/explorers.json';
+
+/// The tracks that have lessons in this app.
+const availableTracks = {littleLearnersTrack, explorersTrack};
+
+/// The Explorers lessons, read from the bundled JSON (no network). Its Letters unit is the Little Learners one (same
+/// lessons and files), so a child who already knows them keeps that progress.
+final explorersContentProvider = FutureProvider<TrackContent>((ref) => loadTrackContent(ref.watch(assetBundleProvider), path: explorersAsset));
+
+/// The catalog of a track; an unknown track reads as Little Learners.
+final trackContentProvider = FutureProvider.family<TrackContent, String>((ref, track) =>
+    track == explorersTrack ? ref.watch(explorersContentProvider.future) : ref.watch(contentProvider.future));
+
+/// The track of the child who is playing (Little Learners when nobody is chosen yet).
+final activeTrackProvider = Provider<String>((ref) {
+  final id = ref.watch(activeChildIdProvider);
+  final child = ref.watch(profilesProvider).where((p) => p.id == id).firstOrNull;
+  return child?.track ?? littleLearnersTrack;
+});
+
+/// The catalog of the child who is playing.
+final activeContentProvider = FutureProvider<TrackContent>((ref) => ref.watch(trackContentProvider(ref.watch(activeTrackProvider)).future));

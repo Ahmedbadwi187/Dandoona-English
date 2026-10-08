@@ -20,6 +20,18 @@ IconData unitIcon(String key) => switch (key) {
   'home' => Icons.house_rounded,
   'opposites' => Icons.swap_horiz_rounded,
   'transport' => Icons.directions_bus_rounded,
+  // Explorers (6-8)
+  'sounds' => Icons.graphic_eq_rounded,
+  'digraphs' => Icons.join_inner_rounded,
+  'blends' => Icons.merge_type_rounded,
+  'magic-e' => Icons.auto_fix_high_rounded,
+  'vowel-teams' => Icons.groups_rounded,
+  'sight-words' => Icons.visibility_rounded,
+  'sentences' => Icons.notes_rounded,
+  'word-families' => Icons.account_tree_rounded,
+  'everyday' => Icons.wb_sunny_rounded,
+  'clock' => Icons.schedule_rounded,
+  'grammar' => Icons.spellcheck_rounded,
   _ => Icons.star_rounded,
 };
 

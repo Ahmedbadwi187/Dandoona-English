@@ -39,12 +39,13 @@ Future<SharedPreferences> mockPrefs([Map<String, Object> initial = const {}]) as
 }
 
 /// Overrides every app dependency that touches the platform.
-Future<List<Override>> testOverrides({Map<String, Object> prefs = const {}, TrackContent? content, FakeReminders? reminders}) async {
+Future<List<Override>> testOverrides({Map<String, Object> prefs = const {}, TrackContent? content, FakeReminders? reminders, TrackContent? explorers}) async {
   final p = await mockPrefs(prefs);
   final c = content ?? sampleContent();
   return [
     sharedPreferencesProvider.overrideWithValue(p),
     contentProvider.overrideWith((ref) async => c),
+    if (explorers != null) explorersContentProvider.overrideWith((ref) async => explorers),
     reminderServiceProvider.overrideWithValue(reminders ?? FakeReminders()),
   ];
 }
@@ -120,3 +121,7 @@ class FakeRecorder implements RecorderService {
 /// The real exported lessons (so image/audio paths exist in the test asset bundle).
 TrackContent realContent() =>
     TrackContent.fromJson(jsonDecode(File('assets/content/little_learners.json').readAsStringSync()) as Map<String, dynamic>);
+
+/// The real exported Explorers catalog (its Letters unit points at the Little Learners files).
+TrackContent realExplorersContent() =>
+    TrackContent.fromJson(jsonDecode(File('assets/content/explorers.json').readAsStringSync()) as Map<String, dynamic>);
