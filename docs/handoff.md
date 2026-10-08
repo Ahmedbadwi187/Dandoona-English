@@ -205,3 +205,6 @@ by arithmetic, `noArticle` lessons) and **Grammar Starters** (a/an, is/are, has/
   show "Almost ready". The database migrations are applied (`dotnet ef database update ... --connection`, the design-time factory has a fixed local
   connection) and the hosted API runs them at start-up too (`Database:MigrateOnStartup` in appsettings.Production.json).
 - APKs: `dist/dandoona-host.apk` (release, API_BASE_URL = the host above); for the emulator use the debug build (10.0.2.2:5080) with the local API.
+- **Little Learners only release**: build with `--dart-define=ENABLE_EXPLORERS=false` (see docs/explorers-progress.md section 9).
+- **Integration tests without Docker**: `$env:KIDS_TEST_SQL = "Server=(localdb)MSSQLLocalDB;Database=KidsEnglishIntegrationTests;Trusted_Connection=True;TrustServerCertificate=True"; dotnet test tests/KidsEnglish.Api.IntegrationTests` (that database is dropped and recreated: never point it at the hosted one). Stop `KidsEnglish.Api.exe` first. Their settings come from tests/KidsEnglish.Api.IntegrationTests/appsettings.Testing.json.
+- True or False and Sight Word Hunt exist (`features/activities/reading_games.dart`); `node tools/art/add-reading-games.mjs` adds them (with instructions) to the lessons.

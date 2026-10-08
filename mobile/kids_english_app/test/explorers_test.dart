@@ -11,6 +11,8 @@ import 'package:kids_english_app/features/profiles/child_profile.dart';
 import 'package:kids_english_app/features/progress/progress.dart';
 import 'package:kids_english_app/features/rewards/chest_rewards.dart';
 import 'package:kids_english_app/features/units/unit_logic.dart';
+import 'package:kids_english_app/features/router_state.dart';
+import 'package:kids_english_app/router.dart';
 
 import 'helpers.dart';
 
@@ -116,5 +118,20 @@ void main() {
     await c.read(explorersContentProvider.future);
     c.read(activeChildIdProvider.notifier).select('e1');
     expect(c.read(chestInventoryProvider).outfits, containsAll(['headphones', 'bandana', 'wizard-hat', 'team-cap', 'book-hat', 'detective-cap', 'pencil-band', 'rainbow-band', 'sun-visor', 'clock-cap', 'quill-hat']));
+  });
+
+  testWidgets('the parent sees an Explorers child with the Explorers units (not the Little Learners ones) in the details', (t) async {
+    final c = await _open(t, children: '[${_child('e1', 'Lina', 'explorers')},${_child('c1', 'Omar', 'little-learners')}]', progress: _progress(_letters, 'e1'));
+    c.read(parentSessionProvider.notifier).unlock();
+    c.read(routerProvider).go('/parent/child/e1');
+    await t.pumpAndSettle();
+    expect(find.byKey(const Key('detail-name')), findsOneWidget);
+    await t.scrollUntilVisible(find.byKey(const Key('unit-row-sound-builders')), 300, scrollable: find.byType(Scrollable).first);
+    expect(find.byKey(const Key('unit-row-sound-builders')), findsOneWidget);
+    expect(find.byKey(const Key('unit-row-animals'), skipOffstage: false), findsNothing); // a Little Learners unit
+    c.read(routerProvider).go('/parent/child/c1');
+    await t.pumpAndSettle();
+    await t.scrollUntilVisible(find.byKey(const Key('unit-row-animals')), 300, scrollable: find.byType(Scrollable).first);
+    expect(find.byKey(const Key('unit-row-sound-builders'), skipOffstage: false), findsNothing);
   });
 }
