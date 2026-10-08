@@ -72,7 +72,7 @@ public record ExportLesson(string Id, int Order, string Level, string? Letter, s
     ExportLessonAudio Audio, List<ExportWord> Words, List<string> Activities, ExportColor? Color = null, bool? Counting = null, bool? OwnWordsOnly = null, List<ExportBin>? Bins = null, List<string>? Odd = null);
 public record ExportBin(string Key, string Icon);
 public record ExportLessonAudio(string Intro, string? Phoneme, List<string> Praise, Dictionary<string, string>? Instructions = null, string? ColorName = null);
-public record ExportWord(string Word, string Audio, string Image, string? Phrase = null, string? Sound = null, string? Lives = null, string? Home = null, string? Says = null, string? Group = null, string? Opposite = null, string? PhraseText = null, List<string>? Graphemes = null);
+public record ExportWord(string Word, string Audio, string Image, string? Phrase = null, string? Sound = null, string? Lives = null, string? Home = null, string? Says = null, string? Group = null, string? Opposite = null, string? PhraseText = null, List<string>? Graphemes = null, string? Plural = null, string? PluralAudio = null);
 public record ExportColor(string Name, string Hex, string Swatch, string Drawing);
 
 public record ExportResult(int Exported, IReadOnlyList<string> Incomplete, long TotalBytes, string? JsonPath);
@@ -165,7 +165,7 @@ public class ExportRunner(Layout layout, GenerationConfig config, IMediaTool med
                 {
                     var key = LessonPlan.Slug(w.Word);
                     var svg = w.Reuse is not null ? reusedSvg[key] : w.Source == "svg";
-                    return new ExportWord(w.Word.Trim(), Layout.ExportAudioRel(l, $"word-{key}"), Layout.ExportImageRel(l, key, svg), PhraseFor(w), w.Sound is null ? null : Layout.ExportAudioRel(l, LessonPlan.SoundRole(w.Word)), w.Lives is null ? null : Layout.ExportAudioRel(l, LessonPlan.LivesRole(w.Word)), w.Home, w.Says is null ? null : Layout.ExportAudioRel(l, LessonPlan.SaysRole(w.Word)), w.Group, w.Opposite, PhraseTextFor(w), w.Graphemes);
+                    return new ExportWord(w.Word.Trim(), Layout.ExportAudioRel(l, $"word-{key}"), Layout.ExportImageRel(l, key, svg), PhraseFor(w), w.Sound is null ? null : Layout.ExportAudioRel(l, LessonPlan.SoundRole(w.Word)), w.Lives is null ? null : Layout.ExportAudioRel(l, LessonPlan.LivesRole(w.Word)), w.Home, w.Says is null ? null : Layout.ExportAudioRel(l, LessonPlan.SaysRole(w.Word)), w.Group, w.Opposite, PhraseTextFor(w), w.Graphemes, w.Plural?.Trim(), w.Plural is null ? null : Layout.ExportAudioRel(l, LessonPlan.PluralRole(w.Word)));
                 }).ToList(),
                 l.Activities.ToList(),
                 color,

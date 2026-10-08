@@ -124,6 +124,7 @@ public static class LessonPlan
             if (!string.IsNullOrWhiteSpace(w.Sound)) items.Add(new(SoundRole(w.Word), w.Sound.Trim(), false));
             if (!string.IsNullOrWhiteSpace(w.Lives)) items.Add(new(LivesRole(w.Word), w.Lives.Trim(), false));
             if (!string.IsNullOrWhiteSpace(w.Says)) items.Add(new(SaysRole(w.Word), w.Says.Trim(), false));
+            if (!string.IsNullOrWhiteSpace(w.Plural)) items.Add(new(PluralRole(w.Word), PluralLine(w), false));
         }
         foreach (var w in l.Words)
             if (l.Narration.Phrases.FirstOrDefault(p => p.Key.Trim().Equals(w.Word.Trim(), StringComparison.OrdinalIgnoreCase)) is { Value: { Length: > 0 } phrase })
@@ -142,6 +143,10 @@ public static class LessonPlan
     public static string SaysRole(string word) => $"says-{Slug(word)}";
     public static string LivesRole(string word) => $"lives-{Slug(word)}";
     public static string PhraseRole(string word) => $"phrase-{Slug(word)}";
+    public static string PluralRole(string word) => $"plural-{Slug(word)}";
+
+    /// <summary>The line that shows a plural: "One cat. Two cats!"</summary>
+    public static string PluralLine(LessonWord w) => $"One {w.Word.Trim()}. Two {w.Plural!.Trim()}!";
 
     /// <summary>Words that reuse a picture from another lesson: (word key, "lesson-id/key").</summary>
     public static IReadOnlyList<(string Key, string Reuse)> Reused(Lesson l) =>

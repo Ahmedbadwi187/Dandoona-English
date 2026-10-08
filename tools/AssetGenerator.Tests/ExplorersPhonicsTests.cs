@@ -76,6 +76,16 @@ public class ExplorersPhonicsTests
     }
 
     [Fact]
+    public void A_plural_is_the_word_with_s_and_brings_one_line_one_cat_two_cats()
+    {
+        using var repo = Repo(Lesson.Replace("{ word: cat, graphemes: [c, a, t]", "{ word: cat, plural: cats, graphemes: [c, a, t]"));
+        var l = CurriculumReader.LoadAll(repo.Layout.CurriculumDir).Single();
+        LessonPlan.Audio(l).ShouldContain(new AudioItem("plural-cat", "One cat. Two cats!", false));
+        using var bad = Repo(Lesson.Replace("{ word: cat, graphemes: [c, a, t]", "{ word: cat, plural: cates, graphemes: [c, a, t]"));
+        Should.Throw<CurriculumException>(() => CurriculumReader.LoadAll(bad.Layout.CurriculumDir)).Message.ShouldContain("'plural' is the word with -s");
+    }
+
+    [Fact]
     public void Every_phoneme_is_one_clip_flagged_as_a_phoneme()
     {
         using var repo = Repo();
@@ -94,7 +104,7 @@ public class ExplorersPhonicsTests
     [Fact]
     public async Task Export_writes_the_phoneme_table_and_each_words_graphemes_and_copies_a_little_learners_picture()
     {
-        using var repo = Repo();
+        using var repo = Repo(Lesson.Replace("{ word: act, graphemes", "{ word: act, plural: acts, graphemes"));
         var units = CurriculumReader.LoadUnits(repo.Layout.CurriculumDir);
         var lesson = CurriculumReader.LoadAll(repo.Layout.CurriculumDir).Single();
         var table = CurriculumReader.LoadPhonemes(repo.Layout.CurriculumDir).Select(p => p.Phoneme).ToList();
@@ -115,9 +125,13 @@ public class ExplorersPhonicsTests
         phonemes.TryGetProperty("t", out _).ShouldBeFalse();
         result.Incomplete.ShouldContain(i => i.Contains("phoneme-t"));
         var cat = doc.RootElement.GetProperty("units")[0].GetProperty("lessons")[0].GetProperty("words")[0];
+        cat.TryGetProperty("plural", out _).ShouldBeFalse(); // only words with a plural carry one
         cat.GetProperty("graphemes").EnumerateArray().Select(g => g.GetString()).ShouldBe(["c", "a", "t"]);
         cat.GetProperty("image").GetString().ShouldBe("images/explorers/sound_builders_a/cat.webp");
         File.ReadAllText(Path.Combine(repo.Layout.AssetsDir, "images/explorers/sound_builders_a/cat.webp")).ShouldBe("CAT");
+        var act = doc.RootElement.GetProperty("units")[0].GetProperty("lessons")[0].GetProperty("words")[1];
+        act.GetProperty("plural").GetString().ShouldBe("acts");
+        act.GetProperty("pluralAudio").GetString().ShouldBe("audio/explorers/sound_builders_a/plural_act.mp3");
     }
 
     [Fact]

@@ -438,23 +438,49 @@ class _WordBuilderActivityState extends ConsumerState<WordBuilderActivity> with 
 }
 
 // ----------------------------------------------------------------------------------------------------------- Read & Pick
+/// A picture to pick in Read & Pick: one [source] picture, or the same picture twice for its plural ("cats").
+class ReadPick {
+  const ReadPick(this.source, {this.two = false});
+  final LessonWord source;
+  final bool two;
+
+  /// What it shows, written: "cat", or "cats" for two.
+  String get word => two ? (source.plural ?? source.word) : source.word;
+
+  /// What is said when it is picked: the word, or for two "One cat. Two cats!".
+  String get audio => two ? (source.pluralAudio ?? source.audio) : source.audio;
+}
+
 /// One Read & Pick round: the written [target] and three pictures to choose from.
 class ReadRound {
   const ReadRound(this.target, this.options);
-  final LessonWord target;
-  final List<LessonWord> options;
+  final ReadPick target;
+  final List<ReadPick> options;
+  bool get plural => target.two;
 }
 
-/// Every word of the lesson once, each with two other pictures of the lesson.
+/// Every word of the lesson once, each with two other pictures of the lesson; then each word that has a plural ("cats"):
+/// two cats, one cat, and two of something else, so the child sees that -s means more than one.
 List<ReadRound> buildReadRounds(Lesson lesson, Random random) {
   final words = lesson.words.toList()..shuffle(random);
+  final plurals = words.where((w) => w.plural != null).toList();
   return [
-    for (final w in words) ReadRound(w, ([w, ...(lesson.words.where((o) => o.word != w.word).toList()..shuffle(random)).take(2)])..shuffle(random)),
+    for (final w in words)
+      ReadRound(ReadPick(w), [ReadPick(w), ...(lesson.words.where((o) => o.word != w.word).toList()..shuffle(random)).take(2).map(ReadPick.new)]..shuffle(random)),
+    for (final w in plurals)
+      ReadRound(ReadPick(w, two: true), [ReadPick(w, two: true), ReadPick(w), ReadPick((lesson.words.where((o) => o.word != w.word).toList()..shuffle(random)).first, two: true)]..shuffle(random)),
   ];
 }
 
-/// Read & Pick: the word is shown written, with no sound, and the child taps its picture. The word is said after the
-/// answer (a wrong picture says its own word, so the child hears the difference).
+/// "a" or "an" before a word, from its first sound: "an ant", "an egg", but "a cube" (u says "you" there).
+String articleFor(LessonWord w) {
+  final first = w.graphemes.isEmpty ? (w.word.isEmpty ? '' : w.word[0]) : (graphemeSound(w.graphemes.first) ?? '');
+  return const {'a', 'e', 'i', 'o', 'u'}.contains(first) ? 'an' : 'a';
+}
+
+/// Read & Pick: the word is shown written ("a cat", "an ant"), with no sound, and the child taps its picture. The word is
+/// said after the answer (a wrong picture says its own word, so the child hears the difference). The last rounds show a
+/// plural ("cats"): two of the picture is right, and Dandoona says "One cat. Two cats!".
 class ReadAndPickActivity extends ConsumerStatefulWidget {
   const ReadAndPickActivity({super.key, required this.lesson, required this.onFinished, this.random, this.nextDelay = const Duration(milliseconds: 1100)});
 
@@ -487,7 +513,7 @@ class _ReadAndPickActivityState extends ConsumerState<ReadAndPickActivity> with 
   @override
   List<DemoStep> get demoSteps {
     final r = _rounds[_index];
-    return [DemoStep.tap(_wordKey), DemoStep.tap(_pictureKeys[r.options.indexOf(r.target)])];
+    return [DemoStep.tap(_wordKey), DemoStep.tap(_pictureKeys[r.options.indexWhere((o) => o.word == r.target.word)])];
   }
 
   @override
@@ -515,7 +541,7 @@ class _ReadAndPickActivityState extends ConsumerState<ReadAndPickActivity> with 
     _demoShown = false;
   }
 
-  Future<void> _tap(LessonWord w) async {
+  Future<void> _tap(ReadPick w) async {
     if (_locked || demo) return;
     final round = _rounds[_index];
     unawaited(speech.say(then: w.audio)); // the sound comes after the answer
@@ -555,7 +581,19 @@ class _ReadAndPickActivityState extends ConsumerState<ReadAndPickActivity> with 
               key: _wordKey,
               padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
               decoration: BoxDecoration(color: Palette.white, borderRadius: BorderRadius.circular(24), border: Border.all(color: Palette.nightInk, width: 4)),
-              child: Text(round.target.word, key: const Key('read-word'), style: const TextStyle(fontSize: 64, fontWeight: FontWeight.w900, color: Palette.nightInk, letterSpacing: 4)),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                textBaseline: TextBaseline.alphabetic,
+                children: [
+                  // "a" / "an" before one thing; nothing before a plural
+                  if (!round.plural) ...[
+                    Text(articleFor(round.target.source), key: const Key('read-article'), style: TextStyle(fontSize: 40, fontWeight: FontWeight.w800, color: Palette.nightInk.withValues(alpha: 0.6))),
+                    const SizedBox(width: 14),
+                  ],
+                  Text(round.target.word, key: const Key('read-word'), style: const TextStyle(fontSize: 64, fontWeight: FontWeight.w900, color: Palette.nightInk, letterSpacing: 4)),
+                ],
+              ),
             ),
             const SizedBox(height: 24),
             Wrap(
@@ -576,7 +614,16 @@ class _ReadAndPickActivityState extends ConsumerState<ReadAndPickActivity> with 
                         borderRadius: BorderRadius.circular(26),
                         border: Border.all(color: _right == round.options[i].word ? Palette.green : (_wrong == round.options[i].word ? Palette.red : Palette.tan), width: 6),
                       ),
-                      child: AssetPicture(round.options[i].image, size: 128, semanticLabel: 'picture'),
+                      child: round.options[i].two
+                          ? SizedBox(
+                              width: 128,
+                              height: 128,
+                              child: Stack(children: [
+                                Positioned(left: 0, top: 0, child: AssetPicture(round.options[i].source.image, size: 84, semanticLabel: 'picture')),
+                                Positioned(right: 0, bottom: 0, child: AssetPicture(round.options[i].source.image, size: 84, semanticLabel: 'picture')),
+                              ]),
+                            )
+                          : AssetPicture(round.options[i].source.image, size: 128, semanticLabel: 'picture'),
                     ),
                   ),
               ],

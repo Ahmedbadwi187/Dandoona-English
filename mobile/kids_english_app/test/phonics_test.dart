@@ -221,6 +221,61 @@ void main() {
     });
   });
 
+  group('Read & Pick: a/an and plurals', () {
+    Lesson plural() => Lesson.fromJson({
+          'id': 'sound-builders-a',
+          'order': 1,
+          'level': 'a1',
+          'audio': {'intro': 'audio/x/intro.mp3', 'praise': ['audio/x/p.mp3'], 'instructions': {'read-and-pick': 'audio/x/instr_read.mp3'}},
+          'words': [
+            {'word': 'cat', 'audio': 'audio/x/word_cat.mp3', 'image': 'images/little_learners/letter_c/cat.webp', 'graphemes': ['c', 'a', 't'], 'plural': 'cats', 'pluralAudio': 'audio/x/plural_cat.mp3'},
+            {'word': 'ant', 'audio': 'audio/x/word_ant.mp3', 'image': 'images/little_learners/letter_h/hat.svg', 'graphemes': ['a', 'n', 't']},
+            {'word': 'sun', 'audio': 'audio/x/word_sun.mp3', 'image': 'images/little_learners/letter_s/sun.svg', 'graphemes': ['s', 'u', 'n']},
+          ],
+          'activities': ['read-and-pick'],
+        });
+
+    test('"an" before a word that starts with a vowel sound, "a" otherwise; the u in cube says "you", so "a cube"', () {
+      LessonWord w(String word, List<String> g) => LessonWord(word: word, audio: '', image: '', graphemes: g);
+      expect(articleFor(w('ant', ['a', 'n', 't'])), 'an');
+      expect(articleFor(w('egg', ['e', 'gg:g'])), 'an');
+      expect(articleFor(w('cat', ['c', 'a', 't'])), 'a');
+      expect(articleFor(w('cube', ['c', 'u:ue', 'b', 'e:-'])), 'a');
+    });
+
+    test('after every word once, each plural is asked: two of the picture, one of it, and two of another', () {
+      final rounds = buildReadRounds(plural(), Random(1));
+      expect(rounds.length, 4);
+      expect(rounds.take(3).every((r) => !r.plural), isTrue);
+      final last = rounds.last;
+      expect(last.plural, isTrue);
+      expect(last.target.word, 'cats');
+      expect(last.options.map((o) => (o.source.word, o.two)), containsAll([('cat', true), ('cat', false)]));
+      expect(last.options.where((o) => o.two && o.source.word != 'cat').length, 1);
+    });
+
+    testWidgets('the plural round: no "a", two cats is right and says "One cat. Two cats!"; one cat says "cat"', (t) async {
+      final (audio, results, _) = await _game(t, (done) => ReadAndPickActivity(lesson: plural(), onFinished: done, random: Random(1)), seen: 'read-and-pick');
+      for (var r = 0; r < 3; r++) {
+        final word = t.widget<Text>(find.byKey(const Key('read-word'))).data!;
+        expect(t.widget<Text>(find.byKey(const Key('read-article'))).data, word == 'ant' ? 'an' : 'a');
+        await _tap(t, 'read-$word');
+        await t.pump(const Duration(seconds: 2));
+        await t.pumpAndSettle();
+      }
+      expect(t.widget<Text>(find.byKey(const Key('read-word'))).data, 'cats');
+      expect(find.byKey(const Key('read-article')), findsNothing);
+      await _tap(t, 'read-cat');
+      expect(audio.played.last, 'asset:audio/x/word_cat.mp3');
+      await t.pump(const Duration(seconds: 1));
+      await _tap(t, 'read-cats');
+      expect(audio.played.last, 'asset:audio/x/plural_cat.mp3');
+      await t.pump(const Duration(seconds: 2));
+      await t.pumpAndSettle();
+      expect(results.single.stars, 2);
+    });
+  });
+
   group('Read & Pick', () {
     testWidgets('the word is shown with no sound; its picture is the answer, and only then the word is heard', (t) async {
       final (audio, results, _) = await _game(t, (done) => ReadAndPickActivity(lesson: _lesson(), onFinished: done, random: Random(2)), seen: 'read-and-pick');

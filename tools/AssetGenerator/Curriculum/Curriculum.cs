@@ -76,6 +76,9 @@ public class LessonWord
     /// <summary>Explorers phonics: the word's spelling split into its sounds ([c, a, t]; later [sh, i, p]). Each is a key of the
     /// track's `phonemes` table, and together they spell the word. Used by Sound Tap and Word Builder.</summary>
     public List<string>? Graphemes { get; set; }
+    /// <summary>Explorers: the word for more than one, made with -s ("cats"). Read & Pick asks it after the word itself, and
+    /// Dandoona says "One cat. Two cats!": grammar shown with pictures, never named.</summary>
+    public string? Plural { get; set; }
 }
 
 /// <summary>One sound of a track's phoneme table (content/curriculum/units/&lt;track&gt;.yaml `phonemes`): the grapheme key ("c",
@@ -234,6 +237,8 @@ public class LessonValidator : AbstractValidator<Lesson>
             w.RuleFor(i => i).Must(i => i.Graphemes is null || (i.Graphemes.Count is >= 2 and <= 8 && i.Graphemes.All(g => GraphemeRegex.IsMatch(g)) && string.Concat(i.Graphemes.Select(GraphemeText)) == i.Word.Trim().ToLowerInvariant()))
                 .WithMessage("'graphemes' must be 2-8 parts that spell the word (\"sh\", or \"a:ay\" for a letter with another sound, \"e:-\" for a silent letter).");
             w.RuleFor(i => i.Source).Must(s => s is "openai" or "svg").WithMessage("Word source must be openai or svg.");
+            w.RuleFor(i => i).Must(i => i.Plural is null || i.Plural.Trim() == i.Word.Trim().ToLowerInvariant() + "s")
+                .WithMessage("'plural' is the word with -s (cat -> cats).");
             w.RuleFor(i => i.Says).MaximumLength(60).Must(s => !string.IsNullOrWhiteSpace(s)).When(i => i.Says is not null);
             w.RuleFor(i => i.Sound).MaximumLength(40).Must(s => !string.IsNullOrWhiteSpace(s)).When(i => i.Sound is not null);
             w.RuleFor(i => i.Home).Must(h => Homes.Contains(h!)).When(i => i.Home is not null).WithMessage("Word home must be one of: " + string.Join(", ", Homes));
