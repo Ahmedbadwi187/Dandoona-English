@@ -11,6 +11,7 @@ import '../../core/theme.dart';
 import '../audio/audio_service.dart';
 import '../child/child_scope.dart';
 import '../content/content_models.dart';
+import '../content/packs.dart';
 import '../session/session.dart';
 import 'chest_rewards.dart';
 import 'chest_screen.dart' show StickerTile;
@@ -28,6 +29,18 @@ class StickerBookScreen extends ConsumerWidget {
     final withChest = [for (final u in inventory.units) if (u.chest != null) u];
     final total = inventory.allStickers.length;
     final got = inventory.stickers.length;
+
+    // The stickers of a chest that was opened (maybe on another phone) need that unit's pack for their pictures and voices: fetch it
+    // once; if that fails (offline) the stickers show their words until the pack arrives.
+    final downloads = ref.watch(packDownloadsProvider);
+    final missing = [for (final u in withChest) if (inventory.isOpened(u.id) && u.needsDownload && downloads[u.id] == null) u];
+    if (missing.isNotEmpty) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        for (final u in missing) {
+          unawaited(ref.read(packDownloadsProvider.notifier).ensure(u));
+        }
+      });
+    }
 
     return ChildScope(
       child: SessionGuard(

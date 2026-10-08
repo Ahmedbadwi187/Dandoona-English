@@ -1,10 +1,12 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kids_english_app/app.dart';
 import 'package:kids_english_app/features/audio/audio_service.dart';
+import 'package:kids_english_app/features/content/packs.dart';
 import 'package:kids_english_app/features/profiles/child_profile.dart';
 import 'package:kids_english_app/features/progress/progress.dart';
 import 'package:kids_english_app/features/rewards/accessories.dart';
@@ -26,7 +28,7 @@ String _progress(Iterable<String> lessons) => jsonEncode([
 final _letters = [for (var i = 0; i < 26; i++) 'letter-${String.fromCharCode(97 + i)}'];
 
 /// The map of a child who finished Letters (so its chest is ready); [meta] is the saved unit meta, if any.
-Future<(FakeAudio, ProviderContainer)> _open(WidgetTester t, {String? meta, String? children}) async {
+Future<(FakeAudio, ProviderContainer)> _open(WidgetTester t, {String? meta, String? children, PackRepository? packs}) async {
   t.view.physicalSize = const Size(1080, 2400);
   t.view.devicePixelRatio = 1080 / 411;
   addTearDown(t.view.reset);
@@ -37,7 +39,7 @@ Future<(FakeAudio, ProviderContainer)> _open(WidgetTester t, {String? meta, Stri
     'progress.v1': _progress(_letters),
     'meta.v2': ?meta,
   });
-  final c = ProviderContainer(overrides: [...overrides, audioServiceProvider.overrideWithValue(audio)]);
+  final c = ProviderContainer(overrides: [...overrides, audioServiceProvider.overrideWithValue(audio), if (packs != null) packRepositoryProvider.overrideWithValue(packs)]);
   addTearDown(c.dispose);
   await t.pumpWidget(UncontrolledProviderScope(container: c, child: const KidsEnglishApp()));
   await t.pumpAndSettle();
@@ -213,6 +215,17 @@ void main() {
     expect(_where(c), '/map');
   });
 
+  testWidgets('the Sticker Book fetches the pack of a unit whose chest was opened on another phone, so its stickers get their pictures', (t) async {
+    final fetcher = _AskedFetcher();
+    final shared = await mockPrefs();
+    final packs = PackRepository(baseUrl: 'http://test', track: 'little-learners', prefs: shared, fetcher: fetcher, root: () async => Directory.systemTemp);
+    final (_, c) = await _open(t, packs: packs, meta: '{"schema":2,"children":{"c1":{"certificates":{},"celebrated":["letters"],"chests":["letters","numbers"]}}}');
+    c.read(routerProvider).push('/stickers');
+    await t.pumpAndSettle();
+    expect(fetcher.asked, contains('http://test/packs/little_learners/index.json')); // it asked for the Numbers pack (the only opened chest of a pack unit)
+    expect(fetcher.asked.where((u) => u.contains('/animals/')), isEmpty); // not for units whose chest is closed
+  });
+
   testWidgets('a chest that is not ready yet does not open (Dandoona says what to do first)', (t) async {
     final (_, c) = await _open(t);
     c.read(unitMetaProvider);
@@ -224,4 +237,15 @@ void main() {
     await t.pumpAndSettle();
     await t.pump(const Duration(seconds: 3));
   });
+}
+
+/// A pack server that is not there: it only remembers what was asked.
+class _AskedFetcher implements PackFetcher {
+  final asked = <String>[];
+
+  @override
+  Future<List<int>> get(Uri url) async {
+    asked.add(url.toString());
+    throw const PackException('offline', offline: true);
+  }
 }

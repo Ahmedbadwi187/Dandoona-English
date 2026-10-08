@@ -14,6 +14,7 @@ import '../../core/widgets.dart';
 import '../audio/audio_service.dart';
 import '../child/child_scope.dart';
 import '../content/content_models.dart';
+import '../content/packs.dart';
 import '../onboarding/onboarding_widgets.dart';
 import '../profiles/child_profile.dart';
 import '../session/session.dart';
@@ -59,6 +60,11 @@ class _ChestScreenState extends ConsumerState<ChestScreen> with TickerProviderSt
       _opened = true;
     }
     _c.addListener(_onTick);
+    // the stickers need this unit's pack (for their pictures and voices): make sure it is on the phone
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final unit = _unit;
+      if (unit != null && unit.needsDownload) unawaited(ref.read(packDownloadsProvider.notifier).ensure(unit));
+    });
   }
 
   @override
