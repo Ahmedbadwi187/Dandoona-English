@@ -24,7 +24,9 @@ public class StatsApiTests(ApiFactory factory)
         return child.Id;
     }
 
-    private HttpClient Admin(string? key = ApiFactory.StatsKey)
+    private HttpClient Admin() => Admin(factory.StatsKey);
+
+    private HttpClient Admin(string? key)
     {
         var c = factory.CreateClient();
         if (key is not null) c.DefaultRequestHeaders.Add("X-Stats-Key", key);

@@ -3,6 +3,7 @@ using KidsEnglish.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Testcontainers.MsSql;
@@ -25,7 +26,8 @@ public class ApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
 
     private string ConnectionString => ExternalDb ?? _sql!.GetConnectionString();
 
-    public const string StatsKey = "test-stats-key-0123456789";
+    /// <summary>The statistics key the API is configured with (from appsettings.Testing.json).</summary>
+    public string StatsKey => Services.GetRequiredService<IConfiguration>()["Stats:Key"]!;
 
     /// <summary>A throwaway packs folder the API serves at /packs (tests write pack files into it).</summary>
     public string PacksRoot { get; } = Directory.CreateTempSubdirectory("packs").FullName;
@@ -50,15 +52,23 @@ public class ApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
         Directory.Delete(CardsRoot, recursive: true);
     }
 
+    /// <summary>
+    /// The settings come from appsettings.Testing.json (copied next to the tests): rate limit, Jwt (including Jwt:Key), stats key.
+    /// Only what is different on every run is set here: the throwaway database of the container and the two temporary folders.
+    /// </summary>
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.UseEnvironment("Testing");
-        builder.UseSetting("ConnectionStrings:Default", ConnectionString);
-        builder.UseSetting("RateLimiting:AuthPermitsPerMinute", "10000");
-        builder.UseSetting("Jwt:Key", "integration-tests-only-signing-key-0123456789");
-        builder.UseSetting("ContentPacks:Root", PacksRoot);
-        builder.UseSetting("ContentCards:Root", CardsRoot);
-        builder.UseSetting("Stats:Key", StatsKey);
+        builder.ConfigureAppConfiguration((_, config) =>
+        {
+            config.AddJsonFile(Path.Combine(AppContext.BaseDirectory, "appsettings.Testing.json"), optional: false, reloadOnChange: false);
+            config.AddInMemoryCollection(new Dictionary<string, string?>
+            {
+                ["ConnectionStrings:Default"] = ConnectionString,
+                ["ContentPacks:Root"] = PacksRoot,
+                ["ContentCards:Root"] = CardsRoot,
+            });
+        });
         builder.ConfigureServices(services =>
         {
             services.RemoveAll<IEmailSender>();
