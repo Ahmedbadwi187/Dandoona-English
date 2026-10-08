@@ -42,10 +42,15 @@ Future<void> _loadFonts() async {
 }
 
 /// One word of a lesson file: `- { word: cake, graphemes: [c, "a:ay", ...], reuse: "little-learners:x/y" }` or `source: svg`.
-final _wordLine = RegExp(r'word: (\w+), graphemes: \[([^\]]*)\], (?:reuse: "little-learners:([\w-]+)/(\w+)"|source: svg)');
+final _wordLine = RegExp(r'word: (\w+), (?:plural: (\w+), )?graphemes: \[([^\]]*)\], (?:reuse: "little-learners:([\w-]+)/(\w+)"|source: svg)');
 
 String _picture(String lesson, String word, String? llLesson, String? llKey) {
   if (llLesson == null) return '$_root/content/art/explorers/$lesson/$word.svg';
+  // the app's own copy when it has one (a picture read from a file can stall the test clock)
+  for (final ext in ['webp', 'svg']) {
+    final bundled = 'images/little_learners/${llLesson.replaceAll('-', '_')}/$llKey.$ext';
+    if (File('assets/$bundled').existsSync()) return bundled;
+  }
   final drawn = File('$_root/content/art/little-learners/$llLesson/$llKey.svg');
   return drawn.existsSync() ? drawn.path : '$_root/content/generated/little-learners/$llLesson/images/$llKey.approved.webp';
 }
@@ -72,8 +77,10 @@ List<Map<String, dynamic>> _lessons(String unit) {
           {
             'word': m.group(1),
             'audio': 'audio/x/${m.group(1)}.mp3',
-            'image': _picture(id, m.group(1)!, m.group(3), m.group(4)),
-            'graphemes': [for (final g in m.group(2)!.split(',')) g.trim().replaceAll('"', '')],
+            'image': _picture(id, m.group(1)!, m.group(4), m.group(5)),
+            'graphemes': [for (final g in m.group(3)!.split(',')) g.trim().replaceAll('"', '')],
+            if (m.group(2) != null) 'plural': m.group(2),
+            if (m.group(2) != null) 'pluralAudio': 'audio/x/plural_${m.group(1)}.mp3',
           },
       ],
       'activities': ['sound-tap', 'word-builder', 'read-and-pick'],
@@ -250,5 +257,24 @@ void main() {
     final c = await _open(t, extra: {'demos.v1': '{"e1":["sound-tap","word-builder","read-and-pick"]}'});
     await _game(t, c, 'magic-e-i', 'read-and-pick');
     await expectLater(find.byType(KidsEnglishApp), matchesGoldenFile('$_out/07-read-and-pick-magic-e.png'));
+  });
+
+  testWidgets('08 Read & Pick in Sound Builders: "an ant", then the plural round "cats"', (t) async {
+    final c = await _open(t, extra: {'demos.v1': '{"e1":["sound-tap","word-builder","read-and-pick"]}'});
+    await _game(t, c, 'sound-builders-a', 'read-and-pick');
+    var shotArticle = false;
+    for (var r = 0; r < 4; r++) {
+      final word = t.widget<Text>(find.byKey(const Key('read-word'))).data!;
+      if (word == 'ant' && !shotArticle) {
+        shotArticle = true;
+        await expectLater(find.byType(KidsEnglishApp), matchesGoldenFile('$_out/08-read-and-pick-an-ant.png'));
+      }
+      await t.tap(find.byKey(Key('read-$word')));
+      await t.pump(const Duration(seconds: 2));
+      await t.pumpAndSettle();
+      await _settle(t);
+    }
+    expect(t.widget<Text>(find.byKey(const Key('read-word'))).data, 'cats');
+    await expectLater(find.byType(KidsEnglishApp), matchesGoldenFile('$_out/09-read-and-pick-plural.png'));
   });
 }

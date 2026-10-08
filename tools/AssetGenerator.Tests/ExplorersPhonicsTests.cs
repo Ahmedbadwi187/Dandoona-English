@@ -142,12 +142,15 @@ public class ExplorersPhonicsTests
         lessons.Select(l => l.Id).ShouldBe(["sound-builders-a", "sound-builders-e", "sound-builders-i", "sound-builders-o", "sound-builders-u"]);
         lessons.ShouldAllBe(l => l.Words.Count == 4 && l.Activities.SequenceEqual(new[] { "sound-tap", "word-builder", "read-and-pick" }));
         lessons.ShouldAllBe(l => l.Activities.All(a => l.Narration.Instructions.ContainsKey(a)));
-        // every word is three sounds with the lesson's vowel in the middle
+        // every word is two or three sounds with the lesson's short vowel; one word starts with it (an ant, an egg)
         foreach (var l in lessons)
         {
             var vowel = l.Id.Substring(l.Id.Length - 1);
-            l.Words.ShouldAllBe(w => w.Graphemes!.Count == 3 && w.Graphemes[1] == vowel);
+            l.Words.ShouldAllBe(w => (w.Graphemes!.Count == 2 || w.Graphemes.Count == 3) && w.Graphemes.Contains(vowel));
+            // one plural each, shown with pictures: one cat, two cats
+            l.Words.Count(w => w.Plural is not null).ShouldBe(1);
         }
+        lessons.SelectMany(l => l.Words).Where(w => w.Graphemes![0].Length == 1 && "aeiou".Contains(w.Graphemes[0])).Select(w => w.Word).ShouldBe(["ant", "egg"]);
         var units = CurriculumReader.LoadUnits(curriculum).Single(u => u.Track == "explorers" && u.Id == "sound-builders");
         units.Chest!.Accessory.ShouldBe("explorer-hat");
         units.Story!.Pages.Count.ShouldBe(5);

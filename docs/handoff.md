@@ -159,11 +159,14 @@ What is built (each part its own commit on `explorers`):
   5-page decodable story. Two review stops on the Explorers map: after Blends and after Vowel Teams.
 - Screenshots: `docs/design-options/explorers/phase-2/` (`flutter test test_screenshots/explorers_phase2_test.dart --update-goldens`;
   run one test at a time with `--plain-name` if a run stalls: a picture read from a file can stall the test clock).
+- **Grammar early, by pictures only**: plural -s in Sound Builders (`plural: cats`; Read & Pick ends with "cats": two pictures
+  right, one wrong, "One cat. Two cats!"), "a"/"an" shown before every word in Read & Pick (from its first sound). ant and egg
+  replaced bag and pen so "an" appears. is/are is planned for My Sentences; Grammar Starters reviews these (notes in explorers.yaml).
 - Look at: "five" and "nine" reuse the Little Learners counting pictures (balloons), so in Read & Pick the child counts; "kick",
   "math" and "path" are the hardest new drawings to read at a glance.
 
 **To do on the owner's PC (in this order):**
-1. `dotnet run --project tools/AssetGenerator -- audio --track explorers --dry-run` (estimate with Phase 2: 6,467 characters, about
+1. `dotnet run --project tools/AssetGenerator -- audio --track explorers --dry-run` (estimate with Phase 2 and the plural lines: 6,557 characters, about
    **$0.52** (Phase 1 alone: 2,388, $0.19);
    check the remaining ElevenLabs credits first), then without `--dry-run`, then `export --track explorers`. Until then the Sound
    Builders and Phase 2 lessons stay out of the catalog (their islands show "Soon") and the Explorers unit names have no voice.
@@ -171,5 +174,5 @@ What is built (each part its own commit on `explorers`):
 2. Listen to every phoneme: `docs/explorers-phonemes.md` (32 sounds; fix `say` or record overrides).
 3. Run the app on the emulator with an Explorers child (6-8, or accept the offer for a Little Learner) and look at the games.
 Spend: **about $5.51 of $50** (nothing was spent in the cloud sessions; Phases 1+2 add about $0.52 of audio when generated; no images).
-Tests on `explorers`: Flutter 415, generator 98, application 36. On `explorers-phase-2`: Flutter 421, generator 102, application 36
+Tests on `explorers`: Flutter 415, generator 98, application 36. On `explorers-phase-2`: Flutter 424, generator 103, application 36
 (API integration tests need Docker + SQL Server; not run there).

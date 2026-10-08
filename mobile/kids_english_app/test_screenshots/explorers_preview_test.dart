@@ -40,8 +40,8 @@ Future<void> _loadFonts() async {
 // The five lessons as in content/curriculum/sound-builders-*.yaml: a picture reused from Little Learners (in the app's assets)
 // or one of the new drawings (read from content/art).
 final _lessons = {
-  'a': [('cat', 'images/little_learners/letter_c/cat.webp'), ('jam', null), ('bag', null), ('hat', 'images/little_learners/letter_h/hat.svg')],
-  'e': [('hen', null), ('bed', '$_ll/my-home-1/bed.svg'), ('pen', null), ('ten', '$_ll/number-7-10/ten.svg')],
+  'a': [('cat', 'images/little_learners/letter_c/cat.webp'), ('jam', null), ('ant', 'images/little_learners/letter_a/ant.webp'), ('hat', 'images/little_learners/letter_h/hat.svg')],
+  'e': [('hen', null), ('bed', '$_ll/my-home-1/bed.svg'), ('egg', 'images/little_learners/letter_e/egg.svg'), ('ten', '$_ll/number-7-10/ten.svg')],
   'i': [('pig', 'images/little_learners/letter_p/pig.webp'), ('fig', null), ('bin', null), ('six', '$_ll/number-4-6/six.svg')],
   'o': [('dog', 'images/little_learners/letter_d/dog.webp'), ('pot', null), ('box', 'images/little_learners/letter_x/box.svg'), ('mop', null)],
   'u': [('bug', null), ('nut', 'images/little_learners/letter_n/nut.svg'), ('bus', '$_ll/transport-1/bus.svg'), ('cup', null)],
@@ -63,7 +63,7 @@ TrackContent _explorers() {
           'instructions': {'sound-tap': 'x.mp3', 'word-builder': 'x.mp3', 'read-and-pick': 'x.mp3'},
         },
         'words': [
-          for (final (w, img) in e.value) {'word': w, 'audio': 'audio/x/$w.mp3', 'image': img ?? '$_art/sound-builders-${e.key}/$w.svg', 'graphemes': w.split('')},
+          for (final (w, img) in e.value) {'word': w, 'audio': 'audio/x/$w.mp3', 'image': img ?? '$_art/sound-builders-${e.key}/$w.svg', 'graphemes': w == 'egg' ? ['e', 'gg:g'] : w.split(''), if (const {'cat', 'hen', 'pig', 'dog', 'bug'}.contains(w)) 'plural': '${w}s'},
         ],
         'activities': ['sound-tap', 'word-builder', 'read-and-pick'],
       },

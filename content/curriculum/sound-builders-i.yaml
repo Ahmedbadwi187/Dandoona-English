@@ -5,7 +5,7 @@ track: explorers
 level: a1
 order: 3
 words:
-  - { word: pig, graphemes: [p, i, g], reuse: "little-learners:letter-p/pig" }
+  - { word: pig, plural: pigs, graphemes: [p, i, g], reuse: "little-learners:letter-p/pig" }
   - { word: fig, graphemes: [f, i, g], source: svg, imagePrompt: "a purple fig cut open" }
   - { word: bin, graphemes: [b, i, n], source: svg, imagePrompt: "a green kitchen bin" }
   - { word: six, graphemes: [s, i, x], reuse: "little-learners:number-4-6/six" }

@@ -14,23 +14,23 @@ How to check and fix:
 
 | | Sound | IPA | Voice reads | File to listen to | Words that use it |
 |---|---|---|---|---|---|
-| [ ] | **a** | `/æ/` | "aa" | `content/generated/explorers/phonemes/audio/phoneme-a.gen.mp3` | cat, jam, bag, hat |
-| [ ] | **e** | `/ɛ/` | "eh" | `content/generated/explorers/phonemes/audio/phoneme-e.gen.mp3` | hen, bed, pen, ten |
+| [ ] | **a** | `/æ/` | "aa" | `content/generated/explorers/phonemes/audio/phoneme-a.gen.mp3` | cat, jam, ant, hat |
+| [ ] | **e** | `/ɛ/` | "eh" | `content/generated/explorers/phonemes/audio/phoneme-e.gen.mp3` | hen, bed, egg, ten |
 | [ ] | **i** | `/ɪ/` | "ih" | `content/generated/explorers/phonemes/audio/phoneme-i.gen.mp3` | pig, fig, bin, six |
 | [ ] | **o** | `/ɒ/` | "aw" | `content/generated/explorers/phonemes/audio/phoneme-o.gen.mp3` | dog, pot, box, mop |
 | [ ] | **u** | `/ʌ/` | "uh" | `content/generated/explorers/phonemes/audio/phoneme-u.gen.mp3` | bug, nut, bus, cup |
-| [ ] | **b** | `/b/` | "buh" | `content/generated/explorers/phonemes/audio/phoneme-b.gen.mp3` | bag, bed, bin, box, bug, bus |
+| [ ] | **b** | `/b/` | "buh" | `content/generated/explorers/phonemes/audio/phoneme-b.gen.mp3` | bed, bin, box, bug, bus |
 | [ ] | **c** | `/k/` | "kuh" | `content/generated/explorers/phonemes/audio/phoneme-c.gen.mp3` | cat, cup |
 | [ ] | **d** | `/d/` | "duh" | `content/generated/explorers/phonemes/audio/phoneme-d.gen.mp3` | bed, dog |
 | [ ] | **f** | `/f/` | "fff" | `content/generated/explorers/phonemes/audio/phoneme-f.gen.mp3` | fig |
-| [ ] | **g** | `/g/` | "guh" | `content/generated/explorers/phonemes/audio/phoneme-g.gen.mp3` | bag, pig, fig, dog, bug |
+| [ ] | **g** | `/g/` | "guh" | `content/generated/explorers/phonemes/audio/phoneme-g.gen.mp3` | egg (gg), pig, fig, dog, bug |
 | [ ] | **h** | `/h/` | "huh" | `content/generated/explorers/phonemes/audio/phoneme-h.gen.mp3` | hat, hen |
 | [ ] | **j** | `/dʒ/` | "juh" | `content/generated/explorers/phonemes/audio/phoneme-j.gen.mp3` | jam |
 | [ ] | **m** | `/m/` | "mmm" | `content/generated/explorers/phonemes/audio/phoneme-m.gen.mp3` | jam, mop |
-| [ ] | **n** | `/n/` | "nnn" | `content/generated/explorers/phonemes/audio/phoneme-n.gen.mp3` | hen, pen, ten, bin, nut |
-| [ ] | **p** | `/p/` | "puh" | `content/generated/explorers/phonemes/audio/phoneme-p.gen.mp3` | pen, pig, pot, mop, cup |
+| [ ] | **n** | `/n/` | "nnn" | `content/generated/explorers/phonemes/audio/phoneme-n.gen.mp3` | hen, ten, bin, nut, ant |
+| [ ] | **p** | `/p/` | "puh" | `content/generated/explorers/phonemes/audio/phoneme-p.gen.mp3` | pig, pot, mop, cup |
 | [ ] | **s** | `/s/` | "sss" | `content/generated/explorers/phonemes/audio/phoneme-s.gen.mp3` | six, bus |
-| [ ] | **t** | `/t/` | "tuh" | `content/generated/explorers/phonemes/audio/phoneme-t.gen.mp3` | cat, hat, ten, pot, nut |
+| [ ] | **t** | `/t/` | "tuh" | `content/generated/explorers/phonemes/audio/phoneme-t.gen.mp3` | cat, hat, ten, pot, nut, ant |
 | [ ] | **x** | `/ks/` | "ks" | `content/generated/explorers/phonemes/audio/phoneme-x.gen.mp3` | six, box |
 | [ ] | **l** | `/l/` | "lll" | `content/generated/explorers/phonemes/audio/phoneme-l.gen.mp3` | lunch, flag, clap, plum, blocks, lamp, plane, snail |
 | [ ] | **r** | `/r/` | "rrr" | `content/generated/explorers/phonemes/audio/phoneme-r.gen.mp3` | rock, frog, crab, drum, truck, grapes, rose, rain, train, tree |

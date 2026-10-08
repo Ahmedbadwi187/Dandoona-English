@@ -160,6 +160,10 @@ units:
     color: red
     narration: { title: "More Sight Words", welcome: "More words we see a lot!", celebration: "Wonderful reading!", lines: { locked: "Finish Sight Words first!" } }
 
+  # Grammar comes early, inside the units, always through examples and pictures and never by its name: plurals with -s in
+  # Sound Builders (Read & Pick: one cat, two cats), "a"/"an" whenever a word is read with its picture (a cat, an ant),
+  # and is/are here in My Sentences (one picture: "The cat is big." / two: "The cats are big."). Grammar Starters reviews
+  # and extends these patterns; it does not introduce them.
   - id: my-sentences
     order: 9
     delivery: pack
@@ -192,6 +196,7 @@ units:
     color: orange
     narration: { title: "Numbers and Time", welcome: "What time is it?", celebration: "You can tell the time!", lines: { locked: "Finish Numbers and Time first!" } }
 
+  # Reviews and extends what the earlier units showed (-s plurals, a/an, is/are) with new examples: no grammar terms.
   - id: grammar-starters
     order: 13
     delivery: pack

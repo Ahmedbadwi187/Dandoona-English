@@ -5,7 +5,7 @@ track: explorers
 level: a1
 order: 4
 words:
-  - { word: dog, graphemes: [d, o, g], reuse: "little-learners:letter-d/dog" }
+  - { word: dog, plural: dogs, graphemes: [d, o, g], reuse: "little-learners:letter-d/dog" }
   - { word: pot, graphemes: [p, o, t], source: svg, imagePrompt: "a cooking pot with a lid" }
   - { word: box, graphemes: [b, o, x], reuse: "little-learners:letter-x/box" }
   - { word: mop, graphemes: [m, o, p], source: svg, imagePrompt: "a mop for the floor" }
