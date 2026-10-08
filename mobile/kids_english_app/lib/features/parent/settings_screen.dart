@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../settings/settings.dart';
+import '../sync/sync_controller.dart' show defaultApiBaseUrl;
 import '../sync/sync_section.dart';
 
 /// Parent settings: language, session timer (default 15 min), unlock all letters.
@@ -51,6 +53,30 @@ class SettingsScreen extends ConsumerWidget {
             value: settings.unlockAll,
             onChanged: notifier.setUnlockAll,
           ),
+          if (defaultApiBaseUrl.isNotEmpty) ...[
+            const SizedBox(height: 12),
+            const Divider(),
+            const SizedBox(height: 8),
+            Text(s('cardsTitle'), style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 18)),
+            const SizedBox(height: 4),
+            Text(s('cardsHint')),
+            const SizedBox(height: 8),
+            SelectableText(cardsUrl(defaultApiBaseUrl), key: const Key('cards-link'), textDirection: TextDirection.ltr),
+            const SizedBox(height: 4),
+            Align(
+              alignment: AlignmentDirectional.centerStart,
+              child: OutlinedButton.icon(
+                key: const Key('cards-copy'),
+                onPressed: () async {
+                  final messenger = ScaffoldMessenger.of(context);
+                  await Clipboard.setData(ClipboardData(text: cardsUrl(defaultApiBaseUrl)));
+                  messenger.showSnackBar(SnackBar(content: Text(s('cardsCopied'))));
+                },
+                icon: const Icon(Icons.copy_rounded),
+                label: Text(s('cardsCopy')),
+              ),
+            ),
+          ],
           const SizedBox(height: 20),
           const SyncSection(),
         ],
@@ -58,3 +84,6 @@ class SettingsScreen extends ConsumerWidget {
     );
   }
 }
+
+/// The address of the printable parent cards on the server (the same page for everyone).
+String cardsUrl(String baseUrl) => '${baseUrl.replaceAll(RegExp(r'/+$'), '')}/cards';

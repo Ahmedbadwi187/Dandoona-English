@@ -30,6 +30,9 @@ public class ApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
     /// <summary>A throwaway packs folder the API serves at /packs (tests write pack files into it).</summary>
     public string PacksRoot { get; } = Directory.CreateTempSubdirectory("packs").FullName;
 
+    /// <summary>A throwaway cards folder the API serves at /cards.</summary>
+    public string CardsRoot { get; } = Directory.CreateTempSubdirectory("cards").FullName;
+
     public async Task InitializeAsync()
     {
         if (_sql is not null) await _sql.StartAsync();
@@ -44,6 +47,7 @@ public class ApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
         if (_sql is not null) await _sql.DisposeAsync();
         await base.DisposeAsync();
         Directory.Delete(PacksRoot, recursive: true);
+        Directory.Delete(CardsRoot, recursive: true);
     }
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
@@ -53,6 +57,7 @@ public class ApiFactory : WebApplicationFactory<Program>, IAsyncLifetime
         builder.UseSetting("RateLimiting:AuthPermitsPerMinute", "10000");
         builder.UseSetting("Jwt:Key", "integration-tests-only-signing-key-0123456789");
         builder.UseSetting("ContentPacks:Root", PacksRoot);
+        builder.UseSetting("ContentCards:Root", CardsRoot);
         builder.UseSetting("Stats:Key", StatsKey);
         builder.ConfigureServices(services =>
         {

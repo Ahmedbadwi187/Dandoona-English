@@ -29,6 +29,7 @@ var approve = new Command("approve", "Approve a reviewed image variant and recor
 var decisions = new Command("decisions", "Write docs/asset-decisions.md.");
 var status = new Command("status", "Show missing/unapproved assets and phonemes without your own recording.") { lessonOpt, trackOpt };
 var review = new Command("review", "Write content/generated/review.html: all candidate images with file names (no API calls).") { lessonOpt, trackOpt };
+var cards = new Command("cards", "Write the printable parent cards (cards/<track>/*.html) from content/parent/tips.yaml.") { trackOpt };
 var export = new Command("export", "Encode approved assets into the Flutter assets folder and write the lesson JSON.") { trackOpt, forceOpt };
 
 audio.SetAction((pr, ct) => Guard(async () =>
@@ -98,6 +99,14 @@ decisions.SetAction((pr, ct) => Guard(() =>
     return Task.FromResult(0);
 }));
 
+cards.SetAction((pr, ct) => Guard(() =>
+{
+    var layout = Layout.Find(pr.GetValue(rootOpt));
+    var files = ParentCards.Write(layout, pr.GetValue(trackOpt) ?? "little-learners");
+    Console.WriteLine($"Wrote {files.Count} card page(s) to {ParentCards.OutputDir(layout, pr.GetValue(trackOpt) ?? "little-learners")}");
+    return Task.FromResult(0);
+}));
+
 review.SetAction((pr, ct) => Guard(() =>
 {
     var (layout, lessons) = Load(pr);
@@ -118,7 +127,7 @@ export.SetAction((pr, ct) => Guard(async () =>
 
 var root = new RootCommand("Kids English AssetGenerator (dev-only: produces static .mp3/.webp files; never part of the app or API).")
 {
-    audio, images, all, mascot, approve, status, review, decisions, export
+    audio, images, all, mascot, approve, status, review, decisions, cards, export
 };
 root.Add(rootOpt);
 return await root.Parse(args).InvokeAsync();

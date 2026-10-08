@@ -657,6 +657,8 @@ void main() {
       await tester.pumpWidget(UncontrolledProviderScope(container: container, child: const MaterialApp(home: SettingsScreen())));
       await tester.pump();
       await tester.scrollUntilVisible(find.byKey(const Key('sync-delete')), 200, scrollable: find.byType(Scrollable).first);
+      await tester.ensureVisible(find.byKey(const Key('sync-delete')));
+      await tester.pump();
 
       await tester.tap(find.byKey(const Key('sync-delete')));
       await tester.pumpAndSettle();

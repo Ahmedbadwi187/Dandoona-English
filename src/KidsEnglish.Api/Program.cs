@@ -63,6 +63,7 @@ app.UseSerilogRequestLogging();
 app.UseExceptionHandler();
 app.UseStatusCodePages();
 app.UseContentPacks(); // static, anonymous, before rate limits and auth
+app.UseContentCards(); // the printable parent cards: static, anonymous, no tracking
 app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();
