@@ -4,9 +4,9 @@ track: little-learners
 level: pre-a1
 order: 2
 words:
-  - { word: point, imagePrompt: "Dandoona point", source: openai }
-  - { word: think, imagePrompt: "Dandoona think", source: openai }
-  - { word: run, imagePrompt: "Dandoona run", mascot: true, source: openai }
+  - { word: point, imagePrompt: "Dandoona point", source: openai, says: "Dandoona says, point!" }
+  - { word: think, imagePrompt: "Dandoona think", source: openai, says: "Dandoona says, think!" }
+  - { word: run, imagePrompt: "Dandoona run", mascot: true, source: openai, says: "Dandoona says, run!" }
 narration:
   intro: "More actions! ... Point. ... Think. ... Run!"
   phrases: { point: "I can point.", think: "I can think.", run: "I can run." }
@@ -15,4 +15,7 @@ narration:
     listen-and-tap: "Listen, then tap what Dandoona does!"
     match-picture: "Match each word to its picture!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, sentence, memory, record-and-listen]
+    dandoona-says: "Do what Dandoona says!"
+    sentence: "Listen, then tap the picture that fits!"
+    memory: "Find the matching cards!"
+activities: [listen-and-tap, match-picture, sentence, memory, dandoona-says, record-and-listen]

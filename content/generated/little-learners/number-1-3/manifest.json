@@ -51,6 +51,18 @@
     "instr-record-and-listen": {
       "hash": "0953488676f25f4555a126d39be8e9df051e56e3a0e4fa67b7931a8e71e72b5a",
       "generatedAtUtc": "2026-10-07T17:45:31.2714536Z"
+    },
+    "instr-count-along": {
+      "hash": "b7ca9ea86927c3b52413bd53adcfbb1e5e42eaaebed8cc46baced0b8889335d7",
+      "generatedAtUtc": "2026-10-08T11:22:41.2214772Z"
+    },
+    "instr-memory": {
+      "hash": "52cb2e853f37931bc66ba9192f7638b9d4237547be3bf263dd4f621bc409fe85",
+      "generatedAtUtc": "2026-10-08T11:22:42.4279862Z"
+    },
+    "instr-trace": {
+      "hash": "a389eafc284559ba8f14d769ba16e824197473d098bc3aa14592f0e5b9a4af0d",
+      "generatedAtUtc": "2026-10-08T11:22:43.5839413Z"
     }
   }
 }

@@ -18,4 +18,5 @@ narration:
     match-picture: "Match each word to its picture!"
     record-and-listen: "Listen, then say it!"
     color-the-object: "Color the pumpkin orange!"
+    mix-colors: "Mix the colors! What do you get?"
 activities: [listen-and-tap, match-picture, record-and-listen, mix-colors, color-the-object]

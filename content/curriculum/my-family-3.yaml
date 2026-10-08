@@ -15,4 +15,6 @@ narration:
     listen-and-tap: "Listen, then tap the person!"
     match-picture: "Match each word to its picture!"
     record-and-listen: "Listen, then say it!"
+    memory: "Find the matching cards!"
+    sort: "Put it where it belongs!"
 activities: [listen-and-tap, match-picture, memory, sort, record-and-listen]

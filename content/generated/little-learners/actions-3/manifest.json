@@ -51,6 +51,26 @@
     "instr-record-and-listen": {
       "hash": "0953488676f25f4555a126d39be8e9df051e56e3a0e4fa67b7931a8e71e72b5a",
       "generatedAtUtc": "2026-10-08T07:30:45.5088659Z"
+    },
+    "says-dance": {
+      "hash": "675e52d1837b561aa6fdc4dcc7ec88648ead76de8f72ea34b554b91e88ce65c1",
+      "generatedAtUtc": "2026-10-08T11:23:26.6072Z"
+    },
+    "says-sit": {
+      "hash": "9fcdfdce48fa7f49d6e7b3e58aae6bd87ea77690d6d50b0f343997bb343d29ea",
+      "generatedAtUtc": "2026-10-08T11:23:27.7108462Z"
+    },
+    "says-sleep": {
+      "hash": "1b3e40bfc602b9eb1da9343daa90cbce89b676257b63174d62ccd90c747c3559",
+      "generatedAtUtc": "2026-10-08T11:23:28.8363261Z"
+    },
+    "instr-dandoona-says": {
+      "hash": "897d101933ebcf7623df300efae4f39a42ee0ce5903ed4e4a5d55fcc9e6cc563",
+      "generatedAtUtc": "2026-10-08T11:23:29.9483423Z"
+    },
+    "instr-memory": {
+      "hash": "52cb2e853f37931bc66ba9192f7638b9d4237547be3bf263dd4f621bc409fe85",
+      "generatedAtUtc": "2026-10-08T11:23:31.0745187Z"
     }
   }
 }

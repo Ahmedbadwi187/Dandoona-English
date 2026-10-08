@@ -179,7 +179,7 @@ void main() {
     testWidgets('tracing numbers: a counting lesson traces its numerals, the first said by its word', (t) async {
       final l = lesson('number-1-3');
       final audio = await pump(t, TraceActivity(lesson: l, onFinished: (_) {}));
-      expect(audio.played, ['asset:${l.words.first.audio}']);
+      expect(audio.played, ['asset:${l.audio.instructions['trace']}', 'asset:${l.words.first.audio}']); // how to, then the first number
       expect(find.byKey(const Key('trace-board')), findsOneWidget);
     });
 
@@ -233,7 +233,7 @@ void main() {
       }
       await t.pump(const Duration(seconds: 1));
       expect(result?.stars, 3);
-      expect(audio.played.length, 6); // each card said its word
+      expect(audio.played.length, 7); // how to play, then each card said its word
     });
 
     testWidgets('memory: opposite words are the pair, a wrong pair closes again and counts', (t) async {
@@ -276,7 +276,7 @@ void main() {
         await t.pump(const Duration(milliseconds: 100));
       }
       expect(result?.stars, 2);
-      expect(audio.played.length, rounds.length + 1);
+      expect(audio.played.length, rounds.length + 2); // how to play, every tap says its word
     });
 
     testWidgets('sentences: the sentence is said with a gap on the screen and the picture fills it', (t) async {
@@ -301,7 +301,7 @@ void main() {
       expect(find.byKey(const Key('mix-option-orange')), findsOneWidget);
       await t.tap(find.byKey(const Key('mix-option-orange')));
       await t.pump(const Duration(milliseconds: 100));
-      expect(audio.played, ['asset:${l.audio.colorName}']);
+      expect(audio.played, ['asset:${l.audio.instructions['mix-colors']}', 'asset:${l.audio.colorName}']);
       await t.pump(const Duration(milliseconds: 100));
       expect(result, isNull); // a second mix
       final second = (colorRecipes.keys.where((k) => k != 'orange').toList()..shuffle(Random(8))).first;

@@ -59,6 +59,16 @@ public class ExtrasContentTests
     }
 
     [Fact]
+    public void Every_game_of_the_later_units_has_a_spoken_instruction_and_dandoona_says_is_in_every_actions_lesson()
+    {
+        var all = Lessons();
+        foreach (var l in all.Where(l => !l.Id.StartsWith("letter-")))
+            foreach (var a in l.Activities.Where(a => a != "trace-small"))
+                l.Narration.Instructions.ShouldContainKey(a, $"{l.Id} has no spoken instruction for {a}");
+        foreach (var l in all.Where(l => l.Unit == "actions")) l.Activities.ShouldContain("dandoona-says");
+    }
+
+    [Fact]
     public void Opposites_are_pairs_of_each_other()
     {
         var words = Lessons().Where(l => l.Unit == "opposites").SelectMany(l => l.Words).ToList();

@@ -79,6 +79,10 @@
     "instr-habitat": {
       "hash": "09ee605a0d5235d5d4f3702134112e892b18b701cfddfef4795e8f1e13a7d61e",
       "generatedAtUtc": "2026-10-08T09:44:09.4561492Z"
+    },
+    "instr-memory": {
+      "hash": "52cb2e853f37931bc66ba9192f7638b9d4237547be3bf263dd4f621bc409fe85",
+      "generatedAtUtc": "2026-10-08T11:23:03.0718024Z"
     }
   }
 }

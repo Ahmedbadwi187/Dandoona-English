@@ -15,4 +15,7 @@ narration:
     listen-and-tap: "Listen, then tap the face!"
     match-picture: "Match each word to its face!"
     record-and-listen: "Listen, then say it!"
+    sentence: "Listen, then tap the picture that fits!"
+    memory: "Find the matching cards!"
+    story-feeling: "How does Dandoona feel?"
 activities: [listen-and-tap, match-picture, sentence, memory, story-feeling, record-and-listen]

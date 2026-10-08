@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "little-learners",
-  "generatedAt": "2026-10-08T10:31:29.2950288Z",
+  "generatedAt": "2026-10-08T11:24:33.6162894Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -1443,6 +1443,7 @@
               "color-the-object": "audio/little_learners/color_green/instr_color_the_object.mp3",
               "listen-and-tap": "audio/little_learners/color_green/instr_listen_and_tap.mp3",
               "match-picture": "audio/little_learners/color_green/instr_match_picture.mp3",
+              "mix-colors": "audio/little_learners/color_green/instr_mix_colors.mp3",
               "record-and-listen": "audio/little_learners/color_green/instr_record_and_listen.mp3"
             },
             "colorName": "audio/little_learners/color_green/color_name.mp3"
@@ -1499,6 +1500,7 @@
               "color-the-object": "audio/little_learners/color_orange/instr_color_the_object.mp3",
               "listen-and-tap": "audio/little_learners/color_orange/instr_listen_and_tap.mp3",
               "match-picture": "audio/little_learners/color_orange/instr_match_picture.mp3",
+              "mix-colors": "audio/little_learners/color_orange/instr_mix_colors.mp3",
               "record-and-listen": "audio/little_learners/color_orange/instr_record_and_listen.mp3"
             },
             "colorName": "audio/little_learners/color_orange/color_name.mp3"
@@ -1555,6 +1557,7 @@
               "color-the-object": "audio/little_learners/color_purple/instr_color_the_object.mp3",
               "listen-and-tap": "audio/little_learners/color_purple/instr_listen_and_tap.mp3",
               "match-picture": "audio/little_learners/color_purple/instr_match_picture.mp3",
+              "mix-colors": "audio/little_learners/color_purple/instr_mix_colors.mp3",
               "record-and-listen": "audio/little_learners/color_purple/instr_record_and_listen.mp3"
             },
             "colorName": "audio/little_learners/color_purple/color_name.mp3"
@@ -1611,6 +1614,7 @@
               "color-the-object": "audio/little_learners/color_pink/instr_color_the_object.mp3",
               "listen-and-tap": "audio/little_learners/color_pink/instr_listen_and_tap.mp3",
               "match-picture": "audio/little_learners/color_pink/instr_match_picture.mp3",
+              "mix-colors": "audio/little_learners/color_pink/instr_mix_colors.mp3",
               "record-and-listen": "audio/little_learners/color_pink/instr_record_and_listen.mp3"
             },
             "colorName": "audio/little_learners/color_pink/color_name.mp3"
@@ -1897,10 +1901,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 4,
-        "sha256": "8512886c37c44580c58a6584a64e39c835d25b9fc5d78b437c07f50bbace4849",
-        "bytes": 1195891,
-        "manifest": "numbers/v4/manifest.json",
+        "version": 5,
+        "sha256": "1e33b000e41ed1e2b32af2b9b6e14a3fba03c9f011069b42d9f2519e99a73eda",
+        "bytes": 1544249,
+        "manifest": "numbers/v5/manifest.json",
         "lessonIds": [
           "number-1-3",
           "number-4-6",
@@ -1988,10 +1992,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 4,
-        "sha256": "2c6a6b1a2098d828524ce38cd6d07149025e75070eba4e63be2f25bc180ea52d",
-        "bytes": 1565381,
-        "manifest": "shapes/v4/manifest.json",
+        "version": 5,
+        "sha256": "6d60a20f7ffc0a06d346b0a9a4f923a1ebd884326eb6030fa6a2139ceeda0005",
+        "bytes": 1834537,
+        "manifest": "shapes/v5/manifest.json",
         "lessonIds": [
           "shapes-1",
           "shapes-2",
@@ -2080,10 +2084,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 4,
-        "sha256": "e852d48a80c28dc1cb2a1fd779d96ada9d75b969b7044257d590d48c33323abe",
-        "bytes": 3920962,
-        "manifest": "animals/v4/manifest.json",
+        "version": 5,
+        "sha256": "f10780d2328f3d00e08dd87bc6234bd38de445185a5dec6e9effee9a7b049165",
+        "bytes": 4135027,
+        "manifest": "animals/v5/manifest.json",
         "lessonIds": [
           "animals-1",
           "animals-2",
@@ -2169,10 +2173,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 3,
-        "sha256": "a35798ece6ef118b3ea2416380a8781d99aed2e1586373af134551b08d5091af",
-        "bytes": 766521,
-        "manifest": "feelings/v3/manifest.json",
+        "version": 4,
+        "sha256": "ada3daadf71c6c6c354014e406b0213838d738d35dad43b2b4b1f7493d9b4f72",
+        "bytes": 894838,
+        "manifest": "feelings/v4/manifest.json",
         "lessonIds": [
           "feelings-1",
           "feelings-2"
@@ -2254,10 +2258,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 3,
-        "sha256": "802f1ca8acb65060318820b5e33718a31780ad3f7463447fdcbed5672926745f",
-        "bytes": 759056,
-        "manifest": "my_body/v3/manifest.json",
+        "version": 4,
+        "sha256": "bb9a860d23645999a8a32b29412d0d6b73a538525753c80efb98e07ea6bb769d",
+        "bytes": 928620,
+        "manifest": "my_body/v4/manifest.json",
         "lessonIds": [
           "my-body-1",
           "my-body-2"
@@ -2342,10 +2346,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 5,
-        "sha256": "3514534111806150bb0d19722af6f61a9d654828a1907f043370402e8eda2bb4",
-        "bytes": 2309415,
-        "manifest": "actions/v5/manifest.json",
+        "version": 6,
+        "sha256": "2c588b84f022094ba30cde8616c5fb55e880a37b9663de85ff8cd71efd3d83e7",
+        "bytes": 2701006,
+        "manifest": "actions/v6/manifest.json",
         "lessonIds": [
           "actions-1",
           "actions-2",
@@ -2433,10 +2437,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 4,
-        "sha256": "78234da66f9de5c2b14d9d0b647e737ee4a259dc8ac8f7b2cf4b9b77ca89cc45",
-        "bytes": 1643152,
-        "manifest": "food/v4/manifest.json",
+        "version": 5,
+        "sha256": "530790d1332239b5bcd359f453c3759753ec55e45da96dc1f27f596d4e17e030",
+        "bytes": 1865111,
+        "manifest": "food/v5/manifest.json",
         "lessonIds": [
           "food-1",
           "food-2",
@@ -2521,10 +2525,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 3,
-        "sha256": "af371611690e01d17aa5b6e22684242ffbf0f2475c016aa85245959dfb22d792",
-        "bytes": 1109756,
-        "manifest": "clothes/v3/manifest.json",
+        "version": 4,
+        "sha256": "ad04d281796263bac64b0c531ae7bafc3b1f54be6e65cb3c939738f312aa142e",
+        "bytes": 1314316,
+        "manifest": "clothes/v4/manifest.json",
         "lessonIds": [
           "clothes-1",
           "clothes-2",
@@ -2611,10 +2615,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 3,
-        "sha256": "ba8941858c2838d5f8aaa4dbc3b77b93c07da6da5c93ae6e8bc1da5b38efa764",
-        "bytes": 1281668,
-        "manifest": "toys/v3/manifest.json",
+        "version": 4,
+        "sha256": "578e8415287d88a5c2174243c2527a0f56ace7e6ac97231d30b68d4dba73aff8",
+        "bytes": 1487449,
+        "manifest": "toys/v4/manifest.json",
         "lessonIds": [
           "toys-1",
           "toys-2",
@@ -2700,10 +2704,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 3,
-        "sha256": "2d3a585de9d4fea7e77d6d15ae74f315b36b26b7a0ff4fe4fa65179ece295c75",
-        "bytes": 1453547,
-        "manifest": "my_family/v3/manifest.json",
+        "version": 4,
+        "sha256": "631736b168b3a063f7833ae548cbbda377cafb4845557433f846b056042f57f3",
+        "bytes": 1653533,
+        "manifest": "my_family/v4/manifest.json",
         "lessonIds": [
           "my-family-1",
           "my-family-2",
@@ -2788,10 +2792,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 3,
-        "sha256": "2468e56ee2295bf86217cc2d5d294eddec6f8453de13f693a0c1452a2d1d49ee",
-        "bytes": 1057401,
-        "manifest": "my_home/v3/manifest.json",
+        "version": 4,
+        "sha256": "e9a70cb65caf829cd36fb1d6f495a3fe3a085e849c06bd9a9eab2ea46d896ea5",
+        "bytes": 1254856,
+        "manifest": "my_home/v4/manifest.json",
         "lessonIds": [
           "my-home-1",
           "my-home-2",
@@ -2879,10 +2883,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 4,
-        "sha256": "4d6c9524c51a1cac295127d3ae6c4c1d69f0ad4f7086445291e5e2a354899ce9",
-        "bytes": 982919,
-        "manifest": "opposites/v4/manifest.json",
+        "version": 5,
+        "sha256": "a386503ce428e1cf840a315ce6d5a6a45371a853c929433f4f121ba005c123db",
+        "bytes": 1085418,
+        "manifest": "opposites/v5/manifest.json",
         "lessonIds": [
           "opposites-1",
           "opposites-2"
@@ -2968,10 +2972,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 3,
-        "sha256": "a3d4ab5e9f23b8d87fa0f6503dbf5b93246a99b6ce3de6714683ad96eacb8871",
-        "bytes": 1041733,
-        "manifest": "transport/v3/manifest.json",
+        "version": 4,
+        "sha256": "2cd3247f5f926a9f788b991b854466f8cfddc4db4870bc017ef1837bbeda7868",
+        "bytes": 1244643,
+        "manifest": "transport/v4/manifest.json",
         "lessonIds": [
           "transport-1",
           "transport-2",

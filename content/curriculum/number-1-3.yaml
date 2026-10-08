@@ -16,4 +16,7 @@ narration:
     listen-and-tap: "Listen, then tap that many balloons!"
     match-picture: "Match each number to its balloons!"
     record-and-listen: "Listen, then say it!"
+    memory: "Find the matching cards!"
+    count-along: "Touch each balloon and count!"
+    trace: "Trace the number with your finger!"
 activities: [listen-and-tap, match-picture, memory, count-along, record-and-listen, trace]

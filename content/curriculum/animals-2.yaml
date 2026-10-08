@@ -18,4 +18,7 @@ narration:
     animal-sounds: "Who says this? Tap the animal!"
     habitat: "Where does it live? Tap its home!"
     record-and-listen: "Listen, then say it!"
+    odd-one-out: "Which one does not belong?"
+    sentence: "Listen, then tap the picture that fits!"
+    memory: "Find the matching cards!"
 activities: [listen-and-tap, match-picture, odd-one-out, sentence, memory, animal-sounds, habitat, record-and-listen]

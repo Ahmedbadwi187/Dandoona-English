@@ -59,6 +59,10 @@
     "instr-record-and-listen": {
       "hash": "0953488676f25f4555a126d39be8e9df051e56e3a0e4fa67b7931a8e71e72b5a",
       "generatedAtUtc": "2026-10-06T22:46:41.3608578Z"
+    },
+    "instr-mix-colors": {
+      "hash": "95905de6c32088687140bc2f0c9da144fee07d1842f673315093902814bc7e8b",
+      "generatedAtUtc": "2026-10-08T11:22:36.5632405Z"
     }
   }
 }

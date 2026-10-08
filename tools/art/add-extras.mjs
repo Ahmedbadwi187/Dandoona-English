@@ -118,3 +118,27 @@ for (const unit of later) {
   write(pick, t);
 }
 console.log('Extras added.');
+
+// --- A short spoken instruction for every game (added to the lesson's narration.instructions; needs `audio` afterwards)
+const instructions = {
+  'count-along': 'Touch each balloon and count!',
+  'sort': 'Put it where it belongs!',
+  'memory': 'Find the matching cards!',
+  'odd-one-out': 'Which one does not belong?',
+  'sentence': 'Listen, then tap the picture that fits!',
+  'mix-colors': 'Mix the colors! What do you get?',
+  'build-picture': 'Build the picture with shapes!',
+  'turns': 'Take turns with Dandoona!',
+  'story-feeling': 'How does Dandoona feel?',
+};
+for (const id of files.filter((f) => !f.startsWith('letter-'))) {
+  let t = read(id);
+  const acts = /^activities: \[(.*)\]$/m.exec(t)?.[1].split(',').map((s) => s.trim()) ?? [];
+  const lines = [];
+  for (const a of acts) if (instructions[a] && !new RegExp(`^    ${a}:`, 'm').test(t)) lines.push(`    ${a}: "${instructions[a]}"`);
+  if (/^unit: numbers$/m.test(t) && acts.includes('trace') && !/^    trace:/m.test(t)) lines.push('    trace: "Trace the number with your finger!"');
+  if (!lines.length) continue;
+  t = t.replace(/^activities:/m, lines.join('\n') + '\nactivities:');
+  write(id, t);
+}
+console.log('Instructions added.');

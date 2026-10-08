@@ -12,7 +12,7 @@ Status: [x] done, [ ] to do, [~] started.
    says "capital A" and "small a" when each is tapped; the small letter is traced as well as the capital.
 3. [x] **Animal sounds and where animals live** (Animals): "a cat says meow" for every animal (voice), and a game that puts each animal in its
    home (house, farm, water, wild). Built: `animal-sounds` (hear "Meow! Meow!", tap the animal; rabbit and zebra are quiet so they are not asked) and `habitat` (put the animal in its home, it says "A cow lives on the farm.").
-4. [~] **"Dandoona says"** (Actions): Dandoona says an action and the child does it for real; a gentle timer, no scores. Built (`dandoona-says`, ring timer, green check, always 3 stars) and live in Actions lesson 1. **Waiting for voice credit**: the ElevenLabs monthly quota ran out (40000 credits), so lessons 2 and 3 (`node tools/art/make-lessons.mjs actions` already writes their `says` lines; then `audio` + `export`; about 20 credits left of need ~50) are not switched on yet.
+4. [x] **"Dandoona says"** (Actions): Dandoona says an action and the child does it for real; a gentle timer, no scores. Built (`dandoona-says`, ring timer, green check, always 3 stars). Live in all three Actions lessons.
 5. [x] **Counting for real and tracing numbers** (Numbers): tap each balloon as it is counted; trace the numeral 1-10. Built: `count-along` (touch each balloon, it says the number) and `trace` on the numbers lessons (the numerals one after the other).
 6. [x] **Printable cards for parents** (all units): one page per unit with 3-4 things to look for at home; a web page, no tracking. Built: `AssetGenerator cards` writes cards/little_learners/*.html (15 units + index, English and Arabic, no scripts, nothing loaded from elsewhere) from content/parent/tips.yaml; the API serves them at /cards (static, anonymous, locked-down headers); the parent settings show the link with a copy button.
 7. [x] **More activities on the same content** (all units): odd one out, drag to sort, memory cards. Built: `odd-one-out` (3 of the unit + 1 Letters picture), `sort` (drag or tap into bins; Body, Food, Clothes, Transport, Home, Family), `memory` (every later lesson; Opposites pair a word with its opposite).
@@ -26,9 +26,5 @@ Status: [x] done, [ ] to do, [~] started.
 Rules that stay: no AI or ads or paid services in the product, free licenses, assets bundled or served by our own API, spend under the $25
 cap with a cost estimate first, nothing about a child leaves the phone except through the optional account.
 
-## Spoken instructions still missing (ElevenLabs quota ran out, 40000 credits a month)
-
-These games work without a spoken instruction (they speak the words, phrases and story lines that already exist), but each would be
-friendlier with one short line. Add them to the lesson files under `narration.instructions` (keys: count-along, sort, memory,
-odd-one-out, sentence, mix-colors, build-picture, turns, story-feeling, dandoona-says) and run `audio` + `export` once the quota is back.
-Also pending: the `says` lines of Actions lessons 2 and 3 (see item 4).
+## Voice
+Every game has its spoken instruction and every Actions lesson has its "Dandoona says" lines (generated once the ElevenLabs credit was added; 87 lines, about 19 cents).

@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 1,
+  "track": "little-learners",
+  "unit": "my-home",
+  "version": 4,
+  "contentHash": "5a5b25556f5dfff001c6477181135a89b9fff2a88962d35bbd7dc7615379584d",
+  "lessons": [
+    {
+      "id": "my-home-1",
+      "order": 1,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/my_home_1/intro.mp3",
+        "praise": [
+          "audio/little_learners/my_home_1/praise_0.mp3",
+          "audio/little_learners/my_home_1/praise_1.mp3",
+          "audio/little_learners/my_home_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/my_home_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/my_home_1/instr_match_picture.mp3",
+          "memory": "audio/little_learners/my_home_1/instr_memory.mp3",
+          "record-and-listen": "audio/little_learners/my_home_1/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "bed",
+          "audio": "audio/little_learners/my_home_1/word_bed.mp3",
+          "image": "images/little_learners/my_home_1/bed.svg",
+          "phrase": "audio/little_learners/my_home_1/phrase_bed.mp3",
+          "group": "bedroom",
+          "phraseText": "This is a bed."
+        },
+        {
+          "word": "door",
+          "audio": "audio/little_learners/my_home_1/word_door.mp3",
+          "image": "images/little_learners/my_home_1/door.svg",
+          "phrase": "audio/little_learners/my_home_1/phrase_door.mp3",
+          "phraseText": "This is a door."
+        },
+        {
+          "word": "window",
+          "audio": "audio/little_learners/my_home_1/word_window.mp3",
+          "image": "images/little_learners/my_home_1/window.svg",
+          "phrase": "audio/little_learners/my_home_1/phrase_window.mp3",
+          "phraseText": "This is a window."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "my-home-2",
+      "order": 2,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/my_home_2/intro.mp3",
+        "praise": [
+          "audio/little_learners/my_home_2/praise_0.mp3",
+          "audio/little_learners/my_home_2/praise_1.mp3",
+          "audio/little_learners/my_home_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/my_home_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/my_home_2/instr_match_picture.mp3",
+          "memory": "audio/little_learners/my_home_2/instr_memory.mp3",
+          "odd-one-out": "audio/little_learners/my_home_2/instr_odd_one_out.mp3",
+          "record-and-listen": "audio/little_learners/my_home_2/instr_record_and_listen.mp3",
+          "sentence": "audio/little_learners/my_home_2/instr_sentence.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "lamp",
+          "audio": "audio/little_learners/my_home_2/word_lamp.mp3",
+          "image": "images/little_learners/my_home_2/lamp.svg",
+          "phrase": "audio/little_learners/my_home_2/phrase_lamp.mp3",
+          "phraseText": "This is a lamp."
+        },
+        {
+          "word": "table",
+          "audio": "audio/little_learners/my_home_2/word_table.mp3",
+          "image": "images/little_learners/my_home_2/table.svg",
+          "phrase": "audio/little_learners/my_home_2/phrase_table.mp3",
+          "group": "kitchen",
+          "phraseText": "This is a table."
+        },
+        {
+          "word": "chair",
+          "audio": "audio/little_learners/my_home_2/word_chair.mp3",
+          "image": "images/little_learners/my_home_2/chair.svg",
+          "phrase": "audio/little_learners/my_home_2/phrase_chair.mp3",
+          "group": "kitchen",
+          "phraseText": "This is a chair."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "odd-one-out",
+        "sentence",
+        "memory",
+        "record-and-listen"
+      ],
+      "odd": [
+        "apple",
+        "cat",
+        "car",
+        "ball",
+        "tree"
+      ]
+    },
+    {
+      "id": "my-home-3",
+      "order": 3,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/my_home_3/intro.mp3",
+        "praise": [
+          "audio/little_learners/my_home_3/praise_0.mp3",
+          "audio/little_learners/my_home_3/praise_1.mp3",
+          "audio/little_learners/my_home_3/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/my_home_3/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/my_home_3/instr_match_picture.mp3",
+          "memory": "audio/little_learners/my_home_3/instr_memory.mp3",
+          "record-and-listen": "audio/little_learners/my_home_3/instr_record_and_listen.mp3",
+          "sort": "audio/little_learners/my_home_3/instr_sort.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "sofa",
+          "audio": "audio/little_learners/my_home_3/word_sofa.mp3",
+          "image": "images/little_learners/my_home_3/sofa.svg",
+          "phrase": "audio/little_learners/my_home_3/phrase_sofa.mp3",
+          "group": "living",
+          "phraseText": "This is a sofa."
+        },
+        {
+          "word": "key",
+          "audio": "audio/little_learners/my_home_3/word_key.mp3",
+          "image": "images/little_learners/my_home_3/key.svg",
+          "phrase": "audio/little_learners/my_home_3/phrase_key.mp3",
+          "phraseText": "This is a key."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "sort",
+        "record-and-listen"
+      ],
+      "bins": [
+        {
+          "key": "bedroom",
+          "icon": "bedroom"
+        },
+        {
+          "key": "kitchen",
+          "icon": "kitchen"
+        },
+        {
+          "key": "living",
+          "icon": "living"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/little_learners/my_home_1/instr_listen_and_tap.mp3",
+      "sha256": "b321f97bf1b209ae172af392a051b2f273d2890d12a6e233c2f74039d71b3a58",
+      "bytes": 32226
+    },
+    {
+      "path": "audio/little_learners/my_home_1/instr_match_picture.mp3",
+      "sha256": "cbbd89ce6a80813e7106b74b887e3694e94ccb641b8b6472618d419b531215d1",
+      "bytes": 39750
+    },
+    {
+      "path": "audio/little_learners/my_home_1/instr_memory.mp3",
+      "sha256": "cfbef7b8473dcae0d0808dca55fd5b6a7488a8c1b29943fbce5e301f1a4addb2",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/little_learners/my_home_1/instr_record_and_listen.mp3",
+      "sha256": "edeeb5ee6203244585ff4d24f1bab00a626a5a582e6dae14e49e05bb6342e8c2",
+      "bytes": 31391
+    },
+    {
+      "path": "audio/little_learners/my_home_1/intro.mp3",
+      "sha256": "e886d8a753e56c9e5ee35e06b60ade145828317c94e37ee8ababa4fc39e40e6f",
+      "bytes": 69425
+    },
+    {
+      "path": "audio/little_learners/my_home_1/phrase_bed.mp3",
+      "sha256": "6aac6b99bb70a9e8208a1e5ebf1d97b7a1614adb287576cb4ecc9510f3d6a7e8",
+      "bytes": 24285
+    },
+    {
+      "path": "audio/little_learners/my_home_1/phrase_door.mp3",
+      "sha256": "9f8df6f65e513600b8ff0a6680e410968b68b7dd533c30d9f6ab6f1f6f291a57",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/little_learners/my_home_1/phrase_window.mp3",
+      "sha256": "b469b61ed3f843a415e63d5a3a845ad6a3ffa12b984a95f15097de76dcc0f528",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/little_learners/my_home_1/praise_0.mp3",
+      "sha256": "ff214abe3c79f124dcad576be52f89c71d6d4fb7c9b392151e4aa2b0f86160ca",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/little_learners/my_home_1/praise_1.mp3",
+      "sha256": "004f558590241289bb1063f60506e794861290ea86efdb9d2c218c0c4c367745",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/my_home_1/praise_2.mp3",
+      "sha256": "8b25a1d234a6b429ee9b017014422f53b7082ee8ef1fcd72d98bf0fd0fbf69c1",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/my_home_1/word_bed.mp3",
+      "sha256": "7e6913d247980d91b4a798eac46a9a8540a1472d19ccbef6d78f272e78155aa0",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/little_learners/my_home_1/word_door.mp3",
+      "sha256": "b131b063d47a90a3a0624d4ea3fce8405666283a693a79695e0ce9e63179f78e",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/little_learners/my_home_1/word_window.mp3",
+      "sha256": "a1bfd25cfa1995ab951a51bed9de7000f6c5cfb3e6e3ed0ac4ba5d6eb3e836e7",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/little_learners/my_home_2/instr_listen_and_tap.mp3",
+      "sha256": "7e12d510dd3226bc39c29360e9555626f6594f3b81c3c08fb2471d9362c02a17",
+      "bytes": 33062
+    },
+    {
+      "path": "audio/little_learners/my_home_2/instr_match_picture.mp3",
+      "sha256": "2dcd7be09e0ac28bfb8a34b3794fecfbad86f1a0d505a69d40c467fc6592b043",
+      "bytes": 41004
+    },
+    {
+      "path": "audio/little_learners/my_home_2/instr_memory.mp3",
+      "sha256": "af9187cf75e6f2342b51a1692ca4945539dd15d1d4037f16a4738e564b964060",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/little_learners/my_home_2/instr_odd_one_out.mp3",
+      "sha256": "6a6b7a59288f01f8c00fd6aaf8458fac0078c2fb6c3a5fe5fb681b368ea170b3",
+      "bytes": 29301
+    },
+    {
+      "path": "audio/little_learners/my_home_2/instr_record_and_listen.mp3",
+      "sha256": "ba76bc6f0509b164e3a63601e2239b3e18b4f6c51ecf44082aad648a6bddd188",
+      "bytes": 29301
+    },
+    {
+      "path": "audio/little_learners/my_home_2/instr_sentence.mp3",
+      "sha256": "91fb16f15b957a779de1a17bcef0c1d8f7b8f3d57545df909e5aea8d9f3bd275",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/little_learners/my_home_2/intro.mp3",
+      "sha256": "738acb0f47213a65e5a65232536a5ffe1f7751ea760087d794ee12d42f4b8977",
+      "bytes": 80710
+    },
+    {
+      "path": "audio/little_learners/my_home_2/phrase_chair.mp3",
+      "sha256": "63a503d0271e7604d2d0d7bcc76759e7a634735db550226ce6666a4dd479d31f",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/little_learners/my_home_2/phrase_lamp.mp3",
+      "sha256": "f95f8c5932d8d28ddf7f4765725535b866bdc7378aac545a94703bca806c6998",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/little_learners/my_home_2/phrase_table.mp3",
+      "sha256": "28dd3f955b353f11e89026b478dc36986c09c49175701a05ba456c5606aeb864",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/little_learners/my_home_2/praise_0.mp3",
+      "sha256": "9e5d38a49815c0bb0172e8d3e3bfcfd6b2583741ea7e0a2fc781855a08719c9a",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/my_home_2/praise_1.mp3",
+      "sha256": "377de5ec4912bf8aa6a6de44b21e97cc11e32b69ce82d8999a1a90dc59df357f",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/my_home_2/praise_2.mp3",
+      "sha256": "55a059b1d0c415d6543e62b86802fcd3e79dea0687b8eb354ea59e1582b391af",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/little_learners/my_home_2/word_chair.mp3",
+      "sha256": "cb9229708cb735b670783d0f3cdc83fe106973babb32ce68d304ed963da1aa7f",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/little_learners/my_home_2/word_lamp.mp3",
+      "sha256": "f1c01db6b595ab49dfbe6760815fee0149947c8bf6d483188631a07ca6c29d23",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/little_learners/my_home_2/word_table.mp3",
+      "sha256": "e237b431ffc20784912783d201a4f376807722cda2834f1869dc8d5fe7ba7793",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/little_learners/my_home_3/instr_listen_and_tap.mp3",
+      "sha256": "7b1e4694eb564dfc040d4d89b112ce5a106625a49ca954cf34c227fef0fe4dee",
+      "bytes": 32226
+    },
+    {
+      "path": "audio/little_learners/my_home_3/instr_match_picture.mp3",
+      "sha256": "21ed5dba6042d6376da648af20a838b60a3144c2be2b18c41f7e149726b1352b",
+      "bytes": 41004
+    },
+    {
+      "path": "audio/little_learners/my_home_3/instr_memory.mp3",
+      "sha256": "ced56dffbddc6e78b181043a66e7cad07851e71a111a909cf7acb2f83548bde9",
+      "bytes": 31391
+    },
+    {
+      "path": "audio/little_learners/my_home_3/instr_record_and_listen.mp3",
+      "sha256": "2d8b17c0c68cef2b9b877e30cbbbf7e98ab3e835fcbbdf79af1902ff7abd1b72",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/little_learners/my_home_3/instr_sort.mp3",
+      "sha256": "977ad5bf0a332848c80f4c85e5dfbb0aa2e11c63eb8ff2b87199e9d16389c9dd",
+      "bytes": 27629
+    },
+    {
+      "path": "audio/little_learners/my_home_3/intro.mp3",
+      "sha256": "d9c84bbf28caeddf1a6611f5f99f4143688ee0e78ed5ac0ecffff73db1cbb939",
+      "bytes": 59812
+    },
+    {
+      "path": "audio/little_learners/my_home_3/phrase_key.mp3",
+      "sha256": "aa4f3c52e93f0d593852368cdcbf91b382e73a943574d9bf13fff42741fcd981",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/little_learners/my_home_3/phrase_sofa.mp3",
+      "sha256": "140da5932c0d4f42f4064d089f6bda51f62e4aca9c88b1e49000787425f52467",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/little_learners/my_home_3/praise_0.mp3",
+      "sha256": "57ffb7232824adfc063938ab4970231c6312b3b2134e0a8d9112d4fac6bc70fc",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/my_home_3/praise_1.mp3",
+      "sha256": "2f903a4ba2d5433eabf1b87857736f5a6014cb7f24dbb24f5ef771d41dc60fef",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/my_home_3/praise_2.mp3",
+      "sha256": "d51f93d58cf1a1b42be1ef225b88144f9398fc526dc1566fe0fb437d585d517e",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/my_home_3/word_key.mp3",
+      "sha256": "90f1d8134709a3eabb2ba11df2920a8c4f09ee7ca7408bcd9cdd639b4207736e",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/little_learners/my_home_3/word_sofa.mp3",
+      "sha256": "6086725a3381bd592932e175fb3f65ee6c295a557f04409363158378f064a28e",
+      "bytes": 18852
+    },
+    {
+      "path": "images/little_learners/my_home_1/bed.svg",
+      "sha256": "8fbe2ce2f9f8a6d907bcfc7d39b072eb52e27c9feb051ce52eb1033edf1599da",
+      "bytes": 720
+    },
+    {
+      "path": "images/little_learners/my_home_1/door.svg",
+      "sha256": "e3bd9d141dc4c4cf07b5d3a07263d18fb9e41bd5042f39054cb7ca434fbc683e",
+      "bytes": 568
+    },
+    {
+      "path": "images/little_learners/my_home_1/window.svg",
+      "sha256": "cb5003a6e86d9ab4beca467782e8bd6adeef9e44d4b37cc0fe5c1d1a72f56960",
+      "bytes": 818
+    },
+    {
+      "path": "images/little_learners/my_home_2/chair.svg",
+      "sha256": "eaafc5d704ebf902d352a349ad9ff77d5544414ffec14ba42a1b0f545e1ec04c",
+      "bytes": 541
+    },
+    {
+      "path": "images/little_learners/my_home_2/lamp.svg",
+      "sha256": "16f7e6c202e8d1571a585b24a3c2f25f0715731e29547255b09e8a9273c81007",
+      "bytes": 569
+    },
+    {
+      "path": "images/little_learners/my_home_2/table.svg",
+      "sha256": "e39be9dbc73dc6f33f7ebad1b4446174a69404e43eef01c1fd859e835baf81d5",
+      "bytes": 567
+    },
+    {
+      "path": "images/little_learners/my_home_3/key.svg",
+      "sha256": "b35b33a79f33226b40d63f3bb0038eb47923be9490131daf2e66314815c21039",
+      "bytes": 528
+    },
+    {
+      "path": "images/little_learners/my_home_3/sofa.svg",
+      "sha256": "9677f8993a2e6041dd2d5f2d4f04ee8a783071062708473ce6804bc7de87658b",
+      "bytes": 763
+    }
+  ]
+}

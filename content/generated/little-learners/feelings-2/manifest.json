@@ -51,6 +51,18 @@
     "instr-record-and-listen": {
       "hash": "0953488676f25f4555a126d39be8e9df051e56e3a0e4fa67b7931a8e71e72b5a",
       "generatedAtUtc": "2026-10-07T19:33:10.0587227Z"
+    },
+    "instr-memory": {
+      "hash": "52cb2e853f37931bc66ba9192f7638b9d4237547be3bf263dd4f621bc409fe85",
+      "generatedAtUtc": "2026-10-08T11:23:12.3434874Z"
+    },
+    "instr-sentence": {
+      "hash": "3629dfcf9d025930f9556c58d2383dbf26863da0e772ef718f3e0adfb945a488",
+      "generatedAtUtc": "2026-10-08T11:23:13.5000945Z"
+    },
+    "instr-story-feeling": {
+      "hash": "c84cf01e87de50bb89c22df4f44f11af888d18c256ff41d31c630e0ba6dc10ec",
+      "generatedAtUtc": "2026-10-08T11:23:14.6116365Z"
     }
   }
 }

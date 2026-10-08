@@ -118,9 +118,7 @@ Items 1-10 are built (11, the 6-8 track, is deliberately later). What a new sess
   `ActivityNames` + validation, server enum + map + test, app widget + `activity_screen.dart` + `lesson_screen.dart` icon.
 - `node tools/art/make-lessons.mjs <unit>` rewrites the later lessons; run `node tools/art/add-extras.mjs` after it (adds the extra games
   and groups), then `audio`, `export --track little-learners`, `cards`.
-- **Voice quota**: ElevenLabs ran out (40000 credits a month) during "Dandoona says". Still to do when it is back: the `says` lines and
-  instruction of Actions lessons 2 and 3, and a short spoken instruction for each new game (list at the end of the plan file). The games
-  work without them (they speak the existing words, phrases and story lines).
+- **Voice**: all game instructions and the Actions "says" lines are generated. New games: add `narration.instructions.<activity>` (see `add-extras.mjs`), then `audio` and `export`.
 - Smart review: `misses.v1` (phone only), orange Practice button on the map, parent's "Practice at home" list.
 - Parent cards: `AssetGenerator cards` -> `cards/little_learners/*.html`, served at `/cards` by the API, link + copy in parent settings.
 - Restart the API after pulling (new activity codes, /cards): `KidsEnglish.Api.exe --urls http://localhost:5080`.
