@@ -22,13 +22,17 @@ function dots(n) {
   return svg(s);
 }
 
-/** k tens-rods (ten little squares each), side by side. */
+/** k tens-rods (a bar with ten little squares each), side by side. */
 function rods(k) {
   const w = Math.min(44, 440 / k - 6), gap = 6, total = k * w + (k - 1) * gap, x0 = 256 - total / 2, cell = 28, top = 256 - 5 * cell;
   let s = '';
   for (let i = 0; i < k; i++) {
     const x = x0 + i * (w + gap);
-    for (let j = 0; j < 10; j++) s += `<rect x="${x}" y="${top + j * cell}" width="${w}" height="${cell}" fill="${i % 2 ? C.teal : C.green}" stroke-width="4"/>\n`;
+    let lines = '';
+    for (let j = 1; j < 10; j++) lines += `M${x} ${top + j * cell}h${w}`;
+    s += `<rect x="${x}" y="${top}" width="${w}" height="${cell * 10}" fill="${i % 2 ? C.teal : C.green}" stroke-width="5"/>
+<path d="${lines}" fill="none" stroke-width="3"/>
+`;
   }
   return svg(s);
 }

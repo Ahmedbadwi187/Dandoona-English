@@ -1,0 +1,1766 @@
+{
+  "schemaVersion": 1,
+  "track": "explorers",
+  "unit": "numbers-time",
+  "version": 2,
+  "contentHash": "e0b36c8a7b350dd4b9ec0cb35dd4fb179ed6ca93d26fa0925a684bc2c1c1d02c",
+  "lessons": [
+    {
+      "id": "numbers-time-teens-1",
+      "order": 1,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/numbers_time_teens_1/intro.mp3",
+        "praise": [
+          "audio/explorers/numbers_time_teens_1/praise_0.mp3",
+          "audio/explorers/numbers_time_teens_1/praise_1.mp3",
+          "audio/explorers/numbers_time_teens_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/numbers_time_teens_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/numbers_time_teens_1/instr_match_picture.mp3",
+          "memory": "audio/explorers/numbers_time_teens_1/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/numbers_time_teens_1/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "eleven",
+          "audio": "audio/explorers/numbers_time_teens_1/word_eleven.mp3",
+          "image": "images/explorers/numbers_time_teens_1/eleven.svg"
+        },
+        {
+          "word": "twelve",
+          "audio": "audio/explorers/numbers_time_teens_1/word_twelve.mp3",
+          "image": "images/explorers/numbers_time_teens_1/twelve.svg"
+        },
+        {
+          "word": "thirteen",
+          "audio": "audio/explorers/numbers_time_teens_1/word_thirteen.mp3",
+          "image": "images/explorers/numbers_time_teens_1/thirteen.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "numbers-time-teens-2",
+      "order": 2,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/numbers_time_teens_2/intro.mp3",
+        "praise": [
+          "audio/explorers/numbers_time_teens_2/praise_0.mp3",
+          "audio/explorers/numbers_time_teens_2/praise_1.mp3",
+          "audio/explorers/numbers_time_teens_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/numbers_time_teens_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/numbers_time_teens_2/instr_match_picture.mp3",
+          "memory": "audio/explorers/numbers_time_teens_2/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/numbers_time_teens_2/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "fourteen",
+          "audio": "audio/explorers/numbers_time_teens_2/word_fourteen.mp3",
+          "image": "images/explorers/numbers_time_teens_2/fourteen.svg"
+        },
+        {
+          "word": "fifteen",
+          "audio": "audio/explorers/numbers_time_teens_2/word_fifteen.mp3",
+          "image": "images/explorers/numbers_time_teens_2/fifteen.svg"
+        },
+        {
+          "word": "sixteen",
+          "audio": "audio/explorers/numbers_time_teens_2/word_sixteen.mp3",
+          "image": "images/explorers/numbers_time_teens_2/sixteen.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "numbers-time-teens-3",
+      "order": 3,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/numbers_time_teens_3/intro.mp3",
+        "praise": [
+          "audio/explorers/numbers_time_teens_3/praise_0.mp3",
+          "audio/explorers/numbers_time_teens_3/praise_1.mp3",
+          "audio/explorers/numbers_time_teens_3/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/numbers_time_teens_3/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/numbers_time_teens_3/instr_match_picture.mp3",
+          "memory": "audio/explorers/numbers_time_teens_3/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/numbers_time_teens_3/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "seventeen",
+          "audio": "audio/explorers/numbers_time_teens_3/word_seventeen.mp3",
+          "image": "images/explorers/numbers_time_teens_3/seventeen.svg"
+        },
+        {
+          "word": "eighteen",
+          "audio": "audio/explorers/numbers_time_teens_3/word_eighteen.mp3",
+          "image": "images/explorers/numbers_time_teens_3/eighteen.svg"
+        },
+        {
+          "word": "nineteen",
+          "audio": "audio/explorers/numbers_time_teens_3/word_nineteen.mp3",
+          "image": "images/explorers/numbers_time_teens_3/nineteen.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "numbers-time-tens-1",
+      "order": 4,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/numbers_time_tens_1/intro.mp3",
+        "praise": [
+          "audio/explorers/numbers_time_tens_1/praise_0.mp3",
+          "audio/explorers/numbers_time_tens_1/praise_1.mp3",
+          "audio/explorers/numbers_time_tens_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/numbers_time_tens_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/numbers_time_tens_1/instr_match_picture.mp3",
+          "memory": "audio/explorers/numbers_time_tens_1/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/numbers_time_tens_1/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "twenty",
+          "audio": "audio/explorers/numbers_time_tens_1/word_twenty.mp3",
+          "image": "images/explorers/numbers_time_tens_1/twenty.svg"
+        },
+        {
+          "word": "thirty",
+          "audio": "audio/explorers/numbers_time_tens_1/word_thirty.mp3",
+          "image": "images/explorers/numbers_time_tens_1/thirty.svg"
+        },
+        {
+          "word": "forty",
+          "audio": "audio/explorers/numbers_time_tens_1/word_forty.mp3",
+          "image": "images/explorers/numbers_time_tens_1/forty.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "numbers-time-tens-2",
+      "order": 5,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/numbers_time_tens_2/intro.mp3",
+        "praise": [
+          "audio/explorers/numbers_time_tens_2/praise_0.mp3",
+          "audio/explorers/numbers_time_tens_2/praise_1.mp3",
+          "audio/explorers/numbers_time_tens_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/numbers_time_tens_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/numbers_time_tens_2/instr_match_picture.mp3",
+          "memory": "audio/explorers/numbers_time_tens_2/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/numbers_time_tens_2/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "fifty",
+          "audio": "audio/explorers/numbers_time_tens_2/word_fifty.mp3",
+          "image": "images/explorers/numbers_time_tens_2/fifty.svg"
+        },
+        {
+          "word": "sixty",
+          "audio": "audio/explorers/numbers_time_tens_2/word_sixty.mp3",
+          "image": "images/explorers/numbers_time_tens_2/sixty.svg"
+        },
+        {
+          "word": "seventy",
+          "audio": "audio/explorers/numbers_time_tens_2/word_seventy.mp3",
+          "image": "images/explorers/numbers_time_tens_2/seventy.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "numbers-time-tens-3",
+      "order": 6,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/numbers_time_tens_3/intro.mp3",
+        "praise": [
+          "audio/explorers/numbers_time_tens_3/praise_0.mp3",
+          "audio/explorers/numbers_time_tens_3/praise_1.mp3",
+          "audio/explorers/numbers_time_tens_3/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/numbers_time_tens_3/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/numbers_time_tens_3/instr_match_picture.mp3",
+          "memory": "audio/explorers/numbers_time_tens_3/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/numbers_time_tens_3/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "eighty",
+          "audio": "audio/explorers/numbers_time_tens_3/word_eighty.mp3",
+          "image": "images/explorers/numbers_time_tens_3/eighty.svg"
+        },
+        {
+          "word": "ninety",
+          "audio": "audio/explorers/numbers_time_tens_3/word_ninety.mp3",
+          "image": "images/explorers/numbers_time_tens_3/ninety.svg"
+        },
+        {
+          "word": "hundred",
+          "audio": "audio/explorers/numbers_time_tens_3/word_hundred.mp3",
+          "image": "images/explorers/numbers_time_tens_3/hundred.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "numbers-time-days-1",
+      "order": 7,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/numbers_time_days_1/intro.mp3",
+        "praise": [
+          "audio/explorers/numbers_time_days_1/praise_0.mp3",
+          "audio/explorers/numbers_time_days_1/praise_1.mp3",
+          "audio/explorers/numbers_time_days_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/numbers_time_days_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/numbers_time_days_1/instr_match_picture.mp3",
+          "memory": "audio/explorers/numbers_time_days_1/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/numbers_time_days_1/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "Monday",
+          "audio": "audio/explorers/numbers_time_days_1/word_monday.mp3",
+          "image": "images/explorers/numbers_time_days_1/monday.svg"
+        },
+        {
+          "word": "Tuesday",
+          "audio": "audio/explorers/numbers_time_days_1/word_tuesday.mp3",
+          "image": "images/explorers/numbers_time_days_1/tuesday.svg"
+        },
+        {
+          "word": "Wednesday",
+          "audio": "audio/explorers/numbers_time_days_1/word_wednesday.mp3",
+          "image": "images/explorers/numbers_time_days_1/wednesday.svg"
+        },
+        {
+          "word": "Thursday",
+          "audio": "audio/explorers/numbers_time_days_1/word_thursday.mp3",
+          "image": "images/explorers/numbers_time_days_1/thursday.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "numbers-time-days-2",
+      "order": 8,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/numbers_time_days_2/intro.mp3",
+        "praise": [
+          "audio/explorers/numbers_time_days_2/praise_0.mp3",
+          "audio/explorers/numbers_time_days_2/praise_1.mp3",
+          "audio/explorers/numbers_time_days_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/numbers_time_days_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/numbers_time_days_2/instr_match_picture.mp3",
+          "memory": "audio/explorers/numbers_time_days_2/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/numbers_time_days_2/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "Friday",
+          "audio": "audio/explorers/numbers_time_days_2/word_friday.mp3",
+          "image": "images/explorers/numbers_time_days_2/friday.svg"
+        },
+        {
+          "word": "Saturday",
+          "audio": "audio/explorers/numbers_time_days_2/word_saturday.mp3",
+          "image": "images/explorers/numbers_time_days_2/saturday.svg"
+        },
+        {
+          "word": "Sunday",
+          "audio": "audio/explorers/numbers_time_days_2/word_sunday.mp3",
+          "image": "images/explorers/numbers_time_days_2/sunday.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "numbers-time-months-1",
+      "order": 9,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/numbers_time_months_1/intro.mp3",
+        "praise": [
+          "audio/explorers/numbers_time_months_1/praise_0.mp3",
+          "audio/explorers/numbers_time_months_1/praise_1.mp3",
+          "audio/explorers/numbers_time_months_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/numbers_time_months_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/numbers_time_months_1/instr_match_picture.mp3",
+          "memory": "audio/explorers/numbers_time_months_1/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/numbers_time_months_1/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "January",
+          "audio": "audio/explorers/numbers_time_months_1/word_january.mp3",
+          "image": "images/explorers/numbers_time_months_1/january.svg"
+        },
+        {
+          "word": "February",
+          "audio": "audio/explorers/numbers_time_months_1/word_february.mp3",
+          "image": "images/explorers/numbers_time_months_1/february.svg"
+        },
+        {
+          "word": "March",
+          "audio": "audio/explorers/numbers_time_months_1/word_march.mp3",
+          "image": "images/explorers/numbers_time_months_1/march.svg"
+        },
+        {
+          "word": "April",
+          "audio": "audio/explorers/numbers_time_months_1/word_april.mp3",
+          "image": "images/explorers/numbers_time_months_1/april.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "numbers-time-months-2",
+      "order": 10,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/numbers_time_months_2/intro.mp3",
+        "praise": [
+          "audio/explorers/numbers_time_months_2/praise_0.mp3",
+          "audio/explorers/numbers_time_months_2/praise_1.mp3",
+          "audio/explorers/numbers_time_months_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/numbers_time_months_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/numbers_time_months_2/instr_match_picture.mp3",
+          "memory": "audio/explorers/numbers_time_months_2/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/numbers_time_months_2/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "May",
+          "audio": "audio/explorers/numbers_time_months_2/word_may.mp3",
+          "image": "images/explorers/numbers_time_months_2/may.svg"
+        },
+        {
+          "word": "June",
+          "audio": "audio/explorers/numbers_time_months_2/word_june.mp3",
+          "image": "images/explorers/numbers_time_months_2/june.svg"
+        },
+        {
+          "word": "July",
+          "audio": "audio/explorers/numbers_time_months_2/word_july.mp3",
+          "image": "images/explorers/numbers_time_months_2/july.svg"
+        },
+        {
+          "word": "August",
+          "audio": "audio/explorers/numbers_time_months_2/word_august.mp3",
+          "image": "images/explorers/numbers_time_months_2/august.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "numbers-time-months-3",
+      "order": 11,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/numbers_time_months_3/intro.mp3",
+        "praise": [
+          "audio/explorers/numbers_time_months_3/praise_0.mp3",
+          "audio/explorers/numbers_time_months_3/praise_1.mp3",
+          "audio/explorers/numbers_time_months_3/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/numbers_time_months_3/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/numbers_time_months_3/instr_match_picture.mp3",
+          "memory": "audio/explorers/numbers_time_months_3/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/numbers_time_months_3/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "September",
+          "audio": "audio/explorers/numbers_time_months_3/word_september.mp3",
+          "image": "images/explorers/numbers_time_months_3/september.svg"
+        },
+        {
+          "word": "October",
+          "audio": "audio/explorers/numbers_time_months_3/word_october.mp3",
+          "image": "images/explorers/numbers_time_months_3/october.svg"
+        },
+        {
+          "word": "November",
+          "audio": "audio/explorers/numbers_time_months_3/word_november.mp3",
+          "image": "images/explorers/numbers_time_months_3/november.svg"
+        },
+        {
+          "word": "December",
+          "audio": "audio/explorers/numbers_time_months_3/word_december.mp3",
+          "image": "images/explorers/numbers_time_months_3/december.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "numbers-time-clock-1",
+      "order": 12,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/numbers_time_clock_1/intro.mp3",
+        "praise": [
+          "audio/explorers/numbers_time_clock_1/praise_0.mp3",
+          "audio/explorers/numbers_time_clock_1/praise_1.mp3",
+          "audio/explorers/numbers_time_clock_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/numbers_time_clock_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/numbers_time_clock_1/instr_match_picture.mp3",
+          "memory": "audio/explorers/numbers_time_clock_1/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/numbers_time_clock_1/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "one o'clock",
+          "audio": "audio/explorers/numbers_time_clock_1/word_one_o_clock.mp3",
+          "image": "images/explorers/numbers_time_clock_1/one_o_clock.svg"
+        },
+        {
+          "word": "two o'clock",
+          "audio": "audio/explorers/numbers_time_clock_1/word_two_o_clock.mp3",
+          "image": "images/explorers/numbers_time_clock_1/two_o_clock.svg"
+        },
+        {
+          "word": "three o'clock",
+          "audio": "audio/explorers/numbers_time_clock_1/word_three_o_clock.mp3",
+          "image": "images/explorers/numbers_time_clock_1/three_o_clock.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "numbers-time-clock-2",
+      "order": 13,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/numbers_time_clock_2/intro.mp3",
+        "praise": [
+          "audio/explorers/numbers_time_clock_2/praise_0.mp3",
+          "audio/explorers/numbers_time_clock_2/praise_1.mp3",
+          "audio/explorers/numbers_time_clock_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/numbers_time_clock_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/numbers_time_clock_2/instr_match_picture.mp3",
+          "memory": "audio/explorers/numbers_time_clock_2/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/numbers_time_clock_2/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "four o'clock",
+          "audio": "audio/explorers/numbers_time_clock_2/word_four_o_clock.mp3",
+          "image": "images/explorers/numbers_time_clock_2/four_o_clock.svg"
+        },
+        {
+          "word": "five o'clock",
+          "audio": "audio/explorers/numbers_time_clock_2/word_five_o_clock.mp3",
+          "image": "images/explorers/numbers_time_clock_2/five_o_clock.svg"
+        },
+        {
+          "word": "six o'clock",
+          "audio": "audio/explorers/numbers_time_clock_2/word_six_o_clock.mp3",
+          "image": "images/explorers/numbers_time_clock_2/six_o_clock.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "numbers-time-clock-3",
+      "order": 14,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/numbers_time_clock_3/intro.mp3",
+        "praise": [
+          "audio/explorers/numbers_time_clock_3/praise_0.mp3",
+          "audio/explorers/numbers_time_clock_3/praise_1.mp3",
+          "audio/explorers/numbers_time_clock_3/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/numbers_time_clock_3/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/numbers_time_clock_3/instr_match_picture.mp3",
+          "memory": "audio/explorers/numbers_time_clock_3/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/numbers_time_clock_3/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "seven o'clock",
+          "audio": "audio/explorers/numbers_time_clock_3/word_seven_o_clock.mp3",
+          "image": "images/explorers/numbers_time_clock_3/seven_o_clock.svg"
+        },
+        {
+          "word": "eight o'clock",
+          "audio": "audio/explorers/numbers_time_clock_3/word_eight_o_clock.mp3",
+          "image": "images/explorers/numbers_time_clock_3/eight_o_clock.svg"
+        },
+        {
+          "word": "nine o'clock",
+          "audio": "audio/explorers/numbers_time_clock_3/word_nine_o_clock.mp3",
+          "image": "images/explorers/numbers_time_clock_3/nine_o_clock.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    },
+    {
+      "id": "numbers-time-clock-4",
+      "order": 15,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/numbers_time_clock_4/intro.mp3",
+        "praise": [
+          "audio/explorers/numbers_time_clock_4/praise_0.mp3",
+          "audio/explorers/numbers_time_clock_4/praise_1.mp3",
+          "audio/explorers/numbers_time_clock_4/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/explorers/numbers_time_clock_4/instr_listen_and_tap.mp3",
+          "match-picture": "audio/explorers/numbers_time_clock_4/instr_match_picture.mp3",
+          "memory": "audio/explorers/numbers_time_clock_4/instr_memory.mp3",
+          "read-and-pick": "audio/explorers/numbers_time_clock_4/instr_read_and_pick.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "ten o'clock",
+          "audio": "audio/explorers/numbers_time_clock_4/word_ten_o_clock.mp3",
+          "image": "images/explorers/numbers_time_clock_4/ten_o_clock.svg"
+        },
+        {
+          "word": "eleven o'clock",
+          "audio": "audio/explorers/numbers_time_clock_4/word_eleven_o_clock.mp3",
+          "image": "images/explorers/numbers_time_clock_4/eleven_o_clock.svg"
+        },
+        {
+          "word": "twelve o'clock",
+          "audio": "audio/explorers/numbers_time_clock_4/word_twelve_o_clock.mp3",
+          "image": "images/explorers/numbers_time_clock_4/twelve_o_clock.svg"
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "read-and-pick",
+        "match-picture",
+        "memory"
+      ],
+      "noArticle": true
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/explorers/numbers_time_clock_1/instr_listen_and_tap.mp3",
+      "sha256": "3285b28f6de10d57ab8486b1a8e9d21b78d6d2949b7c60ca5869b345620dfefe",
+      "bytes": 33898
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_1/instr_match_picture.mp3",
+      "sha256": "f2b136162845d4c3e6b7d7dd243c254c2fb53d288189197ba86b11d354ee565d",
+      "bytes": 40586
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_1/instr_memory.mp3",
+      "sha256": "6aa996e1d0700f1334e7a9ff438588a8c985d224f174584a8f2f0e3cb3fcfb74",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_1/instr_read_and_pick.mp3",
+      "sha256": "545759f1777e23de87d96484262f05532c62502534dd87b2c6f00bb7015208ef",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_1/intro.mp3",
+      "sha256": "1599c0c0f898a443aca89a78f4dd79074b847fa17f737cd2a49aa860974f17d6",
+      "bytes": 58976
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_1/praise_0.mp3",
+      "sha256": "f4e65782b657306874d3617cc7439872609c0dae40660f7c3c397a551bb3487b",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_1/praise_1.mp3",
+      "sha256": "fbaccfbc7e40fe05d1115e09271080c30645c0b9c8a84388e33fef14137b7cbf",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_1/praise_2.mp3",
+      "sha256": "f612534124dee98bd5cde200ad2048f647ae53cc5760ea385e3ca0b4800622fa",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_1/word_one_o_clock.mp3",
+      "sha256": "ef3c6c9f134625b064a416f65193e2e2c9b2ba95690ca09f61398e16b206821e",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_1/word_three_o_clock.mp3",
+      "sha256": "e1979a2ef0509af7aed3c646585e5e154d9d533b82fc4295a7e60a6945a0dcc0",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_1/word_two_o_clock.mp3",
+      "sha256": "7abd35fb5dbf1338b8b5a6a3e2ad5938700f792496eafc747b0441fe5ae51b21",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_2/instr_listen_and_tap.mp3",
+      "sha256": "2d4de7761e86886a3ffb4c8cc2cfdfc54ee386e991b799c3cdb96801994fcb3e",
+      "bytes": 34316
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_2/instr_match_picture.mp3",
+      "sha256": "ceb316a2edd02290555dee22d759212a41cd0b9ff702b3f7a1f487c3432147af",
+      "bytes": 38914
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_2/instr_memory.mp3",
+      "sha256": "49a72a4091121a3aa983ada4dffc52312b752c979fc01a0f32229c70d34f7409",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_2/instr_read_and_pick.mp3",
+      "sha256": "015342467ba972aabb37c6dcca7e0c047f58e8e2730cf2e80035ceb1d4bbfb36",
+      "bytes": 47691
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_2/intro.mp3",
+      "sha256": "8631db1a90c1cd9f62069ad9990264010c765ecf14bfaff66dadd2747360be26",
+      "bytes": 92413
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_2/praise_0.mp3",
+      "sha256": "9af2d8a56a1e33fd124788fcf8ae34388e86f81cca909268fcff5f5809b2a9a1",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_2/praise_1.mp3",
+      "sha256": "afc6ef8ee5693a94cb6ce2fc8aa2251e55ede07ca2b06346242e2529ff745ea1",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_2/praise_2.mp3",
+      "sha256": "0c427e0e9763db7469c1fa2c7ce5cb777de34255defcc559a78418816f2443dd",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_2/word_five_o_clock.mp3",
+      "sha256": "9f0ce9b4342f9859e639101cac386229a25a6500ef824c939dcc884ee256b35c",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_2/word_four_o_clock.mp3",
+      "sha256": "e690a922c198d94b20abe47a7038d6236946600c579d43137e2baaeb2f10aa8b",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_2/word_six_o_clock.mp3",
+      "sha256": "7f06fb7674f3e813ce97c9d408d5c104b3faca34ee0d2d6f8dd330d6fe2e4d60",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_3/instr_listen_and_tap.mp3",
+      "sha256": "274d9da8494e10fb367986e8afca829914d3d117e70f41c3eed0234c0e5afc99",
+      "bytes": 34316
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_3/instr_match_picture.mp3",
+      "sha256": "f0e7f6968d00a5a19120a95c21c56b1cbcaf288512ef5838b4911180130e7330",
+      "bytes": 37660
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_3/instr_memory.mp3",
+      "sha256": "9715f6fc114d1f7accd384da9ed4c7f3c7faff83fa07f14269bf179d9f67486d",
+      "bytes": 26375
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_3/instr_read_and_pick.mp3",
+      "sha256": "08cd80c9d9b309cccc98f39a2fd623dba5cb6426e62c9226c103375244c11eab",
+      "bytes": 50199
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_3/intro.mp3",
+      "sha256": "2c31f2d05da5fdb06c8b18f901bad37fa786a5cf6a9ecc141c6b40583499986c",
+      "bytes": 70261
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_3/praise_0.mp3",
+      "sha256": "f5b872331020df59ba761a770080d1274aaf3c71b1746d1b302e8c3082b22ac0",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_3/praise_1.mp3",
+      "sha256": "e657428a7595fc348cf3a9f4fb0007d7c0f6d2e1ce8ad718db0c3eaed141752c",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_3/praise_2.mp3",
+      "sha256": "51c061aba6c38d885d7283e01a02824f88b77d7c49c765218785257eecd99625",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_3/word_eight_o_clock.mp3",
+      "sha256": "cb1f2a03f9ecbbe7dbb5eea9856a2c60fc2deabb6789d56797e6d981de8c11f4",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_3/word_nine_o_clock.mp3",
+      "sha256": "e35557137c08a384474621ae062165a3709a1716cbe3701907fb89a68937df8b",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_3/word_seven_o_clock.mp3",
+      "sha256": "e6dd80364f8a2e2657d0abb960ee888d073db2f1b340a35fac5c001859bd886c",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_4/instr_listen_and_tap.mp3",
+      "sha256": "f947e1eef2319a4ce0ab20a38bdb8f4f7ef30a98ffa1bc84bf67e237936d475d",
+      "bytes": 36824
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_4/instr_match_picture.mp3",
+      "sha256": "f073738e4992107fae08ae8237894499c597e0dd0ab0a66148e4fd0f9494187e",
+      "bytes": 38914
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_4/instr_memory.mp3",
+      "sha256": "ca309422ae4570b53d684eb4ee57e0472b2c782dea6f78f62745258147eb219a",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_4/instr_read_and_pick.mp3",
+      "sha256": "340a98f0295ce4febc80393a37f44805941fae56b77c3493ccb52531a87aff2c",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_4/intro.mp3",
+      "sha256": "9050c8a1a29923b76042d16f278e24c7b51cb82d931900415c2be17239dfb40e",
+      "bytes": 66499
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_4/praise_0.mp3",
+      "sha256": "9e688e82aee724a205e96f464d6b710eb88654c9092019e77c787b40725b0d9a",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_4/praise_1.mp3",
+      "sha256": "2ca0f12948913fa8903491594e397b9b80bd7d41ea7b3e36bf8a1c424ac4bd9c",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_4/praise_2.mp3",
+      "sha256": "071455e5efe33ff5f8e54b98978013e8a4abbf1986574ac1fa793aaf3ff00ee8",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_4/word_eleven_o_clock.mp3",
+      "sha256": "b4c567e18a03b70bbbab35a3ad993c2fa4d40f5634e274258b8abd6232a9f292",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_4/word_ten_o_clock.mp3",
+      "sha256": "c48c1f91a4ffb37a66987d24bfb35578c5d7f425bcb45db8d4a87012cf32b94b",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/numbers_time_clock_4/word_twelve_o_clock.mp3",
+      "sha256": "8f0df9d918f87bcf0b8bfde2f7be9e618b20e8b8eb486f2f9394d16d61721e86",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_1/instr_listen_and_tap.mp3",
+      "sha256": "6606cae297a6b4fc7ca8206684a0b793db2437090a869767f985485a2aa475c4",
+      "bytes": 35152
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_1/instr_match_picture.mp3",
+      "sha256": "a397e0e12dc10ac269936f173ecb81f2ccccab71473ff0505aa70acc206e2d50",
+      "bytes": 37660
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_1/instr_memory.mp3",
+      "sha256": "749ef8c88c333baa90b0c8e1ea47093eeaa0ba46891c8fbc4aa0609307be8293",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_1/instr_read_and_pick.mp3",
+      "sha256": "e17fb8961eee4c40703fa2b8e60f980de7d1688e545f123d11f5a3e0ac81bdd9",
+      "bytes": 45601
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_1/intro.mp3",
+      "sha256": "b5378f19fc95605a6152ea57bc3d1f403c990b71823abb9289af0b2a0d0648a1",
+      "bytes": 64409
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_1/praise_0.mp3",
+      "sha256": "0e2cc3af4bae112a47a2b1118eaf352baf9c2516a30c251ac6934d1140119c52",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_1/praise_1.mp3",
+      "sha256": "2b5831b410ac6acb50ef2f4b9b3900911feca2104f73b440fabd4f356ac84992",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_1/praise_2.mp3",
+      "sha256": "bdc0718efd6a2b739b7e7f29eefb8c9094a20f728d2f3a6f24dd6d3abe6c0fc5",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_1/word_monday.mp3",
+      "sha256": "6aaeec7570859614956b2032539893fb707287105ad3d0a8688eeb26ab73f5a9",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_1/word_thursday.mp3",
+      "sha256": "f06b1da3288deafe2eb2ed6eefeae5e11ef7d4827a45525a4e508a860ede1267",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_1/word_tuesday.mp3",
+      "sha256": "36fc20e59a3d5a6f585e622b5094faf18b1f3cec601c070b2cc93bc42f319855",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_1/word_wednesday.mp3",
+      "sha256": "14af2d41236ffe1349e5fb9e57d4e8c7a71861788eabb05e5a1b2f8d21e438aa",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_2/instr_listen_and_tap.mp3",
+      "sha256": "43fd7ac1d52a6bc1f7841a0b66658228dedb886668713d54cebc59b545e37547",
+      "bytes": 33898
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_2/instr_match_picture.mp3",
+      "sha256": "2be3ed1f18918beacae7305f6b0455f5f4896afd4a708524e277b89b8cd1a0d4",
+      "bytes": 44765
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_2/instr_memory.mp3",
+      "sha256": "7cbee1a0860d098581315e3402ee7f0b149b85f3a9a11d2cd179ec98c814ba4d",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_2/instr_read_and_pick.mp3",
+      "sha256": "7d6321c8d2432dbfcbbb7ce180516b4fa3cb303cadae06ded3ff048eb58ca917",
+      "bytes": 47273
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_2/intro.mp3",
+      "sha256": "8311c7b9dd21f820be3565520136f08292d191568d765b5d22d2b8b4c7516126",
+      "bytes": 68589
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_2/praise_0.mp3",
+      "sha256": "21616b2088833cb79c1b2ef50689145213cbb80e478f86e6264f7d1ef132e1d4",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_2/praise_1.mp3",
+      "sha256": "5d70493404746c82f48a728bd32b7732f31186b360dd48f9281830dd13768070",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_2/praise_2.mp3",
+      "sha256": "d83776dc8da25bf0f21dcff2e2b9de1a07449a1058fcb9e15244c155134afea7",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_2/word_friday.mp3",
+      "sha256": "12ff7d9cb30cca74071f47e208a6a238146b0d919a24e2eab33cc051608ac1eb",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_2/word_saturday.mp3",
+      "sha256": "01220a4031c186d3f4ba78dcd27be373c684e4e0eb4fb748cc2933952ca0cfb3",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/explorers/numbers_time_days_2/word_sunday.mp3",
+      "sha256": "4502990e4a27c2d1b63c66c07d1b14c2e02cf841e842edd53084404154fd7870",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_1/instr_listen_and_tap.mp3",
+      "sha256": "3b45c4931c0f255b55e2f2f54f376e99bb4c69c03ddbb45cbc3a90261a361b4e",
+      "bytes": 35152
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_1/instr_match_picture.mp3",
+      "sha256": "a98de3af452745d412a2b516e22c1c7e43386a397c3204b4f387a1c2d1f63b5e",
+      "bytes": 41839
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_1/instr_memory.mp3",
+      "sha256": "570cecd09bacb42b032d1283e453a193c1d757cefa7a9f8435d0267495cf5ef0",
+      "bytes": 31391
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_1/instr_read_and_pick.mp3",
+      "sha256": "9c67e22d7d3ddcb267cb26c2e0994502b403f0ad7d281d790625498280ea2313",
+      "bytes": 44347
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_1/intro.mp3",
+      "sha256": "ed6c30f439bbb960480005e6906e54d65975a8d29001919789987c71a719a1f0",
+      "bytes": 70261
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_1/praise_0.mp3",
+      "sha256": "e2333e1f5c6e15b5b85e898d1876af3782fc1c8f6ca9833ac9e532f7ab0e27d3",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_1/praise_1.mp3",
+      "sha256": "b6088ad83621d653526e5a109bac933fbcfbffb9bf50151fe748c88aa702e4a9",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_1/praise_2.mp3",
+      "sha256": "a2de6fab8db51fde1e967eafc6a5159ff135bf1d4f757b096474442a93eb25be",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_1/word_april.mp3",
+      "sha256": "f166c822ae3b38b42527fafd76ccd88ea53c2a23b536259077cfe5e536c65b13",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_1/word_february.mp3",
+      "sha256": "f7047601d0c40a021411ca903a54a55829d164b9a371fcce2e02dcfef7f4c771",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_1/word_january.mp3",
+      "sha256": "cd2fc2e227fede2237389e0b0a51defabfb010457a8634763775e5325085ca16",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_1/word_march.mp3",
+      "sha256": "ff3f5ab5b169d4b6e1855a9b9d09fabacfad681b90a0098bdd5ed60abf611dd1",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_2/instr_listen_and_tap.mp3",
+      "sha256": "61787e9e5a625dc644d91335b05655335e7fca018ddc88c696353254eaeb3c67",
+      "bytes": 33898
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_2/instr_match_picture.mp3",
+      "sha256": "79a99e0a44a63ed85ff4737dc48115f39ce6fd50e0fc7e6d4decb9d9189f88ef",
+      "bytes": 38914
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_2/instr_memory.mp3",
+      "sha256": "7cc35ba1c9acf1bd8e12b3851e4e21a8358400ce579de6d1c68b47f8027a4c26",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_2/instr_read_and_pick.mp3",
+      "sha256": "df76b74132104635c90fb2153a104ca016d79f642bcf1b4066ad8434a36263f6",
+      "bytes": 42675
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_2/intro.mp3",
+      "sha256": "cc28d2a9a1a9f2287840d7082d3cd23e85841ac8ce2767fa2ce91c9ac49bf9ce",
+      "bytes": 51453
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_2/praise_0.mp3",
+      "sha256": "f0562269846dd1e5d7327168cff9711a82d0f0ae002676a80a3a4732c238618b",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_2/praise_1.mp3",
+      "sha256": "05c0dbe07a9917b9151442e01529885f188d2aff767f5f28c15cf38d56e7624d",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_2/praise_2.mp3",
+      "sha256": "fb538f908307a0589b70eb551221a293a596687ff56f83e5a0ec751d08ab0a77",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_2/word_august.mp3",
+      "sha256": "cfbfd3ab8bb13e2a1fd3dab712d25d90cb871e23d638eb8496954aa537911108",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_2/word_july.mp3",
+      "sha256": "a23d7541e2b8323213fc11c75e67193a44228e861fce4b4bf0038f8bedd03f0f",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_2/word_june.mp3",
+      "sha256": "961a33408e9c2f9ade5c28bc607e1bc8a39f0e3209804d11bebd9b657880cd71",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_2/word_may.mp3",
+      "sha256": "a35897bdccf1b022f054467922954870d903fc342b1a5c1a0862817eefd7f1dc",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_3/instr_listen_and_tap.mp3",
+      "sha256": "4b197fc5e9bf311704b31f3e2b5b8b6601af50ae5520afb1af14fc3e39b293c4",
+      "bytes": 35152
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_3/instr_match_picture.mp3",
+      "sha256": "6496dceca20fd890e6a323fd62deb6bb2d5af00b369bc0d87ccb8e507277b0ce",
+      "bytes": 38914
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_3/instr_memory.mp3",
+      "sha256": "4e230563f19d70da574c98ec267324da94ea4dc9774758f9c1ae28819e8f9613",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_3/instr_read_and_pick.mp3",
+      "sha256": "fe0254233d5653645c27d07a07822ba28d6d6cf4e3e9e35b094c47286a831c2c",
+      "bytes": 46437
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_3/intro.mp3",
+      "sha256": "f2321dd9f267cc5d6bceacbe7dd7715c8b21f22205e63fdb3abd758464c79856",
+      "bytes": 60648
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_3/praise_0.mp3",
+      "sha256": "6975e5666a16f4da889bc05915e58c3341c7e7b4366a512795931fabaa745d34",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_3/praise_1.mp3",
+      "sha256": "9a9d20defcac6ee233b3a6e133b8a749e8a49ed29d4e75561f0067bcba95707d",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_3/praise_2.mp3",
+      "sha256": "8c3f08589c8cb13aaa5207e9133d25bf518132b1ccc285557a45c986d1ab7d87",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_3/word_december.mp3",
+      "sha256": "583f0373742da0d42a011bcae081ea3f7843246e1645e870a75fbfd3c7d8251f",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_3/word_november.mp3",
+      "sha256": "9e35917386137b9303b754d3eea949372d6b8ca03cf61a04b6c115130ae0225a",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_3/word_october.mp3",
+      "sha256": "7ed45bb7ff7a48f02d4ada76d2483c033026ada8de020c30656715234796705d",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/numbers_time_months_3/word_september.mp3",
+      "sha256": "d4144e266d4abd930a9f69aed0c6af1423e5e0332fd5bddeaa99950d9b77c138",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_1/instr_listen_and_tap.mp3",
+      "sha256": "9aa230416c4d98f8de5a19ca965698fe0534cb852d9d6c5ecc6386ead4b7970a",
+      "bytes": 35988
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_1/instr_match_picture.mp3",
+      "sha256": "c8cbaf8201a97a277e944c6788bc0b87d47902eeba26a1773888012f346b718b",
+      "bytes": 41839
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_1/instr_memory.mp3",
+      "sha256": "744f2b73987acd3999d1242231a3d704742b5eb37e5aa8f790a77c4cfdb4b66c",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_1/instr_read_and_pick.mp3",
+      "sha256": "4c16f5d18f746c070d4319a0ea31fbcc633fdaea367df3bd96e088e7b550d470",
+      "bytes": 42675
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_1/intro.mp3",
+      "sha256": "9bd59a4300f5c92d8a3a5cbc4411034a6c86b34cebde591d67baafe779d674c3",
+      "bytes": 47691
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_1/praise_0.mp3",
+      "sha256": "46b7d63c9e7b52e173178f46c7dc0d05a7e9ff1d10b8c9fa67e009d282e692b3",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_1/praise_1.mp3",
+      "sha256": "c9ffbf264e6859a2535c79311a94b3395a5a9b59c8bd657a2f4353d8f7c68d5b",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_1/praise_2.mp3",
+      "sha256": "25e400ee20ddc7e76a582d6f09567872363ba89472af25ff3fa54ad066a30f3a",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_1/word_eleven.mp3",
+      "sha256": "5679d6a5efe7e46cffd700093dd4e77a919be88ed38dfdbd0989d255449dadea",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_1/word_thirteen.mp3",
+      "sha256": "6896f7554b0b732fad55c144ee889eac80c917e1fe3f7251e2bb6c7d9e109747",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_1/word_twelve.mp3",
+      "sha256": "63ecd21cc3b314a050183682e466d06615c2791710003fcbb9e1d8ce3f4abd6b",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_2/instr_listen_and_tap.mp3",
+      "sha256": "1b0d7c349d97312d0400d29fa52c436e3b9c8da6103d07141feb3808f7e6c4d6",
+      "bytes": 35152
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_2/instr_match_picture.mp3",
+      "sha256": "50e97760ef967a03b2372d5c46d77ea9d3069b179b1cd833fb6ded8f29fdb9e2",
+      "bytes": 37660
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_2/instr_memory.mp3",
+      "sha256": "464414c38c0a929cde07a35767f2b404abc2431ab566f351ac83bd51d9bce723",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_2/instr_read_and_pick.mp3",
+      "sha256": "8ba426a43e597321f5cac129178d759bfca9f890ec18e4c8857627f20e468bd4",
+      "bytes": 43511
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_2/intro.mp3",
+      "sha256": "34db21c871c1db603dca0acbe41897b078428ea7030be84fd98002a5e9df6a5c",
+      "bytes": 64409
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_2/praise_0.mp3",
+      "sha256": "68e313fd5b6f69422010df961737888bae6f7e708d2875be0f738a2c9f087c07",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_2/praise_1.mp3",
+      "sha256": "2c4c1eddd69ff4f32d1687c2f44e16431278a148a8d8f027b6432974f2d49c7d",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_2/praise_2.mp3",
+      "sha256": "4b7a0d16bebb9b80472d225c82ddf16793f5f31469c7ab514cb75e6e99b76629",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_2/word_fifteen.mp3",
+      "sha256": "c5abf9b1c84e75c4e85fcb7484c87a775470f278f2dc86787d836250bc6f19d8",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_2/word_fourteen.mp3",
+      "sha256": "c1eaeb010afc9a9a65ddafacb69d4c380ffde481385308e53ba14b329ddea0d9",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_2/word_sixteen.mp3",
+      "sha256": "68a75e6ff1e79e4ab48d6d619684db33fb1487274f63289d3af786f8dc22e692",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_3/instr_listen_and_tap.mp3",
+      "sha256": "daa5aede23c9973e755fcc1b3aee9e76303d274acaf31004348d81c6224b9625",
+      "bytes": 34316
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_3/instr_match_picture.mp3",
+      "sha256": "50c8672e04f7ba5ed93bf6249dd215a25acb8dd23edb0cf23a0bf0a65ce58531",
+      "bytes": 38078
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_3/instr_memory.mp3",
+      "sha256": "95309904a5997ae67251743de089291151aaeac899ebc8b9824b87b850460adf",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_3/instr_read_and_pick.mp3",
+      "sha256": "24084c12176a4b3a6505036dad29eee9728210134e6f456967c0876b7757c143",
+      "bytes": 47273
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_3/intro.mp3",
+      "sha256": "619bee7e1662f2bdc1ddff181d53e7bf2a8db9538158133104216960fc93842b",
+      "bytes": 65663
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_3/praise_0.mp3",
+      "sha256": "bf6a9c75b7c5c3d8efa2cbe7f0698f0edcb6c5f5e00b1f72d21fe4494951fe35",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_3/praise_1.mp3",
+      "sha256": "4a9f0f0249019b114f713bc6ed5d987a8aa6b09d269c31cf8c5923ec8dc609b6",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_3/praise_2.mp3",
+      "sha256": "39d669b6138b4cfaf1fa735bbb9703343c9fbd667f6a93d52a01b3fe26980a16",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_3/word_eighteen.mp3",
+      "sha256": "37e38cef942772798bf00abe043fbe458742011721fd3ad1e58e51153c86e5c5",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_3/word_nineteen.mp3",
+      "sha256": "d3208718f2b0e29091299b019f046ed206cad34f0fdf4313c210e6370ea736e1",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/numbers_time_teens_3/word_seventeen.mp3",
+      "sha256": "60b64153819cbf27da6662f24f1b2d78b72c158259c5749f5fb3f24e5c65d8dc",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_1/instr_listen_and_tap.mp3",
+      "sha256": "3f81cce3986080a57a3ae0f58a938f37f108aea01cbf3dd3a7d101a88254a00e",
+      "bytes": 31391
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_1/instr_match_picture.mp3",
+      "sha256": "e8cfcae758e5e81a429f0852c80d56f08252650003e1af353bdf87680361217e",
+      "bytes": 41839
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_1/instr_memory.mp3",
+      "sha256": "0efcdd41499ccf29c5bb116d62314161b0a649f02653bf9e4d7ecd52129b603d",
+      "bytes": 24703
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_1/instr_read_and_pick.mp3",
+      "sha256": "5a13d134ff1ab954a0b2b61999858e319517ee58d9ce30f2bd982fa416631589",
+      "bytes": 48527
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_1/intro.mp3",
+      "sha256": "c7e41a45572125c4914f731949b992086c104981033aa66cca504ea129064b18",
+      "bytes": 44765
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_1/praise_0.mp3",
+      "sha256": "5dda9c8a0aa748df02c67e516c9c0a0aa45724dba21344698ac1b03b5e7f9a3d",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_1/praise_1.mp3",
+      "sha256": "fb29d05f7d13d2d8fd6a7e2d0ab80652d0a508e62c8d20ce5d10bd2d9b46e239",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_1/praise_2.mp3",
+      "sha256": "68c518cfd43634e92a03587df2b5aa7539b66dd26ecaf1c2d530c0c3ddd1b31c",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_1/word_forty.mp3",
+      "sha256": "c8359970cb1903cb4860fb36711894f14f76d120fbdc77a623bb1b8d1f68ce72",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_1/word_thirty.mp3",
+      "sha256": "561f5df66a669b73773a60537ed6ffb3ddb8cebd1efcf667a6265e3eaafe2524",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_1/word_twenty.mp3",
+      "sha256": "f49d463c9dcd05880b3161e843b1e109bce6cf204a0147de0c61cff5663a1fef",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_2/instr_listen_and_tap.mp3",
+      "sha256": "4f56121123aab8a691716e0c7688408736a905abd632c2be4ed20197c0f23db2",
+      "bytes": 37660
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_2/instr_match_picture.mp3",
+      "sha256": "4409a2b66400acee33f28fd5f35b5b1978994b4e9bfb255b0aa09dcac4e56656",
+      "bytes": 44765
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_2/instr_memory.mp3",
+      "sha256": "1a18324bc80a65791431f475595e175173beb981345f78c5e8d57c81a6597482",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_2/instr_read_and_pick.mp3",
+      "sha256": "c10b8b220a5758b319310842a615a5ff9ac24cfb53a16a22e6a5ec2cbd25c729",
+      "bytes": 48527
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_2/intro.mp3",
+      "sha256": "403f6cdbd2951be3e1ba2b185360be7bb155dc2d74dc64306a467c2970d9f633",
+      "bytes": 56050
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_2/praise_0.mp3",
+      "sha256": "1311813758e3e8f5a004c27abf1ff31fe7120ab215aff23dd170d00bf3551db1",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_2/praise_1.mp3",
+      "sha256": "d3a057a3cb8cfb48640730f4e829a3792c55cc62b6681b5e47c17aa6dad749d5",
+      "bytes": 22613
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_2/praise_2.mp3",
+      "sha256": "7fa33ae49f6572be4c6129cd32c4e4a1217bd0c851b8ef9586917dd01089e06c",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_2/word_fifty.mp3",
+      "sha256": "5835cbe6f97345c933cbe41a7c44d017e19ec4b7c72daecdffc8a51093ff2fd2",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_2/word_seventy.mp3",
+      "sha256": "561e310cece51a7564be436f354148769fc7516d25dff23d242c8a163718a134",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_2/word_sixty.mp3",
+      "sha256": "1639f3aa133bb900c1d4a63871ca9088359605ccf7f519de8f2a67fea8362dcd",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_3/instr_listen_and_tap.mp3",
+      "sha256": "b38ea6afedce22710ce75b7e52de016893757dced4993942045aa63298eed031",
+      "bytes": 32226
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_3/instr_match_picture.mp3",
+      "sha256": "74cca57fe02d677f91fffa87ad82f978d402001bf4e20bd8e0e33e421b4b1c7c",
+      "bytes": 38078
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_3/instr_memory.mp3",
+      "sha256": "3d3a93dcfabd48e782550ce45c4614514bcdcd2ce295131ce30e7d71628d9c05",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_3/instr_read_and_pick.mp3",
+      "sha256": "ebad6d1d841d0a3e0ecb4c9f1e3170a72a66595bf13c15fb6faa10df15cb3345",
+      "bytes": 46437
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_3/intro.mp3",
+      "sha256": "90d1f817e32c255cdab3c2542254ccd6b99302fdec851932330b213e13b164b8",
+      "bytes": 57722
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_3/praise_0.mp3",
+      "sha256": "36b15c0e58b769ca7f571d2e8b92c8b64b25c10db57de4b5b1d72da162724a4f",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_3/praise_1.mp3",
+      "sha256": "0b9505ee5c8f6956834950d400903867b88438b72cab754992aa0d41fc45f584",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_3/praise_2.mp3",
+      "sha256": "404642a7068d603fd21f37eebd2019ebd1965905220f7cd4e96078a3a66a9be9",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_3/word_eighty.mp3",
+      "sha256": "c51fc966557117a1fa7c703a23854f717b4566c08191ac48ad110da06cb28155",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_3/word_hundred.mp3",
+      "sha256": "14840706a71573f1c50b3f9f25028d0c09e6e30a2ffa7ea1d849f9fc4d437d9d",
+      "bytes": 19688
+    },
+    {
+      "path": "audio/explorers/numbers_time_tens_3/word_ninety.mp3",
+      "sha256": "a8ff6549ec8a79e54587829eff47d95fbf0c259b487ae6a0ac3ddd7b1857d28c",
+      "bytes": 18016
+    },
+    {
+      "path": "images/explorers/numbers_time_clock_1/one_o_clock.svg",
+      "sha256": "5044ea7dfc498e57c7bf98f71defff31326a75f1c694bd7d4945cd9cc6e5891e",
+      "bytes": 1352
+    },
+    {
+      "path": "images/explorers/numbers_time_clock_1/three_o_clock.svg",
+      "sha256": "3e339a697701aed86f6341a6dad08e3b22dea948fb880d988d76b21ac4f515cc",
+      "bytes": 1352
+    },
+    {
+      "path": "images/explorers/numbers_time_clock_1/two_o_clock.svg",
+      "sha256": "6540962f7a1739960a09543d1358503f03e0848c603fd5dacffed47e5cd6ce64",
+      "bytes": 1352
+    },
+    {
+      "path": "images/explorers/numbers_time_clock_2/five_o_clock.svg",
+      "sha256": "3bdc0447e64de307a342b4f7462d8ce0348b60cfccc07dc3b586b367afcd4af3",
+      "bytes": 1352
+    },
+    {
+      "path": "images/explorers/numbers_time_clock_2/four_o_clock.svg",
+      "sha256": "2077079c6a365ac2bf33d8714a9d30129017f0dd819f302426798e201f86584d",
+      "bytes": 1352
+    },
+    {
+      "path": "images/explorers/numbers_time_clock_2/six_o_clock.svg",
+      "sha256": "a8f6960894b798bf10777cf01607893beb6a2ef50c4554272654569544783650",
+      "bytes": 1352
+    },
+    {
+      "path": "images/explorers/numbers_time_clock_3/eight_o_clock.svg",
+      "sha256": "b81561fa3e12b1b76e472d7e2e1ba1465318e67bfc1a86612b4014ca472b3099",
+      "bytes": 1352
+    },
+    {
+      "path": "images/explorers/numbers_time_clock_3/nine_o_clock.svg",
+      "sha256": "9ffd0fa744e4ff302bb8b7a02b1441148e1a589180d8a2e877e7f880e479f271",
+      "bytes": 1352
+    },
+    {
+      "path": "images/explorers/numbers_time_clock_3/seven_o_clock.svg",
+      "sha256": "bb8ec719ef189ff211085b66b393caad37a3bbccedbb7f6c5dba1b8384fd4082",
+      "bytes": 1352
+    },
+    {
+      "path": "images/explorers/numbers_time_clock_4/eleven_o_clock.svg",
+      "sha256": "84ba8546b0d7716df41a329b5cf5f3fca461c831076f9bf52efea59262cb4472",
+      "bytes": 1352
+    },
+    {
+      "path": "images/explorers/numbers_time_clock_4/ten_o_clock.svg",
+      "sha256": "26ca872419ef6a7511c00c9c4c778bf66a0de8b56b6c7ea6a2120ea8ac93fb50",
+      "bytes": 1352
+    },
+    {
+      "path": "images/explorers/numbers_time_clock_4/twelve_o_clock.svg",
+      "sha256": "0a15c3f19e036cd99f2a3d74eea70f024c6547cc8ced34adc150a7a60c7d50b3",
+      "bytes": 1352
+    },
+    {
+      "path": "images/explorers/numbers_time_days_1/monday.svg",
+      "sha256": "4abab35dd1143804eb4dcffd7019fc043d70bf6d46031121f9a5da64912c3520",
+      "bytes": 1220
+    },
+    {
+      "path": "images/explorers/numbers_time_days_1/thursday.svg",
+      "sha256": "eab9b9baa8d1e1b777741f5fe759350df1f075249dbfd14a412cf2afcd9221aa",
+      "bytes": 1220
+    },
+    {
+      "path": "images/explorers/numbers_time_days_1/tuesday.svg",
+      "sha256": "c9bab971492f2953fbee1c3de852cea13b3bc4727f79b629fba63b8bfe9ff938",
+      "bytes": 1220
+    },
+    {
+      "path": "images/explorers/numbers_time_days_1/wednesday.svg",
+      "sha256": "7e0b735355ad0d29ccd1722702aee9dfe6d16ccf372ec1eb78d5cb389d7ca3f7",
+      "bytes": 1220
+    },
+    {
+      "path": "images/explorers/numbers_time_days_2/friday.svg",
+      "sha256": "dcfee8dd41fc1aff4fb83f25811a3851ab21bf0b93951e1d4f2e25e765329410",
+      "bytes": 1220
+    },
+    {
+      "path": "images/explorers/numbers_time_days_2/saturday.svg",
+      "sha256": "58e41bc6839e23ef7276b324d9c5537cde30935e2333d8fc4eb871b972f4ce5f",
+      "bytes": 1220
+    },
+    {
+      "path": "images/explorers/numbers_time_days_2/sunday.svg",
+      "sha256": "8915832b2e67fb15dc574bc76103f57ee85f54ec86469714f4f1e66c7a0d04f7",
+      "bytes": 1220
+    },
+    {
+      "path": "images/explorers/numbers_time_months_1/april.svg",
+      "sha256": "7adfd77376d04141c7745c9b3747f794f9993737127a3e3e6250ad376e26cf16",
+      "bytes": 1440
+    },
+    {
+      "path": "images/explorers/numbers_time_months_1/february.svg",
+      "sha256": "73a4953a9799b0f3a7e6d693249897fa2b2143b2f8829e4f5c7334b0320cdfd1",
+      "bytes": 1440
+    },
+    {
+      "path": "images/explorers/numbers_time_months_1/january.svg",
+      "sha256": "88b011c54c0e98b07eb1dffc927462b393e977cfde3be061fe6c406fc0a857ad",
+      "bytes": 1440
+    },
+    {
+      "path": "images/explorers/numbers_time_months_1/march.svg",
+      "sha256": "e80b07116f717f2325985aa4aa71983cf75fae3710aa05450f4aed8dffe62167",
+      "bytes": 1440
+    },
+    {
+      "path": "images/explorers/numbers_time_months_2/august.svg",
+      "sha256": "4397054385870a09d40c2f4859caa3f63480cd8fa784735040641cfb80a5e3a7",
+      "bytes": 1440
+    },
+    {
+      "path": "images/explorers/numbers_time_months_2/july.svg",
+      "sha256": "8beabeb87105908377cc63c2ce12e261ac45233e5b4409277ae0dff0f2692e22",
+      "bytes": 1440
+    },
+    {
+      "path": "images/explorers/numbers_time_months_2/june.svg",
+      "sha256": "abc91b69d6b7dbd4ce7a6b6fc61bb419cf65921f8ff892ce1876c34e458d1fd9",
+      "bytes": 1440
+    },
+    {
+      "path": "images/explorers/numbers_time_months_2/may.svg",
+      "sha256": "e147b1148fdae9299608efc3820be88c0e1e059db98ee4126114e73e08e12023",
+      "bytes": 1440
+    },
+    {
+      "path": "images/explorers/numbers_time_months_3/december.svg",
+      "sha256": "3855a6e7e25b2d0b0a016753c8134aa1c17f07d0f30e1f238411bad23fe2546f",
+      "bytes": 1440
+    },
+    {
+      "path": "images/explorers/numbers_time_months_3/november.svg",
+      "sha256": "d6e16fa31f44d1fa7f5bbd71e7857bb0b6a2c636a4df4dd76815776455d95d0e",
+      "bytes": 1440
+    },
+    {
+      "path": "images/explorers/numbers_time_months_3/october.svg",
+      "sha256": "763e90efd171234bab4497f3343aed2c7db34b3cf66397a2e9d98ea44d395233",
+      "bytes": 1440
+    },
+    {
+      "path": "images/explorers/numbers_time_months_3/september.svg",
+      "sha256": "148d9083932be541638dd5316d456338fed461c599f12145bfbe7df665fb4697",
+      "bytes": 1440
+    },
+    {
+      "path": "images/explorers/numbers_time_teens_1/eleven.svg",
+      "sha256": "122c509c7cb3978a88aed6ff77ae900e2c2fe34e94f93da406ef848771cc46ff",
+      "bytes": 770
+    },
+    {
+      "path": "images/explorers/numbers_time_teens_1/thirteen.svg",
+      "sha256": "15ba86d1e2a15b030691e2c4421773e566c92867db9e8d1e665f4438172539b4",
+      "bytes": 870
+    },
+    {
+      "path": "images/explorers/numbers_time_teens_1/twelve.svg",
+      "sha256": "f53017f82cbed26b1243a618218b0cf11b439b95d18f808e213a120b50874352",
+      "bytes": 820
+    },
+    {
+      "path": "images/explorers/numbers_time_teens_2/fifteen.svg",
+      "sha256": "0cb95ece84dca889918861ea906ab153b9adf5ec7bbee0a5de416e877cf76050",
+      "bytes": 970
+    },
+    {
+      "path": "images/explorers/numbers_time_teens_2/fourteen.svg",
+      "sha256": "d27fb65bc63c7c7ae6b085e26cc5aa055ee8a734111a0fb2ebaff25ad0595f9d",
+      "bytes": 920
+    },
+    {
+      "path": "images/explorers/numbers_time_teens_2/sixteen.svg",
+      "sha256": "6c4a1eb7d18607ce719528773edcf597e515510155d937b621b984f59a9d63da",
+      "bytes": 1020
+    },
+    {
+      "path": "images/explorers/numbers_time_teens_3/eighteen.svg",
+      "sha256": "ff390dd093ef685a8c088bb1fe8d883f977036c6861534298be0b5cd428d366c",
+      "bytes": 1120
+    },
+    {
+      "path": "images/explorers/numbers_time_teens_3/nineteen.svg",
+      "sha256": "7e9be3cb7b1e46e27b0c66ed93b3e3a76a91c8bf4b9eaa724f87fca427e47ede",
+      "bytes": 1170
+    },
+    {
+      "path": "images/explorers/numbers_time_teens_3/seventeen.svg",
+      "sha256": "0bd20bbca3b52a621a2fc2193943eac6ce8cd8f2873c5cdafad0591993939e9b",
+      "bytes": 1070
+    },
+    {
+      "path": "images/explorers/numbers_time_tens_1/forty.svg",
+      "sha256": "ced9b5a8bdf2f6911b4b154e20cfa1e8a1c1e2dcd54cb56051a152f9421a107d",
+      "bytes": 1104
+    },
+    {
+      "path": "images/explorers/numbers_time_tens_1/thirty.svg",
+      "sha256": "f087a3d27f1cc12a6161b9abe6e7c53d5674a883cb7471e5a847affa2c6a3ea9",
+      "bytes": 883
+    },
+    {
+      "path": "images/explorers/numbers_time_tens_1/twenty.svg",
+      "sha256": "c23f4050914b12a23140e1f7bb3fba5541a99b241bcf1afd29e8c56dc3b768d9",
+      "bytes": 662
+    },
+    {
+      "path": "images/explorers/numbers_time_tens_2/fifty.svg",
+      "sha256": "ba72b83a2699059ee5caddc1e27c48d51fe3b99814e167af0cc8e35a3f76bb34",
+      "bytes": 1325
+    },
+    {
+      "path": "images/explorers/numbers_time_tens_2/seventy.svg",
+      "sha256": "b00201dd8d1db29c27529110764bcca9fec7aab01aabad06f775f369cfed24a2",
+      "bytes": 1757
+    },
+    {
+      "path": "images/explorers/numbers_time_tens_2/sixty.svg",
+      "sha256": "77432d8d14eaf3bf659c0750114eed26d79c4894987f544735b1f772711cba9e",
+      "bytes": 1546
+    },
+    {
+      "path": "images/explorers/numbers_time_tens_3/eighty.svg",
+      "sha256": "f508cd04545cb8b51948e8cb2a39416cdb196b90cd01fb909ccb20c631e5afca",
+      "bytes": 1978
+    },
+    {
+      "path": "images/explorers/numbers_time_tens_3/hundred.svg",
+      "sha256": "3fcf4a2f1f79e4cbf54d833e0c33df907e20df1b2311938e826579764cbcf9a7",
+      "bytes": 2410
+    },
+    {
+      "path": "images/explorers/numbers_time_tens_3/ninety.svg",
+      "sha256": "17e709931e0f9228c6dcf957d8d6d55a29eaf3589fdc048b822eb1ee04033be9",
+      "bytes": 4799
+    }
+  ]
+}

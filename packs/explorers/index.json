@@ -105,10 +105,10 @@
     },
     {
       "unit": "numbers-time",
-      "version": 1,
-      "sha256": "355cf0205d061af29054ae48a54e396f384e134ecb95e364357b4aa441482266",
-      "bytes": 5191836,
-      "manifest": "numbers_time/v1/manifest.json",
+      "version": 2,
+      "sha256": "0848f95cadefbf49dcde7d88e67655a59c60db4c7c698ad974b119c00daeffca",
+      "bytes": 5161108,
+      "manifest": "numbers_time/v2/manifest.json",
       "lessonIds": [
         "numbers-time-teens-1",
         "numbers-time-teens-2",
