@@ -22,14 +22,14 @@ The five older outfits (party hat, glasses, bow, crown, bow tie) are still earne
 | 5 | Animals | `animal-ears` (cat ears headband) | cat, dog, duck, fish | yes |
 | 6 | Feelings | `heart-glasses` (heart-shaped glasses) | happy, sad, angry, sleepy | yes |
 | 7 | My Body | `sweatband` (sporty headband) | hand, foot, eye, nose | yes |
-| 8 | Actions | `hero-mask` (little hero mask) | jump, run, clap, dance | when Actions is built |
+| 8 | Actions | `hero-mask` (little hero mask) | jump, run, clap, dance | yes |
 | 9 | Food | `chef-hat` | apple, milk, pizza, cupcake | yes |
-| 10 | Clothes | `beanie` (woolly hat) | shirt, shoes, hat, socks | when Clothes is built |
-| 11 | Toys | `propeller-cap` | ball, doll, kite, teddy | when Toys is built |
-| 12 | My Family | `flower-crown` | mom, dad, baby, grandma | when My Family is built |
-| 13 | My Home | `night-cap` (cozy nightcap) | bed, door, lamp, window | when My Home is built |
-| 14 | Opposites | `sunglasses` | big, small, hot, cold | when Opposites is built |
-| 15 | Transport | `pilot-cap` | car, bus, boat, plane | when Transport is built |
+| 10 | Clothes | `beanie` (woolly hat) | shirt, shoes, hat, socks | yes |
+| 11 | Toys | `propeller-cap` | ball, doll, kite, teddy | yes |
+| 12 | My Family | `flower-crown` | mom, dad, baby, grandma | yes |
+| 13 | My Home | `night-cap` (cozy nightcap) | bed, door, lamp, window | yes |
+| 14 | Opposites | `sunglasses` | big, small, hot, cold | yes |
+| 15 | Transport | `pilot-cap` | car, bus, boat, plane | yes |
 
 For a unit that is not built yet the sticker words are the intended ones; when the unit's content is written the words must
 match (the generator refuses a sticker that is not a word of its unit, and a built unit must have its outfit drawn).

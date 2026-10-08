@@ -60,8 +60,15 @@ Main character: **Dandoona (دندونة)**, the owner's own character.
 - **Reviews** (after units 4, 8, 11) and the **castle**: a never-failing hear-and-tap game with two words per unit of its group
   (`features/units/review_screen.dart`); passing opens the next unit. The castle uses every unit.
 - **Stories**: not built (no unit has one yet).
-- Units built with content: Letters, Colors, Numbers (3 lessons), Shapes (4 lessons incl. "Shapes around us"). Numbers and Shapes are
-  downloadable packs; an installed pack is checked once per run for a newer version.
+- **The whole course is built**: all 15 units of the map (76 lessons; Letters and Colors bundled, the other 13 are downloadable packs; an
+  installed pack is checked once per run for a newer version). Every unit has its chest outfit drawn (15 outfits in `content/art/accessories`)
+  and its stickers; 20 outfits in the wardrobe with the 5 star ones. Pictures: self-drawn SVG by `tools/art/make-*.mjs` (shapes, feelings, body,
+  things), reused Letters pictures, Dandoona herself (poses + generated action pictures), and generated pictures picked with `approve`.
+  Spent about $4.9 of $25 in all. `tools/art/make-lessons.mjs` writes the lesson files of the later units from one table.
+- **Demo data**: `scripts/seed-demo-data.sh` (run it against a running API) gives `demo@dandoona.app` / `Demo!2026x` three children: Sara (Letters and
+  Colors done), Adam (Letters A-M) and **Noor, who finished everything** (all lessons, certificates, chests, reviews and the castle): log in on a
+  fresh app and pick Noor to see the whole map, the 60 stickers and all 20 outfits. In the emulator, type the password with `adb shell input text`
+  (the keyboard drops the `!`).
 - Sounds are synthesized by `tools/sounds/*.ps1` (cheer, chest-open); balloon and shape pictures by `tools/art/*.mjs`.
 
 ## Tests (all green at the time of writing)
@@ -99,7 +106,7 @@ Main character: **Dandoona (دندونة)**, the owner's own character.
 3. Certificate screen: a separate "Save" button next to "Share" (today saving goes through the share sheet).
 4. Real e-mail provider for verification and password reset (not chosen; only the logging sender exists). Show the parent's first name
    after log-in too (today it is stored at sign-up only).
-5. Next units in map order: Animals, Feelings, My Body, Actions, Food, Clothes, Toys, My Family, My Home, Opposites, Transport. Each is
-   a content pack: lessons yaml + pictures + voice (show the cost estimate first), then its chest outfit (drawn) and stickers.
+5. Content ideas: a story for some units (the map has a Story stop; no unit has one yet), more lessons per unit, mini-games and coloring pages as
+   extra chest rewards, a second track (Explorers 6-8). Install ffmpeg and run `export --force` to shrink the packs (about 1-2.6 MB each now).
 6. Release signing, privacy policy and terms final text, store listing (see the open items at the end of `store-compliance.md`).
 7. Optional: play the "Welcome back!" line on later launches (it is generated and exported but not used).
