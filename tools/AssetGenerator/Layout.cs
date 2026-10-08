@@ -115,6 +115,11 @@ public static class LessonPlan
         foreach (var w in l.Words) items.Add(new($"word-{Slug(w.Word)}", w.Word.Trim(), false));
         if (!string.IsNullOrWhiteSpace(l.Narration.ColorName)) items.Add(new("color-name", l.Narration.ColorName.Trim(), false));
         foreach (var w in l.Words)
+        {
+            if (!string.IsNullOrWhiteSpace(w.Sound)) items.Add(new(SoundRole(w.Word), w.Sound.Trim(), false));
+            if (!string.IsNullOrWhiteSpace(w.Lives)) items.Add(new(LivesRole(w.Word), w.Lives.Trim(), false));
+        }
+        foreach (var w in l.Words)
             if (l.Narration.Phrases.FirstOrDefault(p => p.Key.Trim().Equals(w.Word.Trim(), StringComparison.OrdinalIgnoreCase)) is { Value: { Length: > 0 } phrase })
                 items.Add(new(PhraseRole(w.Word), phrase.Trim(), false));
         foreach (var (key, text) in l.Narration.Instructions.OrderBy(k => k.Key, StringComparer.Ordinal)) items.Add(new(InstructionRole(key), text.Trim(), false));
@@ -126,6 +131,8 @@ public static class LessonPlan
         l.Words.Where(w => w.Reuse is null).Select(w => new ImageItem(Slug(w.Word), w.ImagePrompt.Trim(), w.Mascot, w.Source == "svg")).ToList();
 
     public static string InstructionRole(string key) => $"instr-{key}";
+    public static string SoundRole(string word) => $"sound-{Slug(word)}";
+    public static string LivesRole(string word) => $"lives-{Slug(word)}";
     public static string PhraseRole(string word) => $"phrase-{Slug(word)}";
 
     /// <summary>Words that reuse a picture from another lesson: (word key, "lesson-id/key").</summary>

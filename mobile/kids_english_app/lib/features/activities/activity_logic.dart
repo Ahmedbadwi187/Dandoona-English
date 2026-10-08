@@ -51,6 +51,11 @@ List<ChoiceRound> buildChoiceRounds(Lesson lesson, TrackContent track, Random ra
   return rounds..shuffle(random);
 }
 
+/// Animal sounds: like listen-and-tap, but the prompt is what the animal says, so only animals that make a sound are asked
+/// (the pictures to choose from are the unit's other animals).
+List<ChoiceRound> buildSoundRounds(Lesson lesson, TrackContent track, Random random, {int optionCount = 3}) =>
+    [for (final r in buildChoiceRounds(lesson, track, random, optionCount: optionCount)) if (r.target.sound != null) r];
+
 /// Pairs for match-the-picture: each word has a picture card and a sound card; the two columns are shuffled differently.
 class MatchPairs {
   const MatchPairs({required this.pictures, required this.sounds});

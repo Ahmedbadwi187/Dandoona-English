@@ -4,9 +4,9 @@ track: little-learners
 level: pre-a1
 order: 5
 words:
-  - { word: bear, reuse: letter-b/bear }
-  - { word: tiger, reuse: letter-t/tiger }
-  - { word: zebra, reuse: letter-z/zebra }
+  - { word: bear, reuse: letter-b/bear, sound: "Grr! Grr!", home: wild, lives: "A bear lives in the wild." }
+  - { word: tiger, reuse: letter-t/tiger, sound: "Growl! Growl!", home: wild, lives: "A tiger lives in the wild." }
+  - { word: zebra, reuse: letter-z/zebra, home: wild, lives: "A zebra lives in the wild." }
 narration:
   intro: "More animals! ... A bear. ... A tiger. ... A zebra!"
   phrases: { bear: "A bear.", tiger: "A tiger.", zebra: "A zebra." }
@@ -14,5 +14,7 @@ narration:
   instructions:
     listen-and-tap: "Listen, then tap the animal!"
     match-picture: "Match each word to its animal!"
+    animal-sounds: "Who says this? Tap the animal!"
+    habitat: "Where does it live? Tap its home!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, record-and-listen]
+activities: [listen-and-tap, match-picture, animal-sounds, habitat, record-and-listen]

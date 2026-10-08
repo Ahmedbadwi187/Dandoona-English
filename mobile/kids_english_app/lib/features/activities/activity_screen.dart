@@ -24,6 +24,7 @@ import '../units/unit_logic.dart';
 import '../units/unit_meta.dart';
 import 'activity_logic.dart';
 import 'color_the_object_activity.dart';
+import 'habitat_activity.dart';
 import 'listen_and_tap_activity.dart';
 import 'match_picture_activity.dart';
 import 'record_listen_activity.dart';
@@ -146,7 +147,9 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
                   'trace' => TraceActivity(lesson: widget.lesson, onFinished: _finished),
                   'trace-small' => TraceActivity(lesson: widget.lesson, onFinished: _finished, small: true),
                   'record-and-listen' => RecordListenActivity(lesson: widget.lesson, onFinished: _finished),
-                  'color-the-object' => ColorTheObjectActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
+                  'animal-sounds' => ListenAndTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished, sounds: true),
+                  'habitat' => HabitatActivity(lesson: widget.lesson, onFinished: _finished),
+                    'color-the-object' => ColorTheObjectActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   _ => Center(child: Text(Strings.en('loadError'))),
                 },
         ),

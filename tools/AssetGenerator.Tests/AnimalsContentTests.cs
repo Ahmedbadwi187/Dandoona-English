@@ -23,4 +23,50 @@ public class AnimalsContentTests
         chest.Accessory.ShouldBe("animal-ears");
         chest.Stickers.ShouldBe(["cat", "dog", "duck", "fish"]);
     }
+
+    [Fact]
+    public void Every_animal_has_a_home_and_a_lives_sentence_the_noisy_ones_a_sound_and_every_line_is_planned_as_audio()
+    {
+        var layout = Layout.FindFrom(AppContext.BaseDirectory);
+        var lessons = CurriculumReader.LoadAll(layout.CurriculumDir).Where(l => l.Unit == "animals").ToList();
+        foreach (var l in lessons)
+        {
+            l.Activities.ShouldContain("animal-sounds");
+            l.Activities.ShouldContain("habitat");
+            var roles = LessonPlan.Audio(l).Select(a => a.Role).ToList();
+            roles.ShouldContain("instr-animal-sounds");
+            roles.ShouldContain("instr-habitat");
+            foreach (var w in l.Words)
+            {
+                LessonValidator.Homes.ShouldContain(w.Home!, w.Word);
+                roles.ShouldContain(LessonPlan.LivesRole(w.Word));
+                if (w.Sound is not null) roles.ShouldContain(LessonPlan.SoundRole(w.Word));
+            }
+        }
+        lessons.SelectMany(l => l.Words).Where(w => w.Sound is null).Select(w => w.Word).ShouldBe(["rabbit", "zebra"]);
+    }
+
+    [Fact]
+    public void A_habitat_lesson_needs_a_home_for_every_word_and_a_home_needs_its_sentence()
+    {
+        var layout = Layout.FindFrom(AppContext.BaseDirectory);
+        var good = CurriculumReader.LoadAll(layout.CurriculumDir).First(l => l.Id == "animals-1");
+        new LessonValidator().Validate(good).IsValid.ShouldBeTrue();
+
+        var noHome = CurriculumReader.LoadAll(layout.CurriculumDir).First(l => l.Id == "animals-1");
+        noHome.Words[0].Home = null;
+        new LessonValidator().Validate(noHome).IsValid.ShouldBeFalse();
+
+        var noSentence = CurriculumReader.LoadAll(layout.CurriculumDir).First(l => l.Id == "animals-1");
+        noSentence.Words[0].Lives = null;
+        new LessonValidator().Validate(noSentence).IsValid.ShouldBeFalse();
+
+        var badHome = CurriculumReader.LoadAll(layout.CurriculumDir).First(l => l.Id == "animals-1");
+        badHome.Words[0].Home = "moon";
+        new LessonValidator().Validate(badHome).IsValid.ShouldBeFalse();
+
+        var oneSound = CurriculumReader.LoadAll(layout.CurriculumDir).First(l => l.Id == "animals-1");
+        oneSound.Words[1].Sound = null; // only the cat is left with a sound
+        new LessonValidator().Validate(oneSound).IsValid.ShouldBeFalse();
+    }
 }

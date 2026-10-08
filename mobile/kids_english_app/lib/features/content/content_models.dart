@@ -369,13 +369,22 @@ class LessonAudio {
 }
 
 class LessonWord {
-  const LessonWord({required this.word, required this.audio, required this.image, this.phrase});
+  const LessonWord({required this.word, required this.audio, required this.image, this.phrase, this.sound, this.lives, this.home});
 
   final String word;
   final String audio;
 
   /// Colors unit: the word in a phrase ("A red apple."), used by record-and-listen.
   final String? phrase;
+
+  /// Animals: what the animal says (audio of "Meow! Meow!"), for animal-sounds; null for an animal that is quiet.
+  final String? sound;
+
+  /// Animals: audio of "A cow lives on the farm.", said when the animal is put in its home.
+  final String? lives;
+
+  /// Animals: where it lives, one of house, farm, water, wild.
+  final String? home;
 
   /// `.svg` (self-drawn) or `.webp` (generated); both are rendered by AssetPicture.
   final String image;
@@ -385,5 +394,8 @@ class LessonWord {
         audio: json['audio'] as String,
         image: json['image'] as String,
         phrase: json['phrase'] as String?,
+        sound: json['sound'] as String?,
+        lives: json['lives'] as String?,
+        home: json['home'] as String?,
       );
 }

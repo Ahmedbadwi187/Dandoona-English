@@ -10344,5 +10344,271 @@
     "what": "letter-z/instr-trace-small (27 chars)",
     "usd": 0.00216,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:02.7161013Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/sound-cat (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:03.818034Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/lives-cat (25 chars)",
+    "usd": 0.00200,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:04.9043068Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/sound-dog (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:05.9910027Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/lives-dog (25 chars)",
+    "usd": 0.00200,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:07.1169865Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/lives-rabbit (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:08.2614508Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/instr-animal-sounds (30 chars)",
+    "usd": 0.0024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:09.4566361Z",
+    "service": "ElevenLabs",
+    "what": "animals-1/instr-habitat (33 chars)",
+    "usd": 0.00264,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:15.7372569Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/sound-cow (9 chars)",
+    "usd": 0.00072,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:16.8867581Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/lives-cow (24 chars)",
+    "usd": 0.00192,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:17.9770729Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/sound-pig (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:19.1077199Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/lives-pig (24 chars)",
+    "usd": 0.00192,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:20.1569654Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/sound-horse (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:21.2501086Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/lives-horse (26 chars)",
+    "usd": 0.00208,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:22.4013255Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/instr-animal-sounds (30 chars)",
+    "usd": 0.0024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:23.5693987Z",
+    "service": "ElevenLabs",
+    "what": "animals-2/instr-habitat (33 chars)",
+    "usd": 0.00264,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:28.0676071Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/sound-duck (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:29.2774651Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/lives-duck (28 chars)",
+    "usd": 0.00224,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:30.3300629Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/sound-fish (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:31.608079Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/lives-fish (26 chars)",
+    "usd": 0.00208,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:32.7076042Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/sound-frog (15 chars)",
+    "usd": 0.00120,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:33.8280762Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/lives-frog (28 chars)",
+    "usd": 0.00224,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:35.0382471Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/instr-animal-sounds (30 chars)",
+    "usd": 0.0024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:36.2776034Z",
+    "service": "ElevenLabs",
+    "what": "animals-3/instr-habitat (33 chars)",
+    "usd": 0.00264,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:42.9332403Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/sound-lion (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:44.0487087Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/lives-lion (25 chars)",
+    "usd": 0.00200,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:45.1147918Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/sound-elephant (11 chars)",
+    "usd": 0.00088,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:46.314981Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/lives-elephant (30 chars)",
+    "usd": 0.0024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:47.4874022Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/sound-monkey (17 chars)",
+    "usd": 0.00136,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:48.5716447Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/lives-monkey (27 chars)",
+    "usd": 0.00216,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:49.7184558Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/instr-animal-sounds (30 chars)",
+    "usd": 0.0024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:50.9161428Z",
+    "service": "ElevenLabs",
+    "what": "animals-4/instr-habitat (33 chars)",
+    "usd": 0.00264,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:56.3021972Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/sound-bear (9 chars)",
+    "usd": 0.00072,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:44:58.0920574Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/lives-bear (25 chars)",
+    "usd": 0.00200,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:45:00.1701931Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/sound-tiger (13 chars)",
+    "usd": 0.00104,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:45:01.3112849Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/lives-tiger (26 chars)",
+    "usd": 0.00208,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:45:02.4375817Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/lives-zebra (26 chars)",
+    "usd": 0.00208,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:45:03.5780928Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/instr-animal-sounds (30 chars)",
+    "usd": 0.0024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T09:45:04.7274038Z",
+    "service": "ElevenLabs",
+    "what": "animals-5/instr-habitat (33 chars)",
+    "usd": 0.00264,
+    "estimated": false
   }
 ]

@@ -4,9 +4,9 @@ track: little-learners
 level: pre-a1
 order: 2
 words:
-  - { word: cow, reuse: letter-c/cow }
-  - { word: pig, reuse: letter-p/pig }
-  - { word: horse, reuse: letter-h/horse }
+  - { word: cow, reuse: letter-c/cow, sound: "Moo! Moo!", home: farm, lives: "A cow lives on the farm." }
+  - { word: pig, reuse: letter-p/pig, sound: "Oink! Oink!", home: farm, lives: "A pig lives on the farm." }
+  - { word: horse, reuse: letter-h/horse, sound: "Neigh! Neigh!", home: farm, lives: "A horse lives on the farm." }
 narration:
   intro: "Farm animals! ... A cow. ... A pig. ... A horse!"
   phrases: { cow: "A cow.", pig: "A pig.", horse: "A horse." }
@@ -14,5 +14,7 @@ narration:
   instructions:
     listen-and-tap: "Listen, then tap the animal!"
     match-picture: "Match each word to its animal!"
+    animal-sounds: "Who says this? Tap the animal!"
+    habitat: "Where does it live? Tap its home!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, record-and-listen]
+activities: [listen-and-tap, match-picture, animal-sounds, habitat, record-and-listen]

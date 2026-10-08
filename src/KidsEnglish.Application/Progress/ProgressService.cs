@@ -17,7 +17,9 @@ public static class ActivityCodes
         ["record-and-listen"] = ActivityType.RecordAndListen,
         ["match-picture"] = ActivityType.MatchPicture,
         ["color-the-object"] = ActivityType.ColorTheObject,
-        ["trace-small"] = ActivityType.TraceSmall
+        ["trace-small"] = ActivityType.TraceSmall,
+        ["animal-sounds"] = ActivityType.AnimalSounds,
+        ["habitat"] = ActivityType.Habitat
     };
 
     public static bool TryParse(string? code, out ActivityType type) => Map.TryGetValue(code ?? "", out type);

@@ -48,6 +48,12 @@ public class LessonWord
     public bool Mascot { get; set; }
     /// <summary>"openai" (generated illustration) or "svg" (self-drawn, content/art/{track}/{lesson}/{key}.svg).</summary>
     public string Source { get; set; } = "openai";
+    /// <summary>Animals: what the animal says ("Meow! Meow!"), spoken for the animal-sounds activity.</summary>
+    public string? Sound { get; set; }
+    /// <summary>Animals: where it lives, one of Homes (house, farm, water, wild); needs `lives` too.</summary>
+    public string? Home { get; set; }
+    /// <summary>Animals: the sentence said when the animal is put in its home ("A cow lives on the farm.").</summary>
+    public string? Lives { get; set; }
 }
 
 public class Narration
@@ -151,7 +157,8 @@ public class PlacementDef
 
 public class LessonValidator : AbstractValidator<Lesson>
 {
-    public static readonly string[] ActivityNames = ["trace", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "trace-small"];
+    public static readonly string[] ActivityNames = ["trace", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "trace-small", "animal-sounds", "habitat"];
+    public static readonly string[] Homes = ["house", "farm", "water", "wild"];
     private static readonly string[] Levels = ["pre-a1", "a1", "a2"];
     private static readonly string[] Tracks = ["little-learners", "explorers", "champions"];
 
@@ -175,6 +182,9 @@ public class LessonValidator : AbstractValidator<Lesson>
             w.RuleFor(i => i.ImagePrompt).NotEmpty().MaximumLength(500).When(i => i.Reuse is null);
             w.RuleFor(i => i.Reuse).Matches("^[a-z0-9]+(-[a-z0-9]+)*/[a-z0-9-]+$").When(i => i.Reuse is not null).WithMessage("'Reuse' must look like lesson-id/word-key.");
             w.RuleFor(i => i.Source).Must(s => s is "openai" or "svg").WithMessage("Word source must be openai or svg.");
+            w.RuleFor(i => i.Sound).MaximumLength(40).Must(s => !string.IsNullOrWhiteSpace(s)).When(i => i.Sound is not null);
+            w.RuleFor(i => i.Home).Must(h => Homes.Contains(h!)).When(i => i.Home is not null).WithMessage("Word home must be one of: " + string.Join(", ", Homes));
+            w.RuleFor(i => i.Lives).NotEmpty().MaximumLength(80).When(i => i.Home is not null).WithMessage("A word with a home needs a `lives` sentence.");
         });
         RuleFor(x => x.Words)
             .Must(ws => ws.Select(w => w.Word.Trim().ToLowerInvariant()).Distinct().Count() == ws.Count)
@@ -192,6 +202,8 @@ public class LessonValidator : AbstractValidator<Lesson>
         RuleFor(x => x.Activities).NotEmpty();
         RuleForEach(x => x.Activities).Must(a => ActivityNames.Contains(a))
             .WithMessage("Unknown activity '{PropertyValue}'. Use: " + string.Join(", ", ActivityNames));
+        RuleFor(x => x).Must(l => !l.Activities.Contains("habitat") || l.Words.All(w => w.Home is not null)).WithMessage("Every word of a habitat lesson needs a home.");
+        RuleFor(x => x).Must(l => !l.Activities.Contains("animal-sounds") || l.Words.Count(w => w.Sound is not null) >= 2).WithMessage("An animal-sounds lesson needs at least two words with a sound.");
         RuleFor(x => x.Activities).Must(a => a.Distinct().Count() == a.Count).WithMessage("Duplicate activities in lesson.");
     }
 }

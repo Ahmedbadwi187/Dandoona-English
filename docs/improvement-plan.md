@@ -10,8 +10,8 @@ Status: [x] done, [ ] to do, [~] started.
    tap a picture for its word). The story stop on the map opens it; reading to the end marks it.
 2. [x] **Capital and small letters** (owner's addition): every letter lesson shows the capital and the small letter together ("Aa"); Dandoona
    says "capital A" and "small a" when each is tapped; the small letter is traced as well as the capital.
-3. [ ] **Animal sounds and where animals live** (Animals): "a cat says meow" for every animal (voice), and a game that puts each animal in its
-   home (farm, water, jungle).
+3. [x] **Animal sounds and where animals live** (Animals): "a cat says meow" for every animal (voice), and a game that puts each animal in its
+   home (house, farm, water, wild). Built: `animal-sounds` (hear "Meow! Meow!", tap the animal; rabbit and zebra are quiet so they are not asked) and `habitat` (put the animal in its home, it says "A cow lives on the farm.").
 4. [ ] **"Dandoona says"** (Actions): Dandoona says an action and the child does it for real; a gentle timer, no scores.
 5. [ ] **Counting for real and tracing numbers** (Numbers): tap each balloon as it is counted; trace the numeral 1-10.
 6. [ ] **Printable cards for parents** (all units): one page per unit with 3-4 things to look for at home; a web page, no tracking.

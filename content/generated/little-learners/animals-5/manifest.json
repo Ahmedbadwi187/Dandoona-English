@@ -51,6 +51,34 @@
     "instr-record-and-listen": {
       "hash": "0953488676f25f4555a126d39be8e9df051e56e3a0e4fa67b7931a8e71e72b5a",
       "generatedAtUtc": "2026-10-07T19:25:22.6799279Z"
+    },
+    "sound-bear": {
+      "hash": "d64877000e3e24fda5259835338ac8b15c0620d2f1d742f7d042a76378645f2a",
+      "generatedAtUtc": "2026-10-08T09:44:56.2966823Z"
+    },
+    "lives-bear": {
+      "hash": "9dd3c93ebe0c7cafcb72bc3df125aa9f908ebb2c10abb14b8c242339be661cf9",
+      "generatedAtUtc": "2026-10-08T09:44:58.0908394Z"
+    },
+    "sound-tiger": {
+      "hash": "9bc2193f3868bee1a1ef06c57a60ea64d5677081aa4acf97cf04c5709e912324",
+      "generatedAtUtc": "2026-10-08T09:45:00.1693285Z"
+    },
+    "lives-tiger": {
+      "hash": "fdf76839b32efc4dd401477641a354f9b509ff552230b136697255520b7fe910",
+      "generatedAtUtc": "2026-10-08T09:45:01.3104753Z"
+    },
+    "lives-zebra": {
+      "hash": "b162d42d6e6305f29b4ee28cd3a997bf517a71d104e7f7288694782fdf96e58f",
+      "generatedAtUtc": "2026-10-08T09:45:02.4363706Z"
+    },
+    "instr-animal-sounds": {
+      "hash": "14c8012988db89e430d4794edd6f8840adf96c938148babaf74c453ca5f3c4d4",
+      "generatedAtUtc": "2026-10-08T09:45:03.5758633Z"
+    },
+    "instr-habitat": {
+      "hash": "09ee605a0d5235d5d4f3702134112e892b18b701cfddfef4795e8f1e13a7d61e",
+      "generatedAtUtc": "2026-10-08T09:45:04.7264065Z"
     }
   }
 }

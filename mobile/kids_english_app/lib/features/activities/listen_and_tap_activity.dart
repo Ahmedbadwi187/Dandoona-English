@@ -22,6 +22,7 @@ class ListenAndTapActivity extends ConsumerStatefulWidget {
     this.random,
     this.nextDelay = const Duration(milliseconds: 900),
     this.hintAfter = const Duration(seconds: 8),
+    this.sounds = false,
   });
 
   final Lesson lesson;
@@ -33,13 +34,16 @@ class ListenAndTapActivity extends ConsumerStatefulWidget {
   /// After this long without a tap, the right picture lights up and the hint is spoken.
   final Duration hintAfter;
 
+  /// Animals: the prompt is what the animal says ("Meow!") instead of its name; only animals that make a sound are asked.
+  final bool sounds;
+
   @override
   ConsumerState<ListenAndTapActivity> createState() => _ListenAndTapActivityState();
 }
 
 class _ListenAndTapActivityState extends ConsumerState<ListenAndTapActivity> {
   late final Random _random = widget.random ?? Random();
-  late final List<ChoiceRound> _rounds = buildChoiceRounds(widget.lesson, widget.track, _random);
+  late final List<ChoiceRound> _rounds = widget.sounds ? buildSoundRounds(widget.lesson, widget.track, _random) : buildChoiceRounds(widget.lesson, widget.track, _random);
   int _index = 0;
   int _mistakes = 0;
   String? _wrongWord;
@@ -52,15 +56,17 @@ class _ListenAndTapActivityState extends ConsumerState<ListenAndTapActivity> {
 
   ChoiceRound get _round => _rounds[_index];
 
+  String get _activityKey => widget.sounds ? 'animal-sounds' : 'listen-and-tap';
+
   /// Colors unit: the prompt is the color name ("Red!"), and every picture of the lesson is a right answer; otherwise the word itself.
-  String get _promptAudio => widget.lesson.audio.colorName ?? _round.target.audio;
+  String get _promptAudio => widget.sounds ? _round.target.sound! : (widget.lesson.audio.colorName ?? _round.target.audio);
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
-      unawaited(_speech.say(instruction: widget.lesson.audio.instructions['listen-and-tap'], then: _promptAudio));
+      unawaited(_speech.say(instruction: widget.lesson.audio.instructions[_activityKey], then: _promptAudio));
       _idle.arm();
     });
   }

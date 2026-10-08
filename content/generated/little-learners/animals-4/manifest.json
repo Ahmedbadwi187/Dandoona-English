@@ -51,6 +51,38 @@
     "instr-record-and-listen": {
       "hash": "0953488676f25f4555a126d39be8e9df051e56e3a0e4fa67b7931a8e71e72b5a",
       "generatedAtUtc": "2026-10-07T19:25:09.7421167Z"
+    },
+    "sound-lion": {
+      "hash": "929337e8c31501d456ec53d73e9f0e3d9550e624b8dd0401b355a1bb928f0e4b",
+      "generatedAtUtc": "2026-10-08T09:44:42.9228525Z"
+    },
+    "lives-lion": {
+      "hash": "d2797221b4a2a50ee04e0971e20a0800bd01b6b93dab1ac27c46cf73acb57a22",
+      "generatedAtUtc": "2026-10-08T09:44:44.047079Z"
+    },
+    "sound-elephant": {
+      "hash": "718e9355d01e247b1636dbf2eddce22a90c5fe271a3484bdd9ed2ce2355f4c19",
+      "generatedAtUtc": "2026-10-08T09:44:45.1138301Z"
+    },
+    "lives-elephant": {
+      "hash": "ba9adce7718f217f5c36439b950e36f9e2593113f879cd14b4ad7b0489bef764",
+      "generatedAtUtc": "2026-10-08T09:44:46.3137046Z"
+    },
+    "sound-monkey": {
+      "hash": "d9e984396825e290f7dea2da4b5df6c2a90254d044ca592de94cf83e48dfbe32",
+      "generatedAtUtc": "2026-10-08T09:44:47.4861365Z"
+    },
+    "lives-monkey": {
+      "hash": "497ab39af7079ee2c784bfbacebe5f8da24d7121bc157546388bfe3b3eb04583",
+      "generatedAtUtc": "2026-10-08T09:44:48.5708663Z"
+    },
+    "instr-animal-sounds": {
+      "hash": "14c8012988db89e430d4794edd6f8840adf96c938148babaf74c453ca5f3c4d4",
+      "generatedAtUtc": "2026-10-08T09:44:49.7174296Z"
+    },
+    "instr-habitat": {
+      "hash": "09ee605a0d5235d5d4f3702134112e892b18b701cfddfef4795e8f1e13a7d61e",
+      "generatedAtUtc": "2026-10-08T09:44:50.9148884Z"
     }
   }
 }

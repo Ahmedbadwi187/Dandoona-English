@@ -4,9 +4,9 @@ track: little-learners
 level: pre-a1
 order: 4
 words:
-  - { word: lion, reuse: letter-l/lion }
-  - { word: elephant, reuse: letter-e/elephant }
-  - { word: monkey, reuse: letter-m/monkey }
+  - { word: lion, reuse: letter-l/lion, sound: "Roar! Roar!", home: wild, lives: "A lion lives in the wild." }
+  - { word: elephant, reuse: letter-e/elephant, sound: "Toot! Toot!", home: wild, lives: "An elephant lives in the wild." }
+  - { word: monkey, reuse: letter-m/monkey, sound: "Ooh ooh! Aah aah!", home: wild, lives: "A monkey lives in the wild." }
 narration:
   intro: "Wild animals! ... A lion. ... An elephant. ... A monkey!"
   phrases: { lion: "A lion.", elephant: "An elephant.", monkey: "A monkey." }
@@ -14,5 +14,7 @@ narration:
   instructions:
     listen-and-tap: "Listen, then tap the animal!"
     match-picture: "Match each word to its animal!"
+    animal-sounds: "Who says this? Tap the animal!"
+    habitat: "Where does it live? Tap its home!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, record-and-listen]
+activities: [listen-and-tap, match-picture, animal-sounds, habitat, record-and-listen]

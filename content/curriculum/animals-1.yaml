@@ -4,9 +4,9 @@ track: little-learners
 level: pre-a1
 order: 1
 words:
-  - { word: cat, reuse: letter-c/cat }
-  - { word: dog, reuse: letter-d/dog }
-  - { word: rabbit, reuse: letter-r/rabbit }
+  - { word: cat, reuse: letter-c/cat, sound: "Meow! Meow!", home: house, lives: "A cat lives in the house." }
+  - { word: dog, reuse: letter-d/dog, sound: "Woof! Woof!", home: house, lives: "A dog lives in the house." }
+  - { word: rabbit, reuse: letter-r/rabbit, home: farm, lives: "A rabbit lives on the farm." }
 narration:
   intro: "Let's meet the animals! ... A cat. ... A dog. ... A rabbit!"
   phrases: { cat: "A cat.", dog: "A dog.", rabbit: "A rabbit." }
@@ -14,5 +14,7 @@ narration:
   instructions:
     listen-and-tap: "Listen, then tap the animal!"
     match-picture: "Match each word to its animal!"
+    animal-sounds: "Who says this? Tap the animal!"
+    habitat: "Where does it live? Tap its home!"
     record-and-listen: "Listen, then say it!"
-activities: [listen-and-tap, match-picture, record-and-listen]
+activities: [listen-and-tap, match-picture, animal-sounds, habitat, record-and-listen]

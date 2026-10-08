@@ -51,6 +51,38 @@
     "instr-record-and-listen": {
       "hash": "0953488676f25f4555a126d39be8e9df051e56e3a0e4fa67b7931a8e71e72b5a",
       "generatedAtUtc": "2026-10-07T19:24:56.9176501Z"
+    },
+    "sound-duck": {
+      "hash": "caaadb53bf49a9bfc5ed33efd452f51c25b5654647ed5d68a9551fa43a9508f4",
+      "generatedAtUtc": "2026-10-08T09:44:28.0597333Z"
+    },
+    "lives-duck": {
+      "hash": "856c1d51515491ddca50c286b0e9ce7a2a0b24616dce8466150a5b9a47fde207",
+      "generatedAtUtc": "2026-10-08T09:44:29.2760738Z"
+    },
+    "sound-fish": {
+      "hash": "8aa859d8bfce4ba032500ed55c7ddf6eda26a09a07d31ac6f15e315deee6a4f6",
+      "generatedAtUtc": "2026-10-08T09:44:30.328711Z"
+    },
+    "lives-fish": {
+      "hash": "749f22a4dab0997caadd828bde2ce8fe3c3e6ebe7c51d4c05242966b20872070",
+      "generatedAtUtc": "2026-10-08T09:44:31.6052545Z"
+    },
+    "sound-frog": {
+      "hash": "f8bf9a5372008fa5b6326c90b4a920c9a4bf5f30df65b4a3400bf2eac16c0c69",
+      "generatedAtUtc": "2026-10-08T09:44:32.7064291Z"
+    },
+    "lives-frog": {
+      "hash": "11f3e78b5531e2bd0544efedd0ce828a31b486b5a8ecac68d4dd74de2ecbbb8f",
+      "generatedAtUtc": "2026-10-08T09:44:33.8264132Z"
+    },
+    "instr-animal-sounds": {
+      "hash": "14c8012988db89e430d4794edd6f8840adf96c938148babaf74c453ca5f3c4d4",
+      "generatedAtUtc": "2026-10-08T09:44:35.0374447Z"
+    },
+    "instr-habitat": {
+      "hash": "09ee605a0d5235d5d4f3702134112e892b18b701cfddfef4795e8f1e13a7d61e",
+      "generatedAtUtc": "2026-10-08T09:44:36.2763954Z"
     }
   }
 }
