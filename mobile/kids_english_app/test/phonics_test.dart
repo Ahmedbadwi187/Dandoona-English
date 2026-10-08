@@ -65,7 +65,82 @@ Future<void> _tap(WidgetTester t, String key) async {
   await t.pumpAndSettle();
 }
 
+/// A magic-e lesson: "cake" is c, a (saying its name), k, and a silent e; "ship" starts with one sound for two letters.
+Lesson _magic() => Lesson.fromJson({
+      'id': 'magic-e-a',
+      'order': 1,
+      'level': 'a1',
+      'audio': {'intro': 'audio/x/intro.mp3', 'praise': ['audio/x/p.mp3'], 'instructions': {'sound-tap': 'audio/x/i1.mp3', 'word-builder': 'audio/x/i2.mp3'}},
+      'words': [
+        {'word': 'cake', 'audio': 'audio/x/word_cake.mp3', 'image': 'images/little_learners/letter_c/cat.webp', 'graphemes': ['c', 'a:ay', 'k', 'e:-']},
+        {'word': 'ship', 'audio': 'audio/x/word_ship.mp3', 'image': 'images/little_learners/letter_h/hat.svg', 'graphemes': ['sh', 'i', 'p']},
+        {'word': 'cat', 'audio': 'audio/x/word_cat.mp3', 'image': 'images/little_learners/letter_c/cat.webp', 'graphemes': ['c', 'a', 't']},
+      ],
+      'activities': ['sound-tap', 'word-builder'],
+    });
+
+TrackContent _magicTrack() => TrackContent.fromJson({
+      'schemaVersion': 2,
+      'track': 'explorers',
+      'units': [],
+      'phonemes': {for (final g in ['c', 'a', 'ay', 'k', 'sh', 'i', 'p', 't']) g: 'audio/explorers/phonemes/phoneme_$g.mp3'},
+    });
+
 void main() {
+  test('a grapheme is its letters, and the sound they make (none for a silent letter)', () {
+    expect(graphemeText('sh'), 'sh');
+    expect(graphemeSound('sh'), 'sh');
+    expect(graphemeText('a:ay'), 'a');
+    expect(graphemeSound('a:ay'), 'ay');
+    expect(graphemeText('e:-'), 'e');
+    expect(graphemeSound('e:-'), isNull);
+  });
+
+  group('magic e and digraphs', () {
+    testWidgets('Sound Tap: "a" in cake says its name, the magic e says nothing and looks quieter; "sh" is one box', (t) async {
+      final (audio, _, _) = await _game(t, (done) => SoundTapActivity(lesson: _magic(), track: _magicTrack(), onFinished: done), seen: 'sound-tap');
+      expect([for (var i = 0; i < 4; i++) t.widget<GraphemeTile>(find.descendant(of: find.byKey(Key('sound-box-$i')), matching: find.byType(GraphemeTile))).text], ['c', 'a', 'k', 'e']);
+      expect(t.widget<GraphemeTile>(find.descendant(of: find.byKey(const Key('sound-box-3')), matching: find.byType(GraphemeTile))).silent, isTrue);
+      audio.played.clear();
+      await _tap(t, 'sound-box-1');
+      expect(audio.played, ['asset:audio/explorers/phonemes/phoneme_ay.mp3']);
+      await _tap(t, 'sound-box-3');
+      expect(audio.played.length, 1); // silent
+      await _tap(t, 'sound-box-0');
+      await _tap(t, 'sound-box-2');
+      await t.pump(const Duration(seconds: 3));
+      await t.pumpAndSettle();
+      expect(audio.played.last, 'asset:audio/x/word_cake.mp3'); // all four heard (the silent one too): the word is read
+      expect(find.byKey(const Key('sound-box-3')), findsNothing); // ship: three boxes
+      expect(t.widget<GraphemeTile>(find.descendant(of: find.byKey(const Key('sound-box-0')), matching: find.byType(GraphemeTile))).text, 'sh');
+      await _tap(t, 'sound-box-0');
+      expect(audio.played.last, 'asset:audio/explorers/phonemes/phoneme_sh.mp3');
+    });
+
+    test('Word Builder never offers a second tile that looks like one of the word\'s (no short "a" next to the long one)', () {
+      for (var seed = 0; seed < 20; seed++) {
+        final tiles = builderTiles(_magic().words[0], _magic(), Random(seed));
+        expect(tiles.map(graphemeText).toSet().length, tiles.length);
+        expect(tiles, containsAll(['c', 'a:ay', 'k', 'e:-']));
+      }
+    });
+
+    testWidgets('Word Builder: the "a" tile builds cake and says /ay/ there', (t) async {
+      final (audio, results, _) = await _game(t, (done) => WordBuilderActivity(lesson: _magic(), track: _magicTrack(), onFinished: done, random: Random(4)), seen: 'word-builder');
+      final tiles = [for (var i = 0; i < 6; i++) if (find.byKey(Key('builder-tile-$i')).evaluate().isNotEmpty) t.widget<GraphemeTile>(find.descendant(of: find.byKey(Key('builder-tile-$i')), matching: find.byType(GraphemeTile))).text];
+      audio.played.clear();
+      for (final g in ['c', 'a', 'k', 'e']) {
+        await _tap(t, 'builder-tile-${tiles.indexOf(g)}');
+      }
+      expect(audio.played, containsAllInOrder(['asset:audio/explorers/phonemes/phoneme_c.mp3', 'asset:audio/explorers/phonemes/phoneme_ay.mp3', 'asset:audio/explorers/phonemes/phoneme_k.mp3']));
+      expect(audio.played.where((p) => p.contains('phoneme_e')), isEmpty);
+      await t.pump(const Duration(seconds: 2));
+      await t.pumpAndSettle();
+      expect(audio.played, contains('asset:audio/x/word_cake.mp3'));
+      expect(results, isEmpty);
+    });
+  });
+
   group('Sound Tap', () {
     testWidgets('each box says its sound; when all are heard, the word is read and the next word comes; always three stars', (t) async {
       final (audio, results, _) = await _game(t, (done) => SoundTapActivity(lesson: _lesson(), track: _track(), onFinished: done), seen: 'sound-tap');

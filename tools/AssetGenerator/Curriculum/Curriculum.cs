@@ -198,6 +198,15 @@ public class PlacementDef
 
 public class LessonValidator : AbstractValidator<Lesson>
 {
+    /// <summary>A grapheme: its letters, optionally with the key of the sound it makes here ("a:ay" in cake) or "-" for silent ("e:-").</summary>
+    public static readonly System.Text.RegularExpressions.Regex GraphemeRegex = new("^[a-z]{1,3}(:([a-z]{1,3}|-))?$");
+
+    /// <summary>The letters of a grapheme as written in the word.</summary>
+    public static string GraphemeText(string g) => g.Contains(':') ? g[..g.IndexOf(':')] : g;
+
+    /// <summary>The key of the sound the grapheme makes (its letters unless given), or "-" when it is silent.</summary>
+    public static string GraphemeSound(string g) => g.Contains(':') ? g[(g.IndexOf(':') + 1)..] : g;
+
     public static readonly string[] ActivityNames = ["trace", "listen-and-tap", "record-and-listen", "match-picture", "color-the-object", "trace-small", "animal-sounds", "habitat", "dandoona-says", "sort", "memory", "odd-one-out", "sentence", "count-along", "mix-colors", "build-picture", "turns", "story-feeling", "sound-tap", "word-builder", "read-and-pick"];
     public static readonly string[] Homes = ["house", "farm", "water", "wild"];
     private static readonly string[] Levels = ["pre-a1", "a1", "a2"];
@@ -222,8 +231,8 @@ public class LessonValidator : AbstractValidator<Lesson>
             w.RuleFor(i => i.Word).NotEmpty().MaximumLength(30).Matches("^[A-Za-z' -]+$");
             w.RuleFor(i => i.ImagePrompt).NotEmpty().MaximumLength(500).When(i => i.Reuse is null);
             w.RuleFor(i => i.Reuse).Matches("^([a-z0-9]+(-[a-z0-9]+)*:)?[a-z0-9]+(-[a-z0-9]+)*/[a-z0-9-]+$").When(i => i.Reuse is not null).WithMessage("'Reuse' must look like lesson-id/word-key (or track:lesson-id/word-key).");
-            w.RuleFor(i => i).Must(i => i.Graphemes is null || (i.Graphemes.Count is >= 2 and <= 8 && i.Graphemes.All(g => System.Text.RegularExpressions.Regex.IsMatch(g, "^[a-z]{1,3}$")) && string.Concat(i.Graphemes) == i.Word.Trim().ToLowerInvariant()))
-                .WithMessage("'graphemes' must be 2-8 lowercase parts that spell the word.");
+            w.RuleFor(i => i).Must(i => i.Graphemes is null || (i.Graphemes.Count is >= 2 and <= 8 && i.Graphemes.All(g => GraphemeRegex.IsMatch(g)) && string.Concat(i.Graphemes.Select(GraphemeText)) == i.Word.Trim().ToLowerInvariant()))
+                .WithMessage("'graphemes' must be 2-8 parts that spell the word (\"sh\", or \"a:ay\" for a letter with another sound, \"e:-\" for a silent letter).");
             w.RuleFor(i => i.Source).Must(s => s is "openai" or "svg").WithMessage("Word source must be openai or svg.");
             w.RuleFor(i => i.Says).MaximumLength(60).Must(s => !string.IsNullOrWhiteSpace(s)).When(i => i.Says is not null);
             w.RuleFor(i => i.Sound).MaximumLength(40).Must(s => !string.IsNullOrWhiteSpace(s)).When(i => i.Sound is not null);
@@ -332,7 +341,7 @@ public static class CurriculumReader
         var phonemes = LoadPhonemes(directory);
         foreach (var (file, lesson) in lessons)
             foreach (var w in lesson.Words.Where(w => w.Graphemes is not null))
-                foreach (var g in w.Graphemes!.Where(g => !phonemes.Any(p => p.Track == lesson.Track && p.Phoneme.Key == g)))
+                foreach (var g in w.Graphemes!.Select(LessonValidator.GraphemeSound).Where(g => g != "-" && !phonemes.Any(p => p.Track == lesson.Track && p.Phoneme.Key == g)))
                     errors.Add($"{file}: '{w.Word}' uses the sound '{g}', which is not in the {lesson.Track} phoneme table.");
 
         foreach (var dup in lessons.GroupBy(l => l.Lesson.Id).Where(g => g.Count() > 1))

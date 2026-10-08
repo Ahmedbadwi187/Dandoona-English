@@ -78,21 +78,30 @@ mixin _PhonicsGame<T extends ConsumerStatefulWidget> on ConsumerState<T> {
         ),
       );
 
+  /// Says the sound of [grapheme]; a silent letter says nothing.
   void playPhoneme(TrackContent track, String grapheme) {
-    final clip = track.phonemes[grapheme];
+    final key = graphemeSound(grapheme);
+    final clip = key == null ? null : track.phonemes[key];
     if (clip != null) unawaited(speech.say(then: clip));
   }
 }
 
 /// A letter (or letters) on a tile, the same look for boxes, tiles and slots.
 class GraphemeTile extends StatelessWidget {
-  const GraphemeTile({super.key, required this.text, this.color = Palette.white, this.border = Palette.nightInk, this.size = 84, this.faded = false});
+  const GraphemeTile({super.key, required this.text, this.color = Palette.white, this.border = Palette.nightInk, this.size = 84, this.faded = false, this.silent = false});
+
+  /// Tiles are built from a word's graphemes: [GraphemeTile.of] shows only the letters and marks a silent one.
+  factory GraphemeTile.of(String grapheme, {Key? key, Color color = Palette.white, Color border = Palette.nightInk, double size = 84, bool faded = false}) =>
+      GraphemeTile(key: key, text: graphemeText(grapheme), color: color, border: border, size: size, faded: faded, silent: grapheme.isNotEmpty && graphemeSound(grapheme) == null);
 
   final String text;
   final Color color;
   final Color border;
   final double size;
   final bool faded;
+
+  /// A silent letter (the magic e): lighter letter, so the child sees it makes no sound of its own.
+  final bool silent;
 
   @override
   Widget build(BuildContext context) => Container(
@@ -105,7 +114,12 @@ class GraphemeTile extends StatelessWidget {
           border: Border.all(color: faded ? border.withValues(alpha: 0.3) : border, width: 4),
           boxShadow: faded ? null : [BoxShadow(color: Palette.nightInk.withValues(alpha: 0.18), offset: const Offset(0, 4), blurRadius: 4)],
         ),
-        child: Text(text, style: TextStyle(fontSize: size * 0.55, fontWeight: FontWeight.w900, color: faded ? Palette.nightInk.withValues(alpha: 0.3) : Palette.nightInk)),
+        child: Text(text,
+            style: TextStyle(
+              fontSize: size * (text.length > 2 ? 0.4 : 0.55),
+              fontWeight: FontWeight.w900,
+              color: faded || silent ? Palette.nightInk.withValues(alpha: silent && !faded ? 0.45 : 0.3) : Palette.nightInk,
+            )),
       );
 }
 
@@ -205,8 +219,8 @@ class _SoundTapActivityState extends ConsumerState<SoundTapActivity> with _Phoni
                     onTap: () => unawaited(_tap(i)),
                     child: KeyedSubtree(
                       key: _boxKeys[i],
-                      child: GraphemeTile(
-                        text: word.graphemes[i],
+                      child: GraphemeTile.of(
+                        word.graphemes[i],
                         color: _reading ? Palette.green : (_heard.contains(i) ? Palette.sunflower : Palette.white),
                         size: 92,
                       ),
@@ -236,12 +250,16 @@ class _SoundTapActivityState extends ConsumerState<SoundTapActivity> with _Phoni
 }
 
 // ----------------------------------------------------------------------------------------------------------- Word Builder
-/// The letter tiles of one round: the word's own graphemes and up to two more from the lesson's other words, shuffled.
+/// The letter tiles of one round: the word's own graphemes and up to two more from the lesson's other words (never one
+/// that looks like a tile already there), shuffled.
 List<String> builderTiles(LessonWord word, Lesson lesson, Random random) {
-  final extra = <String>{
+  final own = {for (final g in word.graphemes) graphemeText(g)};
+  final extra = <String, String>{
     for (final w in lesson.words)
-      if (w.word != word.word) ...w.graphemes.where((g) => !word.graphemes.contains(g)),
-  }.toList()
+      if (w.word != word.word)
+        for (final g in w.graphemes)
+          if (!own.contains(graphemeText(g))) graphemeText(g): g,
+  }.values.toList()
     ..shuffle(random);
   return [...word.graphemes, ...extra.take(2)]..shuffle(random);
 }
@@ -304,8 +322,10 @@ class _WordBuilderActivityState extends ConsumerState<WordBuilderActivity> with 
   Future<void> _place(int tile) async {
     if (_done || demo || _used.contains(tile)) return;
     final word = _words[_index];
-    playPhoneme(widget.track, _tiles[tile]);
-    if (_tiles[tile] != word.graphemes[_placed]) {
+    // a tile that looks the same as the next one is right (the same letters), and says the sound they make in this word
+    final right = graphemeText(_tiles[tile]) == graphemeText(word.graphemes[_placed]);
+    playPhoneme(widget.track, right ? word.graphemes[_placed] : _tiles[tile]);
+    if (!right) {
       _mistakes++;
       setState(() => _shaking = tile);
       await Future<void>.delayed(const Duration(milliseconds: 500));
@@ -374,7 +394,7 @@ class _WordBuilderActivityState extends ConsumerState<WordBuilderActivity> with 
                     builder: (context, _, _) => KeyedSubtree(
                       key: _slotKeys[i],
                       child: i < _placed
-                          ? GraphemeTile(text: word.graphemes[i], color: _done ? Palette.green : Palette.sunflower)
+                          ? GraphemeTile.of(word.graphemes[i], color: _done ? Palette.green : Palette.sunflower)
                           : GraphemeTile(text: '', color: Palette.cream, border: i == _placed ? Palette.blue : Palette.tan),
                     ),
                   ),
@@ -389,11 +409,11 @@ class _WordBuilderActivityState extends ConsumerState<WordBuilderActivity> with 
               children: [
                 for (var t = 0; t < _tiles.length; t++)
                   _used.contains(t)
-                      ? GraphemeTile(text: _tiles[t], faded: true)
+                      ? GraphemeTile(text: graphemeText(_tiles[t]), faded: true)
                       : Draggable<int>(
                           data: t,
-                          feedback: Material(color: Colors.transparent, child: GraphemeTile(text: _tiles[t], color: Palette.sunflower)),
-                          childWhenDragging: GraphemeTile(text: _tiles[t], faded: true),
+                          feedback: Material(color: Colors.transparent, child: GraphemeTile(text: graphemeText(_tiles[t]), color: Palette.sunflower)),
+                          childWhenDragging: GraphemeTile(text: graphemeText(_tiles[t]), faded: true),
                           child: GestureDetector(
                             key: Key('builder-tile-$t'),
                             onTap: () => unawaited(_place(t)),
@@ -403,7 +423,7 @@ class _WordBuilderActivityState extends ConsumerState<WordBuilderActivity> with 
                                 tween: Tween(begin: 0, end: _shaking == t ? 1 : 0),
                                 duration: const Duration(milliseconds: 400),
                                 builder: (context, v, child) => Transform.translate(offset: Offset(sin(v * pi * 6) * 8, 0), child: child),
-                                child: GraphemeTile(text: _tiles[t], color: _shaking == t ? Palette.pink : Palette.white),
+                                child: GraphemeTile(text: graphemeText(_tiles[t]), color: _shaking == t ? Palette.pink : Palette.white),
                               ),
                             ),
                           ),

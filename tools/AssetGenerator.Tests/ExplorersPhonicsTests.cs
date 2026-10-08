@@ -57,10 +57,22 @@ public class ExplorersPhonicsTests
     [InlineData("graphemes: [c, a, t], reuse", "graphemes: [c, t], reuse", "spell the word")]
     [InlineData("graphemes: [c, a, t], reuse", "graphemes: [c, at], reuse", "not in the explorers phoneme table")]
     [InlineData("  - { word: cat, graphemes: [c, a, t], reuse: \"little-learners:letter-c/cat\" }", "  - { word: cat, reuse: \"little-learners:letter-c/cat\" }", "need 'graphemes'")]
+    [InlineData("graphemes: [c, a, t], reuse", "graphemes: [c, \"a:ay\", t], reuse", "the sound 'ay', which is not in the explorers phoneme table")]
+    [InlineData("graphemes: [c, a, t], reuse", "graphemes: [c, \"a:\", t], reuse", "spell the word")]
     public void Graphemes_must_spell_the_word_with_sounds_of_the_table(string from, string to, string error)
     {
         using var repo = Repo(Lesson.Replace(from, to));
         Should.Throw<CurriculumException>(() => CurriculumReader.LoadAll(repo.Layout.CurriculumDir)).Message.ShouldContain(error);
+    }
+
+    [Fact]
+    public void A_letter_can_say_another_sound_of_the_table_or_be_silent()
+    {
+        using var repo = Repo(Lesson.Replace("{ word: act, graphemes: [a, c, t]", "{ word: cate, graphemes: [c, \"a:t\", t, \"e:-\"]"));
+        var w = CurriculumReader.LoadAll(repo.Layout.CurriculumDir).Single().Words[1];
+        w.Graphemes.ShouldBe(["c", "a:t", "t", "e:-"]);
+        w.Graphemes!.Select(LessonValidator.GraphemeText).ShouldBe(["c", "a", "t", "e"]);
+        w.Graphemes!.Select(LessonValidator.GraphemeSound).ShouldBe(["c", "t", "t", "-"]);
     }
 
     [Fact]

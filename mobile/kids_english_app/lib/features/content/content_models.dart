@@ -398,7 +398,8 @@ class LessonAudio {
 class LessonWord {
   const LessonWord({required this.word, required this.audio, required this.image, this.phrase, this.sound, this.lives, this.home, this.says, this.group, this.opposite, this.phraseText, this.graphemes = const []});
 
-  /// Explorers phonics: the word split into its sounds ([c, a, t]), each a key of the track's phonemes.
+  /// Explorers phonics: the word split into its sounds ([c, a, t]), each a key of the track's phonemes. A part can name
+  /// the sound its letters make here ("a:ay" in cake) or be silent ("e:-"); see [graphemeText] and [graphemeSound].
   final List<String> graphemes;
 
   final String word;
@@ -445,4 +446,17 @@ class LessonWord {
         phraseText: json['phraseText'] as String?,
         graphemes: ((json['graphemes'] as List<dynamic>?) ?? const []).cast<String>(),
       );
+}
+
+/// The letters of a grapheme as written in the word: "a:ay" → "a".
+String graphemeText(String g) {
+  final i = g.indexOf(':');
+  return i < 0 ? g : g.substring(0, i);
+}
+
+/// The phoneme key of a grapheme ("sh" → "sh", "a:ay" → "ay"), or null when the letter is silent ("e:-").
+String? graphemeSound(String g) {
+  final i = g.indexOf(':');
+  final key = i < 0 ? g : g.substring(i + 1);
+  return key == '-' ? null : key;
 }
