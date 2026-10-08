@@ -68,6 +68,17 @@ public class ParentCardsTests
         finally { Directory.Delete(temp, true); }
     }
 
+    [Fact]
+    public void The_explorers_cards_exist_for_every_unit_of_the_track_and_letters_keeps_the_little_learners_tips()
+    {
+        var layout = Real();
+        var units = CurriculumReader.LoadUnits(layout.CurriculumDir).Where(u => u.Track == "explorers").ToList();
+        var tips = ParentCards.LoadTips(layout, "explorers");
+        units.Where(u => u.From.Length == 0).ShouldAllBe(u => tips.ContainsKey(u.Id), "every Explorers unit with its own lessons has tips");
+        ParentCards.Check(tips, units.Where(u => u.From.Length == 0)).ShouldBeEmpty();
+        units.Count.ShouldBe(13);
+    }
+
     private static void CopyDir(string from, string to)
     {
         Directory.CreateDirectory(to);

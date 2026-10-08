@@ -20,10 +20,13 @@ public static class ContentPacks
     public static string? ResolveRoot(IConfiguration config, IWebHostEnvironment env)
     {
         var configured = config["ContentPacks:Root"];
-        var root = string.IsNullOrWhiteSpace(configured)
-            ? Path.GetFullPath(Path.Combine(env.ContentRootPath, "..", "..", "packs"))
-            : Path.GetFullPath(configured, env.ContentRootPath);
-        return Directory.Exists(root) ? root : null;
+        // The setting wins; otherwise a "packs" folder next to the API files (a hosted site), otherwise the repo's packs/ (running from source).
+        var candidates = new List<string>();
+        if (!string.IsNullOrWhiteSpace(configured)) candidates.Add(Path.GetFullPath(configured, env.ContentRootPath));
+        candidates.Add(Path.GetFullPath(Path.Combine(env.ContentRootPath, "packs")));
+        candidates.Add(Path.GetFullPath(Path.Combine(env.ContentRootPath, "..", "..", "packs")));
+        var root = candidates.FirstOrDefault(Directory.Exists);
+        return root;
     }
 
     public static void UseContentPacks(this WebApplication app)

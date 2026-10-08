@@ -78,7 +78,7 @@ if (app.Environment.IsDevelopment() || app.Configuration.GetValue<bool>("Databas
     await scope.ServiceProvider.GetRequiredService<AppDbContext>().Database.MigrateAsync();
 }
 
-app.MapGet("/health", () => Results.Ok(new { status = "ok" })).AllowAnonymous();
+app.MapGet("/health", () => Results.Ok(new { status = "ok", packs = ContentPacks.ResolveRoot(app.Configuration, app.Environment) is not null, cards = ContentCards.ResolveRoot(app.Configuration, app.Environment) is not null })).AllowAnonymous();
 app.MapAuthEndpoints();
 app.MapChildEndpoints();
 app.MapProgressEndpoints();

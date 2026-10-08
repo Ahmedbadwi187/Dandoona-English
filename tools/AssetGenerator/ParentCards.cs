@@ -22,12 +22,13 @@ public static class ParentCards
 {
     private static readonly IDeserializer Deserializer = new DeserializerBuilder().WithNamingConvention(CamelCaseNamingConvention.Instance).Build();
 
-    public static string TipsFile(Layout layout) => Path.Combine(layout.Root, "content", "parent", "tips.yaml");
+    /// <summary>content/parent/tips.yaml for Little Learners, content/parent/tips-&lt;track&gt;.yaml for the other tracks.</summary>
+    public static string TipsFile(Layout layout, string track = "little-learners") => Path.Combine(layout.Root, "content", "parent", track == "little-learners" ? "tips.yaml" : $"tips-{track}.yaml");
     public static string OutputDir(Layout layout, string track) => Path.Combine(layout.Root, "cards", track.Replace('-', '_'));
 
-    public static IReadOnlyDictionary<string, UnitTips> LoadTips(Layout layout)
+    public static IReadOnlyDictionary<string, UnitTips> LoadTips(Layout layout, string track = "little-learners")
     {
-        var path = TipsFile(layout);
+        var path = TipsFile(layout, track);
         if (!File.Exists(path)) throw new CurriculumException($"Parent tips not found: {path}");
         return Deserializer.Deserialize<Dictionary<string, UnitTips>>(File.ReadAllText(path));
     }
@@ -53,17 +54,20 @@ public static class ParentCards
     public static IReadOnlyList<string> Write(Layout layout, string track)
     {
         var units = CurriculumReader.LoadUnits(layout.CurriculumDir).Where(u => u.Track == track).OrderBy(u => u.Order).ToList();
-        var tips = LoadTips(layout);
+        var tips = LoadTips(layout, track).ToDictionary(kv => kv.Key, kv => kv.Value);
+        // a unit borrowed from another track (Letters in Explorers) keeps that track's tips unless this track has its own
+        foreach (var u in units.Where(u => u.From.Length > 0 && !tips.ContainsKey(u.Id)))
+            if (LoadTips(layout, u.From).TryGetValue(u.Id, out var borrowed)) tips[u.Id] = borrowed;
         var errors = Check(tips, units);
         if (errors.Count > 0) throw new CurriculumException("Parent tips: " + string.Join(" ", errors));
-        var lessons = CurriculumReader.LoadAll(layout.CurriculumDir).Where(l => l.Track == track).ToList();
+        var allLessons = CurriculumReader.LoadAll(layout.CurriculumDir);
 
         var dir = OutputDir(layout, track);
         Directory.CreateDirectory(dir);
         var written = new List<string>();
         foreach (var u in units)
         {
-            var words = lessons.Where(l => l.Unit == u.Id).OrderBy(l => l.ResolvedOrder).SelectMany(l => l.Words).Select(w => w.Word.Trim()).ToList();
+            var words = allLessons.Where(l => l.Track == u.ContentTrack && l.Unit == u.Id).OrderBy(l => l.ResolvedOrder).SelectMany(l => l.Words).Select(w => w.Word.Trim()).ToList();
             var file = Path.Combine(dir, u.Id + ".html");
             File.WriteAllText(file, UnitPage(u, words, tips[u.Id], units), new UTF8Encoding(false));
             written.Add(file);

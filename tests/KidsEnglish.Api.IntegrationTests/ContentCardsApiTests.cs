@@ -30,7 +30,7 @@ public class ContentCardsApiTests(ApiFactory factory)
 
         var redirect = await factory.CreateClient(new() { AllowAutoRedirect = false }).GetAsync("/cards");
         redirect.StatusCode.ShouldBe(HttpStatusCode.Redirect);
-        redirect.Headers.Location!.ToString().ShouldBe("/cards/little_learners/index.html");
+        redirect.Headers.Location!.ToString().ShouldBe("/cards/index.html");
     }
 
     [Fact]

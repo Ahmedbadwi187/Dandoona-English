@@ -1,0 +1,135 @@
+# Printable cards for parents of the Explorers track (ages 6-8): what to look for and do at home, in English and Arabic.
+# The Letters unit is borrowed from Little Learners and keeps its tips (content/parent/tips.yaml).
+# Rules: short, kind, no pressure, nothing that needs a screen, nothing that needs buying.
+sound-builders:
+  en:
+    - "Say a short word slowly and let your child count the sounds on their fingers: c-a-t is three."
+    - "Hide a letter on a card (c, a, t) and put them in order to build the word together."
+    - "Point at a short word on a box or a sign and read it by its sounds, not by its shape."
+    - "Praise the trying: a word read slowly is a word read."
+  ar:
+    - "انطقوا كلمة قصيرة ببطء ودعوا طفلكم يعدّ أصواتها على أصابعه: c-a-t ثلاثة أصوات."
+    - "اكتبوا الحروف (c, a, t) على بطاقات وركّبوها معًا لتكوّنوا الكلمة."
+    - "أشيروا إلى كلمة قصيرة على علبة أو لافتة واقرؤوها بأصواتها لا بشكلها."
+    - "شجّعوا المحاولة: الكلمة المقروءة ببطء هي كلمة مقروءة."
+digraphs:
+  en:
+    - "Make the sounds with your mouths: sh like a quiet shush, ch like a train, th with your tongue between your teeth."
+    - "Look for sh, ch, th and ck in a book and circle them with a pencil."
+    - "Sort a few words by their sound: ship and shop, chip and chair."
+    - "Say the word and ask: does it start with one sound for two letters?"
+  ar:
+    - "انطقوا الأصوات بالفم: sh مثل الهمس، ch مثل القطار، th مع وضع اللسان بين الأسنان."
+    - "ابحثوا في كتاب عن sh وch وth وck وضعوا حولها دائرة بالقلم."
+    - "رتبوا كلمات حسب صوتها: ship وshop، chip وchair."
+    - "قولوا الكلمة واسألوا: هل تبدأ بصوت واحد لحرفين؟"
+blends:
+  en:
+    - "Say both sounds side by side: f-l, fl, flag. Let your child hear that nothing is missing."
+    - "Read the words of a short sign together: stop, drum, hand."
+    - "Play I spy with blends: I spy something that starts with fl."
+    - "Build a word with letter cards and then change the first sounds: flag, drag, snag."
+  ar:
+    - "انطقوا الصوتين معًا: f-l ثم fl ثم flag، ليسمع طفلكم أن لا شيء ناقص."
+    - "اقرؤوا معًا كلمات من لافتة قصيرة: stop، drum، hand."
+    - "العبوا أرى شيئًا يبدأ بـ fl."
+    - "ركّبوا كلمة ببطاقات الحروف ثم غيّروا الصوت الأول: flag، drag، snag."
+magic-e:
+  en:
+    - "Show how a silent e changes a word: cap becomes cape, kit becomes kite."
+    - "Cover the e with a finger, read the word, then uncover it and read again."
+    - "Look for words with a silent e at the end on food boxes and toys."
+    - "Make a game: whisper the silent e, say the word loudly."
+  ar:
+    - "أروه كيف يغيّر حرف e الصامت الكلمة: cap تصبح cape وkit تصبح kite."
+    - "غطّوا حرف e بإصبع واقرؤوا الكلمة ثم اكشفوه واقرؤوا مرة ثانية."
+    - "ابحثوا عن كلمات تنتهي بـ e صامتة على علب الطعام والألعاب."
+    - "العبوا: اهمسوا بحرف e الصامت وانطقوا الكلمة بصوت عالٍ."
+vowel-teams:
+  en:
+    - "Two vowels walking together: when two letters make one sound, say it once: rain, tree, boat."
+    - "Look for ai, ee, oa and oo in a story and read the words aloud."
+    - "Draw a quick picture of rain, a tree, a boat and a moon and write the word under each."
+    - "Read a page of a picture book and let your child spot one vowel team."
+  ar:
+    - "حرفان متجاوران يصنعان صوتًا واحدًا: انطقوه مرة واحدة: rain وtree وboat."
+    - "ابحثوا عن ai وee وoa وoo في قصة واقرؤوا الكلمات بصوت عالٍ."
+    - "ارسموا بسرعة مطرًا وشجرة وقاربًا وقمرًا واكتبوا الكلمة تحت كل رسمة."
+    - "اقرؤوا صفحة من كتاب مصوّر ودعوا طفلكم يلتقط زوجًا واحدًا من هذه الحروف."
+sight-words-1:
+  en:
+    - "Make cards for I, see, the, my, is, it, in, on and play snap: say the word and slap the card."
+    - "Hunt for the same small words in a book and count how many you find."
+    - "Say a short sentence and let your child point at each word: I see the cat."
+    - "Keep it short: five minutes a day is better than one long try."
+  ar:
+    - "اصنعوا بطاقات لكلمات I وsee وthe وmy وis وit وin وon والعبوا سناب: انطقوا الكلمة واضربوا البطاقة."
+    - "ابحثوا عن الكلمات الصغيرة نفسها في كتاب وعدّوا كم وجدتم."
+    - "قولوا جملة قصيرة ودعوا طفلكم يشير إلى كل كلمة: I see the cat."
+    - "خلّوها قصيرة: خمس دقائق كل يوم أفضل من محاولة واحدة طويلة."
+sight-words-2:
+  en:
+    - "Add the new words to your card pile: we, can, go, and, you, look, here, to, he, she, was, said, like, have, they, are."
+    - "Write a word in big letters, trace it with a finger, then cover it and say it."
+    - "Read the same short story three days in a row; it gets easier each time."
+    - "Let your child be the teacher and quiz you on the cards."
+  ar:
+    - "أضيفوا الكلمات الجديدة إلى كومة البطاقات: we وcan وgo وand وyou وlook وhere وto وhe وshe وwas وsaid وlike وhave وthey وare."
+    - "اكتبوا كلمة بحروف كبيرة واتبعوها بالإصبع ثم غطوها وانطقوها."
+    - "اقرؤوا القصة القصيرة نفسها ثلاثة أيام متتالية: تصبح أسهل كل مرة."
+    - "دعوا طفلكم يكون المعلّم ويسألكم عن البطاقات."
+my-sentences:
+  en:
+    - "Read a one-line sentence together and ask your child to point at the picture it describes."
+    - "Show one thing and then two: The cat is big. The cats are big."
+    - "Say a or an by listening to the first sound: a cat, an egg, an ant."
+    - "Let your child say a new sentence about something in the room, and write it down."
+  ar:
+    - "اقرؤوا جملة من سطر واحد ودعوا طفلكم يشير إلى الصورة التي تصفها."
+    - "أروه شيئًا ثم شيئين: The cat is big. The cats are big."
+    - "اختاروا a أو an بالاستماع إلى الصوت الأول: a cat وan egg وan ant."
+    - "دعوا طفلكم يقول جملة جديدة عن شيء في الغرفة واكتبوها له."
+word-families:
+  en:
+    - "Say words that end the same and let your child spot the rhyme: cat, hat, rat, bat."
+    - "Write -at on a card and add a letter in front: c, h, r, b. Read each new word."
+    - "Play I spy with endings: I spy something that ends like bug."
+    - "Spell a word out loud and let your child write it with letter cards."
+  ar:
+    - "قولوا كلمات تنتهي بالصوت نفسه ودعوا طفلكم يلتقط القافية: cat وhat وrat وbat."
+    - "اكتبوا -at على بطاقة وأضيفوا حرفًا قبلها: c وh وr وb، واقرؤوا كل كلمة جديدة."
+    - "العبوا أرى شيئًا ينتهي مثل bug."
+    - "تهجّوا كلمة بصوت عالٍ ودعوا طفلكم يكتبها ببطاقات الحروف."
+everyday-english:
+  en:
+    - "Talk about the weather every morning: It is sunny. It is rainy."
+    - "Name what is in your child's school bag: a pencil, a book, a ruler."
+    - "Name the places you pass on the way: a school, a park, a shop, a hospital."
+    - "Ask what you eat at each meal: breakfast, lunch, dinner."
+  ar:
+    - "تحدثوا عن الطقس كل صباح: It is sunny. It is rainy."
+    - "سمّوا ما في حقيبة طفلكم المدرسية: pencil وbook وruler."
+    - "سمّوا الأماكن التي تمرون بها: school وpark وshop وhospital."
+    - "اسألوا ماذا تأكلون في كل وجبة: breakfast وlunch وdinner."
+numbers-time:
+  en:
+    - "Count by tens with your fingers up to one hundred, then count backwards for fun."
+    - "Say the day and the month every morning: It is Monday. It is May."
+    - "Read the clock at full hours: It is three o'clock."
+    - "Put a calendar on the wall and cross off the days together."
+  ar:
+    - "عدّوا بالعشرات بأصابعكم حتى المئة ثم عدّوا بالعكس للمتعة."
+    - "قولوا اليوم والشهر كل صباح: It is Monday. It is May."
+    - "اقرؤوا الساعة عند الساعات الكاملة: It is three o'clock."
+    - "علّقوا تقويمًا على الحائط وشطبوا الأيام معًا."
+grammar-starters:
+  en:
+    - "Look at one and then two of something and say it: The duck is big. The ducks are big."
+    - "Choose a or an by listening: a bed, an apple."
+    - "Say what someone has: The hen has an egg. The hens have eggs."
+    - "Say what you can do and do it: I can jump. I can clap."
+  ar:
+    - "انظروا إلى شيء واحد ثم اثنين وقولوا: The duck is big. The ducks are big."
+    - "اختاروا a أو an بالاستماع: a bed وan apple."
+    - "قولوا ما يملكه أحد: The hen has an egg. The hens have eggs."
+    - "قولوا ما تستطيعون فعله ونفّذوه: I can jump. I can clap."

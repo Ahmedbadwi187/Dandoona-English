@@ -188,3 +188,20 @@ What is built (each part its own commit on `explorers`):
 Spend: **about $5.51 of $50** (nothing was spent in the cloud sessions; Phases 1-3 add about $0.73 of audio when generated; no images).
 Tests on `explorers`: Flutter 415, generator 98, application 36. On `explorers-phase-2`: Flutter 424, generator 103, application 36. On `explorers-phase-3`: Flutter 429, generator 112, application 36
 (API integration tests need Docker + SQL Server; not run there).
+
+## Explorers: Phase 4 and 5 are built (on main) - state after the owner's first phone test
+All 13 Explorers units now have lessons (85 lessons, 24 packs in total with Little Learners): Letters (borrowed), Sound Builders, Digraphs,
+Blends, Magic E, Vowel Teams, Sight Words 1-2, My Sentences, **Word Families** (6 families, 19 words, Spell It game), **Everyday English**
+(school, weather, town, meals, play; sentences with a gap), **Numbers & Time** (11-20, tens to 100, days, months, o'clock; pictures drawn
+by arithmetic, `noArticle` lessons) and **Grammar Starters** (a/an, is/are, has/have, can by picture). Each new unit has a chest outfit
+(`rainbow-band`, `sun-visor`, `clock-cap`, `quill-hat`), a 5-page story and review-4 sits before the castle. Parent cards for Explorers:
+`AssetGenerator cards --track explorers` (content/parent/tips-explorers.yaml); `/cards` lists both tracks.
+- Art scripts (re-runnable): `tools/art/make-families.mjs`, `make-family-lessons.mjs`, `make-numbers-time.mjs`, `make-numbers-time-lessons.mjs`,
+  `make-everyday.mjs`, `make-everyday-lessons.mjs`, `make-grammar-lessons.mjs`. A word can carry `say:` (what the voice reads, used for "kite" -> "kyte").
+- Spend: about $6.90 of the $50 cap (ElevenLabs $3.74, OpenAI $3.16). Phonemes to listen to: `docs/explorers-phonemes.md` (33 sounds now: `w` added).
+- **Hosting**: the API is at https://eyadahmed1192-001-site1.jtempurl.com (SmarterASP). The app downloads the packs from `/packs`, so the
+  `packs` and `cards` folders must be uploaded next to the API files: run `scripts/prepare-host-content.ps1` and upload `dist/host-content/packs`
+  and `.../cards` by FTP after every content change (a pack version never changes once published). Without them the units after Letters/Colors
+  show "Almost ready". The database migrations are applied (`dotnet ef database update ... --connection`, the design-time factory has a fixed local
+  connection) and the hosted API runs them at start-up too (`Database:MigrateOnStartup` in appsettings.Production.json).
+- APKs: `dist/dandoona-host.apk` (release, API_BASE_URL = the host above); for the emulator use the debug build (10.0.2.2:5080) with the local API.

@@ -17,10 +17,13 @@ public static class ContentCards
     public static string? ResolveRoot(IConfiguration config, IWebHostEnvironment env)
     {
         var configured = config["ContentCards:Root"];
-        var root = string.IsNullOrWhiteSpace(configured)
-            ? Path.GetFullPath(Path.Combine(env.ContentRootPath, "..", "..", "cards"))
-            : Path.GetFullPath(configured, env.ContentRootPath);
-        return Directory.Exists(root) ? root : null;
+        // The setting wins; otherwise a "cards" folder next to the API files (a hosted site), otherwise the repo's cards/ (running from source).
+        var candidates = new List<string>();
+        if (!string.IsNullOrWhiteSpace(configured)) candidates.Add(Path.GetFullPath(configured, env.ContentRootPath));
+        candidates.Add(Path.GetFullPath(Path.Combine(env.ContentRootPath, "cards")));
+        candidates.Add(Path.GetFullPath(Path.Combine(env.ContentRootPath, "..", "..", "cards")));
+        var root = candidates.FirstOrDefault(Directory.Exists);
+        return root;
     }
 
     public static void UseContentCards(this WebApplication app)
@@ -33,8 +36,10 @@ public static class ContentCards
         }
 
         // /cards and /cards/<track> land on the index of the track.
-        app.MapGet("/cards", () => Results.Redirect("/cards/little_learners/index.html", permanent: false));
-        app.MapGet("/cards/{track}", (string track) => Results.Redirect($"/cards/{track}/index.html", permanent: false));
+        app.MapGet("/cards", () => Results.Redirect("/cards/index.html", permanent: false));
+        // (a fixed list: a {track} pattern would also catch /cards/index.html, and a matched route stops the static file from being served)
+        foreach (var track in new[] { "little_learners", "explorers" })
+            app.MapGet($"/cards/{track}", () => Results.Redirect($"/cards/{track}/index.html", permanent: false));
 
         app.UseStaticFiles(new StaticFileOptions
         {
