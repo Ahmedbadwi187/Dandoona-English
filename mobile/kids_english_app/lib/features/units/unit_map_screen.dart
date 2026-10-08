@@ -16,6 +16,7 @@ import '../content/content_repository.dart';
 import '../content/packs.dart';
 import '../gate/parental_gate.dart';
 import '../profiles/child_profile.dart';
+import '../progress/active_days.dart';
 import '../progress/progress.dart';
 import '../rewards/accessories.dart';
 import '../router_state.dart';
@@ -391,6 +392,9 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
                 onParent: _openParentArea,
               ),
             ),
+            // Explorers: the active days, celebrated, never reset (the Little Learners map stays as it was)
+            if (track.track == explorersTrack && childId != null)
+              Positioned(left: 12, top: safeTop + mapBarHeight + 10, child: ActiveDaysBadge(key: ValueKey('days-$childId'), childId: childId)),
             if (practiceWords > 0)
               Positioned(
                 right: 16,
