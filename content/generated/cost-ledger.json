@@ -17701,5 +17701,33 @@
     "what": "unit-grammar-starters/instr-story-5 (18 chars)",
     "usd": 0.00144,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:39:24.9917258Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/word-car (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:39:30.07139Z",
+    "service": "ElevenLabs",
+    "what": "toys-1/word-car (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:39:35.230756Z",
+    "service": "ElevenLabs",
+    "what": "transport-1/word-car (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T18:39:38.9716646Z",
+    "service": "ElevenLabs",
+    "what": "vowel-teams-oo-ar/word-car (4 chars)",
+    "usd": 0.00032,
+    "estimated": false
   }
 ]

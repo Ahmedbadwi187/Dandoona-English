@@ -1,0 +1,438 @@
+{
+  "schemaVersion": 1,
+  "track": "little-learners",
+  "unit": "toys",
+  "version": 7,
+  "contentHash": "3009cd3cb22015a9c068a5df09e7d43c00dff196c43d7844c42cf182c35d238f",
+  "lessons": [
+    {
+      "id": "toys-1",
+      "order": 1,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/toys_1/intro.mp3",
+        "praise": [
+          "audio/little_learners/toys_1/praise_0.mp3",
+          "audio/little_learners/toys_1/praise_1.mp3",
+          "audio/little_learners/toys_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/toys_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/toys_1/instr_match_picture.mp3",
+          "memory": "audio/little_learners/toys_1/instr_memory.mp3",
+          "record-and-listen": "audio/little_learners/toys_1/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "ball",
+          "audio": "audio/little_learners/toys_1/word_ball.mp3",
+          "image": "images/little_learners/toys_1/ball.svg",
+          "phrase": "audio/little_learners/toys_1/phrase_ball.mp3",
+          "phraseText": "I play with a ball."
+        },
+        {
+          "word": "car",
+          "audio": "audio/little_learners/toys_1/word_car.mp3",
+          "image": "images/little_learners/toys_1/car.svg",
+          "phrase": "audio/little_learners/toys_1/phrase_car.mp3",
+          "phraseText": "I play with a car."
+        },
+        {
+          "word": "kite",
+          "audio": "audio/little_learners/toys_1/word_kite.mp3",
+          "image": "images/little_learners/toys_1/kite.svg",
+          "phrase": "audio/little_learners/toys_1/phrase_kite.mp3",
+          "phraseText": "I play with a kite."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "toys-2",
+      "order": 2,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/toys_2/intro.mp3",
+        "praise": [
+          "audio/little_learners/toys_2/praise_0.mp3",
+          "audio/little_learners/toys_2/praise_1.mp3",
+          "audio/little_learners/toys_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/toys_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/toys_2/instr_match_picture.mp3",
+          "memory": "audio/little_learners/toys_2/instr_memory.mp3",
+          "odd-one-out": "audio/little_learners/toys_2/instr_odd_one_out.mp3",
+          "record-and-listen": "audio/little_learners/toys_2/instr_record_and_listen.mp3",
+          "sentence": "audio/little_learners/toys_2/instr_sentence.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "balloon",
+          "audio": "audio/little_learners/toys_2/word_balloon.mp3",
+          "image": "images/little_learners/toys_2/balloon.svg",
+          "phrase": "audio/little_learners/toys_2/phrase_balloon.mp3",
+          "phraseText": "I play with a balloon."
+        },
+        {
+          "word": "yo-yo",
+          "audio": "audio/little_learners/toys_2/word_yo_yo.mp3",
+          "image": "images/little_learners/toys_2/yo_yo.svg",
+          "phrase": "audio/little_learners/toys_2/phrase_yo_yo.mp3",
+          "phraseText": "I play with a yo-yo."
+        },
+        {
+          "word": "teddy",
+          "audio": "audio/little_learners/toys_2/word_teddy.mp3",
+          "image": "images/little_learners/toys_2/teddy.webp",
+          "phrase": "audio/little_learners/toys_2/phrase_teddy.mp3",
+          "phraseText": "I hug my teddy."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "odd-one-out",
+        "sentence",
+        "memory",
+        "record-and-listen"
+      ],
+      "odd": [
+        "apple",
+        "cat",
+        "tree",
+        "key",
+        "egg"
+      ]
+    },
+    {
+      "id": "toys-3",
+      "order": 3,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/toys_3/intro.mp3",
+        "praise": [
+          "audio/little_learners/toys_3/praise_0.mp3",
+          "audio/little_learners/toys_3/praise_1.mp3",
+          "audio/little_learners/toys_3/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/toys_3/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/toys_3/instr_match_picture.mp3",
+          "memory": "audio/little_learners/toys_3/instr_memory.mp3",
+          "record-and-listen": "audio/little_learners/toys_3/instr_record_and_listen.mp3",
+          "turns": "audio/little_learners/toys_3/instr_turns.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "doll",
+          "audio": "audio/little_learners/toys_3/word_doll.mp3",
+          "image": "images/little_learners/toys_3/doll.webp",
+          "phrase": "audio/little_learners/toys_3/phrase_doll.mp3",
+          "phraseText": "I play with a doll."
+        },
+        {
+          "word": "blocks",
+          "audio": "audio/little_learners/toys_3/word_blocks.mp3",
+          "image": "images/little_learners/toys_3/blocks.svg",
+          "phrase": "audio/little_learners/toys_3/phrase_blocks.mp3",
+          "phraseText": "I play with blocks."
+        },
+        {
+          "word": "drum",
+          "audio": "audio/little_learners/toys_3/word_drum.mp3",
+          "image": "images/little_learners/toys_3/drum.svg",
+          "phrase": "audio/little_learners/toys_3/phrase_drum.mp3",
+          "phraseText": "I play the drum."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "turns",
+        "record-and-listen"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/little_learners/toys_1/instr_listen_and_tap.mp3",
+      "sha256": "360234fa3d28e03b09c0d0ad7124933cb8f993583c8e40b2312ab6b976db29c5",
+      "bytes": 32226
+    },
+    {
+      "path": "audio/little_learners/toys_1/instr_match_picture.mp3",
+      "sha256": "a732da4341464db920e70dea574aed09c4464b14e7436ae4b3bb30f1a5b3536a",
+      "bytes": 38914
+    },
+    {
+      "path": "audio/little_learners/toys_1/instr_memory.mp3",
+      "sha256": "99c2f49bbf0cad95ec28539a84cf9a3dfdcc2702277baa307a1b3a8521143b79",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/little_learners/toys_1/instr_record_and_listen.mp3",
+      "sha256": "a11806606a06765a537cdaef26be98156ff9a3230992c7752b5301718999b44a",
+      "bytes": 27629
+    },
+    {
+      "path": "audio/little_learners/toys_1/intro.mp3",
+      "sha256": "e1030940c585e3d68dd8d23bbc311d5edf2ad8259e42516e8f095218a7ef392f",
+      "bytes": 71097
+    },
+    {
+      "path": "audio/little_learners/toys_1/phrase_ball.mp3",
+      "sha256": "653ee088c05b1c19feda42915699aa8be70e8466624eccd8e8a793fa2e1301e2",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/little_learners/toys_1/phrase_car.mp3",
+      "sha256": "aeacb73c897494c6446fda30a72e37fa4d9b1e8be6a9ed18e668f196c26e8f7c",
+      "bytes": 27211
+    },
+    {
+      "path": "audio/little_learners/toys_1/phrase_kite.mp3",
+      "sha256": "b7720769b62317ab341f3cf4898767d380d9f572cdece5157a2b760ba454ba43",
+      "bytes": 27629
+    },
+    {
+      "path": "audio/little_learners/toys_1/praise_0.mp3",
+      "sha256": "8f0c328b9d8eb599f452071aa66e244c4cb1b96ae7d1a72a0caf671487bf3793",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/toys_1/praise_1.mp3",
+      "sha256": "cf8b47a51e02b2532a8615f6cebdeae1234941ce0d2fc1f684f4216186017abe",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/toys_1/praise_2.mp3",
+      "sha256": "f003c18c525a2ffb1f91e2116d6c0a6c6ba5e6504b20c9f7c60f16ef5ad5bc51",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/toys_1/word_ball.mp3",
+      "sha256": "7b55d43bbb022c1e218dc6d92dc1236ad593a41221a850d88e009db7ed3d1fca",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/little_learners/toys_1/word_car.mp3",
+      "sha256": "940cd019cd65a2a5e324da29d4d9ced3a2117bf50b9f583083801325bd52e97e",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/little_learners/toys_1/word_kite.mp3",
+      "sha256": "39798ea7633d2a4a2546d23cf8444560e0a404e9bea9dfde31ed1c94a75a09ea",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/little_learners/toys_2/instr_listen_and_tap.mp3",
+      "sha256": "271d6107bf19967eda3afc2703abbe1fc608a43831f6c9510024348876e6eff2",
+      "bytes": 33062
+    },
+    {
+      "path": "audio/little_learners/toys_2/instr_match_picture.mp3",
+      "sha256": "1cd8a137907549b0c4347f962bb85126096239db1447d3948229f5bcb99669cf",
+      "bytes": 39750
+    },
+    {
+      "path": "audio/little_learners/toys_2/instr_memory.mp3",
+      "sha256": "178d750eac4816d88fdf415d1a4f0a0d5f0174146820bcb359e86150ca7241db",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/little_learners/toys_2/instr_odd_one_out.mp3",
+      "sha256": "c4d0e5b6c7ca51b3477a77483157fe72dbfa45db2305f1ed34f3b4a3340925fa",
+      "bytes": 31391
+    },
+    {
+      "path": "audio/little_learners/toys_2/instr_record_and_listen.mp3",
+      "sha256": "7d67b0b6efd5048d93a92fc1374eb05af7146a5af41d9e7d52f8dfd4b2238781",
+      "bytes": 30137
+    },
+    {
+      "path": "audio/little_learners/toys_2/instr_sentence.mp3",
+      "sha256": "787e5f7127749dd7179da17e0ec4c4545190e3af391d07d3c725e08ff1c4645e",
+      "bytes": 48527
+    },
+    {
+      "path": "audio/little_learners/toys_2/intro.mp3",
+      "sha256": "2c20025661b198d1a41a8537071b7db43d119672f730ccabc86740dc48d23af8",
+      "bytes": 97846
+    },
+    {
+      "path": "audio/little_learners/toys_2/phrase_balloon.mp3",
+      "sha256": "d3fcd7783baf0e05a78731507c1a72ff837568ad792de6db741ea91b9f36ae12",
+      "bytes": 26375
+    },
+    {
+      "path": "audio/little_learners/toys_2/phrase_teddy.mp3",
+      "sha256": "ddf6f4b7a1c2d3ecb45a1a3d22867798d5aed1cdf10dd769fbaef511ada4ce3f",
+      "bytes": 27629
+    },
+    {
+      "path": "audio/little_learners/toys_2/phrase_yo_yo.mp3",
+      "sha256": "a88e7284e6c2ea5138303197d0317f578a66059a0af72dffd606bc441d59c97b",
+      "bytes": 29301
+    },
+    {
+      "path": "audio/little_learners/toys_2/praise_0.mp3",
+      "sha256": "851f2e141d5cd2143fda0acd061a03a18d38215dc29dcbb13cb18f542c5ba543",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/toys_2/praise_1.mp3",
+      "sha256": "a708c1958652e8fc67f70b520fd3fc48bd3b6d4645d1365c6c0252f8e1d0f736",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/little_learners/toys_2/praise_2.mp3",
+      "sha256": "7d780f9250fed609ed6723e688b4bcc87b02dc9a6466eece696475560aa5bc5d",
+      "bytes": 18852
+    },
+    {
+      "path": "audio/little_learners/toys_2/word_balloon.mp3",
+      "sha256": "ce40b28144e31f4523618faaf6a1f4fcde03a99011301bb27b0401cd1e89c474",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/little_learners/toys_2/word_teddy.mp3",
+      "sha256": "5ad211f28ea2ebd76b5b2fab8118f913369521fdc85ef2ed43286667a5fc4795",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/little_learners/toys_2/word_yo_yo.mp3",
+      "sha256": "c5fab0bf4a87e6964532e99c21c2f63e0e7aa8fa78dcb1d232f34c82f11b82d0",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/little_learners/toys_3/instr_listen_and_tap.mp3",
+      "sha256": "3b54b1583ea5bdc6f6c3f17b19987120fba32564c63ffb108d5142875f298734",
+      "bytes": 33062
+    },
+    {
+      "path": "audio/little_learners/toys_3/instr_match_picture.mp3",
+      "sha256": "dc8af6c81317f00d87a14bbf5f917b1b660c85822e888db0f193e98d03b7ccc6",
+      "bytes": 38914
+    },
+    {
+      "path": "audio/little_learners/toys_3/instr_memory.mp3",
+      "sha256": "5c32fff899cd6a9bdffa11c6f2d1e7cb67f65db0ebd79814393a703eb46c1c88",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/little_learners/toys_3/instr_record_and_listen.mp3",
+      "sha256": "e1674a3135fa3e43140bbfeb5c7a6627171a3b3e7b67f6bf1f05715d2bcef459",
+      "bytes": 31391
+    },
+    {
+      "path": "audio/little_learners/toys_3/instr_turns.mp3",
+      "sha256": "f0e063e291df690706b417e1a800dd527afc07225f5b6f058b70fc2ecf16f2d2",
+      "bytes": 32226
+    },
+    {
+      "path": "audio/little_learners/toys_3/intro.mp3",
+      "sha256": "52242447a640e3474c1e76e12bcfde674d2ab9ec64afdc3d9c784b2fdfa605c1",
+      "bytes": 79874
+    },
+    {
+      "path": "audio/little_learners/toys_3/phrase_blocks.mp3",
+      "sha256": "37ff8a711802c837364df37000ecc9ff7387549b5f41ad86e07de15fd3066f5b",
+      "bytes": 28465
+    },
+    {
+      "path": "audio/little_learners/toys_3/phrase_doll.mp3",
+      "sha256": "77e649b6825ca792cd54ef58b5b2779b4486565ee01bf6352a24793649402063",
+      "bytes": 30973
+    },
+    {
+      "path": "audio/little_learners/toys_3/phrase_drum.mp3",
+      "sha256": "183ca4ea62335d3a2a053bbd22a9aca97a5d79cadd28111d14912f3c9ee799ec",
+      "bytes": 25539
+    },
+    {
+      "path": "audio/little_learners/toys_3/praise_0.mp3",
+      "sha256": "3aa3a960aab24a06d6db9ee2c619aafbc7c6146d3aa047d0322b5523668fd85d",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/little_learners/toys_3/praise_1.mp3",
+      "sha256": "c00c8fc2386c3f09d99ce277ceef9ef93b7bfbd8b1008b5e94787ca687262f39",
+      "bytes": 20524
+    },
+    {
+      "path": "audio/little_learners/toys_3/praise_2.mp3",
+      "sha256": "71b5c91ccd1408f0143fbba7d4cdbbb86ca86771ae53b1560e49f26268e0d854",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/little_learners/toys_3/word_blocks.mp3",
+      "sha256": "2733df46be15a30f6b15cbb88b060b5da77a733d67241abd4f6e022d5dd91746",
+      "bytes": 17598
+    },
+    {
+      "path": "audio/little_learners/toys_3/word_doll.mp3",
+      "sha256": "1bf7e80ee81a8a6b3986a3ef8c67be6ca6880579f32d947971898e19d3d3a60b",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/little_learners/toys_3/word_drum.mp3",
+      "sha256": "7254541dbc69dd530cc2499cbd3899c8759b240a73e9af65d31aa17c04f46f44",
+      "bytes": 15926
+    },
+    {
+      "path": "images/little_learners/toys_1/ball.svg",
+      "sha256": "8ef201c33acf827a672b9a7441034eefec66df20d1a6a84240114b41f094d466",
+      "bytes": 726
+    },
+    {
+      "path": "images/little_learners/toys_1/car.svg",
+      "sha256": "daa26ba93d235c41c82c1a1d36d800c9f0d0e5d58d56d278dd571f30cabbcd80",
+      "bytes": 838
+    },
+    {
+      "path": "images/little_learners/toys_1/kite.svg",
+      "sha256": "df3972c1152f63111ff15ab12232c3c0c5be6b77f834f7f8fa847698613c8f85",
+      "bytes": 589
+    },
+    {
+      "path": "images/little_learners/toys_2/balloon.svg",
+      "sha256": "55fac7ebd7079f5244d9eabf6dd78a6d0491355a940b3a7f36102ef2a6fb12ad",
+      "bytes": 499
+    },
+    {
+      "path": "images/little_learners/toys_2/teddy.webp",
+      "sha256": "a1147eb64aaf7c31bcf5e34d467f814f5231c62ee0deee3f34cb8feaccae345b",
+      "bytes": 56452
+    },
+    {
+      "path": "images/little_learners/toys_2/yo_yo.svg",
+      "sha256": "614fdee78fbb002136e6b6c9a9397ac94d7614f0c2d8344e0b1d10c451cb3dd8",
+      "bytes": 561
+    },
+    {
+      "path": "images/little_learners/toys_3/blocks.svg",
+      "sha256": "4cc000e907ff1a9480dc16f6c86ba094cc83b9ddc7acf947333359a47aa5a965",
+      "bytes": 609
+    },
+    {
+      "path": "images/little_learners/toys_3/doll.webp",
+      "sha256": "99b463e2e1b5e502f62c5eb3d7fd679e2f28a90727eccf1f81c8a654f6022043",
+      "bytes": 67000
+    },
+    {
+      "path": "images/little_learners/toys_3/drum.svg",
+      "sha256": "c64c43883ea14b02fa2647dbbeb190c5448565b45ef23fe50b083c5a297e9e4d",
+      "bytes": 602
+    }
+  ]
+}

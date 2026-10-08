@@ -1,0 +1,574 @@
+{
+  "schemaVersion": 1,
+  "track": "explorers",
+  "unit": "vowel-teams",
+  "version": 3,
+  "contentHash": "4be80f3b4d040f27d0d1b194d69c8ebabb4472f9960258685638f4d7ac70faae",
+  "lessons": [
+    {
+      "id": "vowel-teams-ai",
+      "order": 1,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/vowel_teams_ai/intro.mp3",
+        "praise": [
+          "audio/explorers/vowel_teams_ai/praise_0.mp3",
+          "audio/explorers/vowel_teams_ai/praise_1.mp3",
+          "audio/explorers/vowel_teams_ai/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/vowel_teams_ai/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/vowel_teams_ai/instr_sound_tap.mp3",
+          "word-builder": "audio/explorers/vowel_teams_ai/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "rain",
+          "audio": "audio/explorers/vowel_teams_ai/word_rain.mp3",
+          "image": "images/explorers/vowel_teams_ai/rain.svg",
+          "graphemes": [
+            "r",
+            "ai:ay",
+            "n"
+          ]
+        },
+        {
+          "word": "snail",
+          "audio": "audio/explorers/vowel_teams_ai/word_snail.mp3",
+          "image": "images/explorers/vowel_teams_ai/snail.svg",
+          "graphemes": [
+            "s",
+            "n",
+            "ai:ay",
+            "l"
+          ]
+        },
+        {
+          "word": "train",
+          "audio": "audio/explorers/vowel_teams_ai/word_train.mp3",
+          "image": "images/explorers/vowel_teams_ai/train.svg",
+          "graphemes": [
+            "t",
+            "r",
+            "ai:ay",
+            "n"
+          ]
+        },
+        {
+          "word": "paint",
+          "audio": "audio/explorers/vowel_teams_ai/word_paint.mp3",
+          "image": "images/explorers/vowel_teams_ai/paint.svg",
+          "graphemes": [
+            "p",
+            "ai:ay",
+            "n",
+            "t"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "read-and-pick"
+      ]
+    },
+    {
+      "id": "vowel-teams-ee",
+      "order": 2,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/vowel_teams_ee/intro.mp3",
+        "praise": [
+          "audio/explorers/vowel_teams_ee/praise_0.mp3",
+          "audio/explorers/vowel_teams_ee/praise_1.mp3",
+          "audio/explorers/vowel_teams_ee/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/vowel_teams_ee/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/vowel_teams_ee/instr_sound_tap.mp3",
+          "word-builder": "audio/explorers/vowel_teams_ee/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "tree",
+          "audio": "audio/explorers/vowel_teams_ee/word_tree.mp3",
+          "image": "images/explorers/vowel_teams_ee/tree.svg",
+          "graphemes": [
+            "t",
+            "r",
+            "ee"
+          ]
+        },
+        {
+          "word": "bee",
+          "audio": "audio/explorers/vowel_teams_ee/word_bee.mp3",
+          "image": "images/explorers/vowel_teams_ee/bee.svg",
+          "graphemes": [
+            "b",
+            "ee"
+          ]
+        },
+        {
+          "word": "sheep",
+          "audio": "audio/explorers/vowel_teams_ee/word_sheep.mp3",
+          "image": "images/explorers/vowel_teams_ee/sheep.svg",
+          "graphemes": [
+            "sh",
+            "ee",
+            "p"
+          ]
+        },
+        {
+          "word": "feet",
+          "audio": "audio/explorers/vowel_teams_ee/word_feet.mp3",
+          "image": "images/explorers/vowel_teams_ee/feet.svg",
+          "graphemes": [
+            "f",
+            "ee",
+            "t"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "read-and-pick"
+      ]
+    },
+    {
+      "id": "vowel-teams-oa",
+      "order": 3,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/vowel_teams_oa/intro.mp3",
+        "praise": [
+          "audio/explorers/vowel_teams_oa/praise_0.mp3",
+          "audio/explorers/vowel_teams_oa/praise_1.mp3",
+          "audio/explorers/vowel_teams_oa/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/vowel_teams_oa/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/vowel_teams_oa/instr_sound_tap.mp3",
+          "word-builder": "audio/explorers/vowel_teams_oa/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "boat",
+          "audio": "audio/explorers/vowel_teams_oa/word_boat.mp3",
+          "image": "images/explorers/vowel_teams_oa/boat.svg",
+          "graphemes": [
+            "b",
+            "oa",
+            "t"
+          ]
+        },
+        {
+          "word": "goat",
+          "audio": "audio/explorers/vowel_teams_oa/word_goat.mp3",
+          "image": "images/explorers/vowel_teams_oa/goat.webp",
+          "graphemes": [
+            "g",
+            "oa",
+            "t"
+          ]
+        },
+        {
+          "word": "soap",
+          "audio": "audio/explorers/vowel_teams_oa/word_soap.mp3",
+          "image": "images/explorers/vowel_teams_oa/soap.svg",
+          "graphemes": [
+            "s",
+            "oa",
+            "p"
+          ]
+        },
+        {
+          "word": "toast",
+          "audio": "audio/explorers/vowel_teams_oa/word_toast.mp3",
+          "image": "images/explorers/vowel_teams_oa/toast.svg",
+          "graphemes": [
+            "t",
+            "oa",
+            "s",
+            "t"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "read-and-pick"
+      ]
+    },
+    {
+      "id": "vowel-teams-oo-ar",
+      "order": 4,
+      "level": "a1",
+      "audio": {
+        "intro": "audio/explorers/vowel_teams_oo_ar/intro.mp3",
+        "praise": [
+          "audio/explorers/vowel_teams_oo_ar/praise_0.mp3",
+          "audio/explorers/vowel_teams_oo_ar/praise_1.mp3",
+          "audio/explorers/vowel_teams_oo_ar/praise_2.mp3"
+        ],
+        "instructions": {
+          "read-and-pick": "audio/explorers/vowel_teams_oo_ar/instr_read_and_pick.mp3",
+          "sound-tap": "audio/explorers/vowel_teams_oo_ar/instr_sound_tap.mp3",
+          "word-builder": "audio/explorers/vowel_teams_oo_ar/instr_word_builder.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "moon",
+          "audio": "audio/explorers/vowel_teams_oo_ar/word_moon.mp3",
+          "image": "images/explorers/vowel_teams_oo_ar/moon.svg",
+          "graphemes": [
+            "m",
+            "oo",
+            "n"
+          ]
+        },
+        {
+          "word": "spoon",
+          "audio": "audio/explorers/vowel_teams_oo_ar/word_spoon.mp3",
+          "image": "images/explorers/vowel_teams_oo_ar/spoon.svg",
+          "graphemes": [
+            "s",
+            "p",
+            "oo",
+            "n"
+          ]
+        },
+        {
+          "word": "car",
+          "audio": "audio/explorers/vowel_teams_oo_ar/word_car.mp3",
+          "image": "images/explorers/vowel_teams_oo_ar/car.svg",
+          "graphemes": [
+            "c",
+            "ar"
+          ]
+        },
+        {
+          "word": "star",
+          "audio": "audio/explorers/vowel_teams_oo_ar/word_star.mp3",
+          "image": "images/explorers/vowel_teams_oo_ar/star.svg",
+          "graphemes": [
+            "s",
+            "t",
+            "ar"
+          ]
+        }
+      ],
+      "activities": [
+        "sound-tap",
+        "word-builder",
+        "read-and-pick"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/explorers/vowel_teams_ai/instr_read_and_pick.mp3",
+      "sha256": "55db5c6f9771143e365650026384af2f0a184ee950b37fc9e3c894f8bc4dda4d",
+      "bytes": 47273
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ai/instr_sound_tap.mp3",
+      "sha256": "d9c2f43ce328eb65d8e53e00f3ebfa1246107d336fb0fc68a232057f2be7b5cc",
+      "bytes": 67335
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ai/instr_word_builder.mp3",
+      "sha256": "bf870fde37dc4c1de0a4a6c98f320de37858fea2d8035c8999c3f2edf9dbcdf6",
+      "bytes": 57722
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ai/intro.mp3",
+      "sha256": "dc9f3625c7236c5b94c08256c8e7aabbae7ccff19ccd057f38478b2fdc78693a",
+      "bytes": 127939
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ai/praise_0.mp3",
+      "sha256": "621242182b72905e78c3f4159801b862ded4e5dc1eb73a0b00ea6379d86b0586",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ai/praise_1.mp3",
+      "sha256": "f1d0d9d4b534b6c83501834bf75019bb97a129b044c9bea13c57cf5cc281dd06",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ai/praise_2.mp3",
+      "sha256": "ddad7b729950c4138e39c31aa4b5ed9a9ba926a2b23f4fbe1f2c52da79667eb2",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ai/word_paint.mp3",
+      "sha256": "2ce8591556e2be0cd1c3c2f8c4e2055e218db3c37966d3723199a9237b05118b",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ai/word_rain.mp3",
+      "sha256": "4d15a204a1635d957cda9faa1073dfb2de38cea78f94bb5e42471a76e519bc0e",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ai/word_snail.mp3",
+      "sha256": "5333ca1a8ae58159aff7d9d1de8835e41a1d0ef5e6366d0a9f3120044d82e462",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ai/word_train.mp3",
+      "sha256": "c1720e63e9b1483aed9ed7fe64da5f768c1bcc4389243a68974f12f30a98189e",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ee/instr_read_and_pick.mp3",
+      "sha256": "7bd0cb124f681dffff4562626d3438fa0f11bb9579e0bc52ba7246c44073979d",
+      "bytes": 44765
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ee/instr_sound_tap.mp3",
+      "sha256": "f758711f71cc82b2ae533cf377dbe5c36eaaa9dd22b901ff6fe33ccf13b7c6ad",
+      "bytes": 72351
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ee/instr_word_builder.mp3",
+      "sha256": "1d3f9888a286368e36fb88f1b413d24d479110614544c2b1dadfad17490c6645",
+      "bytes": 50199
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ee/intro.mp3",
+      "sha256": "2a50566926da0f55c1ec422d837e795b1f6e28e504fb04d3912219df2fe0f6ec",
+      "bytes": 120834
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ee/praise_0.mp3",
+      "sha256": "564f979c65592948e0f2b6496d2f4aab5b9afb8047c0fbbf59fd6663945b8dca",
+      "bytes": 20942
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ee/praise_1.mp3",
+      "sha256": "031a19860881c5ec7c3a6d33dbbc247c3da391372d94f666855ab8af01e06ddd",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ee/praise_2.mp3",
+      "sha256": "2cd96e888b7545e1c59133315697ea63f24a0fb0caadd2497d3f562164f5f4ef",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ee/word_bee.mp3",
+      "sha256": "fb0f39f5c9a0ce98735f876faac51beb85f7ce0e2200d700845fcf508e155e3d",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ee/word_feet.mp3",
+      "sha256": "802e620b384ee7ee10f15a9f729f2e159ddc33565521c70085d58c39f3013b75",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ee/word_sheep.mp3",
+      "sha256": "eadfd363266cbe89270e30ec1301aa3bb26d7d139c56a8fdc01cbe5dd542cddf",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/vowel_teams_ee/word_tree.mp3",
+      "sha256": "7d4546734be78807fc9e91d1b873b6caf06d6647a5ecf45ce7e2cda39d0cfc9e",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oa/instr_read_and_pick.mp3",
+      "sha256": "8b32523513475e76102de2e5e78c8977431765baf7113f3edaf436b9368d0183",
+      "bytes": 56050
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oa/instr_sound_tap.mp3",
+      "sha256": "d990d64bc53064f5ce1215a4d71e530163ee1915410a5cbec0003fecb05a16fe",
+      "bytes": 67335
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oa/instr_word_builder.mp3",
+      "sha256": "486d498b829d1136c3859bdf3d9bbe9e3a547972f04bf1c482a4db6c90e89337",
+      "bytes": 58140
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oa/intro.mp3",
+      "sha256": "f2d1ddf629f3954f58c2528608e0815017f764835fd41d6d1c55caeb07d38db2",
+      "bytes": 105787
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oa/praise_0.mp3",
+      "sha256": "7bd4e97903561cc8b0fb210c2cbf25cb2a75e0d066917e4f8153cc78a5d6cc26",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oa/praise_1.mp3",
+      "sha256": "795ce0fce4e915713399038d94ac9967b7df9de95561a648bf48c8d3f7174fb8",
+      "bytes": 23449
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oa/praise_2.mp3",
+      "sha256": "ea18124d4f102cfb89949fddf03786a3e28d4c25db3dd23b83f35e0d1991d19c",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oa/word_boat.mp3",
+      "sha256": "f897b0a128dbf2b197b2aa82032330ae3d53992272608ea4c3c59c2e852e6d3a",
+      "bytes": 14254
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oa/word_goat.mp3",
+      "sha256": "bd78df3aaf49ab72d9a2cba02404a24105939604eabf3b45e7f3e97858363fe4",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oa/word_soap.mp3",
+      "sha256": "2a2bc8926642d04e0ebe30c700229e8ab2e899bc01b1dd2de556c59651dd3eef",
+      "bytes": 15090
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oa/word_toast.mp3",
+      "sha256": "19255ac8202156116e3d412089b3fe00c6ff9065b52322c132c5232e7c6ad17e",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oo_ar/instr_read_and_pick.mp3",
+      "sha256": "069e4581fbd3ae11b1b72ce54a31f3bf2c7174269a42526e066a6f076afc6b58",
+      "bytes": 49363
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oo_ar/instr_sound_tap.mp3",
+      "sha256": "cb1dca9a5d073096edde398b1b7546768d012e7567102f55602b87773b23aa7e",
+      "bytes": 72351
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oo_ar/instr_word_builder.mp3",
+      "sha256": "7120883bab6ef4902bd013655f965881142050da2f05f0a7bd621b59de8977b8",
+      "bytes": 57722
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oo_ar/intro.mp3",
+      "sha256": "53bc81a8b795577f483a92355a97ed87656c1e226042727b10a7dd225552edd8",
+      "bytes": 129611
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oo_ar/praise_0.mp3",
+      "sha256": "d08a4dad6a8c96925e783dc98de6f3ea8ac7a8ff7c02c7910ca6be9bc0ed735c",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oo_ar/praise_1.mp3",
+      "sha256": "786e5585ca2f75c7fc3d2f08946324896c8c1400ca08873fbc51599a6c3a22f3",
+      "bytes": 21777
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oo_ar/praise_2.mp3",
+      "sha256": "aebe736cd87fb0747c3804a09e5311b090d0d5f396655240cb1f69d20d5b661b",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oo_ar/word_car.mp3",
+      "sha256": "0140abc1fdc05ced2a4d0a6270f9826a724765a97b878e0504bbbbd6481e6800",
+      "bytes": 15926
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oo_ar/word_moon.mp3",
+      "sha256": "f5ce6c3b7a88ef02ba7fa710decec8923a1b3d394a6258ba5622722c86d5f56c",
+      "bytes": 16762
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oo_ar/word_spoon.mp3",
+      "sha256": "4bf187d09917a6f9425f5aa602fbe435a24a167d21ccead28a505c8708d35923",
+      "bytes": 18016
+    },
+    {
+      "path": "audio/explorers/vowel_teams_oo_ar/word_star.mp3",
+      "sha256": "a51c6d9982339c758892c5d335cbe359a85c5822c795e6994a4a907d8982f450",
+      "bytes": 18016
+    },
+    {
+      "path": "images/explorers/vowel_teams_ai/paint.svg",
+      "sha256": "a511ad6d364a094b8e4b7f05e0786eb8719fb7f25eb1bb27d4db88ccb35a78cb",
+      "bytes": 846
+    },
+    {
+      "path": "images/explorers/vowel_teams_ai/rain.svg",
+      "sha256": "4c594228b3404824633b027c454e28d1025255467f4e326e3b0ca96ecd48d09a",
+      "bytes": 977
+    },
+    {
+      "path": "images/explorers/vowel_teams_ai/snail.svg",
+      "sha256": "6c25fccb2c1fba2983394da3eb951fc578c63a4e4c7116c2aa1959b4da10e4cc",
+      "bytes": 926
+    },
+    {
+      "path": "images/explorers/vowel_teams_ai/train.svg",
+      "sha256": "45295b58291439d47340f1da71b9fbebe73c63bbfa323ece559458cabade730b",
+      "bytes": 1073
+    },
+    {
+      "path": "images/explorers/vowel_teams_ee/bee.svg",
+      "sha256": "d7fe6facfc5683e0ccb3c34e38fbe6e9733d0198f5d203eea9e505389521b202",
+      "bytes": 1013
+    },
+    {
+      "path": "images/explorers/vowel_teams_ee/feet.svg",
+      "sha256": "c874617484340da6b9a378a56827f34c37ddbb28daac17ee94397329f1441541",
+      "bytes": 919
+    },
+    {
+      "path": "images/explorers/vowel_teams_ee/sheep.svg",
+      "sha256": "338ec0c959a8d107771ad77b4e6a4ac938577e5c4fd9f075c619b19f5de7f041",
+      "bytes": 1024
+    },
+    {
+      "path": "images/explorers/vowel_teams_ee/tree.svg",
+      "sha256": "e72e2de72dbcc28101b8726c782a863f1a40802840acfd5cb980139e1fd09839",
+      "bytes": 928
+    },
+    {
+      "path": "images/explorers/vowel_teams_oa/boat.svg",
+      "sha256": "564870c5e71d27260cd69b75eb9228703ef008f468f4b8321b5e04d190716fe0",
+      "bytes": 538
+    },
+    {
+      "path": "images/explorers/vowel_teams_oa/goat.webp",
+      "sha256": "47e709ac678f275b48b56d116de2f7e96c6045c5a4439c9c66e010e333be358c",
+      "bytes": 61412
+    },
+    {
+      "path": "images/explorers/vowel_teams_oa/soap.svg",
+      "sha256": "b1c3552175e297bba63be7d73cfb40700dc631c6fc12cf3c93128c90f978bffd",
+      "bytes": 873
+    },
+    {
+      "path": "images/explorers/vowel_teams_oa/toast.svg",
+      "sha256": "d3cd9a7daa5d74e1e2082123e3230f6ec39a6fec7f830b6631bfa41f9e0ecb14",
+      "bytes": 705
+    },
+    {
+      "path": "images/explorers/vowel_teams_oo_ar/car.svg",
+      "sha256": "daa26ba93d235c41c82c1a1d36d800c9f0d0e5d58d56d278dd571f30cabbcd80",
+      "bytes": 838
+    },
+    {
+      "path": "images/explorers/vowel_teams_oo_ar/moon.svg",
+      "sha256": "e4ce97ea52e044873886e21ec4a5fed98c125ea963f0dc8e1be45958fea1e406",
+      "bytes": 512
+    },
+    {
+      "path": "images/explorers/vowel_teams_oo_ar/spoon.svg",
+      "sha256": "6c65efadf67da0d279276f4e62b59e08e8784570a4c8638f42321814671bfecd",
+      "bytes": 603
+    },
+    {
+      "path": "images/explorers/vowel_teams_oo_ar/star.svg",
+      "sha256": "54d3a630dbb8b12b9988d2a430e9773281f5543b9e45dfc16600a1de1eec8ed9",
+      "bytes": 421
+    }
+  ]
+}

@@ -7,7 +7,7 @@ order: 4
 words:
   - { word: moon, graphemes: [m, oo, n], reuse: "little-learners:letter-m/moon" }
   - { word: spoon, graphemes: [s, p, oo, n], source: svg, imagePrompt: "a spoon" }
-  - { word: car, graphemes: [c, ar], reuse: "little-learners:letter-c/car" }
+  - { word: car, graphemes: [c, ar], reuse: "little-learners:letter-c/car", say: "cahr" }
   - { word: star, graphemes: [s, t, ar], reuse: "little-learners:shapes-3/star" }
 narration:
   intro: "o and o say oo. a and r say ar. Let's read: moon, spoon, car, star."

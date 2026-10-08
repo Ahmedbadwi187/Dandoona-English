@@ -6,7 +6,7 @@ letter: C
 phoneme: "/k/"
 words:
   - { word: cat, imagePrompt: "a cute fluffy cartoon cat sitting" }
-  - { word: car, imagePrompt: "a small red car seen from the side", source: svg }
+  - { word: car, imagePrompt: "a small red car seen from the side", source: svg, say: "cahr" }
   - { word: cow, imagePrompt: "a friendly black and white cartoon cow" }
 narration:
   intro: "This is the letter C. C says k, k, cat!"

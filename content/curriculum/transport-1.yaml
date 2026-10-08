@@ -4,7 +4,7 @@ track: little-learners
 level: pre-a1
 order: 1
 words:
-  - { word: car, reuse: letter-c/car, group: road }
+  - { word: car, reuse: letter-c/car, group: road, say: "cahr" }
   - { word: bus, imagePrompt: "bus", source: svg, group: road }
   - { word: train, imagePrompt: "train", source: svg, group: road }
 narration:

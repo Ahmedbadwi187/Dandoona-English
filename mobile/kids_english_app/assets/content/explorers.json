@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "track": "explorers",
-  "generatedAt": "2026-10-08T17:43:55.5038328Z",
+  "generatedAt": "2026-10-08T18:39:58.0143279Z",
   "mascot": "images/mascot/mascot.webp",
   "units": [
     {
@@ -1959,10 +1959,10 @@
       },
       "lessons": [],
       "pack": {
-        "version": 2,
-        "sha256": "2a3e74f07e5d4060270423bdf4d55230695761c4efd55c2f705c2743632b9a3f",
+        "version": 3,
+        "sha256": "6de3977012fbe39ec530ea2c184ae6008f68fe5b66dc34f4a7ab81b86c935401",
         "bytes": 1782328,
-        "manifest": "vowel_teams/v2/manifest.json",
+        "manifest": "vowel_teams/v3/manifest.json",
         "lessonIds": [
           "vowel-teams-ai",
           "vowel-teams-ee",

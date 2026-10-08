@@ -5,7 +5,7 @@ level: pre-a1
 order: 1
 words:
   - { word: ball, reuse: letter-b/ball }
-  - { word: car, reuse: letter-c/car }
+  - { word: car, reuse: letter-c/car, say: "cahr" }
   - { word: kite, reuse: letter-k/kite, say: "kyte" }
 narration:
   intro: "Time to play! ... A ball. ... A car. ... A kite!"
