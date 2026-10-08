@@ -5,6 +5,7 @@ using KidsEnglish.Application.Auth;
 using KidsEnglish.Application.Children;
 using KidsEnglish.Application.Progress;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Shouldly;
 
 namespace KidsEnglish.Api.IntegrationTests;
@@ -66,7 +67,7 @@ public class StatsApiTests(ApiFactory factory)
         (await Admin(key: "wrong").GetAsync("/api/admin/stats/lessons")).StatusCode.ShouldBe(HttpStatusCode.Unauthorized);
 
         // a server with no key configured does not offer the endpoint at all
-        using var noKey = factory.WithWebHostBuilder(b => b.UseSetting("Stats:Key", ""));
+        using var noKey = factory.WithWebHostBuilder(b => b.ConfigureAppConfiguration((_, config) => config.AddInMemoryCollection(new Dictionary<string, string?> { ["Stats:Key"] = "" })));
         var c = noKey.CreateClient();
         c.DefaultRequestHeaders.Add("X-Stats-Key", "");
         (await c.GetAsync("/api/admin/stats/lessons")).StatusCode.ShouldBe(HttpStatusCode.NotFound);
