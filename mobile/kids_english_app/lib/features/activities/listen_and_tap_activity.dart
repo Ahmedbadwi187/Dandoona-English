@@ -24,6 +24,8 @@ class ListenAndTapActivity extends ConsumerStatefulWidget {
     this.hintAfter = const Duration(seconds: 8),
     this.sounds = false,
     this.sentences = false,
+    this.onMiss,
+    this.onRight,
   });
 
   final Lesson lesson;
@@ -40,6 +42,12 @@ class ListenAndTapActivity extends ConsumerStatefulWidget {
 
   /// Sentences: the prompt is the whole phrase ("I like pizza."), shown with a gap where the picture goes; only words with a phrase are asked.
   final bool sentences;
+
+  /// Called once for a word the first time it is tapped wrongly in its round (Practice and the parent's list are built from these).
+  final ValueChanged<LessonWord>? onMiss;
+
+  /// Called for a word that was found without any wrong tap in its round.
+  final ValueChanged<LessonWord>? onRight;
 
   @override
   ConsumerState<ListenAndTapActivity> createState() => _ListenAndTapActivityState();
@@ -105,6 +113,7 @@ class _ListenAndTapActivityState extends ConsumerState<ListenAndTapActivity> {
     if (option.word == _round.target.word) {
       _locked = true;
       _idle.cancel();
+      if (_roundMistakes == 0) widget.onRight?.call(_round.target);
       setState(() {
         _rightWord = option.word;
         _hinting = false;
@@ -129,6 +138,7 @@ class _ListenAndTapActivityState extends ConsumerState<ListenAndTapActivity> {
       }
     } else {
       _mistakes++;
+      if (_roundMistakes == 0) widget.onMiss?.call(_round.target);
       _roundMistakes++;
       setState(() => _wrongWord = option.word);
       if (_roundMistakes >= 2) {

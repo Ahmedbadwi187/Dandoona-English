@@ -29,4 +29,5 @@ abstract final class PrefKeys {
   static const children = 'children.v1';
   static const progress = 'progress.v1';
   static const unitMeta = 'meta.v2';
+  static const misses = 'misses.v1';
 }

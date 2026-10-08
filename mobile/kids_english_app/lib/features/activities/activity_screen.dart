@@ -22,6 +22,7 @@ import '../session/session.dart';
 import '../sync/sync_controller.dart';
 import '../units/unit_logic.dart';
 import '../units/unit_meta.dart';
+import '../units/word_misses.dart';
 import 'activity_logic.dart';
 import 'color_the_object_activity.dart';
 import 'build_picture_activity.dart';
@@ -120,6 +121,14 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
     }
   }
 
+  /// A word the child did not find in its round: remembered on this phone, so Practice and the parent can bring it back.
+  void _missed(LessonWord word) {
+    final childId = ref.read(activeChildIdProvider);
+    // colors and numbers are asked by color or count, not by word: they cannot be practised word by word
+    if (widget.lesson.color != null || widget.lesson.counting) return;
+    if (childId != null) unawaited(ref.read(wordMissesProvider.notifier).miss(childId, widget.lesson.id, word.word));
+  }
+
   void _done() {
     final celebrate = _celebrateUnit;
     if (celebrate != null) {
@@ -151,17 +160,17 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
           child: result != null
               ? ActivityResultView(stars: result.stars, lesson: widget.lesson, mascot: widget.track.mascot, unlocked: _unlocked, onDone: _done)
               : switch (widget.activity) {
-                  'listen-and-tap' => ListenAndTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
+                  'listen-and-tap' => ListenAndTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished, onMiss: _missed),
                   'match-picture' => MatchPictureActivity(lesson: widget.lesson, onFinished: _finished),
                   'trace' => TraceActivity(lesson: widget.lesson, onFinished: _finished),
                   'trace-small' => TraceActivity(lesson: widget.lesson, onFinished: _finished, small: true),
                   'record-and-listen' => RecordListenActivity(lesson: widget.lesson, onFinished: _finished),
-                  'animal-sounds' => ListenAndTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished, sounds: true),
+                  'animal-sounds' => ListenAndTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished, sounds: true, onMiss: _missed),
                   'dandoona-says' => DandoonaSaysActivity(lesson: widget.lesson, onFinished: _finished),
                     'sort' => SortActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   'memory' => MemoryActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   'odd-one-out' => OddOneOutActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
-                  'sentence' => ListenAndTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished, sentences: true),
+                  'sentence' => ListenAndTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished, sentences: true, onMiss: _missed),
                   'count-along' => CountAlongActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   'mix-colors' => MixColorsActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   'build-picture' => BuildPictureActivity(lesson: widget.lesson, onFinished: _finished),

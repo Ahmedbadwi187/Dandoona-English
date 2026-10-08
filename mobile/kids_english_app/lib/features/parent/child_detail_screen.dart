@@ -18,6 +18,7 @@ import '../settings/settings.dart';
 import '../units/unit_logic.dart';
 import '../units/unit_meta.dart';
 import '../units/unit_style.dart';
+import '../units/word_misses.dart';
 import 'parent_data.dart';
 import 'parent_ui.dart';
 import 'weekly_view.dart';
@@ -158,7 +159,7 @@ class _ChildDetailScreenState extends ConsumerState<ChildDetailScreen> {
                   ],
                   Text(s('dPractice'), style: ParentText.section),
                   const SizedBox(height: 8),
-                  _Practice(words: track == null ? const [] : wordsToPractice(track, records, child.id, progress), s: s, audio: _audio),
+                  _Practice(words: track == null ? const [] : wordsToPractice(track, records, child.id, progress, missed: ref.watch(wordMissesProvider.select((m) => m[child.id] == null)) ? const [] : ref.read(wordMissesProvider.notifier).of(child.id)), s: s, audio: _audio),
                   const SizedBox(height: 16),
                   Text(s('dAllUnits'), style: ParentText.section),
                   const SizedBox(height: 8),
@@ -219,16 +220,22 @@ class _ChildDetailScreenState extends ConsumerState<ChildDetailScreen> {
 
 /// The words of the lessons that took the child the most tries or earned the fewest stars (up to [limit]), most difficult
 /// lesson first. Progress is recorded per lesson, so a lesson is represented by its first word.
-List<LessonWord> wordsToPractice(TrackContent track, List<ProgressRecord> records, String childId, ProgressNotifier progress, {int limit = 6}) {
+List<LessonWord> wordsToPractice(TrackContent track, List<ProgressRecord> records, String childId, ProgressNotifier progress, {int limit = 6, Iterable<MissedWord> missed = const []}) {
+  final words = <LessonWord>[];
+  // the words the child really missed in the games come first (exactly those words), most missed first
+  for (final m in missed) {
+    final w = track.lessonById(m.lessonId)?.words.where((x) => x.word == m.word).firstOrNull;
+    if (w != null && !words.any((x) => x.word == w.word)) words.add(w);
+    if (words.length == limit) return words;
+  }
   final scores = <String, int>{};
   for (final r in records.where((r) => r.childId == childId)) {
     scores[r.lessonId] = (scores[r.lessonId] ?? 0) + (r.attempts > 1 ? r.attempts - 1 : 0) + (r.stars < 3 ? 3 - r.stars : 0);
   }
   final ranked = scores.entries.where((e) => e.value > 0).toList()..sort((a, b) => b.value.compareTo(a.value));
-  final words = <LessonWord>[];
   for (final e in ranked) {
     final lesson = track.lessonById(e.key);
-    if (lesson == null || lesson.words.isEmpty) continue;
+    if (lesson == null || lesson.words.isEmpty || words.any((x) => x.word == lesson.words.first.word)) continue;
     words.add(lesson.words.first);
     if (words.length == limit) break;
   }

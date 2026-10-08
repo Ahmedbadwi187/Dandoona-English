@@ -16,6 +16,7 @@ import 'features/rewards/chest_screen.dart';
 import 'features/units/review_screen.dart';
 import 'features/units/story_screen.dart';
 import 'features/rewards/sticker_book_screen.dart';
+import 'features/units/practice_screen.dart';
 import 'features/rewards/wardrobe_screen.dart';
 import 'features/parent/children_screen.dart';
 import 'features/parent/parent_home_screen.dart';
@@ -42,7 +43,7 @@ String? guardRoute({
   if (location == '/who' && !hasProfiles) return '/onboarding';
   // Parent area is only reachable through the parental gate.
   if (location.startsWith('/parent') && !parentUnlocked) return '/who';
-  if ((location == '/map' || location == '/wardrobe' || location == '/stickers' || location.startsWith('/chest/') || location.startsWith('/review/') || location.startsWith('/story/') || location.startsWith('/lesson/') || location.startsWith('/unit/') || location.startsWith('/certificate/')) && !hasActiveChild) return '/who';
+  if ((location == '/map' || location == '/wardrobe' || location == '/stickers' || location == '/practice' || location.startsWith('/chest/') || location.startsWith('/review/') || location.startsWith('/story/') || location.startsWith('/lesson/') || location.startsWith('/unit/') || location.startsWith('/certificate/')) && !hasActiveChild) return '/who';
   return null;
 }
 
@@ -85,6 +86,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/story/:unitId', builder: (_, state) => StoryScreen(unitId: state.pathParameters['unitId']!)),
       GoRoute(path: '/review/:id', builder: (_, state) => ReviewScreen(reviewId: state.pathParameters['id']!)),
       GoRoute(path: '/stickers', builder: (_, _) => const StickerBookScreen()),
+      GoRoute(path: '/practice', builder: (_, _) => const PracticeScreen()),
       GoRoute(path: '/chest/:unitId', builder: (_, state) => ChestScreen(unitId: state.pathParameters['unitId']!)),
       GoRoute(
         path: '/lesson/:id',

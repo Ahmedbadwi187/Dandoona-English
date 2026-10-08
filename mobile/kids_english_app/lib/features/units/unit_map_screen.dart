@@ -25,6 +25,8 @@ import 'map_art.dart';
 import 'map_path.dart';
 import 'unit_logic.dart';
 import 'unit_meta.dart';
+import 'practice_screen.dart';
+import 'word_misses.dart';
 import 'unit_providers.dart';
 import 'unit_style.dart';
 
@@ -333,6 +335,8 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
     if (current < 0 && stops.last.state == StopState.done) current = stops.length - 1; // the whole track is done: she waits at the castle
     _current = current;
 
+    ref.watch(wordMissesProvider); // the Practice button appears when words are waiting
+    final practiceWords = childId == null ? 0 : practiceItems(track, ref.read(wordMissesProvider.notifier).of(childId)).length;
     final safeTop = MediaQuery.paddingOf(context).top;
     final safeBottom = MediaQuery.paddingOf(context).bottom;
 
@@ -387,6 +391,22 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
                 onParent: _openParentArea,
               ),
             ),
+            if (practiceWords > 0)
+              Positioned(
+                right: 16,
+                bottom: safeBottom + 16,
+                child: BigTap(
+                  key: const Key('open-practice'),
+                  onTap: () => context.push('/practice'),
+                  semanticLabel: 'Practice',
+                  child: Container(
+                    width: 64,
+                    height: 64,
+                    decoration: BoxDecoration(color: Palette.orange, shape: BoxShape.circle, border: Border.all(color: Palette.nightInk, width: 3), boxShadow: [BoxShadow(color: Palette.nightInk.withValues(alpha: 0.25), blurRadius: 8, offset: const Offset(0, 3))]),
+                    child: const Icon(Icons.replay_rounded, size: 38, color: Palette.white),
+                  ),
+                ),
+              ),
           ],
         );
       },

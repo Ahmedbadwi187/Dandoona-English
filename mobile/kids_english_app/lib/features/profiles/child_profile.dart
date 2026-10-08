@@ -6,6 +6,7 @@ import '../../core/storage.dart';
 import '../progress/progress.dart';
 import '../settings/settings.dart';
 import '../units/unit_meta.dart';
+import '../units/word_misses.dart';
 
 /// A child profile. A nickname, a drawn avatar, the birth month and year, and the daily goal the parent chose: no photo, no
 /// email, no real name, nothing else (see docs/privacy-data-map.md).
@@ -154,6 +155,7 @@ class ProfilesNotifier extends Notifier<List<ChildProfile>> {
     await _save();
     await ref.read(progressProvider.notifier).removeForChild(id);
     await ref.read(unitMetaProvider.notifier).removeForChild(id);
+    await ref.read(wordMissesProvider.notifier).forget(id);
   }
 
   Future<void> _save() =>
