@@ -41,10 +41,10 @@
     },
     {
       "unit": "vowel-teams",
-      "version": 1,
-      "sha256": "e71e6725a478959618eb1270ac02a7e64e36acc6bba91edbc0960620c20ec5f0",
-      "bytes": 1781492,
-      "manifest": "vowel_teams/v1/manifest.json",
+      "version": 2,
+      "sha256": "2a3e74f07e5d4060270423bdf4d55230695761c4efd55c2f705c2743632b9a3f",
+      "bytes": 1782328,
+      "manifest": "vowel_teams/v2/manifest.json",
       "lessonIds": [
         "vowel-teams-ai",
         "vowel-teams-ee",

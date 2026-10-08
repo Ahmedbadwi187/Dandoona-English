@@ -33,8 +33,8 @@
       "contentHash": "52047938ff4f7c9584d768d7f1370ad383513b964ea1efb38e8436fb7db91982"
     },
     "toys": {
-      "version": 4,
-      "contentHash": "6f0eac05611b184cedd3a02cb108acf22d8d4f0bff746e96665053f86237bfbf"
+      "version": 5,
+      "contentHash": "2d5b074723e17c4d0151782280ec186f3fd8845dab7107843a5465dd1eaf9288"
     },
     "my-family": {
       "version": 4,
@@ -49,8 +49,8 @@
       "contentHash": "032fe0734ff587e4693045174261d5a11afdbc25e0806cfa3b30b9721270e752"
     },
     "transport": {
-      "version": 4,
-      "contentHash": "15b372fc3efd1842130d5c419dcd5c15a38f3721c5131befc690b6b54a961e65"
+      "version": 5,
+      "contentHash": "de7c325081e5e0f855a1ab93b9fe18ec509ed1c31fbf8cc8c7c845efaf58551b"
     }
   },
   "explorers": {
@@ -67,8 +67,8 @@
       "contentHash": "0ec827e88ba0a840bd6815bb80be0f3934cbd06610a14bba9c9095503075421d"
     },
     "vowel-teams": {
-      "version": 1,
-      "contentHash": "f910df5db6411655320f51985225bfcad77d7305e8ef3f650e551e60cefb1ad7"
+      "version": 2,
+      "contentHash": "c47bc194e410d3d169a9fa521b772906e75b4415aa1a43b6beadbd6b63e9b3ce"
     },
     "sight-words-1": {
       "version": 1,

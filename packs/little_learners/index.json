@@ -102,10 +102,10 @@
     },
     {
       "unit": "toys",
-      "version": 4,
-      "sha256": "578e8415287d88a5c2174243c2527a0f56ace7e6ac97231d30b68d4dba73aff8",
+      "version": 5,
+      "sha256": "2c89c485da96dcae942e5b205c8babeb8f78f24de819755b1f9ea9c37d901428",
       "bytes": 1487449,
-      "manifest": "toys/v4/manifest.json",
+      "manifest": "toys/v5/manifest.json",
       "lessonIds": [
         "toys-1",
         "toys-2",
@@ -149,10 +149,10 @@
     },
     {
       "unit": "transport",
-      "version": 4,
-      "sha256": "2cd3247f5f926a9f788b991b854466f8cfddc4db4870bc017ef1837bbeda7868",
+      "version": 5,
+      "sha256": "822ccdeba40dbe919c1c7c34d0976a71bc7fc4ba9b1419dd3eec739bef0eb075",
       "bytes": 1244643,
-      "manifest": "transport/v4/manifest.json",
+      "manifest": "transport/v5/manifest.json",
       "lessonIds": [
         "transport-1",
         "transport-2",

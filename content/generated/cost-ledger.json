@@ -14733,5 +14733,33 @@
     "what": "letter-a/word-ant (3 chars)",
     "usd": 0.00024,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T16:24:58.7245977Z",
+    "service": "ElevenLabs",
+    "what": "vowel-teams-oo-ar/word-car (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T16:25:07.4130539Z",
+    "service": "ElevenLabs",
+    "what": "letter-c/word-car (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T16:25:14.9924756Z",
+    "service": "ElevenLabs",
+    "what": "toys-1/word-car (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T16:25:19.2624375Z",
+    "service": "ElevenLabs",
+    "what": "transport-1/word-car (3 chars)",
+    "usd": 0.00024,
+    "estimated": false
   }
 ]
