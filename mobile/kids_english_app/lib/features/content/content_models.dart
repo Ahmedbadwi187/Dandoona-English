@@ -291,6 +291,8 @@ class Lesson {
     this.ownWordsOnly = false,
     this.bins = const [],
     this.odd = const [],
+    this.sightWords = const [],
+    this.sentences = const [],
   });
 
   final String id;
@@ -315,6 +317,12 @@ class Lesson {
 
   /// Odd one out: words of the Letters unit that do not belong to this unit's theme.
   final List<String> odd;
+
+  /// Explorers: words read by sight, with no picture ("the", "said"); Find the Word asks them.
+  final List<SightWord> sightWords;
+
+  /// Explorers: sentences with a picture; Sentence Builder and Fill the Gap use them.
+  final List<LessonSentence> sentences;
 
   /// The number a counting word stands for ('three' is 3), or null.
   static int? numberOf(String word) {
@@ -346,6 +354,43 @@ class Lesson {
         ownWordsOnly: (json['ownWordsOnly'] as bool?) ?? false,
         bins: [for (final b in (json['bins'] as List<dynamic>?) ?? const []) LessonBin.fromJson(b as Map<String, dynamic>)],
         odd: ((json['odd'] as List<dynamic>?) ?? const []).cast<String>(),
+        sightWords: [for (final w in (json['sightWords'] as List<dynamic>?) ?? const []) SightWord.fromJson(w as Map<String, dynamic>)],
+        sentences: [for (final x in (json['sentences'] as List<dynamic>?) ?? const []) LessonSentence.fromJson(x as Map<String, dynamic>)],
+      );
+}
+
+/// A word read by sight, and its clip.
+class SightWord {
+  const SightWord({required this.word, required this.audio});
+  final String word;
+  final String audio;
+  factory SightWord.fromJson(Map<String, dynamic> json) => SightWord(word: json['word'] as String, audio: json['audio'] as String);
+}
+
+/// A sentence to read: "The cats are big." with its picture (shown twice when [two]); [gap] is the word Fill the Gap hides
+/// and [choices] the words offered for it.
+class LessonSentence {
+  const LessonSentence({required this.text, required this.audio, required this.image, this.two = false, this.gap, this.choices = const []});
+  final String text;
+  final String audio;
+  final String image;
+  final bool two;
+  final String? gap;
+  final List<String> choices;
+
+  /// The words as tiles, without the closing mark: ["The", "cats", "are", "big"].
+  List<String> get tokens => text.trim().replaceAll(RegExp(r'[.!?]$'), '').split(' ').where((t) => t.isNotEmpty).toList();
+
+  /// The closing mark: ".", "!" or "?".
+  String get mark => RegExp(r'[.!?]$').firstMatch(text.trim())?.group(0) ?? '';
+
+  factory LessonSentence.fromJson(Map<String, dynamic> json) => LessonSentence(
+        text: json['text'] as String,
+        audio: json['audio'] as String,
+        image: json['image'] as String,
+        two: (json['two'] as bool?) ?? false,
+        gap: json['gap'] as String?,
+        choices: ((json['choices'] as List<dynamic>?) ?? const []).cast<String>(),
       );
 }
 

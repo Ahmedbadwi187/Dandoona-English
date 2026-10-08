@@ -186,6 +186,9 @@ const _activityIcons = {
   'sound-tap': Icons.graphic_eq_rounded,
   'word-builder': Icons.view_week_rounded,
   'read-and-pick': Icons.chrome_reader_mode_rounded,
+  'find-the-word': Icons.manage_search_rounded,
+  'sentence-builder': Icons.wrap_text_rounded,
+  'fill-the-gap': Icons.space_bar_rounded,
 };
 
 /// Icon-only (no reading needed). Tapping opens the activity; the stars show the child's best result.

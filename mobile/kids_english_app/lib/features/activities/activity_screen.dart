@@ -31,6 +31,7 @@ import 'memory_activity.dart';
 import 'mix_colors_activity.dart';
 import 'odd_one_out_activity.dart';
 import 'phonics_activities.dart';
+import 'sentence_activities.dart';
 import 'sort_activity.dart';
 import 'story_feeling_activity.dart';
 import 'turns_activity.dart';
@@ -183,6 +184,10 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
                   'sound-tap' => SoundTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   'word-builder' => WordBuilderActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished),
                   'read-and-pick' => ReadAndPickActivity(lesson: widget.lesson, onFinished: _finished),
+                  // Explorers sight words and sentences
+                  'find-the-word' => FindTheWordActivity(lesson: widget.lesson, onFinished: _finished),
+                  'sentence-builder' => SentenceBuilderActivity(lesson: widget.lesson, onFinished: _finished),
+                  'fill-the-gap' => FillTheGapActivity(lesson: widget.lesson, onFinished: _finished),
                   _ => Center(child: Text(Strings.en('loadError'))),
                 },
         ),

@@ -19,9 +19,9 @@ import 'hand_demo.dart';
 /// with the hand demo while Dandoona says the game's instruction; the "?" button shows the demo again. No game ever fails:
 /// a wrong try is simply heard and tried again; the stars count the tries.
 
-/// Shared start of a phonics game: the demo the first time (with the instruction), otherwise just the instruction; then
+/// Shared start of an Explorers game (phonics here, sentences in sentence_activities.dart): the demo the first time (with the instruction), otherwise just the instruction; then
 /// the first round's own prompt.
-mixin _PhonicsGame<T extends ConsumerStatefulWidget> on ConsumerState<T> {
+mixin PhonicsGame<T extends ConsumerStatefulWidget> on ConsumerState<T> {
   late final ActivitySpeech speech = ActivitySpeech(ref.read(audioServiceProvider));
   bool demo = false;
 
@@ -86,6 +86,26 @@ mixin _PhonicsGame<T extends ConsumerStatefulWidget> on ConsumerState<T> {
   }
 }
 
+/// A picture of one thing, or of two (the same picture twice, overlapping): how "cats" and "are" are shown.
+class ManyPicture extends StatelessWidget {
+  const ManyPicture(this.image, {super.key, this.two = false, required this.size});
+  final String image;
+  final bool two;
+  final double size;
+
+  @override
+  Widget build(BuildContext context) => two
+      ? SizedBox(
+          width: size,
+          height: size,
+          child: Stack(children: [
+            Positioned(left: 0, top: 0, child: AssetPicture(image, size: size * 0.66, semanticLabel: 'picture')),
+            Positioned(right: 0, bottom: 0, child: AssetPicture(image, size: size * 0.66, semanticLabel: 'picture')),
+          ]),
+        )
+      : AssetPicture(image, size: size, semanticLabel: 'picture');
+}
+
 /// A letter (or letters) on a tile, the same look for boxes, tiles and slots.
 class GraphemeTile extends StatelessWidget {
   const GraphemeTile({super.key, required this.text, this.color = Palette.white, this.border = Palette.nightInk, this.size = 84, this.faded = false, this.silent = false});
@@ -138,7 +158,7 @@ class SoundTapActivity extends ConsumerStatefulWidget {
   ConsumerState<SoundTapActivity> createState() => _SoundTapActivityState();
 }
 
-class _SoundTapActivityState extends ConsumerState<SoundTapActivity> with _PhonicsGame {
+class _SoundTapActivityState extends ConsumerState<SoundTapActivity> with PhonicsGame {
   late final List<LessonWord> _words = widget.lesson.words.where((w) => w.graphemes.isNotEmpty).toList();
   late final List<GlobalKey> _boxKeys = List.generate(8, (_) => GlobalKey());
   int _index = 0;
@@ -279,7 +299,7 @@ class WordBuilderActivity extends ConsumerStatefulWidget {
   ConsumerState<WordBuilderActivity> createState() => _WordBuilderActivityState();
 }
 
-class _WordBuilderActivityState extends ConsumerState<WordBuilderActivity> with _PhonicsGame {
+class _WordBuilderActivityState extends ConsumerState<WordBuilderActivity> with PhonicsGame {
   late final Random _random = widget.random ?? Random();
   late final List<LessonWord> _words = widget.lesson.words.where((w) => w.graphemes.isNotEmpty).toList();
   late List<String> _tiles = builderTiles(_words[0], widget.lesson, _random);
@@ -493,7 +513,7 @@ class ReadAndPickActivity extends ConsumerStatefulWidget {
   ConsumerState<ReadAndPickActivity> createState() => _ReadAndPickActivityState();
 }
 
-class _ReadAndPickActivityState extends ConsumerState<ReadAndPickActivity> with _PhonicsGame {
+class _ReadAndPickActivityState extends ConsumerState<ReadAndPickActivity> with PhonicsGame {
   late List<ReadRound> _rounds = buildReadRounds(widget.lesson, widget.random ?? Random());
   final _wordKey = GlobalKey();
   final List<GlobalKey> _pictureKeys = List.generate(3, (_) => GlobalKey());
@@ -614,16 +634,7 @@ class _ReadAndPickActivityState extends ConsumerState<ReadAndPickActivity> with 
                         borderRadius: BorderRadius.circular(26),
                         border: Border.all(color: _right == round.options[i].word ? Palette.green : (_wrong == round.options[i].word ? Palette.red : Palette.tan), width: 6),
                       ),
-                      child: round.options[i].two
-                          ? SizedBox(
-                              width: 128,
-                              height: 128,
-                              child: Stack(children: [
-                                Positioned(left: 0, top: 0, child: AssetPicture(round.options[i].source.image, size: 84, semanticLabel: 'picture')),
-                                Positioned(right: 0, bottom: 0, child: AssetPicture(round.options[i].source.image, size: 84, semanticLabel: 'picture')),
-                              ]),
-                            )
-                          : AssetPicture(round.options[i].source.image, size: 128, semanticLabel: 'picture'),
+                      child: ManyPicture(round.options[i].source.image, two: round.options[i].two, size: 128),
                     ),
                   ),
               ],
