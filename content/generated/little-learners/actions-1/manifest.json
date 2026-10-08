@@ -51,6 +51,22 @@
     "instr-record-and-listen": {
       "hash": "0953488676f25f4555a126d39be8e9df051e56e3a0e4fa67b7931a8e71e72b5a",
       "generatedAtUtc": "2026-10-08T07:30:16.7484215Z"
+    },
+    "says-wave": {
+      "hash": "3cd7758faf163124208b9f0abd0cb28619837aff29863ce4d4f763b1860f52b0",
+      "generatedAtUtc": "2026-10-08T10:03:42.1433748Z"
+    },
+    "says-jump": {
+      "hash": "9a87637745febf1f2bc60b0b31648af8e1222fbc986e86fbcc495a2cabd85444",
+      "generatedAtUtc": "2026-10-08T10:03:43.3339788Z"
+    },
+    "says-clap": {
+      "hash": "cc966cc630d9967f19a4a05c228acb8ff5fc5b86d9aef0ff6230f199f818a98a",
+      "generatedAtUtc": "2026-10-08T10:03:44.5909069Z"
+    },
+    "instr-dandoona-says": {
+      "hash": "897d101933ebcf7623df300efae4f39a42ee0ce5903ed4e4a5d55fcc9e6cc563",
+      "generatedAtUtc": "2026-10-08T10:03:45.7365106Z"
     }
   }
 }

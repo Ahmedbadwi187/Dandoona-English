@@ -22,6 +22,7 @@ function reuseOf(word, preferred) {
 const units = [
   {
     id: 'actions',
+    says: true, // `Dandoona says` activity: every word has a spoken "Dandoona says, jump!" line
     listen: 'Listen, then tap what Dandoona does!',
     prompt: (w) => `Dandoona ${w}`,
     lessons: [
@@ -101,19 +102,21 @@ for (const u of units) {
   u.lessons.forEach(([intro, words], i) => {
     const id = `${u.id}-${i + 1}`;
     const lines = [`id: ${id}`, `unit: ${u.id}`, 'track: little-learners', 'level: pre-a1', `order: ${i + 1}`, 'words:'];
+    const sayTail = (word) => (u.says ? `, says: "Dandoona says, ${word.replace('-', ' ')}!"` : '');
     for (const [word, , how] of words) {
       const [kind, pref] = how.split(':');
       const spoken = word.replace('-', ' ');
-      if (kind === 'reuse') lines.push(`  - { word: ${word}, reuse: ${reuseOf(word, pref)} }`);
-      else if (kind === 'svg') lines.push(`  - { word: ${word}, imagePrompt: "${spoken}", source: svg }`);
-      else if (kind === 'mascot') lines.push(`  - { word: ${word}, imagePrompt: "${(u.prompt ?? ((w) => w))(spoken)}", mascot: true, source: openai }`);
-      else lines.push(`  - { word: ${word}, imagePrompt: "${(u.prompt ? u.prompt(spoken) : `a friendly cartoon ${spoken}`)}", source: openai }`);
+      if (kind === 'reuse') lines.push(`  - { word: ${word}, reuse: ${reuseOf(word, pref)}${sayTail(word)} }`);
+      else if (kind === 'svg') lines.push(`  - { word: ${word}, imagePrompt: "${spoken}", source: svg${sayTail(word)} }`);
+      else if (kind === 'mascot') lines.push(`  - { word: ${word}, imagePrompt: "${(u.prompt ?? ((w) => w))(spoken)}", mascot: true, source: openai${sayTail(word)} }`);
+      else lines.push(`  - { word: ${word}, imagePrompt: "${(u.prompt ? u.prompt(spoken) : `a friendly cartoon ${spoken}`)}", source: openai${sayTail(word)} }`);
     }
     lines.push('narration:', `  intro: "${intro}"`);
     lines.push(`  phrases: { ${words.map(([w, p]) => `${w}: "${p}"`).join(', ')} }`);
     lines.push('  praise: ["Great job!", "Well done!", "You did it!"]', '  instructions:');
     lines.push(`    listen-and-tap: "${u.listen}"`, '    match-picture: "Match each word to its picture!"', '    record-and-listen: "Listen, then say it!"');
-    lines.push('activities: [listen-and-tap, match-picture, record-and-listen]');
+    if (u.says) lines.push('    dandoona-says: "Do what Dandoona says!"');
+    lines.push(u.says ? 'activities: [listen-and-tap, match-picture, dandoona-says, record-and-listen]' : 'activities: [listen-and-tap, match-picture, record-and-listen]');
     writeFileSync(join(curriculum, `${id}.yaml`), lines.join('\n') + '\n');
   });
 }

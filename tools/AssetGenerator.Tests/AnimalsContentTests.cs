@@ -47,6 +47,24 @@ public class AnimalsContentTests
     }
 
     [Fact]
+    public void A_dandoona_says_lesson_needs_a_says_line_for_every_word_and_the_lines_are_planned_as_audio()
+    {
+        var layout = Layout.FindFrom(AppContext.BaseDirectory);
+        var lessons = CurriculumReader.LoadAll(layout.CurriculumDir).Where(l => l.Unit == "actions" && l.Activities.Contains("dandoona-says")).ToList();
+        lessons.ShouldNotBeEmpty();
+        foreach (var l in lessons)
+        {
+            var roles = LessonPlan.Audio(l).Select(a => a.Role).ToList();
+            roles.ShouldContain("instr-dandoona-says");
+            foreach (var w in l.Words) roles.ShouldContain(LessonPlan.SaysRole(w.Word));
+            new LessonValidator().Validate(l).IsValid.ShouldBeTrue();
+        }
+        var broken = lessons[0];
+        broken.Words[0].Says = null;
+        new LessonValidator().Validate(broken).IsValid.ShouldBeFalse();
+    }
+
+    [Fact]
     public void A_habitat_lesson_needs_a_home_for_every_word_and_a_home_needs_its_sentence()
     {
         var layout = Layout.FindFrom(AppContext.BaseDirectory);

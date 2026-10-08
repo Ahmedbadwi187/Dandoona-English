@@ -19,7 +19,8 @@ public static class ActivityCodes
         ["color-the-object"] = ActivityType.ColorTheObject,
         ["trace-small"] = ActivityType.TraceSmall,
         ["animal-sounds"] = ActivityType.AnimalSounds,
-        ["habitat"] = ActivityType.Habitat
+        ["habitat"] = ActivityType.Habitat,
+        ["dandoona-says"] = ActivityType.DandoonaSays
     };
 
     public static bool TryParse(string? code, out ActivityType type) => Map.TryGetValue(code ?? "", out type);

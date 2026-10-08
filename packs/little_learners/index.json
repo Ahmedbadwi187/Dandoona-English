@@ -65,10 +65,10 @@
     },
     {
       "unit": "actions",
-      "version": 1,
-      "sha256": "0dfd321e58c37959d46afd4c14300f2b763fb7562b74ca6393fb06a81de7ee02",
-      "bytes": 2184013,
-      "manifest": "actions/v1/manifest.json",
+      "version": 3,
+      "sha256": "0b07b5779e481665f90bd9d7d13556ae51ebe3b47469be0302f7fa97ed2b1b8b",
+      "bytes": 2308975,
+      "manifest": "actions/v3/manifest.json",
       "lessonIds": [
         "actions-1",
         "actions-2",

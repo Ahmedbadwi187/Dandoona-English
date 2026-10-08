@@ -46,6 +46,7 @@ items() {
   for lesson in "$@"; do
     case "$lesson" in
       letter-*) acts="trace trace-small listen-and-tap record-and-listen match-picture" ;;
+      actions-*) acts="listen-and-tap match-picture dandoona-says record-and-listen" ;;
       animals-*) acts="listen-and-tap match-picture animal-sounds habitat record-and-listen" ;;
       color-*)  acts="listen-and-tap match-picture record-and-listen color-the-object" ;;
       *)        acts="listen-and-tap match-picture record-and-listen" ;;

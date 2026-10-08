@@ -118,6 +118,7 @@ public static class LessonPlan
         {
             if (!string.IsNullOrWhiteSpace(w.Sound)) items.Add(new(SoundRole(w.Word), w.Sound.Trim(), false));
             if (!string.IsNullOrWhiteSpace(w.Lives)) items.Add(new(LivesRole(w.Word), w.Lives.Trim(), false));
+            if (!string.IsNullOrWhiteSpace(w.Says)) items.Add(new(SaysRole(w.Word), w.Says.Trim(), false));
         }
         foreach (var w in l.Words)
             if (l.Narration.Phrases.FirstOrDefault(p => p.Key.Trim().Equals(w.Word.Trim(), StringComparison.OrdinalIgnoreCase)) is { Value: { Length: > 0 } phrase })
@@ -132,6 +133,7 @@ public static class LessonPlan
 
     public static string InstructionRole(string key) => $"instr-{key}";
     public static string SoundRole(string word) => $"sound-{Slug(word)}";
+    public static string SaysRole(string word) => $"says-{Slug(word)}";
     public static string LivesRole(string word) => $"lives-{Slug(word)}";
     public static string PhraseRole(string word) => $"phrase-{Slug(word)}";
 

@@ -173,6 +173,7 @@ const _activityIcons = {
   'color-the-object': Icons.palette_rounded,
   'animal-sounds': Icons.music_note_rounded,
   'habitat': Icons.home_rounded,
+  'dandoona-says': Icons.directions_run_rounded,
 };
 
 /// Icon-only (no reading needed). Tapping opens the activity; the stars show the child's best result.

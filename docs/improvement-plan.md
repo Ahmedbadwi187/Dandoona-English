@@ -12,7 +12,7 @@ Status: [x] done, [ ] to do, [~] started.
    says "capital A" and "small a" when each is tapped; the small letter is traced as well as the capital.
 3. [x] **Animal sounds and where animals live** (Animals): "a cat says meow" for every animal (voice), and a game that puts each animal in its
    home (house, farm, water, wild). Built: `animal-sounds` (hear "Meow! Meow!", tap the animal; rabbit and zebra are quiet so they are not asked) and `habitat` (put the animal in its home, it says "A cow lives on the farm.").
-4. [ ] **"Dandoona says"** (Actions): Dandoona says an action and the child does it for real; a gentle timer, no scores.
+4. [~] **"Dandoona says"** (Actions): Dandoona says an action and the child does it for real; a gentle timer, no scores. Built (`dandoona-says`, ring timer, green check, always 3 stars) and live in Actions lesson 1. **Waiting for voice credit**: the ElevenLabs monthly quota ran out (40000 credits), so lessons 2 and 3 (`node tools/art/make-lessons.mjs actions` already writes their `says` lines; then `audio` + `export`; about 20 credits left of need ~50) are not switched on yet.
 5. [ ] **Counting for real and tracing numbers** (Numbers): tap each balloon as it is counted; trace the numeral 1-10.
 6. [ ] **Printable cards for parents** (all units): one page per unit with 3-4 things to look for at home; a web page, no tracking.
 7. [ ] **More activities on the same content** (all units): odd one out, drag to sort, memory cards.

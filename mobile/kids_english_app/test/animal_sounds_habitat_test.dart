@@ -14,8 +14,8 @@ import 'pack_helpers.dart';
 
 void main() {
   final lessons = packLessons('animals');
-    // The widget tests use pictures that are bundled in the app (the pack pictures are downloaded files): one different one per animal.
-  final bundled = [for (final w in realContent().lessons.expand((l) => l.words)) w.image].toSet().toList();
+  // The widget tests use pictures that are bundled in the app (the pack pictures are downloaded files): one different one per animal.
+  final bundled = {for (final w in realContent().lessons.expand((l) => l.words)) w.image}.toList();
   var n = 0;
   final shown = [
     for (final l in packManifest('animals')['lessons'] as List<dynamic>)

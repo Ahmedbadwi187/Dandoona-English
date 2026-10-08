@@ -369,7 +369,7 @@ class LessonAudio {
 }
 
 class LessonWord {
-  const LessonWord({required this.word, required this.audio, required this.image, this.phrase, this.sound, this.lives, this.home});
+  const LessonWord({required this.word, required this.audio, required this.image, this.phrase, this.sound, this.lives, this.home, this.says});
 
   final String word;
   final String audio;
@@ -386,6 +386,9 @@ class LessonWord {
   /// Animals: where it lives, one of house, farm, water, wild.
   final String? home;
 
+  /// Actions: audio of "Dandoona says, jump!", for the Dandoona-says activity.
+  final String? says;
+
   /// `.svg` (self-drawn) or `.webp` (generated); both are rendered by AssetPicture.
   final String image;
 
@@ -397,5 +400,6 @@ class LessonWord {
         sound: json['sound'] as String?,
         lives: json['lives'] as String?,
         home: json['home'] as String?,
+        says: json['says'] as String?,
       );
 }

@@ -10610,5 +10610,54 @@
     "what": "animals-5/instr-habitat (33 chars)",
     "usd": 0.00264,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T10:03:42.1482118Z",
+    "service": "ElevenLabs",
+    "what": "actions-1/says-wave (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T10:03:43.3344136Z",
+    "service": "ElevenLabs",
+    "what": "actions-1/says-jump (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T10:03:44.5914166Z",
+    "service": "ElevenLabs",
+    "what": "actions-1/says-clap (20 chars)",
+    "usd": 0.0016,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T10:03:45.7373814Z",
+    "service": "ElevenLabs",
+    "what": "actions-1/instr-dandoona-says (22 chars)",
+    "usd": 0.00176,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T10:03:50.3412568Z",
+    "service": "ElevenLabs",
+    "what": "actions-2/says-point (21 chars)",
+    "usd": 0.00168,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T10:03:51.4940587Z",
+    "service": "ElevenLabs",
+    "what": "actions-2/says-think (21 chars)",
+    "usd": 0.00168,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-08T10:03:52.6290493Z",
+    "service": "ElevenLabs",
+    "what": "actions-2/says-run (19 chars)",
+    "usd": 0.00152,
+    "estimated": false
   }
 ]
