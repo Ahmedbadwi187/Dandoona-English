@@ -268,7 +268,7 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
                           const SizedBox(height: 16),
                           Text(s('pTrack'), style: ParentText.section),
                           const SizedBox(height: 8),
-                          for (final t in const [('little-learners', 'pTrackLL', true), ('explorers', 'pTrackExplorers', true), ('champions', 'pTrackChampions', false)])
+                          for (final t in [('little-learners', 'pTrackLL', true), ('explorers', 'pTrackExplorers', explorersEnabled), ('champions', 'pTrackChampions', false)])
                             _TrackTile(
                               key: Key('edit-track-${t.$1}'),
                               label: s(t.$2),

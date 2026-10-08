@@ -46,8 +46,12 @@ const littleLearnersTrack = 'little-learners';
 const explorersTrack = 'explorers';
 const explorersAsset = 'assets/content/explorers.json';
 
+/// Explorers (6-8) is part of the app unless it is built out: `flutter build ... --dart-define=ENABLE_EXPLORERS=false` makes a
+/// Little Learners only release (the Explorers catalog stays in the files but nothing in the app offers, chooses or opens it).
+const explorersEnabled = bool.fromEnvironment('ENABLE_EXPLORERS', defaultValue: true);
+
 /// The tracks that have lessons in this app.
-const availableTracks = {littleLearnersTrack, explorersTrack};
+const availableTracks = explorersEnabled ? {littleLearnersTrack, explorersTrack} : {littleLearnersTrack};
 
 /// The Explorers lessons, read from the bundled JSON (no network). Its Letters unit is the Little Learners one (same
 /// lessons and files), so a child who already knows them keeps that progress.
@@ -55,13 +59,13 @@ final explorersContentProvider = FutureProvider<TrackContent>((ref) => loadTrack
 
 /// The catalog of a track; an unknown track reads as Little Learners.
 final trackContentProvider = FutureProvider.family<TrackContent, String>((ref, track) =>
-    track == explorersTrack ? ref.watch(explorersContentProvider.future) : ref.watch(contentProvider.future));
+    explorersEnabled && track == explorersTrack ? ref.watch(explorersContentProvider.future) : ref.watch(contentProvider.future));
 
 /// The track of the child who is playing (Little Learners when nobody is chosen yet).
 final activeTrackProvider = Provider<String>((ref) {
   final id = ref.watch(activeChildIdProvider);
   final child = ref.watch(profilesProvider).where((p) => p.id == id).firstOrNull;
-  return child?.track ?? littleLearnersTrack;
+  return explorersEnabled ? (child?.track ?? littleLearnersTrack) : littleLearnersTrack;
 });
 
 /// The catalog of the child who is playing.

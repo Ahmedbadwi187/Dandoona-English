@@ -66,7 +66,7 @@ bool needsMonthAsk(ChildProfile c, ParentAsks asks) => c.birthMonth == null && !
 /// The Explorers offer is due for a Little Learners child who is 6 or older, or who finished the Little Learners castle
 /// (whichever comes first), unless the parent already answered. It is only an offer: nothing changes until they accept.
 bool explorersOfferDue(ChildProfile c, ParentAsks asks, {required DateTime now, required bool castleDone}) {
-  if (c.track != littleLearnersTrack || asks.explorersAnswered.contains(c.id)) return false;
+  if (!explorersEnabled || c.track != littleLearnersTrack || asks.explorersAnswered.contains(c.id)) return false;
   final age = resolveTrack(birthYear: c.birthYear, birthMonth: c.birthMonth, now: now).ageYears;
   return age >= 6 || castleDone;
 }

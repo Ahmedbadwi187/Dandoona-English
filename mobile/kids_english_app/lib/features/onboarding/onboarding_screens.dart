@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/palette.dart';
+import '../content/content_repository.dart' show explorersEnabled;
 import '../../core/strings.dart';
 import '../../core/theme.dart';
 import '../../core/widgets.dart';
@@ -721,9 +722,9 @@ class ChildTrackScreen extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 8),
             child: Text(s('obTrackAuto'), textAlign: TextAlign.center, style: const TextStyle(fontSize: 16, color: Palette.ink)),
           ),
-          for (final (id, label, icon, color) in const [
+          for (final (id, label, icon, color) in [
             ('little-learners', 'obTrackLL', Icons.child_care_rounded, Palette.green),
-            ('explorers', 'obTrackExplorers', Icons.explore_rounded, Palette.blue),
+            if (explorersEnabled) ('explorers', 'obTrackExplorers', Icons.explore_rounded, Palette.blue),
           ])
             ChoiceCard(
               key: Key('track-$id'),
