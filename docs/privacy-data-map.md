@@ -123,3 +123,19 @@ Without an account nothing in this table leaves the phone, except plain pack dow
 ### Open decision
 - Inactive accounts are not deleted automatically today. A retention period (for example deleting accounts with no
   sign-in for 24 months, after an e-mail warning) needs the owner's decision and a line in the privacy policy.
+
+## Explorers track (ages 6-8)
+
+No new data leaves the phone and no new server table: the child's `track` was already stored (`explorers` now has lessons), and
+results of the new games sync as before (activity codes `sound-tap`, `word-builder`, `read-and-pick`; one summary per finished
+activity). New keys **on the phone only**:
+
+| Key | What | Why | How long |
+|---|---|---|---|
+| `asks.v1` | child ids whose parent answered the birth-month question and the Explorers offer | ask each only once | until the app is removed |
+| `demos.v1` | per child, the games whose hand demo was already shown | show a game's demo once by itself | until the app is removed |
+| `activeDays.v1` | per child, the last active-day milestone celebrated (a number) | celebrate each milestone once | until the app is removed |
+
+Active days are counted from the progress already on the phone (days with a finished activity); there is no streak, nothing is
+reset and a missed day is never shown. The birth month is now required for new children (it was already asked); children saved
+with the year alone keep working, and the parent is asked once to add the month.

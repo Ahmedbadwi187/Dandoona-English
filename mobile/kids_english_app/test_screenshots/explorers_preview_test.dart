@@ -3,7 +3,8 @@
 //   flutter test test_screenshots/explorers_preview_test.dart --update-goldens
 // The pictures land in docs/design-options/explorers/. The Sound Builders lessons are added here from their lesson files'
 // words (their audio is not generated yet, so the exported catalog does not list them); the new drawings are read straight
-// from content/art/explorers.
+// from content/art/explorers. Word Builder and Read & Pick shuffle their tiles and pictures on every run, so their pictures are
+// previews (made with --update-goldens), not a fixed comparison; the map pictures are stable.
 import 'dart:convert';
 import 'dart:io';
 

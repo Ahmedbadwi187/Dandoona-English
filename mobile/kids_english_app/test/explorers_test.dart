@@ -7,7 +7,9 @@ import 'package:kids_english_app/app.dart';
 import 'package:kids_english_app/features/audio/audio_service.dart';
 import 'package:kids_english_app/features/content/content_repository.dart';
 import 'package:kids_english_app/features/parent/parent_data.dart';
+import 'package:kids_english_app/features/profiles/child_profile.dart';
 import 'package:kids_english_app/features/progress/progress.dart';
+import 'package:kids_english_app/features/rewards/chest_rewards.dart';
 import 'package:kids_english_app/features/units/unit_logic.dart';
 
 import 'helpers.dart';
@@ -75,5 +77,21 @@ void main() {
     expect(lina.statuses.map((s) => s.unit.id).take(2), ['letters', 'sound-builders']);
     expect(lina.current!.unit.id, 'letters');
     expect(lina.statuses[1].state, isNot(UnitState.current)); // waits for Letters
+  });
+
+  test('an Explorers child keeps every Little Learners outfit and adds the explorer hat; a Little Learner sees no change', () async {
+    final meta = '{"schema":2,"children":{"e1":{"certificates":{},"celebrated":[],"chests":["letters","colors","sound-builders"]},"c1":{"certificates":{},"celebrated":[],"chests":["letters","sound-builders"]}}}';
+    final overrides = await testOverrides(content: realContent(), explorers: realExplorersContent(), prefs: {
+      'children.v1': '[${_child('c1', 'Omar', 'little-learners')},${_child('e1', 'Lina', 'explorers')}]',
+      'meta.v2': meta,
+    });
+    final c = ProviderContainer(overrides: overrides);
+    addTearDown(c.dispose);
+    await c.read(contentProvider.future);
+    await c.read(explorersContentProvider.future);
+    c.read(activeChildIdProvider.notifier).select('e1');
+    expect(c.read(chestInventoryProvider).outfits, containsAll(['grad-cap', 'beret', 'explorer-hat']));
+    c.read(activeChildIdProvider.notifier).select('c1');
+    expect(c.read(chestInventoryProvider).outfits, {'grad-cap'}); // only Little Learners chests count for a Little Learner
   });
 }

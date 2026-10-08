@@ -124,34 +124,35 @@ Items 1-10 are built (11, the 6-8 track, is deliberately later). What a new sess
 - Restart the API after pulling (new activity codes, /cards): `KidsEnglish.Api.exe --urls http://localhost:5080`.
 - A few widget tests are timing-sensitive under load (a different one failed in two of five full runs, all passed when re-run alone).
 
-## NEXT SESSION: start the Explorers track (ages 6-8), Phase 0 then Phase 1
-**Read first: `docs/explorers-plan.md`** (approved by the owner on 2026-10-08; section 11 = decisions and extra requirements, section 12 = what to build).
-The owner closes the desktop app and continues from Claude Code mobile; this is the full state so nothing is lost.
+## Explorers (ages 6-8): Phase 0 and Phase 1 are built on branch `explorers` (not merged; Little Learners ships first from main)
+Plan: `docs/explorers-plan.md` (sections 11-12 approved 2026-10-08). Built in a cloud session; **the owner still has to generate the
+audio, listen to the phonemes and test on the emulator** (the cloud session had no API keys, no emulator and no running API).
 
-State of the repo: everything is committed and pushed on `main` (Little Learners is complete: 15 units, 10 plan items done, parent cards, Practice).
-The API runs from `src/KidsEnglish.Api/bin/Debug/net10.0/KidsEnglish.Api.exe --urls http://localhost:5080` (restart it after pulling).
-The emulator has the debug app installed and the demo parent logged in (demo@dandoona.app / Demo!2026x; children Sara, Adam, Noor, Iana).
-Spent so far about **$5.51 of the new $50 cap** (ElevenLabs $2.35, OpenAI $3.16). ElevenLabs credits were recharged (check the remaining credits before each run).
+What is built (each part its own commit on `explorers`):
+- **Catalog per track**: `content/curriculum/units/explorers.yaml`; `export --track explorers` -> `assets/content/explorers.json`.
+  Letters is borrowed (`from: little-learners`: same lessons, files and progress); the generator never writes the other track's files.
+  App: `contentProvider` is still Little Learners (unchanged); the child area reads `activeContentProvider` (the active child's
+  track), the parent area `trackContentProvider(child.track)`.
+- **New children**: track from birth month + year (5y11m = Little Learners); the month was already required on the age screen;
+  placement by track (`placement` in explorers.yaml); summary shows track + start (track row opens a track choice); Edit child:
+  Explorers selectable + "Starting point". Year-only children: the parent is asked once for the month (`asks.v1`).
+- **Existing children**: Explorers offered in the parent area at 6 or after the Little Learners castle; never automatic;
+  certificates, chests, outfits and progress stay (an Explorers child's chest inventory is Little Learners + Explorers).
+- **Hand demo** (`features/activities/hand_demo.dart`): the first time a child meets a game, a hand does each move once while the
+  game's instruction plays; "?" replays it (`demos.v1`). **Active days** (`features/progress/active_days.dart`): cumulative, never
+  reset, milestones celebrated once (`activeDays.v1`); badge on the Explorers map only.
+- **Sound Builders**: 5 lessons (`content/curriculum/sound-builders-{a,e,i,o,u}.yaml`), 20 everyday words, games Sound Tap, Word
+  Builder (tap or drag), Read & Pick (`features/activities/phonics_activities.dart`), chest `explorer-hat`, a 5-page decodable story.
+  Phoneme table `phonemes:` in explorers.yaml, words carry `graphemes`. 10 new pictures self-drawn (`content/art/explorers`), 10
+  reused from Little Learners (`reuse: little-learners:lesson/key`). Server codes sound-tap, word-builder, read-and-pick (no migration).
+- **Explorers map look**: deeper colors and sky (`MapLook` in `unit_style.dart`); Little Learners renders exactly as on main.
+- Screenshots: `docs/design-options/explorers/sheet.png` (`flutter test test_screenshots/explorers_preview_test.dart --update-goldens`).
 
-Scope the owner approved: **Phase 0 (foundation, no API calls) + Phase 1 (the full Sound Builders unit), then STOP** and send:
-screenshots of the Explorers map and each new activity, the list of phonemes to listen to, total cost so far, test results. Go straight from
-Phase 0 into Phase 1 without waiting, if it fits the budget (show the Phase 1 cost estimate in a progress update).
-
-Hard rules from the owner (in addition to the plan):
-- **Little Learners ships first** (store release). Do not change its behaviour, content, packs or catalog; keep all its tests green. Explorers
-  arrives later as an app update. Prefer a separate branch (`explorers`) or changes that cannot alter the first track.
-- New children: track chosen automatically from age (birth month + year; 5y11m = Little Learners; 6-8 = Explorers). Birth month becomes
-  required for new children; year-only children keep working and the parent is asked once to add the month. English-level answer sets the
-  start inside the track (Letters unit inside the Explorers map for "no English"/"some letters"; Sound Builders for "all letters"; Digraphs with
-  Sound Builders done-by-placement for "reads simple words"). The summary screen shows track and start unit, both changeable there and in Edit child.
-- Existing children: offered Explorers at the 6th birthday or after finishing the Little Learners castle (whichever is first), never automatic;
-  certificates, chests and outfits stay.
-- Every new activity type starts with a short demo (an animated hand does the action once while Dandoona explains it in her voice).
-- Streaks: celebrate active days, never punish or show a sad reset.
-- Writing: letter tiles for spelling and finger tracing for lowercase letters only; no whole-word tracing.
-- Phonemes: generate with ElevenLabs, flag EVERY phoneme for the owner to listen to; the owner may supply override recordings (female, clear English).
-- Phonics words are chosen from everyday themes (animals, food, school, home).
-- Budget: $50 total cap including what is spent; keep a running total; ask only if a step would exceed it.
-
-Prompt to paste in the new session:
-> Read docs/handoff.md (section "NEXT SESSION") and docs/explorers-plan.md, then start Explorers Phase 0 and continue into Phase 1 as approved. Commit as you finish each part. When Phase 1 is done, stop and send me the screenshots, the phonemes to listen to, the total cost and the test results.
+**To do on the owner's PC (in this order):**
+1. `dotnet run --project tools/AssetGenerator -- audio --track explorers --dry-run` (estimate: 2,388 characters, about **$0.19**;
+   check the remaining ElevenLabs credits first), then without `--dry-run`, then `export --track explorers`. Until then the Sound
+   Builders lessons stay out of the catalog (its island shows "Soon") and the 11 later Explorers unit names have no voice.
+2. Listen to every phoneme: `docs/explorers-phonemes.md` (18 sounds; fix `say` or record overrides).
+3. Run the app on the emulator with an Explorers child (6-8, or accept the offer for a Little Learner) and look at the games.
+Spend: **about $5.51 of $50** (nothing was spent in the cloud session; Phase 1 adds about $0.19 when generated).
+Tests on `explorers`: Flutter 415, generator 98, application 36 (API integration tests need Docker + SQL Server; not run there).
