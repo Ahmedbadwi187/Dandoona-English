@@ -132,7 +132,7 @@ void main() {
     expect(card.color, Colors.white);
     expect((card.border! as Border).top.color, isNot(Colors.transparent));
     expect(HSLColor.fromColor((card.border! as Border).top.color).hue, closeTo(HSLColor.fromColor(omar.color).hue, 2));
-    expect(t.getSize(find.descendant(of: find.byKey(const Key('pick-a')), matching: find.byType(AvatarCircle))).width, greaterThanOrEqualTo(96));
+    expect(t.getSize(find.descendant(of: find.byKey(const Key('pick-a')), matching: find.byType(AvatarCircle))).width, greaterThanOrEqualTo(64)); // small cards, still a big enough picture to tap
     final name = t.widget<Text>(find.descendant(of: find.byKey(const Key('pick-a')), matching: find.text('Omar')));
     expect(HSLColor.fromColor(name.style!.color!).lightness, lessThan(0.3)); // the avatar's dark shade
     expect(find.descendant(of: find.byKey(const Key('stars-a')), matching: find.text('3')), findsOneWidget);
@@ -148,17 +148,22 @@ void main() {
     expect(a.size, b.size);
   });
 
-  testWidgets('three or more children make a two-column grid; all the same size', (t) async {
-    await _open(t, kids: const ['a', 'b', 'c']);
+  testWidgets('three children sit in one row, the fourth starts a second row in the middle; all the same size', (t) async {
+    await _open(t, kids: const ['a', 'b', 'c', 'd']);
     final a = t.getRect(find.byKey(const Key('pick-a')));
     final b = t.getRect(find.byKey(const Key('pick-b')));
     final c = t.getRect(find.byKey(const Key('pick-c')));
-    expect(c.top, greaterThan(a.bottom)); // a second row
-    expect(c.center.dx, closeTo(t.view.physicalSize.width / t.view.devicePixelRatio / 2, 1)); // the odd one out sits in the middle
-    expect(b.left, greaterThan(a.left));
+    final d = t.getRect(find.byKey(const Key('pick-d')));
+    expect(b.top, a.top);
+    expect(c.top, a.top);
+    expect(a.right, lessThan(b.left));
+    expect(b.right, lessThan(c.left));
+    expect(d.top, greaterThan(a.bottom)); // a second row
+    expect(d.center.dx, closeTo(t.view.physicalSize.width / t.view.devicePixelRatio / 2, 1)); // the odd one out sits in the middle
     expect(a.size, b.size);
-    expect(c.width, closeTo(a.width, 0.01));
-    expect(c.height, closeTo(a.height, 0.01));
+    expect(d.width, closeTo(a.width, 0.01));
+    expect(d.height, closeTo(a.height, 0.01));
+    expect(a.width, lessThan(150)); // small cards
   });
 
   testWidgets('with many children the grid scrolls', (t) async {
@@ -175,7 +180,7 @@ void main() {
     final top = t.getTopLeft(find.byKey(const Key('who-bubble'))).dy;
     final bottom = screen - t.getBottomLeft(find.byKey(const Key('pick-a'))).dy;
     expect(bottom, lessThan(top + 80));
-    expect(bottom, lessThan(240));
+    expect(bottom, lessThan(280));
   });
 
   testWidgets('tapping a card: the avatar bounces, a cheerful sound plays, then that child\'s unit map opens', (t) async {

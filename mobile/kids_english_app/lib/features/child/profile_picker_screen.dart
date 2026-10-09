@@ -94,8 +94,9 @@ class _ProfilePickerScreenState extends ConsumerState<ProfilePickerScreen> {
               children: [
                 LayoutBuilder(
                   builder: (context, box) {
-                    const gap = 16.0, pad = 20.0;
-                    final cardWidth = ((box.maxWidth - pad * 2 - gap) / 2).clamp(140.0, 260.0);
+                    // three small cards in a row (a phone shows five children without scrolling)
+                    const gap = 12.0, pad = 16.0;
+                    final cardWidth = ((box.maxWidth - pad * 2 - gap * 2) / 3).clamp(100.0, 190.0);
                     return SingleChildScrollView(
                       child: ConstrainedBox(
                         constraints: BoxConstraints(minHeight: box.maxHeight),
@@ -105,7 +106,7 @@ class _ProfilePickerScreenState extends ConsumerState<ProfilePickerScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               _Speech(text: Strings.en('whoIsPlaying'), onTap: () => unawaited(_say())),
-                              const DandoonaView(pose: DandoonaPose.waving, size: 190),
+                              const DandoonaView(pose: DandoonaPose.waving, size: 150),
                               const SizedBox(height: 12),
                               Wrap(
                                 spacing: gap,
@@ -173,9 +174,9 @@ class _Speech extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Flexible(child: FittedBox(fit: BoxFit.scaleDown, child: Text(text, style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w800, color: Palette.nightInk)))),
-                const SizedBox(width: 10),
-                const Icon(Icons.volume_up_rounded, color: Palette.plum, size: 30),
+                Flexible(child: FittedBox(fit: BoxFit.scaleDown, child: Text(text, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w800, color: Palette.nightInk)))),
+                const SizedBox(width: 8),
+                const Icon(Icons.volume_up_rounded, color: Palette.plum, size: 26),
               ],
             ),
           ),
@@ -224,30 +225,30 @@ class _ChildCardState extends State<_ChildCard> with SingleTickerProviderStateMi
         widget.onPick();
       },
       child: Container(
-        padding: const EdgeInsets.fromLTRB(12, 16, 12, 14),
+        padding: const EdgeInsets.fromLTRB(8, 12, 8, 10),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(28),
-          border: Border.all(color: color.border, width: 4),
+          borderRadius: BorderRadius.circular(22),
+          border: Border.all(color: color.border, width: 3),
           boxShadow: [BoxShadow(color: color.border.withValues(alpha: 0.25), blurRadius: 12, offset: const Offset(0, 5))],
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ScaleTransition(scale: _scale, child: AvatarCircle(widget.child.avatarKey, size: 104)),
-            const SizedBox(height: 10),
-            Text(widget.child.name, maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 26, fontWeight: FontWeight.w800, color: color.dark)),
-            const SizedBox(height: 6),
+            ScaleTransition(scale: _scale, child: AvatarCircle(widget.child.avatarKey, size: 68)),
+            const SizedBox(height: 8),
+            Text(widget.child.name, maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 19, fontWeight: FontWeight.w800, color: color.dark)),
+            const SizedBox(height: 4),
             Container(
               key: Key('stars-${widget.child.id}'),
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-              decoration: BoxDecoration(color: color.tint, borderRadius: BorderRadius.circular(20)),
+              padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 3),
+              decoration: BoxDecoration(color: color.tint, borderRadius: BorderRadius.circular(16)),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.star_rounded, size: 22, color: color.dark),
-                  const SizedBox(width: 4),
-                  Text('${widget.stars}', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: color.dark)),
+                  Icon(Icons.star_rounded, size: 16, color: color.dark),
+                  const SizedBox(width: 3),
+                  Text('${widget.stars}', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: color.dark)),
                 ],
               ),
             ),
