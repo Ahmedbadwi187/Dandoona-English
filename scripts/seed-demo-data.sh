@@ -29,12 +29,17 @@ fi
 auth=(-H "Authorization: Bearer $token" -H 'Content-Type: application/json')
 
 # create the child unless one with that name exists; print its id
-child_id() { # name avatar birthYear
-  local existing
+child_id() { # name avatar birthYear [track] [birthMonth]
+  local existing month=""
   existing=$(curl -s "${auth[@]}" "$BASE/api/children" | tr '{' '\n' | grep "\"name\":\"$1\"" | json_field id || true)
   if [ -n "$existing" ]; then echo "$existing"; return; fi
-  curl -s -X POST "${auth[@]}" "$BASE/api/children" -d "{\"name\":\"$1\",\"avatarKey\":\"$2\",\"birthYear\":$3,\"track\":\"little-learners\"}" | json_field id
+  [ -n "${5:-}" ] && month=",\"birthMonth\":$5"
+  curl -s -X POST "${auth[@]}" "$BASE/api/children" -d "{\"name\":\"$1\",\"avatarKey\":\"$2\",\"birthYear\":$3,\"track\":\"${4:-little-learners}\"$month}" | json_field id
 }
+
+# The games of a lesson, read from its own file (used for the Explorers child, so the demo follows the content).
+ROOT0="$(cd "$(dirname "$0")/.." && pwd)"
+acts_of() { sed -n 's/^activities: \[\(.*\)\]\r*$/\1/p' "$ROOT0/content/curriculum/$1.yaml" | tr -d ','; }
 
 LETTERS=(a b c d e f g h i j k l m n o p q r s t u v w x y z)
 COLORS=(red blue yellow green orange purple pink brown black white)
@@ -44,13 +49,17 @@ items() {
   local tag="$1"; shift
   local n=${N0:-0} out=""
   for lesson in "$@"; do
-    case "$lesson" in
-      letter-*) acts="trace trace-small listen-and-tap record-and-listen match-picture" ;;
-      actions-*) acts="listen-and-tap match-picture dandoona-says record-and-listen" ;;
-      animals-*) acts="listen-and-tap match-picture animal-sounds habitat record-and-listen" ;;
-      color-*)  acts="listen-and-tap match-picture record-and-listen color-the-object" ;;
-      *)        acts="listen-and-tap match-picture record-and-listen" ;;
-    esac
+    if [ -n "${FROM_FILES:-}" ]; then
+      acts="$(acts_of "$lesson")"
+    else
+      case "$lesson" in
+        letter-*) acts="trace trace-small listen-and-tap record-and-listen match-picture" ;;
+        actions-*) acts="listen-and-tap match-picture dandoona-says record-and-listen" ;;
+        animals-*) acts="listen-and-tap match-picture animal-sounds habitat record-and-listen" ;;
+        color-*)  acts="listen-and-tap match-picture record-and-listen color-the-object" ;;
+        *)        acts="listen-and-tap match-picture record-and-listen" ;;
+      esac
+    fi
     for act in $acts; do
       n=$((n + 1))
       # fixed, valid GUID per (child, record) so running the script twice stores nothing twice
@@ -91,7 +100,7 @@ echo -n "  Adam ($adam), Letters A-M: "; submit "$adam" 2 "${some[@]}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 UNITS=(letters colors numbers shapes animals feelings my-body actions food clothes toys my-family my-home opposites transport)
 noor=$(child_id Noor bunny $((YEAR - 4)))
-course=(); for f in "$ROOT"/content/curriculum/*.yaml; do course+=("$(basename "$f" .yaml)"); done
+course=(); for f in "$ROOT"/content/curriculum/*.yaml; do grep -q '^track: little-learners' "$f" && course+=("$(basename "$f" .yaml)"); done
 echo -n "  Noor ($noor), all ${#course[@]} lessons of the course: "; submit "$noor" 3 "${course[@]}"
 
 # every certificate and chest (one per unit), the three reviews and the castle
@@ -104,5 +113,21 @@ done
 for r in review-1 review-2 review-3 castle; do ach="$ach{\"kind\":\"review\",\"key\":\"$r\",\"earnedAt\":\"${YEAR}-09-28T12:00:00Z\"},"; done
 echo -n "  Noor, certificates + chests + reviews + castle: "
 curl -s -X POST "${auth[@]}" "$BASE/api/children/$noor/achievements" -d "{\"items\":[${ach%,}]}"; echo
+
+# Lina: an Explorers child (7 years old) who finished the whole Explorers track. Her map starts with the Little Learners Letters unit
+# (so the 26 letter lessons count), then the 12 Explorers units; every game of every lesson comes from the lesson files.
+EXPLORER_UNITS=(letters sound-builders digraphs blends magic-e vowel-teams sight-words-1 sight-words-2 my-sentences word-families everyday-english numbers-time grammar-starters)
+lina=$(child_id Lina flower $((YEAR - 7)) explorers 5)
+trackcourse=(); for f in "$ROOT"/content/curriculum/*.yaml; do b=$(basename "$f" .yaml); if grep -q '^track: explorers' "$f" || [[ "$b" == letter-* ]]; then trackcourse+=("$b"); fi; done
+echo -n "  Lina ($lina), all ${#trackcourse[@]} lessons of Explorers: "; FROM_FILES=1 submit "$lina" 4 "${trackcourse[@]}"
+ach=""; i=0
+for u in "${EXPLORER_UNITS[@]}"; do
+  i=$((i + 1)); day=$(( (i % 28) + 1 ))
+  when=$(printf '%s-09-%02dT12:00:00Z' "$YEAR" "$day")
+  ach="$ach{\"kind\":\"certificate\",\"key\":\"$u\",\"earnedAt\":\"$when\"},{\"kind\":\"chest\",\"key\":\"$u\",\"earnedAt\":\"$when\"},{\"kind\":\"story\",\"key\":\"$u\",\"earnedAt\":\"$when\"},"
+done
+for r in review-1 review-2 review-3 review-4 castle; do ach="$ach{\"kind\":\"review\",\"key\":\"$r\",\"earnedAt\":\"${YEAR}-09-29T12:00:00Z\"},"; done
+echo -n "  Lina, certificates + chests + stories + reviews + castle: "
+curl -s -X POST "${auth[@]}" "$BASE/api/children/$lina/achievements" -d "{\"items\":[${ach%,}]}"; echo
 
 echo "Done. In the app: sign in with $EMAIL / $PASSWORD"
