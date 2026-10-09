@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/widgets.dart';
 import '../audio/activity_speech.dart';
@@ -61,7 +62,7 @@ class ColorTheObjectActivity extends ConsumerStatefulWidget {
 
   final Lesson lesson;
   final TrackContent track;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
 
   /// After this long without a tap, the right color lights up and its name is said.
@@ -107,7 +108,7 @@ class _ColorTheObjectActivityState extends ConsumerState<ColorTheObjectActivity>
     } on Object catch (e) {
       debugPrint('color-the-object: could not load ${_target.drawing}: $e');
       // A missing drawing leaves an empty board; the activity cannot be finished, so report a neutral result.
-      if (mounted) widget.onFinished(const ActivityResult(stars: 1, attempts: 1));
+      if (mounted) await widget.onFinished(const ActivityResult(stars: 1, attempts: 1));
     }
   }
 
@@ -118,7 +119,7 @@ class _ColorTheObjectActivityState extends ConsumerState<ColorTheObjectActivity>
     super.dispose();
   }
 
-  void _sayInstruction() => unawaited(_speech.say(instruction: widget.lesson.audio.instructions['color-the-object']));
+  Future<void> _sayInstruction() => _speech.say(instruction: widget.lesson.audio.instructions['color-the-object']);
 
   /// Nothing happened for a while: light up the right color and say its name.
   void _showHint() {
@@ -128,14 +129,15 @@ class _ColorTheObjectActivityState extends ConsumerState<ColorTheObjectActivity>
     _idle.arm();
   }
 
-  void _pick(ColorChoice c) {
+  Future<void> _pick(ColorChoice c) async {
     if (_done) return;
     setState(() {
       _selected = c.name;
       _hinting = false;
     });
-    unawaited(_speech.say(then: c.audio));
+    final spoken = _speech.say(then: c.audio);
     _idle.arm();
+    await spoken;
   }
 
   Future<void> _tapDrawing() async {
@@ -157,7 +159,7 @@ class _ColorTheObjectActivityState extends ConsumerState<ColorTheObjectActivity>
       });
       unawaited(_speech.say(then: _right.audio));
       await Future<void>.delayed(widget.finishDelay);
-      if (mounted) widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: 1 + _mistakes));
+      if (mounted) await widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: 1 + _mistakes));
     } else {
       _mistakes++;
       setState(() {
@@ -190,7 +192,7 @@ class _ColorTheObjectActivityState extends ConsumerState<ColorTheObjectActivity>
             ),
           ),
           const SizedBox(height: 20),
-          GestureDetector(
+          LoadingTap(
             key: const Key('color-drawing'),
             behavior: HitTestBehavior.opaque,
             onTap: _tapDrawing,

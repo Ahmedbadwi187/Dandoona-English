@@ -143,8 +143,8 @@ void main() {
 
       final target = targetOf(audio);
       final playsBefore = audio.played.length;
-      final wrong = tester.widgetList<GestureDetector>(find.byWidgetPredicate((w) => w.key is Key && '${w.key}'.contains('option-') && !'${w.key}'.contains('option-${target.word}'))).first;
-      await tester.tap(find.byKey(wrong.key!));
+      final wrong = find.byWidgetPredicate((w) => w.key is Key && '${w.key}'.contains('option-') && !'${w.key}'.contains('option-${target.word}')).first;
+      await tester.tap(wrong);
       await tester.pump(const Duration(milliseconds: 700));
       expect(audio.played.length, greaterThan(playsBefore)); // word replayed
       expect(targetOf(audio).word, target.word); // still the same round

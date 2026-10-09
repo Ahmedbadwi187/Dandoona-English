@@ -1,10 +1,10 @@
-import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/sky.dart';
 import '../../core/strings.dart';
@@ -73,13 +73,13 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
                     alignment: Alignment.centerLeft,
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(8, 4, 8, 0),
-                      child: IconButton(
+                      child: LoadingAction(onPressed: () => context.pop(), builder: (onPressed, loading) => IconButton(
                         key: const Key('review-back'),
                         constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
                         iconSize: 32,
-                        onPressed: () => context.pop(),
-                        icon: const Icon(Icons.arrow_back_rounded),
-                      ),
+                        onPressed: onPressed,
+                        icon: LoadingContent(loading: loading, child: const Icon(Icons.arrow_back_rounded)),
+                      )),
                     ),
                   ),
                   Expanded(
@@ -99,7 +99,7 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
                                         child: DemoFrame(
                                           activity: 'listen-and-tap',
                                           instruction: lesson.audio.instructions['listen-and-tap'],
-                                          child: ListenAndTapActivity(key: const Key('review-game'), lesson: lesson, track: _track!, onFinished: (r) => unawaited(_finished(r))),
+                                          child: ListenAndTapActivity(key: const Key('review-game'), lesson: lesson, track: _track!, onFinished: _finished),
                                         ),
                                       ),
                                     ],
@@ -141,12 +141,12 @@ class _Passed extends StatelessWidget {
             const SizedBox(height: 24),
             SizedBox(
               width: double.infinity,
-              child: FilledButton(
+              child: LoadingAction(onPressed: onDone, builder: (onPressed, loading) => FilledButton(
                 key: const Key('review-done'),
                 style: FilledButton.styleFrom(backgroundColor: Palette.green, minimumSize: const Size.fromHeight(kMinTapTarget * 1.1)),
-                onPressed: onDone,
-                child: Text(Strings.en('chestGotIt'), style: kidBody.copyWith(fontWeight: FontWeight.w900)),
-              ),
+                onPressed: onPressed,
+                child: LoadingContent(loading: loading, child: Text(Strings.en('chestGotIt'), style: kidBody.copyWith(fontWeight: FontWeight.w900))),
+              )),
             ),
           ],
         ),
@@ -170,7 +170,7 @@ class _Nothing extends StatelessWidget {
               const DandoonaView(pose: DandoonaPose.thinking, size: 180),
               Text(Strings.en('reviewNotReady'), key: const Key('review-not-ready'), textAlign: TextAlign.center, style: kidBody.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk)),
               const SizedBox(height: 16),
-              FilledButton(onPressed: onBack, style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(kMinTapTarget)), child: Text(Strings.en('chestGotIt'), style: kidBody.copyWith(fontWeight: FontWeight.w900))),
+              LoadingAction(onPressed: onBack, builder: (onPressed, loading) => FilledButton(onPressed: onPressed, style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(kMinTapTarget)), child: LoadingContent(loading: loading, child: Text(Strings.en('chestGotIt'), style: kidBody.copyWith(fontWeight: FontWeight.w900))))),
             ],
           ),
         ),

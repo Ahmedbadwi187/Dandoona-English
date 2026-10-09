@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/palette.dart';
+import '../../core/loading_action.dart';
 import '../../core/widgets.dart';
 import '../content/content_models.dart';
 import '../content/content_repository.dart';
@@ -43,6 +44,8 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
   /// The units counted as done by placement (the "starting point"); null = unchanged.
   Set<String>? _placed;
   bool _leave = false; // saved, discarded or deleted: leaving needs no question
+  bool _working = false;
+  bool _discarding = false;
 
   @override
   void initState() {
@@ -77,6 +80,16 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
 
   static bool _sameSet(Set<String> a, Set<String> b) => a.length == b.length && a.containsAll(b);
 
+  Future<void> _runAction(LoadingCallback action) async {
+    if (_working || _discarding) return;
+    setState(() => _working = true);
+    try {
+      await action();
+    } finally {
+      if (mounted) setState(() => _working = false);
+    }
+  }
+
   Future<void> _save() async {
     final s = ref.read(stringsProvider);
     final settings = ref.read(settingsProvider.notifier);
@@ -110,6 +123,28 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
 
   /// Back to where the parent came from (the list, when this screen was opened directly).
   void _close() => context.canPop() ? context.pop() : context.go('/parent/children');
+
+  Future<void> _back() async {
+    if (_working || _discarding) return;
+    if (_dirty && !_leave) {
+      await _confirmDiscard();
+    } else {
+      await Navigator.of(context).maybePop();
+    }
+  }
+
+  Future<void> _confirmDiscard() async {
+    if (_working || _discarding || _leave) return;
+    setState(() => _discarding = true);
+    try {
+      if (await _askDiscard() && mounted) {
+        setState(() => _leave = true);
+        _close();
+      }
+    } finally {
+      if (mounted) setState(() => _discarding = false);
+    }
+  }
 
   Future<bool> _askDiscard() async {
     final s = ref.read(stringsProvider);
@@ -177,10 +212,7 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
       canPop: !_dirty || _leave,
       onPopInvokedWithResult: (didPop, _) async {
         if (didPop) return;
-        if (await _askDiscard() && mounted) {
-          setState(() => _leave = true);
-          this.context.canPop() ? this.context.pop() : this.context.go('/parent/children');
-        }
+        await _confirmDiscard();
       },
       child: Scaffold(
         body: SafeArea(
@@ -190,7 +222,7 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
                 padding: const EdgeInsets.fromLTRB(4, 8, 16, 8),
                 child: Row(
                   children: [
-                    ParentBack(onPressed: () => Navigator.of(context).maybePop()),
+                    ParentBack(onPressed: _working ? null : _back, loading: _discarding),
                     const SizedBox(width: 4),
                     Expanded(child: Text(s('pEditChild'), style: ParentText.screenTitle)),
                   ],
@@ -328,28 +360,34 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    FilledButton(
-                      key: const Key('edit-save'),
-                      style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(56)),
-                      onPressed: _dirty && _valid ? _save : null,
-                      child: Text(s('save')),
+                    LoadingAction(
+                      onPressed: _dirty && _valid && !_working && !_discarding ? () => _runAction(_save) : null,
+                      builder: (onPressed, loading) => FilledButton(
+                        key: const Key('edit-save'),
+                        style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(56)),
+                        onPressed: onPressed,
+                        child: LoadingContent(loading: loading, child: Text(s('save'))),
+                      ),
                     ),
                     const SizedBox(height: 8),
                     TextButton(
                       key: const Key('rerun-setup'),
                       style: TextButton.styleFrom(minimumSize: const Size.fromHeight(kParentTap)),
-                      onPressed: () => startChildSetup(context, ref, childId: _child.id, returnTo: '/parent/children/${_child.id}'),
+                      onPressed: _working || _discarding ? null : () => startChildSetup(context, ref, childId: _child.id, returnTo: '/parent/children/${_child.id}'),
                       child: Text(s('pRerunSetup')),
                     ),
                     const SizedBox(height: 24),
                     const Divider(color: parentBorder),
                     const SizedBox(height: 8),
-                    TextButton.icon(
-                      key: const Key('edit-delete'),
-                      style: TextButton.styleFrom(foregroundColor: Palette.red, minimumSize: const Size.fromHeight(kParentTap)),
-                      onPressed: _delete,
-                      icon: const Icon(Icons.delete_outline_rounded),
-                      label: Text(s('pDeleteChild')),
+                    LoadingAction(
+                      onPressed: _working || _discarding ? null : () => _runAction(_delete),
+                      builder: (onPressed, loading) => TextButton.icon(
+                        key: const Key('edit-delete'),
+                        style: TextButton.styleFrom(foregroundColor: Palette.red, minimumSize: const Size.fromHeight(kParentTap)),
+                        onPressed: onPressed,
+                        icon: LoadingContent(loading: loading, child: const Icon(Icons.delete_outline_rounded)),
+                        label: Text(s('pDeleteChild')),
+                      ),
                     ),
                   ],
                 ),

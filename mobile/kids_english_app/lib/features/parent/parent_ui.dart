@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/palette.dart';
+import '../../core/loading_action.dart';
 import '../../core/type.dart';
 
 /// The parent screens stay calm: cream page, white cards with a soft border, one accent (the theme's purple).
@@ -59,15 +60,20 @@ class ParentCard extends StatelessWidget {
 
 /// A back arrow; the icon mirrors by itself in right-to-left.
 class ParentBack extends StatelessWidget {
-  const ParentBack({super.key, required this.onPressed});
-  final VoidCallback onPressed;
+  const ParentBack({super.key, required this.onPressed, this.loading = false});
+  final LoadingCallback? onPressed;
+  final bool loading;
 
   @override
-  Widget build(BuildContext context) => IconButton(
-        key: const Key('parent-back'),
-        constraints: const BoxConstraints(minWidth: kParentTap, minHeight: kParentTap),
+  Widget build(BuildContext context) => LoadingAction(
         onPressed: onPressed,
-        icon: const Icon(Icons.arrow_back_rounded),
+        loading: loading,
+        builder: (onPressed, loading) => IconButton(
+          key: const Key('parent-back'),
+          constraints: const BoxConstraints(minWidth: kParentTap, minHeight: kParentTap),
+          onPressed: onPressed,
+          icon: LoadingContent(loading: loading, child: const Icon(Icons.arrow_back_rounded)),
+        ),
       );
 }
 

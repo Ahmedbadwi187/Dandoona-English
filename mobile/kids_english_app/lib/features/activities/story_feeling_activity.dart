@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../onboarding/onboarding_widgets.dart';
 import '../../core/theme.dart';
@@ -48,7 +49,7 @@ class StoryFeelingActivity extends ConsumerStatefulWidget {
 
   final Lesson lesson;
   final TrackContent track;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
   final Duration nextDelay;
 
@@ -90,7 +91,7 @@ class _StoryFeelingActivityState extends ConsumerState<StoryFeelingActivity> {
       await Future<void>.delayed(widget.nextDelay);
       if (!mounted) return;
       if (_index + 1 >= _rounds.length) {
-        widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _rounds.length + _mistakes));
+        await widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _rounds.length + _mistakes));
         return;
       }
       setState(() {
@@ -117,9 +118,9 @@ class _StoryFeelingActivityState extends ConsumerState<StoryFeelingActivity> {
         children: [
           RoundDots(total: _rounds.length, index: _index),
           const SizedBox(height: 12),
-          GestureDetector(
+          LoadingTap(
             key: const Key('feeling-story'),
-            onTap: () => unawaited(_speech.say(then: round.page.audio)),
+            onTap: () => _speech.say(then: round.page.audio),
             child: Column(
               children: [
                 const DandoonaView(pose: DandoonaPose.thinking, size: 170),
@@ -145,9 +146,9 @@ class _StoryFeelingActivityState extends ConsumerState<StoryFeelingActivity> {
             alignment: WrapAlignment.center,
             children: [
               for (final w in round.options)
-                GestureDetector(
+                LoadingTap(
                   key: Key('feeling-${w.word}'),
-                  onTap: () => unawaited(_tap(w)),
+                  onTap: () => _tap(w),
                   child: Container(
                     padding: const EdgeInsets.all(8),
                     constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),

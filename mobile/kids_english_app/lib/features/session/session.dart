@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
@@ -111,12 +112,16 @@ class _TimeUpOverlay extends ConsumerWidget {
                 Text(Strings.en('timeUpBody'),
                     textAlign: TextAlign.center, style: kidCaption.copyWith(color: Palette.cream)),
                 const SizedBox(height: 28),
-                FilledButton(
-                  style: FilledButton.styleFrom(minimumSize: const Size(kMinTapTarget * 3, kMinTapTarget)),
+                LoadingAction(
                   onPressed: () async {
-                    if (await showParentalGate(context)) ref.read(sessionSecondsProvider.notifier).reset();
+                    final passed = await showParentalGate(context);
+                    if (context.mounted && passed) ref.read(sessionSecondsProvider.notifier).reset();
                   },
-                  child: Text(s('continue')),
+                  builder: (onPressed, loading) => FilledButton(
+                    style: FilledButton.styleFrom(minimumSize: const Size(kMinTapTarget * 3, kMinTapTarget)),
+                    onPressed: onPressed,
+                    child: LoadingContent(loading: loading, child: Text(s('continue'))),
+                  ),
                 ),
               ],
             ),

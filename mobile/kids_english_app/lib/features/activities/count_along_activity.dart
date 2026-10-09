@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../audio/activity_speech.dart';
 import '../audio/audio_service.dart';
@@ -20,7 +21,7 @@ class CountAlongActivity extends ConsumerStatefulWidget {
 
   final Lesson lesson;
   final TrackContent track;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Duration nextDelay;
 
   @override
@@ -58,7 +59,7 @@ class _CountAlongActivityState extends ConsumerState<CountAlongActivity> {
     await Future<void>.delayed(widget.nextDelay);
     if (!mounted) return;
     if (_index + 1 >= _numbers.length) {
-      widget.onFinished(ActivityResult(stars: 3, attempts: _numbers.length));
+      await widget.onFinished(ActivityResult(stars: 3, attempts: _numbers.length));
     } else {
       setState(() {
         _index++;
@@ -93,9 +94,9 @@ class _CountAlongActivityState extends ConsumerState<CountAlongActivity> {
             alignment: WrapAlignment.center,
             children: [
               for (var i = 0; i < _n; i++)
-                GestureDetector(
+                LoadingTap(
                   key: Key('balloon-$i'),
-                  onTap: () => unawaited(_touch(i)),
+                  onTap: () => _touch(i),
                   child: AnimatedScale(
                     scale: _counted.contains(i) ? 0.8 : 1,
                     duration: const Duration(milliseconds: 200),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
@@ -57,6 +58,7 @@ class OnboardingFrame extends StatelessWidget {
     this.progress,
     this.onBack,
     this.onContinue,
+    this.continueLoading = false,
     this.continueLabel,
     this.secondaryLabel,
     this.onSecondary,
@@ -75,116 +77,128 @@ class OnboardingFrame extends StatelessWidget {
   /// 0..1 across the question screens; null hides the bar (language, welcome...).
   final double? progress;
   final VoidCallback? onBack;
-  final VoidCallback? onContinue;
+  final LoadingCallback? onContinue;
+  final bool continueLoading;
   final String? continueLabel;
   final String? secondaryLabel;
-  final VoidCallback? onSecondary;
+  final LoadingCallback? onSecondary;
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: s.direction,
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        body: SafeArea(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(8, 8, 20, 0),
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: kMinTapTarget,
-                      height: kMinTapTarget,
-                      child: onBack == null
-                          ? null
-                          : IconButton(
-                              key: const Key('ob-back'),
-                              tooltip: s('obBack'),
-                              iconSize: 30,
-                              onPressed: onBack,
-                              icon: const Icon(Icons.arrow_back_rounded),
-                            ),
-                    ),
-                    if (progress != null)
-                      Expanded(
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: LinearProgressIndicator(
-                            key: const Key('ob-progress'),
-                            value: progress,
-                            minHeight: 14,
-                            backgroundColor: Palette.tan,
-                            color: Palette.plum,
-                          ),
-                        ),
-                      )
-                    else
-                      const Spacer(),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: Center(
-                  child: SingleChildScrollView(
-                    padding: const EdgeInsets.fromLTRB(22, 4, 22, 12),
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(maxWidth: 520),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          DandoonaView(pose: pose, size: poseSize, accessory: accessory),
-                          const SizedBox(height: 6),
-                          Text(title,
-                              key: const Key('ob-title'),
-                              textAlign: TextAlign.center,
-                              style: parentStat.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk, height: 1.25)),
-                          if (subtitle != null) ...[
-                            const SizedBox(height: 6),
-                            Text(subtitle!, textAlign: TextAlign.center, style: parentBody.copyWith(color: Palette.brown, height: 1.4)),
-                          ],
-                          const SizedBox(height: 18),
-                          child,
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(22, 4, 22, 16),
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 520),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
+    return LoadingAction(
+      onPressed: onContinue,
+      loading: continueLoading,
+      builder: (onContinue, loading) => Directionality(
+        textDirection: s.direction,
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: SafeArea(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 8, 20, 0),
+                  child: Row(
                     children: [
                       SizedBox(
-                        width: double.infinity,
-                        child: FilledButton(
-                          key: const Key('ob-continue'),
-                          style: FilledButton.styleFrom(
-                            backgroundColor: Palette.plum,
-                            disabledBackgroundColor: const Color(0xFFE0D8EC),
-                            foregroundColor: Palette.white,
-                            minimumSize: const Size.fromHeight(64),
-                            textStyle: Theme.of(context).textTheme.labelLarge?.merge(parentTitle).copyWith(fontWeight: FontWeight.w800),
-                          ),
-                          onPressed: onContinue,
-                          child: Text(continueLabel ?? s('obContinue')),
-                        ),
+                        width: kMinTapTarget,
+                        height: kMinTapTarget,
+                        child: onBack == null
+                            ? null
+                            : IconButton(
+                                key: const Key('ob-back'),
+                                tooltip: s('obBack'),
+                                iconSize: 30,
+                                onPressed: loading ? null : onBack,
+                                icon: const Icon(Icons.arrow_back_rounded),
+                              ),
                       ),
-                      if (secondaryLabel != null)
-                        TextButton(
-                          key: const Key('ob-secondary'),
-                          style: TextButton.styleFrom(minimumSize: const Size.fromHeight(kMinTapTarget), foregroundColor: Palette.plum),
-                          onPressed: onSecondary,
-                          child: Text(secondaryLabel!, style: parentBody.copyWith(fontWeight: FontWeight.w700)),
-                        ),
+                      if (progress != null)
+                        Expanded(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: LinearProgressIndicator(key: const Key('ob-progress'), value: progress, minHeight: 14, backgroundColor: Palette.tan, color: Palette.plum),
+                          ),
+                        )
+                      else
+                        const Spacer(),
                     ],
                   ),
                 ),
-              ),
-            ],
+                Expanded(
+                  child: Center(
+                    child: SingleChildScrollView(
+                      padding: const EdgeInsets.fromLTRB(22, 4, 22, 12),
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 520),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            DandoonaView(pose: pose, size: poseSize, accessory: accessory),
+                            const SizedBox(height: 6),
+                            Text(
+                              title,
+                              key: const Key('ob-title'),
+                              textAlign: TextAlign.center,
+                              style: parentStat.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk, height: 1.25),
+                            ),
+                            if (subtitle != null) ...[
+                              const SizedBox(height: 6),
+                              Text(
+                                subtitle!,
+                                textAlign: TextAlign.center,
+                                style: parentBody.copyWith(color: Palette.brown, height: 1.4),
+                              ),
+                            ],
+                            const SizedBox(height: 18),
+                            IgnorePointer(ignoring: loading, child: child),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(22, 4, 22, 16),
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 520),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SizedBox(
+                          width: double.infinity,
+                          child: FilledButton(
+                            key: const Key('ob-continue'),
+                            style: FilledButton.styleFrom(
+                              backgroundColor: Palette.plum,
+                              disabledBackgroundColor: const Color(0xFFE0D8EC),
+                              foregroundColor: Palette.white,
+                              minimumSize: const Size.fromHeight(64),
+                              textStyle: Theme.of(context).textTheme.labelLarge?.merge(parentTitle).copyWith(fontWeight: FontWeight.w800),
+                            ),
+                            onPressed: onContinue,
+                            child: LoadingContent(loading: loading, color: Palette.plum, child: Text(continueLabel ?? s('obContinue'))),
+                          ),
+                        ),
+                        if (secondaryLabel != null)
+                          LoadingAction(
+                            onPressed: loading ? null : onSecondary,
+                            builder: (onSecondary, secondaryLoading) => TextButton(
+                              key: const Key('ob-secondary'),
+                              style: TextButton.styleFrom(minimumSize: const Size.fromHeight(kMinTapTarget), foregroundColor: Palette.plum),
+                              onPressed: onSecondary,
+                              child: LoadingContent(
+                                loading: secondaryLoading,
+                                color: Palette.plum,
+                                child: Text(secondaryLabel!, style: parentBody.copyWith(fontWeight: FontWeight.w700)),
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -12,6 +12,7 @@ import '../units/map_path.dart' show castleId;
 import '../units/unit_meta.dart';
 import 'parent_ui.dart';
 import '../../core/type.dart';
+import '../../core/loading_action.dart';
 
 /// Questions the parent area asks once per child, and remembers the answer (on the phone only, `asks.v1`):
 /// - the birth month, for a child saved with the year only (the month is required for new children);
@@ -125,7 +126,7 @@ class ParentPrompts extends ConsumerWidget {
   }
 }
 
-class _PromptCard extends StatelessWidget {
+class _PromptCard extends StatefulWidget {
   const _PromptCard({
     super.key,
     required this.icon,
@@ -148,11 +149,34 @@ class _PromptCard extends StatelessWidget {
   final String no;
   final Key yesKey;
   final Key noKey;
-  final VoidCallback onYes;
-  final VoidCallback onNo;
+  final LoadingCallback onYes;
+  final LoadingCallback onNo;
+
+  @override
+  State<_PromptCard> createState() => _PromptCardState();
+}
+
+class _PromptCardState extends State<_PromptCard> {
+  bool _answering = false;
+
+  Future<void> _answer(LoadingCallback action) async {
+    if (_answering) return;
+    setState(() => _answering = true);
+    try {
+      await action();
+    } finally {
+      if (mounted) setState(() => _answering = false);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    final icon = widget.icon;
+    final color = widget.color;
+    final text = widget.text;
+    final note = widget.note;
+    final yes = widget.yes;
+    final no = widget.no;
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: ParentCard(
@@ -170,7 +194,7 @@ class _PromptCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(text, style: ParentText.body.copyWith(fontWeight: FontWeight.w700)),
-                      if (note != null) Padding(padding: const EdgeInsets.only(top: 4), child: Text(note!, style: ParentText.caption)),
+                      if (note != null) Padding(padding: const EdgeInsets.only(top: 4), child: Text(note, style: ParentText.caption)),
                     ],
                   ),
                 ),
@@ -180,9 +204,27 @@ class _PromptCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                TextButton(key: noKey, onPressed: onNo, style: TextButton.styleFrom(minimumSize: const Size(0, 44), textStyle: parentBody.copyWith(fontWeight: FontWeight.w600)), child: Text(no)),
+                LoadingAction(
+                  onPressed: _answering ? null : () => _answer(widget.onNo),
+                  builder: (onPressed, loading) => TextButton(
+                    key: widget.noKey,
+                    onPressed: onPressed,
+                    style: TextButton.styleFrom(minimumSize: const Size(0, 44), textStyle: parentBody.copyWith(fontWeight: FontWeight.w600)),
+                    child: LoadingContent(loading: loading, child: Text(no)),
+                  ),
+                ),
                 const SizedBox(width: 8),
-                Flexible(child: FilledButton(key: yesKey, onPressed: onYes, style: parentFilledStyle(), child: Text(yes, overflow: TextOverflow.ellipsis))),
+                Flexible(
+                  child: LoadingAction(
+                    onPressed: _answering ? null : () => _answer(widget.onYes),
+                    builder: (onPressed, loading) => FilledButton(
+                      key: widget.yesKey,
+                      onPressed: onPressed,
+                      style: parentFilledStyle(),
+                      child: LoadingContent(loading: loading, child: Text(yes, overflow: TextOverflow.ellipsis)),
+                    ),
+                  ),
+                ),
               ],
             ),
           ],

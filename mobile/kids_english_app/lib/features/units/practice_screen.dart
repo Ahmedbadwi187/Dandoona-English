@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/sky.dart';
 import '../../core/strings.dart';
@@ -92,13 +93,13 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
                     alignment: Alignment.centerLeft,
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(8, 4, 8, 0),
-                      child: IconButton(
+                      child: LoadingAction(onPressed: () => context.canPop() ? context.pop() : context.go('/map'), builder: (onPressed, loading) => IconButton(
                         key: const Key('practice-back'),
                         constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
                         iconSize: 32,
-                        onPressed: () => context.canPop() ? context.pop() : context.go('/map'),
-                        icon: const Icon(Icons.arrow_back_rounded),
-                      ),
+                        onPressed: onPressed,
+                        icon: LoadingContent(loading: loading, child: const Icon(Icons.arrow_back_rounded)),
+                      )),
                     ),
                   ),
                   Expanded(child: body),
@@ -126,12 +127,12 @@ class _Finished extends StatelessWidget {
             children: [
               const DandoonaView(pose: DandoonaPose.clapping, size: 220),
               const SizedBox(height: 12),
-              FilledButton(
+              LoadingAction(onPressed: onDone, builder: (onPressed, loading) => FilledButton(
                 key: const Key('practice-done'),
                 style: FilledButton.styleFrom(backgroundColor: Palette.green, minimumSize: const Size(kMinTapTarget * 2, kMinTapTarget * 1.2)),
-                onPressed: onDone,
-                child: Text(Strings.en('chestGotIt'), style: kidBody.copyWith(fontWeight: FontWeight.w900)),
-              ),
+                onPressed: onPressed,
+                child: LoadingContent(loading: loading, child: Text(Strings.en('chestGotIt'), style: kidBody.copyWith(fontWeight: FontWeight.w900))),
+              )),
             ],
           ),
         ),

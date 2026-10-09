@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/theme.dart';
 import '../../core/widgets.dart';
@@ -17,7 +18,7 @@ class MatchPictureActivity extends ConsumerStatefulWidget {
   const MatchPictureActivity({super.key, required this.lesson, required this.onFinished, this.random, this.hintAfter = const Duration(seconds: 8)});
 
   final Lesson lesson;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
 
   /// After this long without a tap, the next sound card lights up and the hint is spoken.
@@ -62,14 +63,15 @@ class _MatchPictureActivityState extends ConsumerState<MatchPictureActivity> {
     _idle.arm();
   }
 
-  void _tapSound(LessonWord w) {
+  Future<void> _tapSound(LessonWord w) async {
     if (_matched.contains(w.word)) return;
     setState(() {
       _selectedSound = w.word;
       _hinting = false;
     });
-    unawaited(_speech.say(then: w.audio));
+    final spoken = _speech.say(then: w.audio);
     _idle.arm();
+    await spoken;
   }
 
   Future<void> _tapPicture(LessonWord w) async {
@@ -83,7 +85,7 @@ class _MatchPictureActivityState extends ConsumerState<MatchPictureActivity> {
       if (_matched.length == _pairs.pictures.length) {
         _idle.cancel();
         await Future<void>.delayed(const Duration(milliseconds: 700));
-        if (mounted) widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _pairs.pictures.length + _mistakes));
+        if (mounted) await widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _pairs.pictures.length + _mistakes));
       }
     } else {
       _mistakes++;
@@ -110,7 +112,7 @@ class _MatchPictureActivityState extends ConsumerState<MatchPictureActivity> {
             alignment: WrapAlignment.center,
             children: [
               for (final w in _pairs.sounds)
-                GestureDetector(
+                LoadingTap(
                   key: Key('sound-${w.word}'),
                   onTap: () => _tapSound(w),
                   child: Container(
@@ -136,7 +138,7 @@ class _MatchPictureActivityState extends ConsumerState<MatchPictureActivity> {
             alignment: WrapAlignment.center,
             children: [
               for (final w in _pairs.pictures)
-                GestureDetector(
+                LoadingTap(
                   key: Key('image-${w.word}'),
                   onTap: () => _tapPicture(w),
                   child: Container(

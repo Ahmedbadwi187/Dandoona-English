@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/palette.dart';
+import '../../core/loading_action.dart';
 import 'delete_account_dialog.dart';
 import '../settings/settings.dart';
 import 'sync_controller.dart';
@@ -61,25 +62,39 @@ class _SyncSectionState extends ConsumerState<SyncSection> {
               Row(
                 children: [
                   Expanded(
-                    child: FilledButton.icon(
-                      key: const Key('sync-now'),
-                      style: parentFilledStyle(),
+                    child: LoadingAction(
                       onPressed: ui.busy ? null : controller.syncNow,
-                      icon: const Icon(Icons.sync_rounded, size: 18),
-                      label: Text(s('syncNow')),
+                      builder: (onPressed, loading) => FilledButton.icon(
+                        key: const Key('sync-now'),
+                        style: parentFilledStyle(),
+                        onPressed: onPressed,
+                        icon: LoadingContent(loading: loading, size: 18, child: const Icon(Icons.sync_rounded, size: 18)),
+                        label: Text(s('syncNow')),
+                      ),
                     ),
                   ),
                   const SizedBox(width: 12),
-                  OutlinedButton(key: const Key('sync-signout'), style: parentOutlinedStyle(context), onPressed: ui.busy ? null : controller.signOut, child: Text(s('signOut'))),
+                  LoadingAction(
+                    onPressed: ui.busy ? null : controller.signOut,
+                    builder: (onPressed, loading) => OutlinedButton(
+                      key: const Key('sync-signout'),
+                      style: parentOutlinedStyle(context),
+                      onPressed: onPressed,
+                      child: LoadingContent(loading: loading, child: Text(s('signOut'))),
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(height: 8),
-              TextButton.icon(
-                key: const Key('sync-delete'),
-                style: TextButton.styleFrom(foregroundColor: Palette.red),
+              LoadingAction(
                 onPressed: ui.busy ? null : () => confirmDeleteAccount(context, s, controller),
-                icon: const Icon(Icons.delete_forever_rounded),
-                label: Text(s('deleteAccount')),
+                builder: (onPressed, loading) => TextButton.icon(
+                  key: const Key('sync-delete'),
+                  style: TextButton.styleFrom(foregroundColor: Palette.red),
+                  onPressed: onPressed,
+                  icon: LoadingContent(loading: loading, child: const Icon(Icons.delete_forever_rounded)),
+                  label: Text(s('deleteAccount')),
+                ),
               ),
             ],
             if (ui.busy) const Padding(padding: EdgeInsets.only(top: 12), child: LinearProgressIndicator()),

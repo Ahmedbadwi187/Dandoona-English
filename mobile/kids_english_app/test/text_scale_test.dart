@@ -4,7 +4,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:kids_english_app/app.dart';
 import 'package:kids_english_app/core/type.dart';
 import 'package:kids_english_app/features/audio/audio_service.dart';
-import 'package:kids_english_app/features/content/content_models.dart';
 import 'package:kids_english_app/features/profiles/child_profile.dart';
 import 'package:kids_english_app/features/router_state.dart';
 import 'package:kids_english_app/router.dart';

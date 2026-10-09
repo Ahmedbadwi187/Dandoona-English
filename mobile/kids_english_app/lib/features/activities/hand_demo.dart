@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/storage.dart';
 
@@ -212,7 +213,7 @@ class _HandDemoState extends State<HandDemo> with SingleTickerProviderStateMixin
         widget.child,
         if (widget.running)
           Positioned.fill(
-            child: GestureDetector(
+            child: LoadingTap(
               key: const Key('hand-demo'),
               behavior: HitTestBehavior.opaque,
               onTap: () {
@@ -300,17 +301,17 @@ final demoSeenProvider = NotifierProvider<DemoSeenNotifier, Map<String, Set<Stri
 class DemoHelpButton extends StatelessWidget {
   const DemoHelpButton({super.key, required this.onTap});
 
-  final VoidCallback onTap;
+  final LoadingCallback onTap;
 
   @override
   Widget build(BuildContext context) => Semantics(
         button: true,
         label: 'Show me',
-        child: InkResponse(
+        child: LoadingAction(onPressed: onTap, builder: (onPressed, loading) => InkResponse(
           key: const Key('demo-help'),
-          onTap: onTap,
+          onTap: onPressed,
           radius: 36,
-          child: Container(
+          child: LoadingOverlay(loading: loading, child: Container(
             width: 64,
             height: 64,
             alignment: Alignment.center,
@@ -320,7 +321,7 @@ class DemoHelpButton extends StatelessWidget {
               decoration: BoxDecoration(color: Palette.white, shape: BoxShape.circle, border: Border.all(color: Palette.nightInk, width: 3)),
               child: const Icon(Icons.question_mark_rounded, size: 30, color: Palette.nightInk),
             ),
-          ),
-        ),
+          )),
+        )),
       );
 }

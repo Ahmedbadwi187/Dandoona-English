@@ -160,7 +160,7 @@ void main() {
       final words = content.lessons.first.words;
       final target = words.firstWhere((w) => audio.played.last == 'asset:${w.audio}');
       final wrongKey = t
-          .widgetList<GestureDetector>(find.byType(GestureDetector))
+          .widgetList<Widget>(find.byWidgetPredicate((w) => w.key != null && '${w.key}'.contains('option-')))
           .map((g) => g.key)
           .whereType<Key>()
           .firstWhere((k) => '$k'.contains('option-') && !'$k'.contains("option-${target.word}'"));

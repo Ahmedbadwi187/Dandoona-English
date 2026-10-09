@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
@@ -35,7 +36,7 @@ class HabitatActivity extends ConsumerStatefulWidget {
   const HabitatActivity({super.key, required this.lesson, required this.onFinished, this.random, this.nextDelay = const Duration(milliseconds: 600)});
 
   final Lesson lesson;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
   final Duration nextDelay;
 
@@ -79,7 +80,7 @@ class _HabitatActivityState extends ConsumerState<HabitatActivity> {
       await Future.wait([_speech.say(then: lives), Future<void>.delayed(widget.nextDelay)]);
       if (!mounted) return;
       if (_index + 1 >= _animals.length) {
-        widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _animals.length + _mistakes));
+        await widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _animals.length + _mistakes));
       } else {
         setState(() {
           _index++;
@@ -116,9 +117,9 @@ class _HabitatActivityState extends ConsumerState<HabitatActivity> {
             ],
           ),
           const SizedBox(height: 16),
-          GestureDetector(
+          LoadingTap(
             key: const Key('habitat-animal'),
-            onTap: () => unawaited(_speech.say(then: _animal.audio)),
+            onTap: () => _speech.say(then: _animal.audio),
             child: AssetPicture(_animal.image, size: 190, semanticLabel: _animal.word),
           ),
           const SizedBox(height: 20),
@@ -128,7 +129,7 @@ class _HabitatActivityState extends ConsumerState<HabitatActivity> {
             alignment: WrapAlignment.center,
             children: [
               for (final home in habitatHomes)
-                GestureDetector(
+                LoadingTap(
                   key: Key('home-${home.key}'),
                   onTap: () => _tap(home),
                   child: Container(

@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/ids.dart';
 import '../../core/palette.dart';
 import '../../core/strings.dart';
@@ -91,15 +92,16 @@ class _ActivityHost extends ConsumerStatefulWidget {
 class _ActivityHostState extends ConsumerState<_ActivityHost> {
   final _stopwatch = Stopwatch()..start();
   ActivityResult? _result;
+  bool _saving = false;
   List<Accessory> _unlocked = const [];
 
   /// The hand demo of the games that do not show their own: it plays every time the game opens, and the "?" plays it again.
   late bool _demo = hasHostedDemo(widget.activity) && ref.read(autoDemoEveryTimeProvider);
 
-  void _showDemo() {
+  Future<void> _showDemo() async {
     setState(() => _demo = true);
     final line = widget.lesson.audio.instructions[widget.activity];
-    if (line != null) unawaited(ref.read(audioServiceProvider).playAsset(line));
+    if (line != null) await ref.read(audioServiceProvider).playAsset(line);
   }
 
   /// Set when this result finished a unit for the first time: the celebration and certificate come before the map.
@@ -107,31 +109,38 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
 
   Future<void> _finished(ActivityResult result) async {
     if (_result != null) return;
-    setState(() => _result = result);
     final childId = ref.read(activeChildIdProvider);
+    setState(() {
+      _result = result;
+      _saving = childId != null;
+    });
     if (childId == null) return;
-    final progress = ref.read(progressProvider.notifier);
-    final before = progress.totalStars(childId);
-    await progress.record(ProgressRecord(
-          clientRecordId: newRecordId(),
-          childId: childId,
-          lessonId: widget.lesson.id,
-          activity: widget.activity,
-          stars: result.stars,
-          attempts: result.attempts,
-          timeSpentSeconds: _stopwatch.elapsed.inSeconds,
-          completedAt: ref.read(clockProvider)(),
-        ));
-    unawaited(ref.read(syncControllerProvider.notifier).syncQuietly()); // with an account connected, progress goes to the server in the background
-    final unit = widget.track.unitOfLesson(widget.lesson.id);
-    final firstFinish = unit != null &&
-        isUnitFinished(unit, (id) => progress.hasProgress(childId, id)) &&
-        !ref.read(unitMetaProvider).of(childId).celebrated.contains(unit.id);
-    if (mounted) {
-      setState(() {
-        _unlocked = newlyUnlocked(before, progress.totalStars(childId));
-        if (firstFinish) _celebrateUnit = unit.id;
-      });
+    try {
+      final progress = ref.read(progressProvider.notifier);
+      final before = progress.totalStars(childId);
+      await progress.record(ProgressRecord(
+            clientRecordId: newRecordId(),
+            childId: childId,
+            lessonId: widget.lesson.id,
+            activity: widget.activity,
+            stars: result.stars,
+            attempts: result.attempts,
+            timeSpentSeconds: _stopwatch.elapsed.inSeconds,
+            completedAt: ref.read(clockProvider)(),
+          ));
+      unawaited(ref.read(syncControllerProvider.notifier).syncQuietly()); // with an account connected, progress goes to the server in the background
+      final unit = widget.track.unitOfLesson(widget.lesson.id);
+      final firstFinish = unit != null &&
+          isUnitFinished(unit, (id) => progress.hasProgress(childId, id)) &&
+          !ref.read(unitMetaProvider).of(childId).celebrated.contains(unit.id);
+      if (mounted) {
+        setState(() {
+          _unlocked = newlyUnlocked(before, progress.totalStars(childId));
+          if (firstFinish) _celebrateUnit = unit.id;
+        });
+      }
+    } finally {
+      if (mounted) setState(() => _saving = false);
     }
   }
 
@@ -144,6 +153,7 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
   }
 
   void _done() {
+    if (_saving) return;
     final celebrate = _celebrateUnit;
     if (celebrate != null) {
       context.go('/unit/$celebrate/celebrate');
@@ -162,13 +172,13 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
           children: [
             Padding(
               padding: const EdgeInsets.all(8),
-              child: IconButton(
+              child: LoadingAction(onPressed: () => context.pop(), builder: (onPressed, loading) => IconButton(
                 key: const Key('activity-back'),
                 constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
                 iconSize: 32,
-                onPressed: () => context.pop(),
-                icon: const Icon(Icons.arrow_back_rounded),
-              ),
+                onPressed: onPressed,
+                icon: LoadingContent(loading: loading, child: const Icon(Icons.arrow_back_rounded)),
+              )),
             ),
             const Spacer(),
             if (hosted) DemoHelpButton(onTap: _showDemo),
@@ -177,7 +187,7 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
         ),
         Expanded(
           child: result != null
-              ? ActivityResultView(stars: result.stars, lesson: widget.lesson, mascot: widget.track.mascot, unlocked: _unlocked, onDone: _done)
+              ? ActivityResultView(stars: result.stars, lesson: widget.lesson, mascot: widget.track.mascot, unlocked: _unlocked, saving: _saving, onDone: _done)
               : HandDemo(
                   running: _demo,
                   steps: hostedDemoSteps(widget.activity),
@@ -225,12 +235,13 @@ String newRecordId() => newUuid();
 
 /// Celebration: stars pop in one by one, the mascot, and a spoken praise line.
 class ActivityResultView extends ConsumerStatefulWidget {
-  const ActivityResultView({super.key, required this.stars, required this.lesson, required this.onDone, this.mascot, this.unlocked = const []});
+  const ActivityResultView({super.key, required this.stars, required this.lesson, required this.onDone, this.mascot, this.unlocked = const [], this.saving = false});
 
   final int stars;
   final Lesson lesson;
   final String? mascot;
-  final VoidCallback onDone;
+  final LoadingCallback onDone;
+  final bool saving;
 
   /// Accessories this result just unlocked (shown with a sparkle so the child sees the reward).
   final List<Accessory> unlocked;
@@ -301,15 +312,15 @@ class _ActivityResultViewState extends ConsumerState<ActivityResultView> {
               ),
             ],
             const SizedBox(height: 24),
-            FilledButton(
+            LoadingAction(loading: widget.saving, onPressed: widget.onDone, builder: (onPressed, loading) => FilledButton(
               key: const Key('result-done'),
               style: FilledButton.styleFrom(
                 backgroundColor: Palette.green,
                 minimumSize: const Size(kMinTapTarget * 2, kMinTapTarget * 1.2),
               ),
-              onPressed: widget.onDone,
-              child: const Icon(Icons.check_rounded, size: 44, color: Palette.white),
-            ),
+              onPressed: onPressed,
+              child: LoadingContent(loading: loading, child: const Icon(Icons.check_rounded, size: 44, color: Palette.white)),
+            )),
           ],
         ),
       ),

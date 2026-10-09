@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/sky.dart';
 import '../../core/strings.dart';
@@ -54,13 +55,13 @@ class StickerBookScreen extends ConsumerWidget {
                     padding: const EdgeInsets.fromLTRB(8, 4, 16, 4),
                     child: Row(
                       children: [
-                        IconButton(
+                        LoadingAction(onPressed: () => context.pop(), builder: (onPressed, loading) => IconButton(
                           key: const Key('stickers-back'),
                           constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
                           iconSize: 32,
-                          onPressed: () => context.pop(),
-                          icon: const Icon(Icons.arrow_back_rounded),
-                        ),
+                          onPressed: onPressed,
+                          icon: LoadingContent(loading: loading, child: const Icon(Icons.arrow_back_rounded)),
+                        )),
                         Expanded(child: FittedBox(fit: BoxFit.scaleDown, alignment: AlignmentDirectional.centerStart, child: Text(Strings.en('stickerBook'), style: kidTitle.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk)))),
                         Container(
                           key: const Key('stickers-count'),
@@ -114,7 +115,7 @@ class _Page extends StatelessWidget {
             runSpacing: 10,
             children: [
               for (final s in stickersOfUnit(unit))
-                StickerTile(key: Key('sticker-${s.key}'), sticker: s, size: 76, earned: opened, onTap: s.audio == null ? null : () => unawaited(audio.playAsset(s.audio!))),
+                StickerTile(key: Key('sticker-${s.key}'), sticker: s, size: 76, earned: opened, onTap: s.audio == null ? null : () => audio.playAsset(s.audio!)),
             ],
           ),
         ],

@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/theme.dart';
 import '../../core/widgets.dart';
@@ -31,7 +32,7 @@ class ListenAndTapActivity extends ConsumerStatefulWidget {
 
   final Lesson lesson;
   final TrackContent track;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
   final Duration nextDelay;
 
@@ -95,10 +96,11 @@ class _ListenAndTapActivityState extends ConsumerState<ListenAndTapActivity> {
     super.dispose();
   }
 
-  void _playTarget() {
+  Future<void> _playTarget() async {
     if (!mounted) return;
-    unawaited(_speech.say(then: _promptAudio));
+    final spoken = _speech.say(then: _promptAudio);
     _idle.arm();
+    await spoken;
   }
 
   /// Nothing was tapped for a while (or two wrong taps): light up the right picture and say the hint, then the word.
@@ -127,7 +129,7 @@ class _ListenAndTapActivityState extends ConsumerState<ListenAndTapActivity> {
       await Future.wait([praised, Future<void>.delayed(widget.nextDelay)]);
       if (!mounted) return;
       if (isLast) {
-        widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _rounds.length + _mistakes));
+        await widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _rounds.length + _mistakes));
       } else {
         setState(() {
           _index++;
@@ -197,7 +199,7 @@ class _ListenAndTapActivityState extends ConsumerState<ListenAndTapActivity> {
             alignment: WrapAlignment.center,
             children: [
               for (final option in _round.options)
-                GestureDetector(
+                LoadingTap(
                   key: Key('option-${option.word}'),
                   onTap: () => _tap(option),
                   child: Container(
