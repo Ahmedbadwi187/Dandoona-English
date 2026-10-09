@@ -13,6 +13,7 @@ import '../audio/audio_service.dart';
 import '../content/content_models.dart';
 import 'activity_logic.dart';
 import 'activity_widgets.dart';
+import '../../core/type.dart';
 
 /// Which words are sorted: words of the whole unit whose `group` is one of the lesson's bins, a few of each bin first so that every
 /// bin is used, at most [count] in all, in random order.
@@ -145,7 +146,7 @@ class _SortActivityState extends ConsumerState<SortActivity> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(binIcon(bin.icon), size: 72, color: Palette.ink),
-                          Text(Strings.en('bin_${bin.key}'), style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800, color: Palette.ink)),
+                          Text(Strings.en('bin_${bin.key}'), style: kidBody.copyWith(fontWeight: FontWeight.w800, color: Palette.ink)),
                         ],
                       ),
                     ),

@@ -15,6 +15,7 @@ import 'parent_data.dart';
 import 'parent_prompts.dart';
 import 'parent_ui.dart';
 import 'weekly_view.dart';
+import '../../core/type.dart';
 
 /// Parent dashboard (the parent's language, RTL in Arabic). Reached only through the parental gate. One compact card per
 /// child (tap for the details), "Child mode" and "Manage children" fixed at the bottom.
@@ -101,7 +102,7 @@ class ParentHomeScreen extends ConsumerWidget {
                     width: double.infinity,
                     child: OutlinedButton(
                       key: const Key('manage-children'),
-                      style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(kParentTap), side: BorderSide(color: primary, width: 1.5), foregroundColor: primary, textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+                      style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(kParentTap), side: BorderSide(color: primary, width: 1.5), foregroundColor: primary, textStyle: parentBody.copyWith(fontWeight: FontWeight.w600)),
                       onPressed: () => context.push('/parent/children'),
                       child: Text(s('pManageChildren')),
                     ),
@@ -148,7 +149,7 @@ class _ChildCard extends ConsumerWidget {
                   children: [
                     Text.rich(TextSpan(children: [
                       TextSpan(text: child.name, style: ParentText.section),
-                      TextSpan(text: '  ·  ${s.age(child.ageYears(now))}', style: ParentText.caption.copyWith(fontSize: 14)),
+                      TextSpan(text: '  ·  ${s.age(child.ageYears(now))}', style: ParentText.caption),
                     ])),
                     if (current != null)
                       Padding(
@@ -157,7 +158,7 @@ class _ChildCard extends ConsumerWidget {
                           children: [
                             Icon(unitIcon(current.unit.icon), size: 18, color: primary),
                             const SizedBox(width: 6),
-                            Expanded(child: Text(s.format('pNowLearning', {'unit': current.unit.titleFor(lang)}), style: ParentText.body.copyWith(color: primary, fontSize: 15))),
+                            Expanded(child: Text(s.format('pNowLearning', {'unit': current.unit.titleFor(lang)}), style: ParentText.body.copyWith(color: primary))),
                           ],
                         ),
                       ),
@@ -169,7 +170,7 @@ class _ChildCard extends ConsumerWidget {
           ),
           if (current != null) ...[
             const SizedBox(height: 12),
-            Text(s.format('pUnitLessons', {'unit': current.unit.titleFor(lang), 'done': current.done, 'total': current.total}), style: ParentText.body.copyWith(fontSize: 15)),
+            Text(s.format('pUnitLessons', {'unit': current.unit.titleFor(lang), 'done': current.done, 'total': current.total}), style: ParentText.body),
             const SizedBox(height: 6),
             ClipRRect(
               borderRadius: BorderRadius.circular(6),
@@ -178,7 +179,7 @@ class _ChildCard extends ConsumerWidget {
           ],
           if (overview != null) ...[
             const SizedBox(height: 8),
-            Text(s.format('pUnitsDone', {'done': overview.unitsDone, 'total': overview.unitsTotal}), key: Key('units-done-${child.id}'), style: ParentText.caption.copyWith(fontSize: 14)),
+            Text(s.format('pUnitsDone', {'done': overview.unitsDone, 'total': overview.unitsTotal}), key: Key('units-done-${child.id}'), style: ParentText.caption),
           ],
           const SizedBox(height: 12),
           if (week.isEmpty)
@@ -190,12 +191,12 @@ class _ChildCard extends ConsumerWidget {
                 children: [
                   const DandoonaView(pose: DandoonaPose.waving, size: 56),
                   const SizedBox(width: 10),
-                  Expanded(child: Text(s('pNoActivity'), style: ParentText.body.copyWith(fontSize: 15))),
+                  Expanded(child: Text(s('pNoActivity'), style: ParentText.body)),
                 ],
               ),
             )
           else ...[
-            Text(s('thisWeek'), style: ParentText.section.copyWith(fontSize: 15)),
+            Text(s('thisWeek'), style: ParentText.section),
             const SizedBox(height: 8),
             WeekTiles(summary: week, s: s),
             const SizedBox(height: 12),

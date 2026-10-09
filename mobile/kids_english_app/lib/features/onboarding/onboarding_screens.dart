@@ -7,6 +7,7 @@ import '../../core/strings.dart';
 import '../../core/theme.dart';
 import '../../core/widgets.dart';
 import 'onboarding_widgets.dart';
+import '../../core/type.dart';
 
 /// The first-launch screens as plain, fully controlled widgets (the answers and what happens next are passed in), so
 /// each one can be shown and tested on its own. The flow that connects them lives in the onboarding controller.
@@ -33,8 +34,8 @@ class LanguageScreen extends StatelessWidget {
       continueLabel: selected == 'ar' ? 'متابعة' : 'Continue',
       child: Column(
         children: [
-          ChoiceCard(key: const Key('lang-ar'), title: 'العربية', titleSize: 26, selected: selected == 'ar', onTap: () => onSelect('ar')),
-          ChoiceCard(key: const Key('lang-en'), title: 'English', titleSize: 26, selected: selected == 'en', onTap: () => onSelect('en')),
+          ChoiceCard(key: const Key('lang-ar'), title: 'العربية', titleStyle: parentStat, selected: selected == 'ar', onTap: () => onSelect('ar')),
+          ChoiceCard(key: const Key('lang-en'), title: 'English', titleStyle: parentStat, selected: selected == 'en', onTap: () => onSelect('en')),
         ],
       ),
     );
@@ -184,14 +185,14 @@ class AuthScreen extends StatelessWidget {
               child: _AgreeText(s: s, onPrivacy: onPrivacy, onTerms: onTerms),
             ),
           ],
-          if (error != null) Padding(padding: const EdgeInsets.only(top: 8), child: Text(error!, style: const TextStyle(color: Palette.red, fontSize: 15))),
+          if (error != null) Padding(padding: const EdgeInsets.only(top: 8), child: Text(error!, style: parentBody.copyWith(color: Palette.red))),
         ],
       ),
     );
   }
 }
 
-const _checkStyle = TextStyle(fontSize: 16, color: Palette.nightInk, height: 1.35);
+final _checkStyle = parentBody.copyWith(color: Palette.nightInk, height: 1.35);
 final _linkStyle = _checkStyle.copyWith(color: Palette.plum, decoration: TextDecoration.underline, fontWeight: FontWeight.w800);
 
 /// "I agree to the Privacy Policy and Terms" with both names as links.
@@ -258,7 +259,7 @@ class _FieldState extends State<_Field> {
       obscureText: widget.obscure,
       keyboardType: widget.keyboard,
       onChanged: widget.onChanged,
-      style: const TextStyle(fontSize: 19),
+      style: parentSubtitle,
       decoration: InputDecoration(
         labelText: widget.label,
         filled: true,
@@ -332,7 +333,7 @@ class ChildNameScreen extends StatelessWidget {
         children: [
           _Field(key: const Key('ob-name'), label: s('obNameLabel'), value: name, onChanged: onName),
           const SizedBox(height: 18),
-          Text(s('obAvatarTitle'), style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: Palette.nightInk)),
+          Text(s('obAvatarTitle'), style: parentSubtitle.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk)),
           const SizedBox(height: 10),
           Wrap(
             spacing: 12,
@@ -405,7 +406,7 @@ class ChildAgeScreen extends StatelessWidget {
                 children: [
                   const Icon(Icons.route_rounded, color: Palette.darkGreen, size: 30),
                   const SizedBox(width: 10),
-                  Expanded(child: Text('${s('obTrackFor')} $trackLabel', style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w800, color: Palette.nightInk))),
+                  Expanded(child: Text('${s('obTrackFor')} $trackLabel', style: parentBody.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk))),
                 ],
               ),
             ),
@@ -430,7 +431,7 @@ class _Picker<T> extends StatelessWidget {
       initialValue: value,
       isExpanded: true,
       icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 32),
-      style: DefaultTextStyle.of(context).style.copyWith(fontSize: 19, color: Palette.nightInk),
+      style: DefaultTextStyle.of(context).style.merge(parentSubtitle).copyWith(color: Palette.nightInk),
       decoration: InputDecoration(
         labelText: label,
         filled: true,
@@ -625,8 +626,8 @@ class SummaryScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(r.label, style: const TextStyle(fontSize: 14, color: Palette.brown)),
-                            Text(r.value, style: const TextStyle(fontSize: 19, fontWeight: FontWeight.w800, color: Palette.nightInk)),
+                            Text(r.label, style: parentCaption.copyWith(color: Palette.brown)),
+                            Text(r.value, style: parentSubtitle.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk)),
                           ],
                         ),
                       ),
@@ -665,13 +666,13 @@ class ChildGreetingScreen extends StatelessWidget {
                 const Spacer(flex: 2),
                 const DandoonaView(pose: DandoonaPose.jumping, size: 260),
                 const SizedBox(height: 10),
-                Text('${s('hi')}, $name!', key: const Key('greeting-name'), style: const TextStyle(fontSize: 44, fontWeight: FontWeight.w900, color: Palette.nightInk)),
+                Text('${s('hi')}, $name!', key: const Key('greeting-name'), style: parentStat.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk)),
                 const SizedBox(height: 4),
-                Text(s('obGreetIam'), style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w800, color: Palette.plum)),
+                Text(s('obGreetIam'), style: parentStat.copyWith(fontWeight: FontWeight.w800, color: Palette.plum)),
                 const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 28),
-                  child: Text(s('obGreetLets'), textAlign: TextAlign.center, style: const TextStyle(fontSize: 21, color: Palette.nightInk)),
+                  child: Text(s('obGreetLets'), textAlign: TextAlign.center, style: parentTitle.copyWith(color: Palette.nightInk)),
                 ),
                 const Spacer(flex: 2),
                 Padding(
@@ -682,7 +683,7 @@ class ChildGreetingScreen extends StatelessWidget {
                       key: const Key('greeting-go'),
                       style: FilledButton.styleFrom(backgroundColor: Palette.green, minimumSize: const Size.fromHeight(kMinTapTarget * 1.2)),
                       onPressed: onGo,
-                      child: Text(s('obLetsGo'), style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w900)),
+                      child: Text(s('obLetsGo'), style: parentStat.copyWith(fontWeight: FontWeight.w900)),
                     ),
                   ),
                 ),
@@ -720,7 +721,7 @@ class ChildTrackScreen extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(bottom: 8),
-            child: Text(s('obTrackAuto'), textAlign: TextAlign.center, style: const TextStyle(fontSize: 16, color: Palette.ink)),
+            child: Text(s('obTrackAuto'), textAlign: TextAlign.center, style: parentBody.copyWith(color: Palette.ink)),
           ),
           for (final (id, label, icon, color) in [
             ('little-learners', 'obTrackLL', Icons.child_care_rounded, Palette.green),

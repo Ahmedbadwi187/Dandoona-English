@@ -115,6 +115,6 @@ class _Subtitle extends ConsumerWidget {
     final s = ref.watch(stringsProvider);
     final CourseUnit? unit = ref.watch(childOverviewProvider(child.id))?.current?.unit;
     final age = s.age(child.ageYears(now));
-    return Text(unit == null ? age : '$age · ${unit.titleFor(lang)}', style: ParentText.caption.copyWith(fontSize: 14, color: Palette.ink.withValues(alpha: 0.75)));
+    return Text(unit == null ? age : '$age · ${unit.titleFor(lang)}', style: ParentText.caption.copyWith(color: Palette.ink.withValues(alpha: 0.75)));
   }
 }

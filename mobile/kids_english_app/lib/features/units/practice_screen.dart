@@ -17,6 +17,7 @@ import '../onboarding/onboarding_widgets.dart';
 import '../session/session.dart';
 import '../profiles/child_profile.dart';
 import 'word_misses.dart';
+import '../../core/type.dart';
 
 /// A word a child missed, found again in the course: the word and the lesson it comes from.
 typedef PracticeItem = ({MissedWord miss, LessonWord word, Lesson lesson});
@@ -129,7 +130,7 @@ class _Finished extends StatelessWidget {
                 key: const Key('practice-done'),
                 style: FilledButton.styleFrom(backgroundColor: Palette.green, minimumSize: const Size(kMinTapTarget * 2, kMinTapTarget * 1.2)),
                 onPressed: onDone,
-                child: Text(Strings.en('chestGotIt'), style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w900)),
+                child: Text(Strings.en('chestGotIt'), style: kidBody.copyWith(fontWeight: FontWeight.w900)),
               ),
             ],
           ),

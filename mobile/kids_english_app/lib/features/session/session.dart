@@ -8,6 +8,7 @@ import '../../core/strings.dart';
 import '../../core/theme.dart';
 import '../gate/parental_gate.dart';
 import '../settings/settings.dart';
+import '../../core/type.dart';
 
 /// Seconds of play in the current session (in memory; a new app launch starts a fresh session).
 class SessionNotifier extends Notifier<int> {
@@ -105,10 +106,10 @@ class _TimeUpOverlay extends ConsumerWidget {
                 const SizedBox(height: 16),
                 Text(Strings.en('timeUpTitle'),
                     textAlign: TextAlign.center,
-                    style: const TextStyle(color: Palette.white, fontSize: 32, fontWeight: FontWeight.w800)),
+                    style: kidTitle.copyWith(color: Palette.white, fontWeight: FontWeight.w800)),
                 const SizedBox(height: 8),
                 Text(Strings.en('timeUpBody'),
-                    textAlign: TextAlign.center, style: const TextStyle(color: Palette.cream, fontSize: 18)),
+                    textAlign: TextAlign.center, style: kidCaption.copyWith(color: Palette.cream)),
                 const SizedBox(height: 28),
                 FilledButton(
                   style: FilledButton.styleFrom(minimumSize: const Size(kMinTapTarget * 3, kMinTapTarget)),

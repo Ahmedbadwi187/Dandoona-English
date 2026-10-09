@@ -15,6 +15,7 @@ import '../content/packs.dart';
 import '../session/session.dart';
 import 'chest_rewards.dart';
 import 'chest_screen.dart' show StickerTile;
+import '../../core/type.dart';
 
 /// The Sticker Book: one page of stickers per unit, from the chests the child has opened. A sticker that is not earned yet is an
 /// empty frame. Tap a sticker and Dandoona says the word.
@@ -60,12 +61,12 @@ class StickerBookScreen extends ConsumerWidget {
                           onPressed: () => context.pop(),
                           icon: const Icon(Icons.arrow_back_rounded),
                         ),
-                        Expanded(child: Text(Strings.en('stickerBook'), style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w900, color: Palette.nightInk))),
+                        Expanded(child: Text(Strings.en('stickerBook'), style: kidTitle.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk))),
                         Container(
                           key: const Key('stickers-count'),
                           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                           decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(24), border: Border.all(color: Palette.nightInk, width: 3)),
-                          child: Text(Strings.en('stickerBookCount').replaceAll('{n}', '$got').replaceAll('{total}', '$total'), style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w900, color: Palette.nightInk)),
+                          child: Text(Strings.en('stickerBookCount').replaceAll('{n}', '$got').replaceAll('{total}', '$total'), style: kidCaption.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk)),
                         ),
                       ],
                     ),
@@ -106,7 +107,7 @@ class _Page extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(unit.titleFor(lang), style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900, color: opened ? Palette.nightInk : Palette.gray)),
+          Text(unit.titleFor(lang), style: kidBody.copyWith(fontWeight: FontWeight.w900, color: opened ? Palette.nightInk : Palette.gray)),
           const SizedBox(height: 8),
           Wrap(
             spacing: 12,

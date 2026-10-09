@@ -14,6 +14,7 @@ import '../profiles/child_profile.dart';
 import 'activity_logic.dart';
 import 'activity_widgets.dart';
 import 'hand_demo.dart';
+import '../../core/type.dart';
 
 /// Explorers phonics games (ages 6-8): Sound Tap, Word Builder, Read & Pick. Each starts, the first time a child meets it,
 /// with the hand demo while Dandoona says the game's instruction; the "?" button shows the demo again. No game ever fails:
@@ -137,7 +138,7 @@ class GraphemeTile extends StatelessWidget {
         ),
         child: Text(text,
             style: TextStyle(
-              fontSize: size * (text.length > 2 ? 0.4 : 0.55),
+              fontSize: size * (text.length > 2 ? 0.4 : 0.55), // outside the scale on purpose: the letters fill a tile whose size depends on how many tiles there are
               fontWeight: FontWeight.w900,
               color: faded || silent ? Palette.nightInk.withValues(alpha: silent && !faded ? 0.45 : 0.3) : Palette.nightInk,
             )),
@@ -622,10 +623,10 @@ class _ReadAndPickActivityState extends ConsumerState<ReadAndPickActivity> with 
                 children: [
                   // "a" / "an" before one thing; nothing before a plural
                   if (!round.plural && !widget.lesson.noArticle) ...[
-                    Text(articleFor(round.target.source), key: const Key('read-article'), style: TextStyle(fontSize: 40, fontWeight: FontWeight.w800, color: Palette.nightInk.withValues(alpha: 0.6))),
+                    Text(articleFor(round.target.source), key: const Key('read-article'), style: kidGameWord.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk.withValues(alpha: 0.6))),
                     const SizedBox(width: 14),
                   ],
-                  Text(round.target.word, key: const Key('read-word'), style: const TextStyle(fontSize: 64, fontWeight: FontWeight.w900, color: Palette.nightInk, letterSpacing: 4)),
+                  Text(round.target.word, key: const Key('read-word'), style: kidGameWord.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk, letterSpacing: 4)),
                 ],
               ),
             ),

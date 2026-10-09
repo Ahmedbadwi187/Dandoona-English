@@ -11,6 +11,7 @@ import '../content/content_models.dart';
 import 'activity_logic.dart';
 import 'hand_demo.dart';
 import 'phonics_activities.dart';
+import '../../core/type.dart';
 
 /// Two more Explorers reading games on the words and sentences of a lesson: True or False and Sight Word Hunt. Like the others:
 /// the hand demo the first time with Dandoona's instruction, "?" shows it again, a wrong try is tried again and costs a star.
@@ -169,7 +170,7 @@ class _TrueOrFalseActivityState extends ConsumerState<TrueOrFalseActivity> with 
               '${tokens.join(' ')}${round.sentence.mark}',
               key: const Key('tf-sentence'),
               textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 38, fontWeight: FontWeight.w900, color: Palette.nightInk),
+              style: kidTitle.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk),
             ),
             const SizedBox(height: 32),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [_button('yes', _yesKey, true), const SizedBox(width: 36), _button('no', _noKey, false)]),
@@ -311,7 +312,7 @@ class _SightWordHuntActivityState extends ConsumerState<SightWordHuntActivity> w
                                     borderRadius: BorderRadius.circular(44),
                                     border: Border.all(color: Palette.nightInk, width: 5),
                                   ),
-                                  child: Text(w.word, style: const TextStyle(fontSize: 40, fontWeight: FontWeight.w900, color: Palette.nightInk)),
+                                  child: Text(w.word, style: kidGameWord.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk)),
                                 ),
                               ),
                             ),

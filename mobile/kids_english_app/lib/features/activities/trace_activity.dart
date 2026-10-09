@@ -18,7 +18,7 @@ void _paintGlyph(Canvas canvas, Size size, String letter, Color color) {
   final painter = TextPainter(
     text: TextSpan(
       text: letter,
-      style: TextStyle(fontSize: size.height * 0.86, fontWeight: FontWeight.w900, color: color, height: 1.0),
+      style: TextStyle(fontSize: size.height * 0.86, /* outside the scale on purpose: the letter is drawn to fill the tracing board */ fontWeight: FontWeight.w900, color: color, height: 1.0),
     ),
     textDirection: TextDirection.ltr,
   )..layout();

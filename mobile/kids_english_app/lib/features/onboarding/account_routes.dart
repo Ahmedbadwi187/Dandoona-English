@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import '../profiles/child_profile.dart';
 import '../settings/settings.dart';
+import '../../core/type.dart';
 import '../sync/sync_controller.dart';
 import 'onboarding_screens.dart';
 
@@ -126,7 +127,7 @@ class LegalScreen extends ConsumerWidget {
                 for (var i = 0; i < paragraphs.length; i++)
                   Padding(
                     padding: const EdgeInsets.only(bottom: 12),
-                    child: Text(paragraphs[i], style: TextStyle(fontSize: i == 0 ? 20 : 16, fontWeight: i == 0 || paragraphs[i].length < 60 ? FontWeight.w800 : FontWeight.w400, height: 1.5)),
+                    child: Text(paragraphs[i], style: (i == 0 ? parentSubtitle : parentBody).copyWith(fontWeight: i == 0 || paragraphs[i].length < 60 ? FontWeight.w800 : FontWeight.w400, height: 1.5)),
                   ),
               ],
             );

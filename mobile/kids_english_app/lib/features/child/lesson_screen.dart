@@ -10,6 +10,8 @@ import '../../core/theme.dart';
 import '../../core/type.dart';
 import '../../core/widgets.dart';
 import '../activities/color_the_object_activity.dart' show colorFromHex;
+import '../activities/hand_demo.dart';
+import '../audio/activity_speech.dart';
 import '../audio/audio_service.dart';
 import '../content/content_models.dart';
 import '../content/content_repository.dart';
@@ -32,6 +34,11 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
   bool _introPlayed = false;
   bool _introPlaying = false;
   late final AudioService _audio = ref.read(audioServiceProvider);
+  late final ActivitySpeech _speech = ActivitySpeech(_audio);
+
+  /// The hand that shows the child the letter and the pictures one by one, saying each name. It plays after the intro every time the
+  /// lesson opens, and the "?" plays it again.
+  bool _demo = false;
 
   @override
   void initState() {
@@ -45,14 +52,39 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
     if (_introPlayed || lesson == null) return;
     _introPlayed = true;
     _introPlaying = true;
-    unawaited(_audio.playAsset(lesson.audio.intro).whenComplete(() => _introPlaying = false));
+    unawaited(_audio.playAsset(lesson.audio.intro).whenComplete(() {
+      _introPlaying = false;
+      if (mounted && ref.read(autoDemoEveryTimeProvider)) setState(() => _demo = true);
+    }));
   }
 
   @override
   void dispose() {
     // Only the lesson's own intro is cut when leaving; a praise line from the activity that just ended plays on.
     if (_introPlaying) unawaited(_audio.stop());
+    _speech.cancel();
     super.dispose();
+  }
+
+  /// What the hand touches, in order, and what is said when it presses: the letter (capital, then small), or the big circle, then each picture.
+  List<(DemoStep, String?, String?)> _plan(Lesson lesson) {
+    final a = lesson.audio;
+    final sound = a.phoneme ?? a.intro;
+    return [
+      if (lesson.letter != null) ...[
+        (const DemoStep.tapFirst('lesson-letter-tap', holdMs: _letterHold, exact: true), a.instructions['capital'], sound),
+        (const DemoStep.tapFirst('lesson-letter-small-tap', holdMs: _letterHold, exact: true), a.instructions['small'], sound),
+      ] else
+        (const DemoStep.tapFirst('lesson-letter-tap', holdMs: _wordHold, exact: true), null, a.colorName ?? sound),
+      for (final w in lesson.words) (DemoStep.tapFirst('word-${w.word}', holdMs: _wordHold, exact: true), null, w.audio),
+    ];
+  }
+
+  static const _letterHold = 3200, _wordHold = 2200; // the hand waits on each one while its name is said
+
+  void _showDemo() {
+    _speech.cancel();
+    setState(() => _demo = true);
   }
 
   @override
@@ -69,7 +101,16 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
               data: (track) {
                 final lesson = track.lessonById(lessonId);
                 if (lesson == null) return Center(child: Text(Strings.en('loadError')));
-                return ListView(
+                final plan = _plan(lesson);
+                return Stack(
+                  children: [
+                    HandDemo(
+                      running: _demo,
+                      slow: true,
+                      steps: [for (final p in plan) p.$1],
+                      onPress: (i) => unawaited(_speech.say(instruction: plan[i].$2, then: plan[i].$3)),
+                      onDone: () => setState(() => _demo = false),
+                      child: ListView(
                   padding: const EdgeInsets.fromLTRB(12, 4, 12, 16),
                   children: [
                     Align(
@@ -154,6 +195,10 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                           _ActivityTile(lessonId: lesson.id, activity: a, stars: _bestStars(ref, lesson.id, a)),
                       ],
                     ),
+                  ],
+                ),
+                    ),
+                    Positioned(right: 8, top: 4, child: DemoHelpButton(onTap: _showDemo)),
                   ],
                 );
               },

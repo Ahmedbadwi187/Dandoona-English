@@ -13,6 +13,7 @@ import '../audio/audio_service.dart';
 import '../content/content_models.dart';
 import 'activity_logic.dart';
 import 'activity_widgets.dart';
+import '../../core/type.dart';
 
 /// "My turn, your turn": Dandoona takes a toy and says its name, then it is the child's turn to take one, and so on until four toys
 /// have been taken. Taking turns is the lesson: there is nothing to get wrong, so finishing always gives three stars.
@@ -102,7 +103,7 @@ class _TurnsActivityState extends ConsumerState<TurnsActivity> {
                 key: const Key('turn-badge'),
                 padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                 decoration: BoxDecoration(color: _dandoonasTurn ? Palette.orange : Palette.green, borderRadius: BorderRadius.circular(24), border: Border.all(color: Palette.ink, width: 4)),
-                child: FittedBox(fit: BoxFit.scaleDown, child: Text(_dandoonasTurn ? 'My turn!' : 'Your turn!', style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: Palette.white))),
+                child: FittedBox(fit: BoxFit.scaleDown, child: Text(_dandoonasTurn ? 'My turn!' : 'Your turn!', style: kidBody.copyWith(fontWeight: FontWeight.w900, color: Palette.white))),
               )),
             ],
           ),

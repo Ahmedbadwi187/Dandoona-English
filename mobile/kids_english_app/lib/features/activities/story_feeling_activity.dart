@@ -13,6 +13,7 @@ import '../audio/audio_service.dart';
 import '../content/content_models.dart';
 import 'activity_logic.dart';
 import 'activity_widgets.dart';
+import '../../core/type.dart';
 
 /// One round of "how does Dandoona feel": the story page that is read, the feeling it is about, and the pictures to choose from.
 class FeelingRound {
@@ -128,7 +129,7 @@ class _StoryFeelingActivityState extends ConsumerState<StoryFeelingActivity> {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Flexible(child: Text(round.page.text, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w800, color: Palette.nightInk))),
+                      Flexible(child: Text(round.page.text, style: kidBody.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk))),
                       const SizedBox(width: 8),
                       const Icon(Icons.volume_up_rounded, color: Palette.plum, size: 30),
                     ],

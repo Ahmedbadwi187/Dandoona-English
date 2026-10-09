@@ -11,6 +11,7 @@ import 'activity_logic.dart';
 import '../../core/widgets.dart';
 import 'hand_demo.dart';
 import 'phonics_activities.dart';
+import '../../core/type.dart';
 
 /// Explorers reading games past single words (ages 6-8): Find the Word (sight words), Sentence Builder and Fill the Gap.
 /// Like the phonics games: the hand demo the first time with Dandoona's instruction, "?" shows it again, a wrong try is just
@@ -18,12 +19,12 @@ import 'phonics_activities.dart';
 
 /// A word on a card: the same look for sight words, sentence tiles and choices.
 class WordCard extends StatelessWidget {
-  const WordCard({super.key, required this.text, this.color = Palette.white, this.border = Palette.nightInk, this.faded = false, this.fontSize = 34});
+  const WordCard({super.key, required this.text, this.color = Palette.white, this.border = Palette.nightInk, this.faded = false, this.textStyle = kidTitle});
   final String text;
   final Color color;
   final Color border;
   final bool faded;
-  final double fontSize;
+  final TextStyle textStyle;
 
   @override
   Widget build(BuildContext context) => Container(
@@ -41,7 +42,7 @@ class WordCard extends StatelessWidget {
       heightFactor: 1,
       child: Text(
         text,
-        style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.w900, color: faded ? Palette.nightInk.withValues(alpha: 0.3) : Palette.nightInk),
+        style: textStyle.copyWith(fontWeight: FontWeight.w900, color: faded ? Palette.nightInk.withValues(alpha: 0.3) : Palette.nightInk),
       ),
     ),
   );
@@ -185,7 +186,7 @@ class _FindTheWordActivityState extends ConsumerState<FindTheWordActivity> with 
                         width: 240,
                         child: WordCard(
                           text: round.options[i].word,
-                          fontSize: 48,
+                          textStyle: kidGameWord,
                           color: _right == round.options[i].word ? Palette.green : (_wrong == round.options[i].word ? Palette.pink : Palette.white),
                         ),
                       ),
@@ -339,15 +340,15 @@ class _SentenceBuilderActivityState extends ConsumerState<SentenceBuilderActivit
                     builder: (context, _, _) => KeyedSubtree(
                       key: _slotKeys[i],
                       child: i < _placed
-                          ? WordCard(text: sentence.tokens[i], color: _done ? Palette.green : Palette.sunflower, fontSize: 28)
-                          : WordCard(text: '    ', color: Palette.cream, border: i == _placed ? Palette.blue : Palette.tan, fontSize: 28),
+                          ? WordCard(text: sentence.tokens[i], color: _done ? Palette.green : Palette.sunflower, textStyle: kidBody)
+                          : WordCard(text: '    ', color: Palette.cream, border: i == _placed ? Palette.blue : Palette.tan, textStyle: kidBody),
                     ),
                   ),
                 if (_done)
                   Text(
                     sentence.mark,
                     key: const Key('sentence-mark'),
-                    style: const TextStyle(fontSize: 40, fontWeight: FontWeight.w900, color: Palette.nightInk),
+                    style: kidGameWord.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk),
                   ),
               ],
             ),
@@ -359,14 +360,14 @@ class _SentenceBuilderActivityState extends ConsumerState<SentenceBuilderActivit
               children: [
                 for (var t = 0; t < _tiles.length; t++)
                   _used.contains(t)
-                      ? WordCard(text: _tiles[t], faded: true, fontSize: 28)
+                      ? WordCard(text: _tiles[t], faded: true, textStyle: kidBody)
                       : Draggable<int>(
                           data: t,
                           feedback: Material(
                             color: Colors.transparent,
-                            child: WordCard(text: _tiles[t], color: Palette.sunflower, fontSize: 28),
+                            child: WordCard(text: _tiles[t], color: Palette.sunflower, textStyle: kidBody),
                           ),
-                          childWhenDragging: WordCard(text: _tiles[t], faded: true, fontSize: 28),
+                          childWhenDragging: WordCard(text: _tiles[t], faded: true, textStyle: kidBody),
                           child: GestureDetector(
                             key: Key('sentence-tile-$t'),
                             onTap: () => unawaited(_place(t)),
@@ -374,7 +375,7 @@ class _SentenceBuilderActivityState extends ConsumerState<SentenceBuilderActivit
                               key: _tileKeys[t],
                               child: _Shake(
                                 shaking: _shaking == t,
-                                child: WordCard(text: _tiles[t], color: _shaking == t ? Palette.pink : Palette.white, fontSize: 28),
+                                child: WordCard(text: _tiles[t], color: _shaking == t ? Palette.pink : Palette.white, textStyle: kidBody),
                               ),
                             ),
                           ),
@@ -469,7 +470,7 @@ class _FillTheGapActivityState extends ConsumerState<FillTheGapActivity> with Ph
     final sentence = _sentences[_index];
     final tokens = sentence.tokens;
     final gapAt = tokens.indexWhere((t) => t.replaceAll(',', '').toLowerCase() == sentence.gap!.toLowerCase());
-    const style = TextStyle(fontSize: 38, fontWeight: FontWeight.w900, color: Palette.nightInk);
+    final style = kidTitle.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk);
     return frame(
       index: _index,
       total: _sentences.length,
@@ -496,7 +497,7 @@ class _FillTheGapActivityState extends ConsumerState<FillTheGapActivity> with Ph
                         text: _filled ? tokens[i] : '      ',
                         color: _filled ? Palette.green : Palette.cream,
                         border: _filled ? Palette.nightInk : Palette.blue,
-                        fontSize: 34,
+                        textStyle: kidTitle,
                       ),
                     )
                   else
@@ -517,7 +518,7 @@ class _FillTheGapActivityState extends ConsumerState<FillTheGapActivity> with Ph
                       key: _choiceKeys[c],
                       child: _Shake(
                         shaking: _wrong == _choices[c],
-                        child: WordCard(text: _choices[c], fontSize: 40, color: _wrong == _choices[c] ? Palette.pink : Palette.white),
+                        child: WordCard(text: _choices[c], textStyle: kidGameWord, color: _wrong == _choices[c] ? Palette.pink : Palette.white),
                       ),
                     ),
                   ),

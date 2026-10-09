@@ -21,6 +21,7 @@ import '../session/session.dart';
 import 'map_path.dart';
 import 'review_logic.dart';
 import 'unit_meta.dart';
+import '../../core/type.dart';
 
 /// A review on the map: a quick game with words from the units before it ("Hear the word, tap the picture"). It never fails: a wrong
 /// tap just says the word again, and finishing the game passes the review, which opens the next unit.
@@ -92,7 +93,7 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
                                     children: [
                                       Padding(
                                         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-                                        child: Text(Strings.en('reviewTitle'), key: const Key('review-title'), style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w900, color: Palette.nightInk)),
+                                        child: Text(Strings.en('reviewTitle'), key: const Key('review-title'), style: kidBody.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk)),
                                       ),
                                       Expanded(
                                         child: DemoFrame(
@@ -131,7 +132,7 @@ class _Passed extends StatelessWidget {
           children: [
             const DandoonaView(pose: DandoonaPose.jumping, size: 220),
             const SizedBox(height: 8),
-            Text(Strings.en('reviewPassed'), textAlign: TextAlign.center, style: const TextStyle(fontSize: 34, fontWeight: FontWeight.w900, color: Palette.nightInk)),
+            Text(Strings.en('reviewPassed'), textAlign: TextAlign.center, style: kidTitle.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk)),
             const SizedBox(height: 10),
             Row(
               mainAxisSize: MainAxisSize.min,
@@ -144,7 +145,7 @@ class _Passed extends StatelessWidget {
                 key: const Key('review-done'),
                 style: FilledButton.styleFrom(backgroundColor: Palette.green, minimumSize: const Size.fromHeight(kMinTapTarget * 1.1)),
                 onPressed: onDone,
-                child: Text(Strings.en('chestGotIt'), style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w900)),
+                child: Text(Strings.en('chestGotIt'), style: kidBody.copyWith(fontWeight: FontWeight.w900)),
               ),
             ),
           ],
@@ -167,9 +168,9 @@ class _Nothing extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               const DandoonaView(pose: DandoonaPose.thinking, size: 180),
-              Text(Strings.en('reviewNotReady'), key: const Key('review-not-ready'), textAlign: TextAlign.center, style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w800, color: Palette.nightInk)),
+              Text(Strings.en('reviewNotReady'), key: const Key('review-not-ready'), textAlign: TextAlign.center, style: kidBody.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk)),
               const SizedBox(height: 16),
-              FilledButton(onPressed: onBack, style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(kMinTapTarget)), child: Text(Strings.en('chestGotIt'), style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900))),
+              FilledButton(onPressed: onBack, style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(kMinTapTarget)), child: Text(Strings.en('chestGotIt'), style: kidBody.copyWith(fontWeight: FontWeight.w900))),
             ],
           ),
         ),

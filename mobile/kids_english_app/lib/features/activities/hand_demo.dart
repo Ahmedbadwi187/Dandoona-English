@@ -8,31 +8,40 @@ import '../../core/storage.dart';
 
 /// One move of the demo hand: a tap on [target], or a drag from [target] to [to].
 class DemoStep {
-  const DemoStep.tap(GlobalKey this.target)
+  const DemoStep.tap(GlobalKey this.target, {this.holdMs = 0})
       : to = null,
         prefix = null,
-        toPrefix = null;
-  const DemoStep.drag(GlobalKey this.target, GlobalKey this.to)
+        toPrefix = null,
+        exact = false;
+  const DemoStep.drag(GlobalKey this.target, GlobalKey this.to, {this.holdMs = 0})
       : prefix = null,
-        toPrefix = null;
+        toPrefix = null,
+        exact = false;
 
   /// The first piece whose key is a string key starting with [prefix] (the games already key their pieces: 'option-cat', 'card-0'...).
-  const DemoStep.tapFirst(String this.prefix)
+  const DemoStep.tapFirst(String this.prefix, {this.holdMs = 0, this.exact = false})
       : target = null,
         to = null,
         toPrefix = null;
 
   /// A drag from the first piece with key [from] to the first piece with key [toKey].
-  const DemoStep.dragFirst(String from, String toKey)
+  const DemoStep.dragFirst(String from, String toKey, {this.holdMs = 0})
       : prefix = from,
         toPrefix = toKey,
         target = null,
-        to = null;
+        to = null,
+        exact = false;
 
   final GlobalKey? target;
   final GlobalKey? to;
   final String? prefix;
   final String? toPrefix;
+
+  /// How long the hand stays on the piece after pressing it (a slow demo that says the name of what it touches waits here).
+  final int holdMs;
+
+  /// With [exact] the key must be the whole [prefix] (a lesson with "car" and "card").
+  final bool exact;
 
   bool get isDrag => to != null || toPrefix != null;
 }
@@ -41,7 +50,7 @@ class DemoStep {
 /// (tap, or drag), while the activity has Dandoona explain it in her voice. A tap anywhere skips it. The pieces underneath
 /// do not react to the demo, so nothing is answered for the child.
 class HandDemo extends StatefulWidget {
-  const HandDemo({super.key, required this.child, required this.steps, required this.running, required this.onDone});
+  const HandDemo({super.key, required this.child, required this.steps, required this.running, required this.onDone, this.slow = false, this.onPress});
 
   final Widget child;
   final List<DemoStep> steps;
@@ -49,6 +58,12 @@ class HandDemo extends StatefulWidget {
   /// While true the hand plays; the parent sets it false (or the hand finishes and calls [onDone]).
   final bool running;
   final VoidCallback onDone;
+
+  /// A slower hand, for a demo that names what it touches.
+  final bool slow;
+
+  /// Called with the step number at the moment the hand presses it (the lesson screen says the name of the picture then).
+  final ValueChanged<int>? onPress;
 
   static const _move = 550, _press = 350, _drag = 750, _rest = 250; // milliseconds per part of a step
 
@@ -60,6 +75,10 @@ class _HandDemoState extends State<HandDemo> with SingleTickerProviderStateMixin
   late final AnimationController _c = AnimationController(vsync: this);
   final _stack = GlobalKey();
   List<(Offset, Offset?)> _points = const [];
+  List<int> _holds = const [];
+  int _pressed = -1;
+
+  double get _move => (widget.slow ? 1100 : HandDemo._move).toDouble();
   Offset _start = Offset.zero;
 
   @override
@@ -93,12 +112,12 @@ class _HandDemoState extends State<HandDemo> with SingleTickerProviderStateMixin
   }
 
   /// The first piece under the demo whose key is a string key starting with [prefix].
-  Offset? _centerOfPrefix(String prefix) {
+  Offset? _centerOfPrefix(String prefix, {bool exact = false}) {
     RenderBox? found;
     void visit(Element e) {
       if (found != null) return;
       final k = e.widget.key;
-      if (k is ValueKey<String> && k.value.startsWith(prefix) && e.renderObject is RenderBox) {
+      if (k is ValueKey<String> && (exact ? k.value == prefix : k.value.startsWith(prefix)) && e.renderObject is RenderBox) {
         found = e.renderObject as RenderBox;
         return;
       }
@@ -111,7 +130,7 @@ class _HandDemoState extends State<HandDemo> with SingleTickerProviderStateMixin
 
   /// A drag that starts and ends on the same piece (tracing) sweeps across it instead.
   Offset? _start0(DemoStep s) {
-    final c = s.prefix != null ? _centerOfPrefix(s.prefix!) : _centerOf(s.target!);
+    final c = s.prefix != null ? _centerOfPrefix(s.prefix!, exact: s.exact) : _centerOf(s.target!);
     return c != null && s.prefix != null && s.prefix == s.toPrefix ? c + const Offset(-60, -80) : c;
   }
   Offset? _end0(DemoStep s) {
@@ -121,16 +140,18 @@ class _HandDemoState extends State<HandDemo> with SingleTickerProviderStateMixin
         : (s.to == null ? null : _centerOf(s.to!));
   }
 
-  int _stepMs(DemoStep s) => HandDemo._move + HandDemo._press + (s.isDrag ? HandDemo._drag : 0) + HandDemo._rest;
+  int _stepMs(DemoStep s) => _move.round() + HandDemo._press + (s.isDrag ? HandDemo._drag : 0) + HandDemo._rest + s.holdMs;
 
   Future<void> _play() async {
     if (!mounted || !widget.running) return;
     final stack = _stack.currentContext?.findRenderObject() as RenderBox?;
     final points = <(Offset, Offset?)>[];
+    final holds = <int>[];
     for (final s in widget.steps) {
       final a = _start0(s);
       if (a == null) continue;
       points.add((a, s.isDrag ? (_end0(s) ?? a) : null));
+      holds.add(s.holdMs);
     }
     if (points.isEmpty || stack == null) {
       widget.onDone();
@@ -138,6 +159,8 @@ class _HandDemoState extends State<HandDemo> with SingleTickerProviderStateMixin
     }
     setState(() {
       _points = points;
+      _holds = holds;
+      _pressed = -1;
       _start = Offset(stack.size.width * 0.8, stack.size.height * 0.95); // comes in from the bottom corner
     });
     final total = widget.steps.where((s) => _start0(s) != null).fold<int>(0, (t, s) => t + _stepMs(s));
@@ -154,12 +177,16 @@ class _HandDemoState extends State<HandDemo> with SingleTickerProviderStateMixin
   (Offset, double) _at(double t) {
     final msTotal = _c.duration!.inMilliseconds * t;
     var from = _start, elapsed = 0.0;
-    for (final (a, b) in _points) {
-      final len = (HandDemo._move + HandDemo._press + (b != null ? HandDemo._drag : 0) + HandDemo._rest).toDouble();
+    for (final (k, (a, b)) in _points.indexed) {
+      final len = _move + HandDemo._press + (b != null ? HandDemo._drag : 0) + HandDemo._rest + _holds[k];
       if (msTotal <= elapsed + len) {
         final local = msTotal - elapsed;
-        if (local < HandDemo._move) return (Offset.lerp(from, a, Curves.easeInOut.transform(local / HandDemo._move))!, 0);
-        final press = local - HandDemo._move;
+        if (local < _move) return (Offset.lerp(from, a, Curves.easeInOut.transform(local / _move))!, 0);
+        final press = local - _move;
+        if (k > _pressed) {
+          _pressed = k;
+          Future.microtask(() => widget.onPress?.call(k)); // the hand has just arrived and presses
+        }
         if (b == null) {
           if (press < HandDemo._press) return (a, math.sin(press / HandDemo._press * math.pi));
           return (a, 0);

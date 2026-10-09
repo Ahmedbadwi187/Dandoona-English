@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/palette.dart';
 import '../../core/storage.dart';
 import 'progress.dart';
+import '../../core/type.dart';
 
 /// Active days: every day the child finished something counts, for good. There is no streak to break: a missed day is
 /// never shown, nothing resets, and the number only ever grows. Some totals are celebrated once.
@@ -104,7 +105,7 @@ class _ActiveDaysBadgeState extends ConsumerState<ActiveDaysBadge> with SingleTi
             Text(
               _celebrating != null ? '$days days! Hooray!' : '$days ${days == 1 ? 'day' : 'days'}',
               key: const Key('active-days-text'),
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w900, color: Palette.nightInk),
+              style: kidCaption.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk),
             ),
           ],
         ),

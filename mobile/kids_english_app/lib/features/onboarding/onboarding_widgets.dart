@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
+import '../../core/type.dart';
 
 /// Dandoona's poses (her own art, exported by the asset tool). `base` is the locked reference picture.
 enum DandoonaPose {
@@ -137,10 +138,10 @@ class OnboardingFrame extends StatelessWidget {
                           Text(title,
                               key: const Key('ob-title'),
                               textAlign: TextAlign.center,
-                              style: const TextStyle(fontSize: 27, fontWeight: FontWeight.w900, color: Palette.nightInk, height: 1.25)),
+                              style: parentStat.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk, height: 1.25)),
                           if (subtitle != null) ...[
                             const SizedBox(height: 6),
-                            Text(subtitle!, textAlign: TextAlign.center, style: const TextStyle(fontSize: 16, color: Palette.brown, height: 1.4)),
+                            Text(subtitle!, textAlign: TextAlign.center, style: parentBody.copyWith(color: Palette.brown, height: 1.4)),
                           ],
                           const SizedBox(height: 18),
                           child,
@@ -166,7 +167,7 @@ class OnboardingFrame extends StatelessWidget {
                             disabledBackgroundColor: const Color(0xFFE0D8EC),
                             foregroundColor: Palette.white,
                             minimumSize: const Size.fromHeight(64),
-                            textStyle: Theme.of(context).textTheme.labelLarge?.copyWith(fontSize: 21, fontWeight: FontWeight.w800),
+                            textStyle: Theme.of(context).textTheme.labelLarge?.merge(parentTitle).copyWith(fontWeight: FontWeight.w800),
                           ),
                           onPressed: onContinue,
                           child: Text(continueLabel ?? s('obContinue')),
@@ -177,7 +178,7 @@ class OnboardingFrame extends StatelessWidget {
                           key: const Key('ob-secondary'),
                           style: TextButton.styleFrom(minimumSize: const Size.fromHeight(kMinTapTarget), foregroundColor: Palette.plum),
                           onPressed: onSecondary,
-                          child: Text(secondaryLabel!, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700)),
+                          child: Text(secondaryLabel!, style: parentBody.copyWith(fontWeight: FontWeight.w700)),
                         ),
                     ],
                   ),
@@ -193,14 +194,14 @@ class OnboardingFrame extends StatelessWidget {
 
 /// A big answer card (radio style): used for language, account choice, level, daily goal and reminder time.
 class ChoiceCard extends StatelessWidget {
-  const ChoiceCard({super.key, required this.title, required this.selected, required this.onTap, this.subtitle, this.leading, this.titleSize = 20});
+  const ChoiceCard({super.key, required this.title, required this.selected, required this.onTap, this.subtitle, this.leading, this.titleStyle = parentSubtitle});
 
   final String title;
   final String? subtitle;
   final Widget? leading;
   final bool selected;
   final VoidCallback onTap;
-  final double titleSize;
+  final TextStyle titleStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -230,8 +231,8 @@ class ChoiceCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(title, style: TextStyle(fontSize: titleSize, fontWeight: FontWeight.w800, color: Palette.nightInk)),
-                      if (subtitle != null) Padding(padding: const EdgeInsets.only(top: 2), child: Text(subtitle!, style: const TextStyle(fontSize: 14.5, color: Palette.brown))),
+                      Text(title, style: titleStyle.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk)),
+                      if (subtitle != null) Padding(padding: const EdgeInsets.only(top: 2), child: Text(subtitle!, style: parentCaption.copyWith(color: Palette.brown))),
                     ],
                   ),
                 ),

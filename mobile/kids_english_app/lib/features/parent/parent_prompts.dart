@@ -11,6 +11,7 @@ import '../settings/settings.dart';
 import '../units/map_path.dart' show castleId;
 import '../units/unit_meta.dart';
 import 'parent_ui.dart';
+import '../../core/type.dart';
 
 /// Questions the parent area asks once per child, and remembers the answer (on the phone only, `asks.v1`):
 /// - the birth month, for a child saved with the year only (the month is required for new children);
@@ -179,7 +180,7 @@ class _PromptCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                TextButton(key: noKey, onPressed: onNo, style: TextButton.styleFrom(minimumSize: const Size(0, 44), textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600)), child: Text(no)),
+                TextButton(key: noKey, onPressed: onNo, style: TextButton.styleFrom(minimumSize: const Size(0, 44), textStyle: parentBody.copyWith(fontWeight: FontWeight.w600)), child: Text(no)),
                 const SizedBox(width: 8),
                 Flexible(child: FilledButton(key: yesKey, onPressed: onYes, style: parentFilledStyle(), child: Text(yes, overflow: TextOverflow.ellipsis))),
               ],

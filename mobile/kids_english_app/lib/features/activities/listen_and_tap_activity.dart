@@ -11,6 +11,7 @@ import '../audio/activity_speech.dart';
 import '../audio/audio_service.dart';
 import '../content/content_models.dart';
 import 'activity_logic.dart';
+import '../../core/type.dart';
 
 /// Hear a word, tap its picture. A wrong tap replays the word (no scolding); a right tap plays a praise line.
 class ListenAndTapActivity extends ConsumerStatefulWidget {
@@ -187,7 +188,7 @@ class _ListenAndTapActivityState extends ConsumerState<ListenAndTapActivity> {
           ),
           if (widget.sentences && sentenceWithGap(_round.target) != null) ...[
             const SizedBox(height: 20),
-            Text(sentenceWithGap(_round.target)!, key: const Key('sentence-text'), textAlign: TextAlign.center, style: const TextStyle(fontSize: 34, fontWeight: FontWeight.w900, color: Palette.nightInk)),
+            Text(sentenceWithGap(_round.target)!, key: const Key('sentence-text'), textAlign: TextAlign.center, style: kidTitle.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk)),
           ],
           const SizedBox(height: 28),
           Wrap(

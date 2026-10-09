@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/widgets.dart';
+import '../../core/type.dart';
 
 const _months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -58,10 +59,10 @@ class CertificateCard extends StatelessWidget {
             Text(
               Strings.en('certificate').toUpperCase(),
               key: const Key('certificate-title'),
-              style: const TextStyle(fontSize: 34, fontWeight: FontWeight.w900, letterSpacing: 3, color: Palette.nightInk),
+              style: kidTitle.copyWith(fontWeight: FontWeight.w900, letterSpacing: 3, color: Palette.nightInk),
             ),
             const SizedBox(height: 6),
-            Text(Strings.en('certAwardedTo'), style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600, color: Palette.brown)),
+            Text(Strings.en('certAwardedTo'), style: kidCaption.copyWith(fontWeight: FontWeight.w600, color: Palette.brown)),
             const SizedBox(height: 2),
             FittedBox(
               fit: BoxFit.scaleDown,
@@ -69,23 +70,23 @@ class CertificateCard extends StatelessWidget {
                 childName,
                 key: const Key('certificate-name'),
                 maxLines: 1,
-                style: const TextStyle(fontSize: 40, fontWeight: FontWeight.w900, color: Palette.plum),
+                style: kidGameWord.copyWith(fontWeight: FontWeight.w900, color: Palette.plum),
               ),
             ),
             Container(height: 4, width: 190, margin: const EdgeInsets.symmetric(vertical: 6), decoration: BoxDecoration(color: Palette.sunflower, borderRadius: BorderRadius.circular(4))),
-            Text(Strings.en('certFinished'), style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600, color: Palette.brown)),
+            Text(Strings.en('certFinished'), style: kidCaption.copyWith(fontWeight: FontWeight.w600, color: Palette.brown)),
             const SizedBox(height: 6),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 6),
               decoration: BoxDecoration(color: unitColor, borderRadius: BorderRadius.circular(22), border: Border.all(color: Palette.nightInk, width: 3)),
-              child: Text(unitTitle, key: const Key('certificate-unit'), style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w900, color: Palette.white)),
+              child: Text(unitTitle, key: const Key('certificate-unit'), style: kidTitle.copyWith(fontWeight: FontWeight.w900, color: Palette.white)),
             ),
             Expanded(
               child: mascot == null
                   ? const SizedBox.shrink()
                   : Padding(padding: const EdgeInsets.symmetric(vertical: 4), child: AssetPicture(mascot!, semanticLabel: 'Dandoona')),
             ),
-            Text(date, key: const Key('certificate-date'), style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Palette.nightInk)),
+            Text(date, key: const Key('certificate-date'), style: kidCaption.copyWith(fontWeight: FontWeight.w700, color: Palette.nightInk)),
           ],
         ),
       ),

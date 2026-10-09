@@ -14,6 +14,7 @@ import '../session/session.dart';
 import '../units/map_art.dart';
 import 'accessories.dart';
 import 'chest_rewards.dart';
+import '../../core/type.dart';
 
 /// The mascot's wardrobe: accessories unlock with stars; tap an unlocked one to wear it (tap again to take it off).
 class WardrobeScreen extends ConsumerWidget {
@@ -51,7 +52,7 @@ class WardrobeScreen extends ConsumerWidget {
                     const Spacer(),
                     const Icon(Icons.star_rounded, color: Palette.yellow, size: 36),
                     const SizedBox(width: 4),
-                    Text('$stars', key: const Key('wardrobe-stars'), style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w800)),
+                    Text('$stars', key: const Key('wardrobe-stars'), style: kidBody.copyWith(fontWeight: FontWeight.w800)),
                   ],
                 ),
                 const SizedBox(height: 8),
@@ -83,7 +84,7 @@ class WardrobeScreen extends ConsumerWidget {
                           worn: child?.equippedAccessory == u.chest!.accessory,
                           lockedBadge: Column(mainAxisSize: MainAxisSize.min, children: [
                             const CustomPaint(size: Size(48, 48), painter: ChestPainter(open: false, muted: true)),
-                            Text(u.titleFor('en'), maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Palette.gray)),
+                            Text(u.titleFor('en'), maxLines: 1, overflow: TextOverflow.ellipsis, style: kidCaption.copyWith(fontWeight: FontWeight.w700, color: Palette.gray)),
                           ]),
                           onTap: !owned.contains(u.chest!.accessory) ? null : () => wear(u.chest!.accessory),
                         ),
@@ -143,7 +144,7 @@ class _AccessoryCard extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       const Icon(Icons.star_rounded, size: 24, color: Palette.yellow),
-                      Text('${accessory.unlockStars}', style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800)),
+                      Text('${accessory.unlockStars}', style: kidCaption.copyWith(fontWeight: FontWeight.w800)),
                     ],
                   ),
                 ],

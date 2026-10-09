@@ -15,6 +15,7 @@ import '../content/content_repository.dart';
 import '../profiles/child_profile.dart';
 import '../session/session.dart';
 import '../units/unit_meta.dart';
+import '../../core/type.dart';
 
 /// Shown once, right after the last lesson of a unit: Dandoona jumps for joy, stars fall, her voice says the unit is
 /// finished. It records the certificate and that the celebration was seen, then leads on to the certificate.
@@ -84,12 +85,12 @@ class _UnitCelebrationScreenState extends ConsumerState<UnitCelebrationScreen> w
                           child: track.mascot == null ? const SizedBox(height: 220) : AssetPicture(track.mascot!, size: 240, semanticLabel: 'Dandoona'),
                         ),
                         const SizedBox(height: 16),
-                        Text(Strings.en('hooray'), key: const Key('celebration-hooray'), style: const TextStyle(fontSize: 46, fontWeight: FontWeight.w900, color: Palette.nightInk)),
+                        Text(Strings.en('hooray'), key: const Key('celebration-hooray'), style: kidGameWord.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk)),
                         const SizedBox(height: 8),
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                           decoration: BoxDecoration(color: Palette.sunflower, borderRadius: BorderRadius.circular(26), border: Border.all(color: Palette.nightInk, width: 4)),
-                          child: Text(unit.titleFor('en'), key: const Key('celebration-unit'), style: const TextStyle(fontSize: 32, fontWeight: FontWeight.w900, color: Palette.nightInk)),
+                          child: Text(unit.titleFor('en'), key: const Key('celebration-unit'), style: kidTitle.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk)),
                         ),
                         const Spacer(flex: 2),
                         IconButton.filled(

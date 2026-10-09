@@ -97,8 +97,8 @@ class _ChildDetailScreenState extends ConsumerState<ChildDetailScreen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(child.name, key: const Key('detail-name'), style: ParentText.screenTitle.copyWith(fontSize: 22)),
-                        Text(s.age(child.ageYears(now)), style: ParentText.caption.copyWith(fontSize: 14)),
+                        Text(child.name, key: const Key('detail-name'), style: ParentText.screenTitle),
+                        Text(s.age(child.ageYears(now)), style: ParentText.caption),
                       ],
                     ),
                   ),
@@ -370,7 +370,7 @@ class _UnitRow extends ConsumerWidget {
               shrinkWrap: true,
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
               children: [
-                Text(unit.titleFor(lang), style: ParentText.screenTitle.copyWith(fontSize: 22)),
+                Text(unit.titleFor(lang), style: ParentText.screenTitle),
                 const SizedBox(height: 8),
                 for (final l in unit.lessons)
                   Padding(

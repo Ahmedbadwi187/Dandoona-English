@@ -17,6 +17,7 @@ import '../profiles/child_profile.dart';
 import '../progress/progress.dart';
 import '../router_state.dart';
 import 'child_scope.dart';
+import '../../core/type.dart';
 
 /// The cheerful sound of choosing a child (a short rising chime, made by tools/sounds/make-cheer.ps1).
 const cheerSound = 'audio/ui/cheer.wav';
@@ -174,7 +175,7 @@ class _Speech extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Flexible(child: FittedBox(fit: BoxFit.scaleDown, child: Text(text, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w800, color: Palette.nightInk)))),
+                Flexible(child: FittedBox(fit: BoxFit.scaleDown, child: Text(text, style: kidBody.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk)))),
                 const SizedBox(width: 8),
                 const Icon(Icons.volume_up_rounded, color: Palette.plum, size: 26),
               ],
@@ -237,7 +238,7 @@ class _ChildCardState extends State<_ChildCard> with SingleTickerProviderStateMi
           children: [
             ScaleTransition(scale: _scale, child: AvatarCircle(widget.child.avatarKey, size: 68)),
             const SizedBox(height: 8),
-            Text(widget.child.name, maxLines: 1, overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 19, fontWeight: FontWeight.w800, color: color.dark)),
+            Text(widget.child.name, maxLines: 1, overflow: TextOverflow.ellipsis, style: kidCaption.copyWith(fontWeight: FontWeight.w800, color: color.dark)),
             const SizedBox(height: 4),
             Container(
               key: Key('stars-${widget.child.id}'),
@@ -248,7 +249,7 @@ class _ChildCardState extends State<_ChildCard> with SingleTickerProviderStateMi
                 children: [
                   Icon(Icons.star_rounded, size: 16, color: color.dark),
                   const SizedBox(width: 3),
-                  Text('${widget.stars}', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: color.dark)),
+                  Text('${widget.stars}', style: kidCaption.copyWith(fontWeight: FontWeight.w700, color: color.dark)),
                 ],
               ),
             ),

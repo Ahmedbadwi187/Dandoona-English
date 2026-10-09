@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/palette.dart';
+import '../../core/type.dart';
 
 /// The parent screens stay calm: cream page, white cards with a soft border, one accent (the theme's purple).
 /// Every card uses the same radius, padding and border; every text uses one of these four sizes.
@@ -14,7 +15,7 @@ ButtonStyle parentFilledStyle() => FilledButton.styleFrom(
       minimumSize: const Size(0, 44),
       padding: const EdgeInsets.symmetric(horizontal: 18),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-      textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+      textStyle: parentBody.copyWith(fontWeight: FontWeight.w700),
     );
 
 ButtonStyle parentOutlinedStyle(BuildContext context) {
@@ -25,15 +26,15 @@ ButtonStyle parentOutlinedStyle(BuildContext context) {
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
     side: BorderSide(color: primary, width: 1.5),
     foregroundColor: primary,
-    textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+    textStyle: parentBody.copyWith(fontWeight: FontWeight.w700),
   );
 }
 
 abstract final class ParentText {
-  static const screenTitle = TextStyle(fontSize: 22, fontWeight: FontWeight.w800, color: Palette.ink, height: 1.2);
-  static const section = TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Palette.ink);
-  static const body = TextStyle(fontSize: 16, color: Palette.ink);
-  static const caption = TextStyle(fontSize: 13, color: Color(0xFF7B6556));
+  static final screenTitle = parentTitle.copyWith(fontWeight: FontWeight.w800, color: Palette.ink, height: 1.2);
+  static final section = parentSubtitle.copyWith(fontWeight: FontWeight.w700, color: Palette.ink);
+  static final body = parentBody.copyWith(color: Palette.ink);
+  static final caption = parentCaption.copyWith(color: const Color(0xFF7B6556));
 }
 
 /// A white card with the shared border. Tappable when [onTap] is given.

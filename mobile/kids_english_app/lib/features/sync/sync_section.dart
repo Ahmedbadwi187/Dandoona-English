@@ -7,6 +7,7 @@ import '../../core/palette.dart';
 import 'delete_account_dialog.dart';
 import '../settings/settings.dart';
 import 'sync_controller.dart';
+import '../../core/type.dart';
 
 /// Settings section: the optional parent account. Without one everything stays on the device; creating or logging in to one
 /// happens on its own screen (the same one as in the first-launch flow) and uploads what is already here.
@@ -40,9 +41,9 @@ class _SyncSectionState extends ConsumerState<SyncSection> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(s('syncTitle'), style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 18)),
+            Text(s('syncTitle'), style: parentSubtitle.copyWith(fontWeight: FontWeight.w800)),
             const SizedBox(height: 4),
-            Text(s('syncOptional'), style: const TextStyle(fontSize: 13)),
+            Text(s('syncOptional'), style: parentCaption),
             const SizedBox(height: 12),
             if (!ui.signedIn) ...[
               FilledButton.icon(
@@ -53,9 +54,9 @@ class _SyncSectionState extends ConsumerState<SyncSection> {
               ),
             ] else ...[
               Text('${s('signedInAs')} $_email', key: const Key('sync-signed-in')),
-              if (last != null) Text('${s('lastSync')}: ${last.toLocal().toString().substring(0, 16)}', style: const TextStyle(fontSize: 12)),
+              if (last != null) Text('${s('lastSync')}: ${last.toLocal().toString().substring(0, 16)}', style: parentCaption),
               if (ref.read(syncServiceProvider).pendingDeleteCount > 0)
-                Text('${s('pendingDeletes')} ${ref.read(syncServiceProvider).pendingDeleteCount}', key: const Key('pending-deletes'), style: const TextStyle(fontSize: 12)),
+                Text('${s('pendingDeletes')} ${ref.read(syncServiceProvider).pendingDeleteCount}', key: const Key('pending-deletes'), style: parentCaption),
               const SizedBox(height: 12),
               Row(
                 children: [

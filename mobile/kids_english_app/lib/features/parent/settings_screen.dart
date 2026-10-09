@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../settings/settings.dart';
 import '../sync/sync_controller.dart' show defaultApiBaseUrl;
 import '../sync/sync_section.dart';
+import '../../core/type.dart';
 
 /// Parent settings: language, session timer (default 15 min), unlock all letters.
 class SettingsScreen extends ConsumerWidget {
@@ -22,7 +23,7 @@ class SettingsScreen extends ConsumerWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          Text(s('language'), style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 18)),
+          Text(s('language'), style: parentSubtitle.copyWith(fontWeight: FontWeight.w800)),
           const SizedBox(height: 8),
           SegmentedButton<String>(
             key: const Key('language-selector'),
@@ -35,7 +36,7 @@ class SettingsScreen extends ConsumerWidget {
           ),
           const SizedBox(height: 28),
           Text('${s('sessionLimit')}: ${settings.sessionMinutes}',
-              style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 18)),
+              style: parentSubtitle.copyWith(fontWeight: FontWeight.w800)),
           Slider(
             key: const Key('session-slider'),
             min: AppSettings.minSessionMinutes.toDouble(),
@@ -49,7 +50,7 @@ class SettingsScreen extends ConsumerWidget {
           SwitchListTile(
             key: const Key('unlock-all'),
             contentPadding: EdgeInsets.zero,
-            title: Text(s('unlockAll'), style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 18)),
+            title: Text(s('unlockAll'), style: parentSubtitle.copyWith(fontWeight: FontWeight.w800)),
             subtitle: Text(s('unlockAllHint')),
             value: settings.unlockAll,
             onChanged: notifier.setUnlockAll,
@@ -58,7 +59,7 @@ class SettingsScreen extends ConsumerWidget {
             const SizedBox(height: 12),
             const Divider(),
             const SizedBox(height: 8),
-            Text(s('cardsTitle'), style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 18)),
+            Text(s('cardsTitle'), style: parentSubtitle.copyWith(fontWeight: FontWeight.w800)),
             const SizedBox(height: 4),
             Text(s('cardsHint')),
             const SizedBox(height: 8),

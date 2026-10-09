@@ -10,6 +10,7 @@ import '../audio/audio_service.dart';
 import '../content/content_models.dart';
 import 'activity_logic.dart';
 import 'activity_widgets.dart';
+import '../../core/type.dart';
 
 /// Which two colors make which (the colors a child can really mix).
 const colorRecipes = {
@@ -129,7 +130,7 @@ class _MixColorsActivityState extends ConsumerState<MixColorsActivity> {
               const Padding(padding: EdgeInsets.symmetric(horizontal: 4), child: Icon(Icons.add_rounded, size: 32, color: Palette.ink)),
               _blob(_color(recipe[1]), key: const Key('mix-b')),
               const Padding(padding: EdgeInsets.symmetric(horizontal: 4), child: Icon(Icons.drag_handle_rounded, size: 32, color: Palette.ink)),
-              _mixed ? _blob(_color(_result), key: const Key('mix-result')) : Container(key: const Key('mix-result'), width: 70, height: 70, alignment: Alignment.center, decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: Palette.ink, width: 5)), child: const Text('?', style: TextStyle(fontSize: 40, fontWeight: FontWeight.w900, color: Palette.ink))),
+              _mixed ? _blob(_color(_result), key: const Key('mix-result')) : Container(key: const Key('mix-result'), width: 70, height: 70, alignment: Alignment.center, decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: Palette.ink, width: 5)), child: Text('?', style: kidGameWord.copyWith(fontWeight: FontWeight.w900, color: Palette.ink))),
             ],
           ),
           const SizedBox(height: 40),

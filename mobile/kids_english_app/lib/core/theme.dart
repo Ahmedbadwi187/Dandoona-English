@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'palette.dart';
+import 'type.dart';
 
 /// Minimum tap target for the child area (the 3-5 track needs large targets).
 const double kMinTapTarget = 64;
@@ -26,7 +27,7 @@ ThemeData buildTheme() {
       style: FilledButton.styleFrom(
         minimumSize: const Size(kMinTapTarget, kMinTapTarget),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+        textStyle: parentSubtitle.copyWith(fontWeight: FontWeight.w700), // child screens give their buttons kidTitle themselves
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
@@ -35,7 +36,7 @@ ThemeData buildTheme() {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         side: const BorderSide(color: Palette.ink, width: 2),
         foregroundColor: Palette.ink,
-        textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+        textStyle: parentSubtitle.copyWith(fontWeight: FontWeight.w700), // child screens give their buttons kidTitle themselves
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(

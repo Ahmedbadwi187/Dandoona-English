@@ -12,6 +12,7 @@ import '../audio/activity_speech.dart';
 import '../audio/audio_service.dart';
 import '../content/content_models.dart';
 import 'activity_logic.dart';
+import '../../core/type.dart';
 
 /// The homes an animal can be put in, in the order they are shown (the keys are the `home` of a word).
 const habitatHomes = [
@@ -143,7 +144,7 @@ class _HabitatActivityState extends ConsumerState<HabitatActivity> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(home.icon, size: 72, color: Palette.ink),
-                        Text(Strings.en('habitat_${home.key}'), style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800, color: Palette.ink)),
+                        Text(Strings.en('habitat_${home.key}'), style: kidBody.copyWith(fontWeight: FontWeight.w800, color: Palette.ink)),
                       ],
                     ),
                   ),

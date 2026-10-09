@@ -125,7 +125,6 @@ class WeekChart extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.clip,
                   style: ParentText.caption.copyWith(
-                    fontSize: 11,
                     fontWeight: summary.days[i].date == todayDate ? FontWeight.w800 : FontWeight.w400,
                     color: summary.days[i].date == todayDate ? primary : null,
                   ),

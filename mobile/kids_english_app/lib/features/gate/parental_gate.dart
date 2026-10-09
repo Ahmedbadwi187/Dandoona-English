@@ -7,6 +7,7 @@ import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
 import '../settings/settings.dart';
+import '../../core/type.dart';
 
 /// A multiplication a young child cannot do yet, with 4 answer choices.
 class GateChallenge {
@@ -150,7 +151,7 @@ class _ParentalGateDialogState extends ConsumerState<ParentalGateDialog> with Si
         const SizedBox(height: 12),
         Directionality(
           textDirection: TextDirection.ltr,
-          child: Text(_challenge.question, key: const Key('gate-question'), style: const TextStyle(fontSize: 32, fontWeight: FontWeight.w800)),
+          child: Text(_challenge.question, key: const Key('gate-question'), style: parentStat.copyWith(fontWeight: FontWeight.w800)),
         ),
         const SizedBox(height: 16),
         Wrap(

@@ -21,6 +21,7 @@ import '../session/session.dart';
 import '../units/map_art.dart';
 import '../units/unit_meta.dart';
 import 'chest_rewards.dart';
+import '../../core/type.dart';
 
 const chestOpenSound = 'audio/ui/chest-open.wav';
 const _cheerSound = 'audio/ui/cheer.wav';
@@ -177,7 +178,7 @@ class _ChestScreenState extends ConsumerState<ChestScreen> with TickerProviderSt
                         left: 24,
                         right: 24,
                         top: chestRect.bottom + 24,
-                        child: Text(Strings.en('chestTapOpen'), key: const Key('chest-hint'), textAlign: TextAlign.center, style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w800, color: Palette.nightInk)),
+                        child: Text(Strings.en('chestTapOpen'), key: const Key('chest-hint'), textAlign: TextAlign.center, style: kidBody.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk)),
                       ),
                     if (done)
                       Positioned(
@@ -218,7 +219,7 @@ class _RewardCard extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(Strings.en(wasOpened ? 'chestInside' : (hasOutfit ? 'chestNewOutfit' : 'chestNewStickers')), textAlign: TextAlign.center, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900, color: Palette.nightInk)),
+          Text(Strings.en(wasOpened ? 'chestInside' : (hasOutfit ? 'chestNewOutfit' : 'chestNewStickers')), textAlign: TextAlign.center, style: kidBody.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk)),
           if (stickers.isNotEmpty) ...[
             const SizedBox(height: 10),
             Wrap(
@@ -235,7 +236,7 @@ class _RewardCard extends StatelessWidget {
               key: const Key('chest-done'),
               style: FilledButton.styleFrom(backgroundColor: Palette.green, minimumSize: const Size.fromHeight(kMinTapTarget)),
               onPressed: onDone,
-              child: Text(Strings.en('chestGotIt'), style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w900)),
+              child: Text(Strings.en('chestGotIt'), style: kidBody.copyWith(fontWeight: FontWeight.w900)),
             ),
           ),
         ],
@@ -257,7 +258,7 @@ class StickerTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final picture = sticker.image == null
-        ? Center(child: Text(earned ? sticker.word : '?', textAlign: TextAlign.center, style: TextStyle(fontSize: size * 0.2, fontWeight: FontWeight.w800, color: Palette.nightInk)))
+        ? Center(child: Text(earned ? sticker.word : '?', textAlign: TextAlign.center, style: TextStyle(fontSize: size * 0.2, /* outside the scale on purpose: a sticker caption shrinks with the sticker */ fontWeight: FontWeight.w800, color: Palette.nightInk)))
         : AssetPicture(sticker.image!, size: size * 0.78, semanticLabel: sticker.word);
     return GestureDetector(
       onTap: earned ? onTap : null,
@@ -275,7 +276,7 @@ class StickerTile extends StatelessWidget {
             child: earned ? Padding(padding: EdgeInsets.all(size * 0.07), child: picture) : Icon(Icons.help_outline_rounded, size: size * 0.5, color: Palette.gray),
           ),
           const SizedBox(height: 2),
-          Text(earned ? sticker.word : '', style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800, color: Palette.nightInk)),
+          Text(earned ? sticker.word : '', style: kidCaption.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk)),
         ],
       ),
     );

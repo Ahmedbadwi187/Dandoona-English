@@ -18,6 +18,7 @@ import '../onboarding/onboarding_widgets.dart';
 import '../profiles/child_profile.dart';
 import '../session/session.dart';
 import 'unit_meta.dart';
+import '../../core/type.dart';
 
 /// A unit's picture story: one page at a time with a few pictures of the unit's words, Dandoona's pose and the sentence she reads
 /// out loud (tap the sentence to hear it again, tap a picture to hear its word). The last page ends with "The end!"; reading to the
@@ -224,7 +225,7 @@ class _Page extends StatelessWidget {
                   decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(28), border: Border.all(color: Palette.nightInk, width: 3)),
                   child: Row(
                     children: [
-                      Expanded(child: Text(page.text, style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w800, color: Palette.nightInk, height: 1.25))),
+                      Expanded(child: Text(page.text, style: kidBody.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk, height: 1.25))),
                       const SizedBox(width: 8),
                       const Icon(Icons.volume_up_rounded, color: Palette.plum, size: 32),
                     ],
@@ -240,7 +241,7 @@ class _Page extends StatelessWidget {
                         style: FilledButton.styleFrom(backgroundColor: Palette.green, minimumSize: const Size.fromHeight(kMinTapTarget * 1.1)),
                         onPressed: () => unawaited(onDone()),
                         child: Column(mainAxisSize: MainAxisSize.min, children: [
-                          Text(Strings.en('storyTheEnd'), key: const Key('story-end'), style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w900)),
+                          Text(Strings.en('storyTheEnd'), key: const Key('story-end'), style: kidBody.copyWith(fontWeight: FontWeight.w900)),
                         ]),
                       )
                     : FilledButton(
@@ -271,9 +272,9 @@ class _Waiting extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               const DandoonaView(pose: DandoonaPose.thinking, size: 200),
-              Text(Strings.en('mapAlmostReady'), key: const Key('story-waiting'), textAlign: TextAlign.center, style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w800, color: Palette.nightInk)),
+              Text(Strings.en('mapAlmostReady'), key: const Key('story-waiting'), textAlign: TextAlign.center, style: kidBody.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk)),
               const SizedBox(height: 16),
-              FilledButton(onPressed: onBack, style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(kMinTapTarget)), child: Text(Strings.en('chestGotIt'), style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w900))),
+              FilledButton(onPressed: onBack, style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(kMinTapTarget)), child: Text(Strings.en('chestGotIt'), style: kidBody.copyWith(fontWeight: FontWeight.w900))),
             ],
           ),
         ),

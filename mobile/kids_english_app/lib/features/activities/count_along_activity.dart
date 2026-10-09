@@ -9,6 +9,7 @@ import '../audio/audio_service.dart';
 import '../content/content_models.dart';
 import 'activity_logic.dart';
 import 'activity_widgets.dart';
+import '../../core/type.dart';
 
 const _numberNames = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
 
@@ -83,7 +84,7 @@ class _CountAlongActivityState extends ConsumerState<CountAlongActivity> {
             height: 120,
             alignment: Alignment.center,
             decoration: BoxDecoration(color: Palette.white, shape: BoxShape.circle, border: Border.all(color: Palette.ink, width: 5)),
-            child: Text('${_counted.length}', style: const TextStyle(fontSize: 64, fontWeight: FontWeight.w900, color: Palette.ink)),
+            child: Text('${_counted.length}', style: kidHero.copyWith(fontWeight: FontWeight.w900, color: Palette.ink)),
           ),
           const SizedBox(height: 24),
           Wrap(
@@ -112,7 +113,7 @@ class _CountAlongActivityState extends ConsumerState<CountAlongActivity> {
                               border: Border.all(color: Palette.ink, width: 4),
                             ),
                             alignment: Alignment.center,
-                            child: _counted.contains(i) ? Text('${_counted.indexOf(i) + 1}', style: const TextStyle(fontSize: 34, fontWeight: FontWeight.w900, color: Palette.ink)) : null,
+                            child: _counted.contains(i) ? Text('${_counted.indexOf(i) + 1}', style: kidTitle.copyWith(fontWeight: FontWeight.w900, color: Palette.ink)) : null,
                           ),
                           Container(width: 3, height: 16, color: Palette.ink),
                         ],

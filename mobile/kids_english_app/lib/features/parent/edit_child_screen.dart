@@ -414,7 +414,7 @@ class _TrackTile extends StatelessWidget {
               Icon(selected ? Icons.radio_button_checked_rounded : Icons.radio_button_unchecked_rounded, color: selected ? primary : Palette.ink),
               const SizedBox(width: 10),
               Expanded(child: Text(label, style: ParentText.body)),
-              if (note != null) Text(note!, style: ParentText.caption),
+              if (note != null) Flexible(child: Padding(padding: const EdgeInsetsDirectional.only(start: 8), child: Text(note!, style: ParentText.caption))),
             ],
           ),
         ),
