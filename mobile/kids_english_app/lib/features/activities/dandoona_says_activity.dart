@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/widgets.dart';
 import '../audio/activity_speech.dart';
@@ -17,7 +18,7 @@ class DandoonaSaysActivity extends ConsumerStatefulWidget {
   const DandoonaSaysActivity({super.key, required this.lesson, required this.onFinished, this.random, this.turn = const Duration(seconds: 7)});
 
   final Lesson lesson;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
 
   /// How long one action is given before the next one comes by itself.
@@ -62,12 +63,12 @@ class _DandoonaSaysActivityState extends ConsumerState<DandoonaSaysActivity> wit
     if (s == AnimationStatus.completed) _next();
   }
 
-  void _next() {
+  Future<void> _next() async {
     if (_finished || !mounted) return;
     _ring.stop();
     if (_index + 1 >= _words.length) {
       _finished = true;
-      widget.onFinished(ActivityResult(stars: 3, attempts: _words.length));
+      await widget.onFinished(ActivityResult(stars: 3, attempts: _words.length));
       return;
     }
     setState(() => _index++);
@@ -93,9 +94,9 @@ class _DandoonaSaysActivityState extends ConsumerState<DandoonaSaysActivity> wit
             ],
           ),
           const SizedBox(height: 20),
-          GestureDetector(
+          LoadingTap(
             key: const Key('says-picture'),
-            onTap: () => unawaited(_speech.say(then: _word.says)),
+            onTap: () => _speech.say(then: _word.says),
             child: Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(36), border: Border.all(color: Palette.orange, width: 6)),

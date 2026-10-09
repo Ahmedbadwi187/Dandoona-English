@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'loading_action.dart';
 import 'palette.dart';
 import 'theme.dart';
 
@@ -107,23 +109,26 @@ class AvatarCircle extends StatelessWidget {
 /// A large, forgiving tap target for the child area (never smaller than [kMinTapTarget]).
 class BigTap extends StatelessWidget {
   const BigTap({super.key, required this.onTap, required this.child, this.semanticLabel});
-  final VoidCallback? onTap;
+  final LoadingCallback? onTap;
   final Widget child;
   final String? semanticLabel;
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      button: true,
-      enabled: onTap != null,
-      label: semanticLabel,
-      child: InkResponse(
-        onTap: onTap,
-        radius: kMinTapTarget,
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
-          // Shrink-wrap (factor 1) so callers can position the tap target; the min constraints still guarantee 64 dp.
-          child: Center(widthFactor: 1, heightFactor: 1, child: child),
+    return LoadingAction(
+      onPressed: onTap,
+      builder: (onPressed, loading) => Semantics(
+        button: true,
+        enabled: onPressed != null,
+        label: semanticLabel,
+        child: InkResponse(
+          onTap: onPressed,
+          radius: kMinTapTarget,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
+            // Shrink-wrap (factor 1) so callers can position the tap target; the min constraints still guarantee 64 dp.
+            child: Center(widthFactor: 1, heightFactor: 1, child: LoadingOverlay(loading: loading, child: child)),
+          ),
         ),
       ),
     );
@@ -135,7 +140,7 @@ class BigTap extends StatelessWidget {
 class TapToHear extends StatefulWidget {
   const TapToHear({super.key, required this.onTap, required this.child, this.semanticLabel, this.badgeInset = 0, this.badgeBottom});
 
-  final VoidCallback onTap;
+  final LoadingCallback onTap;
   final Widget child;
   final String? semanticLabel;
 
@@ -178,9 +183,9 @@ class _TapToHearState extends State<TapToHear> with TickerProviderStateMixin {
     super.dispose();
   }
 
-  void _tapped() {
+  FutureOr<void> _tapped() {
     _pop.forward(from: 0);
-    widget.onTap();
+    return widget.onTap();
   }
 
   @override

@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../content/content_repository.dart' show explorersEnabled;
 import '../../core/strings.dart';
@@ -20,7 +21,7 @@ class LanguageScreen extends StatelessWidget {
   /// `ar` or `en` (pre-selected from the phone's language).
   final String selected;
   final ValueChanged<String> onSelect;
-  final VoidCallback onContinue;
+  final LoadingCallback onContinue;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +51,7 @@ class ParentWelcomeScreen extends StatelessWidget {
   final Strings s;
   final bool withAccount;
   final ValueChanged<bool> onChoose;
-  final VoidCallback onContinue;
+  final LoadingCallback onContinue;
   final VoidCallback? onBack;
 
   @override
@@ -137,7 +138,7 @@ class AuthScreen extends StatelessWidget {
   final VoidCallback onToggleMode;
   final ValueChanged<String> onEmail, onPassword, onFirstName;
   final ValueChanged<bool> onGuardian, onAgreed;
-  final VoidCallback onSubmit;
+  final LoadingCallback onSubmit;
   final VoidCallback? onBack;
   final bool busy;
   final String? error;
@@ -161,6 +162,7 @@ class AuthScreen extends StatelessWidget {
       title: s(signup ? 'obSignupTitle' : 'obLoginTitle'),
       onBack: onBack,
       onContinue: _valid && !busy ? onSubmit : null,
+      continueLoading: busy,
       continueLabel: s(signup ? 'obCreate' : 'obLogin'),
       secondaryLabel: s(signup ? 'obHaveAccount' : 'obNoAccountYet'),
       onSecondary: onToggleMode,
@@ -313,7 +315,7 @@ class ChildNameScreen extends StatelessWidget {
   final String? avatarKey;
   final ValueChanged<String> onName;
   final ValueChanged<String> onAvatar;
-  final VoidCallback onContinue;
+  final LoadingCallback onContinue;
   final VoidCallback? onBack;
   final double progress;
 
@@ -371,7 +373,7 @@ class ChildAgeScreen extends StatelessWidget {
   final ValueChanged<int> onMonth;
   final ValueChanged<int> onYear;
   final String? trackLabel;
-  final VoidCallback onContinue;
+  final LoadingCallback onContinue;
   final VoidCallback? onBack;
   final double progress;
 
@@ -455,7 +457,7 @@ class ChildLevelScreen extends StatelessWidget {
   final Strings s;
   final int? level;
   final ValueChanged<int> onLevel;
-  final VoidCallback onContinue;
+  final LoadingCallback onContinue;
   final VoidCallback? onBack;
   final double progress;
 
@@ -496,7 +498,7 @@ class DailyGoalScreen extends StatelessWidget {
   final Strings s;
   final int? minutes;
   final ValueChanged<int> onMinutes;
-  final VoidCallback onContinue;
+  final LoadingCallback onContinue;
   final VoidCallback? onBack;
   final double progress;
 
@@ -538,8 +540,8 @@ class ReminderScreen extends StatelessWidget {
   final String? time;
   final Strings s;
   final ValueChanged<String> onTime;
-  final VoidCallback onRemind;
-  final VoidCallback onLater;
+  final LoadingCallback onRemind;
+  final LoadingCallback onLater;
   final VoidCallback? onBack;
   final double progress;
 
@@ -591,7 +593,7 @@ class SummaryScreen extends StatelessWidget {
   final String name;
   final List<SummaryRow> rows;
   final ValueChanged<String> onEdit;
-  final VoidCallback onStart;
+  final LoadingCallback onStart;
   final VoidCallback? onBack;
 
   @override
@@ -704,7 +706,7 @@ class ChildTrackScreen extends StatelessWidget {
   final Strings s;
   final String track;
   final ValueChanged<String> onTrack;
-  final VoidCallback onContinue;
+  final LoadingCallback onContinue;
   final VoidCallback? onBack;
 
   @override

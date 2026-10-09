@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/theme.dart';
 import '../../core/widgets.dart';
@@ -50,9 +51,9 @@ mixin PhonicsGame<T extends ConsumerStatefulWidget> on ConsumerState<T> {
     });
   }
 
-  void showDemo() {
+  Future<void> showDemo() async {
     setState(() => demo = true);
-    unawaited(speech.say(instruction: lesson.audio.instructions[activity]));
+    await speech.say(instruction: lesson.audio.instructions[activity]);
   }
 
   void demoDone() {
@@ -153,7 +154,7 @@ class SoundTapActivity extends ConsumerStatefulWidget {
 
   final Lesson lesson;
   final TrackContent track;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Duration nextDelay;
 
   @override
@@ -205,7 +206,7 @@ class _SoundTapActivityState extends ConsumerState<SoundTapActivity> with Phonic
     await Future<void>.delayed(widget.nextDelay);
     if (!mounted) return;
     if (_index + 1 >= _words.length) {
-      widget.onFinished(ActivityResult(stars: 3, attempts: _taps));
+      await widget.onFinished(ActivityResult(stars: 3, attempts: _taps));
       return;
     }
     setState(() {
@@ -236,9 +237,9 @@ class _SoundTapActivityState extends ConsumerState<SoundTapActivity> with Phonic
               alignment: WrapAlignment.center,
               children: [
                 for (var i = 0; i < word.graphemes.length; i++)
-                  GestureDetector(
+                  LoadingTap(
                     key: Key('sound-box-$i'),
-                    onTap: () => unawaited(_tap(i)),
+                    onTap: () => _tap(i),
                     child: KeyedSubtree(
                       key: _boxKeys[i],
                       child: GraphemeTile.of(
@@ -293,7 +294,7 @@ class WordBuilderActivity extends ConsumerStatefulWidget {
 
   final Lesson lesson;
   final TrackContent track;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
   final Duration nextDelay;
 
@@ -369,7 +370,7 @@ class _WordBuilderActivityState extends ConsumerState<WordBuilderActivity> with 
     await Future<void>.delayed(widget.nextDelay);
     if (!mounted) return;
     if (_index + 1 >= _words.length) {
-      widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _words.length + _mistakes));
+      await widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _words.length + _mistakes));
       return;
     }
     setState(() {
@@ -410,7 +411,7 @@ class _WordBuilderActivityState extends ConsumerState<WordBuilderActivity> with 
                 BigTap(
                   key: const Key('builder-hear'),
                   semanticLabel: 'Hear the word',
-                  onTap: () => unawaited(speech.say(then: word.audio)),
+                  onTap: () => speech.say(then: word.audio),
                   child: const Icon(Icons.volume_up_rounded, size: 40, color: Palette.blue),
                 ),
               ],
@@ -449,9 +450,9 @@ class _WordBuilderActivityState extends ConsumerState<WordBuilderActivity> with 
                           data: t,
                           feedback: Material(color: Colors.transparent, child: GraphemeTile(text: graphemeText(_tiles[t]), color: Palette.sunflower)),
                           childWhenDragging: GraphemeTile(text: graphemeText(_tiles[t]), faded: true),
-                          child: GestureDetector(
+                          child: LoadingTap(
                             key: Key('builder-tile-$t'),
-                            onTap: () => unawaited(_place(t)),
+                            onTap: () => _place(t),
                             child: KeyedSubtree(
                               key: _tileKeys[t],
                               child: TweenAnimationBuilder<double>(
@@ -520,7 +521,7 @@ class ReadAndPickActivity extends ConsumerStatefulWidget {
   const ReadAndPickActivity({super.key, required this.lesson, required this.onFinished, this.random, this.nextDelay = const Duration(milliseconds: 1100)});
 
   final Lesson lesson;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
   final Duration nextDelay;
 
@@ -564,9 +565,9 @@ class _ReadAndPickActivityState extends ConsumerState<ReadAndPickActivity> with 
   }
 
   @override
-  void showDemo() {
+  Future<void> showDemo() {
     _demoShown = true;
-    super.showDemo();
+    return super.showDemo();
   }
 
   /// The word the demo answered is not asked first: it moves to the end.
@@ -592,7 +593,7 @@ class _ReadAndPickActivityState extends ConsumerState<ReadAndPickActivity> with 
     await Future<void>.delayed(widget.nextDelay);
     if (!mounted) return;
     if (_index + 1 >= _rounds.length) {
-      widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _rounds.length + _mistakes));
+      await widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _rounds.length + _mistakes));
       return;
     }
     setState(() {
@@ -637,9 +638,9 @@ class _ReadAndPickActivityState extends ConsumerState<ReadAndPickActivity> with 
               alignment: WrapAlignment.center,
               children: [
                 for (var i = 0; i < round.options.length; i++)
-                  GestureDetector(
+                  LoadingTap(
                     key: Key('read-${round.options[i].word}'),
-                    onTap: () => unawaited(_tap(round.options[i])),
+                    onTap: () => _tap(round.options[i]),
                     child: Container(
                       key: _pictureKeys[i],
                       padding: const EdgeInsets.all(8),

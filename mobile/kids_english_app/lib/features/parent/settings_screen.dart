@@ -7,13 +7,31 @@ import '../settings/settings.dart';
 import '../sync/sync_controller.dart' show defaultApiBaseUrl;
 import '../sync/sync_section.dart';
 import '../../core/type.dart';
+import '../../core/loading_action.dart';
 
 /// Parent settings: language, session timer (default 15 min), unlock all letters.
-class SettingsScreen extends ConsumerWidget {
+class SettingsScreen extends ConsumerStatefulWidget {
   const SettingsScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends ConsumerState<SettingsScreen> {
+  bool _settingLanguage = false;
+
+  Future<void> _setLanguage(String code) async {
+    if (_settingLanguage) return;
+    setState(() => _settingLanguage = true);
+    try {
+      await ref.read(settingsProvider.notifier).setLanguage(code);
+    } finally {
+      if (mounted) setState(() => _settingLanguage = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final s = ref.watch(stringsProvider);
     final settings = ref.watch(settingsProvider);
     final notifier = ref.read(settingsProvider.notifier);
@@ -32,7 +50,8 @@ class SettingsScreen extends ConsumerWidget {
               ButtonSegment(value: 'en', label: Text(s('english'))),
             ],
             selected: {settings.languageCode},
-            onSelectionChanged: (v) => notifier.setLanguage(v.first),
+            selectedIcon: LoadingContent(loading: _settingLanguage, child: const Icon(Icons.check)),
+            onSelectionChanged: _settingLanguage ? null : (v) => _setLanguage(v.first),
           ),
           const SizedBox(height: 28),
           Text('${s('sessionLimit')}: ${settings.sessionMinutes}',
@@ -67,16 +86,19 @@ class SettingsScreen extends ConsumerWidget {
             const SizedBox(height: 4),
             Align(
               alignment: AlignmentDirectional.centerStart,
-              child: OutlinedButton.icon(
-                key: const Key('cards-copy'),
-                style: parentOutlinedStyle(context),
+              child: LoadingAction(
                 onPressed: () async {
                   final messenger = ScaffoldMessenger.of(context);
                   await Clipboard.setData(ClipboardData(text: cardsUrl(defaultApiBaseUrl)));
-                  messenger.showSnackBar(SnackBar(content: Text(s('cardsCopied'))));
+                  if (context.mounted) messenger.showSnackBar(SnackBar(content: Text(s('cardsCopied'))));
                 },
-                icon: const Icon(Icons.copy_rounded, size: 18),
-                label: Text(s('cardsCopy')),
+                builder: (onPressed, loading) => OutlinedButton.icon(
+                  key: const Key('cards-copy'),
+                  style: parentOutlinedStyle(context),
+                  onPressed: onPressed,
+                  icon: LoadingContent(loading: loading, size: 18, child: const Icon(Icons.copy_rounded, size: 18)),
+                  label: Text(s('cardsCopy')),
+                ),
               ),
             ),
           ],

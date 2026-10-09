@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
@@ -29,8 +30,8 @@ class WardrobeScreen extends ConsumerWidget {
     final mascot = ref.watch(contentProvider).maybeWhen(data: (c) => c.mascot, orElse: () => null);
     final inventory = ref.watch(chestInventoryProvider);
     final owned = inventory.outfits;
-    void wear(String id) {
-      if (child != null) ref.read(profilesProvider.notifier).equip(child.id, child.equippedAccessory == id ? null : id);
+    Future<void> wear(String id) async {
+      if (child != null) await ref.read(profilesProvider.notifier).equip(child.id, child.equippedAccessory == id ? null : id);
     }
 
     return ChildScope(
@@ -42,13 +43,13 @@ class WardrobeScreen extends ConsumerWidget {
               children: [
                 Row(
                   children: [
-                    IconButton(
+                    LoadingAction(onPressed: () => context.pop(), builder: (onPressed, loading) => IconButton(
                       key: const Key('wardrobe-back'),
                       constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
                       iconSize: 32,
-                      onPressed: () => context.pop(),
-                      icon: const Icon(Icons.arrow_back_rounded),
-                    ),
+                      onPressed: onPressed,
+                      icon: LoadingContent(loading: loading, child: const Icon(Icons.arrow_back_rounded)),
+                    )),
                     const Spacer(),
                     const Icon(Icons.star_rounded, color: Palette.yellow, size: 36),
                     const SizedBox(width: 4),
@@ -108,14 +109,14 @@ class _AccessoryCard extends StatelessWidget {
   final String? mascotAsset;
   final bool unlocked;
   final bool worn;
-  final VoidCallback? onTap;
+  final LoadingCallback? onTap;
 
   /// What a locked card shows instead of the star price (the chest outfits show their chest and unit).
   final Widget? lockedBadge;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return LoadingTap(
       key: Key('accessory-${accessory.id}'),
       onTap: onTap,
       child: Container(

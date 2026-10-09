@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/theme.dart';
 import '../../core/widgets.dart';
@@ -34,7 +35,7 @@ class BuildPictureActivity extends ConsumerStatefulWidget {
   const BuildPictureActivity({super.key, required this.lesson, required this.onFinished, this.random});
 
   final Lesson lesson;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
 
   @override
@@ -71,7 +72,7 @@ class _BuildPictureActivityState extends ConsumerState<BuildPictureActivity> {
     setState(() => _placed.add(name));
     if (_placed.length == _recipe.length) {
       await Future<void>.delayed(const Duration(milliseconds: 800));
-      if (mounted) widget.onFinished(ActivityResult(stars: 3, attempts: _recipe.length));
+      if (mounted) await widget.onFinished(ActivityResult(stars: 3, attempts: _recipe.length));
     }
   }
 
@@ -115,9 +116,9 @@ class _BuildPictureActivityState extends ConsumerState<BuildPictureActivity> {
               children: [
                 for (final name in _tray)
                   if (!_placed.contains(name))
-                    GestureDetector(
+                    LoadingTap(
                       key: Key('piece-$name'),
-                      onTap: () => unawaited(_tap(name)),
+                      onTap: () => _tap(name),
                       child: Container(
                         padding: const EdgeInsets.all(8),
                         constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),

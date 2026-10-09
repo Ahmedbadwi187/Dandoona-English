@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/widgets.dart';
 import '../audio/activity_speech.dart';
@@ -53,7 +54,7 @@ class MemoryActivity extends ConsumerStatefulWidget {
 
   final Lesson lesson;
   final TrackContent track;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
   final Duration closeAfter;
 
@@ -103,7 +104,7 @@ class _MemoryActivityState extends ConsumerState<MemoryActivity> {
         if (!mounted) return;
         // as many turns as pairs is perfect; up to twice as many is fine
         final stars = _turns <= _pairs ? 3 : (_turns <= _pairs * 2 ? 2 : 1);
-        widget.onFinished(ActivityResult(stars: stars, attempts: _turns));
+        await widget.onFinished(ActivityResult(stars: stars, attempts: _turns));
       }
     } else {
       _busy = true;
@@ -126,9 +127,9 @@ class _MemoryActivityState extends ConsumerState<MemoryActivity> {
         alignment: WrapAlignment.center,
         children: [
           for (final (i, card) in _cards.indexed)
-            GestureDetector(
+            LoadingTap(
               key: Key('card-$i'),
-              onTap: () => unawaited(_flip(i)),
+              onTap: () => _flip(i),
               child: Container(
                 width: 140,
                 height: 140,

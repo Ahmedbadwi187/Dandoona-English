@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 
 /// The first Flutter frame is identical to the native splash (cream background, Dandoona centered), then she
@@ -67,7 +68,7 @@ class _DandoonaSplashState extends State<DandoonaSplash> with SingleTickerProvid
               final fade = 1 - Curves.easeIn.transform(((t - _waveTo) / (1 - _waveTo)).clamp(0.0, 1.0));
               return IgnorePointer(
                 ignoring: fade <= 0,
-                child: GestureDetector(
+                child: LoadingTap(
                   behavior: HitTestBehavior.opaque,
                   onTap: _finish,
                   child: Opacity(

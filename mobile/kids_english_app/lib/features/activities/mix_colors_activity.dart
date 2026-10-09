@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../audio/activity_speech.dart';
 import '../audio/audio_service.dart';
@@ -37,7 +38,7 @@ class MixColorsActivity extends ConsumerStatefulWidget {
 
   final Lesson lesson;
   final TrackContent track;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
   final Duration nextDelay;
 
@@ -95,7 +96,7 @@ class _MixColorsActivityState extends ConsumerState<MixColorsActivity> {
       await Future<void>.delayed(widget.nextDelay);
       if (!mounted) return;
       if (_index + 1 >= _mixes.length) {
-        widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _mixes.length + _mistakes));
+        await widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _mixes.length + _mistakes));
         return;
       }
       setState(() {
@@ -140,9 +141,9 @@ class _MixColorsActivityState extends ConsumerState<MixColorsActivity> {
             alignment: WrapAlignment.center,
             children: [
               for (final name in _options)
-                GestureDetector(
+                LoadingTap(
                   key: Key('mix-option-$name'),
-                  onTap: () => unawaited(_choose(name)),
+                  onTap: () => _choose(name),
                   child: Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(60), border: Border.all(color: _wrong == name ? Palette.red : Palette.tan, width: 6)),

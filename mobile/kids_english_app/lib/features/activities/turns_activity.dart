@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../onboarding/onboarding_widgets.dart';
 import '../../core/theme.dart';
@@ -22,7 +23,7 @@ class TurnsActivity extends ConsumerStatefulWidget {
 
   final Lesson lesson;
   final TrackContent track;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
 
   /// How long Dandoona takes before it is the child's turn.
@@ -69,7 +70,7 @@ class _TurnsActivityState extends ConsumerState<TurnsActivity> {
       _taken.add(toy.word);
       _dandoonasTurn = false;
     });
-    if (_taken.length >= _turns) _finish();
+    if (_taken.length >= _turns) await _finish();
   }
 
   Future<void> _childTakes(LessonWord toy) async {
@@ -77,14 +78,14 @@ class _TurnsActivityState extends ConsumerState<TurnsActivity> {
     setState(() => _taken.add(toy.word));
     unawaited(_speech.say(then: toy.audio));
     if (_taken.length >= _turns) {
-      _finish();
+      await _finish();
       return;
     }
     await Future<void>.delayed(const Duration(milliseconds: 700));
     if (mounted) unawaited(_dandoonaTakes());
   }
 
-  void _finish() => widget.onFinished(const ActivityResult(stars: 3, attempts: _turns));
+  Future<void> _finish() async => await widget.onFinished(const ActivityResult(stars: 3, attempts: _turns));
 
   @override
   Widget build(BuildContext context) {
@@ -114,9 +115,9 @@ class _TurnsActivityState extends ConsumerState<TurnsActivity> {
             alignment: WrapAlignment.center,
             children: [
               for (final toy in _toys)
-                GestureDetector(
+                LoadingTap(
                   key: Key('toy-${toy.word}'),
-                  onTap: () => unawaited(_childTakes(toy)),
+                  onTap: () => _childTakes(toy),
                   child: Opacity(
                     opacity: _taken.contains(toy.word) ? 0.3 : 1,
                     child: Container(

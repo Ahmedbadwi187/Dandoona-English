@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
@@ -45,7 +46,7 @@ class LetterMapScreen extends ConsumerWidget {
                   children: [
                     Text(Strings.en('loadError'), style: kidBody),
                     const SizedBox(height: 12),
-                    FilledButton(onPressed: () => ref..invalidate(contentProvider)..invalidate(explorersContentProvider), child: Text(Strings.en('retry'))),
+                    LoadingAction(onPressed: () => ref..invalidate(contentProvider)..invalidate(explorersContentProvider), builder: (onPressed, loading) => FilledButton(onPressed: onPressed, child: LoadingContent(loading: loading, child: Text(Strings.en('retry'))))),
                   ],
                 ),
               ),
@@ -82,13 +83,13 @@ class _Map extends ConsumerWidget {
           padding: const EdgeInsets.fromLTRB(4, 8, 12, 8),
           child: Row(
             children: [
-              IconButton(
+              LoadingAction(onPressed: () => context.go('/map'), builder: (onPressed, loading) => IconButton(
                 key: const Key('map-back'),
                 constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
                 iconSize: 32,
-                onPressed: () => context.go('/map'),
-                icon: const Icon(Icons.arrow_back_rounded),
-              ),
+                onPressed: onPressed,
+                icon: LoadingContent(loading: loading, child: const Icon(Icons.arrow_back_rounded)),
+              )),
               if (child != null) AvatarCircle(child.avatarKey, size: 48),
               const SizedBox(width: 8),
               Expanded(
@@ -97,7 +98,7 @@ class _Map extends ConsumerWidget {
                     style: kidBody.copyWith(fontWeight: FontWeight.w800)),
               ),
               BigTap(
-                onTap: () => context.push('/wardrobe'),
+                onTap: () { context.push('/wardrobe'); },
                 semanticLabel: 'Mascot wardrobe',
                 child: Container(
                   key: const Key('open-wardrobe'),
@@ -139,7 +140,7 @@ class _Map extends ConsumerWidget {
                 lesson: lesson,
                 unlocked: unlocked,
                 stars: stars,
-                onTap: unlocked ? () => context.push('/lesson/${lesson.id}') : null,
+                onTap: unlocked ? () { context.push('/lesson/${lesson.id}'); } : null,
               );
             },
           ),
@@ -166,7 +167,7 @@ class _MapRow extends StatelessWidget {
   final Lesson lesson;
   final bool unlocked;
   final int stars;
-  final VoidCallback? onTap;
+  final LoadingCallback? onTap;
 
   @override
   Widget build(BuildContext context) {

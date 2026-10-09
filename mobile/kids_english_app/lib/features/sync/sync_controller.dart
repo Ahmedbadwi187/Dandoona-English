@@ -177,10 +177,21 @@ class SyncController extends Notifier<SyncUiState> {
   /// Signs out. Children and progress stay on this device (the app works without an account); anything not sent yet
   /// is sent first, quietly.
   Future<void> signOut() async {
-    await syncQuietly();
-    await _service.signOut();
-    await ref.read(settingsProvider.notifier).setParentName('');
-    state = state.copyWith(signedIn: false, clearMessage: true);
+    if (state.busy) return;
+    state = state.copyWith(busy: true, clearMessage: true);
+    try {
+      // Keep the quiet pre-sign-out sync while blocking other account actions.
+      try {
+        if (await _service.isSignedIn()) await _sync(pullBack: !_pulledThisSession);
+      } on SyncException {
+        // offline or session expired: local data is kept for the next sign-in
+      }
+      await _service.signOut();
+      await ref.read(settingsProvider.notifier).setParentName('');
+      state = state.copyWith(signedIn: false, clearMessage: true);
+    } finally {
+      state = state.copyWith(busy: false);
+    }
   }
 
   Future<void> _run(Future<String> Function() action) async {
@@ -198,6 +209,8 @@ class SyncController extends Notifier<SyncUiState> {
         SyncErrorKind.notFound || SyncErrorKind.server => 'syncFailed',
       };
       state = state.copyWith(busy: false, messageKey: key, messageIsError: true);
+    } finally {
+      if (state.busy) state = state.copyWith(busy: false);
     }
   }
 }

@@ -2,10 +2,12 @@ import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart' show TickerCanceled;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/sky.dart';
 import '../../core/strings.dart';
@@ -94,11 +96,15 @@ class _ChestScreenState extends ConsumerState<ChestScreen> with TickerProviderSt
     setState(() {});
   }
 
-  void _start() {
+  Future<void> _start() async {
     if (_started) return;
     _started = true;
     _idle.stop();
-    unawaited(_c.forward());
+    try {
+      await _c.forward().orCancel;
+    } on TickerCanceled {
+      // Leaving the chest cancels its animation.
+    }
   }
 
   CourseUnit? get _unit {
@@ -149,13 +155,13 @@ class _ChestScreenState extends ConsumerState<ChestScreen> with TickerProviderSt
                     Positioned(
                       top: 0,
                       left: 8,
-                      child: IconButton(
+                      child: LoadingAction(onPressed: () => context.pop(), builder: (onPressed, loading) => IconButton(
                         key: const Key('chest-back'),
                         constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
                         iconSize: 32,
-                        onPressed: () => context.pop(),
-                        icon: const Icon(Icons.arrow_back_rounded),
-                      ),
+                        onPressed: onPressed,
+                        icon: LoadingContent(loading: loading, child: const Icon(Icons.arrow_back_rounded)),
+                      )),
                     ),
                     Positioned.fromRect(
                       rect: dandoona,
@@ -164,7 +170,7 @@ class _ChestScreenState extends ConsumerState<ChestScreen> with TickerProviderSt
                     // the chest
                     Positioned.fromRect(
                       rect: chestRect.translate(0, idleLift),
-                      child: GestureDetector(
+                      child: LoadingTap(
                         key: const Key('chest-tap'),
                         behavior: HitTestBehavior.opaque,
                         onTap: _start,
@@ -226,18 +232,18 @@ class _RewardCard extends StatelessWidget {
               spacing: 10,
               runSpacing: 10,
               alignment: WrapAlignment.center,
-              children: [for (final s in stickers) StickerTile(key: Key('chest-sticker-${s.word}'), sticker: s, size: 72, onTap: s.audio == null ? null : () => unawaited(audio.playAsset(s.audio!)))],
+              children: [for (final s in stickers) StickerTile(key: Key('chest-sticker-${s.word}'), sticker: s, size: 72, onTap: s.audio == null ? null : () => audio.playAsset(s.audio!))],
             ),
           ],
           const SizedBox(height: 14),
           SizedBox(
             width: double.infinity,
-            child: FilledButton(
+            child: LoadingAction(onPressed: onDone, builder: (onPressed, loading) => FilledButton(
               key: const Key('chest-done'),
               style: FilledButton.styleFrom(backgroundColor: Palette.green, minimumSize: const Size.fromHeight(kMinTapTarget)),
-              onPressed: onDone,
-              child: Text(Strings.en('chestGotIt'), style: kidBody.copyWith(fontWeight: FontWeight.w900)),
-            ),
+              onPressed: onPressed,
+              child: LoadingContent(loading: loading, child: Text(Strings.en('chestGotIt'), style: kidBody.copyWith(fontWeight: FontWeight.w900))),
+            )),
           ),
         ],
       ),
@@ -253,14 +259,14 @@ class StickerTile extends StatelessWidget {
   final Sticker sticker;
   final double size;
   final bool earned;
-  final VoidCallback? onTap;
+  final LoadingCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     final picture = sticker.image == null
         ? Center(child: Text(earned ? sticker.word : '?', textAlign: TextAlign.center, style: TextStyle(fontSize: size * 0.2, /* outside the scale on purpose: a sticker caption shrinks with the sticker */ fontWeight: FontWeight.w800, color: Palette.nightInk)))
         : AssetPicture(sticker.image!, size: size * 0.78, semanticLabel: sticker.word);
-    return GestureDetector(
+    return LoadingTap(
       onTap: earned ? onTap : null,
       child: Column(
         mainAxisSize: MainAxisSize.min,

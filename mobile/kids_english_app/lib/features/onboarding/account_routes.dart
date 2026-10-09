@@ -30,7 +30,13 @@ class _ParentWelcomeRouteState extends ConsumerState<ParentWelcomeRoute> {
       s: ref.watch(stringsProvider),
       withAccount: _withAccount,
       onChoose: (v) => setState(() => _withAccount = v),
-      onContinue: () => _withAccount ? context.push('/auth') : context.go(firstChildRoute),
+      onContinue: () {
+        if (_withAccount) {
+          context.push('/auth');
+        } else {
+          context.go(firstChildRoute);
+        }
+      },
     );
   }
 }
