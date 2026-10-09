@@ -14,13 +14,21 @@ permissions:
 
 jobs:
   ipa:
-    runs-on: macos-15
+    runs-on: macos-26
     timeout-minutes: 60
     defaults:
       run:
         working-directory: mobile/kids_english_app
     steps:
       - uses: actions/checkout@v4
+
+      - name: Use the newest Xcode 26 (App Store Connect needs the iOS 26 SDK or later)
+        working-directory: .
+        run: |
+          XCODE="$(ls -d /Applications/Xcode_26*.app 2>/dev/null | sort -V | tail -1)"
+          if [ -z "$XCODE" ]; then echo "::error::No Xcode 26 on this machine. Installed: $(ls -d /Applications/Xcode*.app | xargs -n1 basename | tr '\n' ' ')"; exit 1; fi
+          sudo xcode-select -s "$XCODE/Contents/Developer"
+          xcodebuild -version
 
       - uses: subosito/flutter-action@v2
         with:

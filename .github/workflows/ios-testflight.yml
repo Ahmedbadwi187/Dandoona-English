@@ -34,7 +34,7 @@ env:
 
 jobs:
   testflight:
-    runs-on: macos-15
+    runs-on: macos-26
     timeout-minutes: 75
     defaults:
       run:
@@ -73,6 +73,14 @@ jobs:
           ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
           ASC_KEY_PATH: ${{ runner.temp }}/keys/AuthKey.p8
         run: '"$RUNNER_TEMP/venv/bin/python" ios/ci/asc_signing.py check'
+
+      - name: Use the newest Xcode 26 (App Store Connect needs the iOS 26 SDK or later)
+        working-directory: .
+        run: |
+          XCODE="$(ls -d /Applications/Xcode_26*.app 2>/dev/null | sort -V | tail -1)"
+          if [ -z "$XCODE" ]; then echo "::error::No Xcode 26 on this machine. Installed: $(ls -d /Applications/Xcode*.app | xargs -n1 basename | tr '\n' ' ')"; exit 1; fi
+          sudo xcode-select -s "$XCODE/Contents/Developer"
+          xcodebuild -version
 
       - uses: subosito/flutter-action@v2
         with:
