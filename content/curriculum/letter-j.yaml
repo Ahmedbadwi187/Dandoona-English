@@ -8,7 +8,8 @@ words:
   - { word: jar, imagePrompt: "a glass jar of red jam", source: svg }
   - { word: juice, imagePrompt: "a glass of orange juice with a straw", source: svg }
 narration:
-  intro: "This is the letter J. J says juh, juh, jar!"
+  intro: "This is the letter J."
+  introWord: jar
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter J!"

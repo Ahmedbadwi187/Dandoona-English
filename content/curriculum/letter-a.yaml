@@ -9,7 +9,8 @@ words:
   - { word: ant, imagePrompt: "a small friendly cartoon ant" }
   - { word: alligator, imagePrompt: "a friendly green cartoon alligator smiling" }
 narration:
-  intro: "This is the letter A. A says a, a, apple!"
+  intro: "This is the letter A."
+  introWord: apple
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter A!"

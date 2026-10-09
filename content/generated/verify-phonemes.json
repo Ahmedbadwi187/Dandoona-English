@@ -1,0 +1,258 @@
+[
+ {
+  "key": "a",
+  "ipa": "æ",
+  "voice_reads": "aa",
+  "file": "phoneme-a.gen.mp3",
+  "heard": "aː",
+  "verdict": "ok"
+ },
+ {
+  "key": "e",
+  "ipa": "ɛ",
+  "voice_reads": "eh",
+  "file": "phoneme-e.gen.mp3",
+  "heard": "aː",
+  "verdict": "differs: heard aː"
+ },
+ {
+  "key": "i",
+  "ipa": "ɪ",
+  "voice_reads": "ih",
+  "file": "phoneme-i.gen.mp3",
+  "heard": "i",
+  "verdict": "ok"
+ },
+ {
+  "key": "o",
+  "ipa": "ɒ",
+  "voice_reads": "aw",
+  "file": "phoneme-o.gen.mp3",
+  "heard": "aː",
+  "verdict": "differs: heard aː"
+ },
+ {
+  "key": "u",
+  "ipa": "ʌ",
+  "voice_reads": "uh",
+  "file": "phoneme-u.gen.mp3",
+  "heard": "ɑ",
+  "verdict": "differs: heard ɑ"
+ },
+ {
+  "key": "b",
+  "ipa": "b",
+  "voice_reads": "buh",
+  "file": "phoneme-b.gen.mp3",
+  "heard": "boː",
+  "verdict": "ok"
+ },
+ {
+  "key": "c",
+  "ipa": "k",
+  "voice_reads": "kuh",
+  "file": "phoneme-c.gen.mp3",
+  "heard": "khu5",
+  "verdict": "extra sounds heard (khu5)"
+ },
+ {
+  "key": "d",
+  "ipa": "d",
+  "voice_reads": "duh",
+  "file": "phoneme-d.gen.mp3",
+  "heard": "dʉ",
+  "verdict": "ok"
+ },
+ {
+  "key": "f",
+  "ipa": "f",
+  "voice_reads": "fff",
+  "file": "phoneme-f.gen.mp3",
+  "heard": "",
+  "verdict": "differs: heard "
+ },
+ {
+  "key": "g",
+  "ipa": "g",
+  "voice_reads": "guh",
+  "file": "phoneme-g.gen.mp3",
+  "heard": "ɡuː",
+  "verdict": "ok"
+ },
+ {
+  "key": "h",
+  "ipa": "h",
+  "voice_reads": "huh",
+  "file": "phoneme-h.gen.mp3",
+  "heard": "ħa",
+  "verdict": "differs: heard ħa"
+ },
+ {
+  "key": "j",
+  "ipa": "dʒ",
+  "voice_reads": "juh",
+  "file": "phoneme-j.gen.mp3",
+  "heard": "tɕy5",
+  "verdict": "differs: heard tɕy5"
+ },
+ {
+  "key": "m",
+  "ipa": "m",
+  "voice_reads": "mmm",
+  "file": "phoneme-m.gen.mp3",
+  "heard": "",
+  "verdict": "differs: heard "
+ },
+ {
+  "key": "n",
+  "ipa": "n",
+  "voice_reads": "nnn",
+  "file": "phoneme-n.gen.mp3",
+  "heard": "",
+  "verdict": "differs: heard "
+ },
+ {
+  "key": "p",
+  "ipa": "p",
+  "voice_reads": "puh",
+  "file": "phoneme-p.gen.mp3",
+  "heard": "puː",
+  "verdict": "ok"
+ },
+ {
+  "key": "s",
+  "ipa": "s",
+  "voice_reads": "sss",
+  "file": "phoneme-s.gen.mp3",
+  "heard": "",
+  "verdict": "differs: heard "
+ },
+ {
+  "key": "t",
+  "ipa": "t",
+  "voice_reads": "tuh",
+  "file": "phoneme-t.gen.mp3",
+  "heard": "tuː",
+  "verdict": "ok"
+ },
+ {
+  "key": "x",
+  "ipa": "ks",
+  "voice_reads": "ks",
+  "file": "phoneme-x.gen.mp3",
+  "heard": "kas",
+  "verdict": "differs: heard kas"
+ },
+ {
+  "key": "l",
+  "ipa": "l",
+  "voice_reads": "lll",
+  "file": "phoneme-l.gen.mp3",
+  "heard": "laː",
+  "verdict": "ok"
+ },
+ {
+  "key": "r",
+  "ipa": "r",
+  "voice_reads": "rrr",
+  "file": "phoneme-r.gen.mp3",
+  "heard": "ʌ",
+  "verdict": "differs: heard ʌ"
+ },
+ {
+  "key": "v",
+  "ipa": "v",
+  "voice_reads": "vvv",
+  "file": "phoneme-v.gen.mp3",
+  "heard": "viːðɨðiː",
+  "verdict": "extra sounds heard (viːðɨðiː)"
+ },
+ {
+  "key": "z",
+  "ipa": "z",
+  "voice_reads": "zzz",
+  "file": "phoneme-z.gen.mp3",
+  "heard": "",
+  "verdict": "differs: heard "
+ },
+ {
+  "key": "sh",
+  "ipa": "ʃ",
+  "voice_reads": "shh",
+  "file": "phoneme-sh.gen.mp3",
+  "heard": "",
+  "verdict": "differs: heard "
+ },
+ {
+  "key": "ch",
+  "ipa": "tʃ",
+  "voice_reads": "chuh",
+  "file": "phoneme-ch.gen.mp3",
+  "heard": "tɕhi.5",
+  "verdict": "differs: heard tɕhi.5"
+ },
+ {
+  "key": "th",
+  "ipa": "θ",
+  "voice_reads": "thh",
+  "file": "phoneme-th.gen.mp3",
+  "heard": "dajiʃ",
+  "verdict": "differs: heard dajiʃ"
+ },
+ {
+  "key": "ay",
+  "ipa": "eɪ",
+  "voice_reads": "ay",
+  "file": "phoneme-ay.gen.mp3",
+  "heard": "aɪ",
+  "verdict": "differs: heard aɪ"
+ },
+ {
+  "key": "ee",
+  "ipa": "iː",
+  "voice_reads": "ee",
+  "file": "phoneme-ee.gen.mp3",
+  "heard": "aː",
+  "verdict": "differs: heard aː"
+ },
+ {
+  "key": "ie",
+  "ipa": "aɪ",
+  "voice_reads": "eye",
+  "file": "phoneme-ie.gen.mp3",
+  "heard": "haː",
+  "verdict": "differs: heard haː"
+ },
+ {
+  "key": "oa",
+  "ipa": "oʊ",
+  "voice_reads": "oh",
+  "file": "phoneme-oa.gen.mp3",
+  "heard": "uː",
+  "verdict": "differs: heard uː"
+ },
+ {
+  "key": "ue",
+  "ipa": "juː",
+  "voice_reads": "you",
+  "file": "phoneme-ue.gen.mp3",
+  "heard": "juː",
+  "verdict": "ok"
+ },
+ {
+  "key": "oo",
+  "ipa": "uː",
+  "voice_reads": "oo",
+  "file": "phoneme-oo.gen.mp3",
+  "heard": "aː",
+  "verdict": "differs: heard aː"
+ },
+ {
+  "key": "ar",
+  "ipa": "ɑːr",
+  "voice_reads": "ar",
+  "file": "phoneme-ar.gen.mp3",
+  "heard": "ɑ",
+  "verdict": "differs: heard ɑ"
+ }
+]

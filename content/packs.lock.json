@@ -1,56 +1,56 @@
 {
   "little-learners": {
     "numbers": {
-      "version": 5,
-      "contentHash": "b7e81ade4319f2b0419ab7829918ed59cb5c2f009f704e3355852432db347824"
+      "version": 6,
+      "contentHash": "0e73d11c67a6c55181832ce867c9d7725af13fe457423f2e6ab2a2290fa5836c"
     },
     "shapes": {
-      "version": 6,
-      "contentHash": "4cabcc68daed1033451cf967985f05f9ee5ea05217fea4cd40a0f288d33c0685"
+      "version": 7,
+      "contentHash": "85516e4926a43c6f51664ebd37d7e1c10a03f49143f75cb9a4a99f6ee68c9f45"
     },
     "animals": {
-      "version": 5,
-      "contentHash": "0e4f55eec8f9541d02bbbdf5a677a7ca7b078b0bca1a3f2cd3f86f38941034f9"
+      "version": 6,
+      "contentHash": "2f9c1a26410133b47e21c03645708a9fa31526b8c0b27cc57564f0daa32abbdc"
     },
     "feelings": {
-      "version": 4,
-      "contentHash": "916e23ed4fa2241eb68d482c61b3c205d3d86013b16ba17d5164674e17cf3550"
+      "version": 5,
+      "contentHash": "820cf4be9a0930f6b7d5a1e5206ef94770ebf92f069a8c6d1c0cd16cf3262f22"
     },
     "my-body": {
-      "version": 4,
-      "contentHash": "36b9f8fb72a4816c1bbfaa0ac1ba72e2fcecb3275fe87e4893136fea07b380dd"
+      "version": 5,
+      "contentHash": "b4b48653216974f678217b4d467444bda3022a00d56f9a0236da728978b2b0a7"
     },
     "actions": {
-      "version": 6,
-      "contentHash": "b944b0f3a5daefa2f7e2da45595c48a6e55066fcd61799adaf84236eb61b3ff4"
+      "version": 7,
+      "contentHash": "2e3e73883363cd00b59639c6bd31ff6ceefcc106e6c4de297dea7eed57602a5f"
     },
     "food": {
-      "version": 5,
-      "contentHash": "287a6327880b9e32b4c548c483eb57ed18018e01b91c33ed9b92dfe50b0f43f7"
+      "version": 6,
+      "contentHash": "d9173c5c3196000f7362be0e67f57ac3305e1cb2c8e0c9a2031fb280375f76b0"
     },
     "clothes": {
-      "version": 4,
-      "contentHash": "52047938ff4f7c9584d768d7f1370ad383513b964ea1efb38e8436fb7db91982"
+      "version": 5,
+      "contentHash": "d7d81656d82744c3d71e68d6416c2eba01360f2917f8a25059d3d3b4da4a962f"
     },
     "toys": {
-      "version": 7,
-      "contentHash": "3009cd3cb22015a9c068a5df09e7d43c00dff196c43d7844c42cf182c35d238f"
+      "version": 8,
+      "contentHash": "9c55a21b81313612b72aa0581d1e17c3ebb37ffe54ab3f470892b5ee295e8f70"
     },
     "my-family": {
-      "version": 4,
-      "contentHash": "85f1e92b7035f81b6da4cceed6b26ca70f49fb162d91efa8b7d935e0f6d7fee2"
+      "version": 5,
+      "contentHash": "8aba9701b8c484078afc79d91653e3782dc74aef1d87559516c33f0caceca1ba"
     },
     "my-home": {
-      "version": 4,
-      "contentHash": "5a5b25556f5dfff001c6477181135a89b9fff2a88962d35bbd7dc7615379584d"
+      "version": 5,
+      "contentHash": "db01231c82f1956e435e8b49d5b7a3c114d570dfadb318705677a8f79212c7c3"
     },
     "opposites": {
-      "version": 5,
-      "contentHash": "032fe0734ff587e4693045174261d5a11afdbc25e0806cfa3b30b9721270e752"
+      "version": 6,
+      "contentHash": "a6b4785df985fa44cc0e57d7c6a14d63306e799badd3fc81a21414b2d055a18e"
     },
     "transport": {
-      "version": 6,
-      "contentHash": "de510ea9b2676ad6d222b5f8871b0882f8484cd402463b8518ce34babc29de78"
+      "version": 7,
+      "contentHash": "04d594296a7ee24f02804c2b1871d81fa744129f48b4fcfc1d0d4de9263bf78e"
     }
   },
   "explorers": {

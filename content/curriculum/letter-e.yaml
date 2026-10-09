@@ -8,7 +8,8 @@ words:
   - { word: egg, imagePrompt: "a plain white egg", source: svg }
   - { word: elephant, imagePrompt: "a friendly cartoon elephant", source: openai }
 narration:
-  intro: "This is the letter E. E says eh, eh, egg!"
+  intro: "This is the letter E."
+  introWord: egg
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter E!"

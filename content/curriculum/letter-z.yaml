@@ -8,7 +8,8 @@ words:
   - { word: zebra, imagePrompt: "a friendly cartoon zebra", source: openai }
   - { word: zip, imagePrompt: "a zipper closing a small pouch", source: svg }
 narration:
-  intro: "This is the letter Z. Z says zz, zz, zebra!"
+  intro: "This is the letter Z."
+  introWord: zebra
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter Z!"

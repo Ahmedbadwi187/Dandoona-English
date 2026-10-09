@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "track": "little-learners",
+  "unit": "my-family",
+  "version": 5,
+  "contentHash": "8aba9701b8c484078afc79d91653e3782dc74aef1d87559516c33f0caceca1ba",
+  "lessons": [
+    {
+      "id": "my-family-1",
+      "order": 1,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/my_family_1/intro.mp3",
+        "praise": [
+          "audio/little_learners/my_family_1/praise_0.mp3",
+          "audio/little_learners/my_family_1/praise_1.mp3",
+          "audio/little_learners/my_family_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/my_family_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/my_family_1/instr_match_picture.mp3",
+          "memory": "audio/little_learners/my_family_1/instr_memory.mp3",
+          "record-and-listen": "audio/little_learners/my_family_1/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "mom",
+          "audio": "audio/little_learners/my_family_1/word_mom.mp3",
+          "image": "images/little_learners/my_family_1/mom.webp",
+          "phrase": "audio/little_learners/my_family_1/phrase_mom.mp3",
+          "group": "parents",
+          "phraseText": "This is my mom."
+        },
+        {
+          "word": "dad",
+          "audio": "audio/little_learners/my_family_1/word_dad.mp3",
+          "image": "images/little_learners/my_family_1/dad.webp",
+          "phrase": "audio/little_learners/my_family_1/phrase_dad.mp3",
+          "group": "parents",
+          "phraseText": "This is my dad."
+        },
+        {
+          "word": "baby",
+          "audio": "audio/little_learners/my_family_1/word_baby.mp3",
+          "image": "images/little_learners/my_family_1/baby.webp",
+          "phrase": "audio/little_learners/my_family_1/phrase_baby.mp3",
+          "group": "children",
+          "phraseText": "This is my baby."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "my-family-2",
+      "order": 2,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/my_family_2/intro.mp3",
+        "praise": [
+          "audio/little_learners/my_family_2/praise_0.mp3",
+          "audio/little_learners/my_family_2/praise_1.mp3",
+          "audio/little_learners/my_family_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/my_family_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/my_family_2/instr_match_picture.mp3",
+          "memory": "audio/little_learners/my_family_2/instr_memory.mp3",
+          "odd-one-out": "audio/little_learners/my_family_2/instr_odd_one_out.mp3",
+          "record-and-listen": "audio/little_learners/my_family_2/instr_record_and_listen.mp3",
+          "sentence": "audio/little_learners/my_family_2/instr_sentence.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "grandma",
+          "audio": "audio/little_learners/my_family_2/word_grandma.mp3",
+          "image": "images/little_learners/my_family_2/grandma.webp",
+          "phrase": "audio/little_learners/my_family_2/phrase_grandma.mp3",
+          "group": "grandparents",
+          "phraseText": "This is my grandma."
+        },
+        {
+          "word": "grandpa",
+          "audio": "audio/little_learners/my_family_2/word_grandpa.mp3",
+          "image": "images/little_learners/my_family_2/grandpa.webp",
+          "phrase": "audio/little_learners/my_family_2/phrase_grandpa.mp3",
+          "group": "grandparents",
+          "phraseText": "This is my grandpa."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "odd-one-out",
+        "sentence",
+        "memory",
+        "record-and-listen"
+      ],
+      "odd": [
+        "apple",
+        "car",
+        "ball",
+        "hat",
+        "tree"
+      ]
+    },
+    {
+      "id": "my-family-3",
+      "order": 3,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/my_family_3/intro.mp3",
+        "praise": [
+          "audio/little_learners/my_family_3/praise_0.mp3",
+          "audio/little_learners/my_family_3/praise_1.mp3",
+          "audio/little_learners/my_family_3/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/my_family_3/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/my_family_3/instr_match_picture.mp3",
+          "memory": "audio/little_learners/my_family_3/instr_memory.mp3",
+          "record-and-listen": "audio/little_learners/my_family_3/instr_record_and_listen.mp3",
+          "sort": "audio/little_learners/my_family_3/instr_sort.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "brother",
+          "audio": "audio/little_learners/my_family_3/word_brother.mp3",
+          "image": "images/little_learners/my_family_3/brother.webp",
+          "phrase": "audio/little_learners/my_family_3/phrase_brother.mp3",
+          "group": "children",
+          "phraseText": "This is my brother."
+        },
+        {
+          "word": "sister",
+          "audio": "audio/little_learners/my_family_3/word_sister.mp3",
+          "image": "images/little_learners/my_family_3/sister.webp",
+          "phrase": "audio/little_learners/my_family_3/phrase_sister.mp3",
+          "group": "children",
+          "phraseText": "This is my sister."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "sort",
+        "record-and-listen"
+      ],
+      "bins": [
+        {
+          "key": "grandparents",
+          "icon": "elder"
+        },
+        {
+          "key": "parents",
+          "icon": "parents"
+        },
+        {
+          "key": "children",
+          "icon": "child"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/little_learners/my_family_1/instr_listen_and_tap.mp3",
+      "sha256": "e70a2b55b532dc4a90a8a5b4351fd468b37c32c46a36965a4ca5af8d10b672d8",
+      "bytes": 17597
+    },
+    {
+      "path": "audio/little_learners/my_family_1/instr_match_picture.mp3",
+      "sha256": "5a0f2ea77b05025d6903cc2014027f47f95219ccfbc04f84e80ca35c8ef73dd6",
+      "bytes": 19896
+    },
+    {
+      "path": "audio/little_learners/my_family_1/instr_memory.mp3",
+      "sha256": "022a54d45cc21c7d08d6b2d19ac4b36e9575d0e654bee24d1991b328f4a751ec",
+      "bytes": 14253
+    },
+    {
+      "path": "audio/little_learners/my_family_1/instr_record_and_listen.mp3",
+      "sha256": "2ba1ccfe33a5e00445c4d681992b301f460d6bd3a99493fc138e747e8f761e97",
+      "bytes": 16970
+    },
+    {
+      "path": "audio/little_learners/my_family_1/intro.mp3",
+      "sha256": "43719b8fe7e10a1a712e67c9cf218b89deaa7a246c00a1254b182c5d6545d48c",
+      "bytes": 36614
+    },
+    {
+      "path": "audio/little_learners/my_family_1/phrase_baby.mp3",
+      "sha256": "06ecb6a7752ec15d50949468a75ab3ec649f25a23a4ead49c25a77435c33af3f",
+      "bytes": 12790
+    },
+    {
+      "path": "audio/little_learners/my_family_1/phrase_dad.mp3",
+      "sha256": "64d91ec60c8a2aecef97f70f196d9d54f551234ef09795d4d1411886213eef4c",
+      "bytes": 12372
+    },
+    {
+      "path": "audio/little_learners/my_family_1/phrase_mom.mp3",
+      "sha256": "6de50f113636300d8e933e68f4bf323cfa283a9846b328b20684fdbb350eaa9c",
+      "bytes": 13208
+    },
+    {
+      "path": "audio/little_learners/my_family_1/praise_0.mp3",
+      "sha256": "e8d64e2d9e11c3998fcf93e5ed49ab215564ea153c977b27fb292ff94ad1068b",
+      "bytes": 10492
+    },
+    {
+      "path": "audio/little_learners/my_family_1/praise_1.mp3",
+      "sha256": "05ee27212fa061e964cf9fc541301b53dca6d1b0ca775e3f39e618bcecfb2c0e",
+      "bytes": 10909
+    },
+    {
+      "path": "audio/little_learners/my_family_1/praise_2.mp3",
+      "sha256": "a592db91c79684366436e2b71d6df7bcb2f7552b04bd4d1d7e80db601d520feb",
+      "bytes": 9865
+    },
+    {
+      "path": "audio/little_learners/my_family_1/word_baby.mp3",
+      "sha256": "4d05f94d11540ae89a7c9ea04103a278a0b6f9a25ab8769a9ae31c87590ce646",
+      "bytes": 7984
+    },
+    {
+      "path": "audio/little_learners/my_family_1/word_dad.mp3",
+      "sha256": "82270a10272eea00a97aa7803b476052b76b8c3a6ed39de1118959387861c3ea",
+      "bytes": 7984
+    },
+    {
+      "path": "audio/little_learners/my_family_1/word_mom.mp3",
+      "sha256": "8eb6601fb5196779f24b98364305ef3c707591b09c16fc9fd3a942e9071ce5ff",
+      "bytes": 8402
+    },
+    {
+      "path": "audio/little_learners/my_family_2/instr_listen_and_tap.mp3",
+      "sha256": "bbfed72b4ecdc33a46bf3501287665ba06d8e09c9a7186020dfc1d0fb668c43c",
+      "bytes": 18433
+    },
+    {
+      "path": "audio/little_learners/my_family_2/instr_match_picture.mp3",
+      "sha256": "33478dff9b7fa8dfff236b00fb675e8ebdfe05662a81efa72d6a9d6322512294",
+      "bytes": 19478
+    },
+    {
+      "path": "audio/little_learners/my_family_2/instr_memory.mp3",
+      "sha256": "18ef66f8ef5145fce29e13384ba42c6cd7cc79c3053983cdebeab1b103af305b",
+      "bytes": 15507
+    },
+    {
+      "path": "audio/little_learners/my_family_2/instr_odd_one_out.mp3",
+      "sha256": "055231f7c2efb8837eb0e6c2fa8875e09d05b3269a7e1efa51a8d5bd7bb786b0",
+      "bytes": 15716
+    },
+    {
+      "path": "audio/little_learners/my_family_2/instr_record_and_listen.mp3",
+      "sha256": "143db3346788d79d9919bc7e411819e681006cde387dc2849147bfcf4db00a25",
+      "bytes": 14671
+    },
+    {
+      "path": "audio/little_learners/my_family_2/instr_sentence.mp3",
+      "sha256": "cf20bff8f3a7d233b3989997180cbcc9be6ba4f27b59091d2a88a4163efcb998",
+      "bytes": 23657
+    },
+    {
+      "path": "audio/little_learners/my_family_2/intro.mp3",
+      "sha256": "ee6a3b68891cdd171f716c18f539c6420d823c2023372dd6acd32db91eb46f8a",
+      "bytes": 27001
+    },
+    {
+      "path": "audio/little_learners/my_family_2/phrase_grandma.mp3",
+      "sha256": "b91708dd1bc125178549a5ab151b5db8895acc6c4e89bf9829d918e597296d9b",
+      "bytes": 13626
+    },
+    {
+      "path": "audio/little_learners/my_family_2/phrase_grandpa.mp3",
+      "sha256": "d7af2e0c9158853af8486a01f8535c7bb6c63f408fbd40ef08d7ec549c77d1be",
+      "bytes": 13835
+    },
+    {
+      "path": "audio/little_learners/my_family_2/praise_0.mp3",
+      "sha256": "b8a394d02b37e5f62037a4006fc63b342397931182584dc179345492eff9dea2",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/my_family_2/praise_1.mp3",
+      "sha256": "dce5dc693532090b86f31ae7710cc6b372ab03eec1f4f97697d756bd99f62d64",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/my_family_2/praise_2.mp3",
+      "sha256": "05c96ba364aa6fd7f5e7aac03b7f492070bd1ead7026ca8f1eda48b1662bc335",
+      "bytes": 10492
+    },
+    {
+      "path": "audio/little_learners/my_family_2/word_grandma.mp3",
+      "sha256": "ab51bc2b1797aaf6fc16e513d417c13e947de8b9f9816e3442bf9ad015451d0f",
+      "bytes": 9029
+    },
+    {
+      "path": "audio/little_learners/my_family_2/word_grandpa.mp3",
+      "sha256": "af09fd6310ee3e2135c33f5b4e3f108b1bbd1ce43f0b6aaf34c26e738bad76e4",
+      "bytes": 9447
+    },
+    {
+      "path": "audio/little_learners/my_family_3/instr_listen_and_tap.mp3",
+      "sha256": "68d52226498d8f679af094a149e9435cc6a284298da4b3131ca10a1086e5bb7f",
+      "bytes": 18433
+    },
+    {
+      "path": "audio/little_learners/my_family_3/instr_match_picture.mp3",
+      "sha256": "cc07771bc62f5ae2d957b33a2578c623ccf1379d140c416fa488bf9b450ec744",
+      "bytes": 18851
+    },
+    {
+      "path": "audio/little_learners/my_family_3/instr_memory.mp3",
+      "sha256": "def98a2a61a8385918d76c27cacb66960a4436022274aef1eeb071a0a0a1b7aa",
+      "bytes": 13208
+    },
+    {
+      "path": "audio/little_learners/my_family_3/instr_record_and_listen.mp3",
+      "sha256": "033638221834189acf4bfc109d081235b0cd7e956ee1685c38017bcc695bff35",
+      "bytes": 15089
+    },
+    {
+      "path": "audio/little_learners/my_family_3/instr_sort.mp3",
+      "sha256": "1dc23964a324b695907c867525b68beb812c74c85dd4fd7b74fed2ac56a1a8cc",
+      "bytes": 16970
+    },
+    {
+      "path": "audio/little_learners/my_family_3/intro.mp3",
+      "sha256": "9a833fc5a1b3bac715d2564a628313a650835283f375b403381019d024f8234f",
+      "bytes": 31389
+    },
+    {
+      "path": "audio/little_learners/my_family_3/phrase_brother.mp3",
+      "sha256": "c7de9b7dd0c8fa421caa56dbe4609d795664bd3f1e8780a491ae1afb36524b12",
+      "bytes": 12790
+    },
+    {
+      "path": "audio/little_learners/my_family_3/phrase_sister.mp3",
+      "sha256": "65f39cd177ba07c253fba89b019eb49450d08f20356f1bfe3fc8eeba0b419524",
+      "bytes": 13626
+    },
+    {
+      "path": "audio/little_learners/my_family_3/praise_0.mp3",
+      "sha256": "5f57692a48953b0918482a7760031e50f5d81e51390eff3d1246158f1f87274d",
+      "bytes": 10492
+    },
+    {
+      "path": "audio/little_learners/my_family_3/praise_1.mp3",
+      "sha256": "57470964f78825a87f3e2ea1aac2d5395b9a1faab04f761229b7d9a1b06d6cf1",
+      "bytes": 9029
+    },
+    {
+      "path": "audio/little_learners/my_family_3/praise_2.mp3",
+      "sha256": "e997f284d78cdf1c7c09a10f3b454157f0c38355b7f59d2bc1b653ce5e653f7c",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/my_family_3/word_brother.mp3",
+      "sha256": "8ed90ba778d1aa00950d64945a5fd5f3547d5fb47cf7c6f8d150211ab81b594c",
+      "bytes": 7984
+    },
+    {
+      "path": "audio/little_learners/my_family_3/word_sister.mp3",
+      "sha256": "98dc0c3ab4efb8dc51b7125013ec022023edb2f134deb6a624367a46f246fa38",
+      "bytes": 8820
+    },
+    {
+      "path": "images/little_learners/my_family_1/baby.webp",
+      "sha256": "c0576a3a7c0a250f9d45860fa4a4169448e13f88c07bac1bd53126e80765bb74",
+      "bytes": 15174
+    },
+    {
+      "path": "images/little_learners/my_family_1/dad.webp",
+      "sha256": "ac8331b44c078078a5ed8ede9620977d5b36e94dd3c4ea767f85ecd969947a10",
+      "bytes": 16088
+    },
+    {
+      "path": "images/little_learners/my_family_1/mom.webp",
+      "sha256": "d076126bc2bd97dcc89456d63b025ea95a3af70ff7306ee5a3890952eb2b7172",
+      "bytes": 19910
+    },
+    {
+      "path": "images/little_learners/my_family_2/grandma.webp",
+      "sha256": "6df9bd563d7f10379d3c3c7d67999dc2ccfb7eef5bb2fb43423b890b00604a05",
+      "bytes": 19936
+    },
+    {
+      "path": "images/little_learners/my_family_2/grandpa.webp",
+      "sha256": "4437d63e211aa08fe21066a62b0ac8d598c8118f4bcd1e110c8c61892e01f385",
+      "bytes": 16282
+    },
+    {
+      "path": "images/little_learners/my_family_3/brother.webp",
+      "sha256": "859363c544ad4d39c79cb1bd68dde3a371884fdd79612e03e96e210f7e7a873f",
+      "bytes": 16666
+    },
+    {
+      "path": "images/little_learners/my_family_3/sister.webp",
+      "sha256": "42a3517b9326d74eacb66d3f1cd5dddd1a5d82451609b3a50156d097dba8f043",
+      "bytes": 18092
+    }
+  ]
+}

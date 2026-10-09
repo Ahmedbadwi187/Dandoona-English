@@ -8,7 +8,8 @@ words:
   - { word: box, imagePrompt: "a brown cardboard box", source: svg }
   - { word: xylophone, imagePrompt: "a colorful xylophone with two mallets", source: svg }
 narration:
-  intro: "This is the letter X. X says ks, ks, box!"
+  intro: "This is the letter X."
+  introWord: box
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter X!"

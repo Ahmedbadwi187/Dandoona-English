@@ -8,7 +8,8 @@ words:
   - { word: sun, imagePrompt: "a happy yellow sun with rays", source: svg }
   - { word: snake, imagePrompt: "a friendly cartoon green snake coiled", source: openai }
 narration:
-  intro: "This is the letter S. S says ss, ss, sun!"
+  intro: "This is the letter S."
+  introWord: sun
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter S!"

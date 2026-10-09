@@ -8,7 +8,8 @@ words:
   - { word: fish, imagePrompt: "a simple orange fish", source: svg }
   - { word: frog, imagePrompt: "a cute green cartoon frog sitting", source: openai }
 narration:
-  intro: "This is the letter F. F says ff, ff, fish!"
+  intro: "This is the letter F."
+  introWord: fish
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter F!"

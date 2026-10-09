@@ -8,7 +8,8 @@ words:
   - { word: gift, imagePrompt: "a wrapped gift box with a bow", source: svg }
   - { word: goat, imagePrompt: "a friendly cartoon goat", source: openai }
 narration:
-  intro: "This is the letter G. G says guh, guh, gift!"
+  intro: "This is the letter G."
+  introWord: gift
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter G!"

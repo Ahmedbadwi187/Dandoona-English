@@ -1,0 +1,3594 @@
+[
+ {
+  "track": "little-learners",
+  "lesson": "actions-1",
+  "file": "word-clap.gen.mp3",
+  "expected": "clap",
+  "heard": "Clap.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "actions-1",
+  "file": "word-jump.gen.mp3",
+  "expected": "jump",
+  "heard": "Jump.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "actions-1",
+  "file": "word-wave.gen.mp3",
+  "expected": "wave",
+  "heard": "Wave.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "actions-2",
+  "file": "word-point.gen.mp3",
+  "expected": "point",
+  "heard": "Point",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "actions-2",
+  "file": "word-run.gen.mp3",
+  "expected": "run",
+  "heard": "Run.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "actions-2",
+  "file": "word-think.gen.mp3",
+  "expected": "think",
+  "heard": "Think.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "actions-3",
+  "file": "word-dance.gen.mp3",
+  "expected": "dance",
+  "heard": "Dance.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "actions-3",
+  "file": "word-sit.gen.mp3",
+  "expected": "sit",
+  "heard": "Sit.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "actions-3",
+  "file": "word-sleep.gen.mp3",
+  "expected": "sleep",
+  "heard": "Sleep.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "animals-1",
+  "file": "word-cat.gen.mp3",
+  "expected": "cat",
+  "heard": "Cat.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "animals-1",
+  "file": "word-dog.gen.mp3",
+  "expected": "dog",
+  "heard": "Dog",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "animals-1",
+  "file": "word-rabbit.gen.mp3",
+  "expected": "rabbit",
+  "heard": "rabbit",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "animals-2",
+  "file": "word-cow.gen.mp3",
+  "expected": "cow",
+  "heard": "Cow.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "animals-2",
+  "file": "word-horse.gen.mp3",
+  "expected": "horse",
+  "heard": "Horse.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "animals-2",
+  "file": "word-pig.gen.mp3",
+  "expected": "pig",
+  "heard": "Pig.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "animals-3",
+  "file": "word-duck.gen.mp3",
+  "expected": "duck",
+  "heard": "Duck.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "animals-3",
+  "file": "word-fish.gen.mp3",
+  "expected": "fish",
+  "heard": "Fish.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "animals-3",
+  "file": "word-frog.gen.mp3",
+  "expected": "frog",
+  "heard": "Frog.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "animals-4",
+  "file": "word-elephant.gen.mp3",
+  "expected": "elephant",
+  "heard": "Elephant.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "animals-4",
+  "file": "word-lion.gen.mp3",
+  "expected": "lion",
+  "heard": "Lion",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "animals-4",
+  "file": "word-monkey.gen.mp3",
+  "expected": "monkey",
+  "heard": "Monkey",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "animals-5",
+  "file": "word-bear.gen.mp3",
+  "expected": "bear",
+  "heard": "Bear.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "animals-5",
+  "file": "word-tiger.gen.mp3",
+  "expected": "tiger",
+  "heard": "Tiger",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "animals-5",
+  "file": "word-zebra.gen.mp3",
+  "expected": "zebra",
+  "heard": "Zebra",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "clothes-1",
+  "file": "word-dress.gen.mp3",
+  "expected": "dress",
+  "heard": "Dress.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "clothes-1",
+  "file": "word-pants.gen.mp3",
+  "expected": "pants",
+  "heard": "Pants.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "clothes-1",
+  "file": "word-shirt.gen.mp3",
+  "expected": "shirt",
+  "heard": "shirt.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "clothes-2",
+  "file": "word-hat.gen.mp3",
+  "expected": "hat",
+  "heard": "Hut.",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "clothes-2",
+  "file": "word-shoes.gen.mp3",
+  "expected": "shoes",
+  "heard": "shoes.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "clothes-2",
+  "file": "word-socks.gen.mp3",
+  "expected": "socks",
+  "heard": "Socks.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "clothes-3",
+  "file": "word-gloves.gen.mp3",
+  "expected": "gloves",
+  "heard": "Gloves.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "clothes-3",
+  "file": "word-jacket.gen.mp3",
+  "expected": "jacket",
+  "heard": "Jacket",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "clothes-3",
+  "file": "word-scarf.gen.mp3",
+  "expected": "scarf",
+  "heard": "scarf",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-black",
+  "file": "word-cat.gen.mp3",
+  "expected": "cat",
+  "heard": "Cat",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-black",
+  "file": "word-spider.gen.mp3",
+  "expected": "spider",
+  "heard": "Spider.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-black",
+  "file": "word-tire.gen.mp3",
+  "expected": "tire",
+  "heard": "T-T-T-T-T-T",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-blue",
+  "file": "word-balloon.gen.mp3",
+  "expected": "balloon",
+  "heard": "balloon",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-blue",
+  "file": "word-cloud.gen.mp3",
+  "expected": "cloud",
+  "heard": "Cloud",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-blue",
+  "file": "word-whale.gen.mp3",
+  "expected": "whale",
+  "heard": "Whale.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-brown",
+  "file": "word-bear.gen.mp3",
+  "expected": "bear",
+  "heard": "There.",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-brown",
+  "file": "word-monkey.gen.mp3",
+  "expected": "monkey",
+  "heard": "monkey",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-brown",
+  "file": "word-nut.gen.mp3",
+  "expected": "nut",
+  "heard": "Not.",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-green",
+  "file": "word-frog.gen.mp3",
+  "expected": "frog",
+  "heard": "Frog.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-green",
+  "file": "word-leaf.gen.mp3",
+  "expected": "leaf",
+  "heard": "Leaf.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-green",
+  "file": "word-tree.gen.mp3",
+  "expected": "tree",
+  "heard": "Tree",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-orange",
+  "file": "word-carrot.gen.mp3",
+  "expected": "carrot",
+  "heard": "Carrot",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-orange",
+  "file": "word-orange.gen.mp3",
+  "expected": "orange",
+  "heard": "orange",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-orange",
+  "file": "word-pumpkin.gen.mp3",
+  "expected": "pumpkin",
+  "heard": "Pumpkin",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-pink",
+  "file": "word-bow.gen.mp3",
+  "expected": "bow",
+  "heard": "Bow.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-pink",
+  "file": "word-cupcake.gen.mp3",
+  "expected": "cupcake",
+  "heard": "cupcake.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-pink",
+  "file": "word-pig.gen.mp3",
+  "expected": "pig",
+  "heard": "Pig",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-purple",
+  "file": "word-eggplant.gen.mp3",
+  "expected": "eggplant",
+  "heard": "Eggplant.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-purple",
+  "file": "word-flower.gen.mp3",
+  "expected": "flower",
+  "heard": "Flower.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-purple",
+  "file": "word-grapes.gen.mp3",
+  "expected": "grapes",
+  "heard": "Grapes",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-red",
+  "file": "word-apple.gen.mp3",
+  "expected": "apple",
+  "heard": "Apple",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-red",
+  "file": "word-heart.gen.mp3",
+  "expected": "heart",
+  "heard": "Heart.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-red",
+  "file": "word-strawberry.gen.mp3",
+  "expected": "strawberry",
+  "heard": "Strawberry.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-white",
+  "file": "word-egg.gen.mp3",
+  "expected": "egg",
+  "heard": "egg.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-white",
+  "file": "word-milk.gen.mp3",
+  "expected": "milk",
+  "heard": "Milk",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-white",
+  "file": "word-snowman.gen.mp3",
+  "expected": "snowman",
+  "heard": "Snowman.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-yellow",
+  "file": "word-banana.gen.mp3",
+  "expected": "banana",
+  "heard": "Banana",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-yellow",
+  "file": "word-duck.gen.mp3",
+  "expected": "duck",
+  "heard": "Duck.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "color-yellow",
+  "file": "word-sun.gen.mp3",
+  "expected": "sun",
+  "heard": "The sun.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "feelings-1",
+  "file": "word-angry.gen.mp3",
+  "expected": "angry",
+  "heard": "angry",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "feelings-1",
+  "file": "word-happy.gen.mp3",
+  "expected": "happy",
+  "heard": "Happy",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "feelings-1",
+  "file": "word-sad.gen.mp3",
+  "expected": "sad",
+  "heard": "Sad.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "feelings-2",
+  "file": "word-scared.gen.mp3",
+  "expected": "scared",
+  "heard": "Scared",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "feelings-2",
+  "file": "word-sleepy.gen.mp3",
+  "expected": "sleepy",
+  "heard": "Sleepy.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "feelings-2",
+  "file": "word-surprised.gen.mp3",
+  "expected": "surprised",
+  "heard": "Surprised",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "food-1",
+  "file": "word-apple.gen.mp3",
+  "expected": "apple",
+  "heard": "Apple",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "food-1",
+  "file": "word-banana.gen.mp3",
+  "expected": "banana",
+  "heard": "Banana",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "food-1",
+  "file": "word-orange.gen.mp3",
+  "expected": "orange",
+  "heard": "orange",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "food-2",
+  "file": "word-carrot.gen.mp3",
+  "expected": "carrot",
+  "heard": "Carrot",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "food-2",
+  "file": "word-grapes.gen.mp3",
+  "expected": "grapes",
+  "heard": "Grapes.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "food-2",
+  "file": "word-strawberry.gen.mp3",
+  "expected": "strawberry",
+  "heard": "Strawberry.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "food-3",
+  "file": "word-egg.gen.mp3",
+  "expected": "egg",
+  "heard": "egg.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "food-3",
+  "file": "word-juice.gen.mp3",
+  "expected": "juice",
+  "heard": "juice.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "food-3",
+  "file": "word-milk.gen.mp3",
+  "expected": "milk",
+  "heard": "milk.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "food-4",
+  "file": "word-cupcake.gen.mp3",
+  "expected": "cupcake",
+  "heard": "cupcake.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "food-4",
+  "file": "word-ice-cream.gen.mp3",
+  "expected": "ice cream",
+  "heard": "ice cream.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "food-4",
+  "file": "word-pizza.gen.mp3",
+  "expected": "pizza",
+  "heard": "Pizza",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-a",
+  "file": "word-alligator.gen.mp3",
+  "expected": "alligator",
+  "heard": "Alligator.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-a",
+  "file": "word-ant.gen.mp3",
+  "expected": "ant",
+  "heard": "and",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-a",
+  "file": "word-apple.gen.mp3",
+  "expected": "apple",
+  "heard": "Apple.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-b",
+  "file": "word-ball.gen.mp3",
+  "expected": "ball",
+  "heard": "Ball.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-b",
+  "file": "word-banana.gen.mp3",
+  "expected": "banana",
+  "heard": "Banana",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-b",
+  "file": "word-bear.gen.mp3",
+  "expected": "bear",
+  "heard": "Bear.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-c",
+  "file": "word-car.gen.mp3",
+  "expected": "car",
+  "heard": "Cuh-huh.",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-c",
+  "file": "word-cat.gen.mp3",
+  "expected": "cat",
+  "heard": "cat",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-c",
+  "file": "word-cow.gen.mp3",
+  "expected": "cow",
+  "heard": "Cow.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-d",
+  "file": "word-dog.gen.mp3",
+  "expected": "dog",
+  "heard": "DOG",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-d",
+  "file": "word-duck.gen.mp3",
+  "expected": "duck",
+  "heard": "Duck!",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-e",
+  "file": "word-egg.gen.mp3",
+  "expected": "egg",
+  "heard": "Egg",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-e",
+  "file": "word-elephant.gen.mp3",
+  "expected": "elephant",
+  "heard": "Elephant.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-f",
+  "file": "word-fish.gen.mp3",
+  "expected": "fish",
+  "heard": "Fish.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-f",
+  "file": "word-frog.gen.mp3",
+  "expected": "frog",
+  "heard": "Frog.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-g",
+  "file": "word-gift.gen.mp3",
+  "expected": "gift",
+  "heard": "Gift.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-g",
+  "file": "word-goat.gen.mp3",
+  "expected": "goat",
+  "heard": "Goat.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-h",
+  "file": "word-hat.gen.mp3",
+  "expected": "hat",
+  "heard": "Hat.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-h",
+  "file": "word-horse.gen.mp3",
+  "expected": "horse",
+  "heard": "Horse.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-i",
+  "file": "word-ice-cream.gen.mp3",
+  "expected": "ice cream",
+  "heard": "ice cream.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-i",
+  "file": "word-igloo.gen.mp3",
+  "expected": "igloo",
+  "heard": "It glow.",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-j",
+  "file": "word-jar.gen.mp3",
+  "expected": "jar",
+  "heard": "JAR",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-j",
+  "file": "word-juice.gen.mp3",
+  "expected": "juice",
+  "heard": "Juice.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-k",
+  "file": "word-key.gen.mp3",
+  "expected": "key",
+  "heard": "Key.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-k",
+  "file": "word-kite.gen.mp3",
+  "expected": "kite",
+  "heard": "Q-Tear",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-l",
+  "file": "word-leaf.gen.mp3",
+  "expected": "leaf",
+  "heard": "Leaf.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-l",
+  "file": "word-lion.gen.mp3",
+  "expected": "lion",
+  "heard": "Lion",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-m",
+  "file": "word-monkey.gen.mp3",
+  "expected": "monkey",
+  "heard": "monkey",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-m",
+  "file": "word-moon.gen.mp3",
+  "expected": "moon",
+  "heard": "Moon",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-n",
+  "file": "word-nest.gen.mp3",
+  "expected": "nest",
+  "heard": "Nest.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-n",
+  "file": "word-nut.gen.mp3",
+  "expected": "nut",
+  "heard": "Not.",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-o",
+  "file": "word-octopus.gen.mp3",
+  "expected": "octopus",
+  "heard": "Octopus.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-o",
+  "file": "word-orange.gen.mp3",
+  "expected": "orange",
+  "heard": "orange",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-p",
+  "file": "word-pig.gen.mp3",
+  "expected": "pig",
+  "heard": "Pig.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-p",
+  "file": "word-pizza.gen.mp3",
+  "expected": "pizza",
+  "heard": "Pizza",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-q",
+  "file": "word-queen.gen.mp3",
+  "expected": "queen",
+  "heard": "Queen",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-q",
+  "file": "word-quilt.gen.mp3",
+  "expected": "quilt",
+  "heard": "quilt",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-r",
+  "file": "word-rabbit.gen.mp3",
+  "expected": "rabbit",
+  "heard": "rabbit.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-r",
+  "file": "word-rainbow.gen.mp3",
+  "expected": "rainbow",
+  "heard": "Rainbow",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-s",
+  "file": "word-snake.gen.mp3",
+  "expected": "snake",
+  "heard": "Snake.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-s",
+  "file": "word-sun.gen.mp3",
+  "expected": "sun",
+  "heard": "Son",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-t",
+  "file": "word-tiger.gen.mp3",
+  "expected": "tiger",
+  "heard": "Tiger",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-t",
+  "file": "word-tree.gen.mp3",
+  "expected": "tree",
+  "heard": "Tree",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-u",
+  "file": "word-umbrella.gen.mp3",
+  "expected": "umbrella",
+  "heard": "umbrella",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-u",
+  "file": "word-unicorn.gen.mp3",
+  "expected": "unicorn",
+  "heard": "Unicorn.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-v",
+  "file": "word-van.gen.mp3",
+  "expected": "van",
+  "heard": "Fun.",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-v",
+  "file": "word-violin.gen.mp3",
+  "expected": "violin",
+  "heard": "Violin.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-w",
+  "file": "word-whale.gen.mp3",
+  "expected": "whale",
+  "heard": "Whale.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-w",
+  "file": "word-window.gen.mp3",
+  "expected": "window",
+  "heard": "window",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-x",
+  "file": "word-box.gen.mp3",
+  "expected": "box",
+  "heard": "Box.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-x",
+  "file": "word-xylophone.gen.mp3",
+  "expected": "xylophone",
+  "heard": "xylophone",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-y",
+  "file": "word-yak.gen.mp3",
+  "expected": "yak",
+  "heard": "Yuck.",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-y",
+  "file": "word-yo-yo.gen.mp3",
+  "expected": "yo yo",
+  "heard": "Yo, yo.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-z",
+  "file": "word-zebra.gen.mp3",
+  "expected": "zebra",
+  "heard": "Zebra",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "letter-z",
+  "file": "word-zip.gen.mp3",
+  "expected": "zip",
+  "heard": "Zip.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-body-1",
+  "file": "word-ear.gen.mp3",
+  "expected": "ear",
+  "heard": "Ear.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-body-1",
+  "file": "word-eye.gen.mp3",
+  "expected": "eye",
+  "heard": "I",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-body-1",
+  "file": "word-nose.gen.mp3",
+  "expected": "nose",
+  "heard": "Nose.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-body-2",
+  "file": "word-foot.gen.mp3",
+  "expected": "foot",
+  "heard": "Foot.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-body-2",
+  "file": "word-hand.gen.mp3",
+  "expected": "hand",
+  "heard": "Hand.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-body-2",
+  "file": "word-mouth.gen.mp3",
+  "expected": "mouth",
+  "heard": "mouth.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-family-1",
+  "file": "word-baby.gen.mp3",
+  "expected": "baby",
+  "heard": "Baby",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-family-1",
+  "file": "word-dad.gen.mp3",
+  "expected": "dad",
+  "heard": "Dad.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-family-1",
+  "file": "word-mom.gen.mp3",
+  "expected": "mom",
+  "heard": "Mom.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-family-2",
+  "file": "word-grandma.gen.mp3",
+  "expected": "grandma",
+  "heard": "Grandma",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-family-2",
+  "file": "word-grandpa.gen.mp3",
+  "expected": "grandpa",
+  "heard": "Grandpa?",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-family-3",
+  "file": "word-brother.gen.mp3",
+  "expected": "brother",
+  "heard": "Brother",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-family-3",
+  "file": "word-sister.gen.mp3",
+  "expected": "sister",
+  "heard": "Sister",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-home-1",
+  "file": "word-bed.gen.mp3",
+  "expected": "bed",
+  "heard": "Bed.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-home-1",
+  "file": "word-door.gen.mp3",
+  "expected": "door",
+  "heard": "door.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-home-1",
+  "file": "word-window.gen.mp3",
+  "expected": "window",
+  "heard": "window",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-home-2",
+  "file": "word-chair.gen.mp3",
+  "expected": "chair",
+  "heard": "Chair.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-home-2",
+  "file": "word-lamp.gen.mp3",
+  "expected": "lamp",
+  "heard": "Lamp.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-home-2",
+  "file": "word-table.gen.mp3",
+  "expected": "table",
+  "heard": "Table.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-home-3",
+  "file": "word-key.gen.mp3",
+  "expected": "key",
+  "heard": "Key",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "my-home-3",
+  "file": "word-sofa.gen.mp3",
+  "expected": "sofa",
+  "heard": "So far.",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "number-1-3",
+  "file": "word-one.gen.mp3",
+  "expected": "one",
+  "heard": "1.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "number-1-3",
+  "file": "word-three.gen.mp3",
+  "expected": "three",
+  "heard": "Three.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "number-1-3",
+  "file": "word-two.gen.mp3",
+  "expected": "two",
+  "heard": "Two.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "number-4-6",
+  "file": "word-five.gen.mp3",
+  "expected": "five",
+  "heard": "5",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "number-4-6",
+  "file": "word-four.gen.mp3",
+  "expected": "four",
+  "heard": "Four.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "number-4-6",
+  "file": "word-six.gen.mp3",
+  "expected": "six",
+  "heard": "6.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "number-7-10",
+  "file": "word-eight.gen.mp3",
+  "expected": "eight",
+  "heard": "8.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "number-7-10",
+  "file": "word-nine.gen.mp3",
+  "expected": "nine",
+  "heard": "9.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "number-7-10",
+  "file": "word-seven.gen.mp3",
+  "expected": "seven",
+  "heard": "7.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "number-7-10",
+  "file": "word-ten.gen.mp3",
+  "expected": "ten",
+  "heard": "10.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "opposites-1",
+  "file": "word-big.gen.mp3",
+  "expected": "big",
+  "heard": "Big.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "opposites-1",
+  "file": "word-cold.gen.mp3",
+  "expected": "cold",
+  "heard": "Cold.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "opposites-1",
+  "file": "word-hot.gen.mp3",
+  "expected": "hot",
+  "heard": "Hot.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "opposites-1",
+  "file": "word-small.gen.mp3",
+  "expected": "small",
+  "heard": "Small.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "opposites-2",
+  "file": "word-down.gen.mp3",
+  "expected": "down",
+  "heard": "Down.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "opposites-2",
+  "file": "word-fast.gen.mp3",
+  "expected": "fast",
+  "heard": "Fast.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "opposites-2",
+  "file": "word-slow.gen.mp3",
+  "expected": "slow",
+  "heard": "Slow.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "opposites-2",
+  "file": "word-up.gen.mp3",
+  "expected": "up",
+  "heard": "Up.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "shapes-1",
+  "file": "word-circle.gen.mp3",
+  "expected": "circle",
+  "heard": "circle.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "shapes-1",
+  "file": "word-square.gen.mp3",
+  "expected": "square",
+  "heard": "Square.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "shapes-1",
+  "file": "word-triangle.gen.mp3",
+  "expected": "triangle",
+  "heard": "Triangle",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "shapes-2",
+  "file": "word-diamond.gen.mp3",
+  "expected": "diamond",
+  "heard": "Diamond",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "shapes-2",
+  "file": "word-oval.gen.mp3",
+  "expected": "oval",
+  "heard": "Au revoir.",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "shapes-2",
+  "file": "word-rectangle.gen.mp3",
+  "expected": "rectangle",
+  "heard": "Rectangle",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "shapes-3",
+  "file": "word-heart.gen.mp3",
+  "expected": "heart",
+  "heard": "heart",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "shapes-3",
+  "file": "word-star.gen.mp3",
+  "expected": "star",
+  "heard": "Star.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "shapes-4",
+  "file": "word-ball.gen.mp3",
+  "expected": "ball",
+  "heard": "ball.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "shapes-4",
+  "file": "word-egg.gen.mp3",
+  "expected": "egg",
+  "heard": "Egg.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "shapes-4",
+  "file": "word-kite.gen.mp3",
+  "expected": "kite",
+  "heard": "Koote!",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "shapes-4",
+  "file": "word-window.gen.mp3",
+  "expected": "window",
+  "heard": "window",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "toys-1",
+  "file": "word-ball.gen.mp3",
+  "expected": "ball",
+  "heard": "Ball.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "toys-1",
+  "file": "word-car.gen.mp3",
+  "expected": "car",
+  "heard": "Haha.",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "toys-1",
+  "file": "word-kite.gen.mp3",
+  "expected": "kite",
+  "heard": "Kute!",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "toys-2",
+  "file": "word-balloon.gen.mp3",
+  "expected": "balloon",
+  "heard": "balloon.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "toys-2",
+  "file": "word-teddy.gen.mp3",
+  "expected": "teddy",
+  "heard": "Teddy",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "toys-2",
+  "file": "word-yo-yo.gen.mp3",
+  "expected": "yo yo",
+  "heard": "Yo-yo",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "toys-3",
+  "file": "word-blocks.gen.mp3",
+  "expected": "blocks",
+  "heard": "Blocks.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "toys-3",
+  "file": "word-doll.gen.mp3",
+  "expected": "doll",
+  "heard": "doll.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "toys-3",
+  "file": "word-drum.gen.mp3",
+  "expected": "drum",
+  "heard": "Drum.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "transport-1",
+  "file": "word-bus.gen.mp3",
+  "expected": "bus",
+  "heard": "Buss.",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "transport-1",
+  "file": "word-car.gen.mp3",
+  "expected": "car",
+  "heard": "Caw her.",
+  "ok": false
+ },
+ {
+  "track": "little-learners",
+  "lesson": "transport-1",
+  "file": "word-train.gen.mp3",
+  "expected": "train",
+  "heard": "Train",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "transport-2",
+  "file": "word-bike.gen.mp3",
+  "expected": "bike",
+  "heard": "bike",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "transport-2",
+  "file": "word-boat.gen.mp3",
+  "expected": "boat",
+  "heard": "Boat.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "transport-2",
+  "file": "word-plane.gen.mp3",
+  "expected": "plane",
+  "heard": "plane",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "transport-3",
+  "file": "word-truck.gen.mp3",
+  "expected": "truck",
+  "heard": "Truck.",
+  "ok": true
+ },
+ {
+  "track": "little-learners",
+  "lesson": "transport-3",
+  "file": "word-van.gen.mp3",
+  "expected": "van",
+  "heard": "Fun.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "blends-end",
+  "file": "word-gift.gen.mp3",
+  "expected": "gift",
+  "heard": "gift.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "blends-end",
+  "file": "word-hand.gen.mp3",
+  "expected": "hand",
+  "heard": "Hand.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "blends-end",
+  "file": "word-lamp.gen.mp3",
+  "expected": "lamp",
+  "heard": "Lamp",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "blends-end",
+  "file": "word-nest.gen.mp3",
+  "expected": "nest",
+  "heard": "Nest.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "blends-l",
+  "file": "word-blocks.gen.mp3",
+  "expected": "blocks",
+  "heard": "blocks",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "blends-l",
+  "file": "word-clap.gen.mp3",
+  "expected": "clap",
+  "heard": "Clap.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "blends-l",
+  "file": "word-flag.gen.mp3",
+  "expected": "flag",
+  "heard": "Flag.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "blends-l",
+  "file": "word-plum.gen.mp3",
+  "expected": "plum",
+  "heard": "Plumb.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "blends-r",
+  "file": "word-crab.gen.mp3",
+  "expected": "crab",
+  "heard": "Crab.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "blends-r",
+  "file": "word-drum.gen.mp3",
+  "expected": "drum",
+  "heard": "Drum.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "blends-r",
+  "file": "word-frog.gen.mp3",
+  "expected": "frog",
+  "heard": "frog",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "blends-r",
+  "file": "word-truck.gen.mp3",
+  "expected": "truck",
+  "heard": "Truck?",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-ch",
+  "file": "word-bench.gen.mp3",
+  "expected": "bench",
+  "heard": "Bench.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-ch",
+  "file": "word-chick.gen.mp3",
+  "expected": "chick",
+  "heard": "Check.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-ch",
+  "file": "word-chip.gen.mp3",
+  "expected": "chip",
+  "heard": "Chip",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-ch",
+  "file": "word-lunch.gen.mp3",
+  "expected": "lunch",
+  "heard": "Lunch.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-ck",
+  "file": "word-duck.gen.mp3",
+  "expected": "duck",
+  "heard": "Duck.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-ck",
+  "file": "word-kick.gen.mp3",
+  "expected": "kick",
+  "heard": "Kick.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-ck",
+  "file": "word-rock.gen.mp3",
+  "expected": "rock",
+  "heard": "Rock.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-ck",
+  "file": "word-socks.gen.mp3",
+  "expected": "socks",
+  "heard": "Socks.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-sh",
+  "file": "word-dish.gen.mp3",
+  "expected": "dish",
+  "heard": "Dish.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-sh",
+  "file": "word-fish.gen.mp3",
+  "expected": "fish",
+  "heard": "Fish.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-sh",
+  "file": "word-ship.gen.mp3",
+  "expected": "ship",
+  "heard": "Ship.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-sh",
+  "file": "word-shop.gen.mp3",
+  "expected": "shop",
+  "heard": "Shop.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-th",
+  "file": "word-bath.gen.mp3",
+  "expected": "bath",
+  "heard": "Bath.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-th",
+  "file": "word-math.gen.mp3",
+  "expected": "math",
+  "heard": "Math.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-th",
+  "file": "word-moth.gen.mp3",
+  "expected": "moth",
+  "heard": "Moth.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "digraphs-th",
+  "file": "word-path.gen.mp3",
+  "expected": "path",
+  "heard": "Path.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-meals",
+  "file": "word-breakfast.gen.mp3",
+  "expected": "breakfast",
+  "heard": "Breakfast",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-meals",
+  "file": "word-dinner.gen.mp3",
+  "expected": "dinner",
+  "heard": "Dinner.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-meals",
+  "file": "word-lunch.gen.mp3",
+  "expected": "lunch",
+  "heard": "Lunch.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-play",
+  "file": "word-bike.gen.mp3",
+  "expected": "bike",
+  "heard": "bike.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-play",
+  "file": "word-football.gen.mp3",
+  "expected": "football",
+  "heard": "football.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-play",
+  "file": "word-kite.gen.mp3",
+  "expected": "kite",
+  "heard": "Q-Tear",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-play",
+  "file": "word-paint.gen.mp3",
+  "expected": "paint",
+  "heard": "paint",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-school",
+  "file": "word-bag.gen.mp3",
+  "expected": "bag",
+  "heard": "bag.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-school",
+  "file": "word-book.gen.mp3",
+  "expected": "book",
+  "heard": "book.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-school",
+  "file": "word-pencil.gen.mp3",
+  "expected": "pencil",
+  "heard": "Pencil",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-school",
+  "file": "word-ruler.gen.mp3",
+  "expected": "ruler",
+  "heard": "Ruler",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-town",
+  "file": "word-hospital.gen.mp3",
+  "expected": "hospital",
+  "heard": "hospital.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-town",
+  "file": "word-park.gen.mp3",
+  "expected": "park",
+  "heard": "Park.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-town",
+  "file": "word-school.gen.mp3",
+  "expected": "school",
+  "heard": "school.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-town",
+  "file": "word-shop.gen.mp3",
+  "expected": "shop",
+  "heard": "Shop.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-weather-1",
+  "file": "word-cloudy.gen.mp3",
+  "expected": "cloudy",
+  "heard": "Cloudy.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-weather-1",
+  "file": "word-rainy.gen.mp3",
+  "expected": "rainy",
+  "heard": "Rainy",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-weather-1",
+  "file": "word-sunny.gen.mp3",
+  "expected": "sunny",
+  "heard": "Sunny.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-weather-2",
+  "file": "word-snowy.gen.mp3",
+  "expected": "snowy",
+  "heard": "Snowy.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-weather-2",
+  "file": "word-stormy.gen.mp3",
+  "expected": "stormy",
+  "heard": "Stormy.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "everyday-english-weather-2",
+  "file": "word-windy.gen.mp3",
+  "expected": "windy",
+  "heard": "Windy.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "grammar-starters-a-an",
+  "file": "word-apple.gen.mp3",
+  "expected": "apple",
+  "heard": "Apple",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "grammar-starters-a-an",
+  "file": "word-bed.gen.mp3",
+  "expected": "bed",
+  "heard": "Bed.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "grammar-starters-a-an",
+  "file": "word-igloo.gen.mp3",
+  "expected": "igloo",
+  "heard": "Inglue.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "grammar-starters-a-an",
+  "file": "word-orange.gen.mp3",
+  "expected": "orange",
+  "heard": "orange",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "grammar-starters-a-an",
+  "file": "word-umbrella.gen.mp3",
+  "expected": "umbrella",
+  "heard": "Umbrella",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "grammar-starters-can",
+  "file": "word-clap.gen.mp3",
+  "expected": "clap",
+  "heard": "Clap.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "grammar-starters-can",
+  "file": "word-jump.gen.mp3",
+  "expected": "jump",
+  "heard": "Jump.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "grammar-starters-can",
+  "file": "word-run.gen.mp3",
+  "expected": "run",
+  "heard": "Run.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "grammar-starters-can",
+  "file": "word-sit.gen.mp3",
+  "expected": "sit",
+  "heard": "Sit.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "grammar-starters-has-have",
+  "file": "word-cat.gen.mp3",
+  "expected": "cat",
+  "heard": "cat",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "grammar-starters-has-have",
+  "file": "word-hen.gen.mp3",
+  "expected": "hen",
+  "heard": "Hen.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "grammar-starters-has-have",
+  "file": "word-pig.gen.mp3",
+  "expected": "pig",
+  "heard": "Pig",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "grammar-starters-is-are",
+  "file": "word-duck.gen.mp3",
+  "expected": "duck",
+  "heard": "Duck.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "grammar-starters-is-are",
+  "file": "word-fish.gen.mp3",
+  "expected": "fish",
+  "heard": "Fish.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "grammar-starters-is-are",
+  "file": "word-frog.gen.mp3",
+  "expected": "frog",
+  "heard": "Frog.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "magic-e-a",
+  "file": "word-cake.gen.mp3",
+  "expected": "cake",
+  "heard": "Cake.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "magic-e-a",
+  "file": "word-grapes.gen.mp3",
+  "expected": "grapes",
+  "heard": "Grapes",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "magic-e-a",
+  "file": "word-plane.gen.mp3",
+  "expected": "plane",
+  "heard": "plane",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "magic-e-a",
+  "file": "word-snake.gen.mp3",
+  "expected": "snake",
+  "heard": "Snake.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "magic-e-i",
+  "file": "word-bike.gen.mp3",
+  "expected": "bike",
+  "heard": "bike.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "magic-e-i",
+  "file": "word-five.gen.mp3",
+  "expected": "five",
+  "heard": "Five.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "magic-e-i",
+  "file": "word-kite.gen.mp3",
+  "expected": "kite",
+  "heard": "Kuteh",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "magic-e-i",
+  "file": "word-nine.gen.mp3",
+  "expected": "nine",
+  "heard": "9.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "magic-e-o-u",
+  "file": "word-bone.gen.mp3",
+  "expected": "bone",
+  "heard": "bone.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "magic-e-o-u",
+  "file": "word-cube.gen.mp3",
+  "expected": "cube",
+  "heard": "Cube.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "magic-e-o-u",
+  "file": "word-nose.gen.mp3",
+  "expected": "nose",
+  "heard": "nose",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "magic-e-o-u",
+  "file": "word-rose.gen.mp3",
+  "expected": "rose",
+  "heard": "Rose.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "my-sentences-a-an",
+  "file": "word-ant.gen.mp3",
+  "expected": "ant",
+  "heard": "and",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "my-sentences-a-an",
+  "file": "word-apple.gen.mp3",
+  "expected": "apple",
+  "heard": "Apple.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "my-sentences-a-an",
+  "file": "word-bus.gen.mp3",
+  "expected": "bus",
+  "heard": "BUS!",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "my-sentences-a-an",
+  "file": "word-cake.gen.mp3",
+  "expected": "cake",
+  "heard": "Cake?",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "my-sentences-a-an",
+  "file": "word-egg.gen.mp3",
+  "expected": "egg",
+  "heard": "egg",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "my-sentences-a-an",
+  "file": "word-hen.gen.mp3",
+  "expected": "hen",
+  "heard": "Hen.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "my-sentences-is-are",
+  "file": "word-cat.gen.mp3",
+  "expected": "cat",
+  "heard": "cat",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "my-sentences-is-are",
+  "file": "word-dog.gen.mp3",
+  "expected": "dog",
+  "heard": "Dog",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "my-sentences-is-are",
+  "file": "word-duck.gen.mp3",
+  "expected": "duck",
+  "heard": "Duck.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "my-sentences-is-are",
+  "file": "word-pig.gen.mp3",
+  "expected": "pig",
+  "heard": "Pig",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "my-sentences-mix",
+  "file": "word-egg.gen.mp3",
+  "expected": "egg",
+  "heard": "Egg.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "my-sentences-mix",
+  "file": "word-fish.gen.mp3",
+  "expected": "fish",
+  "heard": "Fish.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "my-sentences-mix",
+  "file": "word-frog.gen.mp3",
+  "expected": "frog",
+  "heard": "Frog.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "my-sentences-mix",
+  "file": "word-kite.gen.mp3",
+  "expected": "kite",
+  "heard": "Good day.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "my-sentences-mix",
+  "file": "word-ship.gen.mp3",
+  "expected": "ship",
+  "heard": "Ship.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-clock-1",
+  "file": "word-one-o-clock.gen.mp3",
+  "expected": "one o clock",
+  "heard": "1 o'clock.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-clock-1",
+  "file": "word-three-o-clock.gen.mp3",
+  "expected": "three o clock",
+  "heard": "3 o'clock.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-clock-1",
+  "file": "word-two-o-clock.gen.mp3",
+  "expected": "two o clock",
+  "heard": "2 o'clock.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-clock-2",
+  "file": "word-five-o-clock.gen.mp3",
+  "expected": "five o clock",
+  "heard": "5 o'clock.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-clock-2",
+  "file": "word-four-o-clock.gen.mp3",
+  "expected": "four o clock",
+  "heard": "four o'clock",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-clock-2",
+  "file": "word-six-o-clock.gen.mp3",
+  "expected": "six o clock",
+  "heard": "6 o'clock.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-clock-3",
+  "file": "word-eight-o-clock.gen.mp3",
+  "expected": "eight o clock",
+  "heard": "8 o'clock.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-clock-3",
+  "file": "word-nine-o-clock.gen.mp3",
+  "expected": "nine o clock",
+  "heard": "9 o'clock.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-clock-3",
+  "file": "word-seven-o-clock.gen.mp3",
+  "expected": "seven o clock",
+  "heard": "seven o'clock",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-clock-4",
+  "file": "word-eleven-o-clock.gen.mp3",
+  "expected": "eleven o clock",
+  "heard": "11 o'clock",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-clock-4",
+  "file": "word-ten-o-clock.gen.mp3",
+  "expected": "ten o clock",
+  "heard": "10 o'clock",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-clock-4",
+  "file": "word-twelve-o-clock.gen.mp3",
+  "expected": "twelve o clock",
+  "heard": "12 o'clock.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-days-1",
+  "file": "word-monday.gen.mp3",
+  "expected": "monday",
+  "heard": "Monday.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-days-1",
+  "file": "word-thursday.gen.mp3",
+  "expected": "thursday",
+  "heard": "Thursday.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-days-1",
+  "file": "word-tuesday.gen.mp3",
+  "expected": "tuesday",
+  "heard": "Tuesday",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-days-1",
+  "file": "word-wednesday.gen.mp3",
+  "expected": "wednesday",
+  "heard": "Wednesday.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-days-2",
+  "file": "word-friday.gen.mp3",
+  "expected": "friday",
+  "heard": "Friday.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-days-2",
+  "file": "word-saturday.gen.mp3",
+  "expected": "saturday",
+  "heard": "Saturday.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-days-2",
+  "file": "word-sunday.gen.mp3",
+  "expected": "sunday",
+  "heard": "Sunday.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-months-1",
+  "file": "word-april.gen.mp3",
+  "expected": "april",
+  "heard": "April",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-months-1",
+  "file": "word-february.gen.mp3",
+  "expected": "february",
+  "heard": "February.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-months-1",
+  "file": "word-january.gen.mp3",
+  "expected": "january",
+  "heard": "January. //",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-months-1",
+  "file": "word-march.gen.mp3",
+  "expected": "march",
+  "heard": "March",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-months-2",
+  "file": "word-august.gen.mp3",
+  "expected": "august",
+  "heard": "August.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-months-2",
+  "file": "word-july.gen.mp3",
+  "expected": "july",
+  "heard": "July",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-months-2",
+  "file": "word-june.gen.mp3",
+  "expected": "june",
+  "heard": "June.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-months-2",
+  "file": "word-may.gen.mp3",
+  "expected": "may",
+  "heard": "May",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-months-3",
+  "file": "word-december.gen.mp3",
+  "expected": "december",
+  "heard": "December",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-months-3",
+  "file": "word-november.gen.mp3",
+  "expected": "november",
+  "heard": "November",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-months-3",
+  "file": "word-october.gen.mp3",
+  "expected": "october",
+  "heard": "October",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-months-3",
+  "file": "word-september.gen.mp3",
+  "expected": "september",
+  "heard": "September.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-teens-1",
+  "file": "word-eleven.gen.mp3",
+  "expected": "eleven",
+  "heard": "11",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-teens-1",
+  "file": "word-thirteen.gen.mp3",
+  "expected": "thirteen",
+  "heard": "13.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-teens-1",
+  "file": "word-twelve.gen.mp3",
+  "expected": "twelve",
+  "heard": "12",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-teens-2",
+  "file": "word-fifteen.gen.mp3",
+  "expected": "fifteen",
+  "heard": "15.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-teens-2",
+  "file": "word-fourteen.gen.mp3",
+  "expected": "fourteen",
+  "heard": "14",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-teens-2",
+  "file": "word-sixteen.gen.mp3",
+  "expected": "sixteen",
+  "heard": "16",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-teens-3",
+  "file": "word-eighteen.gen.mp3",
+  "expected": "eighteen",
+  "heard": "18",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-teens-3",
+  "file": "word-nineteen.gen.mp3",
+  "expected": "nineteen",
+  "heard": "19",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-teens-3",
+  "file": "word-seventeen.gen.mp3",
+  "expected": "seventeen",
+  "heard": "17.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-tens-1",
+  "file": "word-forty.gen.mp3",
+  "expected": "forty",
+  "heard": "40",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-tens-1",
+  "file": "word-thirty.gen.mp3",
+  "expected": "thirty",
+  "heard": "30",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-tens-1",
+  "file": "word-twenty.gen.mp3",
+  "expected": "twenty",
+  "heard": "20",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-tens-2",
+  "file": "word-fifty.gen.mp3",
+  "expected": "fifty",
+  "heard": "50",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-tens-2",
+  "file": "word-seventy.gen.mp3",
+  "expected": "seventy",
+  "heard": "70.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-tens-2",
+  "file": "word-sixty.gen.mp3",
+  "expected": "sixty",
+  "heard": "60.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-tens-3",
+  "file": "word-eighty.gen.mp3",
+  "expected": "eighty",
+  "heard": "80",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-tens-3",
+  "file": "word-hundred.gen.mp3",
+  "expected": "hundred",
+  "heard": "100.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "numbers-time-tens-3",
+  "file": "word-ninety.gen.mp3",
+  "expected": "ninety",
+  "heard": "90",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-a",
+  "file": "sight-i.gen.mp3",
+  "expected": "i",
+  "heard": "I",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-a",
+  "file": "sight-my.gen.mp3",
+  "expected": "my",
+  "heard": "My",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-a",
+  "file": "sight-see.gen.mp3",
+  "expected": "see",
+  "heard": "See.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-a",
+  "file": "sight-the.gen.mp3",
+  "expected": "the",
+  "heard": "the",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-a",
+  "file": "word-bed.gen.mp3",
+  "expected": "bed",
+  "heard": "Bed.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-a",
+  "file": "word-cat.gen.mp3",
+  "expected": "cat",
+  "heard": "cat",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-a",
+  "file": "word-dog.gen.mp3",
+  "expected": "dog",
+  "heard": "DOG",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-a",
+  "file": "word-hat.gen.mp3",
+  "expected": "hat",
+  "heard": "HUT!",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-b",
+  "file": "sight-in.gen.mp3",
+  "expected": "in",
+  "heard": "in",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-b",
+  "file": "sight-is.gen.mp3",
+  "expected": "is",
+  "heard": "is",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-b",
+  "file": "sight-it.gen.mp3",
+  "expected": "it",
+  "heard": "It's",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-b",
+  "file": "sight-on.gen.mp3",
+  "expected": "on",
+  "heard": "on.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-b",
+  "file": "word-bug.gen.mp3",
+  "expected": "bug",
+  "heard": "Bug. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz. Buzz.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-b",
+  "file": "word-cup.gen.mp3",
+  "expected": "cup",
+  "heard": "Cup.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-b",
+  "file": "word-pig.gen.mp3",
+  "expected": "pig",
+  "heard": "Pig.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-b",
+  "file": "word-sun.gen.mp3",
+  "expected": "sun",
+  "heard": "Son",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-c",
+  "file": "sight-and.gen.mp3",
+  "expected": "and",
+  "heard": "and",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-c",
+  "file": "sight-can.gen.mp3",
+  "expected": "can",
+  "heard": "can.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-c",
+  "file": "sight-go.gen.mp3",
+  "expected": "go",
+  "heard": "Go.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-c",
+  "file": "sight-we.gen.mp3",
+  "expected": "we",
+  "heard": "We",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-c",
+  "file": "word-bus.gen.mp3",
+  "expected": "bus",
+  "heard": "Buss.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-c",
+  "file": "word-duck.gen.mp3",
+  "expected": "duck",
+  "heard": "Duck.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-c",
+  "file": "word-hen.gen.mp3",
+  "expected": "hen",
+  "heard": "Hen.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-1-c",
+  "file": "word-ship.gen.mp3",
+  "expected": "ship",
+  "heard": "Ship.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-a",
+  "file": "sight-here.gen.mp3",
+  "expected": "here",
+  "heard": "Here.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-a",
+  "file": "sight-look.gen.mp3",
+  "expected": "look",
+  "heard": "Look.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-a",
+  "file": "sight-to.gen.mp3",
+  "expected": "to",
+  "heard": "to",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-a",
+  "file": "sight-you.gen.mp3",
+  "expected": "you",
+  "heard": "You",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-a",
+  "file": "word-boat.gen.mp3",
+  "expected": "boat",
+  "heard": "boat.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-a",
+  "file": "word-fish.gen.mp3",
+  "expected": "fish",
+  "heard": "Fish.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-a",
+  "file": "word-kite.gen.mp3",
+  "expected": "kite",
+  "heard": "kute",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-a",
+  "file": "word-shop.gen.mp3",
+  "expected": "shop",
+  "heard": "Shop.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-b",
+  "file": "sight-he.gen.mp3",
+  "expected": "he",
+  "heard": "He",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-b",
+  "file": "sight-said.gen.mp3",
+  "expected": "said",
+  "heard": "said.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-b",
+  "file": "sight-she.gen.mp3",
+  "expected": "she",
+  "heard": "She...",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-b",
+  "file": "sight-was.gen.mp3",
+  "expected": "was",
+  "heard": "was",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-b",
+  "file": "word-bath.gen.mp3",
+  "expected": "bath",
+  "heard": "Bath.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-b",
+  "file": "word-bike.gen.mp3",
+  "expected": "bike",
+  "heard": "bike.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-b",
+  "file": "word-cake.gen.mp3",
+  "expected": "cake",
+  "heard": "Cake.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-b",
+  "file": "word-frog.gen.mp3",
+  "expected": "frog",
+  "heard": "Frog.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-c",
+  "file": "sight-are.gen.mp3",
+  "expected": "are",
+  "heard": "are",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-c",
+  "file": "sight-have.gen.mp3",
+  "expected": "have",
+  "heard": "Have",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-c",
+  "file": "sight-like.gen.mp3",
+  "expected": "like",
+  "heard": "Like.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-c",
+  "file": "sight-they.gen.mp3",
+  "expected": "they",
+  "heard": "they",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-c",
+  "file": "word-bee.gen.mp3",
+  "expected": "bee",
+  "heard": "B.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-c",
+  "file": "word-goat.gen.mp3",
+  "expected": "goat",
+  "heard": "Goat",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-c",
+  "file": "word-star.gen.mp3",
+  "expected": "star",
+  "heard": "Star.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sight-words-2-c",
+  "file": "word-toast.gen.mp3",
+  "expected": "toast",
+  "heard": "toast.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-a",
+  "file": "word-ant.gen.mp3",
+  "expected": "ant",
+  "heard": "and",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-a",
+  "file": "word-cat.gen.mp3",
+  "expected": "cat",
+  "heard": "cat",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-a",
+  "file": "word-hat.gen.mp3",
+  "expected": "hat",
+  "heard": "Hutt.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-a",
+  "file": "word-jam.gen.mp3",
+  "expected": "jam",
+  "heard": "Jum.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-e",
+  "file": "word-bed.gen.mp3",
+  "expected": "bed",
+  "heard": "Bed.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-e",
+  "file": "word-egg.gen.mp3",
+  "expected": "egg",
+  "heard": "Egg",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-e",
+  "file": "word-hen.gen.mp3",
+  "expected": "hen",
+  "heard": "Hen.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-e",
+  "file": "word-ten.gen.mp3",
+  "expected": "ten",
+  "heard": "10.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-i",
+  "file": "word-bin.gen.mp3",
+  "expected": "bin",
+  "heard": "bin.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-i",
+  "file": "word-fig.gen.mp3",
+  "expected": "fig",
+  "heard": "Fig.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-i",
+  "file": "word-pig.gen.mp3",
+  "expected": "pig",
+  "heard": "Pig.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-i",
+  "file": "word-six.gen.mp3",
+  "expected": "six",
+  "heard": "Six.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-o",
+  "file": "word-box.gen.mp3",
+  "expected": "box",
+  "heard": "Box.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-o",
+  "file": "word-dog.gen.mp3",
+  "expected": "dog",
+  "heard": "DOG",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-o",
+  "file": "word-mop.gen.mp3",
+  "expected": "mop",
+  "heard": "Mop.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-o",
+  "file": "word-pot.gen.mp3",
+  "expected": "pot",
+  "heard": "Port",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-u",
+  "file": "word-bug.gen.mp3",
+  "expected": "bug",
+  "heard": "Bug.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-u",
+  "file": "word-bus.gen.mp3",
+  "expected": "bus",
+  "heard": "Buss.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-u",
+  "file": "word-cup.gen.mp3",
+  "expected": "cup",
+  "heard": "Cup",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "sound-builders-u",
+  "file": "word-nut.gen.mp3",
+  "expected": "nut",
+  "heard": "Not",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-ai",
+  "file": "word-paint.gen.mp3",
+  "expected": "paint",
+  "heard": "paint",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-ai",
+  "file": "word-rain.gen.mp3",
+  "expected": "rain",
+  "heard": "Rain.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-ai",
+  "file": "word-snail.gen.mp3",
+  "expected": "snail",
+  "heard": "Snail.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-ai",
+  "file": "word-train.gen.mp3",
+  "expected": "train",
+  "heard": "Train",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-ee",
+  "file": "word-bee.gen.mp3",
+  "expected": "bee",
+  "heard": "B.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-ee",
+  "file": "word-feet.gen.mp3",
+  "expected": "feet",
+  "heard": "Feet.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-ee",
+  "file": "word-sheep.gen.mp3",
+  "expected": "sheep",
+  "heard": "Sheep.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-ee",
+  "file": "word-tree.gen.mp3",
+  "expected": "tree",
+  "heard": "Tree",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-oa",
+  "file": "word-boat.gen.mp3",
+  "expected": "boat",
+  "heard": "boat",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-oa",
+  "file": "word-goat.gen.mp3",
+  "expected": "goat",
+  "heard": "Goats.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-oa",
+  "file": "word-soap.gen.mp3",
+  "expected": "soap",
+  "heard": "Soap.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-oa",
+  "file": "word-toast.gen.mp3",
+  "expected": "toast",
+  "heard": "toast.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-oo-ar",
+  "file": "word-car.gen.mp3",
+  "expected": "car",
+  "heard": "Car",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-oo-ar",
+  "file": "word-moon.gen.mp3",
+  "expected": "moon",
+  "heard": "Moon",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-oo-ar",
+  "file": "word-spoon.gen.mp3",
+  "expected": "spoon",
+  "heard": "Spoon.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "vowel-teams-oo-ar",
+  "file": "word-star.gen.mp3",
+  "expected": "star",
+  "heard": "Star.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-an",
+  "file": "word-can.gen.mp3",
+  "expected": "can",
+  "heard": "can",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-an",
+  "file": "word-fan.gen.mp3",
+  "expected": "fan",
+  "heard": "Fan",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-an",
+  "file": "word-pan.gen.mp3",
+  "expected": "pan",
+  "heard": "Pan.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-an",
+  "file": "word-van.gen.mp3",
+  "expected": "van",
+  "heard": "Fun!",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-at",
+  "file": "word-bat.gen.mp3",
+  "expected": "bat",
+  "heard": "bat",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-at",
+  "file": "word-cat.gen.mp3",
+  "expected": "cat",
+  "heard": "cat",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-at",
+  "file": "word-hat.gen.mp3",
+  "expected": "hat",
+  "heard": "HUT!",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-at",
+  "file": "word-rat.gen.mp3",
+  "expected": "rat",
+  "heard": "Rat.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-ig",
+  "file": "word-fig.gen.mp3",
+  "expected": "fig",
+  "heard": "Fig",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-ig",
+  "file": "word-pig.gen.mp3",
+  "expected": "pig",
+  "heard": "Pig.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-ig",
+  "file": "word-wig.gen.mp3",
+  "expected": "wig",
+  "heard": "Wig.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-ot",
+  "file": "word-dot.gen.mp3",
+  "expected": "dot",
+  "heard": "Dot.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-ot",
+  "file": "word-hot.gen.mp3",
+  "expected": "hot",
+  "heard": "Hot.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-ot",
+  "file": "word-pot.gen.mp3",
+  "expected": "pot",
+  "heard": "Port.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-ug",
+  "file": "word-bug.gen.mp3",
+  "expected": "bug",
+  "heard": "Bug.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-ug",
+  "file": "word-jug.gen.mp3",
+  "expected": "jug",
+  "heard": "Choke.",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-ug",
+  "file": "word-mug.gen.mp3",
+  "expected": "mug",
+  "heard": "MUG",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-ug",
+  "file": "word-rug.gen.mp3",
+  "expected": "rug",
+  "heard": "Rug",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-un",
+  "file": "word-bun.gen.mp3",
+  "expected": "bun",
+  "heard": "Bon!",
+  "ok": false
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-un",
+  "file": "word-run.gen.mp3",
+  "expected": "run",
+  "heard": "Run.",
+  "ok": true
+ },
+ {
+  "track": "explorers",
+  "lesson": "word-families-un",
+  "file": "word-sun.gen.mp3",
+  "expected": "sun",
+  "heard": "Son",
+  "ok": false
+ }
+]

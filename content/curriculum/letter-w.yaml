@@ -8,7 +8,8 @@ words:
   - { word: whale, imagePrompt: "a friendly cartoon blue whale", source: openai }
   - { word: window, imagePrompt: "a window with blue sky and curtains", source: svg }
 narration:
-  intro: "This is the letter W. W says wuh, wuh, whale!"
+  intro: "This is the letter W."
+  introWord: whale
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter W!"

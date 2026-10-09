@@ -8,7 +8,8 @@ words:
   - { word: queen, imagePrompt: "a friendly cartoon queen wearing a crown", source: openai }
   - { word: quilt, imagePrompt: "a patchwork quilt of colorful squares", source: svg }
 narration:
-  intro: "This is the letter Q. Q says kwuh, kwuh, queen!"
+  intro: "This is the letter Q."
+  introWord: queen
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter Q!"

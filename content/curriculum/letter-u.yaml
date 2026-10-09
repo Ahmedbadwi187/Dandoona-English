@@ -8,7 +8,8 @@ words:
   - { word: umbrella, imagePrompt: "an open red umbrella", source: svg }
   - { word: unicorn, imagePrompt: "a friendly cartoon white unicorn", source: openai }
 narration:
-  intro: "This is the letter U. U says uh, uh, umbrella!"
+  intro: "This is the letter U."
+  introWord: umbrella
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter U!"

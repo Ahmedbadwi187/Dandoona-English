@@ -8,7 +8,8 @@ words:
   - { word: orange, imagePrompt: "a round orange fruit with a leaf", source: svg }
   - { word: octopus, imagePrompt: "a friendly cartoon purple octopus", source: openai }
 narration:
-  intro: "This is the letter O. O says aw, aw, orange!"
+  intro: "This is the letter O."
+  introWord: orange
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter O!"

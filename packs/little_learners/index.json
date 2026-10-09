@@ -4,10 +4,10 @@
   "packs": [
     {
       "unit": "numbers",
-      "version": 5,
-      "sha256": "1e33b000e41ed1e2b32af2b9b6e14a3fba03c9f011069b42d9f2519e99a73eda",
-      "bytes": 1544249,
-      "manifest": "numbers/v5/manifest.json",
+      "version": 6,
+      "sha256": "0d3619cf366edb282e6b43900697f6b283cfe9282ac0c211e504d87a61e31456",
+      "bytes": 793739,
+      "manifest": "numbers/v6/manifest.json",
       "lessonIds": [
         "number-1-3",
         "number-4-6",
@@ -16,10 +16,10 @@
     },
     {
       "unit": "shapes",
-      "version": 6,
-      "sha256": "e1508790c68480a1248864263633fa1622944ccd265234ec589c94c5e22b11fd",
-      "bytes": 1836627,
-      "manifest": "shapes/v6/manifest.json",
+      "version": 7,
+      "sha256": "b7c0e9a6d59ff5a29bc977a43bc5dbf8313ff7abd120ad41bb94256ee52a5931",
+      "bytes": 932921,
+      "manifest": "shapes/v7/manifest.json",
       "lessonIds": [
         "shapes-1",
         "shapes-2",
@@ -29,10 +29,10 @@
     },
     {
       "unit": "animals",
-      "version": 5,
-      "sha256": "f10780d2328f3d00e08dd87bc6234bd38de445185a5dec6e9effee9a7b049165",
-      "bytes": 4135027,
-      "manifest": "animals/v5/manifest.json",
+      "version": 6,
+      "sha256": "357b67a4447d8028e140ee284caf11ecfc41fcf12de45275eed5d51ec8e752bd",
+      "bytes": 1901121,
+      "manifest": "animals/v6/manifest.json",
       "lessonIds": [
         "animals-1",
         "animals-2",
@@ -43,10 +43,10 @@
     },
     {
       "unit": "feelings",
-      "version": 4,
-      "sha256": "ada3daadf71c6c6c354014e406b0213838d738d35dad43b2b4b1f7493d9b4f72",
-      "bytes": 894838,
-      "manifest": "feelings/v4/manifest.json",
+      "version": 5,
+      "sha256": "2c64210601c081c23d1da2349b9485f4b500f4bf0accd25753254416a837ee09",
+      "bytes": 456152,
+      "manifest": "feelings/v5/manifest.json",
       "lessonIds": [
         "feelings-1",
         "feelings-2"
@@ -54,10 +54,10 @@
     },
     {
       "unit": "my-body",
-      "version": 4,
-      "sha256": "bb9a860d23645999a8a32b29412d0d6b73a538525753c80efb98e07ea6bb769d",
-      "bytes": 928620,
-      "manifest": "my_body/v4/manifest.json",
+      "version": 5,
+      "sha256": "d8131d94cb595db9621397eb864caa3d3d73a09e64b435884771450130889bd6",
+      "bytes": 472794,
+      "manifest": "my_body/v5/manifest.json",
       "lessonIds": [
         "my-body-1",
         "my-body-2"
@@ -65,10 +65,10 @@
     },
     {
       "unit": "actions",
-      "version": 6,
-      "sha256": "2c588b84f022094ba30cde8616c5fb55e880a37b9663de85ff8cd71efd3d83e7",
-      "bytes": 2701006,
-      "manifest": "actions/v6/manifest.json",
+      "version": 7,
+      "sha256": "dce0cac61188b88d6e1348b7c1b9c700fc482be6ea3ae95fc2b1ba7a74d49e4e",
+      "bytes": 1196708,
+      "manifest": "actions/v7/manifest.json",
       "lessonIds": [
         "actions-1",
         "actions-2",
@@ -77,10 +77,10 @@
     },
     {
       "unit": "food",
-      "version": 5,
-      "sha256": "530790d1332239b5bcd359f453c3759753ec55e45da96dc1f27f596d4e17e030",
-      "bytes": 1865111,
-      "manifest": "food/v5/manifest.json",
+      "version": 6,
+      "sha256": "5ab13b81033efeb9a16d38ebaf5b80f65d319fc9a511c279cea8cc5d642354d4",
+      "bytes": 921783,
+      "manifest": "food/v6/manifest.json",
       "lessonIds": [
         "food-1",
         "food-2",
@@ -90,10 +90,10 @@
     },
     {
       "unit": "clothes",
-      "version": 4,
-      "sha256": "ad04d281796263bac64b0c531ae7bafc3b1f54be6e65cb3c939738f312aa142e",
-      "bytes": 1314316,
-      "manifest": "clothes/v4/manifest.json",
+      "version": 5,
+      "sha256": "5a8a6446a3a687fc8239ef8d46227091053f1192d8a4fbb27d9a1aa6021713d0",
+      "bytes": 669344,
+      "manifest": "clothes/v5/manifest.json",
       "lessonIds": [
         "clothes-1",
         "clothes-2",
@@ -102,10 +102,10 @@
     },
     {
       "unit": "toys",
-      "version": 7,
-      "sha256": "5e65d30d986c39c0c7dcd6e8acd47e7dfd3a94d59124de7ee04d3c07608efda3",
-      "bytes": 1489957,
-      "manifest": "toys/v7/manifest.json",
+      "version": 8,
+      "sha256": "a69752deb4cdfcf1e63174a7cee27091a751a5132bfe2e29ee1632ea1e9ae2e2",
+      "bytes": 726657,
+      "manifest": "toys/v8/manifest.json",
       "lessonIds": [
         "toys-1",
         "toys-2",
@@ -114,10 +114,10 @@
     },
     {
       "unit": "my-family",
-      "version": 4,
-      "sha256": "631736b168b3a063f7833ae548cbbda377cafb4845557433f846b056042f57f3",
-      "bytes": 1653533,
-      "manifest": "my_family/v4/manifest.json",
+      "version": 5,
+      "sha256": "a0d8fb07fe643f6b32a1399af2a6cd1fffbd095e2bd5bfdbe0ae2fb92c5f7880",
+      "bytes": 735208,
+      "manifest": "my_family/v5/manifest.json",
       "lessonIds": [
         "my-family-1",
         "my-family-2",
@@ -126,10 +126,10 @@
     },
     {
       "unit": "my-home",
-      "version": 4,
-      "sha256": "e9a70cb65caf829cd36fb1d6f495a3fe3a085e849c06bd9a9eab2ea46d896ea5",
-      "bytes": 1254856,
-      "manifest": "my_home/v4/manifest.json",
+      "version": 5,
+      "sha256": "591125a82ffd1b8d70b8c196c84896b36573932721c57555095752afb2223491",
+      "bytes": 638727,
+      "manifest": "my_home/v5/manifest.json",
       "lessonIds": [
         "my-home-1",
         "my-home-2",
@@ -138,10 +138,10 @@
     },
     {
       "unit": "opposites",
-      "version": 5,
-      "sha256": "a386503ce428e1cf840a315ce6d5a6a45371a853c929433f4f121ba005c123db",
-      "bytes": 1085418,
-      "manifest": "opposites/v5/manifest.json",
+      "version": 6,
+      "sha256": "e419de9222f8aa6f551410d10a37f83e603bb000ab6822e8e2d1db5844e72cec",
+      "bytes": 524732,
+      "manifest": "opposites/v6/manifest.json",
       "lessonIds": [
         "opposites-1",
         "opposites-2"
@@ -149,10 +149,10 @@
     },
     {
       "unit": "transport",
-      "version": 6,
-      "sha256": "10264ecbaf66fb9325f51e2443214d197dc0d25fc8a5bcd4a96bf3174abbd019",
-      "bytes": 1246315,
-      "manifest": "transport/v6/manifest.json",
+      "version": 7,
+      "sha256": "cd208ba4433dae317cbe8da98a4c735333e7e7d3ed3a9517e39e2d775b48a8d5",
+      "bytes": 635206,
+      "manifest": "transport/v7/manifest.json",
       "lessonIds": [
         "transport-1",
         "transport-2",

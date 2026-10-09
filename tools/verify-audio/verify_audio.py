@@ -37,7 +37,28 @@ def norm_ipa(s: str) -> str:
     for ch in "ˈˌː ʰ̩͡ˑ.":
         s = s.replace(ch, "")
     # rough equivalences between the dictionary and the recogniser's symbols
+    # the recogniser writes vowels a little differently from the dictionary (espeak): treat the near neighbours as the same
+    s = s.replace("æ", "a").replace("ɪ", "i").replace("ə", "ʌ").replace("o", "ɒ").replace("ɚ", "ʌ")
     return s.replace("ɡ", "g").replace("ɐ", "ʌ").replace("ɑ", "a").replace("ɔ", "ɒ").replace("e", "ɛ").replace("ɹ", "r")
+
+
+def score_sound(wav: Path, letter: str, expected_phoneme: str, seconds: float | None = None):
+    """Rates an isolated sound 0..1 with the phoneme recogniser. Returns (score, heard, sounds_like_the_letter_name).
+    1.0 is the expected sound alone; each extra sound (the small vowel of "buh") costs a little; the NAME of the letter
+    or a missing sound scores 0; a clip over 0.8 s loses a bit (a long vowel makes a sound hard to blend)."""
+    heard = recognise_phonemes(wav)
+    n, want = norm_ipa(heard), norm_ipa(expected_phoneme)
+    name = norm_ipa(LETTER_NAMES.get(letter.lower(), "~"))
+    is_name = bool(name) and name in n and name != want and want not in n.replace(name, "")
+    # the recogniser writes both "uh" (/ʌ/) and "a" (/æ/) as "a": it cannot tell them apart, so this is capped below "good"
+    if want == "ʌ" and want not in n and "a" in n and not is_name:
+        return 0.7, heard, False
+    if is_name or want not in n:
+        return 0.0, heard, is_name
+    score = 1.0 - 0.12 * max(len(n) - len(want), 0)
+    if seconds and seconds > 0.8:
+        score -= 0.15
+    return max(score, 0.05), heard, False
 
 
 def run(cmd):
@@ -76,7 +97,7 @@ def technical(path: Path):
 
 
 def cut(src: Path, start: float, end: float, dst: Path):
-    run(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-ss", f"{start:.3f}", "-to", f"{end:.3f}", "-ar", "16000", "-ac", "1", str(dst)])
+    run(["ffmpeg", "-y", "-v", "error", "-ss", f"{start:.3f}", "-to", f"{end:.3f}", "-i", str(src), "-af", "adelay=300:all=1,apad=pad_dur=0.3", "-ar", "16000", "-ac", "1", str(dst)])
 
 
 def words(s: str):
@@ -173,22 +194,32 @@ def verify_lesson(lesson_id: str, track: str, tmp: Path):
 
 
 def write_review(results, out: Path):
+    choices_file = out.parent / "phoneme-choices.json"
+    choices = json.loads(choices_file.read_text(encoding="utf-8")) if choices_file.exists() else {}
+    rel = lambda f: html.escape("../../" + f.replace(chr(92), "/"))
     rows = []
     for r in results:
         verdict = "PASS" if r.get("ok") else "CHECK"
         cls = "ok" if r.get("ok") else "bad"
-        checks = "".join(f'<li class="{"ok" if c["ok"] else "bad"}">{"✔" if c["ok"] else "✘"} {html.escape(c["name"])} <small>{html.escape(c["detail"])}</small></li>' for c in r["checks"])
-        src = "/".join(Path(r["file"]).parts[-4:]).replace("\\", "/")
-        rows.append(f'<section><h2>{html.escape(r["lesson"])} <span class="{cls}">{verdict}</span></h2>'
-                    f'<audio controls src="{html.escape("../../" + r["file"].replace(chr(92), "/"))}"></audio><ul>{checks}</ul></section>')
-    out.write_text('<!doctype html><meta charset="utf-8"><title>verify-audio</title>'
-                   '<style>body{font:16px system-ui;max-width:760px;margin:2em auto;padding:0 1em}.ok{color:#1a7f37}.bad{color:#c62828}'
-                   'li{list-style:none;margin:.3em 0}small{color:#666}section{border-bottom:1px solid #ddd;padding:1em 0}</style>'
-                   '<h1>verify-audio</h1><p>Listening is still the final check: Whisper and the phoneme model are aids, not judges.</p>'
+        checks = "".join(f'<li class="{"ok" if c["ok"] else "bad"}">{"&#10004;" if c["ok"] else "&#10008;"} {html.escape(c["name"])} <small>{html.escape(c["detail"])}</small></li>' for c in r["checks"])
+        ch = choices.get(r["lesson"], {}).get("chosen")
+        sound = ""
+        if ch:
+            best = ' <b class="warn">best available</b>' if choices[r["lesson"]].get("best_available") else ""
+            sound = (f'<p>Sound clip: <b>{html.escape(ch["method"])}</b> &ldquo;{html.escape(ch["text"][:60])}&rdquo; &mdash; score {ch["score"]}, '
+                     f'heard /{html.escape(ch["heard"])}/ {best}<br><audio controls src="{rel(ch["file"])}"></audio></p>')
+        rows.append(f'<section><h2>{html.escape(r["lesson"])} <span class="{cls}">{verdict}</span></h2>{sound}'
+                    f'<p>Whole intro:<br><audio controls src="{rel(r["file"])}"></audio></p><ul>{checks}</ul></section>')
+    out.write_text('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>verify-audio</title>'
+                   '<style>body{font:16px system-ui;max-width:760px;margin:2em auto;padding:0 1em}.ok{color:#1a7f37}.bad{color:#c62828}.warn{color:#b26a00}'
+                   'li{list-style:none;margin:.3em 0}small{color:#666}section{border-bottom:1px solid #ddd;padding:1em 0}ul{padding:0}</style>'
+                   '<h1>Letter intros &mdash; verify-audio</h1><p>The checks are aids, not judges: Whisper hears the words and a phoneme model hears the sounds. '
+                   'Short vowels (e, o, u) and soft sounds are the least reliable, so listening is the final check.</p>'
                    + "".join(rows), encoding="utf-8")
 
 
 def main():
+    sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser()
     ap.add_argument("--lesson", nargs="*", default=[])
     ap.add_argument("--all-letters", action="store_true")

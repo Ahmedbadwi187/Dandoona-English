@@ -8,7 +8,8 @@ words:
   - { word: yo-yo, imagePrompt: "a red yo-yo with a string", source: svg }
   - { word: yak, imagePrompt: "a friendly cartoon yak with long fur", source: openai }
 narration:
-  intro: "This is the letter Y. Y says yuh, yuh, yo-yo!"
+  intro: "This is the letter Y."
+  introWord: yo-yo
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter Y!"

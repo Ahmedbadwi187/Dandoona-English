@@ -8,7 +8,8 @@ words:
   - { word: rainbow, imagePrompt: "a rainbow with two clouds", source: svg }
   - { word: rabbit, imagePrompt: "a cute cartoon rabbit", source: openai }
 narration:
-  intro: "This is the letter R. R says rr, rr, rainbow!"
+  intro: "This is the letter R."
+  introWord: rainbow
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter R!"

@@ -1,0 +1,572 @@
+{
+  "schemaVersion": 1,
+  "track": "little-learners",
+  "unit": "shapes",
+  "version": 7,
+  "contentHash": "85516e4926a43c6f51664ebd37d7e1c10a03f49143f75cb9a4a99f6ee68c9f45",
+  "lessons": [
+    {
+      "id": "shapes-1",
+      "order": 1,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/shapes_1/intro.mp3",
+        "praise": [
+          "audio/little_learners/shapes_1/praise_0.mp3",
+          "audio/little_learners/shapes_1/praise_1.mp3",
+          "audio/little_learners/shapes_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "build-picture": "audio/little_learners/shapes_1/instr_build_picture.mp3",
+          "listen-and-tap": "audio/little_learners/shapes_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/shapes_1/instr_match_picture.mp3",
+          "memory": "audio/little_learners/shapes_1/instr_memory.mp3",
+          "record-and-listen": "audio/little_learners/shapes_1/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "circle",
+          "audio": "audio/little_learners/shapes_1/word_circle.mp3",
+          "image": "images/little_learners/shapes_1/circle.svg",
+          "phrase": "audio/little_learners/shapes_1/phrase_circle.mp3",
+          "phraseText": "A circle."
+        },
+        {
+          "word": "square",
+          "audio": "audio/little_learners/shapes_1/word_square.mp3",
+          "image": "images/little_learners/shapes_1/square.svg",
+          "phrase": "audio/little_learners/shapes_1/phrase_square.mp3",
+          "phraseText": "A square."
+        },
+        {
+          "word": "triangle",
+          "audio": "audio/little_learners/shapes_1/word_triangle.mp3",
+          "image": "images/little_learners/shapes_1/triangle.svg",
+          "phrase": "audio/little_learners/shapes_1/phrase_triangle.mp3",
+          "phraseText": "A triangle."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "build-picture",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "shapes-2",
+      "order": 2,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/shapes_2/intro.mp3",
+        "praise": [
+          "audio/little_learners/shapes_2/praise_0.mp3",
+          "audio/little_learners/shapes_2/praise_1.mp3",
+          "audio/little_learners/shapes_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "build-picture": "audio/little_learners/shapes_2/instr_build_picture.mp3",
+          "listen-and-tap": "audio/little_learners/shapes_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/shapes_2/instr_match_picture.mp3",
+          "memory": "audio/little_learners/shapes_2/instr_memory.mp3",
+          "record-and-listen": "audio/little_learners/shapes_2/instr_record_and_listen.mp3",
+          "sentence": "audio/little_learners/shapes_2/instr_sentence.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "rectangle",
+          "audio": "audio/little_learners/shapes_2/word_rectangle.mp3",
+          "image": "images/little_learners/shapes_2/rectangle.svg",
+          "phrase": "audio/little_learners/shapes_2/phrase_rectangle.mp3",
+          "phraseText": "A rectangle."
+        },
+        {
+          "word": "oval",
+          "audio": "audio/little_learners/shapes_2/word_oval.mp3",
+          "image": "images/little_learners/shapes_2/oval.svg",
+          "phrase": "audio/little_learners/shapes_2/phrase_oval.mp3",
+          "phraseText": "An oval."
+        },
+        {
+          "word": "diamond",
+          "audio": "audio/little_learners/shapes_2/word_diamond.mp3",
+          "image": "images/little_learners/shapes_2/diamond.svg",
+          "phrase": "audio/little_learners/shapes_2/phrase_diamond.mp3",
+          "phraseText": "A diamond."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "sentence",
+        "memory",
+        "build-picture",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "shapes-3",
+      "order": 3,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/shapes_3/intro.mp3",
+        "praise": [
+          "audio/little_learners/shapes_3/praise_0.mp3",
+          "audio/little_learners/shapes_3/praise_1.mp3",
+          "audio/little_learners/shapes_3/praise_2.mp3"
+        ],
+        "instructions": {
+          "build-picture": "audio/little_learners/shapes_3/instr_build_picture.mp3",
+          "listen-and-tap": "audio/little_learners/shapes_3/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/shapes_3/instr_match_picture.mp3",
+          "memory": "audio/little_learners/shapes_3/instr_memory.mp3",
+          "record-and-listen": "audio/little_learners/shapes_3/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "star",
+          "audio": "audio/little_learners/shapes_3/word_star.mp3",
+          "image": "images/little_learners/shapes_3/star.svg",
+          "phrase": "audio/little_learners/shapes_3/phrase_star.mp3",
+          "phraseText": "A star."
+        },
+        {
+          "word": "heart",
+          "audio": "audio/little_learners/shapes_3/word_heart.mp3",
+          "image": "images/little_learners/shapes_3/heart.svg",
+          "phrase": "audio/little_learners/shapes_3/phrase_heart.mp3",
+          "phraseText": "A heart."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "build-picture",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "shapes-4",
+      "order": 4,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/shapes_4/intro.mp3",
+        "praise": [
+          "audio/little_learners/shapes_4/praise_0.mp3",
+          "audio/little_learners/shapes_4/praise_1.mp3",
+          "audio/little_learners/shapes_4/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/shapes_4/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/shapes_4/instr_match_picture.mp3",
+          "memory": "audio/little_learners/shapes_4/instr_memory.mp3",
+          "record-and-listen": "audio/little_learners/shapes_4/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "ball",
+          "audio": "audio/little_learners/shapes_4/word_ball.mp3",
+          "image": "images/little_learners/shapes_4/ball.svg",
+          "phrase": "audio/little_learners/shapes_4/phrase_ball.mp3",
+          "phraseText": "A ball is a circle."
+        },
+        {
+          "word": "window",
+          "audio": "audio/little_learners/shapes_4/word_window.mp3",
+          "image": "images/little_learners/shapes_4/window.svg",
+          "phrase": "audio/little_learners/shapes_4/phrase_window.mp3",
+          "phraseText": "A window is a rectangle."
+        },
+        {
+          "word": "kite",
+          "audio": "audio/little_learners/shapes_4/word_kite.mp3",
+          "image": "images/little_learners/shapes_4/kite.svg",
+          "phrase": "audio/little_learners/shapes_4/phrase_kite.mp3",
+          "phraseText": "A kite is a diamond."
+        },
+        {
+          "word": "egg",
+          "audio": "audio/little_learners/shapes_4/word_egg.mp3",
+          "image": "images/little_learners/shapes_4/egg.svg",
+          "phrase": "audio/little_learners/shapes_4/phrase_egg.mp3",
+          "phraseText": "An egg is an oval."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "record-and-listen"
+      ],
+      "ownWordsOnly": true
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/little_learners/shapes_1/instr_build_picture.mp3",
+      "sha256": "917024a3509c88e5acde14440533777fdcf94fe22184c705853268496ee9f217",
+      "bytes": 17179
+    },
+    {
+      "path": "audio/little_learners/shapes_1/instr_listen_and_tap.mp3",
+      "sha256": "e188f0c719b0ace0ff3f718f96271a7d3db8babf73b31924df0de4402cf760d0",
+      "bytes": 16970
+    },
+    {
+      "path": "audio/little_learners/shapes_1/instr_match_picture.mp3",
+      "sha256": "a384a03f2c57b752c122ba8eacec7b54839a6b9cdd3c950037634f00c0f8a0d8",
+      "bytes": 17179
+    },
+    {
+      "path": "audio/little_learners/shapes_1/instr_memory.mp3",
+      "sha256": "2176f28b3da28859f32f46d2c2f9597603abb555f62580ee74407ca1b606e849",
+      "bytes": 13208
+    },
+    {
+      "path": "audio/little_learners/shapes_1/instr_record_and_listen.mp3",
+      "sha256": "7925ea18f27d3c7bfbd7f1de3067367da29dabec4703c0e025ade47ffe16e3df",
+      "bytes": 17597
+    },
+    {
+      "path": "audio/little_learners/shapes_1/intro.mp3",
+      "sha256": "52f44afa677fec91e70bd3e471f88180ceb4f2a572286944dbd3bc6fd4be3c80",
+      "bytes": 45809
+    },
+    {
+      "path": "audio/little_learners/shapes_1/phrase_circle.mp3",
+      "sha256": "39f498206eb699159874a8beae245590de8b50a38aefadc5bbcbf5cf6d9d4543",
+      "bytes": 9447
+    },
+    {
+      "path": "audio/little_learners/shapes_1/phrase_square.mp3",
+      "sha256": "7671f8af839637a2f727b2306bb4fb58a92f9a42122f64689a068d525f0b5c96",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/shapes_1/phrase_triangle.mp3",
+      "sha256": "0f6bec8e04f156f0b36a365ba0e3fbe2d687016a3ebf6b55b3fc13fb523b29c6",
+      "bytes": 10909
+    },
+    {
+      "path": "audio/little_learners/shapes_1/praise_0.mp3",
+      "sha256": "51474999945fe1c4cd382faac46f63b9127609d90affa72ff3f120b734b1f32f",
+      "bytes": 8402
+    },
+    {
+      "path": "audio/little_learners/shapes_1/praise_1.mp3",
+      "sha256": "c60c8febca30246d1710c183643b8ebf3e4d08e5bdd182aa2b6a3872c2dc4092",
+      "bytes": 9865
+    },
+    {
+      "path": "audio/little_learners/shapes_1/praise_2.mp3",
+      "sha256": "9fc7f011df5f17d1627666039b6afa55b3c8d624cd73ee2ceea7f81c5c466ce8",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/shapes_1/word_circle.mp3",
+      "sha256": "8cca7155972a47e38514a88c3db3a0c14f743d439760481d53c437fdf5ac445c",
+      "bytes": 8820
+    },
+    {
+      "path": "audio/little_learners/shapes_1/word_square.mp3",
+      "sha256": "73eae949de9b526c57c0b6bdf88c2ec43a2185e2224aaaa78c780f5a867b6724",
+      "bytes": 8820
+    },
+    {
+      "path": "audio/little_learners/shapes_1/word_triangle.mp3",
+      "sha256": "8600d162ad88c5a503fc9a5a3ddd2a52dbc9a740a49b767306ec7225cdf6a1c8",
+      "bytes": 10492
+    },
+    {
+      "path": "audio/little_learners/shapes_2/instr_build_picture.mp3",
+      "sha256": "54a4716b306ce4e273f5aa0a8679bc393082bf9be5cdc3c2c7a0c3c21ed64ab7",
+      "bytes": 16134
+    },
+    {
+      "path": "audio/little_learners/shapes_2/instr_listen_and_tap.mp3",
+      "sha256": "2c86ce75a640a28c55ba0f1889694aebcd11cc96c38c7404266b5e08805a8b28",
+      "bytes": 17597
+    },
+    {
+      "path": "audio/little_learners/shapes_2/instr_match_picture.mp3",
+      "sha256": "899a573a5227a517dd2948f56fb959957c5a832d51045a33b7e8049e670f7535",
+      "bytes": 17597
+    },
+    {
+      "path": "audio/little_learners/shapes_2/instr_memory.mp3",
+      "sha256": "7b54ce73d4188d46ebd13fd57f0f245e3d37f78233ec08f8170e270766918251",
+      "bytes": 15089
+    },
+    {
+      "path": "audio/little_learners/shapes_2/instr_record_and_listen.mp3",
+      "sha256": "ed0a8d4b7642e291b79ba0cdb215ea3402d2ddc851319540180421e7116ba1bf",
+      "bytes": 15089
+    },
+    {
+      "path": "audio/little_learners/shapes_2/instr_sentence.mp3",
+      "sha256": "3d91af303f559074256a48fb9634c92216bea971c06e0c79708bc85df800b7a6",
+      "bytes": 23239
+    },
+    {
+      "path": "audio/little_learners/shapes_2/intro.mp3",
+      "sha256": "c9498a5d6631bcb291cbeee183495e802232bf52655202f87e739649b0d26849",
+      "bytes": 58557
+    },
+    {
+      "path": "audio/little_learners/shapes_2/phrase_diamond.mp3",
+      "sha256": "2f319565293fa80dc0d26859d5500efb2a2f128a69a21b1478fa9ce692f7550a",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/shapes_2/phrase_oval.mp3",
+      "sha256": "c5452ae12db3124d040fa02af478a78d7be3f070032fd6d64026a0b618bdeff7",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/shapes_2/phrase_rectangle.mp3",
+      "sha256": "315523b6b38c014cc3a9b5e6fceb0ee84b43fea8c80cb802cc3c2d1c12cc26f1",
+      "bytes": 12163
+    },
+    {
+      "path": "audio/little_learners/shapes_2/praise_0.mp3",
+      "sha256": "86e2996b8f936aa4f0e0e180d7bccab6006e68152636e1f60bb545efc95735a0",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/shapes_2/praise_1.mp3",
+      "sha256": "c3e491601484f250638963f71da2ba7b9c8f9f875cd79d6a452358d49572e561",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/shapes_2/praise_2.mp3",
+      "sha256": "cc839e7e58b39990d6f4edef2b51d78345c28bfaba252272c04ed6d3063e9f13",
+      "bytes": 10492
+    },
+    {
+      "path": "audio/little_learners/shapes_2/word_diamond.mp3",
+      "sha256": "4ae1174ad9922569143789b45548a7c53bb37ce899d8ec9c66d6318691ace048",
+      "bytes": 9029
+    },
+    {
+      "path": "audio/little_learners/shapes_2/word_oval.mp3",
+      "sha256": "a4fa8aa35ed7fe8bbba14921459040947e21fbf0338ac4c223b18aef918716e6",
+      "bytes": 8402
+    },
+    {
+      "path": "audio/little_learners/shapes_2/word_rectangle.mp3",
+      "sha256": "558d262c0765dfd20cb20ec21b054c915397546244fa434d4963735e7f0b8e3e",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/shapes_3/instr_build_picture.mp3",
+      "sha256": "161bdf79ee38576c614b2a9e31b29cc3beee8f7fd6fb602afb33dc08b170b264",
+      "bytes": 17597
+    },
+    {
+      "path": "audio/little_learners/shapes_3/instr_listen_and_tap.mp3",
+      "sha256": "fb31b8fb2675e19734c968899511bb269913ad4f45412dfbb0ce83128f1c165b",
+      "bytes": 17597
+    },
+    {
+      "path": "audio/little_learners/shapes_3/instr_match_picture.mp3",
+      "sha256": "9f12039f119d5420d0fd428a2e476b7d51e95952cf9eda23afb6a11ec1853c82",
+      "bytes": 16970
+    },
+    {
+      "path": "audio/little_learners/shapes_3/instr_memory.mp3",
+      "sha256": "bfb683fe36aed3227becc5a4004d26ea484bcb195ded454ff5621a79419ed49c",
+      "bytes": 15716
+    },
+    {
+      "path": "audio/little_learners/shapes_3/instr_record_and_listen.mp3",
+      "sha256": "f7ad233faefc8deb8f5f4844de9eeb2a64b1e5850824cb9b94c5b0fa6ef874fa",
+      "bytes": 15089
+    },
+    {
+      "path": "audio/little_learners/shapes_3/intro.mp3",
+      "sha256": "b4a11d12e6b8fd51b38bb7d7e7e2184776e981b484a95b8da74c3dad04895f70",
+      "bytes": 35151
+    },
+    {
+      "path": "audio/little_learners/shapes_3/phrase_heart.mp3",
+      "sha256": "0fe30eec74e46b1e4039f8c9130ad75122da0ffdb28276138eb5d812aeb35672",
+      "bytes": 9865
+    },
+    {
+      "path": "audio/little_learners/shapes_3/phrase_star.mp3",
+      "sha256": "00efc76b9a810deae88d5d9822dd6edbf3304ccc50ce0c6597213fb124075255",
+      "bytes": 9447
+    },
+    {
+      "path": "audio/little_learners/shapes_3/praise_0.mp3",
+      "sha256": "620821db5576d6922a72ea5491c1e94c84d3479572095da6634ee4b08876c194",
+      "bytes": 11327
+    },
+    {
+      "path": "audio/little_learners/shapes_3/praise_1.mp3",
+      "sha256": "5d6c0f3bb941e1cd266e599d6a32d461620e3ba958873a7d131f15b4fb6337f8",
+      "bytes": 9865
+    },
+    {
+      "path": "audio/little_learners/shapes_3/praise_2.mp3",
+      "sha256": "6c6644123b8b23a630af27ca925a015a2754e009e9e43a77d13011def6898407",
+      "bytes": 10492
+    },
+    {
+      "path": "audio/little_learners/shapes_3/word_heart.mp3",
+      "sha256": "218a8a0b463b00d54c7c151727cba8f8cc0efce69e8d0ad5fc0f718ef2b71291",
+      "bytes": 7984
+    },
+    {
+      "path": "audio/little_learners/shapes_3/word_star.mp3",
+      "sha256": "e0a5bc0ab0558d2abc5252e37c63fefa6077930681e5fc7897be29996f55c4cd",
+      "bytes": 8820
+    },
+    {
+      "path": "audio/little_learners/shapes_4/instr_listen_and_tap.mp3",
+      "sha256": "7017f1dc1a40571ac383f40c099afc0118197cb2e7c527519edfed009eb715ad",
+      "bytes": 17597
+    },
+    {
+      "path": "audio/little_learners/shapes_4/instr_match_picture.mp3",
+      "sha256": "8eca753e274f40d7fb1dd96c90b028da5154068ec2b40c14e3912fcfe708ab33",
+      "bytes": 20523
+    },
+    {
+      "path": "audio/little_learners/shapes_4/instr_memory.mp3",
+      "sha256": "bb7ad1342dba5c9a66c40f7f0db27c6a570acc914018a70189e5ef963432716c",
+      "bytes": 15507
+    },
+    {
+      "path": "audio/little_learners/shapes_4/instr_record_and_listen.mp3",
+      "sha256": "74675ec3f93d081293140725771c1685bcce6700be9ca6bd402c81b8af42099a",
+      "bytes": 15507
+    },
+    {
+      "path": "audio/little_learners/shapes_4/intro.mp3",
+      "sha256": "edbf920418b19768f07d4a5062f20bedd2bdd224ed63f3fb3e175ebab6aa6249",
+      "bytes": 57094
+    },
+    {
+      "path": "audio/little_learners/shapes_4/phrase_ball.mp3",
+      "sha256": "4ad2e333e62c11cb78c48a59ed35a1e53342923620deddbc14736010b7c0c27f",
+      "bytes": 14253
+    },
+    {
+      "path": "audio/little_learners/shapes_4/phrase_egg.mp3",
+      "sha256": "1ef8af7f45ed7dc353a6f77bcc5bd5c362c48e1cfdc7fe101faa48f62aa1a3ce",
+      "bytes": 14671
+    },
+    {
+      "path": "audio/little_learners/shapes_4/phrase_kite.mp3",
+      "sha256": "b933416f986be2e751168bf19fe2918134a55d3be6ecf316bbac723494a6e703",
+      "bytes": 15089
+    },
+    {
+      "path": "audio/little_learners/shapes_4/phrase_window.mp3",
+      "sha256": "89a8659b86f78389c5c5873305664f4fc371da952cc13edd625fd971554fa874",
+      "bytes": 16134
+    },
+    {
+      "path": "audio/little_learners/shapes_4/praise_0.mp3",
+      "sha256": "f0e9937dbaf770af5aa87dfbd8fcfb1a7ab9a0978a09a884b7bb5467a218c8bd",
+      "bytes": 10909
+    },
+    {
+      "path": "audio/little_learners/shapes_4/praise_1.mp3",
+      "sha256": "90de8a3e9e009ab5c34d93cb053d97319829fc7b86b59ea3b492939956e937cd",
+      "bytes": 9447
+    },
+    {
+      "path": "audio/little_learners/shapes_4/praise_2.mp3",
+      "sha256": "3901f118158cbde0b0fd7c2945334bac86cab64cdc55d920484e10afe418a3f6",
+      "bytes": 10909
+    },
+    {
+      "path": "audio/little_learners/shapes_4/word_ball.mp3",
+      "sha256": "c34f956426490ef7c52ac150e9ab378651ec8e05645204e2448d392f49dac981",
+      "bytes": 7148
+    },
+    {
+      "path": "audio/little_learners/shapes_4/word_egg.mp3",
+      "sha256": "c496078de94fcb547f5dac9ba627f2fac46f47ee2e62525bb2206c1f415d348a",
+      "bytes": 7984
+    },
+    {
+      "path": "audio/little_learners/shapes_4/word_kite.mp3",
+      "sha256": "7b7afb21ee81b41d1d4fcc5996460f53be879b5aa5fa48cfc50b9d5d4bded0cc",
+      "bytes": 9029
+    },
+    {
+      "path": "audio/little_learners/shapes_4/word_window.mp3",
+      "sha256": "1513a933660538265e0ea3a7251f378cada624429a49dff316bd19492f9598e5",
+      "bytes": 8402
+    },
+    {
+      "path": "images/little_learners/shapes_1/circle.svg",
+      "sha256": "7887aea3805b86b42379dc95a2e56504990071957d3639e876a0689fe022e998",
+      "bytes": 295
+    },
+    {
+      "path": "images/little_learners/shapes_1/square.svg",
+      "sha256": "f959273919cd12b500229365a05aa6f99c4323eae6b510a1a9adfbfa4230d0c1",
+      "bytes": 293
+    },
+    {
+      "path": "images/little_learners/shapes_1/triangle.svg",
+      "sha256": "db2715b07366705da3583f56d5d1ef377a425ee655c9245bb617b8e4c3f9c7ee",
+      "bytes": 322
+    },
+    {
+      "path": "images/little_learners/shapes_2/diamond.svg",
+      "sha256": "d7c444fb3a196f6b0088d2b56fb3f027c6acb8695b2795314f76ffa7d33b0ca8",
+      "bytes": 331
+    },
+    {
+      "path": "images/little_learners/shapes_2/oval.svg",
+      "sha256": "25e2e8014b98a196efd128896a7e1b8ba34f181f3e8c3cc638f12b9c958f911a",
+      "bytes": 306
+    },
+    {
+      "path": "images/little_learners/shapes_2/rectangle.svg",
+      "sha256": "711da7a13799e1b34f8baf3934c16327f37078f7d57c20a6baa01c9b3754ca81",
+      "bytes": 293
+    },
+    {
+      "path": "images/little_learners/shapes_3/heart.svg",
+      "sha256": "838be1f2bcb34cb2074c51e31447b7f7a94ab30e748d957046cd1231602fc898",
+      "bytes": 404
+    },
+    {
+      "path": "images/little_learners/shapes_3/star.svg",
+      "sha256": "54d3a630dbb8b12b9988d2a430e9773281f5543b9e45dfc16600a1de1eec8ed9",
+      "bytes": 421
+    },
+    {
+      "path": "images/little_learners/shapes_4/ball.svg",
+      "sha256": "8ef201c33acf827a672b9a7441034eefec66df20d1a6a84240114b41f094d466",
+      "bytes": 726
+    },
+    {
+      "path": "images/little_learners/shapes_4/egg.svg",
+      "sha256": "7c9946a629cda6715fd6ccdbfe13e9280de50940372e854defd743c35e238dca",
+      "bytes": 512
+    },
+    {
+      "path": "images/little_learners/shapes_4/kite.svg",
+      "sha256": "df3972c1152f63111ff15ab12232c3c0c5be6b77f834f7f8fa847698613c8f85",
+      "bytes": 589
+    },
+    {
+      "path": "images/little_learners/shapes_4/window.svg",
+      "sha256": "cb5003a6e86d9ab4beca467782e8bd6adeef9e44d4b37cc0fe5c1d1a72f56960",
+      "bytes": 818
+    }
+  ]
+}

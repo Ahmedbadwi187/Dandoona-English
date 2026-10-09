@@ -8,7 +8,8 @@ words:
   - { word: moon, imagePrompt: "a yellow crescent moon with a star", source: svg }
   - { word: monkey, imagePrompt: "a cute cartoon monkey", source: openai }
 narration:
-  intro: "This is the letter M. M says mm, mm, moon!"
+  intro: "This is the letter M."
+  introWord: moon
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter M!"

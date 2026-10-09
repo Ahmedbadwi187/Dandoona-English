@@ -8,7 +8,8 @@ words:
   - { word: nest, imagePrompt: "a bird nest with two eggs", source: svg }
   - { word: nut, imagePrompt: "an acorn nut", source: svg }
 narration:
-  intro: "This is the letter N. N says nn, nn, nest!"
+  intro: "This is the letter N."
+  introWord: nest
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter N!"

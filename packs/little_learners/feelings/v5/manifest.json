@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 1,
+  "track": "little-learners",
+  "unit": "feelings",
+  "version": 5,
+  "contentHash": "820cf4be9a0930f6b7d5a1e5206ef94770ebf92f069a8c6d1c0cd16cf3262f22",
+  "lessons": [
+    {
+      "id": "feelings-1",
+      "order": 1,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/feelings_1/intro.mp3",
+        "praise": [
+          "audio/little_learners/feelings_1/praise_0.mp3",
+          "audio/little_learners/feelings_1/praise_1.mp3",
+          "audio/little_learners/feelings_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/feelings_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/feelings_1/instr_match_picture.mp3",
+          "memory": "audio/little_learners/feelings_1/instr_memory.mp3",
+          "record-and-listen": "audio/little_learners/feelings_1/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "happy",
+          "audio": "audio/little_learners/feelings_1/word_happy.mp3",
+          "image": "images/little_learners/feelings_1/happy.svg",
+          "phrase": "audio/little_learners/feelings_1/phrase_happy.mp3",
+          "phraseText": "I am happy."
+        },
+        {
+          "word": "sad",
+          "audio": "audio/little_learners/feelings_1/word_sad.mp3",
+          "image": "images/little_learners/feelings_1/sad.svg",
+          "phrase": "audio/little_learners/feelings_1/phrase_sad.mp3",
+          "phraseText": "I am sad."
+        },
+        {
+          "word": "angry",
+          "audio": "audio/little_learners/feelings_1/word_angry.mp3",
+          "image": "images/little_learners/feelings_1/angry.svg",
+          "phrase": "audio/little_learners/feelings_1/phrase_angry.mp3",
+          "phraseText": "I am angry."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "feelings-2",
+      "order": 2,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/feelings_2/intro.mp3",
+        "praise": [
+          "audio/little_learners/feelings_2/praise_0.mp3",
+          "audio/little_learners/feelings_2/praise_1.mp3",
+          "audio/little_learners/feelings_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/feelings_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/feelings_2/instr_match_picture.mp3",
+          "memory": "audio/little_learners/feelings_2/instr_memory.mp3",
+          "record-and-listen": "audio/little_learners/feelings_2/instr_record_and_listen.mp3",
+          "sentence": "audio/little_learners/feelings_2/instr_sentence.mp3",
+          "story-feeling": "audio/little_learners/feelings_2/instr_story_feeling.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "sleepy",
+          "audio": "audio/little_learners/feelings_2/word_sleepy.mp3",
+          "image": "images/little_learners/feelings_2/sleepy.svg",
+          "phrase": "audio/little_learners/feelings_2/phrase_sleepy.mp3",
+          "phraseText": "I am sleepy."
+        },
+        {
+          "word": "scared",
+          "audio": "audio/little_learners/feelings_2/word_scared.mp3",
+          "image": "images/little_learners/feelings_2/scared.svg",
+          "phrase": "audio/little_learners/feelings_2/phrase_scared.mp3",
+          "phraseText": "I am scared."
+        },
+        {
+          "word": "surprised",
+          "audio": "audio/little_learners/feelings_2/word_surprised.mp3",
+          "image": "images/little_learners/feelings_2/surprised.svg",
+          "phrase": "audio/little_learners/feelings_2/phrase_surprised.mp3",
+          "phraseText": "I am surprised."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "sentence",
+        "memory",
+        "story-feeling",
+        "record-and-listen"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/little_learners/feelings_1/instr_listen_and_tap.mp3",
+      "sha256": "e43250f9e2ef5501931a00b85f8dec1b986cc76f4189475f2a8e9c9a688c8049",
+      "bytes": 13835
+    },
+    {
+      "path": "audio/little_learners/feelings_1/instr_match_picture.mp3",
+      "sha256": "ec0a74bc23bc80bb26336221bb24ba58a445b0059fc5273b0e3ed2c462e9bc3e",
+      "bytes": 18851
+    },
+    {
+      "path": "audio/little_learners/feelings_1/instr_memory.mp3",
+      "sha256": "fcd7e7b56826620ffd069ce48dc9e8256af34aafc584eb1ac1855a2c2f864c00",
+      "bytes": 12790
+    },
+    {
+      "path": "audio/little_learners/feelings_1/instr_record_and_listen.mp3",
+      "sha256": "4840fae39b600c5f6b3c4f7fb88f7599020b49dcea7f6fd725310dc6dd732901",
+      "bytes": 15507
+    },
+    {
+      "path": "audio/little_learners/feelings_1/intro.mp3",
+      "sha256": "47e741d1166396cefc65fcd09d1fa47d3dc5f1f9500fd46ea47fc4733b702f6a",
+      "bytes": 44764
+    },
+    {
+      "path": "audio/little_learners/feelings_1/phrase_angry.mp3",
+      "sha256": "0d646fa417a4166511fe6d6f736389c4e14ce1bb61ee7036802cf68f67464d95",
+      "bytes": 10909
+    },
+    {
+      "path": "audio/little_learners/feelings_1/phrase_happy.mp3",
+      "sha256": "d37163e9c4f9fbe20f3a62f238990e1913e3d33d5c4f5b31a6c49553786c6f88",
+      "bytes": 10492
+    },
+    {
+      "path": "audio/little_learners/feelings_1/phrase_sad.mp3",
+      "sha256": "07cba1f1bce96344702a8c5d60c0ab20fa1fb0622501b66327ec995eb2e5b8cb",
+      "bytes": 10492
+    },
+    {
+      "path": "audio/little_learners/feelings_1/praise_0.mp3",
+      "sha256": "d5385113cc57a5d3cfca44640df095d2489553f17366dea90923fded51699797",
+      "bytes": 10492
+    },
+    {
+      "path": "audio/little_learners/feelings_1/praise_1.mp3",
+      "sha256": "9787b7b8055575a312700a70862a8dd5c3e3f0c7afc2b9fa20e9d3e733bee166",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/feelings_1/praise_2.mp3",
+      "sha256": "c67bb67e3707995069c14ad50be3acd4930711e59de242f85c4708e976903e1f",
+      "bytes": 12163
+    },
+    {
+      "path": "audio/little_learners/feelings_1/word_angry.mp3",
+      "sha256": "c639814413eb9f8a44d9dcc6fbd3e8216b39abbd4dbb3311acd85ae0270a7764",
+      "bytes": 8402
+    },
+    {
+      "path": "audio/little_learners/feelings_1/word_happy.mp3",
+      "sha256": "b93defaf170de052484805d5236c9478c5ddf51db1f6f9962bfc3b7038679b58",
+      "bytes": 8820
+    },
+    {
+      "path": "audio/little_learners/feelings_1/word_sad.mp3",
+      "sha256": "c45e368c62d3619e89cff4f43617b6f0fc42b5e7d4741e5baaa744a1c4da9e6c",
+      "bytes": 7148
+    },
+    {
+      "path": "audio/little_learners/feelings_2/instr_listen_and_tap.mp3",
+      "sha256": "9f246540b5b95aac50049b5f8606bd33dd3a6b9a910b4ccc30d1cf9f9c1e834e",
+      "bytes": 15716
+    },
+    {
+      "path": "audio/little_learners/feelings_2/instr_match_picture.mp3",
+      "sha256": "69c2befd2dc87008dd66842812e6d0002195d5ba560cf859afb1200dfa13a457",
+      "bytes": 19896
+    },
+    {
+      "path": "audio/little_learners/feelings_2/instr_memory.mp3",
+      "sha256": "e735c5923d117528dae8cd4dad50326a86527fab04688ce933a9f9438838fc5c",
+      "bytes": 13626
+    },
+    {
+      "path": "audio/little_learners/feelings_2/instr_record_and_listen.mp3",
+      "sha256": "8d6b8d2932fda50c5ba5d3b510234d149add4c5b2fba6bb2518d623f0328aeda",
+      "bytes": 15089
+    },
+    {
+      "path": "audio/little_learners/feelings_2/instr_sentence.mp3",
+      "sha256": "e45efa6d294fffe62e2667afd730218a8de241d3cc8409b8e658cfc6e1260174",
+      "bytes": 22194
+    },
+    {
+      "path": "audio/little_learners/feelings_2/instr_story_feeling.mp3",
+      "sha256": "562fca5676ebccf5e24e813e52cfb13050afcb926a6b2a6ec0248255dba0dcbe",
+      "bytes": 15089
+    },
+    {
+      "path": "audio/little_learners/feelings_2/intro.mp3",
+      "sha256": "90c75ea69015f4115bb1fa973892a6a8683dcf42aa43c45a8a84b4998837d896",
+      "bytes": 44764
+    },
+    {
+      "path": "audio/little_learners/feelings_2/phrase_scared.mp3",
+      "sha256": "43fd6c31c1c066a2d648666cc9be12022f8b0656012730c6c61b8e742bb35ae2",
+      "bytes": 11745
+    },
+    {
+      "path": "audio/little_learners/feelings_2/phrase_sleepy.mp3",
+      "sha256": "e0b8027f7320af15fd20fb07de0e1a15aa401d24b9da40f53ebe3b500141d743",
+      "bytes": 11745
+    },
+    {
+      "path": "audio/little_learners/feelings_2/phrase_surprised.mp3",
+      "sha256": "da3bf9c99bac46dcd6cf07f78090ea09d4a9030b3250cdf46a17f502b14fb98d",
+      "bytes": 13208
+    },
+    {
+      "path": "audio/little_learners/feelings_2/praise_0.mp3",
+      "sha256": "0be8ce6031d38ace461ca6d1efe1568d6410eeb71eca34fb6eede383426b6220",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/feelings_2/praise_1.mp3",
+      "sha256": "2e32259a64c0e797dc9713c7ee0613c350e97b505922d15a07722f8b4285e623",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/feelings_2/praise_2.mp3",
+      "sha256": "4696c56feaeae19974b53550ad6abbf249d5ce31538b900606b4bc2a72573fa5",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/feelings_2/word_scared.mp3",
+      "sha256": "a0ae54b7527e9f49ad88a6f712c0e436ebdc8a4041fd573be113da4105f1cf63",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/feelings_2/word_sleepy.mp3",
+      "sha256": "37a704f4ae26c6e127fbe7cd7bee37c2c19d5c58d965936530f6bb8a6581b12e",
+      "bytes": 9865
+    },
+    {
+      "path": "audio/little_learners/feelings_2/word_surprised.mp3",
+      "sha256": "32b9d8946648f1c038c6abd1fc830c124263a89dc7c4bc2ed33c125bff898728",
+      "bytes": 10909
+    },
+    {
+      "path": "images/little_learners/feelings_1/angry.svg",
+      "sha256": "05bdc2a51c3d9b71c60f442eee08d779f634f3bdf286893b4da7ecd409cb2e52",
+      "bytes": 808
+    },
+    {
+      "path": "images/little_learners/feelings_1/happy.svg",
+      "sha256": "d47ff5c25e7a368d6df23ce7c6832185a556cb376b6bdf824dc8cf169b90c7a7",
+      "bytes": 906
+    },
+    {
+      "path": "images/little_learners/feelings_1/sad.svg",
+      "sha256": "fbc0a70db17d5ebece6ecfdb8dd677bd599a725fb9491b324b9de30adc268344",
+      "bytes": 843
+    },
+    {
+      "path": "images/little_learners/feelings_2/scared.svg",
+      "sha256": "df037ad149e86cbcba94b7af09bebc234c0d235209638d2628aedf589368d88e",
+      "bytes": 881
+    },
+    {
+      "path": "images/little_learners/feelings_2/sleepy.svg",
+      "sha256": "6d56f6c58d3888a272ec7103dc12557bf9ad9268e3d09fbbde68be02644e66af",
+      "bytes": 846
+    },
+    {
+      "path": "images/little_learners/feelings_2/surprised.svg",
+      "sha256": "dfc5f6368686e72317874154903db72342c84ea188821c5bf2d3add6e38fb580",
+      "bytes": 991
+    }
+  ]
+}

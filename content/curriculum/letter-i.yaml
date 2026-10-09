@@ -8,7 +8,8 @@ words:
   - { word: ice cream, imagePrompt: "an ice cream cone with two scoops", source: svg }
   - { word: igloo, imagePrompt: "a white igloo", source: svg }
 narration:
-  intro: "This is the letter I. I says ih, ih, ice cream!"
+  intro: "This is the letter I."
+  introWord: ice cream
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter I!"

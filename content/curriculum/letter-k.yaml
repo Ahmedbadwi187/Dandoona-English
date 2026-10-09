@@ -8,7 +8,8 @@ words:
   - { word: kite, imagePrompt: "a diamond kite with a tail", source: svg, say: "kyte" }
   - { word: key, imagePrompt: "a golden key", source: svg }
 narration:
-  intro: "This is the letter K. K says kuh, kuh, kite!"
+  intro: "This is the letter K."
+  introWord: kite
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter K!"

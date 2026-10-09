@@ -72,9 +72,10 @@ public static class DecisionsDoc
         foreach (var (l, a) in voiceFiles.Where(v => v.a.IsPhoneme))
             sb.AppendLine($"- [{(File.Exists(layout.AudioOverride(l, "phoneme")) ? "x" : " ")}] **{l.Letter}** `{l.Phoneme}` - `content/generated/{l.Track}/{l.Id}/audio/phoneme.gen.mp3`{(File.Exists(layout.AudioOverride(l, "phoneme")) ? " (your recording in place)" : "")}");
         sb.AppendLine();
-        sb.AppendLine("Intro lines that sound the letter out (\"A says a, a, apple!\" may be read as letter names):");
+        sb.AppendLine("Letter intros are built from parts joined with pauses (spoken name, 0.7 s, the letter's sound, 0.5 s, the sound again, 0.7 s, the example word).");
+        sb.AppendLine("The sound clips are chosen and scored by `tools/verify-audio` (method and score per letter in `content/generated/phoneme-choices.json`; review page `content/generated/verify-audio.html`).");
         foreach (var (l, a) in voiceFiles.Where(v => v.a.Role == "intro"))
-            sb.AppendLine($"- {l.Id}: \"{a.Text}\"");
+            sb.AppendLine(a.ComposeWord is null ? $"- {l.Id}: \"{a.Text}\"" : $"- {l.Id}: \"{a.Text}\" + /{l.Phoneme?.Trim('/')}/ x2 + `{a.ComposeWord}`");
         sb.AppendLine();
 
         sb.AppendLine("## Spend");

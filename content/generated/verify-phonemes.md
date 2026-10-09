@@ -1,0 +1,25 @@
+# verify-phonemes: 32 sounds, 23 to listen to again
+
+- **e** /ɛ/ (`phoneme-e.gen.mp3`): differs: heard aː
+- **o** /ɒ/ (`phoneme-o.gen.mp3`): differs: heard aː
+- **u** /ʌ/ (`phoneme-u.gen.mp3`): differs: heard ɑ
+- **c** /k/ (`phoneme-c.gen.mp3`): extra sounds heard (khu5)
+- **f** /f/ (`phoneme-f.gen.mp3`): differs: heard 
+- **h** /h/ (`phoneme-h.gen.mp3`): differs: heard ħa
+- **j** /dʒ/ (`phoneme-j.gen.mp3`): differs: heard tɕy5
+- **m** /m/ (`phoneme-m.gen.mp3`): differs: heard 
+- **n** /n/ (`phoneme-n.gen.mp3`): differs: heard 
+- **s** /s/ (`phoneme-s.gen.mp3`): differs: heard 
+- **x** /ks/ (`phoneme-x.gen.mp3`): differs: heard kas
+- **r** /r/ (`phoneme-r.gen.mp3`): differs: heard ʌ
+- **v** /v/ (`phoneme-v.gen.mp3`): extra sounds heard (viːðɨðiː)
+- **z** /z/ (`phoneme-z.gen.mp3`): differs: heard 
+- **sh** /ʃ/ (`phoneme-sh.gen.mp3`): differs: heard 
+- **ch** /tʃ/ (`phoneme-ch.gen.mp3`): differs: heard tɕhi.5
+- **th** /θ/ (`phoneme-th.gen.mp3`): differs: heard dajiʃ
+- **ay** /eɪ/ (`phoneme-ay.gen.mp3`): differs: heard aɪ
+- **ee** /iː/ (`phoneme-ee.gen.mp3`): differs: heard aː
+- **ie** /aɪ/ (`phoneme-ie.gen.mp3`): differs: heard haː
+- **oa** /oʊ/ (`phoneme-oa.gen.mp3`): differs: heard uː
+- **oo** /uː/ (`phoneme-oo.gen.mp3`): differs: heard aː
+- **ar** /ɑːr/ (`phoneme-ar.gen.mp3`): differs: heard ɑ

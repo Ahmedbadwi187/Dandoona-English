@@ -8,7 +8,8 @@ words:
   - { word: tree, imagePrompt: "a green tree with a brown trunk", source: svg }
   - { word: tiger, imagePrompt: "a friendly cartoon tiger", source: openai }
 narration:
-  intro: "This is the letter T. T says tuh, tuh, tree!"
+  intro: "This is the letter T."
+  introWord: tree
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter T!"

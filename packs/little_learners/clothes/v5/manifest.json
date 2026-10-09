@@ -1,0 +1,453 @@
+{
+  "schemaVersion": 1,
+  "track": "little-learners",
+  "unit": "clothes",
+  "version": 5,
+  "contentHash": "d7d81656d82744c3d71e68d6416c2eba01360f2917f8a25059d3d3b4da4a962f",
+  "lessons": [
+    {
+      "id": "clothes-1",
+      "order": 1,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/clothes_1/intro.mp3",
+        "praise": [
+          "audio/little_learners/clothes_1/praise_0.mp3",
+          "audio/little_learners/clothes_1/praise_1.mp3",
+          "audio/little_learners/clothes_1/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/clothes_1/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/clothes_1/instr_match_picture.mp3",
+          "memory": "audio/little_learners/clothes_1/instr_memory.mp3",
+          "record-and-listen": "audio/little_learners/clothes_1/instr_record_and_listen.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "shirt",
+          "audio": "audio/little_learners/clothes_1/word_shirt.mp3",
+          "image": "images/little_learners/clothes_1/shirt.svg",
+          "phrase": "audio/little_learners/clothes_1/phrase_shirt.mp3",
+          "group": "warm",
+          "phraseText": "I wear a shirt."
+        },
+        {
+          "word": "pants",
+          "audio": "audio/little_learners/clothes_1/word_pants.mp3",
+          "image": "images/little_learners/clothes_1/pants.svg",
+          "phrase": "audio/little_learners/clothes_1/phrase_pants.mp3",
+          "phraseText": "I wear pants."
+        },
+        {
+          "word": "dress",
+          "audio": "audio/little_learners/clothes_1/word_dress.mp3",
+          "image": "images/little_learners/clothes_1/dress.svg",
+          "phrase": "audio/little_learners/clothes_1/phrase_dress.mp3",
+          "group": "warm",
+          "phraseText": "I wear a dress."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "record-and-listen"
+      ]
+    },
+    {
+      "id": "clothes-2",
+      "order": 2,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/clothes_2/intro.mp3",
+        "praise": [
+          "audio/little_learners/clothes_2/praise_0.mp3",
+          "audio/little_learners/clothes_2/praise_1.mp3",
+          "audio/little_learners/clothes_2/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/clothes_2/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/clothes_2/instr_match_picture.mp3",
+          "memory": "audio/little_learners/clothes_2/instr_memory.mp3",
+          "odd-one-out": "audio/little_learners/clothes_2/instr_odd_one_out.mp3",
+          "record-and-listen": "audio/little_learners/clothes_2/instr_record_and_listen.mp3",
+          "sentence": "audio/little_learners/clothes_2/instr_sentence.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "socks",
+          "audio": "audio/little_learners/clothes_2/word_socks.mp3",
+          "image": "images/little_learners/clothes_2/socks.svg",
+          "phrase": "audio/little_learners/clothes_2/phrase_socks.mp3",
+          "phraseText": "I wear socks."
+        },
+        {
+          "word": "shoes",
+          "audio": "audio/little_learners/clothes_2/word_shoes.mp3",
+          "image": "images/little_learners/clothes_2/shoes.svg",
+          "phrase": "audio/little_learners/clothes_2/phrase_shoes.mp3",
+          "phraseText": "I wear shoes."
+        },
+        {
+          "word": "hat",
+          "audio": "audio/little_learners/clothes_2/word_hat.mp3",
+          "image": "images/little_learners/clothes_2/hat.svg",
+          "phrase": "audio/little_learners/clothes_2/phrase_hat.mp3",
+          "phraseText": "I wear a hat."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "odd-one-out",
+        "sentence",
+        "memory",
+        "record-and-listen"
+      ],
+      "odd": [
+        "apple",
+        "ball",
+        "car",
+        "cat",
+        "key"
+      ]
+    },
+    {
+      "id": "clothes-3",
+      "order": 3,
+      "level": "pre-a1",
+      "audio": {
+        "intro": "audio/little_learners/clothes_3/intro.mp3",
+        "praise": [
+          "audio/little_learners/clothes_3/praise_0.mp3",
+          "audio/little_learners/clothes_3/praise_1.mp3",
+          "audio/little_learners/clothes_3/praise_2.mp3"
+        ],
+        "instructions": {
+          "listen-and-tap": "audio/little_learners/clothes_3/instr_listen_and_tap.mp3",
+          "match-picture": "audio/little_learners/clothes_3/instr_match_picture.mp3",
+          "memory": "audio/little_learners/clothes_3/instr_memory.mp3",
+          "record-and-listen": "audio/little_learners/clothes_3/instr_record_and_listen.mp3",
+          "sort": "audio/little_learners/clothes_3/instr_sort.mp3"
+        }
+      },
+      "words": [
+        {
+          "word": "jacket",
+          "audio": "audio/little_learners/clothes_3/word_jacket.mp3",
+          "image": "images/little_learners/clothes_3/jacket.svg",
+          "phrase": "audio/little_learners/clothes_3/phrase_jacket.mp3",
+          "group": "cold",
+          "phraseText": "I wear a jacket."
+        },
+        {
+          "word": "scarf",
+          "audio": "audio/little_learners/clothes_3/word_scarf.mp3",
+          "image": "images/little_learners/clothes_3/scarf.svg",
+          "phrase": "audio/little_learners/clothes_3/phrase_scarf.mp3",
+          "group": "cold",
+          "phraseText": "I wear a scarf."
+        },
+        {
+          "word": "gloves",
+          "audio": "audio/little_learners/clothes_3/word_gloves.mp3",
+          "image": "images/little_learners/clothes_3/gloves.svg",
+          "phrase": "audio/little_learners/clothes_3/phrase_gloves.mp3",
+          "group": "cold",
+          "phraseText": "I wear gloves."
+        }
+      ],
+      "activities": [
+        "listen-and-tap",
+        "match-picture",
+        "memory",
+        "sort",
+        "record-and-listen"
+      ],
+      "bins": [
+        {
+          "key": "warm",
+          "icon": "sun"
+        },
+        {
+          "key": "cold",
+          "icon": "snow"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "audio/little_learners/clothes_1/instr_listen_and_tap.mp3",
+      "sha256": "d3d28431976b102aa823ca3f98693f6bd1958093610324ad5f0a602f5ab37b40",
+      "bytes": 15716
+    },
+    {
+      "path": "audio/little_learners/clothes_1/instr_match_picture.mp3",
+      "sha256": "9aed2c26d532b5497ded2c5773f47a19ab0efb5ba25e63725b9af43d799192c1",
+      "bytes": 18851
+    },
+    {
+      "path": "audio/little_learners/clothes_1/instr_memory.mp3",
+      "sha256": "22d51d1c602580562d651995cad0579dec2efc7e05b47f0a09ab3ab8f48ee9f1",
+      "bytes": 13626
+    },
+    {
+      "path": "audio/little_learners/clothes_1/instr_record_and_listen.mp3",
+      "sha256": "ef9d5af0307787b39b5d6ce66f70259cbefc1a9f367e15bd93aee451609830c9",
+      "bytes": 14253
+    },
+    {
+      "path": "audio/little_learners/clothes_1/intro.mp3",
+      "sha256": "2af4c70aa184daf6e0a44737897881472cc1dfc6a9e4c3c2590f22ba1b212388",
+      "bytes": 42465
+    },
+    {
+      "path": "audio/little_learners/clothes_1/phrase_dress.mp3",
+      "sha256": "68a5fa5a7a05da10bd4221fb885381b723f33cc5796a71f0466ca97262f10555",
+      "bytes": 12372
+    },
+    {
+      "path": "audio/little_learners/clothes_1/phrase_pants.mp3",
+      "sha256": "b92f628cce31e57f1d82062e359af0a0c09ed21b5e722e13f84301fed319e069",
+      "bytes": 12163
+    },
+    {
+      "path": "audio/little_learners/clothes_1/phrase_shirt.mp3",
+      "sha256": "d3c346a23d8b816fd7648338dffcedda1d0ad90e6af7ab9f1a5aab579a3400f0",
+      "bytes": 12372
+    },
+    {
+      "path": "audio/little_learners/clothes_1/praise_0.mp3",
+      "sha256": "2b9265dbc0222394d02e9737cea3e04c75f02e9195f7c37abdebc608cfb76729",
+      "bytes": 9865
+    },
+    {
+      "path": "audio/little_learners/clothes_1/praise_1.mp3",
+      "sha256": "4abd17be6a748cad0597ccad6219def34113d6a013b6f2fdc09169a163acb14e",
+      "bytes": 9447
+    },
+    {
+      "path": "audio/little_learners/clothes_1/praise_2.mp3",
+      "sha256": "69ab867655449f85f8190e0d11674e1492c23c359b2cc71ebe22a8d34c527557",
+      "bytes": 11327
+    },
+    {
+      "path": "audio/little_learners/clothes_1/word_dress.mp3",
+      "sha256": "87dc67fdadc3528b52d503c98bbe5fbf7cb81709e9326d42ba29c32aaf2e49ed",
+      "bytes": 8402
+    },
+    {
+      "path": "audio/little_learners/clothes_1/word_pants.mp3",
+      "sha256": "ba5e72d2160c9bb102a2a499b4352bad80cd521db832cba204ce6f0be6146d24",
+      "bytes": 8820
+    },
+    {
+      "path": "audio/little_learners/clothes_1/word_shirt.mp3",
+      "sha256": "78b5d043c5f8a59684e381b1fd7f208f7321aa1f3aa505d14feeb476d3da365f",
+      "bytes": 8402
+    },
+    {
+      "path": "audio/little_learners/clothes_2/instr_listen_and_tap.mp3",
+      "sha256": "3ce3d3beeb44b06d0ae341cbd488a93c6d73567c51045dcf25603218e1de7c94",
+      "bytes": 17597
+    },
+    {
+      "path": "audio/little_learners/clothes_2/instr_match_picture.mp3",
+      "sha256": "562393454cfc95e397def18135f7ce1cb8096cd3660ba45d5a1aba26b453729d",
+      "bytes": 20314
+    },
+    {
+      "path": "audio/little_learners/clothes_2/instr_memory.mp3",
+      "sha256": "b47102bb1ae5e76f10597c8b28ef9730e65a717e3707e167304975c5a8a7a6df",
+      "bytes": 15089
+    },
+    {
+      "path": "audio/little_learners/clothes_2/instr_odd_one_out.mp3",
+      "sha256": "f433fa0876d777c74d64d2ee7e9ffb25c507d57c3b1debd99778c8c8d1405dd5",
+      "bytes": 15089
+    },
+    {
+      "path": "audio/little_learners/clothes_2/instr_record_and_listen.mp3",
+      "sha256": "416e236ec2ad3881964c0ae7e106ffbdcb2b8247da4c7f951d461ccc3f5dddb1",
+      "bytes": 15507
+    },
+    {
+      "path": "audio/little_learners/clothes_2/instr_sentence.mp3",
+      "sha256": "0c797d8679363c64327917225fe898f62cefc266fcafd52c8bf502067a57adab",
+      "bytes": 26583
+    },
+    {
+      "path": "audio/little_learners/clothes_2/intro.mp3",
+      "sha256": "6cccef9610b9f4e6dfbf6cfaeaf5372a6a158788eccfcc15a647c097e59b58cf",
+      "bytes": 30972
+    },
+    {
+      "path": "audio/little_learners/clothes_2/phrase_hat.mp3",
+      "sha256": "a8d6eb42121003cc376e604b6ad203cb40d6a102f131b6f87b9ce20ccd0ceed9",
+      "bytes": 11327
+    },
+    {
+      "path": "audio/little_learners/clothes_2/phrase_shoes.mp3",
+      "sha256": "276ab6d4713df365828e07dfdb2aa61cbb98c439059935ee2ed481c4496b7e82",
+      "bytes": 10909
+    },
+    {
+      "path": "audio/little_learners/clothes_2/phrase_socks.mp3",
+      "sha256": "eaf3af81062f53dd809c2d808fb8b68fd54834b85be5df01cf4eadcf2938cdfb",
+      "bytes": 12372
+    },
+    {
+      "path": "audio/little_learners/clothes_2/praise_0.mp3",
+      "sha256": "f85e93fb47f5991f7301f38f7a1743ba534e4486d5c5681fb4ac57ad99aa0496",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/clothes_2/praise_1.mp3",
+      "sha256": "c59259c0092199433a808d0bb1d469ba83d7b0295a9c6ea6af35aa323580e883",
+      "bytes": 9865
+    },
+    {
+      "path": "audio/little_learners/clothes_2/praise_2.mp3",
+      "sha256": "c71c7ad9116b2b284248f4bc032d0b5476d79c88b40008908f648c67ed1e166f",
+      "bytes": 10492
+    },
+    {
+      "path": "audio/little_learners/clothes_2/word_hat.mp3",
+      "sha256": "226a06bbada0b3c912e5253f8629730f13481a3a247dc5a09cf321477663b37c",
+      "bytes": 7148
+    },
+    {
+      "path": "audio/little_learners/clothes_2/word_shoes.mp3",
+      "sha256": "7eecb36f5e8ac8a110018584c4592f9179b29e02997fd9ec90c4c9f251fda12b",
+      "bytes": 8402
+    },
+    {
+      "path": "audio/little_learners/clothes_2/word_socks.mp3",
+      "sha256": "63d95354482f8ee3c1c2ef66f11b1cac832bf4966e641314250fc769f878aadb",
+      "bytes": 8820
+    },
+    {
+      "path": "audio/little_learners/clothes_3/instr_listen_and_tap.mp3",
+      "sha256": "d333423bcdc8dac06dd5c79ecea63a256981a00583829ab4f852b59f71a66dfd",
+      "bytes": 16552
+    },
+    {
+      "path": "audio/little_learners/clothes_3/instr_match_picture.mp3",
+      "sha256": "16c1f03f938003fc58c0255e916cbba263950949baa3713bcc4d825845ed9776",
+      "bytes": 19060
+    },
+    {
+      "path": "audio/little_learners/clothes_3/instr_memory.mp3",
+      "sha256": "ade70269d5840ea67bc1b035b9b2ec0ea6190b2376af24221dbd0e1d49b5737d",
+      "bytes": 15716
+    },
+    {
+      "path": "audio/little_learners/clothes_3/instr_record_and_listen.mp3",
+      "sha256": "06eea7b48081632aaa6583becacb3b6f21c7cb99e1f204a2452a291cae76ddc7",
+      "bytes": 15507
+    },
+    {
+      "path": "audio/little_learners/clothes_3/instr_sort.mp3",
+      "sha256": "4747d1f1da50c9322526490b05a547dea573ab4968995699b86efab9a07649b4",
+      "bytes": 15507
+    },
+    {
+      "path": "audio/little_learners/clothes_3/intro.mp3",
+      "sha256": "f0f6817fba08a02c527b2811cd2aac7a21340fd4af3642b834746ed783833667",
+      "bytes": 40585
+    },
+    {
+      "path": "audio/little_learners/clothes_3/phrase_gloves.mp3",
+      "sha256": "bf08e4588218002ffbdd02de9165e767381c3e5be63c1d774db318441997b01c",
+      "bytes": 11745
+    },
+    {
+      "path": "audio/little_learners/clothes_3/phrase_jacket.mp3",
+      "sha256": "92b33cbb439226cac53d15b314542a144e5d0af946dd5cf6d341fd1501ab1d39",
+      "bytes": 12790
+    },
+    {
+      "path": "audio/little_learners/clothes_3/phrase_scarf.mp3",
+      "sha256": "f1037f88b771a7bffa325f8969ebb80d20202b534e7cc573667c78cc41cd268c",
+      "bytes": 12372
+    },
+    {
+      "path": "audio/little_learners/clothes_3/praise_0.mp3",
+      "sha256": "f8012cce6bfa0b5b842986a49985aad1b27f507e1a4055c707e2ecff6d9785a6",
+      "bytes": 10283
+    },
+    {
+      "path": "audio/little_learners/clothes_3/praise_1.mp3",
+      "sha256": "5955630ef1af1a5cf4dc8ea93a9958e306fc276e05cd49336d648a9265400e9b",
+      "bytes": 9865
+    },
+    {
+      "path": "audio/little_learners/clothes_3/praise_2.mp3",
+      "sha256": "b8b4e93b321f6e5bb31205c27c4ba5f4caff9b9ab7163454f6cc2ff98c103f26",
+      "bytes": 10909
+    },
+    {
+      "path": "audio/little_learners/clothes_3/word_gloves.mp3",
+      "sha256": "26ade064748393d8a6c3889d6da7c79d93476bdaa307d44da70a3c791b7ec41b",
+      "bytes": 8820
+    },
+    {
+      "path": "audio/little_learners/clothes_3/word_jacket.mp3",
+      "sha256": "ec9b14777cbd4ded6054feed283fd5b6744cf347508020cbee53b651e53bd5fa",
+      "bytes": 9447
+    },
+    {
+      "path": "audio/little_learners/clothes_3/word_scarf.mp3",
+      "sha256": "111b41ee193b0077bdd0954879d7741438035afcdedd6f04eae957809b169ca0",
+      "bytes": 8820
+    },
+    {
+      "path": "images/little_learners/clothes_1/dress.svg",
+      "sha256": "e3b83f290f3e0dd1d2c4bc5d02ddbadef9777103c15f9a6d9d6d8ee4c71ec586",
+      "bytes": 641
+    },
+    {
+      "path": "images/little_learners/clothes_1/pants.svg",
+      "sha256": "9a86e7993136fbca637cf9c2d616f067268323c916723b1bb48c57dac64c08f2",
+      "bytes": 548
+    },
+    {
+      "path": "images/little_learners/clothes_1/shirt.svg",
+      "sha256": "016ad914d427d22c181e5cb894268b98eaaf16c5bc9de2aa2d67dab6b1712bac",
+      "bytes": 512
+    },
+    {
+      "path": "images/little_learners/clothes_2/hat.svg",
+      "sha256": "7bf50e0c21f8630eb2cfa0bd6a5acb4ade329cab12c45cfacb04586dd8f2a8d8",
+      "bytes": 526
+    },
+    {
+      "path": "images/little_learners/clothes_2/shoes.svg",
+      "sha256": "a0b4f6f941e44b41ff8f62bdf90dcd371526c49618e71e024c78e491f9372094",
+      "bytes": 640
+    },
+    {
+      "path": "images/little_learners/clothes_2/socks.svg",
+      "sha256": "e471f7c0649bd14c287757f9244743328704c0ab9aa5cc417feada38e8e39a36",
+      "bytes": 828
+    },
+    {
+      "path": "images/little_learners/clothes_3/gloves.svg",
+      "sha256": "d03080ace354a326f17623f29ed162fe6069f692d7f9407977692da320917b2b",
+      "bytes": 889
+    },
+    {
+      "path": "images/little_learners/clothes_3/jacket.svg",
+      "sha256": "63d22bd7a4b9ae277ab27b3c1d05458fcd574ef036573e9ccb17a278c19d21d3",
+      "bytes": 820
+    },
+    {
+      "path": "images/little_learners/clothes_3/scarf.svg",
+      "sha256": "7b4ed378baf11270e44ce0b96873a8ad16b0ab64e48b6853d5e33c702ad946de",
+      "bytes": 547
+    }
+  ]
+}

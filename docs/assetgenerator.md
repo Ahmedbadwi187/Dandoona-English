@@ -34,6 +34,12 @@ rates are set in `generation.json`.
    `images` refuses to run those until it exists.
 2. `audio` then listen. Phoneme clips are flagged; record your own and save it as `phoneme.override.mp3` next to the
    generated one. `status` lists every phoneme without your recording.
+   A letter's `intro` is composed: its `narration.intro` ("This is the letter B.") is spoken, then joined with silence to the
+   lesson's `phoneme` clip twice and the clip of `narration.introWord`: name, 0.7 s, sound, 0.5 s, sound, 0.7 s, word
+   (`AudioStitcher`; the spoken part is kept in `audio/_parts/`). The `phoneme` clips were made by `tools/verify-audio/make_phonemes.py`
+   (respelling, `eleven_flash_v2` phoneme tags, or the first sound cut from a word, whichever the phoneme recogniser scored best);
+   `uv run tools/verify-audio/verify_audio.py --all-letters` checks the intros and writes `content/generated/verify-audio.html`.
+   Re-run `audio --lesson letter-x` to rebuild an intro after changing one of its parts.
 3. `images`, then in `images/_review/` rename the best variant to `images/{key}.approved.webp`.
 4. `export` copies only approved images and audio into `mobile/kids_english_app/assets/` and writes
    `assets/content/little_learners.json`. It prints lessons exported, incomplete lessons (with what is missing) and

@@ -1,88 +1,13 @@
 [
   {
-    "lesson": "letter-b",
-    "letter": "B",
-    "file": "content\\generated\\little-learners\\letter-b\\audio\\intro.gen.mp3",
+    "lesson": "letter-a",
+    "letter": "A",
+    "file": "content\\generated\\little-learners\\letter-a\\audio\\intro.gen.mp3",
     "checks": [
       {
         "name": "decodes",
         "ok": true,
-        "detail": "5.27s"
-      },
-      {
-        "name": "not clipped",
-        "ok": true,
-        "detail": "peak -2.9 dB"
-      },
-      {
-        "name": "not too quiet",
-        "ok": true,
-        "detail": "mean -18.9 dB"
-      },
-      {
-        "name": "pauses 0.7 / 0.5 / 0.7 s",
-        "ok": true,
-        "detail": "found 0.72, 0.52, 0.72"
-      },
-      {
-        "name": "part 1 says \"This is the letter B.\"",
-        "ok": true,
-        "detail": "heard \"This is the letter B.\""
-      },
-      {
-        "name": "part 4 says \"ball\"",
-        "ok": true,
-        "detail": "heard \"ball.\""
-      },
-      {
-        "name": "sound 1 is /b/",
-        "ok": false,
-        "detail": "heard /diːɹʌbiː/ , expected /b/ - sounds like the letter NAME"
-      },
-      {
-        "name": "sound 2 is /b/",
-        "ok": false,
-        "detail": "heard /diːɹʌbiː/ , expected /b/ - sounds like the letter NAME"
-      }
-    ],
-    "parts": [
-      {
-        "start": 0.0,
-        "end": 1.33
-      },
-      {
-        "start": 2.05,
-        "end": 2.79
-      },
-      {
-        "start": 3.31,
-        "end": 4.05
-      },
-      {
-        "start": 4.77,
-        "end": 5.27
-      }
-    ],
-    "duration": 5.27288,
-    "transcripts": {
-      "name": "This is the letter B.",
-      "word": "ball.",
-      "phonemes": [
-        "diːɹʌbiː",
-        "diːɹʌbiː"
-      ]
-    },
-    "ok": false
-  },
-  {
-    "lesson": "letter-p",
-    "letter": "P",
-    "file": "content\\generated\\little-learners\\letter-p\\audio\\intro.gen.mp3",
-    "checks": [
-      {
-        "name": "decodes",
-        "ok": true,
-        "detail": "4.44s"
+        "detail": "4.89s"
       },
       {
         "name": "not clipped",
@@ -92,12 +17,1137 @@
       {
         "name": "not too quiet",
         "ok": true,
-        "detail": "mean -18.9 dB"
+        "detail": "mean -19.8 dB"
       },
       {
         "name": "pauses 0.7 / 0.5 / 0.7 s",
         "ok": true,
-        "detail": "found 0.72, 0.52, 0.72"
+        "detail": "found 0.70, 0.51, 0.72"
+      },
+      {
+        "name": "part 1 says \"This is the letter A.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter A.\""
+      },
+      {
+        "name": "part 4 says \"apple\"",
+        "ok": true,
+        "detail": "heard \"Apple\""
+      },
+      {
+        "name": "sound 1 is /æ/",
+        "ok": true,
+        "detail": "heard /aː/ , expected /æ/"
+      },
+      {
+        "name": "sound 2 is /æ/",
+        "ok": true,
+        "detail": "heard /aː/ , expected /æ/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.29
+      },
+      {
+        "start": 2.0,
+        "end": 2.52
+      },
+      {
+        "start": 3.03,
+        "end": 3.56
+      },
+      {
+        "start": 4.28,
+        "end": 4.89
+      }
+    ],
+    "duration": 4.890363,
+    "transcripts": {
+      "name": "This is the letter A.",
+      "word": "Apple",
+      "phonemes": [
+        "aː",
+        "aː"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-b",
+    "letter": "B",
+    "file": "content\\generated\\little-learners\\letter-b\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "4.80s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -2.9 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -18.2 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.51, 0.73"
+      },
+      {
+        "name": "part 1 says \"This is the letter B.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter B.\""
+      },
+      {
+        "name": "part 4 says \"ball\"",
+        "ok": true,
+        "detail": "heard \"ball\""
+      },
+      {
+        "name": "sound 1 is /b/",
+        "ok": true,
+        "detail": "heard /bo/ , expected /b/"
+      },
+      {
+        "name": "sound 2 is /b/",
+        "ok": true,
+        "detail": "heard /bo/ , expected /b/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.33
+      },
+      {
+        "start": 2.04,
+        "end": 2.54
+      },
+      {
+        "start": 3.06,
+        "end": 3.56
+      },
+      {
+        "start": 4.29,
+        "end": 4.8
+      }
+    ],
+    "duration": 4.795057,
+    "transcripts": {
+      "name": "This is the letter B.",
+      "word": "ball",
+      "phonemes": [
+        "bo",
+        "bo"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-c",
+    "letter": "C",
+    "file": "content\\generated\\little-learners\\letter-c\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "4.53s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -2.1 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -21.4 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.52, 0.72"
+      },
+      {
+        "name": "part 1 says \"This is the letter C.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter C.\""
+      },
+      {
+        "name": "part 4 says \"cat\"",
+        "ok": true,
+        "detail": "heard \"cat\""
+      },
+      {
+        "name": "sound 1 is /k/",
+        "ok": true,
+        "detail": "heard /kaka/ , expected /k/"
+      },
+      {
+        "name": "sound 2 is /k/",
+        "ok": true,
+        "detail": "heard /kaka/ , expected /k/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.31
+      },
+      {
+        "start": 2.02,
+        "end": 2.42
+      },
+      {
+        "start": 2.93,
+        "end": 3.33
+      },
+      {
+        "start": 4.05,
+        "end": 4.53
+      }
+    ],
+    "duration": 4.525941,
+    "transcripts": {
+      "name": "This is the letter C.",
+      "word": "cat",
+      "phonemes": [
+        "kaka",
+        "kaka"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-d",
+    "letter": "D",
+    "file": "content\\generated\\little-learners\\letter-d\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "4.07s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -4.3 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -21.5 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.51, 0.72"
+      },
+      {
+        "name": "part 1 says \"This is the letter D.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter D.\""
+      },
+      {
+        "name": "part 4 says \"dog\"",
+        "ok": true,
+        "detail": "heard \"dog\""
+      },
+      {
+        "name": "sound 1 is /d/",
+        "ok": true,
+        "detail": "heard /da/ , expected /d/"
+      },
+      {
+        "name": "sound 2 is /d/",
+        "ok": true,
+        "detail": "heard /da/ , expected /d/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.32
+      },
+      {
+        "start": 2.03,
+        "end": 2.16
+      },
+      {
+        "start": 2.67,
+        "end": 2.8
+      },
+      {
+        "start": 3.52,
+        "end": 4.07
+      }
+    ],
+    "duration": 4.072993,
+    "transcripts": {
+      "name": "This is the letter D.",
+      "word": "dog",
+      "phonemes": [
+        "da",
+        "da"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-e",
+    "letter": "E",
+    "file": "content\\generated\\little-learners\\letter-e\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "4.29s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -1.9 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -19.9 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.70, 0.51, 0.71"
+      },
+      {
+        "name": "part 1 says \"This is the letter E.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter E.\""
+      },
+      {
+        "name": "part 4 says \"egg\"",
+        "ok": true,
+        "detail": "heard \"Egg.\""
+      },
+      {
+        "name": "sound 1 is /ɛ/",
+        "ok": true,
+        "detail": "heard /teː/ , expected /ɛ/"
+      },
+      {
+        "name": "sound 2 is /ɛ/",
+        "ok": true,
+        "detail": "heard /eː/ , expected /ɛ/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.34
+      },
+      {
+        "start": 2.05,
+        "end": 2.37
+      },
+      {
+        "start": 2.88,
+        "end": 3.2
+      },
+      {
+        "start": 3.91,
+        "end": 4.29
+      }
+    ],
+    "duration": 4.287914,
+    "transcripts": {
+      "name": "This is the letter E.",
+      "word": "Egg.",
+      "phonemes": [
+        "teː",
+        "eː"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-f",
+    "letter": "F",
+    "file": "content\\generated\\little-learners\\letter-f\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "4.92s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -2.4 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -19.2 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.70, 0.50, 0.70"
+      },
+      {
+        "name": "part 1 says \"This is the letter F.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter F.\""
+      },
+      {
+        "name": "part 4 says \"fish\"",
+        "ok": true,
+        "detail": "heard \"Fish.\""
+      },
+      {
+        "name": "sound 1 is /f/",
+        "ok": true,
+        "detail": "heard /foː/ , expected /f/"
+      },
+      {
+        "name": "sound 2 is /f/",
+        "ok": true,
+        "detail": "heard /foː/ , expected /f/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.27
+      },
+      {
+        "start": 1.97,
+        "end": 2.46
+      },
+      {
+        "start": 2.96,
+        "end": 3.45
+      },
+      {
+        "start": 4.15,
+        "end": 4.92
+      }
+    ],
+    "duration": 4.923333,
+    "transcripts": {
+      "name": "This is the letter F.",
+      "word": "Fish.",
+      "phonemes": [
+        "foː",
+        "foː"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-g",
+    "letter": "G",
+    "file": "content\\generated\\little-learners\\letter-g\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "5.04s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -1.5 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -18.1 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.52, 0.73"
+      },
+      {
+        "name": "part 1 says \"This is the letter G.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter G.\""
+      },
+      {
+        "name": "part 4 says \"gift\"",
+        "ok": true,
+        "detail": "heard \"gift\""
+      },
+      {
+        "name": "sound 1 is /g/",
+        "ok": true,
+        "detail": "heard /ɡaː/ , expected /g/"
+      },
+      {
+        "name": "sound 2 is /g/",
+        "ok": true,
+        "detail": "heard /ɡaː/ , expected /g/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.32
+      },
+      {
+        "start": 2.03,
+        "end": 2.61
+      },
+      {
+        "start": 3.13,
+        "end": 3.71
+      },
+      {
+        "start": 4.44,
+        "end": 5.04
+      }
+    ],
+    "duration": 5.036735,
+    "transcripts": {
+      "name": "This is the letter G.",
+      "word": "gift",
+      "phonemes": [
+        "ɡaː",
+        "ɡaː"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-h",
+    "letter": "H",
+    "file": "content\\generated\\little-learners\\letter-h\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "4.13s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -2.8 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -20.9 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.51, 0.71"
+      },
+      {
+        "name": "part 1 says \"This is the letter H.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter H.\""
+      },
+      {
+        "name": "part 4 says \"hat\"",
+        "ok": false,
+        "detail": "heard \"hot\""
+      },
+      {
+        "name": "sound 1 is /h/",
+        "ok": true,
+        "detail": "heard /ha/ , expected /h/"
+      },
+      {
+        "name": "sound 2 is /h/",
+        "ok": true,
+        "detail": "heard /ha/ , expected /h/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.45
+      },
+      {
+        "start": 2.16,
+        "end": 2.35
+      },
+      {
+        "start": 2.86,
+        "end": 3.05
+      },
+      {
+        "start": 3.76,
+        "end": 4.13
+      }
+    ],
+    "duration": 4.134308,
+    "transcripts": {
+      "name": "This is the letter H.",
+      "word": "hot",
+      "phonemes": [
+        "ha",
+        "ha"
+      ]
+    },
+    "ok": false
+  },
+  {
+    "lesson": "letter-i",
+    "letter": "I",
+    "file": "content\\generated\\little-learners\\letter-i\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "4.70s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -3.7 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -20.4 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.72, 0.51, 0.72"
+      },
+      {
+        "name": "part 1 says \"This is the letter I.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter I\""
+      },
+      {
+        "name": "part 4 says \"ice cream\"",
+        "ok": true,
+        "detail": "heard \"ice cream\""
+      },
+      {
+        "name": "sound 1 is /ɪ/",
+        "ok": true,
+        "detail": "heard /ʔih/ , expected /ɪ/"
+      },
+      {
+        "name": "sound 2 is /ɪ/",
+        "ok": true,
+        "detail": "heard /ʔih/ , expected /ɪ/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.35
+      },
+      {
+        "start": 2.07,
+        "end": 2.31
+      },
+      {
+        "start": 2.82,
+        "end": 3.05
+      },
+      {
+        "start": 3.77,
+        "end": 4.7
+      }
+    ],
+    "duration": 4.699478,
+    "transcripts": {
+      "name": "This is the letter I",
+      "word": "ice cream",
+      "phonemes": [
+        "ʔih",
+        "ʔih"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-j",
+    "letter": "J",
+    "file": "content\\generated\\little-learners\\letter-j\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "5.09s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -4.5 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -20.3 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.51, 0.72"
+      },
+      {
+        "name": "part 1 says \"This is the letter J.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter J.\""
+      },
+      {
+        "name": "part 4 says \"jar\"",
+        "ok": true,
+        "detail": "heard \"JAR\""
+      },
+      {
+        "name": "sound 1 is /dʒ/",
+        "ok": true,
+        "detail": "heard /dʒuː/ , expected /dʒ/"
+      },
+      {
+        "name": "sound 2 is /dʒ/",
+        "ok": true,
+        "detail": "heard /dʒuː/ , expected /dʒ/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.29
+      },
+      {
+        "start": 2.0,
+        "end": 2.65
+      },
+      {
+        "start": 3.16,
+        "end": 3.81
+      },
+      {
+        "start": 4.53,
+        "end": 5.09
+      }
+    ],
+    "duration": 5.093152,
+    "transcripts": {
+      "name": "This is the letter J.",
+      "word": "JAR",
+      "phonemes": [
+        "dʒuː",
+        "dʒuː"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-k",
+    "letter": "K",
+    "file": "content\\generated\\little-learners\\letter-k\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "4.62s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -2.6 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -20.1 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.52, 0.73"
+      },
+      {
+        "name": "part 1 says \"This is the letter K.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter K\""
+      },
+      {
+        "name": "part 4 says \"kite\"",
+        "ok": false,
+        "detail": "heard \"cute hair\""
+      },
+      {
+        "name": "sound 1 is /k/",
+        "ok": true,
+        "detail": "heard /ka/ , expected /k/"
+      },
+      {
+        "name": "sound 2 is /k/",
+        "ok": true,
+        "detail": "heard /ka/ , expected /k/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.43
+      },
+      {
+        "start": 2.14,
+        "end": 2.44
+      },
+      {
+        "start": 2.96,
+        "end": 3.26
+      },
+      {
+        "start": 3.99,
+        "end": 4.62
+      }
+    ],
+    "duration": 4.62068,
+    "transcripts": {
+      "name": "This is the letter K",
+      "word": "cute hair",
+      "phonemes": [
+        "ka",
+        "ka"
+      ]
+    },
+    "ok": false
+  },
+  {
+    "lesson": "letter-l",
+    "letter": "L",
+    "file": "content\\generated\\little-learners\\letter-l\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "5.11s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -1.9 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -19.4 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.51, 0.72"
+      },
+      {
+        "name": "part 1 says \"This is the letter L.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter L.\""
+      },
+      {
+        "name": "part 4 says \"lion\"",
+        "ok": true,
+        "detail": "heard \"Lion\""
+      },
+      {
+        "name": "sound 1 is /l/",
+        "ok": true,
+        "detail": "heard /laː/ , expected /l/"
+      },
+      {
+        "name": "sound 2 is /l/",
+        "ok": true,
+        "detail": "heard /laː/ , expected /l/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.23
+      },
+      {
+        "start": 1.94,
+        "end": 2.6
+      },
+      {
+        "start": 3.11,
+        "end": 3.77
+      },
+      {
+        "start": 4.49,
+        "end": 5.11
+      }
+    ],
+    "duration": 5.111701,
+    "transcripts": {
+      "name": "This is the letter L.",
+      "word": "Lion",
+      "phonemes": [
+        "laː",
+        "laː"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-m",
+    "letter": "M",
+    "file": "content\\generated\\little-learners\\letter-m\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "5.02s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -3.8 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -18.6 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.72, 0.51, 0.70"
+      },
+      {
+        "name": "part 1 says \"This is the letter M.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter M.\""
+      },
+      {
+        "name": "part 4 says \"moon\"",
+        "ok": true,
+        "detail": "heard \"Moon\""
+      },
+      {
+        "name": "sound 1 is /m/",
+        "ok": true,
+        "detail": "heard /m/ , expected /m/"
+      },
+      {
+        "name": "sound 2 is /m/",
+        "ok": true,
+        "detail": "heard /m/ , expected /m/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.34
+      },
+      {
+        "start": 2.06,
+        "end": 2.56
+      },
+      {
+        "start": 3.08,
+        "end": 3.58
+      },
+      {
+        "start": 4.29,
+        "end": 5.02
+      }
+    ],
+    "duration": 5.019388,
+    "transcripts": {
+      "name": "This is the letter M.",
+      "word": "Moon",
+      "phonemes": [
+        "m",
+        "m"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-n",
+    "letter": "N",
+    "file": "content\\generated\\little-learners\\letter-n\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "4.97s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -3.3 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -19.9 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.51, 0.71"
+      },
+      {
+        "name": "part 1 says \"This is the letter N.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter N.\""
+      },
+      {
+        "name": "part 4 says \"nest\"",
+        "ok": true,
+        "detail": "heard \"Nest\""
+      },
+      {
+        "name": "sound 1 is /n/",
+        "ok": true,
+        "detail": "heard /na/ , expected /n/"
+      },
+      {
+        "name": "sound 2 is /n/",
+        "ok": true,
+        "detail": "heard /na/ , expected /n/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.49
+      },
+      {
+        "start": 2.2,
+        "end": 2.6
+      },
+      {
+        "start": 3.11,
+        "end": 3.51
+      },
+      {
+        "start": 4.22,
+        "end": 4.97
+      }
+    ],
+    "duration": 4.965669,
+    "transcripts": {
+      "name": "This is the letter N.",
+      "word": "Nest",
+      "phonemes": [
+        "na",
+        "na"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-o",
+    "letter": "O",
+    "file": "content\\generated\\little-learners\\letter-o\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "5.15s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -5.7 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -21.5 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.51, 0.71"
+      },
+      {
+        "name": "part 1 says \"This is the letter O.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter O.\""
+      },
+      {
+        "name": "part 4 says \"orange\"",
+        "ok": true,
+        "detail": "heard \"Orange\""
+      },
+      {
+        "name": "sound 1 is /ɒ/",
+        "ok": true,
+        "detail": "heard /axo/ , expected /ɒ/"
+      },
+      {
+        "name": "sound 2 is /ɒ/",
+        "ok": true,
+        "detail": "heard /axo/ , expected /ɒ/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.44
+      },
+      {
+        "start": 2.15,
+        "end": 2.72
+      },
+      {
+        "start": 3.23,
+        "end": 3.79
+      },
+      {
+        "start": 4.5,
+        "end": 5.15
+      }
+    ],
+    "duration": 5.15034,
+    "transcripts": {
+      "name": "This is the letter O.",
+      "word": "Orange",
+      "phonemes": [
+        "axo",
+        "axo"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-p",
+    "letter": "P",
+    "file": "content\\generated\\little-learners\\letter-p\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "4.76s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -3.8 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -21.8 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.52, 0.73"
       },
       {
         "name": "part 1 says \"This is the letter P.\"",
@@ -107,17 +1157,17 @@
       {
         "name": "part 4 says \"pig\"",
         "ok": true,
-        "detail": "heard \"Pig.\""
+        "detail": "heard \"Pig\""
       },
       {
         "name": "sound 1 is /p/",
-        "ok": false,
-        "detail": "heard /i5/ , expected /p/"
+        "ok": true,
+        "detail": "heard /puː/ , expected /p/"
       },
       {
         "name": "sound 2 is /p/",
-        "ok": false,
-        "detail": "heard /i5/ , expected /p/"
+        "ok": true,
+        "detail": "heard /pphuː/ , expected /p/"
       }
     ],
     "parts": [
@@ -126,25 +1176,400 @@
         "end": 1.31
       },
       {
-        "start": 2.04,
-        "end": 2.39
+        "start": 2.03,
+        "end": 2.55
       },
       {
-        "start": 2.91,
-        "end": 3.27
+        "start": 3.07,
+        "end": 3.59
       },
       {
-        "start": 3.99,
-        "end": 4.44
+        "start": 4.32,
+        "end": 4.76
       }
     ],
-    "duration": 4.436372,
+    "duration": 4.764263,
     "transcripts": {
       "name": "This is the letter P.",
-      "word": "Pig.",
+      "word": "Pig",
       "phonemes": [
-        "i5",
-        "i5"
+        "puː",
+        "pphuː"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-q",
+    "letter": "Q",
+    "file": "content\\generated\\little-learners\\letter-q\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "4.37s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -3.2 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -19.5 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.51, 0.72"
+      },
+      {
+        "name": "part 1 says \"This is the letter Q.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter Q.\""
+      },
+      {
+        "name": "part 4 says \"queen\"",
+        "ok": true,
+        "detail": "heard \"Queen\""
+      },
+      {
+        "name": "sound 1 is /kw/",
+        "ok": true,
+        "detail": "heard /kwi/ , expected /kw/"
+      },
+      {
+        "name": "sound 2 is /kw/",
+        "ok": true,
+        "detail": "heard /kwi/ , expected /kw/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.29
+      },
+      {
+        "start": 2.0,
+        "end": 2.19
+      },
+      {
+        "start": 2.7,
+        "end": 2.89
+      },
+      {
+        "start": 3.61,
+        "end": 4.37
+      }
+    ],
+    "duration": 4.372902,
+    "transcripts": {
+      "name": "This is the letter Q.",
+      "word": "Queen",
+      "phonemes": [
+        "kwi",
+        "kwi"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-r",
+    "letter": "R",
+    "file": "content\\generated\\little-learners\\letter-r\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "5.29s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -2.8 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -19.2 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.50, 0.72"
+      },
+      {
+        "name": "part 1 says \"This is the letter R.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter R.\""
+      },
+      {
+        "name": "part 4 says \"rainbow\"",
+        "ok": true,
+        "detail": "heard \"Rainbow\""
+      },
+      {
+        "name": "sound 1 is /r/",
+        "ok": true,
+        "detail": "heard /ɹuː/ , expected /r/"
+      },
+      {
+        "name": "sound 2 is /r/",
+        "ok": true,
+        "detail": "heard /rɹoːh/ , expected /r/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.45
+      },
+      {
+        "start": 2.16,
+        "end": 2.72
+      },
+      {
+        "start": 3.23,
+        "end": 3.79
+      },
+      {
+        "start": 4.51,
+        "end": 5.29
+      }
+    ],
+    "duration": 5.289229,
+    "transcripts": {
+      "name": "This is the letter R.",
+      "word": "Rainbow",
+      "phonemes": [
+        "ɹuː",
+        "rɹoːh"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-s",
+    "letter": "S",
+    "file": "content\\generated\\little-learners\\letter-s\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "5.31s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -3.6 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -19.3 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.51, 0.70"
+      },
+      {
+        "name": "part 1 says \"This is the letter S.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter S.\""
+      },
+      {
+        "name": "part 4 says \"sun\"",
+        "ok": true,
+        "detail": "heard \"Sun\""
+      },
+      {
+        "name": "sound 1 is /s/",
+        "ok": true,
+        "detail": "heard /sh/ , expected /s/"
+      },
+      {
+        "name": "sound 2 is /s/",
+        "ok": true,
+        "detail": "heard /shux/ , expected /s/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.33
+      },
+      {
+        "start": 2.04,
+        "end": 2.63
+      },
+      {
+        "start": 3.14,
+        "end": 3.73
+      },
+      {
+        "start": 4.44,
+        "end": 5.31
+      }
+    ],
+    "duration": 5.312494,
+    "transcripts": {
+      "name": "This is the letter S.",
+      "word": "Sun",
+      "phonemes": [
+        "sh",
+        "shux"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-t",
+    "letter": "T",
+    "file": "content\\generated\\little-learners\\letter-t\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "3.91s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -3.6 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -21.1 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.72, 0.51, 0.72"
+      },
+      {
+        "name": "part 1 says \"This is the letter T.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter T.\""
+      },
+      {
+        "name": "part 4 says \"tree\"",
+        "ok": true,
+        "detail": "heard \"Tree\""
+      },
+      {
+        "name": "sound 1 is /t/",
+        "ok": true,
+        "detail": "heard /t/ , expected /t/"
+      },
+      {
+        "name": "sound 2 is /t/",
+        "ok": true,
+        "detail": "heard /t/ , expected /t/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.31
+      },
+      {
+        "start": 2.03,
+        "end": 2.16
+      },
+      {
+        "start": 2.67,
+        "end": 2.8
+      },
+      {
+        "start": 3.52,
+        "end": 3.91
+      }
+    ],
+    "duration": 3.908299,
+    "transcripts": {
+      "name": "This is the letter T.",
+      "word": "Tree",
+      "phonemes": [
+        "t",
+        "t"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-u",
+    "letter": "U",
+    "file": "content\\generated\\little-learners\\letter-u\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "5.03s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -2.9 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -17.6 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.70, 0.51, 0.72"
+      },
+      {
+        "name": "part 1 says \"This is the letter U.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter U.\""
+      },
+      {
+        "name": "part 4 says \"umbrella\"",
+        "ok": true,
+        "detail": "heard \"Umbrella\""
+      },
+      {
+        "name": "sound 1 is /ʌ/",
+        "ok": false,
+        "detail": "heard /aː/ , expected /ʌ/"
+      },
+      {
+        "name": "sound 2 is /ʌ/",
+        "ok": false,
+        "detail": "heard /aː/ , expected /ʌ/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.28
+      },
+      {
+        "start": 1.98,
+        "end": 2.51
+      },
+      {
+        "start": 3.02,
+        "end": 3.55
+      },
+      {
+        "start": 4.27,
+        "end": 5.03
+      }
+    ],
+    "duration": 5.032313,
+    "transcripts": {
+      "name": "This is the letter U.",
+      "word": "Umbrella",
+      "phonemes": [
+        "aː",
+        "aː"
       ]
     },
     "ok": false
@@ -157,7 +1582,7 @@
       {
         "name": "decodes",
         "ok": true,
-        "detail": "4.51s"
+        "detail": "4.52s"
       },
       {
         "name": "not clipped",
@@ -167,12 +1592,12 @@
       {
         "name": "not too quiet",
         "ok": true,
-        "detail": "mean -19.8 dB"
+        "detail": "mean -20.8 dB"
       },
       {
         "name": "pauses 0.7 / 0.5 / 0.7 s",
         "ok": true,
-        "detail": "found 0.70, 0.51, 0.71"
+        "detail": "found 0.71, 0.52, 0.71"
       },
       {
         "name": "part 1 says \"This is the letter V.\"",
@@ -182,17 +1607,17 @@
       {
         "name": "part 4 says \"van\"",
         "ok": false,
-        "detail": "heard \"Fun!\""
+        "detail": "heard \"fun\""
       },
       {
         "name": "sound 1 is /v/",
-        "ok": false,
-        "detail": "heard /vi/ , expected /v/ - sounds like the letter NAME"
+        "ok": true,
+        "detail": "heard /vaː/ , expected /v/"
       },
       {
         "name": "sound 2 is /v/",
-        "ok": false,
-        "detail": "heard /vi/ , expected /v/ - sounds like the letter NAME"
+        "ok": true,
+        "detail": "heard /vaː/ , expected /v/"
       }
     ],
     "parts": [
@@ -201,27 +1626,327 @@
         "end": 1.35
       },
       {
-        "start": 2.05,
-        "end": 2.46
+        "start": 2.06,
+        "end": 2.47
       },
       {
-        "start": 2.97,
-        "end": 3.38
+        "start": 2.98,
+        "end": 3.39
       },
       {
-        "start": 4.09,
-        "end": 4.51
+        "start": 4.1,
+        "end": 4.52
       }
     ],
-    "duration": 4.509206,
+    "duration": 4.52322,
     "transcripts": {
       "name": "This is the letter V.",
-      "word": "Fun!",
+      "word": "fun",
       "phonemes": [
-        "vi",
-        "vi"
+        "vaː",
+        "vaː"
       ]
     },
     "ok": false
+  },
+  {
+    "lesson": "letter-w",
+    "letter": "W",
+    "file": "content\\generated\\little-learners\\letter-w\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "4.48s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -2.3 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -19.3 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.52, 0.72"
+      },
+      {
+        "name": "part 1 says \"This is the letter W.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter W.\""
+      },
+      {
+        "name": "part 4 says \"whale\"",
+        "ok": false,
+        "detail": "heard \"Well\""
+      },
+      {
+        "name": "sound 1 is /w/",
+        "ok": true,
+        "detail": "heard /wa/ , expected /w/"
+      },
+      {
+        "name": "sound 2 is /w/",
+        "ok": true,
+        "detail": "heard /wa/ , expected /w/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.63
+      },
+      {
+        "start": 2.34,
+        "end": 2.52
+      },
+      {
+        "start": 3.03,
+        "end": 3.2
+      },
+      {
+        "start": 3.93,
+        "end": 4.48
+      }
+    ],
+    "duration": 4.475193,
+    "transcripts": {
+      "name": "This is the letter W.",
+      "word": "Well",
+      "phonemes": [
+        "wa",
+        "wa"
+      ]
+    },
+    "ok": false
+  },
+  {
+    "lesson": "letter-x",
+    "letter": "X",
+    "file": "content\\generated\\little-learners\\letter-x\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "5.15s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -1.6 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -20.2 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.51, 0.72"
+      },
+      {
+        "name": "part 1 says \"This is the letter X.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter X.\""
+      },
+      {
+        "name": "part 4 says \"box\"",
+        "ok": true,
+        "detail": "heard \"box\""
+      },
+      {
+        "name": "sound 1 is /ks/",
+        "ok": false,
+        "detail": "heard // , expected /ks/"
+      },
+      {
+        "name": "sound 2 is /ks/",
+        "ok": false,
+        "detail": "heard // , expected /ks/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.46
+      },
+      {
+        "start": 2.17,
+        "end": 2.73
+      },
+      {
+        "start": 3.23,
+        "end": 3.78
+      },
+      {
+        "start": 4.51,
+        "end": 5.15
+      }
+    ],
+    "duration": 5.150794,
+    "transcripts": {
+      "name": "This is the letter X.",
+      "word": "box",
+      "phonemes": [
+        "",
+        ""
+      ]
+    },
+    "ok": false
+  },
+  {
+    "lesson": "letter-y",
+    "letter": "Y",
+    "file": "content\\generated\\little-learners\\letter-y\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "4.40s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -2.2 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -18.9 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.51, 0.72"
+      },
+      {
+        "name": "part 1 says \"This is the letter Y.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter Y.\""
+      },
+      {
+        "name": "part 4 says \"yo-yo\"",
+        "ok": true,
+        "detail": "heard \"Yo, yo\""
+      },
+      {
+        "name": "sound 1 is /j/",
+        "ok": true,
+        "detail": "heard /ja/ , expected /j/"
+      },
+      {
+        "name": "sound 2 is /j/",
+        "ok": true,
+        "detail": "heard /ja/ , expected /j/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.32
+      },
+      {
+        "start": 2.03,
+        "end": 2.23
+      },
+      {
+        "start": 2.73,
+        "end": 2.93
+      },
+      {
+        "start": 3.64,
+        "end": 4.4
+      }
+    ],
+    "duration": 4.404444,
+    "transcripts": {
+      "name": "This is the letter Y.",
+      "word": "Yo, yo",
+      "phonemes": [
+        "ja",
+        "ja"
+      ]
+    },
+    "ok": true
+  },
+  {
+    "lesson": "letter-z",
+    "letter": "Z",
+    "file": "content\\generated\\little-learners\\letter-z\\audio\\intro.gen.mp3",
+    "checks": [
+      {
+        "name": "decodes",
+        "ok": true,
+        "detail": "4.39s"
+      },
+      {
+        "name": "not clipped",
+        "ok": true,
+        "detail": "peak -2.3 dB"
+      },
+      {
+        "name": "not too quiet",
+        "ok": true,
+        "detail": "mean -20.6 dB"
+      },
+      {
+        "name": "pauses 0.7 / 0.5 / 0.7 s",
+        "ok": true,
+        "detail": "found 0.71, 0.52, 0.71"
+      },
+      {
+        "name": "part 1 says \"This is the letter Z.\"",
+        "ok": true,
+        "detail": "heard \"This is the letter Z.\""
+      },
+      {
+        "name": "part 4 says \"zebra\"",
+        "ok": true,
+        "detail": "heard \"Zebra\""
+      },
+      {
+        "name": "sound 1 is /z/",
+        "ok": true,
+        "detail": "heard /z/ , expected /z/"
+      },
+      {
+        "name": "sound 2 is /z/",
+        "ok": true,
+        "detail": "heard /z/ , expected /z/"
+      }
+    ],
+    "parts": [
+      {
+        "start": 0.0,
+        "end": 1.41
+      },
+      {
+        "start": 2.12,
+        "end": 2.32
+      },
+      {
+        "start": 2.84,
+        "end": 3.04
+      },
+      {
+        "start": 3.75,
+        "end": 4.39
+      }
+    ],
+    "duration": 4.390816,
+    "transcripts": {
+      "name": "This is the letter Z.",
+      "word": "Zebra",
+      "phonemes": [
+        "z",
+        "z"
+      ]
+    },
+    "ok": true
   }
 ]
