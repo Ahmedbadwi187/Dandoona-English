@@ -35,7 +35,8 @@ mixin PhonicsGame<T extends ConsumerStatefulWidget> on ConsumerState<T> {
   void startGame() {
     speech; // made now, never first inside dispose
     final childId = ref.read(activeChildIdProvider);
-    final seen = childId != null && ref.read(demoSeenProvider.notifier).seen(childId, activity);
+    // the demo plays every time the game opens; only when that is switched off does "seen once" decide
+    final seen = !ref.read(autoDemoEveryTimeProvider) && childId != null && ref.read(demoSeenProvider.notifier).seen(childId, activity);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       if (seen) {

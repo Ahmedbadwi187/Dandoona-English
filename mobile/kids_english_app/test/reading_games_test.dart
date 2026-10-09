@@ -42,22 +42,41 @@ Lesson _lesson() => Lesson.fromJson({
 
 const _child = '[{"id":"c1","name":"Lina","avatarKey":"star","birthYear":2019,"birthMonth":2,"track":"explorers","createdAt":"2026-01-01T00:00:00Z"}]';
 
-Future<(FakeAudio, List<ActivityResult>)> _game(WidgetTester t, Widget Function(ValueChanged<ActivityResult>) build, {String? seen}) async {
+Future<(FakeAudio, List<ActivityResult>)> _game(WidgetTester t, Widget Function(ValueChanged<ActivityResult>) build, {String? seen, bool autoDemo = false}) async {
+  // with the demo on, the hand is still moving right after the game opens, so that case does not wait for everything to settle
   t.view.physicalSize = const Size(1080, 2400);
   t.view.devicePixelRatio = 1080 / 411;
   addTearDown(t.view.reset);
   final audio = FakeAudio();
   final results = <ActivityResult>[];
-  final overrides = await testOverrides(prefs: {'children.v1': _child, if (seen != null) 'demos.v1': '{"c1":["$seen"]}'});
+  final overrides = await testOverrides(autoDemo: autoDemo, prefs: {'children.v1': _child, if (seen != null) 'demos.v1': '{"c1":["$seen"]}'});
   final c = ProviderContainer(overrides: [...overrides, audioServiceProvider.overrideWithValue(audio)]);
   addTearDown(c.dispose);
   c.read(activeChildIdProvider.notifier).select('c1');
   await t.pumpWidget(UncontrolledProviderScope(container: c, child: MaterialApp(home: Scaffold(body: build(results.add)))));
-  await t.pumpAndSettle();
+  if (autoDemo) {
+    await t.pump();
+    await t.pump(const Duration(milliseconds: 300));
+  } else {
+    await t.pumpAndSettle();
+  }
   return (audio, results);
 }
 
 void main() {
+  group('the demo', () {
+    testWidgets('plays by itself every time a game opens, also for a child who has seen it before (the "?" is only to play it again)', (t) async {
+      final (audio, _) = await _game(t, (done) => TrueOrFalseActivity(lesson: _lesson(), onFinished: done, random: Random(3)), seen: 'true-or-false', autoDemo: true);
+      expect(t.widget<HandDemo>(find.byType(HandDemo)).running, isTrue);
+      expect(audio.played, ['asset:audio/x/i_tf.mp3']); // Dandoona explains it while the hand moves
+    });
+
+    testWidgets('with the every-time rule off, a child who has seen it does not get it again', (t) async {
+      await _game(t, (done) => TrueOrFalseActivity(lesson: _lesson(), onFinished: done, random: Random(3)), seen: 'true-or-false');
+      expect(t.widget<HandDemo>(find.byType(HandDemo)).running, isFalse);
+    });
+  });
+
   group('the rounds of True or False', () {
     test('half true, half false; a sentence about one or two is false with the wrong number, otherwise with another picture', () {
       for (var seed = 0; seed < 30; seed++) {

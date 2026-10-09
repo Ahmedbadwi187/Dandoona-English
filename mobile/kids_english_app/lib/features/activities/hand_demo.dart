@@ -208,6 +208,10 @@ class DemoSeenNotifier extends Notifier<Map<String, Set<String>>> {
   }
 }
 
+/// The demo plays every time a game opens (the child never has to press the "?" first; the "?" plays it again). Off only in tests that
+/// are about something else, where the first-time rule (demos.v1) decides.
+final autoDemoEveryTimeProvider = Provider<bool>((_) => true);
+
 final demoSeenProvider = NotifierProvider<DemoSeenNotifier, Map<String, Set<String>>>(DemoSeenNotifier.new);
 
 /// The round "?" button that plays the demo again.

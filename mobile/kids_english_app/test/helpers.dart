@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart' show Override;
 import 'package:kids_english_app/core/storage.dart';
 import 'package:kids_english_app/features/audio/audio_service.dart';
+import 'package:kids_english_app/features/activities/hand_demo.dart' show autoDemoEveryTimeProvider;
 import 'package:kids_english_app/features/content/content_models.dart';
 import 'package:kids_english_app/features/content/content_repository.dart';
 import 'package:kids_english_app/features/reminders/reminder_service.dart';
@@ -39,7 +40,7 @@ Future<SharedPreferences> mockPrefs([Map<String, Object> initial = const {}]) as
 }
 
 /// Overrides every app dependency that touches the platform.
-Future<List<Override>> testOverrides({Map<String, Object> prefs = const {}, TrackContent? content, FakeReminders? reminders, TrackContent? explorers}) async {
+Future<List<Override>> testOverrides({Map<String, Object> prefs = const {}, TrackContent? content, FakeReminders? reminders, TrackContent? explorers, bool autoDemo = false}) async {
   final p = await mockPrefs(prefs);
   final c = content ?? sampleContent();
   return [
@@ -47,6 +48,7 @@ Future<List<Override>> testOverrides({Map<String, Object> prefs = const {}, Trac
     contentProvider.overrideWith((ref) async => c),
     if (explorers != null) explorersContentProvider.overrideWith((ref) async => explorers),
     reminderServiceProvider.overrideWithValue(reminders ?? FakeReminders()),
+    autoDemoEveryTimeProvider.overrideWithValue(autoDemo), // most tests are not about the demo: there the first-time rule decides
   ];
 }
 
