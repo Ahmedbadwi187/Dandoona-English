@@ -1,0 +1,14 @@
+<Project>
+  <!-- A publish carries the content the API serves (/packs and /cards). scripts/prepare-host-content.ps1 gathers the newest version of
+       every content pack and the parent cards into dist/host-content; this adds both folders to the published files, so one publish
+       (Visual Studio or dotnet publish) uploads the API and its content together. Without that folder nothing is added. -->
+  <Target Name="PrepareHostContent" BeforeTargets="ComputeResolvedFilesToPublishList" Condition="'$(OS)' == 'Windows_NT' And Exists('$(MSBuildThisFileDirectory)../../scripts/prepare-host-content.ps1')">
+    <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildThisFileDirectory)../../scripts/prepare-host-content.ps1&quot;" ContinueOnError="true" StandardOutputImportance="low" />
+  </Target>
+  <Target Name="AddHostContentToPublish" AfterTargets="ComputeResolvedFilesToPublishList">
+    <ItemGroup>
+      <HostContent Include="$(MSBuildThisFileDirectory)../../dist/host-content/**/*" />
+      <ResolvedFileToPublish Include="@(HostContent)" RelativePath="%(HostContent.RecursiveDir)%(HostContent.Filename)%(HostContent.Extension)" CopyToPublishDirectory="PreserveNewest" />
+    </ItemGroup>
+  </Target>
+</Project>

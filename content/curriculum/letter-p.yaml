@@ -8,7 +8,8 @@ words:
   - { word: pig, imagePrompt: "a cute pink cartoon pig", source: openai }
   - { word: pizza, imagePrompt: "a pizza slice with cheese and pepperoni", source: svg }
 narration:
-  intro: "This is the letter P. P says puh, puh, pig!"
+  intro: "This is the letter P."
+  introWord: pig
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter P!"

@@ -117,6 +117,8 @@ public class PhonemeDef
 public class Narration
 {
     public string Intro { get; set; } = "";
+    /// <summary>Letters: the example word of the intro ("ball"). When set, the intro is the spoken `intro` line, then the letter's phoneme clip twice, then that word's clip, joined with pauses.</summary>
+    public string? IntroWord { get; set; }
     public List<string> Praise { get; set; } = [];
     /// <summary>Spoken instructions, keyed by activity name (shown to the child when the activity starts), plus an optional "hint".</summary>
     public Dictionary<string, string> Instructions { get; set; } = [];
@@ -273,6 +275,8 @@ public class LessonValidator : AbstractValidator<Lesson>
             .WithMessage("Duplicate words in lesson.");
 
         RuleFor(x => x.Narration.Intro).NotEmpty().MaximumLength(500);
+        RuleFor(x => x).Must(l => l.Narration.IntroWord is null || (!string.IsNullOrWhiteSpace(l.Phoneme) && l.Words.Any(w => w.Word.Trim().Equals(l.Narration.IntroWord.Trim(), StringComparison.OrdinalIgnoreCase))))
+            .WithMessage("`introWord` needs a `phoneme` and must be one of the lesson's words.");
         RuleFor(x => x.Narration.Praise).NotEmpty();
         RuleForEach(x => x.Narration.Praise).NotEmpty().MaximumLength(100);
         RuleFor(x => x.Narration.ColorName).MaximumLength(30);

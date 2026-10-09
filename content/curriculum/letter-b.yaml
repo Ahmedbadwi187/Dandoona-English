@@ -9,7 +9,8 @@ words:
   - { word: bear, imagePrompt: "a friendly brown cartoon bear" }
   - { word: banana, imagePrompt: "a ripe yellow banana" }
 narration:
-  intro: "This is the letter B. B says b, b, ball!"
+  intro: "This is the letter B."
+  introWord: ball
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter B!"

@@ -22,4 +22,6 @@
     <UserSecretsId>fd1199a9-6625-4993-9374-31c6fabb6bb0</UserSecretsId>
   </PropertyGroup>
 
+  <Import Project="publish-content.targets" />
+
 </Project>

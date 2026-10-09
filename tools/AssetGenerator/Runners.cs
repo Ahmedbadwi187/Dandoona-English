@@ -39,7 +39,7 @@ public class AudioRunner(Layout layout, VoiceConfig voices, GenerationConfig con
                 var hash = Hashing.AudioHash(item.Text, voice, voices.Model, voices.OutputFormat);
                 var state =
                     File.Exists(layout.AudioOverride(lesson, item.Role)) ? AudioState.Overridden :
-                    !File.Exists(layout.AudioGen(lesson, item.Role)) || force ? AudioState.Missing :
+                    !File.Exists(Spoken(lesson, item)) || force ? AudioState.Missing :
                     // File exists but nothing recorded about it: adopt it rather than pay to regenerate.
                     !manifest.Audio.TryGetValue(item.Role, out var entry) || entry.Hash == hash ? AudioState.UpToDate :
                     AudioState.Changed;
@@ -47,6 +47,25 @@ public class AudioRunner(Layout layout, VoiceConfig voices, GenerationConfig con
             }
         }
         return jobs;
+    }
+
+    /// <summary>The file the voice writes: the line itself, or just its spoken first part when the line is composed.</summary>
+    private string Spoken(Lesson lesson, AudioItem item) => item.ComposeWord is null ? layout.AudioGen(lesson, item.Role) : layout.AudioPart(lesson, item.Role);
+
+    /// <summary>Builds the composed lines (name, sound, sound, word) from their parts. Free, so it always re-runs: a new recording of a sound or word is picked up.</summary>
+    private async Task ComposeAsync(IEnumerable<AudioJob> jobs, CancellationToken ct)
+    {
+        foreach (var j in jobs.Where(j => j.Item.ComposeWord is not null && j.State != AudioState.Overridden))
+        {
+            var parts = new[] { Spoken(j.Lesson, j.Item), layout.AudioForExport(j.Lesson, "phoneme"), layout.AudioForExport(j.Lesson, "phoneme"), layout.AudioForExport(j.Lesson, j.Item.ComposeWord!) };
+            if (parts.Any(p => p is null || !File.Exists(p)))
+            {
+                output.WriteLine($"  cannot build {j.Lesson.Id}/{j.Item.Role}: a part is missing (needs the spoken line, the phoneme clip and {j.Item.ComposeWord}).");
+                continue;
+            }
+            await AudioStitcher.JoinAsync(parts!, AudioStitcher.LetterIntroPauses, layout.AudioGen(j.Lesson, j.Item.Role), ct);
+            output.WriteLine($"  built {j.Lesson.Id}/{j.Item.Role} from {parts.Length} parts");
+        }
     }
 
     public async Task<int> RunAsync(IEnumerable<Lesson> lessons, bool dryRun, bool force, CancellationToken ct)
@@ -65,7 +84,8 @@ public class AudioRunner(Layout layout, VoiceConfig voices, GenerationConfig con
         var planned = chars / 1000m * rate;
         output.WriteLine($"Estimated ElevenLabs usage: {chars} characters ({voices.Model}) = ${planned:0.0000} at ${rate}/1k chars. {ledger.Summary()}");
 
-        if (dryRun || todo.Count == 0) { if (dryRun) output.WriteLine("(dry run: nothing was generated)"); return 0; }
+        if (dryRun) { output.WriteLine("(dry run: nothing was generated)"); return 0; }
+        if (todo.Count == 0) { await ComposeAsync(jobs, ct); return 0; }
         if (client is null) throw new ApiException("ELEVENLABS_API_KEY is not set (use .env, user-secrets or an environment variable).");
         ledger.EnsureWithinBudget(planned);
 
@@ -77,7 +97,7 @@ public class AudioRunner(Layout layout, VoiceConfig voices, GenerationConfig con
             {
                 ct.ThrowIfCancellationRequested();
                 var bytes = await client.SynthesizeAsync(j.Item.Text, voice, voices.Model, voices.OutputFormat, ct);
-                var path = layout.AudioGen(j.Lesson, j.Item.Role);
+                var path = Spoken(j.Lesson, j.Item);
                 Directory.CreateDirectory(Path.GetDirectoryName(path)!);
                 await File.WriteAllBytesAsync(path, bytes, ct);
                 manifest.Audio[j.Item.Role] = new ManifestEntry { Hash = j.Hash, GeneratedAtUtc = DateTime.UtcNow };
@@ -86,6 +106,7 @@ public class AudioRunner(Layout layout, VoiceConfig voices, GenerationConfig con
             }
             output.WriteLine($"  generated {group.Key.Id}: {group.Count()} line(s)");
         }
+        await ComposeAsync(jobs, ct);
         output.WriteLine(ledger.Summary());
         return 0;
     }

@@ -29,6 +29,12 @@ final contentProvider = FutureProvider<TrackContent>((ref) async {
   ]);
 });
 
+/// The ids of the Explorers units that are packs (empty until the Explorers catalog has loaded): a download of one of them goes to /packs/explorers.
+final explorersCatalogUnitIdsProvider = Provider<Set<String>>((ref) => {
+  for (final u in ref.watch(explorersContentProvider).asData?.value.units ?? const <CourseUnit>[])
+    if (u.pack != null) u.id,
+});
+
 CourseUnit? _loadPack(PackRepository repo, CourseUnit unit) {
   try {
     return repo.load(unit);
@@ -55,7 +61,16 @@ const availableTracks = explorersEnabled ? {littleLearnersTrack, explorersTrack}
 
 /// The Explorers lessons, read from the bundled JSON (no network). Its Letters unit is the Little Learners one (same
 /// lessons and files), so a child who already knows them keeps that progress.
-final explorersContentProvider = FutureProvider<TrackContent>((ref) => loadTrackContent(ref.watch(assetBundleProvider), path: explorersAsset));
+final explorersContentProvider = FutureProvider<TrackContent>((ref) async {
+  final bundled = await loadTrackContent(ref.watch(assetBundleProvider), path: explorersAsset);
+  ref.watch(installedPacksProvider);
+  final repo = ref.watch(explorersPackRepositoryProvider);
+  if (repo == null || !bundled.units.any((u) => u.pack != null)) return bundled;
+  return bundled.withUnits([
+    for (final u in bundled.units)
+      if (u.needsDownload) _loadPack(repo, u) ?? u else u,
+  ]);
+});
 
 /// The catalog of a track; an unknown track reads as Little Learners.
 final trackContentProvider = FutureProvider.family<TrackContent, String>((ref, track) =>

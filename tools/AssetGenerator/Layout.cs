@@ -32,6 +32,8 @@ public sealed class Layout(string root)
     public string ManifestPath(Lesson l) => Path.Combine(LessonDir(l), "manifest.json");
 
     public string AudioGen(Lesson l, string role) => Path.Combine(LessonDir(l), "audio", $"{role}.gen.mp3");
+    /// <summary>The spoken part of a composed line (the rest are other clips); the finished line is written to AudioGen.</summary>
+    public string AudioPart(Lesson l, string role) => Path.Combine(LessonDir(l), "audio", "_parts", $"{role}.gen.mp3");
     public string AudioOverride(Lesson l, string role) => Path.Combine(LessonDir(l), "audio", $"{role}.override.mp3");
 
     public string ImageReviewDir(Lesson l) => Path.Combine(LessonDir(l), "images", "_review");
@@ -105,7 +107,8 @@ public sealed class Layout(string root)
 }
 
 /// <summary>What a lesson needs, derived from its curriculum definition.</summary>
-public record AudioItem(string Role, string Text, bool IsPhoneme);
+/// <summary>`ComposeWord`: the intro is built from several parts (see AudioStitcher). Text is only the spoken first part; the rest are the lesson's own phoneme and word clips.</summary>
+public record AudioItem(string Role, string Text, bool IsPhoneme, string? ComposeWord = null);
 public record ImageItem(string Key, string Prompt, bool UsesMascot, bool IsSvg = false);
 
 public static class LessonPlan
@@ -114,7 +117,8 @@ public static class LessonPlan
     {
         // a track's phoneme table: one clip per sound, every one flagged as a phoneme to listen to
         if (l.PhonemeSet is not null) return l.PhonemeSet.Select(p => new AudioItem(PhonemeRole(p.Key), p.Say.Trim(), true)).ToList();
-        var items = new List<AudioItem> { new("intro", l.Narration.Intro.Trim(), false) };
+        var composed = !string.IsNullOrWhiteSpace(l.Phoneme) && !string.IsNullOrWhiteSpace(l.Narration.IntroWord);
+        var items = new List<AudioItem> { new("intro", l.Narration.Intro.Trim(), false, composed ? $"word-{Slug(l.Narration.IntroWord!)}" : null) };
         if (!string.IsNullOrWhiteSpace(l.Phoneme)) items.Add(new("phoneme", l.Phoneme.Trim(), true));
         for (var i = 0; i < l.Narration.Praise.Count; i++) items.Add(new($"praise-{i}", l.Narration.Praise[i].Trim(), false));
         foreach (var w in l.Words) items.Add(new($"word-{Slug(w.Word)}", (w.Say ?? w.Word).Trim(), false));

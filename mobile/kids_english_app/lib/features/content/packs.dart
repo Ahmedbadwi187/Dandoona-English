@@ -11,6 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../core/storage.dart';
 import '../sync/sync_controller.dart' show defaultApiBaseUrl;
 import 'content_models.dart';
+import 'content_repository.dart' show explorersCatalogUnitIdsProvider;
 
 /// Downloadable content packs: every unit after Letters and Colors. The app's catalog names each pack (version, checksum,
 /// lesson ids); the pack itself (lesson JSON, audio, pictures) comes from our API at /packs, is checked file by file
@@ -77,6 +78,9 @@ class PackRepository {
   final SharedPreferences prefs;
   final PackFetcher fetcher;
   final Future<Directory> Function() _root;
+
+  /// The same server, folder and storage for another track (Explorers packs live under /packs/explorers).
+  PackRepository forTrack(String other) => PackRepository(baseUrl: baseUrl, track: other, prefs: prefs, fetcher: fetcher, root: _root);
 
   Uri _url(String rel) => Uri.parse('${baseUrl.replaceAll(RegExp(r'/+$'), '')}/packs/${_snake(track)}/$rel');
 
@@ -185,6 +189,9 @@ final packRepositoryProvider = Provider<PackRepository?>((ref) {
   );
 });
 
+/// The Explorers packs come from the same server under /packs/explorers (null when there is no server).
+final explorersPackRepositoryProvider = Provider<PackRepository?>((ref) => ref.watch(packRepositoryProvider)?.forTrack('explorers'));
+
 enum PackDownload { downloading, offline, failed }
 
 /// Downloads in progress or failed, per unit. [ensure] starts one in the background (once at a time per unit); when it
@@ -203,7 +210,9 @@ class PackDownloadsNotifier extends Notifier<Map<String, PackDownload>> {
   }
 
   Future<void> ensure(CourseUnit unit) async {
-    final repo = ref.read(packRepositoryProvider);
+    // a unit of the Explorers catalog is downloaded from the Explorers folder, every other one from the Little Learners folder
+    final explorersUnit = ref.read(explorersCatalogUnitIdsProvider).contains(unit.id);
+    final repo = explorersUnit ? ref.read(explorersPackRepositoryProvider) : ref.read(packRepositoryProvider);
     final bundled = unit.pack;
     if (repo == null || bundled == null || state[unit.id] == PackDownload.downloading) return;
     final have = repo.installed()[unit.id];

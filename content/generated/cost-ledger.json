@@ -17890,5 +17890,26 @@
     "what": "grammar-starters-can/instr-true-or-false (45 chars)",
     "usd": 0.00360,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T10:59:01.5141843Z",
+    "service": "ElevenLabs",
+    "what": "letter-b/intro (21 chars)",
+    "usd": 0.00168,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T10:59:06.8316077Z",
+    "service": "ElevenLabs",
+    "what": "letter-p/intro (21 chars)",
+    "usd": 0.00168,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T10:59:11.5340399Z",
+    "service": "ElevenLabs",
+    "what": "letter-v/intro (21 chars)",
+    "usd": 0.00168,
+    "estimated": false
   }
 ]

@@ -8,7 +8,8 @@ words:
   - { word: van, imagePrompt: "a small blue delivery van", source: svg }
   - { word: violin, imagePrompt: "a brown violin with a bow", source: openai }
 narration:
-  intro: "This is the letter V. V says vv, vv, van!"
+  intro: "This is the letter V."
+  introWord: van
   praise: ["Great job!", "Well done!", "You did it!"]
   instructions:
     trace: "Trace the letter V!"
