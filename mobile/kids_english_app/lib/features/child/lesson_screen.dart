@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
@@ -115,13 +116,13 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                   children: [
                     Align(
                       alignment: Alignment.centerLeft,
-                      child: IconButton(
+                      child: LoadingAction(onPressed: () => context.pop(), builder: (onPressed, loading) => IconButton(
                         key: const Key('lesson-back'),
                         constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
                         iconSize: 32,
-                        onPressed: () => context.pop(),
-                        icon: const Icon(Icons.arrow_back_rounded),
-                      ),
+                        onPressed: onPressed,
+                        icon: LoadingContent(loading: loading, child: const Icon(Icons.arrow_back_rounded)),
+                      )),
                     ),
                     if (lesson.letter != null)
                       _LetterPair(lesson: lesson) // a letter lesson shows the capital and the small letter, and says which is which
@@ -131,7 +132,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                         badgeInset: 8,
                         key: const Key('lesson-letter-tap'),
                         semanticLabel: lesson.letter,
-                        onTap: () => unawaited(ref.read(audioServiceProvider).playAsset(lesson.audio.colorName ?? lesson.audio.phoneme ?? lesson.audio.intro)),
+                        onTap: () => ref.read(audioServiceProvider).playAsset(lesson.audio.colorName ?? lesson.audio.phoneme ?? lesson.audio.intro),
                         child: Container(
                           width: 128,
                           height: 128,
@@ -176,7 +177,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                               TapToHear(
                                 key: Key('word-${w.word}'),
                                 semanticLabel: w.word,
-                                onTap: () => unawaited(ref.read(audioServiceProvider).playAsset(w.audio)),
+                                onTap: () => ref.read(audioServiceProvider).playAsset(w.audio),
                                 child: AssetPicture(w.image, size: 104, semanticLabel: w.word),
                               ),
                               const SizedBox(height: 2),
@@ -249,9 +250,9 @@ class _ActivityTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return LoadingTap(
       key: Key('activity-$activity'),
-      onTap: () => context.push('/lesson/$lessonId/$activity'),
+      onTap: () { context.push('/lesson/$lessonId/$activity'); },
       child: Container(
         width: 84,
         height: 88,
@@ -295,14 +296,12 @@ class _LetterPair extends ConsumerWidget {
 
   final Lesson lesson;
 
-  void _say(WidgetRef ref, String key) {
+  Future<void> _say(WidgetRef ref, String key) async {
     final audio = ref.read(audioServiceProvider);
     final line = lesson.audio.instructions[key];
     final sound = lesson.audio.phoneme ?? lesson.audio.intro;
-    unawaited(() async {
-      if (line != null) await audio.playAsset(line);
-      await audio.playAsset(sound);
-    }());
+    if (line != null) await audio.playAsset(line);
+    await audio.playAsset(sound);
   }
 
   @override

@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/palette.dart';
+import '../../core/loading_action.dart';
 import '../../core/strings.dart';
 import '../../core/widgets.dart';
 import '../audio/audio_service.dart';
@@ -51,13 +52,16 @@ class _ChildDetailScreenState extends ConsumerState<ChildDetailScreen> {
   Future<void> _hear(CourseUnit unit) async {
     final mine = ++_token;
     setState(() => _hearing = true);
-    for (final lesson in unit.lessons) {
-      for (final w in lesson.words) {
-        if (mine != _token) return;
-        await _audio.playAsset(w.audio);
+    try {
+      for (final lesson in unit.lessons) {
+        for (final w in lesson.words) {
+          if (mine != _token) return;
+          await _audio.playAsset(w.audio);
+        }
       }
+    } finally {
+      if (mounted && mine == _token) setState(() => _hearing = false);
     }
-    if (mounted && mine == _token) setState(() => _hearing = false);
   }
 
   Future<void> _stop() async {
@@ -138,19 +142,27 @@ class _ChildDetailScreenState extends ConsumerState<ChildDetailScreen> {
                           ),
                           const SizedBox(height: 12),
                           _hearing
-                              ? OutlinedButton.icon(
-                                  key: const Key('hear-stop'),
-                                  style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(kParentTap), foregroundColor: Palette.red, side: const BorderSide(color: Palette.red, width: 1.5)),
+                              ? LoadingAction(
+                                  key: const ValueKey('hear-stop-loading'),
                                   onPressed: _stop,
-                                  icon: const Icon(Icons.stop_rounded),
-                                  label: Text(s('dStop')),
+                                  builder: (onPressed, loading) => OutlinedButton.icon(
+                                    key: const Key('hear-stop'),
+                                    style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(kParentTap), foregroundColor: Palette.red, side: const BorderSide(color: Palette.red, width: 1.5)),
+                                    onPressed: onPressed,
+                                    icon: LoadingContent(loading: _hearing || loading, child: const Icon(Icons.stop_rounded)),
+                                    label: Text(s('dStop')),
+                                  ),
                                 )
-                              : FilledButton.tonalIcon(
-                                  key: const Key('hear-words'),
-                                  style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(kParentTap)),
+                              : LoadingAction(
+                                  key: const ValueKey('hear-words-loading'),
                                   onPressed: () => _hear(current.unit),
-                                  icon: const Icon(Icons.volume_up_rounded),
-                                  label: Text(s('dHearWords')),
+                                  builder: (onPressed, loading) => FilledButton.tonalIcon(
+                                    key: const Key('hear-words'),
+                                    style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(kParentTap)),
+                                    onPressed: onPressed,
+                                    icon: LoadingContent(loading: loading, child: const Icon(Icons.volume_up_rounded)),
+                                    label: Text(s('dHearWords')),
+                                  ),
                                 ),
                         ],
                       ),
@@ -276,12 +288,16 @@ class _Practice extends StatelessWidget {
                   AssetPicture(w.image, size: 44, semanticLabel: w.word),
                   const SizedBox(width: 12),
                   Expanded(child: Text(w.word, style: ParentText.section)),
-                  IconButton(
-                    key: Key('practice-play-${w.word}'),
-                    tooltip: s('dPlay'),
-                    constraints: const BoxConstraints(minWidth: kParentTap, minHeight: kParentTap),
-                    onPressed: () => unawaited(audio.playAsset(w.audio)),
-                    icon: Icon(Icons.volume_up_rounded, color: Theme.of(context).colorScheme.primary),
+                  LoadingAction(
+                    key: ValueKey('practice-loading-${w.word}'),
+                    onPressed: () => audio.playAsset(w.audio),
+                    builder: (onPressed, loading) => IconButton(
+                      key: Key('practice-play-${w.word}'),
+                      tooltip: s('dPlay'),
+                      constraints: const BoxConstraints(minWidth: kParentTap, minHeight: kParentTap),
+                      onPressed: onPressed,
+                      icon: LoadingContent(loading: loading, child: Icon(Icons.volume_up_rounded, color: Theme.of(context).colorScheme.primary)),
+                    ),
                   ),
                 ],
               ),

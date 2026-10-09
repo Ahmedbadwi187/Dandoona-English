@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/sky.dart';
 import '../../core/theme.dart' show kMinTapTarget;
@@ -120,12 +121,12 @@ class UnitMapScreen extends ConsumerWidget {
                   children: [
                     Text(Strings.en('loadError'), style: kidBody),
                     const SizedBox(height: 12),
-                    FilledButton(
-                      onPressed: () => ref
+                    LoadingAction(onPressed: () => ref
                         ..invalidate(contentProvider)
-                        ..invalidate(explorersContentProvider),
-                      child: Text(Strings.en('retry')),
-                    ),
+                        ..invalidate(explorersContentProvider), builder: (onPressed, loading) => FilledButton(
+                      onPressed: onPressed,
+                      child: LoadingContent(loading: loading, child: Text(Strings.en('retry'))),
+                    )),
                   ],
                 ),
               ),
@@ -243,9 +244,9 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
     if (line != null && mounted) await audio.playAsset(line);
   }
 
-  void _openUnit(MapStop stop, List<MapStop> stops) {
+  Future<void> _openUnit(MapStop stop, List<MapStop> stops) async {
     if (stop.state == StopState.locked || stop.state == StopState.soon) {
-      unawaited(_closed(stop, stops));
+      await _closed(stop, stops);
       return;
     }
     final unit = stop.unit!.unit;
@@ -256,15 +257,15 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
       _showBubble(Strings.en('mapAlmostReady')); // (the map stays where the child is: the island's own badge shows the download, and Dandoona is not brought back)
       final almost = widget.track.appAudio?.lines['almost-ready'];
       if (almost != null) unawaited(ref.read(audioServiceProvider).playAsset(almost));
-      unawaited(ref.read(packDownloadsProvider.notifier).ensure(unit));
+      await ref.read(packDownloadsProvider.notifier).ensure(unit);
       return;
     }
     context.push('/unit/${unit.id}');
   }
 
-  void _openStation(MapStop stop, List<MapStop> stops) {
+  Future<void> _openStation(MapStop stop, List<MapStop> stops) async {
     if (stop.state == StopState.locked || stop.state == StopState.soon) {
-      unawaited(_closed(stop, stops));
+      await _closed(stop, stops);
       return;
     }
     if (stop.kind == StopKind.chest) {
@@ -406,8 +407,8 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
                   newOutfit: stops.any((s) => s.kind == StopKind.chest && s.state == StopState.ready),
                   starBounce: _starBounce,
                   onAvatar: () => context.go('/who'),
-                  onWardrobe: () => context.push('/wardrobe'),
-                  onStickers: () => context.push('/stickers'),
+                  onWardrobe: () { context.push('/wardrobe'); },
+                  onStickers: () { context.push('/stickers'); },
                   onParent: _openParentArea,
                 ),
               ),
@@ -424,7 +425,7 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
                   bottom: safeBottom + 16,
                   child: BigTap(
                     key: const Key('open-practice'),
-                    onTap: () => context.push('/practice'),
+                    onTap: () { context.push('/practice'); },
                     semanticLabel: 'Practice',
                     child: Container(
                       width: 64,
@@ -617,7 +618,7 @@ class _IslandTile extends StatefulWidget {
   final double scale;
   final Widget? dandoona;
   final bool motion;
-  final VoidCallback onOpen;
+  final LoadingCallback onOpen;
 
   @override
   State<_IslandTile> createState() => _IslandTileState();
@@ -671,7 +672,7 @@ class _IslandTileState extends State<_IslandTile> with SingleTickerProviderState
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          GestureDetector(
+          LoadingTap(
             key: Key('unit-${unit.id}'),
             behavior: HitTestBehavior.opaque,
             onTap: widget.onOpen,
@@ -697,7 +698,7 @@ class _IslandTileState extends State<_IslandTile> with SingleTickerProviderState
               child: BigTap(
                 key: Key('unit-certificate-${unit.id}'),
                 semanticLabel: Strings.en('certificate'),
-                onTap: () => context.push('/certificate/${unit.id}'),
+                onTap: () { context.push('/certificate/${unit.id}'); },
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
@@ -949,7 +950,7 @@ class _CastleTile extends StatelessWidget {
   final MapStop stop;
   final Widget? dandoona;
   final bool motion;
-  final VoidCallback onOpen;
+  final LoadingCallback onOpen;
 
   @override
   Widget build(BuildContext context) {
@@ -966,7 +967,7 @@ class _CastleTile extends StatelessWidget {
     return Semantics(
       container: true,
       label: '${Strings.en('mapCastle')}, ${stop.state == StopState.locked ? 'locked' : 'open'}',
-      child: GestureDetector(
+      child: LoadingTap(
         key: const Key('stop-castle'),
         behavior: HitTestBehavior.opaque,
         onTap: onOpen,
@@ -1009,7 +1010,7 @@ class _StationNode extends StatefulWidget {
 
   final MapStop stop;
   final bool motion;
-  final VoidCallback onTap;
+  final LoadingCallback onTap;
 
   /// Dandoona waits beside a review that is ready to play.
   final Widget? dandoona;
@@ -1074,7 +1075,7 @@ class _StationNodeState extends State<_StationNode> with SingleTickerProviderSta
             StopState.ready => 'open',
             _ => 'locked',
           }}',
-      child: GestureDetector(
+      child: LoadingTap(
         key: Key('stop-${stop.id}'),
         behavior: HitTestBehavior.opaque,
         onTap: widget.onTap,
@@ -1154,10 +1155,10 @@ class _TopBar extends StatelessWidget {
   final bool greeting;
   final bool newOutfit;
   final Animation<double> starBounce;
-  final VoidCallback onAvatar;
-  final VoidCallback onWardrobe;
-  final VoidCallback onStickers;
-  final VoidCallback onParent;
+  final LoadingCallback onAvatar;
+  final LoadingCallback onWardrobe;
+  final LoadingCallback onStickers;
+  final LoadingCallback onParent;
 
   @override
   Widget build(BuildContext context) {

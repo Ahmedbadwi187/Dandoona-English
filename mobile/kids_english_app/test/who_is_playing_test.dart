@@ -81,6 +81,7 @@ Future<(ProviderContainer, FakeAudio)> _open(
 BoxDecoration _decoration(WidgetTester t, String key) => t.widget<Container>(find.descendant(of: find.byKey(Key(key)), matching: find.byType(Container)).first).decoration! as BoxDecoration;
 
 void main() {
+  _singleChildRegression();
   testWidgets('Dandoona\'s sky is the background: gradient and clouds (no plain cream page)', (t) async {
     await _open(t);
     expect(find.byKey(const Key('sky')), findsOneWidget);
@@ -227,5 +228,17 @@ void main() {
     expect(rocket.color, const Color(0xFFE5524A));
     expect(find.descendant(of: find.byKey(const Key('pick-b')), matching: find.byType(SvgPicture)), findsOneWidget);
     expect(find.descendant(of: find.byKey(const Key('pick-b')), matching: find.byIcon(Icons.rocket_launch_rounded)), findsNothing);
+  });
+}
+
+void _singleChildRegression() {
+  testWidgets('one child: the picker still fills the screen width and the content is centered (not squeezed to the left)', (t) async {
+    final (c, _) = await _open(t, kids: const ['a']);
+    c.read(routerProvider).go('/who'); // with one child the app opens the map; the avatar there leads back to the picker
+    await t.pumpAndSettle();
+    final width = t.view.physicalSize.width / t.view.devicePixelRatio;
+    expect(t.getSize(find.byType(SkyBackground).last).width, closeTo(width, 1));
+    expect(t.getCenter(find.byKey(const Key('who-bubble'))).dx, closeTo(width / 2, 2));
+    expect(t.getCenter(find.byKey(const Key('pick-a'))).dx, closeTo(width / 2, 2));
   });
 }

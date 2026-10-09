@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/theme.dart';
 import '../../core/widgets.dart';
@@ -25,7 +26,7 @@ class RecordListenActivity extends ConsumerStatefulWidget {
   });
 
   final Lesson lesson;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Duration maxRecording;
 
   @override
@@ -64,7 +65,7 @@ class _RecordListenActivityState extends ConsumerState<RecordListenActivity> {
     super.dispose();
   }
 
-  void _hear() => unawaited(_speech.say(then: _clip));
+  Future<void> _hear() => _speech.say(then: _clip);
 
   Future<void> _toggleRecord() async {
     if (_phase == _Phase.playing) return;
@@ -105,7 +106,7 @@ class _RecordListenActivityState extends ConsumerState<RecordListenActivity> {
     }
     if (!mounted) return;
     if (_index + 1 >= widget.lesson.words.length) {
-      widget.onFinished(ActivityResult(stars: 3, attempts: widget.lesson.words.length)); // taking part earns the stars
+      await widget.onFinished(ActivityResult(stars: 3, attempts: widget.lesson.words.length)); // taking part earns the stars
     } else {
       setState(() {
         _index++;
@@ -139,8 +140,8 @@ class _RecordListenActivityState extends ConsumerState<RecordListenActivity> {
           TapToHear(
             key: const Key('word-picture'),
             semanticLabel: _word.word,
-            onTap: () {
-              if (_phase == _Phase.idle) _hear();
+            onTap: () async {
+              if (_phase == _Phase.idle) await _hear();
             },
             child: AssetPicture(_word.image, size: 220, semanticLabel: _word.word),
           ),
@@ -195,12 +196,12 @@ class _RecordListenActivityState extends ConsumerState<RecordListenActivity> {
         children: [
           const Icon(Icons.mic_off_rounded, size: 96, color: Palette.gray),
           const SizedBox(height: 24),
-          FilledButton(
+          LoadingAction(onPressed: () => widget.onFinished(const ActivityResult(stars: 1, attempts: 0)), builder: (onPressed, loading) => FilledButton(
             key: const Key('record-skip'),
             style: FilledButton.styleFrom(minimumSize: const Size(kMinTapTarget * 2, kMinTapTarget * 1.2)),
-            onPressed: () => widget.onFinished(const ActivityResult(stars: 1, attempts: 0)),
-            child: const Icon(Icons.arrow_forward_rounded, size: 40),
-          ),
+            onPressed: onPressed,
+            child: LoadingContent(loading: loading, child: const Icon(Icons.arrow_forward_rounded, size: 40)),
+          )),
         ],
       ),
     );

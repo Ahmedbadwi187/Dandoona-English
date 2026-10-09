@@ -5,6 +5,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/widgets.dart';
 import '../content/content_models.dart';
@@ -57,7 +58,7 @@ class TrueOrFalseActivity extends ConsumerStatefulWidget {
   const TrueOrFalseActivity({super.key, required this.lesson, required this.onFinished, this.random, this.nextDelay = const Duration(milliseconds: 1500)});
 
   final Lesson lesson;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
   final Duration nextDelay;
 
@@ -116,7 +117,7 @@ class _TrueOrFalseActivityState extends ConsumerState<TrueOrFalseActivity> with 
     await Future<void>.delayed(widget.nextDelay);
     if (!mounted) return;
     if (_index + 1 >= _rounds.length) {
-      widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _rounds.length + _mistakes));
+      await widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _rounds.length + _mistakes));
       return;
     }
     setState(() {
@@ -129,9 +130,9 @@ class _TrueOrFalseActivityState extends ConsumerState<TrueOrFalseActivity> with 
   Widget _button(String key, GlobalKey gk, bool yes) {
     final shaking = _wrong == key;
     final done = _right == key;
-    return GestureDetector(
+    return LoadingTap(
       key: Key('tf-$key'),
-      onTap: () => unawaited(_answer(yes)),
+      onTap: () => _answer(yes),
       child: KeyedSubtree(
         key: gk,
         child: TweenAnimationBuilder<double>(
@@ -188,7 +189,7 @@ class SightWordHuntActivity extends ConsumerStatefulWidget {
   const SightWordHuntActivity({super.key, required this.lesson, required this.onFinished, this.random, this.drift, this.nextDelay = const Duration(milliseconds: 900)});
 
   final Lesson lesson;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
 
   /// The bubbles drift gently; by default off in widget tests only (a repeating animation never settles there).
@@ -255,7 +256,7 @@ class _SightWordHuntActivityState extends ConsumerState<SightWordHuntActivity> w
     await Future<void>.delayed(widget.nextDelay);
     if (!mounted) return;
     if (_index + 1 >= _targets.length) {
-      widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _targets.length + _mistakes));
+      await widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _targets.length + _mistakes));
       return;
     }
     setState(() {
@@ -278,7 +279,7 @@ class _SightWordHuntActivityState extends ConsumerState<SightWordHuntActivity> w
           BigTap(
             key: const Key('hunt-hear'),
             semanticLabel: 'Hear the word',
-            onTap: () => unawaited(speech.say(then: _targets[_index].audio)),
+            onTap: () => speech.say(then: _targets[_index].audio),
             child: const Icon(Icons.volume_up_rounded, size: 64, color: Palette.blue),
           ),
           Expanded(
@@ -298,9 +299,9 @@ class _SightWordHuntActivityState extends ConsumerState<SightWordHuntActivity> w
                           child: AnimatedScale(
                             scale: _popped.contains(w.word) ? 0 : 1,
                             duration: const Duration(milliseconds: 300),
-                            child: GestureDetector(
+                            child: LoadingTap(
                               key: Key('hunt-${w.word}'),
-                              onTap: () => unawaited(_tap(w)),
+                              onTap: () => _tap(w),
                               child: KeyedSubtree(
                                 key: _keyOf(w.word),
                                 child: Container(

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/sky.dart';
 import '../../core/strings.dart';
@@ -49,7 +50,7 @@ class _StoryScreenState extends ConsumerState<StoryScreen> {
     super.dispose();
   }
 
-  void _say(StoryPage page) => unawaited(_audio.playAsset(page.audio));
+  Future<void> _say(StoryPage page) => _audio.playAsset(page.audio);
 
   DandoonaPose _pose(String? name) => switch (name) {
         'jumping' => DandoonaPose.jumping,
@@ -118,13 +119,13 @@ class _StoryScreenState extends ConsumerState<StoryScreen> {
                     alignment: Alignment.centerLeft,
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(8, 4, 8, 0),
-                      child: IconButton(
+                      child: LoadingAction(onPressed: () => context.pop(), builder: (onPressed, loading) => IconButton(
                         key: const Key('story-back'),
                         constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
                         iconSize: 32,
-                        onPressed: () => context.pop(),
-                        icon: const Icon(Icons.arrow_back_rounded),
-                      ),
+                        onPressed: onPressed,
+                        icon: LoadingContent(loading: loading, child: const Icon(Icons.arrow_back_rounded)),
+                      )),
                     ),
                   ),
                   Expanded(child: body),
@@ -148,7 +149,7 @@ class _Page extends StatelessWidget {
   final int total;
   final bool last;
   final AudioService audio;
-  final VoidCallback onSay;
+  final LoadingCallback onSay;
   final VoidCallback onNext;
   final Future<void> Function() onDone;
 
@@ -194,9 +195,9 @@ class _Page extends StatelessWidget {
                       alignment: WrapAlignment.center,
                       children: [
                         for (final w in words)
-                          GestureDetector(
+                          LoadingTap(
                             key: Key('story-picture-${w.word}'),
-                            onTap: () => unawaited(audio.playAsset(w.audio)),
+                            onTap: () => audio.playAsset(w.audio),
                             child: Container(
                               padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(color: Colors.white.withValues(alpha: 0.92), borderRadius: BorderRadius.circular(28), border: Border.all(color: Palette.sunflower, width: 4)),
@@ -216,7 +217,7 @@ class _Page extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
           child: Column(
             children: [
-              GestureDetector(
+              LoadingTap(
                 key: const Key('story-text'),
                 onTap: onSay,
                 child: Container(
@@ -236,20 +237,20 @@ class _Page extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: last
-                    ? FilledButton(
+                    ? LoadingAction(onPressed: () => onDone(), builder: (onPressed, loading) => FilledButton(
                         key: const Key('story-done'),
                         style: FilledButton.styleFrom(backgroundColor: Palette.green, minimumSize: const Size.fromHeight(kMinTapTarget * 1.1)),
-                        onPressed: () => unawaited(onDone()),
-                        child: Column(mainAxisSize: MainAxisSize.min, children: [
+                        onPressed: onPressed,
+                        child: LoadingContent(loading: loading, child: Column(mainAxisSize: MainAxisSize.min, children: [
                           Text(Strings.en('storyTheEnd'), key: const Key('story-end'), style: kidBody.copyWith(fontWeight: FontWeight.w900)),
-                        ]),
-                      )
-                    : FilledButton(
+                        ])),
+                      ))
+                    : LoadingAction(onPressed: onNext, builder: (onPressed, loading) => FilledButton(
                         key: const Key('story-next'),
                         style: FilledButton.styleFrom(backgroundColor: Palette.plum, minimumSize: const Size.fromHeight(kMinTapTarget * 1.1)),
-                        onPressed: onNext,
-                        child: const Icon(Icons.arrow_forward_rounded, size: 40),
-                      ),
+                        onPressed: onPressed,
+                        child: LoadingContent(loading: loading, child: const Icon(Icons.arrow_forward_rounded, size: 40)),
+                      )),
               ),
             ],
           ),
@@ -274,7 +275,7 @@ class _Waiting extends StatelessWidget {
               const DandoonaView(pose: DandoonaPose.thinking, size: 200),
               Text(Strings.en('mapAlmostReady'), key: const Key('story-waiting'), textAlign: TextAlign.center, style: kidBody.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk)),
               const SizedBox(height: 16),
-              FilledButton(onPressed: onBack, style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(kMinTapTarget)), child: Text(Strings.en('chestGotIt'), style: kidBody.copyWith(fontWeight: FontWeight.w900))),
+              LoadingAction(onPressed: onBack, builder: (onPressed, loading) => FilledButton(onPressed: onPressed, style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(kMinTapTarget)), child: LoadingContent(loading: loading, child: Text(Strings.en('chestGotIt'), style: kidBody.copyWith(fontWeight: FontWeight.w900))))),
             ],
           ),
         ),

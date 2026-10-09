@@ -62,6 +62,12 @@ Future<void> _tap(WidgetTester t, String key) async {
   await t.pumpAndSettle();
 }
 
+/// A tap that answers a round: the tapped card shows its loader until the round is over, so settling would run the round to its end.
+Future<void> _tapOnce(WidgetTester t, String key) async {
+  await t.tap(find.byKey(Key(key)));
+  await t.pump();
+}
+
 void main() {
   test('a sentence splits into its word cards and its closing mark', () {
     final s = _lesson().sentences[2];
@@ -147,11 +153,11 @@ void main() {
         final two = t.widget<ManyPicture>(find.byType(ManyPicture)).two;
         final right = two ? 'are' : 'is';
         if (r == 0) {
-          await _tap(t, 'gap-choice-${two ? 'is' : 'are'}');
+          await _tapOnce(t, 'gap-choice-${two ? 'is' : 'are'}');
           expect(t.widget<WordCard>(find.byKey(const Key('gap-blank'))).text.trim(), isEmpty);
           await t.pump(const Duration(seconds: 1));
         }
-        await _tap(t, 'gap-choice-$right');
+        await _tapOnce(t, 'gap-choice-$right');
         expect(t.widget<WordCard>(find.byKey(const Key('gap-blank'))).text, right);
         expect(audio.played.last, startsWith('asset:audio/x/s'));
         await t.pump(const Duration(seconds: 2));

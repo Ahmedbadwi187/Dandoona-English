@@ -14,6 +14,27 @@ Main character: **Dandoona (دندونة)**, the owner's own character.
 - `D:\Projects\Dandona` (the old character project) is read-only; never modify it or reference it at build time.
 - "Don't start Numbers until I've tested Colors on a real phone."
 
+## Button loading feedback - 9 Oct 2026
+- Branch: `feature/button-loading-states` (based on `main`). This change adds pending feedback and rejects repeated presses;
+  it preserves the app's wording, lessons, audio/image assets, API address, routes and existing button keys.
+- Shared implementation: `mobile/kids_english_app/lib/core/loading_action.dart`. `LoadingAction` tracks the callback's returned
+  `Future`, accepts an external `loading` state, and releases the action in `finally`, including failure and widget disposal.
+  `LoadingContent` keeps a Material button's label/icon footprint and semantics; `LoadingOverlay`, `LoadingTap` and
+  `LoadingInkWell` keep pictures/game feedback visible under a small progress badge. `BigTap`/`TapToHear` forward futures too.
+- Reviewed press actions throughout Flutter: onboarding/language/auth/reminders/setup completion, parent save/delete/prompts,
+  account sync/sign-out/delete, clipboard, certificate sharing, audio/replay/recording, game answers, profile selection,
+  wardrobe/chests/stickers, map/download/stories and the session gate. The `site/` legal pages have no action buttons.
+  Instant navigation/selection stays immediate; there is no artificial wait to show a spinner.
+- When adding a button, use `LoadingCallback` through forwarding widgets and return/await the real operation. Do not use
+  `VoidCallback` or `unawaited(...)` around work that the button should track. Keep `context.push(...)` navigation synchronous
+  (its future lasts until the destination is popped). Audio stop remains available during playback; recording startup releases
+  its loader before recording begins so the child can stop. Conditional Hear/Stop controls have separate loading keys.
+- Dedicated regression tests: `loading_action_test.dart`, `onboarding_loading_test.dart`, `parent_loading_test.dart` and
+  `child_action_loading_test.dart` under `mobile/kids_english_app/test/`; they cover delayed work, repeated presses, stable
+  content/size, recovery, disposal, controller busy state and recording/answer responsiveness. Final validation is recorded
+  after the complete Flutter suite finishes.
+- The earlier `dist/dandoona-release.apk` predates this branch. Rebuild from this branch for a phone test of these loaders.
+
 ## What is built (all committed on main)
 - Units: Letters (A-Z), Colors (10 lessons); 8 units in `content/curriculum/units/little-learners.yaml` (the rest "coming soon"),
   placement table, certificates, unit map.

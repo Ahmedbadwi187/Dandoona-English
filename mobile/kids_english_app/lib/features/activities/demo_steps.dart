@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -64,10 +62,10 @@ class _DemoFrameState extends ConsumerState<DemoFrame> {
         Positioned(
           right: 8,
           top: 0,
-          child: DemoHelpButton(onTap: () {
+          child: DemoHelpButton(onTap: () async {
             setState(() => _demo = true);
             final line = widget.instruction;
-            if (line != null && line.isNotEmpty) unawaited(ref.read(audioServiceProvider).playAsset(line));
+            if (line != null && line.isNotEmpty) await ref.read(audioServiceProvider).playAsset(line);
           }),
         ),
       ],

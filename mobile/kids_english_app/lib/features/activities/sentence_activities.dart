@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/theme.dart';
 import '../content/content_models.dart';
@@ -85,7 +86,7 @@ class FindTheWordActivity extends ConsumerStatefulWidget {
   const FindTheWordActivity({super.key, required this.lesson, required this.onFinished, this.random, this.nextDelay = const Duration(milliseconds: 1000)});
 
   final Lesson lesson;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
   final Duration nextDelay;
 
@@ -144,7 +145,7 @@ class _FindTheWordActivityState extends ConsumerState<FindTheWordActivity> with 
     await Future<void>.delayed(widget.nextDelay);
     if (!mounted) return;
     if (_index + 1 >= _rounds.length) {
-      widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _rounds.length + _mistakes));
+      await widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _rounds.length + _mistakes));
       return;
     }
     setState(() {
@@ -168,16 +169,16 @@ class _FindTheWordActivityState extends ConsumerState<FindTheWordActivity> with 
             BigTap(
               key: const Key('find-hear'),
               semanticLabel: 'Hear the word',
-              onTap: () => unawaited(speech.say(then: round.target.audio)),
+              onTap: () => speech.say(then: round.target.audio),
               child: const Icon(Icons.volume_up_rounded, size: 72, color: Palette.blue),
             ),
             const SizedBox(height: 28),
             for (var i = 0; i < round.options.length; i++)
               Padding(
                 padding: const EdgeInsets.only(bottom: 16),
-                child: GestureDetector(
+                child: LoadingTap(
                   key: Key('find-${round.options[i].word}'),
-                  onTap: () => unawaited(_tap(round.options[i])),
+                  onTap: () => _tap(round.options[i]),
                   child: KeyedSubtree(
                     key: _cardKeys[i],
                     child: _Shake(
@@ -208,7 +209,7 @@ class SentenceBuilderActivity extends ConsumerStatefulWidget {
   const SentenceBuilderActivity({super.key, required this.lesson, required this.onFinished, this.random, this.nextDelay = const Duration(milliseconds: 1600)});
 
   final Lesson lesson;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
   final Duration nextDelay;
 
@@ -288,7 +289,7 @@ class _SentenceBuilderActivityState extends ConsumerState<SentenceBuilderActivit
     await Future<void>.delayed(widget.nextDelay);
     if (!mounted) return;
     if (_index + 1 >= _sentences.length) {
-      widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _sentences.length + _mistakes));
+      await widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _sentences.length + _mistakes));
       return;
     }
     setState(() {
@@ -319,7 +320,7 @@ class _SentenceBuilderActivityState extends ConsumerState<SentenceBuilderActivit
                 BigTap(
                   key: const Key('sentence-hear'),
                   semanticLabel: 'Hear the sentence',
-                  onTap: () => unawaited(speech.say(then: sentence.audio)),
+                  onTap: () => speech.say(then: sentence.audio),
                   child: const Icon(Icons.volume_up_rounded, size: 40, color: Palette.blue),
                 ),
               ],
@@ -368,9 +369,9 @@ class _SentenceBuilderActivityState extends ConsumerState<SentenceBuilderActivit
                             child: WordCard(text: _tiles[t], color: Palette.sunflower, textStyle: kidBody),
                           ),
                           childWhenDragging: WordCard(text: _tiles[t], faded: true, textStyle: kidBody),
-                          child: GestureDetector(
+                          child: LoadingTap(
                             key: Key('sentence-tile-$t'),
-                            onTap: () => unawaited(_place(t)),
+                            onTap: () => _place(t),
                             child: KeyedSubtree(
                               key: _tileKeys[t],
                               child: _Shake(
@@ -396,7 +397,7 @@ class FillTheGapActivity extends ConsumerStatefulWidget {
   const FillTheGapActivity({super.key, required this.lesson, required this.onFinished, this.random, this.nextDelay = const Duration(milliseconds: 1600)});
 
   final Lesson lesson;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
   final Duration nextDelay;
 
@@ -455,7 +456,7 @@ class _FillTheGapActivityState extends ConsumerState<FillTheGapActivity> with Ph
     await Future<void>.delayed(widget.nextDelay);
     if (!mounted) return;
     if (_index + 1 >= _sentences.length) {
-      widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _sentences.length + _mistakes));
+      await widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _sentences.length + _mistakes));
       return;
     }
     setState(() {
@@ -511,9 +512,9 @@ class _FillTheGapActivityState extends ConsumerState<FillTheGapActivity> with Ph
               alignment: WrapAlignment.center,
               children: [
                 for (var c = 0; c < _choices.length; c++)
-                  GestureDetector(
+                  LoadingTap(
                     key: Key('gap-choice-${_choices[c]}'),
-                    onTap: () => unawaited(_tap(_choices[c])),
+                    onTap: () => _tap(_choices[c]),
                     child: KeyedSubtree(
                       key: _choiceKeys[c],
                       child: _Shake(

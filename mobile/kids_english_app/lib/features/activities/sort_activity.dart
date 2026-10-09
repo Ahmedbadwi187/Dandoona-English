@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
@@ -41,7 +42,7 @@ class SortActivity extends ConsumerStatefulWidget {
 
   final Lesson lesson;
   final TrackContent track;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
   final Random? random;
   final Duration nextDelay;
 
@@ -83,7 +84,7 @@ class _SortActivityState extends ConsumerState<SortActivity> {
       await Future.wait([_speech.say(then: _word.audio), Future<void>.delayed(widget.nextDelay)]);
       if (!mounted) return;
       if (_index + 1 >= _words.length) {
-        widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _words.length + _mistakes));
+        await widget.onFinished(ActivityResult(stars: starsForMistakes(_mistakes), attempts: _words.length + _mistakes));
         return;
       }
       setState(() {
@@ -119,7 +120,7 @@ class _SortActivityState extends ConsumerState<SortActivity> {
             data: _word,
             feedback: Material(color: Colors.transparent, child: Opacity(opacity: 0.9, child: picture)),
             childWhenDragging: Opacity(opacity: 0.3, child: picture),
-            child: GestureDetector(onTap: () => unawaited(_speech.say(then: _word.audio)), child: picture),
+            child: LoadingTap(onTap: () => _speech.say(then: _word.audio), child: picture),
           ),
           const SizedBox(height: 24),
           Wrap(
@@ -130,9 +131,9 @@ class _SortActivityState extends ConsumerState<SortActivity> {
               for (final (i, bin) in widget.lesson.bins.indexed)
                 DragTarget<LessonWord>(
                   onAcceptWithDetails: (_) => unawaited(_drop(bin)),
-                  builder: (context, candidates, _) => GestureDetector(
+                  builder: (context, candidates, _) => LoadingTap(
                     key: Key('bin-${bin.key}'),
-                    onTap: () => unawaited(_drop(bin)),
+                    onTap: () => _drop(bin),
                     child: Container(
                       width: 150,
                       padding: const EdgeInsets.symmetric(vertical: 14),

@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
@@ -7,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/palette.dart';
+import '../../core/loading_action.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
 import '../child/child_scope.dart';
@@ -54,9 +54,9 @@ class _CertificateScreenState extends ConsumerState<CertificateScreen> {
 
   Future<void> _share(String fileName) async {
     if (_sharing) return;
-    if (!await showParentalGate(context) || !mounted) return;
     setState(() => _sharing = true);
     try {
+      if (!await showParentalGate(context) || !mounted) return;
       final boundary = _boundary.currentContext?.findRenderObject() as RenderRepaintBoundary?;
       if (boundary == null) return;
       final image = await boundary.toImage(pixelRatio: 3);
@@ -127,12 +127,16 @@ class _CertificateScreenState extends ConsumerState<CertificateScreen> {
                             child: Stack(
                               clipBehavior: Clip.none,
                               children: [
-                                IconButton.filled(
+                                LoadingAction(
+                                  onPressed: _sharing ? null : () => _share('certificate-${unit.id}.png'),
+                                  loading: _sharing,
+                                  builder: (onPressed, loading) => IconButton.filled(
                                   key: const Key('certificate-share'),
                                   style: IconButton.styleFrom(backgroundColor: Palette.blue, minimumSize: const Size(kMinTapTarget, kMinTapTarget)),
                                   iconSize: 34,
-                                  onPressed: _sharing ? null : () => unawaited(_share('certificate-${unit.id}.png')),
-                                  icon: const Icon(Icons.ios_share_rounded, color: Palette.white),
+                                  onPressed: onPressed,
+                                  icon: LoadingContent(loading: loading, color: Palette.white, child: const Icon(Icons.ios_share_rounded, color: Palette.white)),
+                                  ),
                                 ),
                                 const Positioned(right: -2, top: -2, child: Icon(Icons.lock_rounded, size: 20, color: Palette.nightInk)),
                               ],

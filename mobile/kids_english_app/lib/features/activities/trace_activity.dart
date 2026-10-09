@@ -4,6 +4,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/theme.dart';
 import '../audio/activity_speech.dart';
@@ -71,7 +72,7 @@ class TraceActivity extends ConsumerStatefulWidget {
   const TraceActivity({super.key, required this.lesson, required this.onFinished, this.small = false});
 
   final Lesson lesson;
-  final ValueChanged<ActivityResult> onFinished;
+  final FutureOr<void> Function(ActivityResult) onFinished;
 
   /// Trace the small letter (a, b, c) instead of the capital (A, B, C).
   final bool small;
@@ -110,12 +111,12 @@ class _TraceActivityState extends ConsumerState<TraceActivity> {
     super.dispose();
   }
 
-  void _sayInstruction() {
+  Future<void> _sayInstruction() async {
     if (!mounted) return;
     // a numeral is said by its own word ("three") after the instruction, when the lesson has no instruction of its own
     final numbers = [for (final w in widget.lesson.words) if (Lesson.numberOf(w.word) != null) w];
     final number = widget.lesson.counting && _round < numbers.length ? numbers[_round] : null;
-    unawaited(_speech.say(instruction: widget.lesson.audio.instructions[widget.small ? 'trace-small' : 'trace'], then: number?.audio));
+    await _speech.say(instruction: widget.lesson.audio.instructions[widget.small ? 'trace-small' : 'trace'], then: number?.audio);
   }
 
   void _clear() => setState(() {
@@ -214,29 +215,29 @@ class _TraceActivityState extends ConsumerState<TraceActivity> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton.filled(
+                LoadingAction(onPressed: _sayInstruction, builder: (onPressed, loading) => IconButton.filled(
                   key: const Key('trace-hear'),
                   style: IconButton.styleFrom(backgroundColor: Palette.blue, minimumSize: const Size(kMinTapTarget, kMinTapTarget)),
                   iconSize: 36,
-                  onPressed: _sayInstruction,
-                  icon: const Icon(Icons.volume_up_rounded, color: Palette.white),
-                ),
+                  onPressed: onPressed,
+                  icon: LoadingContent(loading: loading, child: const Icon(Icons.volume_up_rounded, color: Palette.white)),
+                )),
                 const SizedBox(width: 24),
-                IconButton.filled(
+                LoadingAction(onPressed: _busy ? null : _clear, builder: (onPressed, loading) => IconButton.filled(
                   key: const Key('trace-clear'),
                   style: IconButton.styleFrom(backgroundColor: Palette.gray, minimumSize: const Size(kMinTapTarget, kMinTapTarget)),
                   iconSize: 36,
-                  onPressed: _busy ? null : _clear,
-                  icon: const Icon(Icons.refresh_rounded, color: Palette.white),
-                ),
+                  onPressed: onPressed,
+                  icon: LoadingContent(loading: loading, child: const Icon(Icons.refresh_rounded, color: Palette.white)),
+                )),
                 const SizedBox(width: 32),
-                IconButton.filled(
+                LoadingAction(onPressed: _busy || _strokes.isEmpty ? null : () => _check(side), builder: (onPressed, loading) => IconButton.filled(
                   key: const Key('trace-done'),
                   style: IconButton.styleFrom(backgroundColor: Palette.green, minimumSize: const Size(kMinTapTarget * 1.3, kMinTapTarget * 1.3)),
                   iconSize: 44,
-                  onPressed: _busy || _strokes.isEmpty ? null : () => unawaited(_check(side)),
-                  icon: const Icon(Icons.check_rounded, color: Palette.white),
-                ),
+                  onPressed: onPressed,
+                  icon: LoadingContent(loading: loading, child: const Icon(Icons.check_rounded, color: Palette.white)),
+                )),
               ],
             ),
           ],
