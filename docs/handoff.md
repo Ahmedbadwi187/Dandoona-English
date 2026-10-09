@@ -128,7 +128,10 @@ Items 1-10 are built (11, the 6-8 track, is deliberately later). What a new sess
 `.github/workflows/ios-testflight.yml` builds on a GitHub macOS runner and uploads to TestFlight (run by hand from Actions). The owner's
 steps (Apple account, Bundle ID, App Store Connect app, API key with Admin access, 4 GitHub secrets, merge the branch so the
 "Run workflow" button shows) are in `docs/ios-testflight.md`. Without `API_BASE_URL` only Letters and Colors are playable.
-Info.plist now says `ITSAppUsesNonExemptEncryption = false` (HTTPS only). Not yet run on a real macOS runner.
+Info.plist now says `ITSAppUsesNonExemptEncryption = false` (HTTPS only). Signing goes through the App Store Connect API
+(`ios/ci/asc_signing.py`: a certificate + App Store profile per run, revoked/deleted at the end; `ios/ci/manual_signing.py`
+switches the Runner target to manual signing on CI only). Push to the `testflight` branch to build and upload.
+`.github/workflows/ios-ipa.yml` builds an unsigned .ipa for Sideloadly (built fine on macOS).
 
 ## Explorers (ages 6-8): Phase 0 and Phase 1 are built on branch `explorers` (not merged; Little Learners ships first from main)
 Plan: `docs/explorers-plan.md` (sections 11-12 approved 2026-10-08). Built in a cloud session; **the owner still has to generate the
