@@ -1,4 +1,27 @@
-# نسخة iOS على TestFlight من غير Mac
+# نسخة iOS من غير Mac
+
+## على الآيفون بتاعك بس (ببلاش، من غير حساب Apple Developer)
+
+1. GitHub بيبني ملف `.ipa` لوحده مع كل push على فرع `ios-testflight` (الملف `.github/workflows/ios-ipa.yml`). وممكن تشغّله بإيدك من Actions ← «iOS IPA (for Sideloadly)».
+2. افتح التشغيلة من تبويب **Actions**، وتحت **Artifacts** نزّل `Dandoona-English-ipa-…`. هيتنزّل zip، فكّه هتلاقي جواه ملف `.ipa`.
+3. على Windows:
+   - نزّل **iTunes** و**iCloud** من موقع Apple نفسه (مش من Microsoft Store).
+   - نزّل **Sideloadly** من https://sideloadly.io.
+4. وصّل الآيفون بالكابل، وافتح Sideloadly.
+   - اسحب ملف `.ipa` جوه البرنامج.
+   - اكتب الـ Apple ID بتاعك. يُفضّل يكون حساب تاني مش حسابك الأساسي.
+   - دوس Start.
+5. على الآيفون:
+   - Settings ← General ← VPN & Device Management ← اختار الـ Apple ID ← Trust.
+   - في iOS 16 وأحدث كمان: Settings ← Privacy & Security ← **Developer Mode** ← شغّله، والآيفون هيعمل restart.
+
+حدود الطريقة دي:
+- التطبيق بيشتغل **7 أيام** بس، وبعدها تعيد الخطوة 4.
+- أقصى حاجة 3 تطبيقات بالطريقة دي على الحساب المجاني.
+- مفيش مختبرين تانيين: الطريقة دي لجهازك إنت بس.
+- Sideloadly برنامج من طرف تالت ومش تبع Apple، وApple ممكن تغيّر حاجة توقّفه.
+
+# نسخة TestFlight (للمختبرين)
 
 البناء والرفع بيحصلوا على جهاز macOS عند GitHub (GitHub Actions). المستودع public، فالدقايق دي مجانية.
 الملف: `.github/workflows/ios-testflight.yml`. بيتشغّل بإيدك بس، وعمره ما بيشتغل لوحده.

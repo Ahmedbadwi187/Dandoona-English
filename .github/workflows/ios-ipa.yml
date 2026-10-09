@@ -1,0 +1,58 @@
+# Builds an unsigned .ipa on a GitHub macOS runner, for installing on your own iPhone with Sideloadly (Windows) and a free
+# Apple ID; Sideloadly signs it. No Apple Developer account and no Mac needed. Steps: docs/ios-testflight.md ("على الآيفون بتاعك").
+# Runs on every push to the ios-testflight branch, or by hand from Actions. The .ipa is under the run's "Artifacts".
+# Optional secret API_BASE_URL (https://...): without it only the bundled units (Letters, Colors) are playable.
+name: iOS IPA (for Sideloadly)
+
+on:
+  push:
+    branches: [ios-testflight]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ipa:
+    runs-on: macos-15
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: mobile/kids_english_app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.47.6"
+          channel: stable
+          cache: true
+
+      - name: Get packages
+        run: flutter pub get
+
+      - name: Analyze and test
+        run: |
+          flutter analyze
+          flutter test
+
+      - name: Build the app without signing
+        env:
+          API: ${{ secrets.API_BASE_URL }}
+        run: |
+          args="--release --no-codesign --build-number=${{ github.run_number }}"
+          if [ -n "$API" ]; then args="$args --dart-define=API_BASE_URL=$API"; echo "Server: set"; else echo "Server: none (Letters and Colors only)"; fi
+          flutter build ios $args
+
+      - name: Pack it as an .ipa
+        run: |
+          rm -rf Payload && mkdir Payload
+          cp -R build/ios/iphoneos/Runner.app Payload/
+          zip -qry "$RUNNER_TEMP/Dandoona-English-${{ github.run_number }}.ipa" Payload
+          ls -la "$RUNNER_TEMP"/*.ipa
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Dandoona-English-ipa-${{ github.run_number }}
+          path: ${{ runner.temp }}/*.ipa
+          retention-days: 14
