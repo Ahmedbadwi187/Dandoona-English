@@ -1,5 +1,6 @@
 # Builds the iPhone/iPad app on a macOS machine in GitHub and uploads it to TestFlight. No Mac needed.
-# Run it by hand: GitHub > Actions > "iOS TestFlight" > Run workflow (pick the branch, usually main).
+# Runs on every push to the `testflight` branch (no merge into main needed), or by hand: GitHub > Actions > "iOS TestFlight" >
+# Run workflow (the button shows once this file is on main).
 # Needs these repository secrets (Settings > Secrets and variables > Actions); steps in docs/ios-testflight.md:
 #   APPLE_TEAM_ID   the 10-character Team ID of the Apple Developer account
 #   ASC_KEY_ID      App Store Connect API key id
@@ -10,6 +11,8 @@
 name: iOS TestFlight
 
 on:
+  push:
+    branches: [testflight]
   workflow_dispatch:
     inputs:
       api_base_url:
