@@ -30,6 +30,7 @@ class _ParentWelcomeRouteState extends ConsumerState<ParentWelcomeRoute> {
       s: ref.watch(stringsProvider),
       withAccount: _withAccount,
       onChoose: (v) => setState(() => _withAccount = v),
+      onBack: () => context.go('/language'), // the language can still be changed from here
       onContinue: () {
         if (_withAccount) {
           context.push('/auth');

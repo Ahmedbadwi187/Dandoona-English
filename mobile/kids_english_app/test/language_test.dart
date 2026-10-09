@@ -24,6 +24,7 @@ Future<ProviderContainer> _start(WidgetTester t, {String device = 'en', Map<Stri
 }
 
 void main() {
+  _backToLanguage();
   group('the language screen is the very first screen', () {
     testWidgets('a fresh install shows it, with both languages written in their own language', (t) async {
       await _start(t);
@@ -158,5 +159,24 @@ void main() {
     test('after it, the first launch continues to onboarding', () {
       expect(go('/', chosen: true), '/onboarding');
     });
+  });
+}
+
+void _backToLanguage() {
+  testWidgets('from the welcome screen the back arrow returns to the language screen, with the chosen language selected, and it can be changed', (t) async {
+    final c = await _start(t, device: 'ar');
+    await t.tap(find.byKey(const Key('ob-continue')));
+    await t.pumpAndSettle();
+    expect(find.byKey(const Key('welcome-no-account')), findsOneWidget);
+    await t.tap(find.byKey(const Key('ob-back')));
+    await t.pumpAndSettle();
+    expect(find.byKey(const Key('lang-ar')), findsOneWidget);
+    await t.ensureVisible(find.byKey(const Key('lang-en')));
+    await t.tap(find.byKey(const Key('lang-en')));
+    await t.pumpAndSettle();
+    await t.tap(find.byKey(const Key('ob-continue')));
+    await t.pumpAndSettle();
+    expect(c.read(settingsProvider).languageCode, 'en');
+    expect(find.byKey(const Key('welcome-no-account')), findsOneWidget);
   });
 }

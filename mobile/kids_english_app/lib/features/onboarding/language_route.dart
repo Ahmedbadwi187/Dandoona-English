@@ -20,7 +20,8 @@ class LanguageRoute extends ConsumerStatefulWidget {
 }
 
 class _LanguageRouteState extends ConsumerState<LanguageRoute> {
-  late String _selected = ref.read(deviceLanguageProvider);
+  // the phone's language the first time; the language already chosen when the parent comes back to this screen
+  late String _selected = ref.read(settingsProvider).languageChosen ? ref.read(settingsProvider).languageCode : ref.read(deviceLanguageProvider);
 
   @override
   Widget build(BuildContext context) {
