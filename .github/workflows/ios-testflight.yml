@@ -1,0 +1,108 @@
+# Builds the iPhone/iPad app on a macOS machine in GitHub and uploads it to TestFlight. No Mac needed.
+# Run it by hand: GitHub > Actions > "iOS TestFlight" > Run workflow (pick the branch, usually main).
+# Needs these repository secrets (Settings > Secrets and variables > Actions); steps in docs/ios-testflight.md:
+#   APPLE_TEAM_ID   the 10-character Team ID of the Apple Developer account
+#   ASC_KEY_ID      App Store Connect API key id
+#   ASC_ISSUER_ID   App Store Connect API issuer id
+#   ASC_KEY_P8      the whole text of the .p8 key file (from -----BEGIN PRIVATE KEY----- to the END line)
+# Optional: API_BASE_URL (https://...) so the build can sync and download content packs; without it only the bundled
+# units (Letters, Colors) are playable.
+name: iOS TestFlight
+
+on:
+  workflow_dispatch:
+    inputs:
+      api_base_url:
+        description: "Server address for this build (https://...). Empty = the API_BASE_URL secret, or no server."
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-testflight
+  cancel-in-progress: false
+
+jobs:
+  testflight:
+    runs-on: macos-15
+    timeout-minutes: 75
+    defaults:
+      run:
+        working-directory: mobile/kids_english_app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.47.6"
+          channel: stable
+          cache: true
+
+      - name: Check the secrets are set
+        env:
+          TEAM: ${{ secrets.APPLE_TEAM_ID }}
+          KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ISSUER: ${{ secrets.ASC_ISSUER_ID }}
+          KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+        run: |
+          missing=""
+          [ -n "$TEAM" ] || missing="$missing APPLE_TEAM_ID"
+          [ -n "$KEY_ID" ] || missing="$missing ASC_KEY_ID"
+          [ -n "$ISSUER" ] || missing="$missing ASC_ISSUER_ID"
+          [ -n "$KEY_P8" ] || missing="$missing ASC_KEY_P8"
+          if [ -n "$missing" ]; then echo "::error::Missing repository secrets:$missing (see docs/ios-testflight.md)"; exit 1; fi
+
+      - name: Get packages
+        run: flutter pub get
+
+      - name: Analyze and test (the same checks as before every commit)
+        run: |
+          flutter analyze
+          flutter test
+
+      - name: Write the App Store Connect key
+        env:
+          KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/keys"
+          printf '%s\n' "$KEY_P8" > "$RUNNER_TEMP/keys/AuthKey.p8"
+
+      - name: Build the Flutter app (signing comes next)
+        env:
+          API: ${{ inputs.api_base_url != '' && inputs.api_base_url || secrets.API_BASE_URL }}
+        run: |
+          args="--release --no-codesign --build-number=${{ github.run_number }}"
+          if [ -n "$API" ]; then args="$args --dart-define=API_BASE_URL=$API"; echo "Server: set"; else echo "Server: none (Letters and Colors only)"; fi
+          flutter build ios $args
+
+      - name: Archive and sign (certificates and profiles are managed by Apple)
+        env:
+          TEAM: ${{ secrets.APPLE_TEAM_ID }}
+          KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ISSUER: ${{ secrets.ASC_ISSUER_ID }}
+        run: |
+          xcodebuild -workspace ios/Runner.xcworkspace -scheme Runner -configuration Release \
+            -destination 'generic/platform=iOS' -archivePath "$RUNNER_TEMP/Runner.xcarchive" \
+            DEVELOPMENT_TEAM="$TEAM" CODE_SIGN_STYLE=Automatic \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$RUNNER_TEMP/keys/AuthKey.p8" -authenticationKeyID "$KEY_ID" -authenticationKeyIssuerID "$ISSUER" \
+            archive
+
+      - name: Upload to TestFlight
+        env:
+          TEAM: ${{ secrets.APPLE_TEAM_ID }}
+          KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ISSUER: ${{ secrets.ASC_ISSUER_ID }}
+        run: |
+          /usr/libexec/PlistBuddy -c "Set :teamID $TEAM" ios/ExportOptions.plist
+          xcodebuild -exportArchive -archivePath "$RUNNER_TEMP/Runner.xcarchive" \
+            -exportOptionsPlist ios/ExportOptions.plist -exportPath "$RUNNER_TEMP/export" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$RUNNER_TEMP/keys/AuthKey.p8" -authenticationKeyID "$KEY_ID" -authenticationKeyIssuerID "$ISSUER"
+          echo "Uploaded build ${{ github.run_number }}. It shows in App Store Connect > TestFlight after Apple processes it (often 10-30 minutes)."
+
+      - name: Remove the key
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/keys"

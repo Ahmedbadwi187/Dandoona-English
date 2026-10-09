@@ -7,7 +7,6 @@ import 'package:kids_english_app/features/activities/hand_demo.dart';
 import 'package:kids_english_app/features/audio/audio_service.dart';
 import 'package:kids_english_app/features/content/content_models.dart';
 import 'package:kids_english_app/features/profiles/child_profile.dart';
-import 'package:kids_english_app/features/audio/audio_service.dart';
 
 import 'helpers.dart';
 import 'pack_content.dart';

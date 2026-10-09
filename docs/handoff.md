@@ -124,6 +124,12 @@ Items 1-10 are built (11, the 6-8 track, is deliberately later). What a new sess
 - Restart the API after pulling (new activity codes, /cards): `KidsEnglish.Api.exe --urls http://localhost:5080`.
 - A few widget tests are timing-sensitive under load (a different one failed in two of five full runs, all passed when re-run alone).
 
+## iOS TestFlight (no Mac): branch `ios-testflight`
+`.github/workflows/ios-testflight.yml` builds on a GitHub macOS runner and uploads to TestFlight (run by hand from Actions). The owner's
+steps (Apple account, Bundle ID, App Store Connect app, API key with Admin access, 4 GitHub secrets, merge the branch so the
+"Run workflow" button shows) are in `docs/ios-testflight.md`. Without `API_BASE_URL` only Letters and Colors are playable.
+Info.plist now says `ITSAppUsesNonExemptEncryption = false` (HTTPS only). Not yet run on a real macOS runner.
+
 ## Explorers (ages 6-8): Phase 0 and Phase 1 are built on branch `explorers` (not merged; Little Learners ships first from main)
 Plan: `docs/explorers-plan.md` (sections 11-12 approved 2026-10-08). Built in a cloud session; **the owner still has to generate the
 audio, listen to the phonemes and test on the emulator** (the cloud session had no API keys, no emulator and no running API).
