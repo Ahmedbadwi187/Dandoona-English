@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../parent/parent_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -61,13 +62,14 @@ class _SyncSectionState extends ConsumerState<SyncSection> {
                   Expanded(
                     child: FilledButton.icon(
                       key: const Key('sync-now'),
+                      style: parentFilledStyle(),
                       onPressed: ui.busy ? null : controller.syncNow,
-                      icon: const Icon(Icons.sync_rounded),
+                      icon: const Icon(Icons.sync_rounded, size: 18),
                       label: Text(s('syncNow')),
                     ),
                   ),
                   const SizedBox(width: 12),
-                  OutlinedButton(key: const Key('sync-signout'), onPressed: ui.busy ? null : controller.signOut, child: Text(s('signOut'))),
+                  OutlinedButton(key: const Key('sync-signout'), style: parentOutlinedStyle(context), onPressed: ui.busy ? null : controller.signOut, child: Text(s('signOut'))),
                 ],
               ),
               const SizedBox(height: 8),

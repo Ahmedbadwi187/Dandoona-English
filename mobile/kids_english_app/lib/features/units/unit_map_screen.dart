@@ -350,7 +350,8 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
       builder: (context, constraints) {
         final width = constraints.maxWidth;
         _viewport = constraints.maxHeight;
-        final layout = layoutStops(stops, width, top: safeTop + mapBarHeight + 24);
+        // Explorers shows the active-days badge under the top bar: the path starts below it, so it never covers the first island
+        final layout = layoutStops(stops, width, top: safeTop + mapBarHeight + 24 + (track.track == explorersTrack ? 56 : 0));
         _centers = layout.centers;
         if (!_scrolledToCurrent && current >= 0) {
           _scrolledToCurrent = true;

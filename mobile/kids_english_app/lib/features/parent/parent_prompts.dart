@@ -155,7 +155,7 @@ class _PromptCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: ParentCard(
-        padding: const EdgeInsets.fromLTRB(14, 12, 14, 8),
+        padding: const EdgeInsets.all(14),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -175,12 +175,13 @@ class _PromptCard extends StatelessWidget {
                 ),
               ],
             ),
-            Wrap(
-              alignment: WrapAlignment.end,
-              spacing: 8,
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                TextButton(key: noKey, onPressed: onNo, child: Text(no)),
-                FilledButton(key: yesKey, onPressed: onYes, child: Text(yes)),
+                TextButton(key: noKey, onPressed: onNo, style: TextButton.styleFrom(minimumSize: const Size(0, 44), textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600)), child: Text(no)),
+                const SizedBox(width: 8),
+                Flexible(child: FilledButton(key: yesKey, onPressed: onYes, style: parentFilledStyle(), child: Text(yes, overflow: TextOverflow.ellipsis))),
               ],
             ),
           ],

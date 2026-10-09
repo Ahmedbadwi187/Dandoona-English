@@ -69,7 +69,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                 final lesson = track.lessonById(lessonId);
                 if (lesson == null) return Center(child: Text(Strings.en('loadError')));
                 return ListView(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.fromLTRB(12, 4, 12, 16),
                   children: [
                     Align(
                       alignment: Alignment.centerLeft,
@@ -91,8 +91,8 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                         semanticLabel: lesson.letter,
                         onTap: () => unawaited(ref.read(audioServiceProvider).playAsset(lesson.audio.colorName ?? lesson.audio.phoneme ?? lesson.audio.intro)),
                         child: Container(
-                          width: 180,
-                          height: 180,
+                          width: 128,
+                          height: 128,
                           decoration: BoxDecoration(
                             color: lesson.color != null ? colorFromHex(lesson.color!.hex) : Palette.nodeColors[(lesson.order - 1) % Palette.nodeColors.length],
                             shape: BoxShape.circle,
@@ -106,25 +106,25 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                                       padding: const EdgeInsets.symmetric(horizontal: 18),
                                       child: FittedBox(
                                         fit: BoxFit.scaleDown,
-                                        child: Text(lesson.digits, key: const Key('lesson-letter'), style: const TextStyle(fontSize: 90, fontWeight: FontWeight.w900, color: Palette.white)),
+                                        child: Text(lesson.digits, key: const Key('lesson-letter'), style: const TextStyle(fontSize: 64, fontWeight: FontWeight.w900, color: Palette.white)),
                                       ),
                                     ) // a Numbers lesson shows its numerals: 1 2 3
                                   : lesson.letter == null && lesson.words.isNotEmpty
                                       ? Padding(
                                           key: const Key('lesson-letter'),
-                                          padding: const EdgeInsets.all(26),
+                                          padding: const EdgeInsets.all(18),
                                           child: AssetPicture(lesson.words.first.image, semanticLabel: lesson.words.first.word),
                                         ) // any other unit (Shapes, Animals...) shows the lesson's first picture
                                       : Text(lesson.letter ?? '?',
                                           key: const Key('lesson-letter'),
-                                          style: const TextStyle(fontSize: 110, fontWeight: FontWeight.w900, color: Palette.white)),
+                                          style: const TextStyle(fontSize: 80, fontWeight: FontWeight.w900, color: Palette.white)),
                         ),
                       ),
                     ),
-                    const SizedBox(height: 24),
+                    const SizedBox(height: 14),
                     Wrap(
-                      spacing: 16,
-                      runSpacing: 16,
+                      spacing: 10,
+                      runSpacing: 10,
                       alignment: WrapAlignment.center,
                       children: [
                         for (final w in lesson.words)
@@ -135,18 +135,18 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                                 key: Key('word-${w.word}'),
                                 semanticLabel: w.word,
                                 onTap: () => unawaited(ref.read(audioServiceProvider).playAsset(w.audio)),
-                                child: AssetPicture(w.image, size: 150, semanticLabel: w.word),
+                                child: AssetPicture(w.image, size: 104, semanticLabel: w.word),
                               ),
-                              const SizedBox(height: 4),
-                              Text(w.word, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+                              const SizedBox(height: 2),
+                              Text(w.word, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
                             ],
                           ),
                       ],
                     ),
-                    const SizedBox(height: 28),
+                    const SizedBox(height: 16),
                     Wrap(
-                      spacing: 16,
-                      runSpacing: 16,
+                      spacing: 10,
+                      runSpacing: 10,
                       alignment: WrapAlignment.center,
                       children: [
                         for (final a in lesson.activities)
@@ -207,22 +207,22 @@ class _ActivityTile extends StatelessWidget {
       key: Key('activity-$activity'),
       onTap: () => context.push('/lesson/$lessonId/$activity'),
       child: Container(
-        width: 120,
-        height: 130,
+        width: 84,
+        height: 88,
         decoration: BoxDecoration(
           color: Palette.white,
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(18),
           border: Border.all(color: Palette.ink, width: 3),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(_activityIcons[activity] ?? Icons.help_outline_rounded, size: 56, color: Palette.ink),
-            const SizedBox(height: 6),
+            Icon(_activityIcons[activity] ?? Icons.help_outline_rounded, size: 36, color: Palette.ink),
+            const SizedBox(height: 4),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                for (var i = 0; i < 3; i++) Icon(Icons.star_rounded, size: 24, color: i < stars ? Palette.yellow : Palette.tan),
+                for (var i = 0; i < 3; i++) Icon(Icons.star_rounded, size: 15, color: i < stars ? Palette.yellow : Palette.tan),
               ],
             ),
           ],
@@ -280,7 +280,7 @@ class _LetterPair extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: 4),
-            Text(caption, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: Palette.ink)),
+            Text(caption, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800, color: Palette.ink)),
           ],
         );
 
@@ -288,9 +288,9 @@ class _LetterPair extends ConsumerWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        bubble(tapKey: const Key('lesson-letter-tap'), textKey: const Key('lesson-letter'), text: letter, size: 170, caption: Strings.en('letterCapital'), key: 'capital'),
+        bubble(tapKey: const Key('lesson-letter-tap'), textKey: const Key('lesson-letter'), text: letter, size: 118, caption: Strings.en('letterCapital'), key: 'capital'),
         const SizedBox(width: 22),
-        bubble(tapKey: const Key('lesson-letter-small-tap'), textKey: const Key('lesson-letter-small'), text: letter.toLowerCase(), size: 130, caption: Strings.en('letterSmall'), key: 'small'),
+        bubble(tapKey: const Key('lesson-letter-small-tap'), textKey: const Key('lesson-letter-small'), text: letter.toLowerCase(), size: 92, caption: Strings.en('letterSmall'), key: 'small'),
       ],
     );
   }

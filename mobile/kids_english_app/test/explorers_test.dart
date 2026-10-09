@@ -8,6 +8,7 @@ import 'package:kids_english_app/features/audio/audio_service.dart';
 import 'package:kids_english_app/features/content/content_repository.dart';
 import 'package:kids_english_app/features/parent/parent_data.dart';
 import 'package:kids_english_app/features/profiles/child_profile.dart';
+import 'package:kids_english_app/features/progress/active_days.dart';
 import 'package:kids_english_app/features/progress/progress.dart';
 import 'package:kids_english_app/features/rewards/chest_rewards.dart';
 import 'package:kids_english_app/features/units/unit_logic.dart';
@@ -133,5 +134,20 @@ void main() {
     await t.pumpAndSettle();
     await t.scrollUntilVisible(find.byKey(const Key('unit-row-animals')), 300, scrollable: find.byType(Scrollable).first);
     expect(find.byKey(const Key('unit-row-sound-builders'), skipOffstage: false), findsNothing);
+  });
+
+  testWidgets('on the Explorers map the active-days badge sits above the first island, never on it', (t) async {
+    final c = await _open(t, children: '[${_child('e1', 'Lina', 'explorers')}]', progress: _progress(_letters, 'e1'));
+    c.read(activeChildIdProvider.notifier).select('e1');
+    await t.pump(const Duration(milliseconds: 500));
+    for (var i = 0; i < 4; i++) {
+      await t.drag(find.byKey(const Key('unit-map')), const Offset(0, 1500)); // scroll to the top of the map
+      await t.pump(const Duration(milliseconds: 400));
+    }
+    final badge = find.byType(ActiveDaysBadge);
+    final first = find.byKey(const Key('unit-icon-letters'), skipOffstage: false);
+    expect(badge, findsOneWidget); // this child has played, so the badge is there
+    expect(first, findsOneWidget);
+    expect(t.getBottomLeft(badge).dy, lessThanOrEqualTo(t.getTopLeft(first).dy), reason: 'the first island starts below the badge');
   });
 }

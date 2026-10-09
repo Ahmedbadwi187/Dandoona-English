@@ -9,8 +9,28 @@ const parentRadius = 20.0;
 const parentPad = 16.0;
 const kParentTap = 48.0;
 
+/// Buttons inside parent cards: a little smaller than the child-facing ones (44 high, softer corners, 15 pt text).
+ButtonStyle parentFilledStyle() => FilledButton.styleFrom(
+      minimumSize: const Size(0, 44),
+      padding: const EdgeInsets.symmetric(horizontal: 18),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+      textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+    );
+
+ButtonStyle parentOutlinedStyle(BuildContext context) {
+  final primary = Theme.of(context).colorScheme.primary;
+  return OutlinedButton.styleFrom(
+    minimumSize: const Size(0, 44),
+    padding: const EdgeInsets.symmetric(horizontal: 18),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+    side: BorderSide(color: primary, width: 1.5),
+    foregroundColor: primary,
+    textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+  );
+}
+
 abstract final class ParentText {
-  static const screenTitle = TextStyle(fontSize: 26, fontWeight: FontWeight.w800, color: Palette.ink, height: 1.2);
+  static const screenTitle = TextStyle(fontSize: 22, fontWeight: FontWeight.w800, color: Palette.ink, height: 1.2);
   static const section = TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Palette.ink);
   static const body = TextStyle(fontSize: 16, color: Palette.ink);
   static const caption = TextStyle(fontSize: 13, color: Color(0xFF7B6556));

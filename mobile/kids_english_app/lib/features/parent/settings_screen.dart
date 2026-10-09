@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'parent_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -67,12 +68,13 @@ class SettingsScreen extends ConsumerWidget {
               alignment: AlignmentDirectional.centerStart,
               child: OutlinedButton.icon(
                 key: const Key('cards-copy'),
+                style: parentOutlinedStyle(context),
                 onPressed: () async {
                   final messenger = ScaffoldMessenger.of(context);
                   await Clipboard.setData(ClipboardData(text: cardsUrl(defaultApiBaseUrl)));
                   messenger.showSnackBar(SnackBar(content: Text(s('cardsCopied'))));
                 },
-                icon: const Icon(Icons.copy_rounded),
+                icon: const Icon(Icons.copy_rounded, size: 18),
                 label: Text(s('cardsCopy')),
               ),
             ),
