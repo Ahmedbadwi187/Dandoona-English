@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/palette.dart';
 import '../../core/sky.dart';
 import '../../core/strings.dart';
+import '../../core/type.dart';
 import '../../core/widgets.dart';
 import '../audio/audio_service.dart';
 import '../child/child_scope.dart';
@@ -116,7 +117,7 @@ class UnitMapScreen extends ConsumerWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(Strings.en('loadError'), style: const TextStyle(fontSize: 22)),
+                    Text(Strings.en('loadError'), style: kidBody),
                     const SizedBox(height: 12),
                     FilledButton(
                       onPressed: () => ref
@@ -550,11 +551,10 @@ class _MascotWithAccessory extends StatelessWidget {
 }
 
 class _SpeechBubble extends StatelessWidget {
-  const _SpeechBubble({super.key, required this.text, this.tailRight = false, this.fontSize = 20});
+  const _SpeechBubble({super.key, required this.text, this.tailRight = false});
 
   final String text;
   final bool tailRight;
-  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -571,7 +571,7 @@ class _SpeechBubble extends StatelessWidget {
         child: Text(
           text,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: fontSize, fontWeight: FontWeight.w900, color: Palette.nightInk, height: 1.15),
+          style: kidBody.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk, height: 1.15),
         ),
       ),
     );
@@ -596,7 +596,7 @@ class _Label extends StatelessWidget {
       ),
       child: Text(
         text,
-        style: TextStyle(fontSize: big ? 24 : 19, fontWeight: FontWeight.w900, color: Palette.nightInk),
+        style: (big ? kidBody : kidCaption).copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk),
       ),
     );
   }
@@ -707,7 +707,7 @@ class _IslandTileState extends State<_IslandTile> with SingleTickerProviderState
                           fit: BoxFit.scaleDown,
                           child: Text(
                             Strings.en('certificate'),
-                            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w900, color: Palette.nightInk),
+                            style: kidCaption.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk),
                           ),
                         ),
                       ),
@@ -887,7 +887,7 @@ class _Island extends StatelessWidget {
                   ),
                   child: Text(
                     Strings.en('mapSoon'),
-                    style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w900, color: Palette.white),
+                    style: kidCaption.copyWith(fontWeight: FontWeight.w900, color: Palette.white),
                   ),
                 ),
               ),
@@ -1180,7 +1180,7 @@ class _TopBar extends StatelessWidget {
                               padding: const EdgeInsets.only(left: 6),
                               child: FittedBox(
                                 fit: BoxFit.scaleDown,
-                                child: _SpeechBubble(key: const Key('greeting'), text: '${Strings.en('hi')}, $name!', fontSize: 22),
+                                child: _SpeechBubble(key: const Key('greeting'), text: '${Strings.en('hi')}, $name!'),
                               ),
                             )
                           : const SizedBox(width: 0, height: 0),
@@ -1208,7 +1208,7 @@ class _TopBar extends StatelessWidget {
                         Text(
                           '$stars',
                           key: const Key('total-stars'),
-                          style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w900, color: Palette.nightInk),
+                          style: kidBody.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk),
                         ),
                       ],
                     ),

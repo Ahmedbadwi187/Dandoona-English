@@ -8,6 +8,7 @@ import '../../core/palette.dart';
 import '../../core/sky.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
+import '../activities/demo_steps.dart';
 import '../activities/listen_and_tap_activity.dart';
 import '../child/child_scope.dart';
 import '../content/content_models.dart';
@@ -66,12 +67,16 @@ class _PracticeScreenState extends ConsumerState<PracticeScreen> {
           activities: const ['listen-and-tap'],
         );
         final lessonOf = {for (final i in items) i.word.word: i.lesson.id};
-        body = ListenAndTapActivity(
-          key: const Key('practice-game'),
-          lesson: lesson,
-          track: track,
-          onRight: (w) => unawaited(ref.read(wordMissesProvider.notifier).got(childId, lessonOf[w.word] ?? '', w.word)),
-          onFinished: (_) => setState(() => _done = true),
+        body = DemoFrame(
+          activity: 'listen-and-tap',
+          instruction: lesson.audio.instructions['listen-and-tap'],
+          child: ListenAndTapActivity(
+            key: const Key('practice-game'),
+            lesson: lesson,
+            track: track,
+            onRight: (w) => unawaited(ref.read(wordMissesProvider.notifier).got(childId, lessonOf[w.word] ?? '', w.word)),
+            onFinished: (_) => setState(() => _done = true),
+          ),
         );
       }
     }

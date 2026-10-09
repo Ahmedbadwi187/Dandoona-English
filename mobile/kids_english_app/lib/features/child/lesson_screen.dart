@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
+import '../../core/type.dart';
 import '../../core/widgets.dart';
 import '../activities/color_the_object_activity.dart' show colorFromHex;
 import '../audio/audio_service.dart';
@@ -86,7 +87,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                     else
                       Center(
                       child: TapToHear(
-                        badgeInset: 14,
+                        badgeInset: 8,
                         key: const Key('lesson-letter-tap'),
                         semanticLabel: lesson.letter,
                         onTap: () => unawaited(ref.read(audioServiceProvider).playAsset(lesson.audio.colorName ?? lesson.audio.phoneme ?? lesson.audio.intro)),
@@ -106,7 +107,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                                       padding: const EdgeInsets.symmetric(horizontal: 18),
                                       child: FittedBox(
                                         fit: BoxFit.scaleDown,
-                                        child: Text(lesson.digits, key: const Key('lesson-letter'), style: const TextStyle(fontSize: 64, fontWeight: FontWeight.w900, color: Palette.white)),
+                                        child: Text(lesson.digits, key: const Key('lesson-letter'), style: kidHero.copyWith(fontWeight: FontWeight.w900, color: Palette.white)),
                                       ),
                                     ) // a Numbers lesson shows its numerals: 1 2 3
                                   : lesson.letter == null && lesson.words.isNotEmpty
@@ -117,7 +118,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                                         ) // any other unit (Shapes, Animals...) shows the lesson's first picture
                                       : Text(lesson.letter ?? '?',
                                           key: const Key('lesson-letter'),
-                                          style: const TextStyle(fontSize: 80, fontWeight: FontWeight.w900, color: Palette.white)),
+                                          style: kidHero.copyWith(fontWeight: FontWeight.w900, color: Palette.white)),
                         ),
                       ),
                     ),
@@ -138,7 +139,7 @@ class _LessonScreenState extends ConsumerState<LessonScreen> {
                                 child: AssetPicture(w.image, size: 104, semanticLabel: w.word),
                               ),
                               const SizedBox(height: 2),
-                              Text(w.word, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+                              Text(w.word, style: kidBody.copyWith(fontWeight: FontWeight.w700)),
                             ],
                           ),
                       ],
@@ -267,7 +268,8 @@ class _LetterPair extends ConsumerWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             TapToHear(
-              badgeInset: 10,
+              badgeInset: -10,
+              badgeBottom: 8,
               key: tapKey,
               semanticLabel: caption,
               onTap: () => _say(ref, key),
@@ -276,11 +278,11 @@ class _LetterPair extends ConsumerWidget {
                 height: size,
                 decoration: BoxDecoration(color: color, shape: BoxShape.circle, border: Border.all(color: Palette.ink, width: 6)),
                 alignment: Alignment.center,
-                child: Text(text, key: textKey, style: TextStyle(fontSize: size * 0.61, fontWeight: FontWeight.w900, color: Palette.white)),
+                child: Text(text, key: textKey, style: kidHero.copyWith(fontWeight: FontWeight.w900, color: Palette.white)),
               ),
             ),
             const SizedBox(height: 4),
-            Text(caption, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800, color: Palette.ink)),
+            Text(caption, style: kidCaption.copyWith(fontWeight: FontWeight.w800, color: Palette.ink)),
           ],
         );
 
@@ -288,9 +290,9 @@ class _LetterPair extends ConsumerWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        bubble(tapKey: const Key('lesson-letter-tap'), textKey: const Key('lesson-letter'), text: letter, size: 118, caption: Strings.en('letterCapital'), key: 'capital'),
+        bubble(tapKey: const Key('lesson-letter-tap'), textKey: const Key('lesson-letter'), text: letter, size: 112, caption: Strings.en('letterCapital'), key: 'capital'),
         const SizedBox(width: 22),
-        bubble(tapKey: const Key('lesson-letter-small-tap'), textKey: const Key('lesson-letter-small'), text: letter.toLowerCase(), size: 92, caption: Strings.en('letterSmall'), key: 'small'),
+        bubble(tapKey: const Key('lesson-letter-small-tap'), textKey: const Key('lesson-letter-small'), text: letter.toLowerCase(), size: 112, caption: Strings.en('letterSmall'), key: 'small'),
       ],
     );
   }

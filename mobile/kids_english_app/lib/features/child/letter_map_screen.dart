@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/palette.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
+import '../../core/type.dart';
 import '../../core/widgets.dart';
 import '../activities/color_the_object_activity.dart' show colorFromHex;
 import '../content/content_models.dart';
@@ -42,7 +43,7 @@ class LetterMapScreen extends ConsumerWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(Strings.en('loadError'), style: const TextStyle(fontSize: 22)),
+                    Text(Strings.en('loadError'), style: kidBody),
                     const SizedBox(height: 12),
                     FilledButton(onPressed: () => ref..invalidate(contentProvider)..invalidate(explorersContentProvider), child: Text(Strings.en('retry'))),
                   ],
@@ -93,7 +94,7 @@ class _Map extends ConsumerWidget {
               Expanded(
                 child: Text(child?.name ?? '',
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w800)),
+                    style: kidBody.copyWith(fontWeight: FontWeight.w800)),
               ),
               BigTap(
                 onTap: () => context.push('/wardrobe'),
@@ -113,7 +114,7 @@ class _Map extends ConsumerWidget {
               ),
               const Icon(Icons.star_rounded, color: Palette.yellow, size: 36),
               const SizedBox(width: 4),
-              Text('$totalStars', key: const Key('total-stars'), style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w800)),
+              Text('$totalStars', key: const Key('total-stars'), style: kidBody.copyWith(fontWeight: FontWeight.w800)),
             ],
           ),
         ),
@@ -203,8 +204,10 @@ class _MapRow extends StatelessWidget {
                   child: unlocked
                       ? (lesson.color != null
                           ? const SizedBox.shrink() // a Colors lesson is the color itself
-                          : Text(lesson.letter ?? '?',
-                          style: const TextStyle(fontSize: 48, fontWeight: FontWeight.w900, color: Palette.white)))
+                          : Padding(
+                              padding: const EdgeInsets.all(12), // the circle is smaller than the 72 hero size, so the letter is scaled down to sit inside it
+                              child: FittedBox(child: Text(lesson.letter ?? '?', style: kidHero.copyWith(fontWeight: FontWeight.w900, color: Palette.white))),
+                            ))
                       : const Icon(Icons.lock_rounded, color: Palette.white, size: 40),
                 ),
                 const SizedBox(height: 2),

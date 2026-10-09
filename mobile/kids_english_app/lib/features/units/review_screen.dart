@@ -10,6 +10,7 @@ import '../../core/sky.dart';
 import '../../core/strings.dart';
 import '../../core/theme.dart';
 import '../activities/activity_logic.dart';
+import '../activities/demo_steps.dart';
 import '../activities/listen_and_tap_activity.dart';
 import '../child/child_scope.dart';
 import '../content/content_models.dart';
@@ -94,7 +95,11 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
                                         child: Text(Strings.en('reviewTitle'), key: const Key('review-title'), style: const TextStyle(fontSize: 28, fontWeight: FontWeight.w900, color: Palette.nightInk)),
                                       ),
                                       Expanded(
-                                        child: ListenAndTapActivity(key: const Key('review-game'), lesson: lesson, track: _track!, onFinished: (r) => unawaited(_finished(r))),
+                                        child: DemoFrame(
+                                          activity: 'listen-and-tap',
+                                          instruction: lesson.audio.instructions['listen-and-tap'],
+                                          child: ListenAndTapActivity(key: const Key('review-game'), lesson: lesson, track: _track!, onFinished: (r) => unawaited(_finished(r))),
+                                        ),
                                       ),
                                     ],
                                   ),

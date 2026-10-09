@@ -8,11 +8,33 @@ import '../../core/storage.dart';
 
 /// One move of the demo hand: a tap on [target], or a drag from [target] to [to].
 class DemoStep {
-  const DemoStep.tap(this.target) : to = null;
-  const DemoStep.drag(this.target, GlobalKey this.to);
+  const DemoStep.tap(GlobalKey this.target)
+      : to = null,
+        prefix = null,
+        toPrefix = null;
+  const DemoStep.drag(GlobalKey this.target, GlobalKey this.to)
+      : prefix = null,
+        toPrefix = null;
 
-  final GlobalKey target;
+  /// The first piece whose key is a string key starting with [prefix] (the games already key their pieces: 'option-cat', 'card-0'...).
+  const DemoStep.tapFirst(String this.prefix)
+      : target = null,
+        to = null,
+        toPrefix = null;
+
+  /// A drag from the first piece with key [from] to the first piece with key [toKey].
+  const DemoStep.dragFirst(String from, String toKey)
+      : prefix = from,
+        toPrefix = toKey,
+        target = null,
+        to = null;
+
+  final GlobalKey? target;
   final GlobalKey? to;
+  final String? prefix;
+  final String? toPrefix;
+
+  bool get isDrag => to != null || toPrefix != null;
 }
 
 /// Shows how a game is played before the child plays it: a hand moves over the game's own pieces and does each move once
@@ -61,21 +83,54 @@ class _HandDemoState extends State<HandDemo> with SingleTickerProviderStateMixin
 
   Offset? _centerOf(GlobalKey key) {
     final box = key.currentContext?.findRenderObject() as RenderBox?;
+    return _localCenter(box);
+  }
+
+  Offset? _localCenter(RenderBox? box) {
     final stack = _stack.currentContext?.findRenderObject() as RenderBox?;
-    if (box == null || stack == null || !box.attached) return null;
+    if (box == null || stack == null || !box.attached || !box.hasSize) return null;
     return box.localToGlobal(box.size.center(Offset.zero), ancestor: stack);
   }
 
-  int _stepMs(DemoStep s) => HandDemo._move + HandDemo._press + (s.to != null ? HandDemo._drag : 0) + HandDemo._rest;
+  /// The first piece under the demo whose key is a string key starting with [prefix].
+  Offset? _centerOfPrefix(String prefix) {
+    RenderBox? found;
+    void visit(Element e) {
+      if (found != null) return;
+      final k = e.widget.key;
+      if (k is ValueKey<String> && k.value.startsWith(prefix) && e.renderObject is RenderBox) {
+        found = e.renderObject as RenderBox;
+        return;
+      }
+      e.visitChildren(visit);
+    }
+
+    (_stack.currentContext as Element?)?.visitChildren(visit);
+    return _localCenter(found);
+  }
+
+  /// A drag that starts and ends on the same piece (tracing) sweeps across it instead.
+  Offset? _start0(DemoStep s) {
+    final c = s.prefix != null ? _centerOfPrefix(s.prefix!) : _centerOf(s.target!);
+    return c != null && s.prefix != null && s.prefix == s.toPrefix ? c + const Offset(-60, -80) : c;
+  }
+  Offset? _end0(DemoStep s) {
+    final c = s.toPrefix != null ? _centerOfPrefix(s.toPrefix!) : null;
+    if (c != null && s.prefix == s.toPrefix) return c + const Offset(60, 80);
+    return s.toPrefix != null ? c
+        : (s.to == null ? null : _centerOf(s.to!));
+  }
+
+  int _stepMs(DemoStep s) => HandDemo._move + HandDemo._press + (s.isDrag ? HandDemo._drag : 0) + HandDemo._rest;
 
   Future<void> _play() async {
     if (!mounted || !widget.running) return;
     final stack = _stack.currentContext?.findRenderObject() as RenderBox?;
     final points = <(Offset, Offset?)>[];
     for (final s in widget.steps) {
-      final a = _centerOf(s.target);
+      final a = _start0(s);
       if (a == null) continue;
-      points.add((a, s.to == null ? null : _centerOf(s.to!)));
+      points.add((a, s.isDrag ? (_end0(s) ?? a) : null));
     }
     if (points.isEmpty || stack == null) {
       widget.onDone();
@@ -85,7 +140,7 @@ class _HandDemoState extends State<HandDemo> with SingleTickerProviderStateMixin
       _points = points;
       _start = Offset(stack.size.width * 0.8, stack.size.height * 0.95); // comes in from the bottom corner
     });
-    final total = widget.steps.where((s) => _centerOf(s.target) != null).fold<int>(0, (t, s) => t + _stepMs(s));
+    final total = widget.steps.where((s) => _start0(s) != null).fold<int>(0, (t, s) => t + _stepMs(s));
     _c.duration = Duration(milliseconds: total);
     try {
       await _c.forward(from: 0).orCancel;

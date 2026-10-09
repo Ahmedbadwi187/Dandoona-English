@@ -37,6 +37,8 @@ import 'sort_activity.dart';
 import 'story_feeling_activity.dart';
 import 'turns_activity.dart';
 import 'dandoona_says_activity.dart';
+import 'demo_steps.dart';
+import 'hand_demo.dart';
 import 'habitat_activity.dart';
 import 'listen_and_tap_activity.dart';
 import 'match_picture_activity.dart';
@@ -91,6 +93,15 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
   ActivityResult? _result;
   List<Accessory> _unlocked = const [];
 
+  /// The hand demo of the games that do not show their own: it plays every time the game opens, and the "?" plays it again.
+  late bool _demo = hasHostedDemo(widget.activity) && ref.read(autoDemoEveryTimeProvider);
+
+  void _showDemo() {
+    setState(() => _demo = true);
+    final line = widget.lesson.audio.instructions[widget.activity];
+    if (line != null) unawaited(ref.read(audioServiceProvider).playAsset(line));
+  }
+
   /// Set when this result finished a unit for the first time: the celebration and certificate come before the map.
   String? _celebrateUnit;
 
@@ -144,25 +155,34 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
   @override
   Widget build(BuildContext context) {
     final result = _result;
+    final hosted = hasHostedDemo(widget.activity) && result == null;
     return Column(
       children: [
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Padding(
-            padding: const EdgeInsets.all(8),
-            child: IconButton(
-              key: const Key('activity-back'),
-              constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
-              iconSize: 32,
-              onPressed: () => context.pop(),
-              icon: const Icon(Icons.arrow_back_rounded),
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: IconButton(
+                key: const Key('activity-back'),
+                constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
+                iconSize: 32,
+                onPressed: () => context.pop(),
+                icon: const Icon(Icons.arrow_back_rounded),
+              ),
             ),
-          ),
+            const Spacer(),
+            if (hosted) DemoHelpButton(onTap: _showDemo),
+            const SizedBox(width: 8),
+          ],
         ),
         Expanded(
           child: result != null
               ? ActivityResultView(stars: result.stars, lesson: widget.lesson, mascot: widget.track.mascot, unlocked: _unlocked, onDone: _done)
-              : switch (widget.activity) {
+              : HandDemo(
+                  running: _demo,
+                  steps: hostedDemoSteps(widget.activity),
+                  onDone: () => setState(() => _demo = false),
+                  child: switch (widget.activity) {
                   'listen-and-tap' => ListenAndTapActivity(lesson: widget.lesson, track: widget.track, onFinished: _finished, onMiss: _missed),
                   'match-picture' => MatchPictureActivity(lesson: widget.lesson, onFinished: _finished),
                   'trace' => TraceActivity(lesson: widget.lesson, onFinished: _finished),
@@ -193,7 +213,8 @@ class _ActivityHostState extends ConsumerState<_ActivityHost> {
                   'sentence-builder' => SentenceBuilderActivity(lesson: widget.lesson, onFinished: _finished),
                   'fill-the-gap' => FillTheGapActivity(lesson: widget.lesson, onFinished: _finished),
                   _ => Center(child: Text(Strings.en('loadError'))),
-                },
+                  },
+                ),
         ),
       ],
     );

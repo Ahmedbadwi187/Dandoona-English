@@ -133,7 +133,7 @@ class BigTap extends StatelessWidget {
 /// A picture (or letter) that speaks when tapped. A small speaker badge tells a child who cannot read that it is
 /// pressable, the badge pulses twice when the screen opens, and the picture bounces when tapped.
 class TapToHear extends StatefulWidget {
-  const TapToHear({super.key, required this.onTap, required this.child, this.semanticLabel, this.badgeInset = 0});
+  const TapToHear({super.key, required this.onTap, required this.child, this.semanticLabel, this.badgeInset = 0, this.badgeBottom});
 
   final VoidCallback onTap;
   final Widget child;
@@ -141,6 +141,9 @@ class TapToHear extends StatefulWidget {
 
   /// Moves the badge towards the middle (for round children, whose corners are empty).
   final double badgeInset;
+
+  /// Where the badge sits from the bottom, when that differs from [badgeInset].
+  final double? badgeBottom;
 
   @override
   State<TapToHear> createState() => _TapToHearState();
@@ -191,19 +194,19 @@ class _TapToHearState extends State<TapToHear> with TickerProviderStateMixin {
           ScaleTransition(scale: _pop.drive(_popScale), child: widget.child),
           Positioned(
             right: widget.badgeInset,
-            bottom: widget.badgeInset,
+            bottom: widget.badgeBottom ?? widget.badgeInset,
             child: ScaleTransition(
               scale: _hint.drive(_hintScale),
               child: Container(
                 key: const Key('speaker-badge'),
-                width: 44,
-                height: 44,
+                width: 32,
+                height: 32,
                 decoration: BoxDecoration(
                   color: Palette.blue,
                   shape: BoxShape.circle,
-                  border: Border.all(color: Palette.ink, width: 3),
+                  border: Border.all(color: Palette.ink, width: 2.5),
                 ),
-                child: const Icon(Icons.volume_up_rounded, size: 26, color: Palette.white),
+                child: const Icon(Icons.volume_up_rounded, size: 19, color: Palette.white),
               ),
             ),
           ),
