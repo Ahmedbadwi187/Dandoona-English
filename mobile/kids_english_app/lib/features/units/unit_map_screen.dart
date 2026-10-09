@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../core/palette.dart';
 import '../../core/sky.dart';
+import '../../core/theme.dart' show kMinTapTarget;
 import '../../core/strings.dart';
 import '../../core/type.dart';
 import '../../core/widgets.dart';
@@ -1153,6 +1154,9 @@ class _TopBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // a 360 dp phone is 31 px too narrow for the full-size buttons: they shrink a little there
+    final compact = MediaQuery.sizeOf(context).width < 400;
+    final button = compact ? 46.0 : 54.0;
     return DecoratedBox(
       decoration: BoxDecoration(
         color: const Color(0xFFF7FBFD).withValues(alpha: 0.97),
@@ -1167,7 +1171,7 @@ class _TopBar extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               children: [
-                BigTap(key: const Key('map-avatar'), semanticLabel: Strings.en('mapWhoIsPlaying'), onTap: onAvatar, child: AvatarCircle(avatarKey, size: 60)),
+                BigTap(key: const Key('map-avatar'), semanticLabel: Strings.en('mapWhoIsPlaying'), onTap: onAvatar, child: AvatarCircle(avatarKey, size: compact ? 52 : 60)),
                 Expanded(
                   child: Align(
                     alignment: Alignment.centerLeft,
@@ -1192,7 +1196,12 @@ class _TopBar extends StatelessWidget {
                     TweenSequenceItem(tween: Tween<double>(begin: 1, end: 1.3).chain(CurveTween(curve: Curves.easeOut)), weight: 40),
                     TweenSequenceItem(tween: Tween<double>(begin: 1.3, end: 1).chain(CurveTween(curve: Curves.elasticOut)), weight: 60),
                   ]).animate(starBounce),
-                  child: Container(
+                  // a big star count at a big text size shrinks instead of pushing the buttons off a narrow phone
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: (MediaQuery.sizeOf(context).width - 20 - 4 * kMinTapTarget - 4).clamp(60.0, 400.0)), // what is left of the bar after the four 64 dp tap targets
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Container(
                     key: const Key('map-stars'),
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     decoration: BoxDecoration(
@@ -1213,6 +1222,8 @@ class _TopBar extends StatelessWidget {
                       ],
                     ),
                   ),
+                    ),
+                  ),
                 ),
                 BigTap(
                   key: const Key('open-wardrobe'),
@@ -1222,8 +1233,8 @@ class _TopBar extends StatelessWidget {
                     clipBehavior: Clip.none,
                     children: [
                       Container(
-                        width: 54,
-                        height: 54,
+                        width: button,
+                        height: button,
                         decoration: BoxDecoration(
                           color: Palette.white,
                           shape: BoxShape.circle,
@@ -1256,8 +1267,8 @@ class _TopBar extends StatelessWidget {
                   onTap: onStickers,
                   semanticLabel: Strings.en('mapStickers'),
                   child: Container(
-                    width: 54,
-                    height: 54,
+                    width: button,
+                    height: button,
                     decoration: BoxDecoration(
                       color: Palette.white,
                       shape: BoxShape.circle,

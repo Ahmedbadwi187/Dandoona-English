@@ -61,7 +61,7 @@ class StickerBookScreen extends ConsumerWidget {
                           onPressed: () => context.pop(),
                           icon: const Icon(Icons.arrow_back_rounded),
                         ),
-                        Expanded(child: Text(Strings.en('stickerBook'), style: kidTitle.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk))),
+                        Expanded(child: FittedBox(fit: BoxFit.scaleDown, alignment: AlignmentDirectional.centerStart, child: Text(Strings.en('stickerBook'), style: kidTitle.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk)))),
                         Container(
                           key: const Key('stickers-count'),
                           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),

@@ -79,7 +79,7 @@ class _Map extends ConsumerWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.fromLTRB(8, 8, 16, 8),
+          padding: const EdgeInsets.fromLTRB(4, 8, 12, 8),
           child: Row(
             children: [
               IconButton(
@@ -90,7 +90,7 @@ class _Map extends ConsumerWidget {
                 icon: const Icon(Icons.arrow_back_rounded),
               ),
               if (child != null) AvatarCircle(child.avatarKey, size: 48),
-              const SizedBox(width: 12),
+              const SizedBox(width: 8),
               Expanded(
                 child: Text(child?.name ?? '',
                     overflow: TextOverflow.ellipsis,
@@ -103,7 +103,7 @@ class _Map extends ConsumerWidget {
                   key: const Key('open-wardrobe'),
                   width: 56,
                   height: 56,
-                  margin: const EdgeInsets.only(right: 12),
+                  margin: const EdgeInsets.only(right: 6),
                   decoration: BoxDecoration(
                     color: Palette.white,
                     shape: BoxShape.circle,
@@ -204,10 +204,14 @@ class _MapRow extends StatelessWidget {
                   child: unlocked
                       ? (lesson.color != null
                           ? const SizedBox.shrink() // a Colors lesson is the color itself
-                          : Padding(
-                              padding: const EdgeInsets.all(12), // the circle is smaller than the 72 hero size, so the letter is scaled down to sit inside it
-                              child: FittedBox(child: Text(lesson.letter ?? '?', style: kidHero.copyWith(fontWeight: FontWeight.w900, color: Palette.white))),
-                            ))
+                          : lesson.counting
+                              ? Padding(padding: const EdgeInsets.symmetric(horizontal: 10), child: FittedBox(fit: BoxFit.scaleDown, child: Text(lesson.digits, style: kidHero.copyWith(fontWeight: FontWeight.w900, color: Palette.white)))) // a Numbers lesson: its numerals
+                              : lesson.letter == null && lesson.words.isNotEmpty
+                                  ? Padding(padding: const EdgeInsets.all(14), child: AssetPicture(lesson.words.first.image)) // any other unit: the lesson's first picture
+                                  : Padding(
+                                      padding: const EdgeInsets.all(12), // the circle is smaller than the 72 hero size, so the letter is scaled down to sit inside it
+                                      child: FittedBox(child: Text(lesson.letter ?? '?', style: kidHero.copyWith(fontWeight: FontWeight.w900, color: Palette.white))),
+                                    ))
                       : const Icon(Icons.lock_rounded, color: Palette.white, size: 40),
                 ),
                 const SizedBox(height: 2),

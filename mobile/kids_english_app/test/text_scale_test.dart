@@ -16,9 +16,9 @@ import 'pack_content.dart';
 const _kids = '[{"id":"c1","name":"Lina","avatarKey":"rocket","birthYear":2022,"track":"little-learners","createdAt":"2026-01-01T00:00:00Z"},'
     '{"id":"c2","name":"Omar","avatarKey":"bear","birthYear":2019,"birthMonth":2,"track":"explorers","createdAt":"2026-01-02T00:00:00Z"}]';
 
-Future<(ProviderContainer, GoRouterLike)> _open(WidgetTester t, {required double systemScale}) async {
-  t.view.physicalSize = const Size(1080, 2400);
-  t.view.devicePixelRatio = 1080 / 411;
+Future<(ProviderContainer, GoRouterLike)> _open(WidgetTester t, {required double systemScale, Size size = const Size(411, 890)}) async {
+  t.view.physicalSize = size * 3;
+  t.view.devicePixelRatio = 3;
   t.platformDispatcher.textScaleFactorTestValue = systemScale;
   addTearDown(t.view.reset);
   addTearDown(t.platformDispatcher.clearTextScaleFactorTestValue);
@@ -68,6 +68,22 @@ void main() {
         await t.pump(const Duration(milliseconds: 600));
         expect(_scaleAt(t), closeTo(kidMaxTextScale, 0.001), reason: r);
         expect(t.takeException(), isNull, reason: 'no overflow at $r');
+      }
+      await t.pumpWidget(const SizedBox());
+      await t.pump(const Duration(seconds: 5));
+    });
+  }
+
+  for (final child in ['c1', 'c2']) {
+    testWidgets('a small phone (360 x 640 dp) at the largest text size ($child): the child screens and the parent screens do not overflow', (t) async {
+      final (c, router) = await _open(t, systemScale: 3.0, size: const Size(360, 640));
+      c.read(activeChildIdProvider.notifier).select(child);
+      c.read(parentSessionProvider.notifier).unlock();
+      for (final r in [...childRoutes, ...parentRoutes]) {
+        router.go(r);
+        await t.pump();
+        await t.pump(const Duration(milliseconds: 600));
+        expect(t.takeException(), isNull, reason: 'no overflow at $r on a small phone');
       }
       await t.pumpWidget(const SizedBox());
       await t.pump(const Duration(seconds: 5));
