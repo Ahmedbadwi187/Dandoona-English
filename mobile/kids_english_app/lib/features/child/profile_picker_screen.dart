@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/loading_action.dart';
 import '../../core/palette.dart';
 import '../../core/sky.dart';
 import '../../core/strings.dart';
@@ -100,13 +101,14 @@ class _ProfilePickerScreenState extends ConsumerState<ProfilePickerScreen> {
                     final cardWidth = ((box.maxWidth - pad * 2 - gap * 2) / 3).clamp(100.0, 190.0);
                     return SingleChildScrollView(
                       child: ConstrainedBox(
-                        constraints: BoxConstraints(minHeight: box.maxHeight),
+                        // the full width (with one child the column would shrink to its widest item and sit on the left)
+                        constraints: BoxConstraints(minHeight: box.maxHeight, minWidth: box.maxWidth),
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(pad, 56, pad, 24),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              _Speech(text: Strings.en('whoIsPlaying'), onTap: () => unawaited(_say())),
+                              _Speech(text: Strings.en('whoIsPlaying'), onTap: _say),
                               const DandoonaView(pose: DandoonaPose.waving, size: 150),
                               const SizedBox(height: 12),
                               Wrap(
@@ -132,15 +134,15 @@ class _ProfilePickerScreenState extends ConsumerState<ProfilePickerScreen> {
                     color: Colors.white,
                     shape: const CircleBorder(),
                     elevation: 2,
-                    child: IconButton(
+                    child: LoadingAction(onPressed: _openParentArea, builder: (onPressed, loading) => IconButton(
                       key: const Key('open-parent-area'),
                       constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
                       iconSize: 30,
                       color: Palette.gray,
                       tooltip: 'Parents',
-                      onPressed: _openParentArea,
-                      icon: const Icon(Icons.lock_rounded),
-                    ),
+                      onPressed: onPressed,
+                      icon: LoadingContent(loading: loading, child: const Icon(Icons.lock_rounded)),
+                    )),
                   ),
                 ),
               ],
@@ -157,14 +159,14 @@ class _Speech extends StatelessWidget {
   const _Speech({required this.text, required this.onTap});
 
   final String text;
-  final VoidCallback onTap;
+  final LoadingCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return Semantics(
       button: true,
       label: text,
-      child: GestureDetector(
+      child: LoadingTap(
         key: const Key('who-bubble'),
         onTap: onTap,
         child: ConstrainedBox(
@@ -194,7 +196,7 @@ class _ChildCard extends StatefulWidget {
 
   final ChildProfile child;
   final int stars;
-  final VoidCallback onPick;
+  final LoadingCallback onPick;
 
   @override
   State<_ChildCard> createState() => _ChildCardState();
@@ -218,12 +220,12 @@ class _ChildCardState extends State<_ChildCard> with SingleTickerProviderStateMi
   Widget build(BuildContext context) {
     final avatar = AvatarOption.byKey(widget.child.avatarKey);
     final color = avatar.color;
-    return GestureDetector(
+    return LoadingTap(
       key: Key('pick-${widget.child.id}'),
       behavior: HitTestBehavior.opaque,
       onTap: () {
         _bounce.forward(from: 0);
-        widget.onPick();
+        return widget.onPick();
       },
       child: Container(
         padding: const EdgeInsets.fromLTRB(8, 12, 8, 10),
