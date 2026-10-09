@@ -235,7 +235,7 @@ void main() {
         isNull,
       );
       final spinner = find.byType(CircularProgressIndicator);
-      expect(TickerMode.of(tester.element(spinner)), isFalse);
+      expect(TickerMode.valuesOf(tester.element(spinner)).enabled, isFalse);
       await tester.tap(find.byKey(const Key('cancel-loading-dialog')));
       await tester.pumpAndSettle();
       expect(find.byType(CircularProgressIndicator), findsNothing);

@@ -119,7 +119,8 @@ void main() {
     await t.pump();
     final back = find.byKey(const Key('parent-back'));
     final buttonPress = t.widget<IconButton>(back).onPressed!;
-    final pop = t.widget<PopScope>(find.ancestor(of: find.byKey(const Key('edit-name')), matching: find.byType(PopScope)).first).onPopInvokedWithResult!;
+    final popScope = find.ancestor(of: find.byKey(const Key('edit-name')), matching: find.byWidgetPredicate((w) => w is PopScope)).first; // (PopScope is generic: byType would not match it)
+    final pop = (t.widget(popScope) as PopScope).onPopInvokedWithResult!;
     buttonPress();
     pop(false, null);
     pop(false, null);
