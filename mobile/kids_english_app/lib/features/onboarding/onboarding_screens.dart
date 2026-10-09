@@ -29,8 +29,10 @@ class LanguageScreen extends StatelessWidget {
     return OnboardingFrame(
       s: s,
       pose: DandoonaPose.waving,
-      poseSize: 170,
+      poseSize: 150,
       title: 'اختر لغتك\nChoose your language',
+      // says what the choice is for: the parent area (the child's lessons are in English either way)
+      subtitle: selected == 'ar' ? 'لغة واجهة ولي الأمر. سيتعلم طفلك باللغة الإنجليزية.' : 'The language of the parent area. Your child learns in English.',
       onContinue: onContinue,
       continueLabel: selected == 'ar' ? 'متابعة' : 'Continue',
       child: Column(
@@ -59,7 +61,7 @@ class ParentWelcomeScreen extends StatelessWidget {
     return OnboardingFrame(
       s: s,
       pose: DandoonaPose.jumping,
-      poseSize: 170,
+      poseSize: 150,
       title: s('obWelcomeTitle'),
       subtitle: s('obWelcomeBody'),
       onBack: onBack,
@@ -95,10 +97,10 @@ class _RoundIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-        width: 48,
-        height: 48,
+        width: 44,
+        height: 44,
         decoration: BoxDecoration(color: color, shape: BoxShape.circle),
-        child: Icon(icon, color: Palette.white, size: 28),
+        child: Icon(icon, color: Palette.white, size: 24),
       );
 }
 
@@ -266,9 +268,10 @@ class _FieldState extends State<_Field> {
         labelText: widget.label,
         filled: true,
         fillColor: Palette.white,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20), borderSide: const BorderSide(color: Palette.tan, width: 3)),
-        enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20), borderSide: const BorderSide(color: Palette.tan, width: 3)),
-        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20), borderSide: const BorderSide(color: Palette.plum, width: 4)),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(18), borderSide: const BorderSide(color: Color(0xFFE3D2ED), width: 1.5)),
+        enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(18), borderSide: const BorderSide(color: Color(0xFFE3D2ED), width: 1.5)),
+        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(18), borderSide: const BorderSide(color: Palette.plum, width: 2)),
       ),
     );
   }
@@ -348,9 +351,9 @@ class ChildNameScreen extends StatelessWidget {
                   semanticLabel: a.key,
                   onTap: () => onAvatar(a.key),
                   child: Container(
-                    padding: const EdgeInsets.all(4),
-                    decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: avatarKey == a.key ? Palette.plum : Colors.transparent, width: 5)),
-                    child: AvatarCircle(a.key, size: 62),
+                    padding: const EdgeInsets.all(3),
+                    decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: avatarKey == a.key ? Palette.plum : Colors.transparent, width: 3)),
+                    child: AvatarCircle(a.key, size: 64),
                   ),
                 ),
             ],
@@ -438,8 +441,9 @@ class _Picker<T> extends StatelessWidget {
         labelText: label,
         filled: true,
         fillColor: Palette.white,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20), borderSide: const BorderSide(color: Palette.tan, width: 3)),
-        enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20), borderSide: const BorderSide(color: Palette.tan, width: 3)),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(18), borderSide: const BorderSide(color: Color(0xFFE3D2ED), width: 1.5)),
+        enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(18), borderSide: const BorderSide(color: Color(0xFFE3D2ED), width: 1.5)),
       ),
       items: [for (final e in items.entries) DropdownMenuItem(value: e.key, child: Text(e.value))],
       onChanged: (v) {
@@ -602,7 +606,7 @@ class SummaryScreen extends StatelessWidget {
       s: s,
       pose: DandoonaPose.clapping,
       accessory: 'party-hat',
-      poseSize: 170,
+      poseSize: 150,
       title: s('obPathReady').replaceAll('{name}', name),
       progress: 1,
       onBack: onBack,
@@ -616,10 +620,11 @@ class SummaryScreen extends StatelessWidget {
               child: InkWell(
                 key: Key('summary-${r.keyName}'),
                 onTap: () => onEdit(r.keyName),
-                borderRadius: BorderRadius.circular(24),
+                borderRadius: BorderRadius.circular(20),
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-                  decoration: BoxDecoration(color: Palette.white, borderRadius: BorderRadius.circular(24), border: Border.all(color: Palette.tan, width: 3)),
+                  constraints: const BoxConstraints(minHeight: 80),
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  decoration: BoxDecoration(color: Palette.white, borderRadius: BorderRadius.circular(20), border: Border.all(color: const Color(0xFFDDD5E5), width: 1.5)),
                   child: Row(
                     children: [
                       _RoundIcon(r.icon, r.color),
@@ -629,11 +634,17 @@ class SummaryScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(r.label, style: parentCaption.copyWith(color: Palette.brown)),
+                            const SizedBox(height: 4),
                             Text(r.value, style: parentSubtitle.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk)),
                           ],
                         ),
                       ),
-                      const Icon(Icons.edit_rounded, color: Palette.plum, size: 26),
+                      Container(
+                        width: 40,
+                        height: 40,
+                        decoration: const BoxDecoration(color: Color(0xFFF1E7FA), shape: BoxShape.circle),
+                        child: const Icon(Icons.edit_rounded, color: Palette.plum, size: 20),
+                      ),
                     ],
                   ),
                 ),

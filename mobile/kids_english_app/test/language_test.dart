@@ -51,6 +51,7 @@ void main() {
 
     testWidgets('choosing English flips the screen at once and the following screens are English and left to right', (t) async {
       final c = await _start(t, device: 'ar');
+      await t.ensureVisible(find.byKey(const Key('lang-en'))); // (the default test screen is short and the language screen now has a line of explanation)
       await t.tap(find.byKey(const Key('lang-en')));
       await t.pumpAndSettle();
       expect(Directionality.of(t.element(find.byKey(const Key('lang-en')))), TextDirection.ltr);

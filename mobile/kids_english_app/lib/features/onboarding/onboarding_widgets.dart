@@ -100,14 +100,14 @@ class OnboardingFrame extends StatelessWidget {
                   child: Row(
                     children: [
                       SizedBox(
-                        width: kMinTapTarget,
-                        height: kMinTapTarget,
+                        width: 48,
+                        height: 48,
                         child: onBack == null
                             ? null
                             : IconButton(
                                 key: const Key('ob-back'),
                                 tooltip: s('obBack'),
-                                iconSize: 30,
+                                iconSize: 28,
                                 onPressed: loading ? null : onBack,
                                 icon: const Icon(Icons.arrow_back_rounded),
                               ),
@@ -115,8 +115,8 @@ class OnboardingFrame extends StatelessWidget {
                       if (progress != null)
                         Expanded(
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: LinearProgressIndicator(key: const Key('ob-progress'), value: progress, minHeight: 14, backgroundColor: Palette.tan, color: Palette.plum),
+                            borderRadius: BorderRadius.circular(3),
+                            child: LinearProgressIndicator(key: const Key('ob-progress'), value: progress, minHeight: 6, backgroundColor: const Color(0xFFE8DDF0), color: Palette.plum),
                           ),
                         )
                       else
@@ -134,7 +134,7 @@ class OnboardingFrame extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             DandoonaView(pose: pose, size: poseSize, accessory: accessory),
-                            const SizedBox(height: 6),
+                            const SizedBox(height: 16),
                             Text(
                               title,
                               key: const Key('ob-title'),
@@ -142,14 +142,14 @@ class OnboardingFrame extends StatelessWidget {
                               style: parentStat.copyWith(fontWeight: FontWeight.w900, color: Palette.nightInk, height: 1.25),
                             ),
                             if (subtitle != null) ...[
-                              const SizedBox(height: 6),
+                              const SizedBox(height: 8),
                               Text(
                                 subtitle!,
                                 textAlign: TextAlign.center,
                                 style: parentBody.copyWith(color: Palette.brown, height: 1.4),
                               ),
                             ],
-                            const SizedBox(height: 18),
+                            const SizedBox(height: 24),
                             IgnorePointer(ignoring: loading, child: child),
                           ],
                         ),
@@ -170,9 +170,10 @@ class OnboardingFrame extends StatelessWidget {
                             key: const Key('ob-continue'),
                             style: FilledButton.styleFrom(
                               backgroundColor: Palette.plum,
-                              disabledBackgroundColor: const Color(0xFFE0D8EC),
+                              disabledBackgroundColor: const Color(0xFFE4DCEC),
+                              disabledForegroundColor: const Color(0xFF81788A),
                               foregroundColor: Palette.white,
-                              minimumSize: const Size.fromHeight(64),
+                              minimumSize: const Size.fromHeight(56),
                               textStyle: Theme.of(context).textTheme.labelLarge?.merge(parentTitle).copyWith(fontWeight: FontWeight.w800),
                             ),
                             onPressed: onContinue,
@@ -227,15 +228,15 @@ class ChoiceCard extends StatelessWidget {
         label: title,
         child: InkWell(
           onTap: onTap,
-          borderRadius: BorderRadius.circular(26),
+          borderRadius: BorderRadius.circular(20),
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 150),
             constraints: const BoxConstraints(minHeight: 76),
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: BoxDecoration(
-              color: selected ? const Color(0xFFF1E8FB) : Palette.white,
-              borderRadius: BorderRadius.circular(26),
-              border: Border.all(color: selected ? Palette.plum : Palette.tan, width: selected ? 5 : 3),
+              color: selected ? const Color(0xFFF1E7FA) : Palette.white,
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: selected ? Palette.plum : const Color(0xFFDDD5E5), width: selected ? 2 : 1.5),
             ),
             child: Row(
               children: [
@@ -250,7 +251,7 @@ class ChoiceCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                Icon(selected ? Icons.check_circle_rounded : Icons.circle_outlined, color: selected ? Palette.plum : const Color(0xFFBDB3CB), size: 30),
+                Icon(selected ? Icons.check_circle_rounded : Icons.circle_outlined, color: selected ? Palette.plum : const Color(0xFFBDB3CB), size: 24),
               ],
             ),
           ),
