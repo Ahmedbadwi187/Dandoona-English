@@ -25,14 +25,18 @@ def fail(msg):
     sys.exit(1)
 
 
+MODE = {"individual": False}  # a Team key (iss = Issuer ID) unless Apple only accepts it as an Individual key (sub = "user")
+
+
 def token():
     key = open(os.environ["ASC_KEY_PATH"]).read()
     if "BEGIN PRIVATE KEY" not in key or "END PRIVATE KEY" not in key:
         fail("ASC_KEY_P8 does not look like the whole .p8 file: copy everything from -----BEGIN PRIVATE KEY----- to the END line.")
     now = int(time.time())
     try:
-        return jwt.encode({"iss": os.environ["ASC_ISSUER_ID"].strip(), "iat": now, "exp": now + 1000, "aud": "appstoreconnect-v1"},
-                          key, algorithm="ES256", headers={"kid": os.environ["ASC_KEY_ID"].strip(), "typ": "JWT"})
+        claims = {"iat": now, "exp": now + 1000, "aud": "appstoreconnect-v1"}
+        claims.update({"sub": "user"} if MODE["individual"] else {"iss": os.environ["ASC_ISSUER_ID"].strip()})
+        return jwt.encode(claims, key, algorithm="ES256", headers={"kid": os.environ["ASC_KEY_ID"].strip(), "typ": "JWT"})
     except Exception as e:  # a broken key
         fail(f"The .p8 key in ASC_KEY_P8 cannot be read ({e.__class__.__name__}). Paste the whole file again.")
 
@@ -46,6 +50,9 @@ def call(method, path, body=None, ok=(200, 201, 204)):
             return r.status, (json.loads(data) if data else {})
     except urllib.error.HTTPError as e:
         text = e.read().decode(errors="replace")
+        if e.code == 401 and not MODE["individual"]:
+            MODE["individual"] = True  # maybe an Individual key: try once as one
+            return call(method, path, body, ok)
         if e.code == 401:
             fail("Apple refused the key (401). Check ASC_KEY_ID (the Key ID of this key), ASC_ISSUER_ID (the Issuer ID above the keys "
                  "table) and that ASC_KEY_P8 is that same key's .p8. Also accept any new agreement in developer.apple.com > Account "
@@ -69,6 +76,8 @@ def check():
     if not apps.get("data"):
         fail(f"No app with Bundle ID {bundle} in App Store Connect. Create it: appstoreconnect.apple.com > Apps > + > New App "
              f"(platform iOS, Bundle ID {bundle}), then run again.")
+    if MODE["individual"]:
+        print("::warning::This is an Individual key. Signing may need a Team key with Admin access (App Store Connect > Users and Access > Integrations > Team Keys).")
     print(f"Key works. Bundle ID registered. App in App Store Connect: {apps['data'][0]['attributes']['name']}")
     return match[0]["id"]
 
