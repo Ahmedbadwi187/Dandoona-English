@@ -139,7 +139,7 @@ const Map<String, String> _arabic = {
   // --- first-launch onboarding (parent area, Arabic) ---
   'obContinue': 'متابعة',
   'obBack': 'رجوع',
-  'obWelcomeTitle': 'أهلاً بك في دندونة إنجليش!',
+  'obWelcomeTitle': 'أهلاً بك في دندونة!',
   'obWelcomeBody': 'سنجهّز مساراً مناسباً لطفلك في دقيقتين.',
   'obNoAccount': 'ابدأ بدون حساب',
   'obNoAccountSub': 'كل شيء يبقى على هذا الجهاز',
@@ -416,7 +416,7 @@ const Map<String, String> _english = {
   // --- first-launch onboarding (parent area, English) ---
   'obContinue': 'Continue',
   'obBack': 'Back',
-  'obWelcomeTitle': 'Welcome to Dandoona English!',
+  'obWelcomeTitle': 'Welcome to Dandoona!',
   'obWelcomeBody': "We'll set up the right path for your child in two minutes.",
   'obNoAccount': 'Start without an account',
   'obNoAccountSub': 'Everything stays on this device',

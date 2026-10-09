@@ -102,8 +102,8 @@ void main() {
     testWidgets('first launch: onboarding in Arabic (RTL) then create the first profile', (tester) async {
       await pumpApp(tester);
       expect(find.byKey(const Key('ob-continue')), findsOneWidget);
-      expect(find.text('أهلاً بك في دندونة إنجليش!'), findsOneWidget);
-      expect(Directionality.of(tester.element(find.text('أهلاً بك في دندونة إنجليش!'))), TextDirection.rtl);
+      expect(find.text('أهلاً بك في دندونة!'), findsOneWidget);
+      expect(Directionality.of(tester.element(find.text('أهلاً بك في دندونة!'))), TextDirection.rtl);
 
       await tester.tap(find.byKey(const Key('ob-continue')));
       await tester.pumpAndSettle();

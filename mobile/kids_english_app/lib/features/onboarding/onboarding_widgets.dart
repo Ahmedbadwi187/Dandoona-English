@@ -209,7 +209,7 @@ class OnboardingFrame extends StatelessWidget {
 
 /// A big answer card (radio style): used for language, account choice, level, daily goal and reminder time.
 class ChoiceCard extends StatelessWidget {
-  const ChoiceCard({super.key, required this.title, required this.selected, required this.onTap, this.subtitle, this.leading, this.titleStyle = parentSubtitle});
+  const ChoiceCard({super.key, required this.title, required this.selected, required this.onTap, this.subtitle, this.leading, this.titleStyle = parentSubtitle, this.minHeight = 76, this.titleWeight = FontWeight.w800});
 
   final String title;
   final String? subtitle;
@@ -217,6 +217,8 @@ class ChoiceCard extends StatelessWidget {
   final bool selected;
   final VoidCallback onTap;
   final TextStyle titleStyle;
+  final double minHeight;
+  final FontWeight titleWeight;
 
   @override
   Widget build(BuildContext context) {
@@ -231,7 +233,7 @@ class ChoiceCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 150),
-            constraints: const BoxConstraints(minHeight: 76),
+            constraints: BoxConstraints(minHeight: minHeight),
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: BoxDecoration(
               color: selected ? const Color(0xFFF1E7FA) : Palette.white,
@@ -246,7 +248,7 @@ class ChoiceCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(title, style: titleStyle.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk)),
+                      Text(title, style: titleStyle.copyWith(fontWeight: titleWeight, color: Palette.nightInk)),
                       if (subtitle != null) Padding(padding: const EdgeInsets.only(top: 2), child: Text(subtitle!, style: parentCaption.copyWith(color: Palette.brown))),
                     ],
                   ),

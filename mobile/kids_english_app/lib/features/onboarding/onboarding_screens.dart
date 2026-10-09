@@ -37,8 +37,8 @@ class LanguageScreen extends StatelessWidget {
       continueLabel: selected == 'ar' ? 'متابعة' : 'Continue',
       child: Column(
         children: [
-          ChoiceCard(key: const Key('lang-ar'), title: 'العربية', titleStyle: parentStat, selected: selected == 'ar', onTap: () => onSelect('ar')),
-          ChoiceCard(key: const Key('lang-en'), title: 'English', titleStyle: parentStat, selected: selected == 'en', onTap: () => onSelect('en')),
+          ChoiceCard(key: const Key('lang-ar'), title: 'العربية', titleStyle: parentSubtitle, titleWeight: FontWeight.w600, minHeight: 68, selected: selected == 'ar', onTap: () => onSelect('ar')),
+          ChoiceCard(key: const Key('lang-en'), title: 'English', titleStyle: parentSubtitle, titleWeight: FontWeight.w600, minHeight: 68, selected: selected == 'en', onTap: () => onSelect('en')),
         ],
       ),
     );
