@@ -147,6 +147,10 @@ class _UnitMap extends ConsumerStatefulWidget {
   ConsumerState<_UnitMap> createState() => _UnitMapState();
 }
 
+/// Where the map was scrolled when it was last closed. A map that is rebuilt a moment later (a downloaded pack changes the catalog and the
+/// screen is made again) opens where it was; one opened later (after a lesson) goes to Dandoona.
+({double offset, DateTime at})? _lastMapScroll;
+
 class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixin {
   final _scroll = ScrollController();
   late final AnimationController _shake = AnimationController(vsync: this, duration: const Duration(milliseconds: 900));
@@ -174,6 +178,7 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
   void dispose() {
     _greetingTimer?.cancel();
     _bubbleTimer?.cancel();
+    if (_scroll.hasClients) _lastMapScroll = (offset: _scroll.offset, at: DateTime.now());
     _scroll.dispose();
     _shake.dispose();
     _starBounce.dispose();
@@ -248,8 +253,7 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
     if (audio != null) unawaited(ref.read(audioServiceProvider).playAsset(audio));
     if (unit.needsDownload) {
       // its pack is still on the way: a calm word for the child (the parent area says when it needs internet)
-      _showBubble(Strings.en('mapAlmostReady'));
-      _revealDandoona();
+      _showBubble(Strings.en('mapAlmostReady')); // (the map stays where the child is: the island's own badge shows the download, and Dandoona is not brought back)
       final almost = widget.track.appAudio?.lines['almost-ready'];
       if (almost != null) unawaited(ref.read(audioServiceProvider).playAsset(almost));
       unawaited(ref.read(packDownloadsProvider.notifier).ensure(unit));
@@ -358,7 +362,10 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
         if (!_scrolledToCurrent && current >= 0) {
           _scrolledToCurrent = true;
           WidgetsBinding.instance.addPostFrameCallback((_) {
-            if (mounted && _scroll.hasClients) _scroll.jumpTo(_targetOffset(layout.centers[current].dy));
+            if (!mounted || !_scroll.hasClients) return;
+            final last = _lastMapScroll;
+            final rebuilt = last != null && DateTime.now().difference(last.at) < const Duration(seconds: 5);
+            _scroll.jumpTo(rebuilt ? last.offset.clamp(0.0, _scroll.position.maxScrollExtent) : _targetOffset(layout.centers[current].dy));
           });
         }
         final motion = _ambientMotion(context);
