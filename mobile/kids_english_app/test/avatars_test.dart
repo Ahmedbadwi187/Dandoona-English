@@ -8,7 +8,7 @@ import 'package:kids_english_app/core/widgets.dart';
 void main() {
   test('a parent can pick Dandoona or one of six friends: eight drawn avatars, all with their picture in the app', () {
     final keys = AvatarOption.pickable.map((a) => a.key).toList();
-    expect(keys, ['dandoona', 'bunny', 'cat', 'bear', 'owl', 'goldfish', 'puppy', 'penguin']);
+    expect(keys, ['dandoona', 'bunny', 'cat', 'bear', 'owl', 'goldfish', 'puppy', 'penguin', 'fox', 'wolf', 'dragon', 'dino', 'robot', 'panda']);
     for (final a in AvatarOption.pickable) {
       expect(a.asset, isNotNull, reason: a.key);
       expect(File(a.asset!).existsSync(), isTrue, reason: '${a.key}: ${a.asset}');
@@ -20,7 +20,7 @@ void main() {
     for (final a in AvatarOption.legacy) {
       final (character, color) = expected[a.key]!;
       expect(a.color, color, reason: '${a.key} keeps its color');
-      expect(a.asset, 'assets/images/avatars/$character.svg', reason: a.key);
+      expect(a.asset, 'assets/images/avatars/$character.${character == 'frog' ? 'svg' : 'webp'}', reason: a.key);
       expect(File(a.asset!).existsSync(), isTrue, reason: a.asset);
     }
     expect(AvatarOption.legacy, hasLength(8));

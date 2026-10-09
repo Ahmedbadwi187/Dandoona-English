@@ -226,7 +226,7 @@ void main() {
     await _open(t, kids: const ['a', 'b']); // the second child has the rocket avatar
     final rocket = AvatarOption.byKey('rocket');
     expect(rocket.color, const Color(0xFFE5524A));
-    expect(find.descendant(of: find.byKey(const Key('pick-b')), matching: find.byType(SvgPicture)), findsOneWidget);
+    expect(find.descendant(of: find.byKey(const Key('pick-b')), matching: find.byType(Image)), findsOneWidget);
     expect(find.descendant(of: find.byKey(const Key('pick-b')), matching: find.byIcon(Icons.rocket_launch_rounded)), findsNothing);
   });
 }

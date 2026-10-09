@@ -46,29 +46,36 @@ class AvatarOption {
   /// A drawn picture (Dandoona or one of her friends) shown instead of the icon. The older icon avatars have none.
   final String? asset;
 
-  /// The avatars a parent can pick now: Dandoona and six friends. No photos.
+  /// The avatars a parent can pick now: Dandoona and twelve friends (the last six are for the 10 to 12 year olds). No photos.
   static const pickable = [
     AvatarOption('dandoona', Icons.face_rounded, Palette.plum, asset: 'assets/images/mascot/mascot.webp'),
-    AvatarOption('bunny', Icons.pets_rounded, Palette.pink, asset: 'assets/images/avatars/bunny.svg'),
-    AvatarOption('cat', Icons.pets_rounded, Palette.yellow, asset: 'assets/images/avatars/cat.svg'),
-    AvatarOption('bear', Icons.pets_rounded, Palette.tan, asset: 'assets/images/avatars/bear.svg'),
-    AvatarOption('owl', Icons.pets_rounded, Palette.teal, asset: 'assets/images/avatars/owl.svg'),
-    AvatarOption('goldfish', Icons.pets_rounded, Palette.blue, asset: 'assets/images/avatars/fish.svg'),
-    AvatarOption('puppy', Icons.pets_rounded, Palette.green, asset: 'assets/images/avatars/puppy.svg'),
-    AvatarOption('penguin', Icons.pets_rounded, Color(0xFFBDE6FA), asset: 'assets/images/avatars/penguin.svg'),
+    AvatarOption('bunny', Icons.pets_rounded, Palette.pink, asset: 'assets/images/avatars/bunny.webp'),
+    AvatarOption('cat', Icons.pets_rounded, Palette.yellow, asset: 'assets/images/avatars/cat.webp'),
+    AvatarOption('bear', Icons.pets_rounded, Palette.tan, asset: 'assets/images/avatars/bear.webp'),
+    AvatarOption('owl', Icons.pets_rounded, Palette.teal, asset: 'assets/images/avatars/owl.webp'),
+    AvatarOption('goldfish', Icons.pets_rounded, Palette.blue, asset: 'assets/images/avatars/fish.webp'),
+    AvatarOption('puppy', Icons.pets_rounded, Palette.green, asset: 'assets/images/avatars/puppy.webp'),
+    AvatarOption('penguin', Icons.pets_rounded, Color(0xFFBDE6FA), asset: 'assets/images/avatars/penguin.webp'),
+    // for the older children (10 to 12): the same fluffy drawings, a little cooler
+    AvatarOption('fox', Icons.pets_rounded, Palette.orange, asset: 'assets/images/avatars/fox.webp'),
+    AvatarOption('wolf', Icons.pets_rounded, Color(0xFF9AA5B8), asset: 'assets/images/avatars/wolf.webp'),
+    AvatarOption('dragon', Icons.pets_rounded, Palette.teal, asset: 'assets/images/avatars/dragon.webp'),
+    AvatarOption('dino', Icons.pets_rounded, Palette.green, asset: 'assets/images/avatars/dino.webp'),
+    AvatarOption('robot', Icons.pets_rounded, Palette.blue, asset: 'assets/images/avatars/robot.webp'),
+    AvatarOption('panda', Icons.pets_rounded, Palette.pink, asset: 'assets/images/avatars/panda.webp'),
   ];
 
   /// The icon avatars children created before the drawn ones keep: each keeps its color and now shows a matching drawn
   /// character (star: cat, rocket: puppy, flower: bunny, sun: bear, leaf: frog, fish: goldfish, cloud: penguin, moon: owl).
   static const legacy = [
-    AvatarOption('star', Icons.star_rounded, Palette.yellow, asset: 'assets/images/avatars/cat.svg'),
-    AvatarOption('rocket', Icons.rocket_launch_rounded, Palette.red, asset: 'assets/images/avatars/puppy.svg'),
-    AvatarOption('flower', Icons.local_florist_rounded, Palette.pink, asset: 'assets/images/avatars/bunny.svg'),
-    AvatarOption('sun', Icons.wb_sunny_rounded, Palette.orange, asset: 'assets/images/avatars/bear.svg'),
+    AvatarOption('star', Icons.star_rounded, Palette.yellow, asset: 'assets/images/avatars/cat.webp'),
+    AvatarOption('rocket', Icons.rocket_launch_rounded, Palette.red, asset: 'assets/images/avatars/puppy.webp'),
+    AvatarOption('flower', Icons.local_florist_rounded, Palette.pink, asset: 'assets/images/avatars/bunny.webp'),
+    AvatarOption('sun', Icons.wb_sunny_rounded, Palette.orange, asset: 'assets/images/avatars/bear.webp'),
     AvatarOption('leaf', Icons.eco_rounded, Palette.green, asset: 'assets/images/avatars/frog.svg'),
-    AvatarOption('fish', Icons.set_meal_rounded, Palette.teal, asset: 'assets/images/avatars/fish.svg'),
-    AvatarOption('cloud', Icons.cloud_rounded, Palette.blue, asset: 'assets/images/avatars/penguin.svg'),
-    AvatarOption('moon', Icons.nightlight_round, Palette.purple, asset: 'assets/images/avatars/owl.svg'),
+    AvatarOption('fish', Icons.set_meal_rounded, Palette.teal, asset: 'assets/images/avatars/fish.webp'),
+    AvatarOption('cloud', Icons.cloud_rounded, Palette.blue, asset: 'assets/images/avatars/penguin.webp'),
+    AvatarOption('moon', Icons.nightlight_round, Palette.purple, asset: 'assets/images/avatars/owl.webp'),
   ];
 
   /// Every avatar a profile can have (so children made earlier still show theirs).
@@ -88,16 +95,13 @@ class AvatarCircle extends StatelessWidget {
     return Container(
       width: size,
       height: size,
-      decoration: BoxDecoration(
-        color: a.color,
-        shape: BoxShape.circle,
-        border: Border.all(color: Palette.ink, width: 3),
-      ),
+      // a soft tint of the avatar's color and no outline: the fluffy drawings are the picture, nothing frames them
+      decoration: BoxDecoration(color: Color.lerp(a.color, Palette.white, 0.65), shape: BoxShape.circle),
       clipBehavior: Clip.antiAlias,
       child: a.asset == null
           ? Icon(a.icon, color: Palette.white, size: size * 0.55)
           : Padding(
-              padding: EdgeInsets.all(size * 0.06),
+              padding: EdgeInsets.all(size * 0.08),
               child: a.asset!.endsWith('.svg')
                   ? SvgPicture.asset(a.asset!, fit: BoxFit.contain)
                   : Image.asset(a.asset!, fit: BoxFit.contain),

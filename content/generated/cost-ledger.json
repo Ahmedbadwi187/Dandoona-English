@@ -18933,5 +18933,96 @@
     "what": "letter-z/intro (21 chars)",
     "usd": 0.00168,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T23:49:17.904Z",
+    "service": "OpenAI",
+    "what": "avatar bunny",
+    "usd": 0.01376,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T23:49:51.603Z",
+    "service": "OpenAI",
+    "what": "avatar cat",
+    "usd": 0.01377,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T23:50:02.189Z",
+    "service": "OpenAI",
+    "what": "avatar bear",
+    "usd": 0.01377,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T23:50:14.658Z",
+    "service": "OpenAI",
+    "what": "avatar owl",
+    "usd": 0.0138,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T23:50:26.614Z",
+    "service": "OpenAI",
+    "what": "avatar fish",
+    "usd": 0.01377,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T23:50:38.904Z",
+    "service": "OpenAI",
+    "what": "avatar puppy",
+    "usd": 0.01377,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T23:50:52.022Z",
+    "service": "OpenAI",
+    "what": "avatar penguin",
+    "usd": 0.01378,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T23:53:24.987Z",
+    "service": "OpenAI",
+    "what": "avatar fox",
+    "usd": 0.0138,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T23:53:36.804Z",
+    "service": "OpenAI",
+    "what": "avatar wolf",
+    "usd": 0.01379,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T23:53:49.231Z",
+    "service": "OpenAI",
+    "what": "avatar dragon",
+    "usd": 0.0138,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T23:53:59.881Z",
+    "service": "OpenAI",
+    "what": "avatar dino",
+    "usd": 0.01379,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T23:54:11.870Z",
+    "service": "OpenAI",
+    "what": "avatar robot",
+    "usd": 0.01384,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-09T23:54:23.906Z",
+    "service": "OpenAI",
+    "what": "avatar panda",
+    "usd": 0.01381,
+    "estimated": false
   }
 ]
