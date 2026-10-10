@@ -247,3 +247,29 @@ by arithmetic, `noArticle` lessons) and **Grammar Starters** (a/an, is/are, has/
 - **The reset code is 6 digits** (Identity's e-mail token provider, valid for a few minutes), easy to type on a phone. It works once; resetting signs every device out.
 - **The app**: log-in form has "Forgot your password?" -> e-mail -> code + new password (min 8) -> back to log-in with a message. Route `/forgot-password` (the address travels in `extra`, not in the URL). Tests: `forgot_password_test.dart`; the integration test now also checks the code is 6 digits.
 - Tried end to end on the emulator against the local API: code read from the log, new password set, old one rejected, new one accepted. The SMTP sender itself has not been run against a real mail server yet (needs the owner's SMTP account).
+
+## Skills, tracks and automatic sync (10 Oct 2026, branch `feature/skills-and-tracks`)
+- **The skills list replaces the single-choice level.** Rules are data: `mobile/kids_english_app/assets/content/skills.json` (groups, implied skills, the two
+  exclusive answers, age boundaries, the track-up rule, skill -> units per track). Code: `lib/features/skills/skills.dart` (pure functions: `toggleSkill`,
+  `suggestTrack`, `placementFor`, `placedAfterEdit`, `convertOldChildren`), `skills_checklist.dart` (the screen list), `skip_ahead.dart`.
+  `test/skills_test.dart` checks every unit and skill the file names exists; boundaries 5/6, implied/exclusive, per-track start, old-level conversion.
+- Track = age (3-5 Little Learners, 6-8 Explorers, older children Explorers) moved UP by skills only. The summary shows the reason and the start unit with the
+  number of units skipped; there is no track box on the age screen. Word skills (colors, counting, animals, everyday words) only cover Little Learners units.
+- **Edit child**: skills section with a preview ("X and Y will be marked done, Z will continue from W"), tracks section (progress per track, Active badge,
+  confirmation when switching, Champions "Soon"), Save pinned at the bottom. Editing skills never removes real progress (`placedAfterEdit`).
+- **Existing children** (skills == null) get skills from the units their old answer counted as done (`convertOldChildren`, run once at start, the track and the
+  `updatedAt` are kept). Children of 6+ in Little Learners still get the Explorers offer (never automatic).
+- **Skip ahead**: only for "I'm not sure"; a review passed with 3 stars suggests the first unplayed, unplaced unit after it, once per unit, off after two refusals
+  in a row, switch back on in Edit child. Phone only (`skipahead.v1`).
+- **Per-track progress** is natural (lesson ids differ per track; Letters is shared). `childTracksProvider` feeds the child's page and the dashboard.
+- **Sync is automatic** (`lib/features/sync/auto_sync.dart`): start, resume, connectivity back (connectivity_plus), 4 s after a change (burst = one sync), every
+  5 min, retry with backoff 30 s .. 15 min; no account = nothing. The settings section has no Sync button, only the status line. Profile fields, skills, goal and
+  track sync with the newest change winning; progress is the union (best per lesson), rewards the union. Server: nullable columns + migration
+  `ChildSkillsGoalAndProfileTime`, see `docs/deployment.md` (back up, apply, roll back). Tests: `auto_sync_test.dart`, `ChildProfileSyncTests`.
+- **Loaders only on real buttons**: `BigTap`, `LoadingTap`, `LoadingInkWell`, the hand-demo `?` run their handler at once with no spinner and no blocking.
+- **Forgot password**: see the section above (SMTP in appsettings).
+- Dev helpers: `tools/adb-ui.mjs` (drive the emulator by labels), `tools/onboard-demo.sh`, `tools/seed-device-progress.mjs`.
+- Audio review for Explorers: `uv run tools/verify-audio/verify_explorers.py`, `verify_phonemes.py`, then `node tools/verify-audio/make_review_page.mjs` ->
+  `content/generated/explorers-audio-review.html`. Asset completeness for both tracks: `test/assets_complete_test.dart`.
+- **Known limits**: a skill unchecked in Edit child removes the local "done by placement" marks on unplayed units, but the server keeps the union of
+  placement marks it already has (it comes back at the next pull). The SMTP sender has not been run against a real mail server. Champions (9-12) is not built.
