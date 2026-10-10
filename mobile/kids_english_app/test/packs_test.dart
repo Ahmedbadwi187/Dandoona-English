@@ -203,6 +203,7 @@ void main() {
       expect(fetcher.asked, contains('$_base/packs/little_learners/numbers/v1/manifest.json')); // Numbers is the current unit
       expect(container.read(packDownloadsProvider)['numbers'], PackDownload.offline);
       expect(find.byKey(const Key('unit-waiting-numbers')), findsOneWidget);
+      expect(find.byKey(const Key('unit-retry')), findsOneWidget, reason: 'offline: the badge offers another try, not a spinner');
 
       await t.tap(find.byKey(const Key('unit-play-numbers')));
       await t.pump(const Duration(milliseconds: 300));

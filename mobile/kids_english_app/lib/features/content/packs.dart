@@ -130,14 +130,24 @@ class PackRepository {
     if (part.existsSync()) part.deleteSync(recursive: true);
     part.createSync(recursive: true);
     final base = ref.manifest.substring(0, ref.manifest.lastIndexOf('/') + 1);
-    for (final f in (manifest['files'] as List<dynamic>).cast<Map<String, dynamic>>()) {
+    final files = (manifest['files'] as List<dynamic>).cast<Map<String, dynamic>>();
+    for (final f in files) {
       final path = f['path'] as String;
       if (path.contains('..') || path.startsWith('/')) throw PackException('bad path in pack: $path');
+    }
+    Future<void> fetchOne(Map<String, dynamic> f) async {
+      final path = f['path'] as String;
       final bytes = await fetcher.get(_url('$base$path'));
       if (sha256.convert(bytes).toString() != f['sha256']) throw PackException('checksum mismatch: $path');
       final file = File('${part.path}/$path');
       file.parent.createSync(recursive: true);
       await file.writeAsBytes(bytes, flush: true);
+    }
+
+    // a few files at a time: a pack is many small files, and one after the other is slow on a weak connection
+    const parallel = 4;
+    for (var i = 0; i < files.length; i += parallel) {
+      await Future.wait([for (final f in files.skip(i).take(parallel)) fetchOne(f)]);
     }
     await File('${part.path}/manifest.json').writeAsBytes(manifestBytes, flush: true);
 

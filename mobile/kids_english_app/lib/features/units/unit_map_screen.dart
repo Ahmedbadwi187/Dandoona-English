@@ -152,6 +152,9 @@ class _UnitMap extends ConsumerStatefulWidget {
 /// screen is made again) opens where it was; one opened later (after a lesson) goes to Dandoona.
 ({double offset, DateTime at})? _lastMapScroll;
 
+/// Units the child tapped while their pack was still coming: they open by themselves when it is here (the map may be rebuilt meanwhile).
+final Set<String> _wantOpen = {};
+
 class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixin {
   final _scroll = ScrollController();
   late final AnimationController _shake = AnimationController(vsync: this, duration: const Duration(milliseconds: 900));
@@ -257,7 +260,9 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
       _showBubble(Strings.en('mapAlmostReady')); // (the map stays where the child is: the island's own badge shows the download, and Dandoona is not brought back)
       final almost = widget.track.appAudio?.lines['almost-ready'];
       if (almost != null) unawaited(ref.read(audioServiceProvider).playAsset(almost));
+      _wantOpen.add(unit.id);
       await ref.read(packDownloadsProvider.notifier).ensure(unit);
+      if (ref.read(packDownloadsProvider)[unit.id] case PackDownload.offline || PackDownload.failed) _wantOpen.remove(unit.id);
       return;
     }
     context.push('/unit/${unit.id}');
@@ -288,6 +293,16 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
       ref.read(parentSessionProvider.notifier).unlock();
       context.go('/parent');
     }
+  }
+
+  /// A unit the child tapped while it downloaded opens as soon as its lessons are here.
+  void _openWantedUnit() {
+    final ready = _wantOpen.where((id) => widget.track.units.any((u) => u.id == id && !u.needsDownload)).toList();
+    if (ready.isEmpty) return;
+    _wantOpen.removeAll(ready);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) unawaited(context.push('/unit/${ready.first}'));
+    });
   }
 
   /// Fetches the packs of the unit the child is on and the next one, in the background (each once at a time).
@@ -324,6 +339,10 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
   @override
   Widget build(BuildContext context) {
     final migration = ref.watch(unitMigrationProvider);
+    ref.listen(packDownloadsProvider, (prev, next) {
+      _wantOpen.removeWhere((id) => next[id] == PackDownload.offline || next[id] == PackDownload.failed);
+    });
+    _openWantedUnit();
     if (migration.isLoading) return const Center(child: CircularProgressIndicator());
 
     final track = widget.track;
@@ -456,7 +475,17 @@ class _UnitMapState extends ConsumerState<_UnitMap> with TickerProviderStateMixi
           left: c.dx - 115,
           top: c.dy - 35 * scale - 6,
           width: 230,
-          child: _IslandTile(stop: stop, scale: scale, dandoona: dandoona, motion: motion, onOpen: () => _openUnit(stop, stops)),
+          // only this island listens to its download (the whole map must not rebuild, or the background fetch would ask again each time)
+          child: Consumer(
+            builder: (context, ref, _) => _IslandTile(
+              stop: stop,
+              scale: scale,
+              dandoona: dandoona,
+              motion: motion,
+              download: ref.watch(packDownloadsProvider.select((d) => d[stop.unit?.unit.id])),
+              onOpen: () => _openUnit(stop, stops),
+            ),
+          ),
         );
       case StopKind.castle:
         return Positioned(
@@ -612,7 +641,10 @@ class _Label extends StatelessWidget {
 }
 
 class _IslandTile extends StatefulWidget {
-  const _IslandTile({required this.stop, required this.scale, required this.dandoona, required this.motion, required this.onOpen});
+  const _IslandTile({required this.stop, required this.scale, required this.dandoona, required this.motion, required this.onOpen, this.download});
+
+  /// null: nothing is happening for this unit's pack (not asked yet, or here).
+  final PackDownload? download;
 
   final MapStop stop;
   final double scale;
@@ -649,6 +681,7 @@ class _IslandTileState extends State<_IslandTile> with SingleTickerProviderState
     final title = unit.titleFor('en');
     Widget island(double? glow) => _Island(
       waiting: unit.needsDownload && (state == StopState.current || state == StopState.done),
+      download: widget.download,
       glow: glow,
       color: unitColor(unit.color),
       icon: unitIcon(unit.icon),
@@ -766,7 +799,11 @@ class _Island extends StatelessWidget {
     this.dandoona,
     this.glow,
     this.waiting = false,
+    this.download,
   });
+
+  /// The pack of a waiting unit: coming (a small spinner in the badge), or not coming (a retry arrow; tapping the island asks again).
+  final PackDownload? download;
 
   /// Open, but its content pack is not on this device yet: a small cloud badge instead of a lock.
   final bool waiting;
@@ -878,7 +915,11 @@ class _Island extends StatelessWidget {
               child: _Badge(
                 key: Key('unit-waiting-$id'),
                 color: Palette.white,
-                child: const Icon(Icons.cloud_download_rounded, size: 18, color: Palette.blue),
+                child: switch (download) {
+                  PackDownload.downloading => const SizedBox(key: Key('unit-downloading'), width: 16, height: 16, child: CircularProgressIndicator(strokeWidth: 2.5, color: Palette.blue)),
+                  PackDownload.offline || PackDownload.failed => const Icon(Icons.refresh_rounded, key: Key('unit-retry'), size: 20, color: Palette.blue),
+                  _ => const Icon(Icons.cloud_download_rounded, size: 18, color: Palette.blue),
+                },
               ),
             ),
           if (state == StopState.soon)
