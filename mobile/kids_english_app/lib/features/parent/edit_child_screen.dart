@@ -5,12 +5,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../core/palette.dart';
+import '../../core/strings.dart';
 import '../../core/loading_action.dart';
 import '../../core/widgets.dart';
-import '../content/content_models.dart';
 import '../content/content_repository.dart';
 import '../onboarding/setup_flow.dart';
-import '../onboarding/track_resolver.dart';
+import '../progress/progress.dart';
+import '../skills/skills.dart';
+import '../skills/skills_checklist.dart';
+import '../units/unit_logic.dart';
 import '../profiles/child_profile.dart';
 import '../reminders/reminder_service.dart';
 import '../settings/settings.dart';
@@ -41,8 +44,8 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
   late int _goal;
   String? _reminder;
 
-  /// The units counted as done by placement (the "starting point"); null = unchanged.
-  Set<String>? _placed;
+  /// What the parent says the child can do (the same list as in the setup).
+  late Set<String> _skills;
   bool _leave = false; // saved, discarded or deleted: leaving needs no question
   bool _working = false;
   bool _discarding = false;
@@ -57,6 +60,7 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
     _year = _child.birthYear;
     _track = _child.track;
     _goal = _child.goalMinutes ?? 10;
+    _skills = {...?_child.skills};
     _reminder = ref.read(settingsProvider).reminderTime;
   }
 
@@ -76,7 +80,7 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
       _track != _child.track ||
       _goal != (_child.goalMinutes ?? 10) ||
       _reminder != ref.read(settingsProvider).reminderTime ||
-      (_placed != null && !_sameSet(_placed!, ref.read(unitMetaProvider).of(_child.id).placed));
+      !_sameSet(_skills, _child.skills ?? const {});
 
   static bool _sameSet(Set<String> a, Set<String> b) => a.length == b.length && a.containsAll(b);
 
@@ -93,9 +97,19 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
   Future<void> _save() async {
     final s = ref.read(stringsProvider);
     final settings = ref.read(settingsProvider.notifier);
-    await ref.read(profilesProvider.notifier).update(_child.id, name: _name.text, avatarKey: _avatar, birthYear: _year, birthMonth: _month, goalMinutes: _goal, track: _track);
-    // A new starting point only adds units counted as done; nothing the child did is taken away.
-    if (_placed != null) await ref.read(unitMetaProvider.notifier).setPlaced(_child.id, _placed!);
+    await ref.read(profilesProvider.notifier).update(_child.id, name: _name.text, avatarKey: _avatar, birthYear: _year, birthMonth: _month, goalMinutes: _goal, track: _track, skills: _skills);
+    // The skills decide which units count as done by placement. Units the child really played keep their stars and status; only marks
+    // on units never played can go away; unlocked chests stay unlocked.
+    final config = await ref.read(skillsConfigProvider.future);
+    final content = await ref.read(trackContentProvider(_track).future);
+    final meta = ref.read(unitMetaProvider);
+    final progress = ref.read(progressProvider.notifier);
+    final unitIds = [for (final u in content.units) u.id];
+    final plan = placementFor(config: config, track: _track, skills: _skills, unitIds: unitIds);
+    final played = {for (final u in content.units) if (u.lessonIds.any((l) => progress.hasProgress(_child.id, l))) u.id};
+    final oldPlaced = meta.of(_child.id).placed;
+    final kept = oldPlaced.where((u) => !unitIds.contains(u) || played.contains(u));
+    await ref.read(unitMetaProvider.notifier).setPlaced(_child.id, {...kept, ...plan.doneUnits});
     await settings.setSessionMinutes(_goal);
     if (_reminder != ref.read(settingsProvider).reminderTime) {
       final reminders = ref.read(reminderServiceProvider);
@@ -190,6 +204,40 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
     if (mounted) context.go('/parent/children');
   }
 
+  /// "3 of 15 units": the units finished (or counted as done by placement) in one track.
+  String? _trackProgress(Strings s, String track) {
+    final content = ref.watch(trackContentProvider(track)).asData?.value;
+    if (content == null) return null;
+    ref.watch(progressProvider);
+    final progress = ref.read(progressProvider.notifier);
+    final placed = ref.watch(unitMetaProvider).of(_child.id).placed;
+    final real = content.units.where((u) => u.lessonIds.isNotEmpty).toList();
+    final done = real.where((u) => placed.contains(u.id) || isUnitFinished(u, (l) => progress.hasProgress(_child.id, l))).length;
+    return s.format('pUnitsOfN', {'done': done, 'total': real.length});
+  }
+
+  /// The parent switches the active track: a short confirmation first. Progress in every track is kept.
+  Future<void> _switchTrack(String track, String nameKey) async {
+    if (track == _track) return;
+    final s = ref.read(stringsProvider);
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => Directionality(
+        textDirection: s.direction,
+        child: AlertDialog(
+          key: const Key('switch-track-dialog'),
+          title: Text(s.format('pSwitchTrackTitle', {'name': _child.name, 'track': s(nameKey)})),
+          content: Text(s('pSwitchTrackBody')),
+          actions: [
+            TextButton(key: const Key('switch-track-cancel'), autofocus: true, onPressed: () => Navigator.pop(ctx, false), child: Text(s('cancel'))),
+            TextButton(key: const Key('switch-track-confirm'), onPressed: () => Navigator.pop(ctx, true), child: Text(s('pSwitch'))),
+          ],
+        ),
+      ),
+    );
+    if (ok == true && mounted) setState(() => _track = track);
+  }
+
   @override
   Widget build(BuildContext context) {
     final s = ref.watch(stringsProvider);
@@ -200,12 +248,8 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
       for (final a in AvatarOption.pickable) a.key,
     ];
     final years = {for (var y = now.year - 2; y >= now.year - 13; y--) y, _year}.toList()..sort((a, b) => b.compareTo(a));
-    final suggested = resolveTrack(birthYear: _year, birthMonth: _month, now: now).trackId;
-    // Starting points of the chosen track: one per placement answer with its own start unit.
-    final trackContent = ref.watch(trackContentProvider(_track)).asData?.value;
-    final placed = _placed ?? ref.watch(unitMetaProvider).of(_child.id).placed;
-    final starts = <String, PlacementLevel>{for (final p in trackContent?.placement ?? const <PlacementLevel>[]) p.startUnit: p};
-    final currentStart = starts.values.where((p) => _sameSet(p.doneUnits.toSet(), placed)).firstOrNull?.startUnit ?? starts.keys.firstOrNull;
+    final lang = ref.watch(settingsProvider).languageCode;
+    final config = ref.watch(skillsConfigProvider).asData?.value;
     final primary = Theme.of(context).colorScheme.primary;
 
     return PopScope(
@@ -297,8 +341,37 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
                               ),
                             ],
                           ),
-                          const SizedBox(height: 16),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    ParentCard(
+                      key: const Key('edit-skills'),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(s('pSkillsTitle'), style: ParentText.section),
+                          const SizedBox(height: 4),
+                          Text(s('obSkillsHint'), style: ParentText.caption),
+                          const SizedBox(height: 10),
+                          if (config == null)
+                            const Center(child: CircularProgressIndicator())
+                          else ...[
+                            SkillsChecklist(s: s, config: config, selected: _skills, onChanged: (v) => setState(() => _skills = v)),
+                            _SkillsPreview(s: s, config: config, track: _track, skills: _skills, name: _name.text.trim().isEmpty ? _child.name : _name.text.trim(), lang: lang),
+                          ],
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    ParentCard(
+                      key: const Key('edit-tracks'),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
                           Text(s('pTrack'), style: ParentText.section),
+                          const SizedBox(height: 4),
+                          Text(s('pTracksHint'), style: ParentText.caption),
                           const SizedBox(height: 8),
                           for (final t in [('little-learners', 'pTrackLL', true), ('explorers', 'pTrackExplorers', explorersEnabled), ('champions', 'pTrackChampions', false)])
                             _TrackTile(
@@ -306,27 +379,10 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
                               label: s(t.$2),
                               selected: _track == t.$1,
                               enabled: t.$3,
-                              note: !t.$3 ? s('pSoon') : (suggested == t.$1 ? s('pSuggested') : null),
-                              onTap: () => setState(() => _track = t.$1),
+                              badge: _track == t.$1 && t.$3 ? s('pActiveTrack') : null,
+                              note: !t.$3 ? s('pSoon') : _trackProgress(s, t.$1),
+                              onTap: () => _switchTrack(t.$1, t.$2),
                             ),
-                          if (starts.length > 1) ...[
-                            const SizedBox(height: 16),
-                            Text(s('pStartUnit'), style: ParentText.section),
-                            const SizedBox(height: 8),
-                            Wrap(
-                              spacing: 8,
-                              runSpacing: 8,
-                              children: [
-                                for (final e in starts.entries)
-                                  _Pill(
-                                    key: Key('edit-start-${e.key}'),
-                                    label: trackContent!.unitById(e.key)?.titleFor(ref.read(settingsProvider).languageCode) ?? e.key,
-                                    selected: currentStart == e.key,
-                                    onTap: () => setState(() => _placed = e.value.doneUnits.toSet()),
-                                  ),
-                              ],
-                            ),
-                          ],
                         ],
                       ),
                     ),
@@ -359,16 +415,6 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
                         ],
                       ),
                     ),
-                    const SizedBox(height: 20),
-                    LoadingAction(
-                      onPressed: _dirty && _valid && !_working && !_discarding ? () => _runAction(_save) : null,
-                      builder: (onPressed, loading) => FilledButton(
-                        key: const Key('edit-save'),
-                        style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(56)),
-                        onPressed: onPressed,
-                        child: LoadingContent(loading: loading, child: Text(s('save'))),
-                      ),
-                    ),
                     const SizedBox(height: 8),
                     TextButton(
                       key: const Key('rerun-setup'),
@@ -390,6 +436,18 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
+                child: LoadingAction(
+                  onPressed: _dirty && _valid && !_working && !_discarding ? () => _runAction(_save) : null,
+                  builder: (onPressed, loading) => FilledButton(
+                    key: const Key('edit-save'),
+                    style: FilledButton.styleFrom(minimumSize: const Size.fromHeight(56)),
+                    onPressed: onPressed,
+                    child: LoadingContent(loading: loading, child: Text(s('save'))),
+                  ),
                 ),
               ),
             ],
@@ -429,12 +487,13 @@ class _Pill extends StatelessWidget {
 }
 
 class _TrackTile extends StatelessWidget {
-  const _TrackTile({super.key, required this.label, required this.selected, required this.enabled, required this.onTap, this.note});
+  const _TrackTile({super.key, required this.label, required this.selected, required this.enabled, required this.onTap, this.note, this.badge});
 
   final String label;
   final bool selected;
   final bool enabled;
   final String? note;
+  final String? badge;
   final VoidCallback onTap;
 
   @override
@@ -451,11 +510,56 @@ class _TrackTile extends StatelessWidget {
             children: [
               Icon(selected ? Icons.radio_button_checked_rounded : Icons.radio_button_unchecked_rounded, color: selected ? primary : Palette.ink),
               const SizedBox(width: 10),
-              Expanded(child: Text(label, style: ParentText.body)),
+              Expanded(child: Text(label, style: ParentText.body.copyWith(fontWeight: selected ? FontWeight.w800 : FontWeight.w400))),
+              if (badge != null)
+                Container(
+                  margin: const EdgeInsetsDirectional.only(start: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  decoration: BoxDecoration(color: primary.withValues(alpha: 0.12), borderRadius: BorderRadius.circular(12)),
+                  child: Text(badge!, style: ParentText.caption.copyWith(color: primary, fontWeight: FontWeight.w800)),
+                ),
               if (note != null) Flexible(child: Padding(padding: const EdgeInsetsDirectional.only(start: 8), child: Text(note!, style: ParentText.caption))),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+/// What saving the skills will do, in one or two sentences ("Colors and Numbers will be marked as done. Sara will continue from Shapes.").
+class _SkillsPreview extends ConsumerWidget {
+  const _SkillsPreview({required this.s, required this.config, required this.track, required this.skills, required this.name, required this.lang});
+
+  final Strings s;
+  final SkillsConfig config;
+  final String track;
+  final Set<String> skills;
+  final String name;
+  final String lang;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final content = ref.watch(trackContentProvider(track)).asData?.value;
+    if (content == null || skills.isEmpty) return const SizedBox.shrink();
+    final plan = placementFor(config: config, track: track, skills: skills, unitIds: [for (final u in content.units) u.id]);
+    String title(String id) => content.unitById(id)?.titleFor(lang) ?? id;
+    final start = plan.startUnit == null ? '' : title(plan.startUnit!);
+    final text = plan.doneUnits.isEmpty
+        ? s.format('pPreviewNone', {'name': name, 'start': start})
+        : s.format('pPreviewDone', {'units': plan.doneUnits.map(title).join(s('pListJoin')), 'name': name, 'start': start});
+    return Container(
+      key: const Key('skills-preview'),
+      margin: const EdgeInsets.only(top: 6),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(color: const Color(0xFFF1E7FA), borderRadius: BorderRadius.circular(14)),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Icon(Icons.info_outline_rounded, size: 20, color: Palette.plum),
+          const SizedBox(width: 8),
+          Expanded(child: Text(text, style: ParentText.body.copyWith(height: 1.35))),
+        ],
       ),
     );
   }

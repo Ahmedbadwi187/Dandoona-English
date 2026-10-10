@@ -589,6 +589,7 @@ void main() {
       addTearDown(tester.view.reset);
       await tester.pumpWidget(_editApp(container, omar.id));
       await tester.pump();
+      await reveal(tester, find.byKey(const Key('edit-delete')));
       await tester.tap(find.byKey(const Key('edit-delete')));
       await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('confirm-delete')));
@@ -618,6 +619,7 @@ void main() {
       addTearDown(tester.view.reset);
       await tester.pumpWidget(_editApp(container, omar.id));
       await tester.pump();
+      await reveal(tester, find.byKey(const Key('edit-delete')));
       await tester.tap(find.byKey(const Key('edit-delete')));
       await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('confirm-delete')));

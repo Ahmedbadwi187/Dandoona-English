@@ -11,6 +11,7 @@ import '../content/content_repository.dart';
 import '../profiles/child_profile.dart';
 import '../reminders/reminder_service.dart';
 import '../settings/settings.dart';
+import '../skills/skills.dart';
 import '../sync/sync_controller.dart';
 import '../units/unit_meta.dart';
 import 'onboarding_screens.dart';
@@ -18,7 +19,7 @@ import 'track_resolver.dart';
 
 /// The answers collected by the child setup flow. They live here (not in each screen) so the back arrow keeps them.
 class SetupDraft {
-  const SetupDraft({this.childId, this.name = '', this.avatar, this.month, this.year, this.level, this.goal, this.reminder, this.returnTo, this.track});
+  const SetupDraft({this.childId, this.name = '', this.avatar, this.month, this.year, this.skills = const {}, this.goal, this.reminder, this.returnTo, this.track});
 
   /// Set when an existing child goes through the setup again.
   final String? childId;
@@ -26,7 +27,9 @@ class SetupDraft {
   final String? avatar;
   final int? month;
   final int? year;
-  final int? level;
+
+  /// What the parent checked in "What can your child already do?" (skill ids, or `none` / `unsure`).
+  final Set<String> skills;
   final int? goal;
 
   /// `morning`, `afternoon`, `evening`, or null (no reminder).
@@ -38,21 +41,31 @@ class SetupDraft {
   /// The track the parent chose on the summary; null = the one that fits the age.
   final String? track;
 
-  SetupDraft copyWith({String? name, String? avatar, int? month, int? year, int? level, int? goal, String? reminder, bool clearReminder = false, String? track}) => SetupDraft(
+  SetupDraft copyWith({String? name, String? avatar, int? month, int? year, Set<String>? skills, int? goal, String? reminder, bool clearReminder = false, String? track}) => SetupDraft(
         childId: childId,
         name: name ?? this.name,
         avatar: avatar ?? this.avatar,
         month: month ?? this.month,
         year: year ?? this.year,
-        level: level ?? this.level,
+        skills: skills ?? this.skills,
         goal: goal ?? this.goal,
         reminder: clearReminder ? null : (reminder ?? this.reminder),
         returnTo: returnTo,
         track: track ?? this.track,
       );
 
-  /// The track this child will use: the parent's choice, else the one that fits the age (month and year).
-  String trackAt(DateTime now) => track ?? resolveTrack(birthYear: year ?? now.year - 4, birthMonth: month, now: now, available: availableTracks).resolvedTrackId;
+  /// The age in whole years (with the month when it is known).
+  int ageAt(DateTime now) {
+    final a = now.year - (year ?? now.year - 4) - (month != null && now.month < month! ? 1 : 0);
+    return a < 0 ? 0 : a;
+  }
+
+  /// The track this child will use: the parent's choice, else the suggestion from the age and the skills ([config] null = the age alone).
+  String trackAt(DateTime now, [SkillsConfig? config]) {
+    if (track != null) return track!;
+    if (config == null) return resolveTrack(birthYear: year ?? now.year - 4, birthMonth: month, now: now, available: availableTracks).resolvedTrackId;
+    return suggestTrack(config: config, ageYears: ageAt(now), skills: skills, available: availableTracks).trackId;
+  }
 }
 
 class SetupDraftNotifier extends Notifier<SetupDraft> {
@@ -69,6 +82,7 @@ class SetupDraftNotifier extends Notifier<SetupDraft> {
       month: c?.birthMonth,
       year: c?.birthYear,
       goal: c?.goalMinutes,
+      skills: c?.skills ?? const {},
       track: c?.track,
       reminder: ref.read(settingsProvider).reminderTime,
       returnTo: returnTo,
@@ -94,7 +108,7 @@ class SetupRoute extends ConsumerWidget {
   final String step;
   final bool fromSummary;
 
-  static const order = ['name', 'age', 'level', 'goal', 'reminder', 'summary'];
+  static const order = ['name', 'age', 'skills', 'goal', 'reminder', 'summary'];
 
   void _next(BuildContext context) {
     if (fromSummary) {
@@ -126,8 +140,6 @@ class SetupRoute extends ConsumerWidget {
           onBack: onBack ?? (d.childId == null && d.returnTo == null ? () => context.go('/onboarding') : null),
         );
       case 'age':
-        final content = ref.watch(contentProvider).asData?.value;
-        final choice = d.year == null ? null : resolveTrack(birthYear: d.year!, birthMonth: d.month, now: now, available: availableTracks);
         return ChildAgeScreen(
           s: s,
           month: d.month,
@@ -135,12 +147,18 @@ class SetupRoute extends ConsumerWidget {
           years: years,
           onMonth: (v) => draft.update((x) => x.copyWith(month: v)),
           onYear: (v) => draft.update((x) => x.copyWith(year: v)),
-          trackLabel: choice == null || content == null ? null : _trackLabel(s, choice),
           onContinue: () => _next(context),
           onBack: onBack,
         );
-      case 'level':
-        return ChildLevelScreen(s: s, level: d.level, onLevel: (v) => draft.update((x) => x.copyWith(level: v)), onContinue: () => _next(context), onBack: onBack);
+      case 'skills':
+        return ChildSkillsScreen(
+          s: s,
+          config: ref.watch(skillsConfigProvider).asData?.value,
+          skills: d.skills,
+          onSkills: (v) => draft.update((x) => x.copyWith(skills: v)),
+          onContinue: () => _next(context),
+          onBack: onBack,
+        );
       case 'goal':
         return DailyGoalScreen(s: s, minutes: d.goal, onMinutes: (v) => draft.update((x) => x.copyWith(goal: v)), onContinue: () => _next(context), onBack: onBack);
       case 'reminder':
@@ -156,7 +174,7 @@ class SetupRoute extends ConsumerWidget {
           onBack: onBack,
         );
       case 'track':
-        return ChildTrackScreen(s: s, track: d.trackAt(now), onTrack: (v) => draft.update((x) => x.copyWith(track: v)), onContinue: () => _next(context), onBack: onBack);
+        return ChildTrackScreen(s: s, track: d.trackAt(now, ref.watch(skillsConfigProvider).asData?.value), onTrack: (v) => draft.update((x) => x.copyWith(track: v)), onContinue: () => _next(context), onBack: onBack);
       case 'greeting':
         return _GreetingRoute(name: d.name);
       default:
@@ -164,7 +182,6 @@ class SetupRoute extends ConsumerWidget {
     }
   }
 
-  static String _trackLabel(Strings s, TrackChoice c) => _trackName(s, c.resolvedTrackId) + (c.available ? '' : ' · ${s('obTrackSoon')}');
   static String _trackName(Strings s, String track) => track == explorersTrack ? s('obTrackExplorers') : s('obTrackLL');
 
   Future<void> _remind(BuildContext context, WidgetRef ref) async {
@@ -181,21 +198,31 @@ class SetupRoute extends ConsumerWidget {
 
   Widget _summary(BuildContext context, WidgetRef ref, Strings s, SetupDraft d, DateTime now) {
     // The track (from the age, or the parent's choice) decides which placement table gives the start unit.
-    final track = d.trackAt(now);
+    final config = ref.watch(skillsConfigProvider).asData?.value;
+    final track = d.trackAt(now, config);
     final content = ref.watch(trackContentProvider(track)).asData?.value;
-    final level = content?.placement.where((p) => p.level == (d.level ?? 0)).firstOrNull;
-    final startUnit = level == null ? null : content?.unitById(level.startUnit);
+    final lang = ref.read(settingsProvider).languageCode;
+    final placement = config == null || content == null ? null : placementFor(config: config, track: track, skills: d.skills, unitIds: [for (final u in content.units) u.id]);
+    final startUnit = placement?.startUnit == null ? null : content?.unitById(placement!.startUnit!);
+    final skipped = placement?.skipped ?? 0;
+    // why this track: the age alone, or what the child can do
+    final suggestion = config == null ? null : suggestTrack(config: config, ageYears: d.ageAt(now), skills: d.skills, available: availableTracks);
+    final reason = suggestion == null || d.track != null
+        ? null
+        : s(suggestion.reason == TrackReason.skills ? 'obReasonSkills' : 'obReasonAge').replaceAll('{name}', d.name).replaceAll('{track}', _trackName(s, track).replaceAll(RegExp(r'\s*[(（].*$'), ''));
 
-    void edit(String row) => context.push('/setup/${const {'track': 'track', 'start': 'level', 'goal': 'goal', 'reminder': 'reminder'}[row]}?edit=1');
+    void edit(String row) => context.push('/setup/${const {'track': 'track', 'start': 'skills', 'goal': 'goal', 'reminder': 'reminder'}[row]}?edit=1');
 
     return SummaryScreen(
       s: s,
       name: d.name,
       onBack: context.canPop() ? () => context.pop() : null,
       onEdit: edit,
+      reason: reason,
       rows: [
+
         SummaryRow(keyName: 'track', label: s('obRowTrack'), value: _trackName(s, track), icon: Icons.route_rounded, color: Palette.green),
-        SummaryRow(keyName: 'start', label: s('obRowStart'), value: startUnit?.titleFor(ref.read(settingsProvider).languageCode) ?? '', icon: Icons.flag_rounded, color: Palette.orange),
+        SummaryRow(keyName: 'start', label: s('obRowStart'), value: (startUnit?.titleFor(lang) ?? '') + (skipped == 0 ? '' : ' · ${s(skipped == 1 ? 'obSkipped1' : 'obSkippedN').replaceAll('{n}', '$skipped')}'), icon: Icons.flag_rounded, color: Palette.orange),
         SummaryRow(keyName: 'goal', label: s('obRowGoal'), value: s('obGoal${d.goal ?? 10}'), icon: Icons.timer_rounded, color: Palette.teal),
         SummaryRow(
           keyName: 'reminder',
@@ -215,21 +242,25 @@ class SetupRoute extends ConsumerWidget {
     final d = ref.read(setupDraftProvider);
     final now = ref.read(clockProvider)();
     final profiles = ref.read(profilesProvider.notifier);
-    final track = d.trackAt(now);
+    final config = await ref.read(skillsConfigProvider.future);
+    final track = d.trackAt(now, config);
     final content = await ref.read(trackContentProvider(track).future);
     final goal = d.goal ?? 10;
 
     final String childId;
     if (d.childId == null) {
-      childId = (await profiles.add(name: d.name, avatarKey: d.avatar!, birthYear: d.year!, birthMonth: d.month, goalMinutes: goal, track: track)).id;
+      childId = (await profiles.add(name: d.name, avatarKey: d.avatar!, birthYear: d.year!, birthMonth: d.month, goalMinutes: goal, track: track, skills: d.skills)).id;
     } else {
       childId = d.childId!;
-      await profiles.update(childId, name: d.name, avatarKey: d.avatar, birthYear: d.year, birthMonth: d.month, goalMinutes: goal, track: track);
+      await profiles.update(childId, name: d.name, avatarKey: d.avatar, birthYear: d.year, birthMonth: d.month, goalMinutes: goal, track: track, skills: d.skills);
     }
 
     // What the parent said about the child's English decides which units count as done and where the child starts.
-    final level = content.placement.where((p) => p.level == (d.level ?? 0)).firstOrNull;
-    if (level != null) await ref.read(unitMetaProvider.notifier).setPlaced(childId, level.doneUnits.toSet());
+    // The skills decide which units count as done by placement and where the child starts. Units of the other track keep their marks.
+    final unitIds = [for (final u in content.units) u.id];
+    final placement = placementFor(config: config, track: track, skills: d.skills, unitIds: unitIds);
+    final others = ref.read(unitMetaProvider).of(childId).placed.where((u) => !unitIds.contains(u));
+    await ref.read(unitMetaProvider.notifier).setPlaced(childId, {...others, ...placement.doneUnits});
 
     final settings = ref.read(settingsProvider.notifier);
     await settings.setSessionMinutes(goal); // the daily goal is the session timer

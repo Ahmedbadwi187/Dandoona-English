@@ -9,6 +9,8 @@ import '../../core/theme.dart';
 import '../../core/widgets.dart';
 import 'onboarding_widgets.dart';
 import '../../core/type.dart';
+import '../skills/skills.dart';
+import '../skills/skills_checklist.dart';
 
 /// The first-launch screens as plain, fully controlled widgets (the answers and what happens next are passed in), so
 /// each one can be shown and tested on its own. The flow that connects them lives in the onboarding controller.
@@ -439,9 +441,9 @@ class ChildNameScreen extends StatelessWidget {
 }
 
 // ------------------------------------------------------------------------------------------------------------ 5.2 age
-/// 5.2: birth month and year. The track follows from the age ([trackLabel] comes from the track resolver).
+/// 5.2: birth month and year. (The track is not shown here: it is decided on the summary from the age and the skills together.)
 class ChildAgeScreen extends StatelessWidget {
-  const ChildAgeScreen({super.key, required this.s, required this.month, required this.year, required this.years, required this.onMonth, required this.onYear, required this.onContinue, this.trackLabel, this.onBack, this.progress = 0.3});
+  const ChildAgeScreen({super.key, required this.s, required this.month, required this.year, required this.years, required this.onMonth, required this.onYear, required this.onContinue, this.onBack, this.progress = 0.3});
 
   final Strings s;
   final int? month;
@@ -449,7 +451,6 @@ class ChildAgeScreen extends StatelessWidget {
   final List<int> years;
   final ValueChanged<int> onMonth;
   final ValueChanged<int> onYear;
-  final String? trackLabel;
   final LoadingCallback onContinue;
   final VoidCallback? onBack;
   final double progress;
@@ -475,21 +476,6 @@ class ChildAgeScreen extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           _Picker<int>(key: const Key('ob-year'), label: s('obYear'), value: year, items: {for (final y in years) y: '$y'}, onChanged: onYear),
-          if (trackLabel != null && month != null && year != null) ...[
-            const SizedBox(height: 16),
-            Container(
-              key: const Key('ob-track'),
-              padding: const EdgeInsets.all(14),
-              decoration: BoxDecoration(color: const Color(0xFFE9F6E2), borderRadius: BorderRadius.circular(20), border: Border.all(color: Palette.green, width: 3)),
-              child: Row(
-                children: [
-                  const Icon(Icons.route_rounded, color: Palette.darkGreen, size: 30),
-                  const SizedBox(width: 10),
-                  Expanded(child: Text('${s('obTrackFor')} $trackLabel', style: parentBody.copyWith(fontWeight: FontWeight.w800, color: Palette.nightInk))),
-                ],
-              ),
-            ),
-          ],
         ],
       ),
     );
@@ -527,19 +513,21 @@ class _Picker<T> extends StatelessWidget {
   }
 }
 
-// ---------------------------------------------------------------------------------------------------------- 5.3 level
-/// 5.3: how much English the child knows, in parent-friendly words (the starting unit comes from the placement config).
-class ChildLevelScreen extends StatelessWidget {
-  const ChildLevelScreen({super.key, required this.s, required this.level, required this.onLevel, required this.onContinue, this.onBack, this.progress = 0.5});
+// -------------------------------------------------------------------------------------------------------- 5.3 skills
+/// 5.3: "What can your child already do?": every skill that applies (checkboxes), for every age. The track and the starting unit come
+/// from the answer (assets/content/skills.json).
+class ChildSkillsScreen extends StatelessWidget {
+  const ChildSkillsScreen({super.key, required this.s, required this.config, required this.skills, required this.onSkills, required this.onContinue, this.onBack, this.progress = 0.5});
 
   final Strings s;
-  final int? level;
-  final ValueChanged<int> onLevel;
+
+  /// Null while the rules are loading.
+  final SkillsConfig? config;
+  final Set<String> skills;
+  final ValueChanged<Set<String>> onSkills;
   final LoadingCallback onContinue;
   final VoidCallback? onBack;
   final double progress;
-
-  static const _icons = [Icons.child_care_rounded, Icons.abc_rounded, Icons.sort_by_alpha_rounded, Icons.menu_book_rounded];
 
   @override
   Widget build(BuildContext context) {
@@ -547,23 +535,13 @@ class ChildLevelScreen extends StatelessWidget {
       s: s,
       pose: DandoonaPose.pointingUp,
       accessory: 'glasses',
-      poseSize: 130,
-      title: s('obLevelTitle'),
+      poseSize: 120,
+      title: s('obSkillsTitle'),
+      subtitle: s('obSkillsHint'),
       progress: progress,
       onBack: onBack,
-      onContinue: level == null ? null : onContinue,
-      child: Column(
-        children: [
-          for (var i = 0; i < 4; i++)
-            ChoiceCard(
-              key: Key('level-$i'),
-              title: s('obLevel$i'),
-              leading: _RoundIcon(_icons[i], Palette.nodeColors[(i * 2 + 1) % Palette.nodeColors.length]),
-              selected: level == i,
-              onTap: () => onLevel(i),
-            ),
-        ],
-      ),
+      onContinue: skills.isEmpty ? null : onContinue,
+      child: config == null ? const Padding(padding: EdgeInsets.all(24), child: CircularProgressIndicator()) : SkillsChecklist(s: s, config: config!, selected: skills, onChanged: onSkills),
     );
   }
 }
@@ -665,10 +643,13 @@ class SummaryRow {
 
 /// 6: "[Name]'s path is ready!" with the track, the starting unit and the daily goal; each row goes back to edit.
 class SummaryScreen extends StatelessWidget {
-  const SummaryScreen({super.key, required this.s, required this.name, required this.rows, required this.onEdit, required this.onStart, this.onBack});
+  const SummaryScreen({super.key, required this.s, required this.name, required this.rows, required this.onEdit, required this.onStart, this.onBack, this.reason});
 
   final Strings s;
   final String name;
+
+  /// One line under the title: why this track ("Based on what Sara can do, we suggest Explorers").
+  final String? reason;
   final List<SummaryRow> rows;
   final ValueChanged<String> onEdit;
   final LoadingCallback onStart;
@@ -682,6 +663,7 @@ class SummaryScreen extends StatelessWidget {
       accessory: 'party-hat',
       poseSize: 150,
       title: s('obPathReady').replaceAll('{name}', name),
+      subtitle: reason,
       progress: 1,
       onBack: onBack,
       onContinue: onStart,

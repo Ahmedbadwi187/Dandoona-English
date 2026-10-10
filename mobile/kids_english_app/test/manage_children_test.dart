@@ -99,7 +99,7 @@ void main() {
       await t.tap(find.text('${_year - 3}').last);
       await t.pumpAndSettle();
       await next();
-      await t.tap(find.byKey(const Key('level-0')));
+      await tapSkill(t, 'none');
       await t.pumpAndSettle();
       await next();
       await t.tap(find.byKey(const Key('goal-5')));
@@ -144,9 +144,10 @@ void main() {
       await t.enterText(find.byKey(const Key('edit-name')), 'Omar K');
       await t.pump();
       expect(save().onPressed, isNotNull);
+      await reveal(t, find.byKey(const Key('edit-goal-15')));
       await t.tap(find.byKey(const Key('edit-goal-15')));
       await t.pump();
-      await t.ensureVisible(find.byKey(const Key('edit-save')));
+      await reveal(t, find.byKey(const Key('edit-save')));
       await t.tap(find.byKey(const Key('edit-save')));
       await t.pumpAndSettle();
 
@@ -209,7 +210,7 @@ void main() {
       final (c, _) = await _open(t, '/parent/children');
       await t.tap(find.byKey(const Key('child-row-c1')));
       await t.pumpAndSettle();
-      await t.ensureVisible(find.byKey(const Key('edit-delete')));
+      await reveal(t, find.byKey(const Key('edit-delete')));
       await t.tap(find.byKey(const Key('edit-delete')));
       await t.pumpAndSettle();
       expect(find.text('Delete Omar?'), findsOneWidget);
@@ -233,7 +234,7 @@ void main() {
       await _open(t, '/parent/children', kids: 1);
       await t.tap(find.byKey(const Key('child-row-c1')));
       await t.pumpAndSettle();
-      await t.ensureVisible(find.byKey(const Key('edit-delete')));
+      await reveal(t, find.byKey(const Key('edit-delete')));
       await t.tap(find.byKey(const Key('edit-delete')));
       await t.pumpAndSettle();
       await t.tap(find.byKey(const Key('confirm-delete')));
@@ -243,7 +244,7 @@ void main() {
 
     testWidgets('the delete dialog in Arabic is right to left and names the child', (t) async {
       await _open(t, '/parent/children/c1', lang: 'ar');
-      await t.ensureVisible(find.byKey(const Key('edit-delete')));
+      await reveal(t, find.byKey(const Key('edit-delete')));
       await t.tap(find.byKey(const Key('edit-delete')));
       await t.pumpAndSettle();
       expect(find.text('حذف Omar؟'), findsOneWidget);
@@ -252,11 +253,11 @@ void main() {
 
     testWidgets('choosing a reminder time asks for permission when saving and schedules it; a refusal keeps no reminder', (t) async {
       final (c, reminders) = await _open(t, '/parent/children/c1');
-      await t.ensureVisible(find.byKey(const Key('edit-reminder-evening')));
+      await reveal(t, find.byKey(const Key('edit-reminder-evening')));
       await t.tap(find.byKey(const Key('edit-reminder-evening')));
       await t.pump();
       expect(reminders.permissionAsked, 0);
-      await t.ensureVisible(find.byKey(const Key('edit-save')));
+      await reveal(t, find.byKey(const Key('edit-save')));
       await t.tap(find.byKey(const Key('edit-save')));
       await t.pumpAndSettle();
       expect(reminders.permissionAsked, 1);
@@ -267,7 +268,7 @@ void main() {
     testWidgets('every control is at least 48 dp', (t) async {
       await _open(t, '/parent/children/c1');
       for (final k in ['edit-goal-5', 'edit-goal-10', 'edit-goal-15', 'edit-reminder-off', 'edit-reminder-morning', 'edit-save', 'rerun-setup']) {
-        await t.ensureVisible(find.byKey(Key(k)));
+        await reveal(t, find.byKey(Key(k)));
         final size = t.getSize(find.byKey(Key(k)));
         expect(size.height, greaterThanOrEqualTo(kParentTap), reason: k);
         expect(size.width, greaterThanOrEqualTo(kParentTap), reason: k);
@@ -276,7 +277,7 @@ void main() {
 
     testWidgets('Run the setup again opens the setup filled with this child and ends on this screen', (t) async {
       await _open(t, '/parent/children/c1');
-      await t.ensureVisible(find.byKey(const Key('rerun-setup')));
+      await reveal(t, find.byKey(const Key('rerun-setup')));
       await t.tap(find.byKey(const Key('rerun-setup')));
       await t.pumpAndSettle();
       expect(find.byKey(const Key('ob-name')), findsOneWidget);

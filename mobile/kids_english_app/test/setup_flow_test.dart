@@ -88,7 +88,7 @@ Future<void> _answers(WidgetTester t, {String name = 'Omar', int level = 2, int 
   await _pick(t, 'ob-month', _s('obMonth3'));
   await _pick(t, 'ob-year', '${DateTime.now().year - 4}');
   await _tap(t, 'ob-continue');
-  await _tap(t, 'level-$level');
+  await tapSkill(t, skillOfLevel(level));
   await _tap(t, 'ob-continue');
   await _tap(t, 'goal-$goal');
   await _tap(t, 'ob-continue');
@@ -108,7 +108,7 @@ void main() {
 
     // summary: the path is ready, with the starting unit from the placement table
     expect(find.text(_s('obPathReady').replaceAll('{name}', 'Omar')), findsOneWidget);
-    expect(find.text('Colors'), findsOneWidget);
+    expect(find.textContaining('Colors'), findsOneWidget); // ("Colors · 1 unit skipped")
     expect(find.text(_s('obGoal15')), findsOneWidget);
     await _tap(t, 'ob-continue'); // Start learning
 
@@ -196,7 +196,7 @@ void main() {
     await _tap(t, 'ob-continue');
     await _pick(t, 'ob-month', _s('obMonth5'));
     await _tap(t, 'ob-continue');
-    await _tap(t, 'level-0');
+    await tapSkill(t, 'none');
     await _tap(t, 'ob-continue');
     await _tap(t, 'goal-5');
     await _tap(t, 'ob-continue');

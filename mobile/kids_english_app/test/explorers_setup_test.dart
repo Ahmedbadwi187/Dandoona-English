@@ -52,7 +52,7 @@ Future<void> _toSummary(WidgetTester t, {required int month, required int year, 
   await _pick(t, 'ob-month', _s('obMonth$month'));
   await _pick(t, 'ob-year', '$year');
   await _tap(t, 'ob-continue');
-  await _tap(t, 'level-$level');
+  await tapSkill(t, skillOfLevel(level));
   await _tap(t, 'ob-continue');
   await _tap(t, 'goal-10');
   await _tap(t, 'ob-continue');
@@ -65,7 +65,7 @@ void main() {
       final c = await _start(t);
       await _toSummary(t, month: 1, year: _year - 7, level: 2);
       expect(find.text(_s('obTrackExplorers')), findsOneWidget);
-      expect(find.text('Sound Builders'), findsOneWidget);
+      expect(find.textContaining('Sound Builders'), findsOneWidget);
       await _tap(t, 'ob-continue'); // Start learning
       final child = c.read(profilesProvider).single;
       expect(child.track, 'explorers');
@@ -76,7 +76,7 @@ void main() {
       final c = await _start(t);
       await _toSummary(t, month: 1, year: _year - 6, level: 0);
       expect(find.text(_s('obTrackExplorers')), findsOneWidget);
-      expect(find.text('Letters'), findsOneWidget);
+      expect(find.textContaining('Letters'), findsOneWidget);
       await _tap(t, 'ob-continue');
       expect(c.read(profilesProvider).single.track, 'explorers');
       expect(c.read(unitMetaProvider).of(c.read(profilesProvider).single.id).placed, isEmpty);
@@ -85,7 +85,7 @@ void main() {
     testWidgets('a child who reads simple words starts at Digraphs, with Letters and Sound Builders done by placement', (t) async {
       final c = await _start(t);
       await _toSummary(t, month: 1, year: _year - 8, level: 3);
-      expect(find.text('Digraphs'), findsOneWidget);
+      expect(find.textContaining('Digraphs'), findsOneWidget);
       await _tap(t, 'ob-continue');
       expect(c.read(unitMetaProvider).of(c.read(profilesProvider).single.id).placed, {'letters', 'sound-builders'});
     });
@@ -109,7 +109,7 @@ void main() {
       await _tap(t, 'track-little-learners');
       await _tap(t, 'ob-continue'); // back on the summary
       expect(find.text(_s('obTrackLL')), findsOneWidget);
-      expect(find.text('Colors'), findsOneWidget); // Little Learners: all letters known -> Colors
+      expect(find.textContaining('Colors'), findsOneWidget); // Little Learners: all letters known -> Colors
       await _tap(t, 'ob-continue');
       expect(c.read(profilesProvider).single.track, 'little-learners');
     });
@@ -199,11 +199,12 @@ void main() {
     c.read(parentSessionProvider.notifier).unlock();
     c.read(routerProvider).go('/parent/children/1');
     await t.pumpAndSettle();
-    await t.scrollUntilVisible(find.byKey(const Key('edit-track-explorers')), 200, scrollable: find.byType(Scrollable).first);
+    await tapSkill(t, 'all-letters'); // the skills decide the units counted as done
+    await reveal(t, find.byKey(const Key('edit-track-explorers')));
     await _tap(t, 'edit-track-explorers');
-    await t.scrollUntilVisible(find.byKey(const Key('edit-start-sound-builders')), 200, scrollable: find.byType(Scrollable).first);
-    await _tap(t, 'edit-start-sound-builders');
-    await t.scrollUntilVisible(find.byKey(const Key('edit-save')), 200, scrollable: find.byType(Scrollable).first);
+    await _tap(t, 'switch-track-confirm'); // the short confirmation
+    await t.scrollUntilVisible(find.byKey(const Key('skills-preview')), -300, scrollable: find.byType(Scrollable).first);
+    expect(find.byKey(const Key('skills-preview')), findsOneWidget);
     await _tap(t, 'edit-save');
     expect(c.read(profilesProvider).single.track, 'explorers');
     expect(c.read(unitMetaProvider).of('1').placed, {'letters'});

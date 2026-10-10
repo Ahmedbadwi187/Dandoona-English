@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/material.dart' show Key, Scrollable;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_riverpod/misc.dart' show Override;
 import 'package:kids_english_app/core/storage.dart';
 import 'package:kids_english_app/features/audio/audio_service.dart';
@@ -9,6 +11,7 @@ import 'package:kids_english_app/features/activities/hand_demo.dart' show autoDe
 import 'package:kids_english_app/features/content/content_models.dart';
 import 'package:kids_english_app/features/content/content_repository.dart';
 import 'package:kids_english_app/features/reminders/reminder_service.dart';
+import 'package:kids_english_app/features/skills/skills.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// 26 small lessons (A-Z) so map/flow tests do not depend on the real asset files.
@@ -48,6 +51,8 @@ Future<List<Override>> testOverrides({Map<String, Object> prefs = const {}, Trac
     contentProvider.overrideWith((ref) async => c),
     if (explorers != null) explorersContentProvider.overrideWith((ref) async => explorers),
     reminderServiceProvider.overrideWithValue(reminders ?? FakeReminders()),
+    // the rules of the skills list are read from the file at once (a bundle read in a widget test can stall pumpAndSettle)
+    skillsConfigProvider.overrideWith((ref) async => SkillsConfig.fromJson(jsonDecode(File('assets/content/skills.json').readAsStringSync()) as Map<String, dynamic>)),
     autoDemoEveryTimeProvider.overrideWithValue(autoDemo), // most tests are not about the demo: there the first-time rule decides
   ];
 }
@@ -127,3 +132,23 @@ TrackContent realContent() =>
 /// The real exported Explorers catalog (its Letters unit points at the Little Learners files).
 TrackContent realExplorersContent() =>
     TrackContent.fromJson(jsonDecode(File('assets/content/explorers.json').readAsStringSync()) as Map<String, dynamic>);
+
+/// The old single-choice answers (0 none, 1 some letters, 2 all letters, 3 reads simple words) as the skill to tap.
+String skillOfLevel(int level) => const ['none', 'some-letters', 'all-letters', 'reads-words'][level];
+
+/// Taps one skill of the "What can your child already do?" list (scrolling to it first: the list is long).
+Future<void> tapSkill(WidgetTester t, String id) async {
+  await reveal(t, find.byKey(Key('skill-$id')));
+  await t.pumpAndSettle();
+  await t.tap(find.byKey(Key('skill-$id')));
+  await t.pumpAndSettle();
+}
+
+/// Scrolls the first scrollable until [target] is built and on screen (long forms like Edit child build their rows lazily).
+Future<void> reveal(WidgetTester t, Finder target) async {
+  if (target.evaluate().isEmpty) {
+    await t.scrollUntilVisible(target, 300, scrollable: find.byType(Scrollable).first);
+  }
+  await t.ensureVisible(target);
+  await t.pumpAndSettle();
+}

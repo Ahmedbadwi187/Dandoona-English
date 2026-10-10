@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "about": "What the parent says the child can already do. Every rule of the skills list lives here, not in code: edit this file to change the groups, the implied skills, the age boundaries, when a skill moves a child up a track, and which units a skill covers in each track. Unit ids are the ids of content/curriculum/units/<track>.yaml; a test checks that every id exists.",
+
+  "age": {
+    "littleLearnersUpTo": 5,
+    "explorersUpTo": 8,
+    "above": "explorers"
+  },
+
+  "groups": [
+    { "id": "words", "skills": ["colors", "counting", "animals", "everyday-words"] },
+    { "id": "letters", "skills": ["some-letters", "all-letters", "letter-sounds"] },
+    { "id": "reading", "skills": ["reads-words", "reads-sentences", "writes-sentences"] },
+    { "id": "speaking", "skills": ["basic-grammar", "understands-spoken", "talks-about-self"] }
+  ],
+
+  "exclusive": ["none", "unsure"],
+
+  "implies": {
+    "all-letters": ["some-letters"],
+    "letter-sounds": ["some-letters"],
+    "reads-words": ["all-letters", "letter-sounds"],
+    "reads-sentences": ["reads-words"],
+    "writes-sentences": ["reads-sentences"],
+    "basic-grammar": ["reads-words"],
+    "talks-about-self": ["understands-spoken"]
+  },
+
+  "trackUp": [
+    {
+      "from": "little-learners",
+      "to": "explorers",
+      "whenAll": ["all-letters", "letter-sounds"],
+      "orAnyOf": ["reads-words", "reads-sentences", "writes-sentences", "basic-grammar"]
+    }
+  ],
+
+  "championsSkills": ["writes-sentences", "basic-grammar", "talks-about-self"],
+
+  "skillUnits": {
+    "little-learners": {
+      "colors": ["colors"],
+      "counting": ["numbers"],
+      "animals": ["animals"],
+      "everyday-words": ["food", "my-family"],
+      "all-letters": ["letters"],
+      "letter-sounds": ["letters"],
+      "reads-words": ["letters"],
+      "reads-sentences": ["letters"],
+      "writes-sentences": ["letters"]
+    },
+    "explorers": {
+      "all-letters": ["letters"],
+      "letter-sounds": ["letters", "sound-builders"],
+      "reads-words": ["letters", "sound-builders"],
+      "reads-sentences": ["letters", "sound-builders", "digraphs", "blends", "sight-words-1"],
+      "writes-sentences": ["letters", "sound-builders", "digraphs", "blends", "sight-words-1", "my-sentences"],
+      "basic-grammar": ["grammar-starters"]
+    }
+  }
+}

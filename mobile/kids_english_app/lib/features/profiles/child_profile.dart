@@ -21,6 +21,7 @@ class ChildProfile {
     this.equippedAccessory,
     this.birthMonth,
     this.goalMinutes,
+    this.skills,
   });
 
   final String id;
@@ -36,6 +37,9 @@ class ChildProfile {
   /// The daily goal in minutes chosen by the parent (5, 10 or 15); null when none was chosen.
   final int? goalMinutes;
 
+  /// What the parent said the child can already do (ids from assets/content/skills.json, or `none` / `unsure`); null = never asked.
+  final Set<String>? skills;
+
   /// Age in whole years (the birth month is used when it is known).
   int ageYears(DateTime now) {
     final a = now.year - birthYear - (birthMonth != null && now.month < birthMonth! ? 1 : 0);
@@ -45,7 +49,7 @@ class ChildProfile {
   /// Accessory id from rewards/accessories.dart currently worn by the mascot for this child (null = none).
   final String? equippedAccessory;
 
-  ChildProfile copyWith({String? name, String? avatarKey, int? birthYear, int? birthMonth, int? goalMinutes, String? track, String? equippedAccessory, bool clearAccessory = false}) =>
+  ChildProfile copyWith({String? name, String? avatarKey, int? birthYear, int? birthMonth, int? goalMinutes, String? track, Set<String>? skills, String? equippedAccessory, bool clearAccessory = false}) =>
       ChildProfile(
         id: id,
         name: name ?? this.name,
@@ -54,6 +58,7 @@ class ChildProfile {
         birthMonth: birthMonth ?? this.birthMonth,
         goalMinutes: goalMinutes ?? this.goalMinutes,
         track: track ?? this.track,
+        skills: skills ?? this.skills,
         createdAt: createdAt,
         equippedAccessory: clearAccessory ? null : (equippedAccessory ?? this.equippedAccessory),
       );
@@ -65,6 +70,7 @@ class ChildProfile {
         'birthYear': birthYear,
         if (birthMonth != null) 'birthMonth': birthMonth,
         if (goalMinutes != null) 'goalMinutes': goalMinutes,
+        if (skills != null) 'skills': (skills!.toList()..sort()),
         'track': track,
         'createdAt': createdAt.toUtc().toIso8601String(),
         if (equippedAccessory != null) 'equippedAccessory': equippedAccessory,
@@ -77,6 +83,7 @@ class ChildProfile {
         birthYear: json['birthYear'] as int,
         birthMonth: json['birthMonth'] as int?,
         goalMinutes: json['goalMinutes'] as int?,
+        skills: (json['skills'] as List<dynamic>?)?.cast<String>().toSet(),
         track: (json['track'] as String?) ?? 'little-learners',
         createdAt: DateTime.parse(json['createdAt'] as String),
         equippedAccessory: json['equippedAccessory'] as String?,
@@ -116,7 +123,7 @@ class ProfilesNotifier extends Notifier<List<ChildProfile>> {
     return profiles;
   }
 
-  Future<ChildProfile> add({required String name, required String avatarKey, required int birthYear, int? birthMonth, int? goalMinutes, String track = 'little-learners'}) async {
+  Future<ChildProfile> add({required String name, required String avatarKey, required int birthYear, int? birthMonth, int? goalMinutes, String track = 'little-learners', Set<String>? skills}) async {
     final now = ref.read(clockProvider)();
     final profile = ChildProfile(
       id: '${now.microsecondsSinceEpoch.toRadixString(36)}${Random().nextInt(1 << 20).toRadixString(36)}',
@@ -126,6 +133,7 @@ class ProfilesNotifier extends Notifier<List<ChildProfile>> {
       birthMonth: birthMonth,
       goalMinutes: goalMinutes,
       track: track,
+      skills: skills,
       createdAt: now,
     );
     state = [...state, profile];
@@ -133,10 +141,10 @@ class ProfilesNotifier extends Notifier<List<ChildProfile>> {
     return profile;
   }
 
-  Future<void> update(String id, {String? name, String? avatarKey, int? birthYear, int? birthMonth, int? goalMinutes, String? track}) async {
+  Future<void> update(String id, {String? name, String? avatarKey, int? birthYear, int? birthMonth, int? goalMinutes, String? track, Set<String>? skills}) async {
     state = [
       for (final p in state)
-        if (p.id == id) p.copyWith(name: name?.trim(), avatarKey: avatarKey, birthYear: birthYear, birthMonth: birthMonth, goalMinutes: goalMinutes, track: track) else p,
+        if (p.id == id) p.copyWith(name: name?.trim(), avatarKey: avatarKey, birthYear: birthYear, birthMonth: birthMonth, goalMinutes: goalMinutes, track: track, skills: skills) else p,
     ];
     await _save();
   }
