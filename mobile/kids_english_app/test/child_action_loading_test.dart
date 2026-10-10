@@ -4,7 +4,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:kids_english_app/core/loading_action.dart';
 import 'package:kids_english_app/core/palette.dart';
 import 'package:kids_english_app/core/widgets.dart';
 import 'package:kids_english_app/features/activities/activity_logic.dart';
@@ -69,10 +68,10 @@ void main() {
 
       await tester.tap(mic);
       await tester.pump();
-      expect(progress(), findsOneWidget);
+      expect(progress(), findsNothing); // the microphone shows no spinner
       await tester.tap(mic);
       await tester.pump();
-      expect(recorder.permissionRequests, 1);
+      expect(recorder.permissionRequests, 1); // and a second tap while the permission is pending asks nothing again
 
       recorder.permissionResult.complete(true);
       await tester.pump();
@@ -84,7 +83,7 @@ void main() {
       await tester.tap(mic);
       await tester.pump();
       expect(recorder.created, hasLength(1));
-      expect(progress(), findsOneWidget);
+      expect(progress(), findsNothing);
       await tester.tap(mic);
       await tester.pump();
       expect(recorder.created, hasLength(1));
@@ -129,7 +128,7 @@ void main() {
     audio.playback = Completer<void>();
     await tester.tap(hear);
     await tester.pump();
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+    expect(find.byType(CircularProgressIndicator), findsNothing); // the speaker button shows no spinner
     expect(tester.getSize(hear), before);
 
     final answer = find.byKey(Key('option-${round.target.word}'));
@@ -141,10 +140,6 @@ void main() {
     expect(
       ((card.decoration! as BoxDecoration).border! as Border).top.color,
       Palette.green,
-    );
-    expect(
-      find.descendant(of: answer, matching: find.byType(LoadingOverlay)),
-      findsOneWidget,
     );
 
     audio.playback!.complete();

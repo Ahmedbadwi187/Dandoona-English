@@ -121,20 +121,19 @@ class BigTap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LoadingAction(
-      onPressed: onTap,
-      builder: (onPressed, loading) => Semantics(
-        button: true,
-        enabled: onPressed != null,
-        label: semanticLabel,
-        child: InkResponse(
-          onTap: onPressed,
-          radius: kMinTapTarget,
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
-            // Shrink-wrap (factor 1) so callers can position the tap target; the min constraints still guarantee 64 dp.
-            child: Center(widthFactor: 1, heightFactor: 1, child: LoadingOverlay(loading: loading, child: child)),
-          ),
+    // Pictures, icons and tiles open at once: no spinner on them, and a tap is never held back while a sound is still playing.
+    // (The loader belongs on real buttons: sign-up, save, and so on.)
+    return Semantics(
+      button: true,
+      enabled: onTap != null,
+      label: semanticLabel,
+      child: InkResponse(
+        onTap: onTap == null ? null : () => runNow(onTap!),
+        radius: kMinTapTarget,
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(minWidth: kMinTapTarget, minHeight: kMinTapTarget),
+          // Shrink-wrap (factor 1) so callers can position the tap target; the min constraints still guarantee 64 dp.
+          child: Center(widthFactor: 1, heightFactor: 1, child: child),
         ),
       ),
     );

@@ -137,6 +137,14 @@ class LoadingOverlay extends StatelessWidget {
   }
 }
 
+/// Runs a tap handler at once and lets it finish in the background (a sound, a short wait). Nothing is held back or blocked.
+void runNow(LoadingCallback callback) {
+  final result = callback();
+  if (result is Future) unawaited(result);
+}
+
+/// A tap on a picture, icon or tile in the app: it opens at once, with no spinner, and is never blocked while a sound plays.
+/// (The name is old: the loader now belongs to real buttons only, see [LoadingAction].)
 class LoadingTap extends StatelessWidget {
   const LoadingTap({
     super.key,
@@ -150,13 +158,10 @@ class LoadingTap extends StatelessWidget {
   final HitTestBehavior? behavior;
 
   @override
-  Widget build(BuildContext context) => LoadingAction(
-    onPressed: onTap,
-    builder: (onPressed, loading) => GestureDetector(
-      behavior: behavior,
-      onTap: onPressed,
-      child: LoadingOverlay(loading: loading, child: child),
-    ),
+  Widget build(BuildContext context) => GestureDetector(
+    behavior: behavior,
+    onTap: onTap == null ? null : () => runNow(onTap!),
+    child: child,
   );
 }
 
@@ -175,13 +180,10 @@ class LoadingInkWell extends StatelessWidget {
   final ShapeBorder? customBorder;
 
   @override
-  Widget build(BuildContext context) => LoadingAction(
-    onPressed: onTap,
-    builder: (onPressed, loading) => InkWell(
-      borderRadius: borderRadius,
-      customBorder: customBorder,
-      onTap: onPressed,
-      child: LoadingOverlay(loading: loading, child: child),
-    ),
+  Widget build(BuildContext context) => InkWell(
+    borderRadius: borderRadius,
+    customBorder: customBorder,
+    onTap: onTap == null ? null : () => runNow(onTap!),
+    child: child,
   );
 }

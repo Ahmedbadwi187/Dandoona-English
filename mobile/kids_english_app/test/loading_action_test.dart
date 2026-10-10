@@ -138,7 +138,7 @@ void main() {
   });
 
   testWidgets(
-    'picture tap retains its picture and footprint while awaiting audio',
+    'a picture tap opens at once: no spinner, nothing held back while its sound plays',
     (tester) async {
       final done = Completer<void>();
       var calls = 0;
@@ -165,17 +165,17 @@ void main() {
       await tester.tap(find.byKey(const Key('picture-tap')));
       await tester.pump();
       expect(find.byIcon(Icons.pets), findsOneWidget);
-      expect(find.byType(CircularProgressIndicator), findsOneWidget);
+      expect(find.byType(CircularProgressIndicator), findsNothing); // the loader belongs to real buttons, not to pictures
       expect(tester.getSize(find.byKey(const Key('picture-tap'))), before);
       await tester.tap(find.byKey(const Key('picture-tap')));
-      expect(calls, 1);
+      expect(calls, 2); // a second tap while the sound still plays is not ignored
       done.complete();
       await tester.pumpAndSettle();
       expect(find.byType(CircularProgressIndicator), findsNothing);
     },
   );
 
-  testWidgets('TapToHear retains the returned audio future', (tester) async {
+  testWidgets('TapToHear plays at once, with no spinner, and every tap counts', (tester) async {
     final done = Completer<void>();
     var calls = 0;
     await tester.pumpWidget(
@@ -198,9 +198,9 @@ void main() {
     );
     await tester.tap(find.byType(TapToHear));
     await tester.pump();
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+    expect(find.byType(CircularProgressIndicator), findsNothing);
     await tester.tap(find.byType(TapToHear));
-    expect(calls, 1);
+    expect(calls, 2);
     done.complete();
     await tester.pumpAndSettle();
     expect(find.byType(CircularProgressIndicator), findsNothing);

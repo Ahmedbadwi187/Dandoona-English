@@ -307,11 +307,11 @@ class DemoHelpButton extends StatelessWidget {
   Widget build(BuildContext context) => Semantics(
         button: true,
         label: 'Show me',
-        child: LoadingAction(onPressed: onTap, builder: (onPressed, loading) => InkResponse(
+        child: InkResponse(
           key: const Key('demo-help'),
-          onTap: onPressed,
+          onTap: () => runNow(onTap),
           radius: 36,
-          child: LoadingOverlay(loading: loading, child: Container(
+          child: Container(
             width: 64,
             height: 64,
             alignment: Alignment.center,
@@ -321,7 +321,7 @@ class DemoHelpButton extends StatelessWidget {
               decoration: BoxDecoration(color: Palette.white, shape: BoxShape.circle, border: Border.all(color: Palette.nightInk, width: 3)),
               child: const Icon(Icons.question_mark_rounded, size: 30, color: Palette.nightInk),
             ),
-          )),
-        )),
+          ),
+        ),
       );
 }

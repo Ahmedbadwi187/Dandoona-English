@@ -73,6 +73,8 @@ class _RecordListenActivityState extends ConsumerState<RecordListenActivity> {
       await _stopAndCompare();
       return;
     }
+    if (_starting) return; // the permission prompt or the start is still going on: a second tap does nothing
+    _starting = true;
     try {
       if (!await _recorder.requestPermission()) {
         if (mounted) setState(() => _micUnavailable = true);
@@ -84,8 +86,12 @@ class _RecordListenActivityState extends ConsumerState<RecordListenActivity> {
       _cap = Timer(widget.maxRecording, () => unawaited(_stopAndCompare()));
     } on Object {
       if (mounted) setState(() => _micUnavailable = true);
+    } finally {
+      _starting = false;
     }
   }
+
+  bool _starting = false;
 
   Future<void> _stopAndCompare() async {
     _cap?.cancel();
