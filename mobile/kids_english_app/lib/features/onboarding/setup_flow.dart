@@ -122,7 +122,8 @@ class SetupRoute extends ConsumerWidget {
           onName: (v) => draft.update((x) => x.copyWith(name: v)),
           onAvatar: (v) => draft.update((x) => x.copyWith(avatar: v)),
           onContinue: () => _next(context),
-          onBack: onBack,
+          // the first question has nothing to pop to when the parent just came from the welcome screen: back goes there, so the account choice can be changed
+          onBack: onBack ?? (d.childId == null && d.returnTo == null ? () => context.go('/onboarding') : null),
         );
       case 'age':
         final content = ref.watch(contentProvider).asData?.value;

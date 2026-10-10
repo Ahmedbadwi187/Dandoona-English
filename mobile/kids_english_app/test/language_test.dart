@@ -24,6 +24,7 @@ Future<ProviderContainer> _start(WidgetTester t, {String device = 'en', Map<Stri
 }
 
 void main() {
+  _backFromFirstQuestion();
   _backToLanguage();
   group('the language screen is the very first screen', () {
     testWidgets('a fresh install shows it, with both languages written in their own language', (t) async {
@@ -178,5 +179,21 @@ void _backToLanguage() {
     await t.pumpAndSettle();
     expect(c.read(settingsProvider).languageCode, 'en');
     expect(find.byKey(const Key('welcome-no-account')), findsOneWidget);
+  });
+}
+
+void _backFromFirstQuestion() {
+  testWidgets('the first child question has a back arrow to the welcome screen, so "without an account" can be changed', (t) async {
+    final c = await _start(t, device: 'en');
+    await t.tap(find.byKey(const Key('ob-continue'))); // language
+    await t.pumpAndSettle();
+    await t.tap(find.byKey(const Key('ob-continue'))); // welcome: without an account
+    await t.pumpAndSettle();
+    expect(find.byKey(const Key('ob-name')), findsOneWidget);
+    expect(find.byKey(const Key('ob-back')), findsOneWidget);
+    await t.tap(find.byKey(const Key('ob-back')));
+    await t.pumpAndSettle();
+    expect(find.byKey(const Key('welcome-account')), findsOneWidget);
+    expect(c.read(settingsProvider).languageCode, 'en');
   });
 }
