@@ -288,25 +288,32 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
                           const SizedBox(height: 12),
                           Text(s('chooseAvatar'), style: ParentText.section),
                           const SizedBox(height: 10),
-                          Wrap(
-                            spacing: 10,
-                            runSpacing: 10,
-                            children: [
-                              for (final key in avatars)
-                                Opacity(
-                                  opacity: others.contains(key) ? 0.35 : 1,
-                                  child: InkResponse(
-                                    key: Key('avatar-$key'),
-                                    onTap: others.contains(key) ? null : () => setState(() => _avatar = key),
-                                    child: Container(
-                                      padding: const EdgeInsets.all(3),
-                                      decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: _avatar == key ? primary : Colors.transparent, width: 3)),
-                                      child: AvatarCircle(key, size: 52),
-                                    ),
-                                  ),
-                                ),
-                            ],
-                          ),
+                          // rows of four spread over the whole card (a Wrap left a white strip on the right)
+                          for (var row = 0; row < avatars.length; row += 4)
+                            Padding(
+                              padding: EdgeInsets.only(top: row == 0 ? 0 : 10),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  for (var i = row; i < row + 4; i++)
+                                    if (i >= avatars.length)
+                                      const SizedBox(width: 58, height: 58)
+                                    else
+                                      Opacity(
+                                        opacity: others.contains(avatars[i]) ? 0.35 : 1,
+                                        child: InkResponse(
+                                          key: Key('avatar-${avatars[i]}'),
+                                          onTap: others.contains(avatars[i]) ? null : () => setState(() => _avatar = avatars[i]),
+                                          child: Container(
+                                            padding: const EdgeInsets.all(3),
+                                            decoration: BoxDecoration(shape: BoxShape.circle, border: Border.all(color: _avatar == avatars[i] ? primary : Colors.transparent, width: 3)),
+                                            child: AvatarCircle(avatars[i], size: 52),
+                                          ),
+                                        ),
+                                      ),
+                                ],
+                              ),
+                            ),
                         ],
                       ),
                     ),
