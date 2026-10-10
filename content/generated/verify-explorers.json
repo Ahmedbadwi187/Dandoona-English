@@ -1,0 +1,6258 @@
+[
+ {
+  "lesson": "word-families-ug",
+  "role": "word-jug",
+  "file": "word-families-ug/audio/word-jug.gen.mp3",
+  "expected": "jug",
+  "heard": "Choke.",
+  "risk": 1.0
+ },
+ {
+  "lesson": "word-families-an",
+  "role": "instr-sound-tap",
+  "file": "word-families-an/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear it sound, then read the word. If you want to read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word, then read the word,",
+  "risk": 0.896
+ },
+ {
+  "lesson": "numbers-time-months-1",
+  "role": "intro",
+  "file": "numbers-time-months-1/audio/intro.gen.mp3",
+  "expected": "The months of the year! January. February. March. April!",
+  "heard": "The months of the year, January, February, March, April, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July, July",
+  "risk": 0.839
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "intro",
+  "file": "everyday-english-town/audio/intro.gen.mp3",
+  "expected": "In town! A school. A park. A hospital. A shop!",
+  "heard": "In town, a school, a park, a hospital, a shop. I'm going to take a look at that. I'm going to take a look at that. I'm going to take a look at that. I'm going to take a look at that. I'm going to take a look at that. I'm going to take a look at that. I'm going to take a look at that. I'm going to take a look at that. I'm going to take a look at that. I'm going to take a look at that. I'm going to take a look at that. I'm going to take a look at that. I'm going to take a look at that.",
+  "risk": 0.835
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "word-kite",
+  "file": "my-sentences-mix/audio/word-kite.gen.mp3",
+  "expected": "kyte",
+  "heard": "Good day.",
+  "risk": 0.818
+ },
+ {
+  "lesson": "word-families-an",
+  "role": "word-van",
+  "file": "word-families-an/audio/word-van.gen.mp3",
+  "expected": "van",
+  "heard": "Fun!",
+  "risk": 0.667
+ },
+ {
+  "lesson": "everyday-english-play",
+  "role": "word-kite",
+  "file": "everyday-english-play/audio/word-kite.gen.mp3",
+  "expected": "kyte",
+  "heard": "Q-Tear",
+  "risk": 0.556
+ },
+ {
+  "lesson": "word-families-un",
+  "role": "word-bun",
+  "file": "word-families-un/audio/word-bun.gen.mp3",
+  "expected": "bun",
+  "heard": "Boone!",
+  "risk": 0.5
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "word-igloo",
+  "file": "grammar-starters-a-an/audio/word-igloo.gen.mp3",
+  "expected": "igloo",
+  "heard": "Inglue.",
+  "risk": 0.455
+ },
+ {
+  "lesson": "sound-builders-a",
+  "role": "word-hat",
+  "file": "sound-builders-a/audio/word-hat.gen.mp3",
+  "expected": "hat",
+  "heard": "Hutt.",
+  "risk": 0.429
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "word-ant",
+  "file": "my-sentences-a-an/audio/word-ant.gen.mp3",
+  "expected": "ant",
+  "heard": "and",
+  "risk": 0.333
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "word-hat",
+  "file": "sight-words-1-a/audio/word-hat.gen.mp3",
+  "expected": "hat",
+  "heard": "HUT!",
+  "risk": 0.333
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "word-sun",
+  "file": "sight-words-1-b/audio/word-sun.gen.mp3",
+  "expected": "sun",
+  "heard": "The sun.",
+  "risk": 0.333
+ },
+ {
+  "lesson": "sound-builders-a",
+  "role": "word-ant",
+  "file": "sound-builders-a/audio/word-ant.gen.mp3",
+  "expected": "ant",
+  "heard": "and",
+  "risk": 0.333
+ },
+ {
+  "lesson": "sound-builders-a",
+  "role": "word-jam",
+  "file": "sound-builders-a/audio/word-jam.gen.mp3",
+  "expected": "jam",
+  "heard": "Jum.",
+  "risk": 0.333
+ },
+ {
+  "lesson": "sound-builders-u",
+  "role": "word-nut",
+  "file": "sound-builders-u/audio/word-nut.gen.mp3",
+  "expected": "nut",
+  "heard": "Not",
+  "risk": 0.333
+ },
+ {
+  "lesson": "vowel-teams-ee",
+  "role": "word-bee",
+  "file": "vowel-teams-ee/audio/word-bee.gen.mp3",
+  "expected": "bee",
+  "heard": "be",
+  "risk": 0.333
+ },
+ {
+  "lesson": "word-families-at",
+  "role": "word-hat",
+  "file": "word-families-at/audio/word-hat.gen.mp3",
+  "expected": "hat",
+  "heard": "HUT!",
+  "risk": 0.333
+ },
+ {
+  "lesson": "magic-e-i",
+  "role": "word-kite",
+  "file": "magic-e-i/audio/word-kite.gen.mp3",
+  "expected": "kyte",
+  "heard": "Kute.",
+  "risk": 0.25
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "word-kite",
+  "file": "sight-words-2-a/audio/word-kite.gen.mp3",
+  "expected": "kyte",
+  "heard": "Kute",
+  "risk": 0.25
+ },
+ {
+  "lesson": "sound-builders-a",
+  "role": "intro",
+  "file": "sound-builders-a/audio/intro.gen.mp3",
+  "expected": "Short a! Listen: a, a. Let's build words: cat, jam, ant, hat.",
+  "heard": "Short A, Listen, AA, Let's Build Words, Cat Jam, Ant Hat. Subs by www.zeoranger.co.uk",
+  "risk": 0.216
+ },
+ {
+  "lesson": "digraphs-ch",
+  "role": "word-chick",
+  "file": "digraphs-ch/audio/word-chick.gen.mp3",
+  "expected": "chick",
+  "heard": "Check.",
+  "risk": 0.2
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "sight-it",
+  "file": "sight-words-1-b/audio/sight-it.gen.mp3",
+  "expected": "it",
+  "heard": "It's",
+  "risk": 0.2
+ },
+ {
+  "lesson": "numbers-time-tens-3",
+  "role": "word-hundred",
+  "file": "numbers-time-tens-3/audio/word-hundred.gen.mp3",
+  "expected": "one hundred",
+  "heard": "100.",
+  "risk": 0.176
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "word-bus",
+  "file": "sight-words-1-c/audio/word-bus.gen.mp3",
+  "expected": "bus",
+  "heard": "Buss.",
+  "risk": 0.143
+ },
+ {
+  "lesson": "sound-builders-o",
+  "role": "word-pot",
+  "file": "sound-builders-o/audio/word-pot.gen.mp3",
+  "expected": "pot",
+  "heard": "Port",
+  "risk": 0.143
+ },
+ {
+  "lesson": "sound-builders-u",
+  "role": "word-bus",
+  "file": "sound-builders-u/audio/word-bus.gen.mp3",
+  "expected": "bus",
+  "heard": "Buss.",
+  "risk": 0.143
+ },
+ {
+  "lesson": "vowel-teams-oo-ar",
+  "role": "word-car",
+  "file": "vowel-teams-oo-ar/audio/word-car.gen.mp3",
+  "expected": "cahr",
+  "heard": "Car",
+  "risk": 0.143
+ },
+ {
+  "lesson": "word-families-ot",
+  "role": "word-pot",
+  "file": "word-families-ot/audio/word-pot.gen.mp3",
+  "expected": "pot",
+  "heard": "Port.",
+  "risk": 0.143
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "sentence-4",
+  "file": "sight-words-1-c/audio/sentence-4.gen.mp3",
+  "expected": "A hen and a duck.",
+  "heard": "a hen in a duck.",
+  "risk": 0.13
+ },
+ {
+  "lesson": "numbers-time-tens-3",
+  "role": "intro",
+  "file": "numbers-time-tens-3/audio/intro.gen.mp3",
+  "expected": "Count by tens! Eighty. Ninety. One hundred!",
+  "heard": "Count by 10s, 80, 90, 100.",
+  "risk": 0.129
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "intro",
+  "file": "grammar-starters-is-are/audio/intro.gen.mp3",
+  "expected": "One is. Two are! Look at the pictures.",
+  "heard": "One is 2R. Look at the pictures.",
+  "risk": 0.115
+ },
+ {
+  "lesson": "blends-l",
+  "role": "word-plum",
+  "file": "blends-l/audio/word-plum.gen.mp3",
+  "expected": "plum",
+  "heard": "plumb",
+  "risk": 0.111
+ },
+ {
+  "lesson": "magic-e-i",
+  "role": "intro",
+  "file": "magic-e-i/audio/intro.gen.mp3",
+  "expected": "Magic e! The e is quiet, and i says its name: eye. Let's read: kite, bike, five, nine.",
+  "heard": "Magic A. The E is quiet and I says its name. I. Let's read Kite Bike 5.9.",
+  "risk": 0.111
+ },
+ {
+  "lesson": "vowel-teams-oa",
+  "role": "word-goat",
+  "file": "vowel-teams-oa/audio/word-goat.gen.mp3",
+  "expected": "goat",
+  "heard": "Goats.",
+  "risk": 0.111
+ },
+ {
+  "lesson": "sound-builders-u",
+  "role": "intro",
+  "file": "sound-builders-u/audio/intro.gen.mp3",
+  "expected": "Short u! Listen: u, u. Let's build words: bug, nut, bus, cup.",
+  "heard": "Short you. Listen. You. You. Let's build words. Bug not bus cup.",
+  "risk": 0.093
+ },
+ {
+  "lesson": "numbers-time-tens-1",
+  "role": "intro",
+  "file": "numbers-time-tens-1/audio/intro.gen.mp3",
+  "expected": "Count by tens! Twenty. Thirty. Forty!",
+  "heard": "Count by 10s 20 30 40",
+  "risk": 0.091
+ },
+ {
+  "lesson": "numbers-time-tens-2",
+  "role": "intro",
+  "file": "numbers-time-tens-2/audio/intro.gen.mp3",
+  "expected": "Count by tens! Fifty. Sixty. Seventy!",
+  "heard": "Count by 10s 50 60 70",
+  "risk": 0.091
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "sentence-4",
+  "file": "sight-words-2-b/audio/sentence-4.gen.mp3",
+  "expected": "Hop, said the frog!",
+  "heard": "Hopps said the frog.",
+  "risk": 0.067
+ },
+ {
+  "lesson": "digraphs-th",
+  "role": "intro",
+  "file": "digraphs-th/audio/intro.gen.mp3",
+  "expected": "th! Put your tongue out a little: th, th. Let's read: bath, moth, math, path.",
+  "heard": "Put your tongue out a little. Let's read. Bath, moth, math, path.",
+  "risk": 0.06
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "intro",
+  "file": "sight-words-1-a/audio/intro.gen.mp3",
+  "expected": "Some words we just know! I, see, the, my. Let's read them!",
+  "heard": "Some words we just know. I see the might. Let's read them.",
+  "risk": 0.06
+ },
+ {
+  "lesson": "magic-e-o-u",
+  "role": "intro",
+  "file": "magic-e-o-u/audio/intro.gen.mp3",
+  "expected": "Magic e! o says its name: oh. u says its name: you. Let's read: bone, nose, rose, cube.",
+  "heard": "Magic A, O says its name, O, U says its name, U. Let's read bone, nose, rose, cube.",
+  "risk": 0.043
+ },
+ {
+  "lesson": "magic-e-a",
+  "role": "intro",
+  "file": "magic-e-a/audio/intro.gen.mp3",
+  "expected": "Magic e! The e is quiet, and a says its name: ay. Let's read: cake, snake, plane, grapes.",
+  "heard": "Magic-y, the E is quiet, and A says its name. Aye, let's read Cake, Snake, Plain, Grapes.",
+  "risk": 0.04
+ },
+ {
+  "lesson": "word-families-an",
+  "role": "intro",
+  "file": "word-families-an/audio/intro.gen.mp3",
+  "expected": "Family -an: van, can, fan, pan. They all end the same!",
+  "heard": "family, and van, can, van, pan. They all end the same.",
+  "risk": 0.04
+ },
+ {
+  "lesson": "blends-end",
+  "role": "intro",
+  "file": "blends-end/audio/intro.gen.mp3",
+  "expected": "Blends at the end! s, t, st. Let's read: nest, hand, lamp, gift.",
+  "heard": "Blends at the end. S. T. Saint. Let's read Nest Hand Lamp Gift.",
+  "risk": 0.034
+ },
+ {
+  "lesson": "digraphs-sh",
+  "role": "intro",
+  "file": "digraphs-sh/audio/intro.gen.mp3",
+  "expected": "sh! Two letters, one sound: sh, sh. Let's read: fish, ship, shop, dish.",
+  "heard": "Shh, two letters, one sound, shh, shh. Let's read fish, ship, shop, dish.",
+  "risk": 0.03
+ },
+ {
+  "lesson": "word-families-ig",
+  "role": "intro",
+  "file": "word-families-ig/audio/intro.gen.mp3",
+  "expected": "Family -ig: pig, wig, fig. They all end the same!",
+  "heard": "family, i.e. pig, wig, fig, they all end the same.",
+  "risk": 0.029
+ },
+ {
+  "lesson": "word-families-ot",
+  "role": "intro",
+  "file": "word-families-ot/audio/intro.gen.mp3",
+  "expected": "Family -ot: pot, dot, hot. They all end the same!",
+  "heard": "family ut, pot, dot, hot. They all end the same.",
+  "risk": 0.029
+ },
+ {
+  "lesson": "digraphs-ck",
+  "role": "intro",
+  "file": "digraphs-ck/audio/intro.gen.mp3",
+  "expected": "ck! c and k together say one sound: k, k. Let's read: duck, socks, rock, kick.",
+  "heard": "Keck CC and K together say one sound, K K. Let's read Duck Socks Rock Kick.",
+  "risk": 0.028
+ },
+ {
+  "lesson": "vowel-teams-ai",
+  "role": "intro",
+  "file": "vowel-teams-ai/audio/intro.gen.mp3",
+  "expected": "Vowel teams! a and i say ay together. Let's read: rain, snail, train, paint.",
+  "heard": "vowel teams, A and I say I together. Let's read Rain Snail Train Paint.",
+  "risk": 0.028
+ },
+ {
+  "lesson": "vowel-teams-ee",
+  "role": "intro",
+  "file": "vowel-teams-ee/audio/intro.gen.mp3",
+  "expected": "e and e say ee together. Let's read: tree, bee, sheep, feet.",
+  "heard": "E and E say E together. Let's read tree be sheep feet.",
+  "risk": 0.025
+ },
+ {
+  "lesson": "vowel-teams-oo-ar",
+  "role": "intro",
+  "file": "vowel-teams-oo-ar/audio/intro.gen.mp3",
+  "expected": "o and o say oo. a and r say ar. Let's read: moon, spoon, car, star.",
+  "heard": "O and O say O, A and R say R. Let's read Moon Spoon Car Star.",
+  "risk": 0.023
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "intro",
+  "file": "grammar-starters-a-an/audio/intro.gen.mp3",
+  "expected": "A or an? Listen to the first sound!",
+  "heard": "A or N. Listen to the first sound.",
+  "risk": 0.019
+ },
+ {
+  "lesson": "blends-end",
+  "role": "instr-sound-tap",
+  "file": "blends-end/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear it sound, then read the word.",
+  "risk": 0.013
+ },
+ {
+  "lesson": "blends-r",
+  "role": "instr-sound-tap",
+  "file": "blends-r/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear it sound, then read the word.",
+  "risk": 0.013
+ },
+ {
+  "lesson": "digraphs-sh",
+  "role": "instr-sound-tap",
+  "file": "digraphs-sh/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear it sound, then read the word.",
+  "risk": 0.013
+ },
+ {
+  "lesson": "magic-e-a",
+  "role": "instr-sound-tap",
+  "file": "magic-e-a/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear it sound, then read the word.",
+  "risk": 0.013
+ },
+ {
+  "lesson": "magic-e-i",
+  "role": "instr-sound-tap",
+  "file": "magic-e-i/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear it sound. Then read the word.",
+  "risk": 0.013
+ },
+ {
+  "lesson": "magic-e-o-u",
+  "role": "instr-sound-tap",
+  "file": "magic-e-o-u/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear it sound, then read the word.",
+  "risk": 0.013
+ },
+ {
+  "lesson": "sound-builders-e",
+  "role": "instr-sound-tap",
+  "file": "sound-builders-e/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear it sound, then read the word.",
+  "risk": 0.013
+ },
+ {
+  "lesson": "sound-builders-i",
+  "role": "instr-sound-tap",
+  "file": "sound-builders-i/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear it sound, then read the word.",
+  "risk": 0.013
+ },
+ {
+  "lesson": "vowel-teams-ai",
+  "role": "instr-sound-tap",
+  "file": "vowel-teams-ai/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear it sound, then read the word.",
+  "risk": 0.013
+ },
+ {
+  "lesson": "vowel-teams-ee",
+  "role": "instr-sound-tap",
+  "file": "vowel-teams-ee/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear it sound, then read the word.",
+  "risk": 0.013
+ },
+ {
+  "lesson": "vowel-teams-oa",
+  "role": "instr-sound-tap",
+  "file": "vowel-teams-oa/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear it sound, then read the word.",
+  "risk": 0.013
+ },
+ {
+  "lesson": "word-families-ig",
+  "role": "instr-sound-tap",
+  "file": "word-families-ig/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear it sound, then read the word.",
+  "risk": 0.013
+ },
+ {
+  "lesson": "word-families-ug",
+  "role": "instr-sound-tap",
+  "file": "word-families-ug/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear it sound, then read the word.",
+  "risk": 0.013
+ },
+ {
+  "lesson": "word-families-ug",
+  "role": "intro",
+  "file": "word-families-ug/audio/intro.gen.mp3",
+  "expected": "Family -ug: bug, jug, mug, rug. They all end the same!",
+  "heard": "Family, Ugg, Bug, Jug, Mug, Rug, they all end the same.",
+  "risk": 0.013
+ },
+ {
+  "lesson": "vowel-teams-oa",
+  "role": "intro",
+  "file": "vowel-teams-oa/audio/intro.gen.mp3",
+  "expected": "o and a say oh together. Let's read: boat, goat, soap, toast.",
+  "heard": "o and a say o together. Let's read boat goat soap toast.",
+  "risk": 0.012
+ },
+ {
+  "lesson": "blends-l",
+  "role": "intro",
+  "file": "blends-l/audio/intro.gen.mp3",
+  "expected": "Blends! Say both sounds: f, l, fl. Let's read: flag, clap, plum, blocks.",
+  "heard": "Blends. Say both sounds. F-L-F-L. Let's read flag, clap, plumb, blocks.",
+  "risk": 0.01
+ },
+ {
+  "lesson": "blends-end",
+  "role": "instr-read-and-pick",
+  "file": "blends-end/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-end",
+  "role": "instr-word-builder",
+  "file": "blends-end/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-end",
+  "role": "praise-0",
+  "file": "blends-end/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-end",
+  "role": "praise-1",
+  "file": "blends-end/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-end",
+  "role": "praise-2",
+  "file": "blends-end/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-end",
+  "role": "word-gift",
+  "file": "blends-end/audio/word-gift.gen.mp3",
+  "expected": "gift",
+  "heard": "GIFT.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-end",
+  "role": "word-hand",
+  "file": "blends-end/audio/word-hand.gen.mp3",
+  "expected": "hand",
+  "heard": "Hand.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-end",
+  "role": "word-lamp",
+  "file": "blends-end/audio/word-lamp.gen.mp3",
+  "expected": "lamp",
+  "heard": "Lamp",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-end",
+  "role": "word-nest",
+  "file": "blends-end/audio/word-nest.gen.mp3",
+  "expected": "nest",
+  "heard": "Nest.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-l",
+  "role": "instr-read-and-pick",
+  "file": "blends-l/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-l",
+  "role": "instr-sound-tap",
+  "file": "blends-l/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear its sound, then read the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-l",
+  "role": "instr-word-builder",
+  "file": "blends-l/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-l",
+  "role": "praise-0",
+  "file": "blends-l/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-l",
+  "role": "praise-1",
+  "file": "blends-l/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-l",
+  "role": "praise-2",
+  "file": "blends-l/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-l",
+  "role": "word-blocks",
+  "file": "blends-l/audio/word-blocks.gen.mp3",
+  "expected": "blocks",
+  "heard": "Blocks.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-l",
+  "role": "word-clap",
+  "file": "blends-l/audio/word-clap.gen.mp3",
+  "expected": "clap",
+  "heard": "Clap.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-l",
+  "role": "word-flag",
+  "file": "blends-l/audio/word-flag.gen.mp3",
+  "expected": "flag",
+  "heard": "Flag.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-r",
+  "role": "instr-read-and-pick",
+  "file": "blends-r/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-r",
+  "role": "instr-word-builder",
+  "file": "blends-r/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-r",
+  "role": "intro",
+  "file": "blends-r/audio/intro.gen.mp3",
+  "expected": "More blends! f, r, fr. Let's read: frog, crab, drum, truck.",
+  "heard": "More blends. F-R-F-R. Let's read Frog Crab Drum Truck.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-r",
+  "role": "praise-0",
+  "file": "blends-r/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-r",
+  "role": "praise-1",
+  "file": "blends-r/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-r",
+  "role": "praise-2",
+  "file": "blends-r/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-r",
+  "role": "word-crab",
+  "file": "blends-r/audio/word-crab.gen.mp3",
+  "expected": "crab",
+  "heard": "Crab.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-r",
+  "role": "word-drum",
+  "file": "blends-r/audio/word-drum.gen.mp3",
+  "expected": "drum",
+  "heard": "Drum.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-r",
+  "role": "word-frog",
+  "file": "blends-r/audio/word-frog.gen.mp3",
+  "expected": "frog",
+  "heard": "Frog",
+  "risk": 0.0
+ },
+ {
+  "lesson": "blends-r",
+  "role": "word-truck",
+  "file": "blends-r/audio/word-truck.gen.mp3",
+  "expected": "truck",
+  "heard": "Truck?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ch",
+  "role": "instr-read-and-pick",
+  "file": "digraphs-ch/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ch",
+  "role": "instr-sound-tap",
+  "file": "digraphs-ch/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear its sound, then read the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ch",
+  "role": "instr-word-builder",
+  "file": "digraphs-ch/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ch",
+  "role": "intro",
+  "file": "digraphs-ch/audio/intro.gen.mp3",
+  "expected": "ch! Two letters, one sound: ch, ch. Let's read: chick, chip, bench, lunch.",
+  "heard": "Ch, two letters, one sound, ch, ch, let's read. Chick-chip bench lunch.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ch",
+  "role": "praise-0",
+  "file": "digraphs-ch/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ch",
+  "role": "praise-1",
+  "file": "digraphs-ch/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ch",
+  "role": "praise-2",
+  "file": "digraphs-ch/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ch",
+  "role": "word-bench",
+  "file": "digraphs-ch/audio/word-bench.gen.mp3",
+  "expected": "bench",
+  "heard": "Bench.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ch",
+  "role": "word-chip",
+  "file": "digraphs-ch/audio/word-chip.gen.mp3",
+  "expected": "chip",
+  "heard": "Chip",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ch",
+  "role": "word-lunch",
+  "file": "digraphs-ch/audio/word-lunch.gen.mp3",
+  "expected": "lunch",
+  "heard": "Lunch.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ck",
+  "role": "instr-read-and-pick",
+  "file": "digraphs-ck/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ck",
+  "role": "instr-sound-tap",
+  "file": "digraphs-ck/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear its sound, then read the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ck",
+  "role": "instr-word-builder",
+  "file": "digraphs-ck/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ck",
+  "role": "praise-0",
+  "file": "digraphs-ck/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ck",
+  "role": "praise-1",
+  "file": "digraphs-ck/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ck",
+  "role": "praise-2",
+  "file": "digraphs-ck/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ck",
+  "role": "word-duck",
+  "file": "digraphs-ck/audio/word-duck.gen.mp3",
+  "expected": "duck",
+  "heard": "Duck.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ck",
+  "role": "word-kick",
+  "file": "digraphs-ck/audio/word-kick.gen.mp3",
+  "expected": "kick",
+  "heard": "Kick.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ck",
+  "role": "word-rock",
+  "file": "digraphs-ck/audio/word-rock.gen.mp3",
+  "expected": "rock",
+  "heard": "Rock.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-ck",
+  "role": "word-socks",
+  "file": "digraphs-ck/audio/word-socks.gen.mp3",
+  "expected": "socks",
+  "heard": "Socks.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-sh",
+  "role": "instr-read-and-pick",
+  "file": "digraphs-sh/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-sh",
+  "role": "instr-word-builder",
+  "file": "digraphs-sh/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-sh",
+  "role": "praise-0",
+  "file": "digraphs-sh/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-sh",
+  "role": "praise-1",
+  "file": "digraphs-sh/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-sh",
+  "role": "praise-2",
+  "file": "digraphs-sh/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-sh",
+  "role": "word-dish",
+  "file": "digraphs-sh/audio/word-dish.gen.mp3",
+  "expected": "dish",
+  "heard": "Dish.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-sh",
+  "role": "word-fish",
+  "file": "digraphs-sh/audio/word-fish.gen.mp3",
+  "expected": "fish",
+  "heard": "Fish.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-sh",
+  "role": "word-ship",
+  "file": "digraphs-sh/audio/word-ship.gen.mp3",
+  "expected": "ship",
+  "heard": "Ship.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-sh",
+  "role": "word-shop",
+  "file": "digraphs-sh/audio/word-shop.gen.mp3",
+  "expected": "shop",
+  "heard": "Shop.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-th",
+  "role": "instr-read-and-pick",
+  "file": "digraphs-th/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-th",
+  "role": "instr-sound-tap",
+  "file": "digraphs-th/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear its sound, then read the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-th",
+  "role": "instr-word-builder",
+  "file": "digraphs-th/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-th",
+  "role": "praise-0",
+  "file": "digraphs-th/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-th",
+  "role": "praise-1",
+  "file": "digraphs-th/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-th",
+  "role": "praise-2",
+  "file": "digraphs-th/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-th",
+  "role": "word-bath",
+  "file": "digraphs-th/audio/word-bath.gen.mp3",
+  "expected": "bath",
+  "heard": "Bath.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-th",
+  "role": "word-math",
+  "file": "digraphs-th/audio/word-math.gen.mp3",
+  "expected": "math",
+  "heard": "Math.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-th",
+  "role": "word-moth",
+  "file": "digraphs-th/audio/word-moth.gen.mp3",
+  "expected": "moth",
+  "heard": "Moth.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "digraphs-th",
+  "role": "word-path",
+  "file": "digraphs-th/audio/word-path.gen.mp3",
+  "expected": "path",
+  "heard": "path",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-meals",
+  "role": "instr-listen-and-tap",
+  "file": "everyday-english-meals/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen, then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-meals",
+  "role": "instr-match-picture",
+  "file": "everyday-english-meals/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-meals",
+  "role": "instr-memory",
+  "file": "everyday-english-meals/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-meals",
+  "role": "instr-read-and-pick",
+  "file": "everyday-english-meals/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-meals",
+  "role": "intro",
+  "file": "everyday-english-meals/audio/intro.gen.mp3",
+  "expected": "Meals! Breakfast. Lunch. Dinner!",
+  "heard": "Meals Breakfast Lunch Dinner",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-meals",
+  "role": "praise-0",
+  "file": "everyday-english-meals/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-meals",
+  "role": "praise-1",
+  "file": "everyday-english-meals/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-meals",
+  "role": "praise-2",
+  "file": "everyday-english-meals/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-meals",
+  "role": "word-breakfast",
+  "file": "everyday-english-meals/audio/word-breakfast.gen.mp3",
+  "expected": "breakfast",
+  "heard": "Breakfast",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-meals",
+  "role": "word-dinner",
+  "file": "everyday-english-meals/audio/word-dinner.gen.mp3",
+  "expected": "dinner",
+  "heard": "Dinner.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-meals",
+  "role": "word-lunch",
+  "file": "everyday-english-meals/audio/word-lunch.gen.mp3",
+  "expected": "lunch",
+  "heard": "Lunch.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-play",
+  "role": "instr-listen-and-tap",
+  "file": "everyday-english-play/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen, then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-play",
+  "role": "instr-match-picture",
+  "file": "everyday-english-play/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-play",
+  "role": "instr-memory",
+  "file": "everyday-english-play/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-play",
+  "role": "instr-read-and-pick",
+  "file": "everyday-english-play/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-play",
+  "role": "intro",
+  "file": "everyday-english-play/audio/intro.gen.mp3",
+  "expected": "Time to play! A football. A bike. Paint. A kite!",
+  "heard": "Time to play, a football, a bike, paint, a kite.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-play",
+  "role": "praise-0",
+  "file": "everyday-english-play/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-play",
+  "role": "praise-1",
+  "file": "everyday-english-play/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-play",
+  "role": "praise-2",
+  "file": "everyday-english-play/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-play",
+  "role": "word-bike",
+  "file": "everyday-english-play/audio/word-bike.gen.mp3",
+  "expected": "bike",
+  "heard": "bike.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-play",
+  "role": "word-football",
+  "file": "everyday-english-play/audio/word-football.gen.mp3",
+  "expected": "football",
+  "heard": "football.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-play",
+  "role": "word-paint",
+  "file": "everyday-english-play/audio/word-paint.gen.mp3",
+  "expected": "paint",
+  "heard": "paint.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "instr-fill-the-gap",
+  "file": "everyday-english-school/audio/instr-fill-the-gap.gen.mp3",
+  "expected": "Read. Then tap the word that fits!",
+  "heard": "Read, then tap the word that fits.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "instr-listen-and-tap",
+  "file": "everyday-english-school/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen, then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "instr-match-picture",
+  "file": "everyday-english-school/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "instr-memory",
+  "file": "everyday-english-school/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "instr-read-and-pick",
+  "file": "everyday-english-school/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "instr-sentence-builder",
+  "file": "everyday-english-school/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "instr-true-or-false",
+  "file": "everyday-english-school/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence, does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "intro",
+  "file": "everyday-english-school/audio/intro.gen.mp3",
+  "expected": "At school! A pencil. A book. A bag. A ruler!",
+  "heard": "At school, a pencil, a book, a bag, a ruler.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "praise-0",
+  "file": "everyday-english-school/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "praise-1",
+  "file": "everyday-english-school/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "praise-2",
+  "file": "everyday-english-school/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "sentence-1",
+  "file": "everyday-english-school/audio/sentence-1.gen.mp3",
+  "expected": "I have a pencil.",
+  "heard": "I have a pencil.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "sentence-2",
+  "file": "everyday-english-school/audio/sentence-2.gen.mp3",
+  "expected": "I see a book.",
+  "heard": "I see a book.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "sentence-3",
+  "file": "everyday-english-school/audio/sentence-3.gen.mp3",
+  "expected": "I have a bag.",
+  "heard": "I have a bag.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "sentence-4",
+  "file": "everyday-english-school/audio/sentence-4.gen.mp3",
+  "expected": "I see a ruler.",
+  "heard": "I see a ruler.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "word-bag",
+  "file": "everyday-english-school/audio/word-bag.gen.mp3",
+  "expected": "bag",
+  "heard": "bag.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "word-book",
+  "file": "everyday-english-school/audio/word-book.gen.mp3",
+  "expected": "book",
+  "heard": "book.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "word-pencil",
+  "file": "everyday-english-school/audio/word-pencil.gen.mp3",
+  "expected": "pencil",
+  "heard": "Pencil",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-school",
+  "role": "word-ruler",
+  "file": "everyday-english-school/audio/word-ruler.gen.mp3",
+  "expected": "ruler",
+  "heard": "Ruler",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "instr-fill-the-gap",
+  "file": "everyday-english-town/audio/instr-fill-the-gap.gen.mp3",
+  "expected": "Read. Then tap the word that fits!",
+  "heard": "Read, then tap the word that fits.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "instr-listen-and-tap",
+  "file": "everyday-english-town/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "instr-match-picture",
+  "file": "everyday-english-town/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "instr-memory",
+  "file": "everyday-english-town/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "instr-read-and-pick",
+  "file": "everyday-english-town/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "instr-sentence-builder",
+  "file": "everyday-english-town/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "instr-true-or-false",
+  "file": "everyday-english-town/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence. Does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "praise-0",
+  "file": "everyday-english-town/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "praise-1",
+  "file": "everyday-english-town/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "praise-2",
+  "file": "everyday-english-town/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "sentence-1",
+  "file": "everyday-english-town/audio/sentence-1.gen.mp3",
+  "expected": "I go to school.",
+  "heard": "I go to school.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "sentence-2",
+  "file": "everyday-english-town/audio/sentence-2.gen.mp3",
+  "expected": "I go to the park.",
+  "heard": "I go to the park.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "sentence-3",
+  "file": "everyday-english-town/audio/sentence-3.gen.mp3",
+  "expected": "I go to the hospital.",
+  "heard": "I go to the hospital.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "sentence-4",
+  "file": "everyday-english-town/audio/sentence-4.gen.mp3",
+  "expected": "I see the shop.",
+  "heard": "I see the shop.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "word-hospital",
+  "file": "everyday-english-town/audio/word-hospital.gen.mp3",
+  "expected": "hospital",
+  "heard": "hospital",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "word-park",
+  "file": "everyday-english-town/audio/word-park.gen.mp3",
+  "expected": "park",
+  "heard": "Park.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "word-school",
+  "file": "everyday-english-town/audio/word-school.gen.mp3",
+  "expected": "school",
+  "heard": "school.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-town",
+  "role": "word-shop",
+  "file": "everyday-english-town/audio/word-shop.gen.mp3",
+  "expected": "shop",
+  "heard": "Shop.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "instr-fill-the-gap",
+  "file": "everyday-english-weather-1/audio/instr-fill-the-gap.gen.mp3",
+  "expected": "Read. Then tap the word that fits!",
+  "heard": "Read, then tap the word that fits.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "instr-listen-and-tap",
+  "file": "everyday-english-weather-1/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "instr-match-picture",
+  "file": "everyday-english-weather-1/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "instr-memory",
+  "file": "everyday-english-weather-1/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "instr-read-and-pick",
+  "file": "everyday-english-weather-1/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "instr-sentence-builder",
+  "file": "everyday-english-weather-1/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "instr-true-or-false",
+  "file": "everyday-english-weather-1/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence, does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "intro",
+  "file": "everyday-english-weather-1/audio/intro.gen.mp3",
+  "expected": "The weather! Sunny. Rainy. Cloudy!",
+  "heard": "The weather sunny rainy cloudy.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "praise-0",
+  "file": "everyday-english-weather-1/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "praise-1",
+  "file": "everyday-english-weather-1/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "praise-2",
+  "file": "everyday-english-weather-1/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "sentence-1",
+  "file": "everyday-english-weather-1/audio/sentence-1.gen.mp3",
+  "expected": "It is sunny.",
+  "heard": "It is sunny.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "sentence-2",
+  "file": "everyday-english-weather-1/audio/sentence-2.gen.mp3",
+  "expected": "It is rainy.",
+  "heard": "It is rainy.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "sentence-3",
+  "file": "everyday-english-weather-1/audio/sentence-3.gen.mp3",
+  "expected": "It is cloudy.",
+  "heard": "It is cloudy.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "word-cloudy",
+  "file": "everyday-english-weather-1/audio/word-cloudy.gen.mp3",
+  "expected": "cloudy",
+  "heard": "Cloudy.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "word-rainy",
+  "file": "everyday-english-weather-1/audio/word-rainy.gen.mp3",
+  "expected": "rainy",
+  "heard": "Rainy.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-1",
+  "role": "word-sunny",
+  "file": "everyday-english-weather-1/audio/word-sunny.gen.mp3",
+  "expected": "sunny",
+  "heard": "Sunny.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "instr-fill-the-gap",
+  "file": "everyday-english-weather-2/audio/instr-fill-the-gap.gen.mp3",
+  "expected": "Read. Then tap the word that fits!",
+  "heard": "Read, then tap the word that fits.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "instr-listen-and-tap",
+  "file": "everyday-english-weather-2/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen, then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "instr-match-picture",
+  "file": "everyday-english-weather-2/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "instr-memory",
+  "file": "everyday-english-weather-2/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "instr-read-and-pick",
+  "file": "everyday-english-weather-2/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "instr-sentence-builder",
+  "file": "everyday-english-weather-2/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "instr-true-or-false",
+  "file": "everyday-english-weather-2/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence. Does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "intro",
+  "file": "everyday-english-weather-2/audio/intro.gen.mp3",
+  "expected": "More weather! Windy. Snowy. Stormy!",
+  "heard": "More weather, windy, snowy, stormy.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "praise-0",
+  "file": "everyday-english-weather-2/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "praise-1",
+  "file": "everyday-english-weather-2/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "praise-2",
+  "file": "everyday-english-weather-2/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "sentence-1",
+  "file": "everyday-english-weather-2/audio/sentence-1.gen.mp3",
+  "expected": "It is windy.",
+  "heard": "It is windy.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "sentence-2",
+  "file": "everyday-english-weather-2/audio/sentence-2.gen.mp3",
+  "expected": "It is snowy.",
+  "heard": "It is snowy.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "sentence-3",
+  "file": "everyday-english-weather-2/audio/sentence-3.gen.mp3",
+  "expected": "It is stormy.",
+  "heard": "It is stormy.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "word-snowy",
+  "file": "everyday-english-weather-2/audio/word-snowy.gen.mp3",
+  "expected": "snowy",
+  "heard": "Snowy.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "word-stormy",
+  "file": "everyday-english-weather-2/audio/word-stormy.gen.mp3",
+  "expected": "stormy",
+  "heard": "Stormy?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "everyday-english-weather-2",
+  "role": "word-windy",
+  "file": "everyday-english-weather-2/audio/word-windy.gen.mp3",
+  "expected": "windy",
+  "heard": "Windy.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "instr-fill-the-gap",
+  "file": "grammar-starters-a-an/audio/instr-fill-the-gap.gen.mp3",
+  "expected": "Read. Then tap the word that fits!",
+  "heard": "read, then tap the word that fits.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "instr-read-and-pick",
+  "file": "grammar-starters-a-an/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "instr-sentence-builder",
+  "file": "grammar-starters-a-an/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "instr-true-or-false",
+  "file": "grammar-starters-a-an/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence. Does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "praise-0",
+  "file": "grammar-starters-a-an/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "praise-1",
+  "file": "grammar-starters-a-an/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "praise-2",
+  "file": "grammar-starters-a-an/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "sentence-1",
+  "file": "grammar-starters-a-an/audio/sentence-1.gen.mp3",
+  "expected": "I see an apple.",
+  "heard": "I see an apple.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "sentence-2",
+  "file": "grammar-starters-a-an/audio/sentence-2.gen.mp3",
+  "expected": "I see an igloo.",
+  "heard": "I see an igloo.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "sentence-3",
+  "file": "grammar-starters-a-an/audio/sentence-3.gen.mp3",
+  "expected": "I have an umbrella.",
+  "heard": "I have an umbrella.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "sentence-4",
+  "file": "grammar-starters-a-an/audio/sentence-4.gen.mp3",
+  "expected": "I see a bed.",
+  "heard": "I see a bed.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "sentence-5",
+  "file": "grammar-starters-a-an/audio/sentence-5.gen.mp3",
+  "expected": "I have an orange.",
+  "heard": "I have an orange.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "word-apple",
+  "file": "grammar-starters-a-an/audio/word-apple.gen.mp3",
+  "expected": "apple",
+  "heard": "Apple",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "word-bed",
+  "file": "grammar-starters-a-an/audio/word-bed.gen.mp3",
+  "expected": "bed",
+  "heard": "Bed.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "word-orange",
+  "file": "grammar-starters-a-an/audio/word-orange.gen.mp3",
+  "expected": "orange",
+  "heard": "orange",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-a-an",
+  "role": "word-umbrella",
+  "file": "grammar-starters-a-an/audio/word-umbrella.gen.mp3",
+  "expected": "umbrella",
+  "heard": "Umbrella",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "instr-fill-the-gap",
+  "file": "grammar-starters-can/audio/instr-fill-the-gap.gen.mp3",
+  "expected": "Read. Then tap the word that fits!",
+  "heard": "Read, then tap the word that fits.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "instr-read-and-pick",
+  "file": "grammar-starters-can/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "instr-sentence-builder",
+  "file": "grammar-starters-can/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "instr-true-or-false",
+  "file": "grammar-starters-can/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence. Does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "intro",
+  "file": "grammar-starters-can/audio/intro.gen.mp3",
+  "expected": "What can you do? I can jump. I can clap. I can run. I can sit!",
+  "heard": "What can you do? I can jump, I can clap, I can run, I can sit.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "praise-0",
+  "file": "grammar-starters-can/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "praise-1",
+  "file": "grammar-starters-can/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "praise-2",
+  "file": "grammar-starters-can/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "sentence-1",
+  "file": "grammar-starters-can/audio/sentence-1.gen.mp3",
+  "expected": "I can jump.",
+  "heard": "I can jump.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "sentence-2",
+  "file": "grammar-starters-can/audio/sentence-2.gen.mp3",
+  "expected": "I can clap.",
+  "heard": "I can clap.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "sentence-3",
+  "file": "grammar-starters-can/audio/sentence-3.gen.mp3",
+  "expected": "I can run.",
+  "heard": "I can run.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "sentence-4",
+  "file": "grammar-starters-can/audio/sentence-4.gen.mp3",
+  "expected": "I can sit.",
+  "heard": "I can sit.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "word-clap",
+  "file": "grammar-starters-can/audio/word-clap.gen.mp3",
+  "expected": "clap",
+  "heard": "Clap.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "word-jump",
+  "file": "grammar-starters-can/audio/word-jump.gen.mp3",
+  "expected": "jump",
+  "heard": "Jump.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "word-run",
+  "file": "grammar-starters-can/audio/word-run.gen.mp3",
+  "expected": "run",
+  "heard": "Run.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-can",
+  "role": "word-sit",
+  "file": "grammar-starters-can/audio/word-sit.gen.mp3",
+  "expected": "sit",
+  "heard": "Sit.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "instr-fill-the-gap",
+  "file": "grammar-starters-has-have/audio/instr-fill-the-gap.gen.mp3",
+  "expected": "Read. Then tap the word that fits!",
+  "heard": "Read, then tap the word that fits.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "instr-read-and-pick",
+  "file": "grammar-starters-has-have/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "instr-sentence-builder",
+  "file": "grammar-starters-has-have/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "instr-true-or-false",
+  "file": "grammar-starters-has-have/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence. Does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "intro",
+  "file": "grammar-starters-has-have/audio/intro.gen.mp3",
+  "expected": "One has. Two have! Look at the pictures.",
+  "heard": "One has to have. Look at the pictures.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "praise-0",
+  "file": "grammar-starters-has-have/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "praise-1",
+  "file": "grammar-starters-has-have/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "praise-2",
+  "file": "grammar-starters-has-have/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "sentence-1",
+  "file": "grammar-starters-has-have/audio/sentence-1.gen.mp3",
+  "expected": "The hen has an egg.",
+  "heard": "The hen has an egg.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "sentence-2",
+  "file": "grammar-starters-has-have/audio/sentence-2.gen.mp3",
+  "expected": "The hens have eggs.",
+  "heard": "The hens have eggs.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "sentence-3",
+  "file": "grammar-starters-has-have/audio/sentence-3.gen.mp3",
+  "expected": "The pig has a wig.",
+  "heard": "The pig has a wig.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "sentence-4",
+  "file": "grammar-starters-has-have/audio/sentence-4.gen.mp3",
+  "expected": "The pigs have wigs.",
+  "heard": "The pigs have wigs.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "sentence-5",
+  "file": "grammar-starters-has-have/audio/sentence-5.gen.mp3",
+  "expected": "The cat has a hat.",
+  "heard": "The cat has a hat.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "sentence-6",
+  "file": "grammar-starters-has-have/audio/sentence-6.gen.mp3",
+  "expected": "The cats have hats.",
+  "heard": "The cats have hats.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "word-cat",
+  "file": "grammar-starters-has-have/audio/word-cat.gen.mp3",
+  "expected": "cat",
+  "heard": "Cat.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "word-hen",
+  "file": "grammar-starters-has-have/audio/word-hen.gen.mp3",
+  "expected": "hen",
+  "heard": "Hen.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-has-have",
+  "role": "word-pig",
+  "file": "grammar-starters-has-have/audio/word-pig.gen.mp3",
+  "expected": "pig",
+  "heard": "Pig",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "instr-fill-the-gap",
+  "file": "grammar-starters-is-are/audio/instr-fill-the-gap.gen.mp3",
+  "expected": "Read. Then tap the word that fits!",
+  "heard": "Read, then tap the word that fits.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "instr-read-and-pick",
+  "file": "grammar-starters-is-are/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "instr-sentence-builder",
+  "file": "grammar-starters-is-are/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "instr-true-or-false",
+  "file": "grammar-starters-is-are/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence. Does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "praise-0",
+  "file": "grammar-starters-is-are/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "praise-1",
+  "file": "grammar-starters-is-are/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "praise-2",
+  "file": "grammar-starters-is-are/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "sentence-1",
+  "file": "grammar-starters-is-are/audio/sentence-1.gen.mp3",
+  "expected": "The duck is big.",
+  "heard": "The duck is big.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "sentence-2",
+  "file": "grammar-starters-is-are/audio/sentence-2.gen.mp3",
+  "expected": "The ducks are big.",
+  "heard": "The ducks are big.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "sentence-3",
+  "file": "grammar-starters-is-are/audio/sentence-3.gen.mp3",
+  "expected": "The frog is wet.",
+  "heard": "The frog is wet.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "sentence-4",
+  "file": "grammar-starters-is-are/audio/sentence-4.gen.mp3",
+  "expected": "The frogs are wet.",
+  "heard": "The frogs are wet.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "sentence-5",
+  "file": "grammar-starters-is-are/audio/sentence-5.gen.mp3",
+  "expected": "The fish is red.",
+  "heard": "The fish is red.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "sentence-6",
+  "file": "grammar-starters-is-are/audio/sentence-6.gen.mp3",
+  "expected": "The fish are red.",
+  "heard": "The fish are red.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "word-duck",
+  "file": "grammar-starters-is-are/audio/word-duck.gen.mp3",
+  "expected": "duck",
+  "heard": "Duck.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "word-fish",
+  "file": "grammar-starters-is-are/audio/word-fish.gen.mp3",
+  "expected": "fish",
+  "heard": "Fish.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "grammar-starters-is-are",
+  "role": "word-frog",
+  "file": "grammar-starters-is-are/audio/word-frog.gen.mp3",
+  "expected": "frog",
+  "heard": "Frog.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-a",
+  "role": "instr-read-and-pick",
+  "file": "magic-e-a/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-a",
+  "role": "instr-word-builder",
+  "file": "magic-e-a/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-a",
+  "role": "praise-0",
+  "file": "magic-e-a/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-a",
+  "role": "praise-1",
+  "file": "magic-e-a/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-a",
+  "role": "praise-2",
+  "file": "magic-e-a/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-a",
+  "role": "word-cake",
+  "file": "magic-e-a/audio/word-cake.gen.mp3",
+  "expected": "cake",
+  "heard": "Cake.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-a",
+  "role": "word-grapes",
+  "file": "magic-e-a/audio/word-grapes.gen.mp3",
+  "expected": "grapes",
+  "heard": "Grapes",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-a",
+  "role": "word-plane",
+  "file": "magic-e-a/audio/word-plane.gen.mp3",
+  "expected": "plane",
+  "heard": "plane",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-a",
+  "role": "word-snake",
+  "file": "magic-e-a/audio/word-snake.gen.mp3",
+  "expected": "snake",
+  "heard": "Snake.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-i",
+  "role": "instr-read-and-pick",
+  "file": "magic-e-i/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-i",
+  "role": "instr-word-builder",
+  "file": "magic-e-i/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-i",
+  "role": "praise-0",
+  "file": "magic-e-i/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-i",
+  "role": "praise-1",
+  "file": "magic-e-i/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-i",
+  "role": "praise-2",
+  "file": "magic-e-i/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-i",
+  "role": "word-bike",
+  "file": "magic-e-i/audio/word-bike.gen.mp3",
+  "expected": "bike",
+  "heard": "bike.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-i",
+  "role": "word-five",
+  "file": "magic-e-i/audio/word-five.gen.mp3",
+  "expected": "five",
+  "heard": "5",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-i",
+  "role": "word-nine",
+  "file": "magic-e-i/audio/word-nine.gen.mp3",
+  "expected": "nine",
+  "heard": "9.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-o-u",
+  "role": "instr-read-and-pick",
+  "file": "magic-e-o-u/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-o-u",
+  "role": "instr-word-builder",
+  "file": "magic-e-o-u/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-o-u",
+  "role": "praise-0",
+  "file": "magic-e-o-u/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-o-u",
+  "role": "praise-1",
+  "file": "magic-e-o-u/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-o-u",
+  "role": "praise-2",
+  "file": "magic-e-o-u/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-o-u",
+  "role": "word-bone",
+  "file": "magic-e-o-u/audio/word-bone.gen.mp3",
+  "expected": "bone",
+  "heard": "bone.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-o-u",
+  "role": "word-cube",
+  "file": "magic-e-o-u/audio/word-cube.gen.mp3",
+  "expected": "cube",
+  "heard": "Cube.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-o-u",
+  "role": "word-nose",
+  "file": "magic-e-o-u/audio/word-nose.gen.mp3",
+  "expected": "nose",
+  "heard": "nose",
+  "risk": 0.0
+ },
+ {
+  "lesson": "magic-e-o-u",
+  "role": "word-rose",
+  "file": "magic-e-o-u/audio/word-rose.gen.mp3",
+  "expected": "rose",
+  "heard": "Rose.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "instr-fill-the-gap",
+  "file": "my-sentences-a-an/audio/instr-fill-the-gap.gen.mp3",
+  "expected": "Read. Then tap the word that fits!",
+  "heard": "Read. Then tap the word that fits.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "instr-sentence-builder",
+  "file": "my-sentences-a-an/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "instr-true-or-false",
+  "file": "my-sentences-a-an/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence. Does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "intro",
+  "file": "my-sentences-a-an/audio/intro.gen.mp3",
+  "expected": "A hen. An egg! Listen to the first sound, then read.",
+  "heard": "A hen, an egg, listen to the first sound then read.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "praise-0",
+  "file": "my-sentences-a-an/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "praise-1",
+  "file": "my-sentences-a-an/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "praise-2",
+  "file": "my-sentences-a-an/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "sentence-1",
+  "file": "my-sentences-a-an/audio/sentence-1.gen.mp3",
+  "expected": "I see an ant.",
+  "heard": "I see an ant.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "sentence-2",
+  "file": "my-sentences-a-an/audio/sentence-2.gen.mp3",
+  "expected": "I have an egg.",
+  "heard": "I have an egg.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "sentence-3",
+  "file": "my-sentences-a-an/audio/sentence-3.gen.mp3",
+  "expected": "I have an apple.",
+  "heard": "I have an apple.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "sentence-4",
+  "file": "my-sentences-a-an/audio/sentence-4.gen.mp3",
+  "expected": "I see a hen.",
+  "heard": "I see a hen.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "sentence-5",
+  "file": "my-sentences-a-an/audio/sentence-5.gen.mp3",
+  "expected": "I have a cake.",
+  "heard": "I have a cake.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "sentence-6",
+  "file": "my-sentences-a-an/audio/sentence-6.gen.mp3",
+  "expected": "It is a bus.",
+  "heard": "It is a bus.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "word-apple",
+  "file": "my-sentences-a-an/audio/word-apple.gen.mp3",
+  "expected": "apple",
+  "heard": "Apple.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "word-bus",
+  "file": "my-sentences-a-an/audio/word-bus.gen.mp3",
+  "expected": "bus",
+  "heard": "BUS!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "word-cake",
+  "file": "my-sentences-a-an/audio/word-cake.gen.mp3",
+  "expected": "cake",
+  "heard": "Cake?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "word-egg",
+  "file": "my-sentences-a-an/audio/word-egg.gen.mp3",
+  "expected": "egg",
+  "heard": "egg",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-a-an",
+  "role": "word-hen",
+  "file": "my-sentences-a-an/audio/word-hen.gen.mp3",
+  "expected": "hen",
+  "heard": "Hen.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "instr-fill-the-gap",
+  "file": "my-sentences-is-are/audio/instr-fill-the-gap.gen.mp3",
+  "expected": "Read. Then tap the word that fits!",
+  "heard": "Read, then tap the word that fits.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "instr-sentence-builder",
+  "file": "my-sentences-is-are/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "instr-true-or-false",
+  "file": "my-sentences-is-are/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence, does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "intro",
+  "file": "my-sentences-is-are/audio/intro.gen.mp3",
+  "expected": "One cat is. Two cats are! Look at the picture, then read.",
+  "heard": "One cat is, two cats are, look at the picture then read.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "praise-0",
+  "file": "my-sentences-is-are/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "praise-1",
+  "file": "my-sentences-is-are/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "praise-2",
+  "file": "my-sentences-is-are/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "sentence-1",
+  "file": "my-sentences-is-are/audio/sentence-1.gen.mp3",
+  "expected": "The cat is big.",
+  "heard": "The cat is big.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "sentence-2",
+  "file": "my-sentences-is-are/audio/sentence-2.gen.mp3",
+  "expected": "The cats are big.",
+  "heard": "The cats are big.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "sentence-3",
+  "file": "my-sentences-is-are/audio/sentence-3.gen.mp3",
+  "expected": "The pig is pink.",
+  "heard": "The pig is pink.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "sentence-4",
+  "file": "my-sentences-is-are/audio/sentence-4.gen.mp3",
+  "expected": "The pigs are pink.",
+  "heard": "The pigs are pink.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "sentence-5",
+  "file": "my-sentences-is-are/audio/sentence-5.gen.mp3",
+  "expected": "The duck is wet.",
+  "heard": "The duck is wet.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "sentence-6",
+  "file": "my-sentences-is-are/audio/sentence-6.gen.mp3",
+  "expected": "The dogs are on the bed.",
+  "heard": "The dogs are on the bed.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "word-cat",
+  "file": "my-sentences-is-are/audio/word-cat.gen.mp3",
+  "expected": "cat",
+  "heard": "cat",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "word-dog",
+  "file": "my-sentences-is-are/audio/word-dog.gen.mp3",
+  "expected": "dog",
+  "heard": "Dog",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "word-duck",
+  "file": "my-sentences-is-are/audio/word-duck.gen.mp3",
+  "expected": "duck",
+  "heard": "Duck. . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-is-are",
+  "role": "word-pig",
+  "file": "my-sentences-is-are/audio/word-pig.gen.mp3",
+  "expected": "pig",
+  "heard": "Pig",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "instr-fill-the-gap",
+  "file": "my-sentences-mix/audio/instr-fill-the-gap.gen.mp3",
+  "expected": "Read. Then tap the word that fits!",
+  "heard": "Read, then tap the word that fits.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "instr-sentence-builder",
+  "file": "my-sentences-mix/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "instr-true-or-false",
+  "file": "my-sentences-mix/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence, does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "intro",
+  "file": "my-sentences-mix/audio/intro.gen.mp3",
+  "expected": "Look at the picture. Is it one, or two? Then read!",
+  "heard": "Look at the picture. Is it one or two? Then read.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "praise-0",
+  "file": "my-sentences-mix/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "praise-1",
+  "file": "my-sentences-mix/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "praise-2",
+  "file": "my-sentences-mix/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "sentence-1",
+  "file": "my-sentences-mix/audio/sentence-1.gen.mp3",
+  "expected": "The ship is red.",
+  "heard": "The ship is red.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "sentence-2",
+  "file": "my-sentences-mix/audio/sentence-2.gen.mp3",
+  "expected": "The kites are up.",
+  "heard": "The kites are up.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "sentence-3",
+  "file": "my-sentences-mix/audio/sentence-3.gen.mp3",
+  "expected": "The frogs are on a rock.",
+  "heard": "The frogs are on a rock.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "sentence-4",
+  "file": "my-sentences-mix/audio/sentence-4.gen.mp3",
+  "expected": "It is an egg.",
+  "heard": "It is an egg.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "sentence-5",
+  "file": "my-sentences-mix/audio/sentence-5.gen.mp3",
+  "expected": "A fish is in the dish.",
+  "heard": "A fish is in the dish.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "word-egg",
+  "file": "my-sentences-mix/audio/word-egg.gen.mp3",
+  "expected": "egg",
+  "heard": "Egg.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "word-fish",
+  "file": "my-sentences-mix/audio/word-fish.gen.mp3",
+  "expected": "fish",
+  "heard": "Fish.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "word-frog",
+  "file": "my-sentences-mix/audio/word-frog.gen.mp3",
+  "expected": "frog",
+  "heard": "frog",
+  "risk": 0.0
+ },
+ {
+  "lesson": "my-sentences-mix",
+  "role": "word-ship",
+  "file": "my-sentences-mix/audio/word-ship.gen.mp3",
+  "expected": "ship",
+  "heard": "Ship.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-1",
+  "role": "instr-listen-and-tap",
+  "file": "numbers-time-clock-1/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-1",
+  "role": "instr-match-picture",
+  "file": "numbers-time-clock-1/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-1",
+  "role": "instr-memory",
+  "file": "numbers-time-clock-1/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-1",
+  "role": "instr-read-and-pick",
+  "file": "numbers-time-clock-1/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-1",
+  "role": "intro",
+  "file": "numbers-time-clock-1/audio/intro.gen.mp3",
+  "expected": "What time is it? One o'clock. Two o'clock. Three o'clock!",
+  "heard": "What time is it, one o'clock, two o'clock, three o'clock?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-1",
+  "role": "praise-0",
+  "file": "numbers-time-clock-1/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-1",
+  "role": "praise-1",
+  "file": "numbers-time-clock-1/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-1",
+  "role": "praise-2",
+  "file": "numbers-time-clock-1/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-1",
+  "role": "word-one-o-clock",
+  "file": "numbers-time-clock-1/audio/word-one-o-clock.gen.mp3",
+  "expected": "one o'clock",
+  "heard": "1 o'clock.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-1",
+  "role": "word-three-o-clock",
+  "file": "numbers-time-clock-1/audio/word-three-o-clock.gen.mp3",
+  "expected": "three o'clock",
+  "heard": "3 o'clock",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-1",
+  "role": "word-two-o-clock",
+  "file": "numbers-time-clock-1/audio/word-two-o-clock.gen.mp3",
+  "expected": "two o'clock",
+  "heard": "2 o'clock.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-2",
+  "role": "instr-listen-and-tap",
+  "file": "numbers-time-clock-2/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen, then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-2",
+  "role": "instr-match-picture",
+  "file": "numbers-time-clock-2/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-2",
+  "role": "instr-memory",
+  "file": "numbers-time-clock-2/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-2",
+  "role": "instr-read-and-pick",
+  "file": "numbers-time-clock-2/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-2",
+  "role": "intro",
+  "file": "numbers-time-clock-2/audio/intro.gen.mp3",
+  "expected": "What time is it? Four o'clock. Five o'clock. Six o'clock!",
+  "heard": "What time is it? Four o'clock. Five o'clock. Six o'clock.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-2",
+  "role": "praise-0",
+  "file": "numbers-time-clock-2/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-2",
+  "role": "praise-1",
+  "file": "numbers-time-clock-2/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-2",
+  "role": "praise-2",
+  "file": "numbers-time-clock-2/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-2",
+  "role": "word-five-o-clock",
+  "file": "numbers-time-clock-2/audio/word-five-o-clock.gen.mp3",
+  "expected": "five o'clock",
+  "heard": "5 o'clock.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-2",
+  "role": "word-four-o-clock",
+  "file": "numbers-time-clock-2/audio/word-four-o-clock.gen.mp3",
+  "expected": "four o'clock",
+  "heard": "four o'clock",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-2",
+  "role": "word-six-o-clock",
+  "file": "numbers-time-clock-2/audio/word-six-o-clock.gen.mp3",
+  "expected": "six o'clock",
+  "heard": "6 o'clock.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-3",
+  "role": "instr-listen-and-tap",
+  "file": "numbers-time-clock-3/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen, then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-3",
+  "role": "instr-match-picture",
+  "file": "numbers-time-clock-3/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-3",
+  "role": "instr-memory",
+  "file": "numbers-time-clock-3/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-3",
+  "role": "instr-read-and-pick",
+  "file": "numbers-time-clock-3/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-3",
+  "role": "intro",
+  "file": "numbers-time-clock-3/audio/intro.gen.mp3",
+  "expected": "What time is it? Seven o'clock. Eight o'clock. Nine o'clock!",
+  "heard": "What time is it? 7 o'clock, 8 o'clock, 9 o'clock.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-3",
+  "role": "praise-0",
+  "file": "numbers-time-clock-3/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-3",
+  "role": "praise-1",
+  "file": "numbers-time-clock-3/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-3",
+  "role": "praise-2",
+  "file": "numbers-time-clock-3/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-3",
+  "role": "word-eight-o-clock",
+  "file": "numbers-time-clock-3/audio/word-eight-o-clock.gen.mp3",
+  "expected": "eight o'clock",
+  "heard": "8 o'clock.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-3",
+  "role": "word-nine-o-clock",
+  "file": "numbers-time-clock-3/audio/word-nine-o-clock.gen.mp3",
+  "expected": "nine o'clock",
+  "heard": "9 o'clock.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-3",
+  "role": "word-seven-o-clock",
+  "file": "numbers-time-clock-3/audio/word-seven-o-clock.gen.mp3",
+  "expected": "seven o'clock",
+  "heard": "7 o'clock.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-4",
+  "role": "instr-listen-and-tap",
+  "file": "numbers-time-clock-4/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen, then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-4",
+  "role": "instr-match-picture",
+  "file": "numbers-time-clock-4/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-4",
+  "role": "instr-memory",
+  "file": "numbers-time-clock-4/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-4",
+  "role": "instr-read-and-pick",
+  "file": "numbers-time-clock-4/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-4",
+  "role": "intro",
+  "file": "numbers-time-clock-4/audio/intro.gen.mp3",
+  "expected": "What time is it? Ten o'clock. Eleven o'clock. Twelve o'clock!",
+  "heard": "What time is it? 10 o'clock? 11 o'clock? 12 o'clock?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-4",
+  "role": "praise-0",
+  "file": "numbers-time-clock-4/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-4",
+  "role": "praise-1",
+  "file": "numbers-time-clock-4/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-4",
+  "role": "praise-2",
+  "file": "numbers-time-clock-4/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-4",
+  "role": "word-eleven-o-clock",
+  "file": "numbers-time-clock-4/audio/word-eleven-o-clock.gen.mp3",
+  "expected": "eleven o'clock",
+  "heard": "11 o'clock.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-4",
+  "role": "word-ten-o-clock",
+  "file": "numbers-time-clock-4/audio/word-ten-o-clock.gen.mp3",
+  "expected": "ten o'clock",
+  "heard": "10 o'clock.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-clock-4",
+  "role": "word-twelve-o-clock",
+  "file": "numbers-time-clock-4/audio/word-twelve-o-clock.gen.mp3",
+  "expected": "twelve o'clock",
+  "heard": "12 o'clock.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-1",
+  "role": "instr-listen-and-tap",
+  "file": "numbers-time-days-1/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-1",
+  "role": "instr-match-picture",
+  "file": "numbers-time-days-1/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-1",
+  "role": "instr-memory",
+  "file": "numbers-time-days-1/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-1",
+  "role": "instr-read-and-pick",
+  "file": "numbers-time-days-1/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-1",
+  "role": "intro",
+  "file": "numbers-time-days-1/audio/intro.gen.mp3",
+  "expected": "The days of the week! Monday. Tuesday. Wednesday. Thursday!",
+  "heard": "The days of the week, Monday, Tuesday, Wednesday, Thursday.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-1",
+  "role": "praise-0",
+  "file": "numbers-time-days-1/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-1",
+  "role": "praise-1",
+  "file": "numbers-time-days-1/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-1",
+  "role": "praise-2",
+  "file": "numbers-time-days-1/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-1",
+  "role": "word-monday",
+  "file": "numbers-time-days-1/audio/word-monday.gen.mp3",
+  "expected": "Monday",
+  "heard": "Monday.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-1",
+  "role": "word-thursday",
+  "file": "numbers-time-days-1/audio/word-thursday.gen.mp3",
+  "expected": "Thursday",
+  "heard": "Thursday.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-1",
+  "role": "word-tuesday",
+  "file": "numbers-time-days-1/audio/word-tuesday.gen.mp3",
+  "expected": "Tuesday",
+  "heard": "Tuesday",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-1",
+  "role": "word-wednesday",
+  "file": "numbers-time-days-1/audio/word-wednesday.gen.mp3",
+  "expected": "Wednesday",
+  "heard": "Wednesday.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-2",
+  "role": "instr-listen-and-tap",
+  "file": "numbers-time-days-2/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-2",
+  "role": "instr-match-picture",
+  "file": "numbers-time-days-2/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-2",
+  "role": "instr-memory",
+  "file": "numbers-time-days-2/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-2",
+  "role": "instr-read-and-pick",
+  "file": "numbers-time-days-2/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-2",
+  "role": "intro",
+  "file": "numbers-time-days-2/audio/intro.gen.mp3",
+  "expected": "More days! Friday. Saturday. Sunday!",
+  "heard": "More days. Friday. Saturday. Sunday.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-2",
+  "role": "praise-0",
+  "file": "numbers-time-days-2/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-2",
+  "role": "praise-1",
+  "file": "numbers-time-days-2/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-2",
+  "role": "praise-2",
+  "file": "numbers-time-days-2/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-2",
+  "role": "word-friday",
+  "file": "numbers-time-days-2/audio/word-friday.gen.mp3",
+  "expected": "Friday",
+  "heard": "Friday.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-2",
+  "role": "word-saturday",
+  "file": "numbers-time-days-2/audio/word-saturday.gen.mp3",
+  "expected": "Saturday",
+  "heard": "Saturday.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-days-2",
+  "role": "word-sunday",
+  "file": "numbers-time-days-2/audio/word-sunday.gen.mp3",
+  "expected": "Sunday",
+  "heard": "Sunday.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-1",
+  "role": "instr-listen-and-tap",
+  "file": "numbers-time-months-1/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-1",
+  "role": "instr-match-picture",
+  "file": "numbers-time-months-1/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-1",
+  "role": "instr-memory",
+  "file": "numbers-time-months-1/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-1",
+  "role": "instr-read-and-pick",
+  "file": "numbers-time-months-1/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-1",
+  "role": "praise-0",
+  "file": "numbers-time-months-1/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-1",
+  "role": "praise-1",
+  "file": "numbers-time-months-1/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-1",
+  "role": "praise-2",
+  "file": "numbers-time-months-1/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-1",
+  "role": "word-april",
+  "file": "numbers-time-months-1/audio/word-april.gen.mp3",
+  "expected": "April",
+  "heard": "April",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-1",
+  "role": "word-february",
+  "file": "numbers-time-months-1/audio/word-february.gen.mp3",
+  "expected": "February",
+  "heard": "February.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-1",
+  "role": "word-january",
+  "file": "numbers-time-months-1/audio/word-january.gen.mp3",
+  "expected": "January",
+  "heard": "January. //",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-1",
+  "role": "word-march",
+  "file": "numbers-time-months-1/audio/word-march.gen.mp3",
+  "expected": "March",
+  "heard": "March.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-2",
+  "role": "instr-listen-and-tap",
+  "file": "numbers-time-months-2/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen, then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-2",
+  "role": "instr-match-picture",
+  "file": "numbers-time-months-2/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-2",
+  "role": "instr-memory",
+  "file": "numbers-time-months-2/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-2",
+  "role": "instr-read-and-pick",
+  "file": "numbers-time-months-2/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-2",
+  "role": "intro",
+  "file": "numbers-time-months-2/audio/intro.gen.mp3",
+  "expected": "More months! May. June. July. August!",
+  "heard": "More months may June, July, August.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-2",
+  "role": "praise-0",
+  "file": "numbers-time-months-2/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-2",
+  "role": "praise-1",
+  "file": "numbers-time-months-2/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-2",
+  "role": "praise-2",
+  "file": "numbers-time-months-2/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-2",
+  "role": "word-august",
+  "file": "numbers-time-months-2/audio/word-august.gen.mp3",
+  "expected": "August",
+  "heard": "August.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-2",
+  "role": "word-july",
+  "file": "numbers-time-months-2/audio/word-july.gen.mp3",
+  "expected": "July",
+  "heard": "July.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-2",
+  "role": "word-june",
+  "file": "numbers-time-months-2/audio/word-june.gen.mp3",
+  "expected": "June",
+  "heard": "June.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-2",
+  "role": "word-may",
+  "file": "numbers-time-months-2/audio/word-may.gen.mp3",
+  "expected": "May",
+  "heard": "May",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-3",
+  "role": "instr-listen-and-tap",
+  "file": "numbers-time-months-3/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen, then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-3",
+  "role": "instr-match-picture",
+  "file": "numbers-time-months-3/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-3",
+  "role": "instr-memory",
+  "file": "numbers-time-months-3/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-3",
+  "role": "instr-read-and-pick",
+  "file": "numbers-time-months-3/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-3",
+  "role": "intro",
+  "file": "numbers-time-months-3/audio/intro.gen.mp3",
+  "expected": "The last months! September. October. November. December!",
+  "heard": "The last month's September, October, November, December.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-3",
+  "role": "praise-0",
+  "file": "numbers-time-months-3/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-3",
+  "role": "praise-1",
+  "file": "numbers-time-months-3/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-3",
+  "role": "praise-2",
+  "file": "numbers-time-months-3/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-3",
+  "role": "word-december",
+  "file": "numbers-time-months-3/audio/word-december.gen.mp3",
+  "expected": "December",
+  "heard": "December",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-3",
+  "role": "word-november",
+  "file": "numbers-time-months-3/audio/word-november.gen.mp3",
+  "expected": "November",
+  "heard": "November",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-3",
+  "role": "word-october",
+  "file": "numbers-time-months-3/audio/word-october.gen.mp3",
+  "expected": "October",
+  "heard": "October",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-months-3",
+  "role": "word-september",
+  "file": "numbers-time-months-3/audio/word-september.gen.mp3",
+  "expected": "September",
+  "heard": "September",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-1",
+  "role": "instr-listen-and-tap",
+  "file": "numbers-time-teens-1/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen, then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-1",
+  "role": "instr-match-picture",
+  "file": "numbers-time-teens-1/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-1",
+  "role": "instr-memory",
+  "file": "numbers-time-teens-1/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-1",
+  "role": "instr-read-and-pick",
+  "file": "numbers-time-teens-1/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-1",
+  "role": "intro",
+  "file": "numbers-time-teens-1/audio/intro.gen.mp3",
+  "expected": "Count more! Eleven. Twelve. Thirteen!",
+  "heard": "Count more, 11, 12, 13.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-1",
+  "role": "praise-0",
+  "file": "numbers-time-teens-1/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-1",
+  "role": "praise-1",
+  "file": "numbers-time-teens-1/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-1",
+  "role": "praise-2",
+  "file": "numbers-time-teens-1/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-1",
+  "role": "word-eleven",
+  "file": "numbers-time-teens-1/audio/word-eleven.gen.mp3",
+  "expected": "eleven",
+  "heard": "11",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-1",
+  "role": "word-thirteen",
+  "file": "numbers-time-teens-1/audio/word-thirteen.gen.mp3",
+  "expected": "thirteen",
+  "heard": "13",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-1",
+  "role": "word-twelve",
+  "file": "numbers-time-teens-1/audio/word-twelve.gen.mp3",
+  "expected": "twelve",
+  "heard": "12.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-2",
+  "role": "instr-listen-and-tap",
+  "file": "numbers-time-teens-2/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-2",
+  "role": "instr-match-picture",
+  "file": "numbers-time-teens-2/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-2",
+  "role": "instr-memory",
+  "file": "numbers-time-teens-2/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-2",
+  "role": "instr-read-and-pick",
+  "file": "numbers-time-teens-2/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-2",
+  "role": "intro",
+  "file": "numbers-time-teens-2/audio/intro.gen.mp3",
+  "expected": "Count more! Fourteen. Fifteen. Sixteen!",
+  "heard": "Count more, 14, 15, 16.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-2",
+  "role": "praise-0",
+  "file": "numbers-time-teens-2/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-2",
+  "role": "praise-1",
+  "file": "numbers-time-teens-2/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-2",
+  "role": "praise-2",
+  "file": "numbers-time-teens-2/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-2",
+  "role": "word-fifteen",
+  "file": "numbers-time-teens-2/audio/word-fifteen.gen.mp3",
+  "expected": "fifteen",
+  "heard": "15.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-2",
+  "role": "word-fourteen",
+  "file": "numbers-time-teens-2/audio/word-fourteen.gen.mp3",
+  "expected": "fourteen",
+  "heard": "14",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-2",
+  "role": "word-sixteen",
+  "file": "numbers-time-teens-2/audio/word-sixteen.gen.mp3",
+  "expected": "sixteen",
+  "heard": "16",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-3",
+  "role": "instr-listen-and-tap",
+  "file": "numbers-time-teens-3/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen, then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-3",
+  "role": "instr-match-picture",
+  "file": "numbers-time-teens-3/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-3",
+  "role": "instr-memory",
+  "file": "numbers-time-teens-3/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-3",
+  "role": "instr-read-and-pick",
+  "file": "numbers-time-teens-3/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-3",
+  "role": "intro",
+  "file": "numbers-time-teens-3/audio/intro.gen.mp3",
+  "expected": "Count more! Seventeen. Eighteen. Nineteen!",
+  "heard": "Count more, 17, 18, 19...",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-3",
+  "role": "praise-0",
+  "file": "numbers-time-teens-3/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-3",
+  "role": "praise-1",
+  "file": "numbers-time-teens-3/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-3",
+  "role": "praise-2",
+  "file": "numbers-time-teens-3/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-3",
+  "role": "word-eighteen",
+  "file": "numbers-time-teens-3/audio/word-eighteen.gen.mp3",
+  "expected": "eighteen",
+  "heard": "18",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-3",
+  "role": "word-nineteen",
+  "file": "numbers-time-teens-3/audio/word-nineteen.gen.mp3",
+  "expected": "nineteen",
+  "heard": "19",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-teens-3",
+  "role": "word-seventeen",
+  "file": "numbers-time-teens-3/audio/word-seventeen.gen.mp3",
+  "expected": "seventeen",
+  "heard": "17.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-1",
+  "role": "instr-listen-and-tap",
+  "file": "numbers-time-tens-1/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-1",
+  "role": "instr-match-picture",
+  "file": "numbers-time-tens-1/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-1",
+  "role": "instr-memory",
+  "file": "numbers-time-tens-1/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-1",
+  "role": "instr-read-and-pick",
+  "file": "numbers-time-tens-1/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-1",
+  "role": "praise-0",
+  "file": "numbers-time-tens-1/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-1",
+  "role": "praise-1",
+  "file": "numbers-time-tens-1/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-1",
+  "role": "praise-2",
+  "file": "numbers-time-tens-1/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-1",
+  "role": "word-forty",
+  "file": "numbers-time-tens-1/audio/word-forty.gen.mp3",
+  "expected": "forty",
+  "heard": "40",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-1",
+  "role": "word-thirty",
+  "file": "numbers-time-tens-1/audio/word-thirty.gen.mp3",
+  "expected": "thirty",
+  "heard": "30",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-1",
+  "role": "word-twenty",
+  "file": "numbers-time-tens-1/audio/word-twenty.gen.mp3",
+  "expected": "twenty",
+  "heard": "20",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-2",
+  "role": "instr-listen-and-tap",
+  "file": "numbers-time-tens-2/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen, then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-2",
+  "role": "instr-match-picture",
+  "file": "numbers-time-tens-2/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-2",
+  "role": "instr-memory",
+  "file": "numbers-time-tens-2/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-2",
+  "role": "instr-read-and-pick",
+  "file": "numbers-time-tens-2/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-2",
+  "role": "praise-0",
+  "file": "numbers-time-tens-2/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-2",
+  "role": "praise-1",
+  "file": "numbers-time-tens-2/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-2",
+  "role": "praise-2",
+  "file": "numbers-time-tens-2/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-2",
+  "role": "word-fifty",
+  "file": "numbers-time-tens-2/audio/word-fifty.gen.mp3",
+  "expected": "fifty",
+  "heard": "50",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-2",
+  "role": "word-seventy",
+  "file": "numbers-time-tens-2/audio/word-seventy.gen.mp3",
+  "expected": "seventy",
+  "heard": "70.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-2",
+  "role": "word-sixty",
+  "file": "numbers-time-tens-2/audio/word-sixty.gen.mp3",
+  "expected": "sixty",
+  "heard": "60.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-3",
+  "role": "instr-listen-and-tap",
+  "file": "numbers-time-tens-3/audio/instr-listen-and-tap.gen.mp3",
+  "expected": "Listen, then tap the picture!",
+  "heard": "Listen, then tap the picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-3",
+  "role": "instr-match-picture",
+  "file": "numbers-time-tens-3/audio/instr-match-picture.gen.mp3",
+  "expected": "Match each word to its picture!",
+  "heard": "Match each word to its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-3",
+  "role": "instr-memory",
+  "file": "numbers-time-tens-3/audio/instr-memory.gen.mp3",
+  "expected": "Find the matching cards!",
+  "heard": "Find the matching cards.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-3",
+  "role": "instr-read-and-pick",
+  "file": "numbers-time-tens-3/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-3",
+  "role": "praise-0",
+  "file": "numbers-time-tens-3/audio/praise-0.gen.mp3",
+  "expected": "Great job!",
+  "heard": "Great job.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-3",
+  "role": "praise-1",
+  "file": "numbers-time-tens-3/audio/praise-1.gen.mp3",
+  "expected": "You know it!",
+  "heard": "You know it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-3",
+  "role": "praise-2",
+  "file": "numbers-time-tens-3/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-3",
+  "role": "word-eighty",
+  "file": "numbers-time-tens-3/audio/word-eighty.gen.mp3",
+  "expected": "eighty",
+  "heard": "80",
+  "risk": 0.0
+ },
+ {
+  "lesson": "numbers-time-tens-3",
+  "role": "word-ninety",
+  "file": "numbers-time-tens-3/audio/word-ninety.gen.mp3",
+  "expected": "ninety",
+  "heard": "90",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "instr-find-the-word",
+  "file": "sight-words-1-a/audio/instr-find-the-word.gen.mp3",
+  "expected": "Listen. Then tap the word you hear!",
+  "heard": "Listen, then tap the word you hear.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "instr-sentence-builder",
+  "file": "sight-words-1-a/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "instr-sight-word-hunt",
+  "file": "sight-words-1-a/audio/instr-sight-word-hunt.gen.mp3",
+  "expected": "Listen. Then tap the word you hear!",
+  "heard": "Listen, then tap the word you hear.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "instr-true-or-false",
+  "file": "sight-words-1-a/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence. Does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "praise-0",
+  "file": "sight-words-1-a/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "praise-1",
+  "file": "sight-words-1-a/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "praise-2",
+  "file": "sight-words-1-a/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "sentence-1",
+  "file": "sight-words-1-a/audio/sentence-1.gen.mp3",
+  "expected": "I see the cat.",
+  "heard": "I see the cat.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "sentence-2",
+  "file": "sight-words-1-a/audio/sentence-2.gen.mp3",
+  "expected": "I see my hat.",
+  "heard": "I see my hat.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "sentence-3",
+  "file": "sight-words-1-a/audio/sentence-3.gen.mp3",
+  "expected": "I see the dog.",
+  "heard": "I see the dog.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "sentence-4",
+  "file": "sight-words-1-a/audio/sentence-4.gen.mp3",
+  "expected": "I see my bed.",
+  "heard": "I see my bed.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "sight-i",
+  "file": "sight-words-1-a/audio/sight-i.gen.mp3",
+  "expected": "I",
+  "heard": "I",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "sight-my",
+  "file": "sight-words-1-a/audio/sight-my.gen.mp3",
+  "expected": "my",
+  "heard": "My",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "sight-see",
+  "file": "sight-words-1-a/audio/sight-see.gen.mp3",
+  "expected": "see",
+  "heard": "See.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "sight-the",
+  "file": "sight-words-1-a/audio/sight-the.gen.mp3",
+  "expected": "the",
+  "heard": "the",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "word-bed",
+  "file": "sight-words-1-a/audio/word-bed.gen.mp3",
+  "expected": "bed",
+  "heard": "Bed.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "word-cat",
+  "file": "sight-words-1-a/audio/word-cat.gen.mp3",
+  "expected": "cat",
+  "heard": "cat",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-a",
+  "role": "word-dog",
+  "file": "sight-words-1-a/audio/word-dog.gen.mp3",
+  "expected": "dog",
+  "heard": "DOG",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "instr-find-the-word",
+  "file": "sight-words-1-b/audio/instr-find-the-word.gen.mp3",
+  "expected": "Listen. Then tap the word you hear!",
+  "heard": "Listen, then tap the word you hear.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "instr-sentence-builder",
+  "file": "sight-words-1-b/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "instr-sight-word-hunt",
+  "file": "sight-words-1-b/audio/instr-sight-word-hunt.gen.mp3",
+  "expected": "Listen. Then tap the word you hear!",
+  "heard": "Listen, then tap the word you hear.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "instr-true-or-false",
+  "file": "sight-words-1-b/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence. Does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "intro",
+  "file": "sight-words-1-b/audio/intro.gen.mp3",
+  "expected": "More words we just know: is, it, in, on. Let's read!",
+  "heard": "more words we just know. Is it in on? Let's read.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "praise-0",
+  "file": "sight-words-1-b/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "praise-1",
+  "file": "sight-words-1-b/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "praise-2",
+  "file": "sight-words-1-b/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "sentence-1",
+  "file": "sight-words-1-b/audio/sentence-1.gen.mp3",
+  "expected": "It is a pig.",
+  "heard": "It is a pig.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "sentence-2",
+  "file": "sight-words-1-b/audio/sentence-2.gen.mp3",
+  "expected": "The bug is in the cup.",
+  "heard": "The bug is in the cup.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "sentence-3",
+  "file": "sight-words-1-b/audio/sentence-3.gen.mp3",
+  "expected": "The sun is hot.",
+  "heard": "The sun is hot.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "sentence-4",
+  "file": "sight-words-1-b/audio/sentence-4.gen.mp3",
+  "expected": "The bug is on the cup.",
+  "heard": "The bug is on the cup.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "sight-in",
+  "file": "sight-words-1-b/audio/sight-in.gen.mp3",
+  "expected": "in",
+  "heard": "in.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "sight-is",
+  "file": "sight-words-1-b/audio/sight-is.gen.mp3",
+  "expected": "is",
+  "heard": "is",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "word-bug",
+  "file": "sight-words-1-b/audio/word-bug.gen.mp3",
+  "expected": "bug",
+  "heard": "Bug.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "word-cup",
+  "file": "sight-words-1-b/audio/word-cup.gen.mp3",
+  "expected": "cup",
+  "heard": "Cup.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-b",
+  "role": "word-pig",
+  "file": "sight-words-1-b/audio/word-pig.gen.mp3",
+  "expected": "pig",
+  "heard": "Pig.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "instr-find-the-word",
+  "file": "sight-words-1-c/audio/instr-find-the-word.gen.mp3",
+  "expected": "Listen. Then tap the word you hear!",
+  "heard": "Listen, then tap the word you hear.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "instr-sentence-builder",
+  "file": "sight-words-1-c/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "instr-sight-word-hunt",
+  "file": "sight-words-1-c/audio/instr-sight-word-hunt.gen.mp3",
+  "expected": "Listen. Then tap the word you hear!",
+  "heard": "Listen, then tap the word you hear.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "instr-true-or-false",
+  "file": "sight-words-1-c/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence. Does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "intro",
+  "file": "sight-words-1-c/audio/intro.gen.mp3",
+  "expected": "More words we just know: we, can, go, and. Let's read!",
+  "heard": "More words we just know, we can go and let's read.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "praise-0",
+  "file": "sight-words-1-c/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading. //",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "praise-1",
+  "file": "sight-words-1-c/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "praise-2",
+  "file": "sight-words-1-c/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "sentence-1",
+  "file": "sight-words-1-c/audio/sentence-1.gen.mp3",
+  "expected": "We can go on the bus.",
+  "heard": "We can go on the bus.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "sentence-2",
+  "file": "sight-words-1-c/audio/sentence-2.gen.mp3",
+  "expected": "We can see a ship.",
+  "heard": "We can see a ship.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "sentence-3",
+  "file": "sight-words-1-c/audio/sentence-3.gen.mp3",
+  "expected": "I can see a duck.",
+  "heard": "I can see a duck.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "sight-and",
+  "file": "sight-words-1-c/audio/sight-and.gen.mp3",
+  "expected": "and",
+  "heard": "and",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "sight-can",
+  "file": "sight-words-1-c/audio/sight-can.gen.mp3",
+  "expected": "can",
+  "heard": "can.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "sight-go",
+  "file": "sight-words-1-c/audio/sight-go.gen.mp3",
+  "expected": "go",
+  "heard": "Go.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "sight-we",
+  "file": "sight-words-1-c/audio/sight-we.gen.mp3",
+  "expected": "we",
+  "heard": "We",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "word-duck",
+  "file": "sight-words-1-c/audio/word-duck.gen.mp3",
+  "expected": "duck",
+  "heard": "Duck.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "word-hen",
+  "file": "sight-words-1-c/audio/word-hen.gen.mp3",
+  "expected": "hen",
+  "heard": "Hen.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-1-c",
+  "role": "word-ship",
+  "file": "sight-words-1-c/audio/word-ship.gen.mp3",
+  "expected": "ship",
+  "heard": "Ship.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "instr-find-the-word",
+  "file": "sight-words-2-a/audio/instr-find-the-word.gen.mp3",
+  "expected": "Listen. Then tap the word you hear!",
+  "heard": "Listen, then tap the word you hear.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "instr-sentence-builder",
+  "file": "sight-words-2-a/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "instr-sight-word-hunt",
+  "file": "sight-words-2-a/audio/instr-sight-word-hunt.gen.mp3",
+  "expected": "Listen. Then tap the word you hear!",
+  "heard": "Listen, then tap the word you hear.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "instr-true-or-false",
+  "file": "sight-words-2-a/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence. Does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "intro",
+  "file": "sight-words-2-a/audio/intro.gen.mp3",
+  "expected": "New words we just know: you, look, here, to. Let's read!",
+  "heard": "New words we just know. You look here too. Let's read.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "praise-0",
+  "file": "sight-words-2-a/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "praise-1",
+  "file": "sight-words-2-a/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "praise-2",
+  "file": "sight-words-2-a/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "sentence-1",
+  "file": "sight-words-2-a/audio/sentence-1.gen.mp3",
+  "expected": "Look at the kite!",
+  "heard": "Look at the kite.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "sentence-2",
+  "file": "sight-words-2-a/audio/sentence-2.gen.mp3",
+  "expected": "Here is a fish.",
+  "heard": "Here is a fish.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "sentence-3",
+  "file": "sight-words-2-a/audio/sentence-3.gen.mp3",
+  "expected": "You can go to the shop.",
+  "heard": "You can go to the shop.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "sentence-4",
+  "file": "sight-words-2-a/audio/sentence-4.gen.mp3",
+  "expected": "Look, here is a boat!",
+  "heard": "Look, here is a boat.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "sight-here",
+  "file": "sight-words-2-a/audio/sight-here.gen.mp3",
+  "expected": "here",
+  "heard": "Here.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "sight-look",
+  "file": "sight-words-2-a/audio/sight-look.gen.mp3",
+  "expected": "look",
+  "heard": "Look.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "sight-to",
+  "file": "sight-words-2-a/audio/sight-to.gen.mp3",
+  "expected": "to",
+  "heard": "to",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "sight-you",
+  "file": "sight-words-2-a/audio/sight-you.gen.mp3",
+  "expected": "you",
+  "heard": "You",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "word-boat",
+  "file": "sight-words-2-a/audio/word-boat.gen.mp3",
+  "expected": "boat",
+  "heard": "boat.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "word-fish",
+  "file": "sight-words-2-a/audio/word-fish.gen.mp3",
+  "expected": "fish",
+  "heard": "Fish.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-a",
+  "role": "word-shop",
+  "file": "sight-words-2-a/audio/word-shop.gen.mp3",
+  "expected": "shop",
+  "heard": "Shop.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "instr-find-the-word",
+  "file": "sight-words-2-b/audio/instr-find-the-word.gen.mp3",
+  "expected": "Listen. Then tap the word you hear!",
+  "heard": "Listen, then tap the word you hear.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "instr-sentence-builder",
+  "file": "sight-words-2-b/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "instr-sight-word-hunt",
+  "file": "sight-words-2-b/audio/instr-sight-word-hunt.gen.mp3",
+  "expected": "Listen. Then tap the word you hear!",
+  "heard": "Listen, then tap the word you hear.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "instr-true-or-false",
+  "file": "sight-words-2-b/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence. Does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "intro",
+  "file": "sight-words-2-b/audio/intro.gen.mp3",
+  "expected": "New words we just know: he, she, was, said. Let's read!",
+  "heard": "New words we just know he, she was, said, let's read.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "praise-0",
+  "file": "sight-words-2-b/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "praise-1",
+  "file": "sight-words-2-b/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "praise-2",
+  "file": "sight-words-2-b/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "sentence-1",
+  "file": "sight-words-2-b/audio/sentence-1.gen.mp3",
+  "expected": "He was in the bath.",
+  "heard": "He was in the bath.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "sentence-2",
+  "file": "sight-words-2-b/audio/sentence-2.gen.mp3",
+  "expected": "She has a red bike.",
+  "heard": "She has a red bike.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "sentence-3",
+  "file": "sight-words-2-b/audio/sentence-3.gen.mp3",
+  "expected": "She has a cake.",
+  "heard": "She has a cake.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "sight-he",
+  "file": "sight-words-2-b/audio/sight-he.gen.mp3",
+  "expected": "he",
+  "heard": "He",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "sight-said",
+  "file": "sight-words-2-b/audio/sight-said.gen.mp3",
+  "expected": "said",
+  "heard": "said.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "sight-she",
+  "file": "sight-words-2-b/audio/sight-she.gen.mp3",
+  "expected": "she",
+  "heard": "She...",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "sight-was",
+  "file": "sight-words-2-b/audio/sight-was.gen.mp3",
+  "expected": "was",
+  "heard": "was",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "word-bath",
+  "file": "sight-words-2-b/audio/word-bath.gen.mp3",
+  "expected": "bath",
+  "heard": "Bath.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "word-bike",
+  "file": "sight-words-2-b/audio/word-bike.gen.mp3",
+  "expected": "bike",
+  "heard": "bike.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "word-cake",
+  "file": "sight-words-2-b/audio/word-cake.gen.mp3",
+  "expected": "cake",
+  "heard": "Cake.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-b",
+  "role": "word-frog",
+  "file": "sight-words-2-b/audio/word-frog.gen.mp3",
+  "expected": "frog",
+  "heard": "Frog.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "instr-find-the-word",
+  "file": "sight-words-2-c/audio/instr-find-the-word.gen.mp3",
+  "expected": "Listen. Then tap the word you hear!",
+  "heard": "Listen, then tap the word you hear.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "instr-sentence-builder",
+  "file": "sight-words-2-c/audio/instr-sentence-builder.gen.mp3",
+  "expected": "Listen. Then put the words in order!",
+  "heard": "Listen, then put the words in order.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "instr-sight-word-hunt",
+  "file": "sight-words-2-c/audio/instr-sight-word-hunt.gen.mp3",
+  "expected": "Listen. Then tap the word you hear!",
+  "heard": "Listen, then tap the word you hear.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "instr-true-or-false",
+  "file": "sight-words-2-c/audio/instr-true-or-false.gen.mp3",
+  "expected": "Read the sentence. Does it match the picture?",
+  "heard": "Read the sentence. Does it match the picture?",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "intro",
+  "file": "sight-words-2-c/audio/intro.gen.mp3",
+  "expected": "New words we just know: like, have, they, are. Let's read!",
+  "heard": "New words we just know like have they are, let's read.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "praise-0",
+  "file": "sight-words-2-c/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "praise-1",
+  "file": "sight-words-2-c/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "praise-2",
+  "file": "sight-words-2-c/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "sentence-1",
+  "file": "sight-words-2-c/audio/sentence-1.gen.mp3",
+  "expected": "I like toast.",
+  "heard": "I like toast.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "sentence-2",
+  "file": "sight-words-2-c/audio/sentence-2.gen.mp3",
+  "expected": "We have a goat.",
+  "heard": "We have a goat.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "sentence-3",
+  "file": "sight-words-2-c/audio/sentence-3.gen.mp3",
+  "expected": "They are bees.",
+  "heard": "They are bees.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "sentence-4",
+  "file": "sight-words-2-c/audio/sentence-4.gen.mp3",
+  "expected": "I like the stars.",
+  "heard": "I like the stars.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "sight-are",
+  "file": "sight-words-2-c/audio/sight-are.gen.mp3",
+  "expected": "are",
+  "heard": "are",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "sight-have",
+  "file": "sight-words-2-c/audio/sight-have.gen.mp3",
+  "expected": "have",
+  "heard": "Have",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "sight-like",
+  "file": "sight-words-2-c/audio/sight-like.gen.mp3",
+  "expected": "like",
+  "heard": "Like",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "sight-they",
+  "file": "sight-words-2-c/audio/sight-they.gen.mp3",
+  "expected": "they",
+  "heard": "they",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "word-bee",
+  "file": "sight-words-2-c/audio/word-bee.gen.mp3",
+  "expected": "bee",
+  "heard": "B.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "word-goat",
+  "file": "sight-words-2-c/audio/word-goat.gen.mp3",
+  "expected": "goat",
+  "heard": "goat",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "word-star",
+  "file": "sight-words-2-c/audio/word-star.gen.mp3",
+  "expected": "star",
+  "heard": "Star.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sight-words-2-c",
+  "role": "word-toast",
+  "file": "sight-words-2-c/audio/word-toast.gen.mp3",
+  "expected": "toast",
+  "heard": "toast.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-a",
+  "role": "instr-read-and-pick",
+  "file": "sound-builders-a/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-a",
+  "role": "instr-sound-tap",
+  "file": "sound-builders-a/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear its sound, then read the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-a",
+  "role": "instr-word-builder",
+  "file": "sound-builders-a/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-a",
+  "role": "praise-0",
+  "file": "sound-builders-a/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-a",
+  "role": "praise-1",
+  "file": "sound-builders-a/audio/praise-1.gen.mp3",
+  "expected": "You built it!",
+  "heard": "You built it!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-a",
+  "role": "praise-2",
+  "file": "sound-builders-a/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-a",
+  "role": "word-cat",
+  "file": "sound-builders-a/audio/word-cat.gen.mp3",
+  "expected": "cat",
+  "heard": "cat",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-e",
+  "role": "instr-read-and-pick",
+  "file": "sound-builders-e/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-e",
+  "role": "instr-word-builder",
+  "file": "sound-builders-e/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-e",
+  "role": "intro",
+  "file": "sound-builders-e/audio/intro.gen.mp3",
+  "expected": "Short e! Listen: e, e. Let's build words: hen, bed, egg, ten.",
+  "heard": "Short E, listen, E-E, let's build words, hen, bed, egg, 10.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-e",
+  "role": "praise-0",
+  "file": "sound-builders-e/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading. //",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-e",
+  "role": "praise-1",
+  "file": "sound-builders-e/audio/praise-1.gen.mp3",
+  "expected": "You built it!",
+  "heard": "You built it!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-e",
+  "role": "praise-2",
+  "file": "sound-builders-e/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-e",
+  "role": "word-bed",
+  "file": "sound-builders-e/audio/word-bed.gen.mp3",
+  "expected": "bed",
+  "heard": "Bed.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-e",
+  "role": "word-egg",
+  "file": "sound-builders-e/audio/word-egg.gen.mp3",
+  "expected": "egg",
+  "heard": "Egg",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-e",
+  "role": "word-hen",
+  "file": "sound-builders-e/audio/word-hen.gen.mp3",
+  "expected": "hen",
+  "heard": "Hen.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-e",
+  "role": "word-ten",
+  "file": "sound-builders-e/audio/word-ten.gen.mp3",
+  "expected": "ten",
+  "heard": "10.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-i",
+  "role": "instr-read-and-pick",
+  "file": "sound-builders-i/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-i",
+  "role": "instr-word-builder",
+  "file": "sound-builders-i/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-i",
+  "role": "intro",
+  "file": "sound-builders-i/audio/intro.gen.mp3",
+  "expected": "Short i! Listen: i, i. Let's build words: pig, fig, bin, six.",
+  "heard": "short eye, listen eye eye, let's build words. Pig, fig, bin, six.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-i",
+  "role": "praise-0",
+  "file": "sound-builders-i/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-i",
+  "role": "praise-1",
+  "file": "sound-builders-i/audio/praise-1.gen.mp3",
+  "expected": "You built it!",
+  "heard": "You built it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-i",
+  "role": "praise-2",
+  "file": "sound-builders-i/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-i",
+  "role": "word-bin",
+  "file": "sound-builders-i/audio/word-bin.gen.mp3",
+  "expected": "bin",
+  "heard": "bin.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-i",
+  "role": "word-fig",
+  "file": "sound-builders-i/audio/word-fig.gen.mp3",
+  "expected": "fig",
+  "heard": "Fig.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-i",
+  "role": "word-pig",
+  "file": "sound-builders-i/audio/word-pig.gen.mp3",
+  "expected": "pig",
+  "heard": "Pig.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-i",
+  "role": "word-six",
+  "file": "sound-builders-i/audio/word-six.gen.mp3",
+  "expected": "six",
+  "heard": "6.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-o",
+  "role": "instr-read-and-pick",
+  "file": "sound-builders-o/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-o",
+  "role": "instr-sound-tap",
+  "file": "sound-builders-o/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear its sound, then read the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-o",
+  "role": "instr-word-builder",
+  "file": "sound-builders-o/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-o",
+  "role": "intro",
+  "file": "sound-builders-o/audio/intro.gen.mp3",
+  "expected": "Short o! Listen: o, o. Let's build words: dog, pot, box, mop.",
+  "heard": "Short O. Listen. O. O. Let's build words. Dog, Pot, Box, Mop.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-o",
+  "role": "praise-0",
+  "file": "sound-builders-o/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-o",
+  "role": "praise-1",
+  "file": "sound-builders-o/audio/praise-1.gen.mp3",
+  "expected": "You built it!",
+  "heard": "You built it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-o",
+  "role": "praise-2",
+  "file": "sound-builders-o/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-o",
+  "role": "word-box",
+  "file": "sound-builders-o/audio/word-box.gen.mp3",
+  "expected": "box",
+  "heard": "Box.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-o",
+  "role": "word-dog",
+  "file": "sound-builders-o/audio/word-dog.gen.mp3",
+  "expected": "dog",
+  "heard": "DOG",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-o",
+  "role": "word-mop",
+  "file": "sound-builders-o/audio/word-mop.gen.mp3",
+  "expected": "mop",
+  "heard": "Mop.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-u",
+  "role": "instr-read-and-pick",
+  "file": "sound-builders-u/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-u",
+  "role": "instr-sound-tap",
+  "file": "sound-builders-u/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear its sound, then read the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-u",
+  "role": "instr-word-builder",
+  "file": "sound-builders-u/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-u",
+  "role": "praise-0",
+  "file": "sound-builders-u/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-u",
+  "role": "praise-1",
+  "file": "sound-builders-u/audio/praise-1.gen.mp3",
+  "expected": "You built it!",
+  "heard": "You built it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-u",
+  "role": "praise-2",
+  "file": "sound-builders-u/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-u",
+  "role": "word-bug",
+  "file": "sound-builders-u/audio/word-bug.gen.mp3",
+  "expected": "bug",
+  "heard": "Bug.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "sound-builders-u",
+  "role": "word-cup",
+  "file": "sound-builders-u/audio/word-cup.gen.mp3",
+  "expected": "cup",
+  "heard": "Cup",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ai",
+  "role": "instr-read-and-pick",
+  "file": "vowel-teams-ai/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ai",
+  "role": "instr-word-builder",
+  "file": "vowel-teams-ai/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ai",
+  "role": "praise-0",
+  "file": "vowel-teams-ai/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ai",
+  "role": "praise-1",
+  "file": "vowel-teams-ai/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ai",
+  "role": "praise-2",
+  "file": "vowel-teams-ai/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ai",
+  "role": "word-paint",
+  "file": "vowel-teams-ai/audio/word-paint.gen.mp3",
+  "expected": "paint",
+  "heard": "paint",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ai",
+  "role": "word-rain",
+  "file": "vowel-teams-ai/audio/word-rain.gen.mp3",
+  "expected": "rain",
+  "heard": "Rain.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ai",
+  "role": "word-snail",
+  "file": "vowel-teams-ai/audio/word-snail.gen.mp3",
+  "expected": "snail",
+  "heard": "Snail.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ai",
+  "role": "word-train",
+  "file": "vowel-teams-ai/audio/word-train.gen.mp3",
+  "expected": "train",
+  "heard": "Train",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ee",
+  "role": "instr-read-and-pick",
+  "file": "vowel-teams-ee/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ee",
+  "role": "instr-word-builder",
+  "file": "vowel-teams-ee/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ee",
+  "role": "praise-0",
+  "file": "vowel-teams-ee/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ee",
+  "role": "praise-1",
+  "file": "vowel-teams-ee/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ee",
+  "role": "praise-2",
+  "file": "vowel-teams-ee/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ee",
+  "role": "word-feet",
+  "file": "vowel-teams-ee/audio/word-feet.gen.mp3",
+  "expected": "feet",
+  "heard": "Feet.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ee",
+  "role": "word-sheep",
+  "file": "vowel-teams-ee/audio/word-sheep.gen.mp3",
+  "expected": "sheep",
+  "heard": "Sheep.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-ee",
+  "role": "word-tree",
+  "file": "vowel-teams-ee/audio/word-tree.gen.mp3",
+  "expected": "tree",
+  "heard": "Tree",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oa",
+  "role": "instr-read-and-pick",
+  "file": "vowel-teams-oa/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oa",
+  "role": "instr-word-builder",
+  "file": "vowel-teams-oa/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oa",
+  "role": "praise-0",
+  "file": "vowel-teams-oa/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oa",
+  "role": "praise-1",
+  "file": "vowel-teams-oa/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oa",
+  "role": "praise-2",
+  "file": "vowel-teams-oa/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oa",
+  "role": "word-boat",
+  "file": "vowel-teams-oa/audio/word-boat.gen.mp3",
+  "expected": "boat",
+  "heard": "Boat.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oa",
+  "role": "word-soap",
+  "file": "vowel-teams-oa/audio/word-soap.gen.mp3",
+  "expected": "soap",
+  "heard": "Soap.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oa",
+  "role": "word-toast",
+  "file": "vowel-teams-oa/audio/word-toast.gen.mp3",
+  "expected": "toast",
+  "heard": "toast.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oo-ar",
+  "role": "instr-read-and-pick",
+  "file": "vowel-teams-oo-ar/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oo-ar",
+  "role": "instr-sound-tap",
+  "file": "vowel-teams-oo-ar/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear its sound, then read the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oo-ar",
+  "role": "instr-word-builder",
+  "file": "vowel-teams-oo-ar/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oo-ar",
+  "role": "praise-0",
+  "file": "vowel-teams-oo-ar/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oo-ar",
+  "role": "praise-1",
+  "file": "vowel-teams-oo-ar/audio/praise-1.gen.mp3",
+  "expected": "You read it!",
+  "heard": "You read it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oo-ar",
+  "role": "praise-2",
+  "file": "vowel-teams-oo-ar/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oo-ar",
+  "role": "word-moon",
+  "file": "vowel-teams-oo-ar/audio/word-moon.gen.mp3",
+  "expected": "moon",
+  "heard": "Moon.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oo-ar",
+  "role": "word-spoon",
+  "file": "vowel-teams-oo-ar/audio/word-spoon.gen.mp3",
+  "expected": "spoon",
+  "heard": "Spoon.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "vowel-teams-oo-ar",
+  "role": "word-star",
+  "file": "vowel-teams-oo-ar/audio/word-star.gen.mp3",
+  "expected": "star",
+  "heard": "Star.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-an",
+  "role": "instr-read-and-pick",
+  "file": "word-families-an/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-an",
+  "role": "instr-spell-it",
+  "file": "word-families-an/audio/instr-spell-it.gen.mp3",
+  "expected": "Listen. Then spell the word with the letters!",
+  "heard": "Listen, then spell the word with the letters.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-an",
+  "role": "instr-word-builder",
+  "file": "word-families-an/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-an",
+  "role": "praise-0",
+  "file": "word-families-an/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-an",
+  "role": "praise-1",
+  "file": "word-families-an/audio/praise-1.gen.mp3",
+  "expected": "You spelled it!",
+  "heard": "You spelled it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-an",
+  "role": "praise-2",
+  "file": "word-families-an/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-an",
+  "role": "word-can",
+  "file": "word-families-an/audio/word-can.gen.mp3",
+  "expected": "can",
+  "heard": "can",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-an",
+  "role": "word-fan",
+  "file": "word-families-an/audio/word-fan.gen.mp3",
+  "expected": "fan",
+  "heard": "Fan",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-an",
+  "role": "word-pan",
+  "file": "word-families-an/audio/word-pan.gen.mp3",
+  "expected": "pan",
+  "heard": "Pan.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-at",
+  "role": "instr-read-and-pick",
+  "file": "word-families-at/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-at",
+  "role": "instr-sound-tap",
+  "file": "word-families-at/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear its sound, then read the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-at",
+  "role": "instr-spell-it",
+  "file": "word-families-at/audio/instr-spell-it.gen.mp3",
+  "expected": "Listen. Then spell the word with the letters!",
+  "heard": "Listen, then spell the word with the letters.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-at",
+  "role": "instr-word-builder",
+  "file": "word-families-at/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-at",
+  "role": "intro",
+  "file": "word-families-at/audio/intro.gen.mp3",
+  "expected": "Family -at: cat, hat, rat, bat. They all end the same!",
+  "heard": "Family at Cat Hat Rat Bat, they all end the same.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-at",
+  "role": "praise-0",
+  "file": "word-families-at/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading!",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-at",
+  "role": "praise-1",
+  "file": "word-families-at/audio/praise-1.gen.mp3",
+  "expected": "You spelled it!",
+  "heard": "You spelled it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-at",
+  "role": "praise-2",
+  "file": "word-families-at/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-at",
+  "role": "word-bat",
+  "file": "word-families-at/audio/word-bat.gen.mp3",
+  "expected": "bat",
+  "heard": "bat",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-at",
+  "role": "word-cat",
+  "file": "word-families-at/audio/word-cat.gen.mp3",
+  "expected": "cat",
+  "heard": "Cat.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-at",
+  "role": "word-rat",
+  "file": "word-families-at/audio/word-rat.gen.mp3",
+  "expected": "rat",
+  "heard": "RAT",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ig",
+  "role": "instr-read-and-pick",
+  "file": "word-families-ig/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ig",
+  "role": "instr-spell-it",
+  "file": "word-families-ig/audio/instr-spell-it.gen.mp3",
+  "expected": "Listen. Then spell the word with the letters!",
+  "heard": "Listen, then spell the word with the letters.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ig",
+  "role": "instr-word-builder",
+  "file": "word-families-ig/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ig",
+  "role": "praise-0",
+  "file": "word-families-ig/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ig",
+  "role": "praise-1",
+  "file": "word-families-ig/audio/praise-1.gen.mp3",
+  "expected": "You spelled it!",
+  "heard": "You spelled it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ig",
+  "role": "praise-2",
+  "file": "word-families-ig/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ig",
+  "role": "word-fig",
+  "file": "word-families-ig/audio/word-fig.gen.mp3",
+  "expected": "fig",
+  "heard": "Fig",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ig",
+  "role": "word-pig",
+  "file": "word-families-ig/audio/word-pig.gen.mp3",
+  "expected": "pig",
+  "heard": "Pig.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ig",
+  "role": "word-wig",
+  "file": "word-families-ig/audio/word-wig.gen.mp3",
+  "expected": "wig",
+  "heard": "Wig.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ot",
+  "role": "instr-read-and-pick",
+  "file": "word-families-ot/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ot",
+  "role": "instr-sound-tap",
+  "file": "word-families-ot/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear its sound, then read the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ot",
+  "role": "instr-spell-it",
+  "file": "word-families-ot/audio/instr-spell-it.gen.mp3",
+  "expected": "Listen. Then spell the word with the letters!",
+  "heard": "Listen, then spell the word with the letters.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ot",
+  "role": "instr-word-builder",
+  "file": "word-families-ot/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ot",
+  "role": "praise-0",
+  "file": "word-families-ot/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ot",
+  "role": "praise-1",
+  "file": "word-families-ot/audio/praise-1.gen.mp3",
+  "expected": "You spelled it!",
+  "heard": "You spelled it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ot",
+  "role": "praise-2",
+  "file": "word-families-ot/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ot",
+  "role": "word-dot",
+  "file": "word-families-ot/audio/word-dot.gen.mp3",
+  "expected": "dot",
+  "heard": "Dot.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ot",
+  "role": "word-hot",
+  "file": "word-families-ot/audio/word-hot.gen.mp3",
+  "expected": "hot",
+  "heard": "Hot.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ug",
+  "role": "instr-read-and-pick",
+  "file": "word-families-ug/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ug",
+  "role": "instr-spell-it",
+  "file": "word-families-ug/audio/instr-spell-it.gen.mp3",
+  "expected": "Listen. Then spell the word with the letters!",
+  "heard": "Listen, then spell the word with the letters.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ug",
+  "role": "instr-word-builder",
+  "file": "word-families-ug/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ug",
+  "role": "praise-0",
+  "file": "word-families-ug/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ug",
+  "role": "praise-1",
+  "file": "word-families-ug/audio/praise-1.gen.mp3",
+  "expected": "You spelled it!",
+  "heard": "You spelled it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ug",
+  "role": "praise-2",
+  "file": "word-families-ug/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ug",
+  "role": "word-bug",
+  "file": "word-families-ug/audio/word-bug.gen.mp3",
+  "expected": "bug",
+  "heard": "Bug.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ug",
+  "role": "word-mug",
+  "file": "word-families-ug/audio/word-mug.gen.mp3",
+  "expected": "mug",
+  "heard": "mug",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-ug",
+  "role": "word-rug",
+  "file": "word-families-ug/audio/word-rug.gen.mp3",
+  "expected": "rug",
+  "heard": "Rug",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-un",
+  "role": "instr-read-and-pick",
+  "file": "word-families-un/audio/instr-read-and-pick.gen.mp3",
+  "expected": "Read the word. Then tap its picture!",
+  "heard": "Read the word, then tap its picture.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-un",
+  "role": "instr-sound-tap",
+  "file": "word-families-un/audio/instr-sound-tap.gen.mp3",
+  "expected": "Tap each box to hear its sound. Then read the word!",
+  "heard": "Tap each box to hear its sound, then read the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-un",
+  "role": "instr-spell-it",
+  "file": "word-families-un/audio/instr-spell-it.gen.mp3",
+  "expected": "Listen. Then spell the word with the letters!",
+  "heard": "Listen, then spell the word with the letters.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-un",
+  "role": "instr-word-builder",
+  "file": "word-families-un/audio/instr-word-builder.gen.mp3",
+  "expected": "Listen. Then tap the letters to build the word!",
+  "heard": "Listen, then tap the letters to build the word.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-un",
+  "role": "intro",
+  "file": "word-families-un/audio/intro.gen.mp3",
+  "expected": "Family -un: sun, bun, run. They all end the same!",
+  "heard": "family, unsun, bun, run, they all end the same.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-un",
+  "role": "praise-0",
+  "file": "word-families-un/audio/praise-0.gen.mp3",
+  "expected": "Great reading!",
+  "heard": "Great reading.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-un",
+  "role": "praise-1",
+  "file": "word-families-un/audio/praise-1.gen.mp3",
+  "expected": "You spelled it!",
+  "heard": "You spelled it.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-un",
+  "role": "praise-2",
+  "file": "word-families-un/audio/praise-2.gen.mp3",
+  "expected": "Super!",
+  "heard": "Super",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-un",
+  "role": "word-run",
+  "file": "word-families-un/audio/word-run.gen.mp3",
+  "expected": "run",
+  "heard": "Run.",
+  "risk": 0.0
+ },
+ {
+  "lesson": "word-families-un",
+  "role": "word-sun",
+  "file": "word-families-un/audio/word-sun.gen.mp3",
+  "expected": "sun",
+  "heard": "Son",
+  "risk": 0.0
+ }
+]
