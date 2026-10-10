@@ -19024,5 +19024,19 @@
     "what": "avatar panda",
     "usd": 0.01381,
     "estimated": false
+  },
+  {
+    "atUtc": "2026-10-10T00:07:11.548Z",
+    "service": "OpenAI",
+    "what": "avatar tiger",
+    "usd": 0.01379,
+    "estimated": false
+  },
+  {
+    "atUtc": "2026-10-10T00:07:23.784Z",
+    "service": "OpenAI",
+    "what": "avatar shark",
+    "usd": 0.01384,
+    "estimated": false
   }
 ]

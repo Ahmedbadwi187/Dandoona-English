@@ -25,6 +25,8 @@ const animals = {
   dragon: 'a friendly teal dragon with small round wings, tiny horns and a spiky tail, smiling proudly',
   dino: 'a green baby dinosaur with a row of soft orange back plates and a big happy smile',
   robot: 'a fluffy round little robot with a soft silver-blue body, an antenna, glowing blue eyes and a smile (still furry and plush)',
+  tiger: 'a young tiger cub with bold dark stripes, a cream muzzle and a confident grin',
+  shark: 'a friendly little blue shark with a pale belly, a small fin on top and a cool, cheeky smile (no teeth showing)',
   panda: 'a chubby panda with black ears, eye patches and arms, wearing a small cool red headband',
 };
 

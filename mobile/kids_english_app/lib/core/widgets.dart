@@ -46,7 +46,7 @@ class AvatarOption {
   /// A drawn picture (Dandoona or one of her friends) shown instead of the icon. The older icon avatars have none.
   final String? asset;
 
-  /// The avatars a parent can pick now: Dandoona and twelve friends (the last six are for the 10 to 12 year olds). No photos.
+  /// The avatars a parent can pick now: Dandoona and fifteen friends (16 in all: four full rows; the last eight are cooler, for the 10 to 12 year olds). No photos.
   static const pickable = [
     AvatarOption('dandoona', Icons.face_rounded, Palette.plum, asset: 'assets/images/mascot/mascot.webp'),
     AvatarOption('bunny', Icons.pets_rounded, Palette.pink, asset: 'assets/images/avatars/bunny.webp'),
@@ -63,6 +63,8 @@ class AvatarOption {
     AvatarOption('dino', Icons.pets_rounded, Palette.green, asset: 'assets/images/avatars/dino.webp'),
     AvatarOption('robot', Icons.pets_rounded, Palette.blue, asset: 'assets/images/avatars/robot.webp'),
     AvatarOption('panda', Icons.pets_rounded, Palette.pink, asset: 'assets/images/avatars/panda.webp'),
+    AvatarOption('tiger', Icons.pets_rounded, Palette.orange, asset: 'assets/images/avatars/tiger.webp'),
+    AvatarOption('shark', Icons.pets_rounded, Palette.blue, asset: 'assets/images/avatars/shark.webp'),
   ];
 
   /// The icon avatars children created before the drawn ones keep: each keeps its color and now shows a matching drawn

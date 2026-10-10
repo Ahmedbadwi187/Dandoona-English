@@ -8,7 +8,7 @@ import 'package:kids_english_app/core/widgets.dart';
 void main() {
   test('a parent can pick Dandoona or one of six friends: eight drawn avatars, all with their picture in the app', () {
     final keys = AvatarOption.pickable.map((a) => a.key).toList();
-    expect(keys, ['dandoona', 'bunny', 'cat', 'bear', 'owl', 'goldfish', 'puppy', 'penguin', 'fox', 'wolf', 'dragon', 'dino', 'robot', 'panda']);
+    expect(keys, ['dandoona', 'bunny', 'cat', 'bear', 'owl', 'goldfish', 'puppy', 'penguin', 'fox', 'wolf', 'dragon', 'dino', 'robot', 'panda', 'tiger', 'shark']);
     for (final a in AvatarOption.pickable) {
       expect(a.asset, isNotNull, reason: a.key);
       expect(File(a.asset!).existsSync(), isTrue, reason: '${a.key}: ${a.asset}');
