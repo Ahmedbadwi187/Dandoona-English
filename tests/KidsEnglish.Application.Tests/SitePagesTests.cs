@@ -57,7 +57,7 @@ public class SitePagesTests
         html.ShouldContain("Families Policy");
         html.ShouldContain("Kids Category");
         // what the app really stores / does (docs/privacy-data-map.md)
-        foreach (var fact in new[] { "birth <em>year</em>", "Microphone", "deleted immediately", "no advertisements", "parental gate", "SDAIA" })
+        foreach (var fact in new[] { "birth <em>month and year</em>", "skills", "reset your password", "Microphone", "deleted immediately", "no advertisements", "parental gate", "SDAIA" })
             html.ShouldContain(fact, Case.Insensitive);
     }
 
