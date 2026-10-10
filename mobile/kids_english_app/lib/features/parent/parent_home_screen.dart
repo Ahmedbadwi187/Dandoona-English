@@ -180,6 +180,9 @@ class _ChildCard extends ConsumerWidget {
           if (overview != null) ...[
             const SizedBox(height: 8),
             Text(s.format('pUnitsDone', {'done': overview.unitsDone, 'total': overview.unitsTotal}), key: Key('units-done-${child.id}'), style: ParentText.caption),
+            // the other track, when the child has played in it (progress is kept per track)
+            for (final t in ref.watch(childTracksProvider(child.id)).where((t) => !t.active && (t.unitsDone > 0 || t.activitiesThisWeek > 0)))
+              Text('${s(t.track == 'explorers' ? 'pTrackExplorers' : 'pTrackLL')}: ${s.format('pUnitsOfN', {'done': t.unitsDone, 'total': t.unitsTotal})}', key: Key('units-done-${t.track}-${child.id}'), style: ParentText.caption),
           ],
           const SizedBox(height: 12),
           if (week.isEmpty)

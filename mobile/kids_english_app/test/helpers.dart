@@ -12,6 +12,7 @@ import 'package:kids_english_app/features/content/content_models.dart';
 import 'package:kids_english_app/features/content/content_repository.dart';
 import 'package:kids_english_app/features/reminders/reminder_service.dart';
 import 'package:kids_english_app/features/skills/skills.dart';
+import 'package:kids_english_app/features/sync/auto_sync.dart' show autoSyncEnabledProvider;
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// 26 small lessons (A-Z) so map/flow tests do not depend on the real asset files.
@@ -43,7 +44,7 @@ Future<SharedPreferences> mockPrefs([Map<String, Object> initial = const {}]) as
 }
 
 /// Overrides every app dependency that touches the platform.
-Future<List<Override>> testOverrides({Map<String, Object> prefs = const {}, TrackContent? content, FakeReminders? reminders, TrackContent? explorers, bool autoDemo = false}) async {
+Future<List<Override>> testOverrides({Map<String, Object> prefs = const {}, TrackContent? content, FakeReminders? reminders, TrackContent? explorers, bool autoDemo = false, bool autoSync = false}) async {
   final p = await mockPrefs(prefs);
   final c = content ?? sampleContent();
   return [
@@ -51,6 +52,7 @@ Future<List<Override>> testOverrides({Map<String, Object> prefs = const {}, Trac
     contentProvider.overrideWith((ref) async => c),
     if (explorers != null) explorersContentProvider.overrideWith((ref) async => explorers),
     reminderServiceProvider.overrideWithValue(reminders ?? FakeReminders()),
+    autoSyncEnabledProvider.overrideWithValue(autoSync), // the automatic sync has its own tests; elsewhere nothing runs in the background
     // the rules of the skills list are read from the file at once (a bundle read in a widget test can stall pumpAndSettle)
     skillsConfigProvider.overrideWith((ref) async => SkillsConfig.fromJson(jsonDecode(File('assets/content/skills.json').readAsStringSync()) as Map<String, dynamic>)),
     autoDemoEveryTimeProvider.overrideWithValue(autoDemo), // most tests are not about the demo: there the first-time rule decides

@@ -7,6 +7,7 @@ import '../../core/palette.dart';
 import '../../core/loading_action.dart';
 import 'delete_account_dialog.dart';
 import '../settings/settings.dart';
+import 'auto_sync.dart';
 import 'sync_controller.dart';
 import '../../core/type.dart';
 
@@ -55,35 +56,19 @@ class _SyncSectionState extends ConsumerState<SyncSection> {
               ),
             ] else ...[
               Text('${s('signedInAs')} $_email', key: const Key('sync-signed-in')),
-              if (last != null) Text('${s('lastSync')}: ${last.toLocal().toString().substring(0, 16)}', style: parentCaption),
+              const SizedBox(height: 4),
+              _StatusLine(status: ref.watch(autoSyncProvider).status, last: last),
               if (ref.read(syncServiceProvider).pendingDeleteCount > 0)
                 Text('${s('pendingDeletes')} ${ref.read(syncServiceProvider).pendingDeleteCount}', key: const Key('pending-deletes'), style: parentCaption),
               const SizedBox(height: 12),
-              Row(
-                children: [
-                  Expanded(
-                    child: LoadingAction(
-                      onPressed: ui.busy ? null : controller.syncNow,
-                      builder: (onPressed, loading) => FilledButton.icon(
-                        key: const Key('sync-now'),
-                        style: parentFilledStyle(),
-                        onPressed: onPressed,
-                        icon: LoadingContent(loading: loading, size: 18, child: const Icon(Icons.sync_rounded, size: 18)),
-                        label: Text(s('syncNow')),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  LoadingAction(
-                    onPressed: ui.busy ? null : controller.signOut,
-                    builder: (onPressed, loading) => OutlinedButton(
-                      key: const Key('sync-signout'),
-                      style: parentOutlinedStyle(context),
-                      onPressed: onPressed,
-                      child: LoadingContent(loading: loading, child: Text(s('signOut'))),
-                    ),
-                  ),
-                ],
+              LoadingAction(
+                onPressed: ui.busy ? null : controller.signOut,
+                builder: (onPressed, loading) => OutlinedButton(
+                  key: const Key('sync-signout'),
+                  style: parentOutlinedStyle(context),
+                  onPressed: onPressed,
+                  child: LoadingContent(loading: loading, child: Text(s('signOut'))),
+                ),
               ),
               const SizedBox(height: 8),
               LoadingAction(
@@ -110,6 +95,37 @@ class _SyncSectionState extends ConsumerState<SyncSection> {
           ],
         ),
       ),
+    );
+  }
+}
+
+/// "All changes saved" / "Saving..." / "Will sync when online", and the time of the last sync. The only place the sync shows itself.
+class _StatusLine extends ConsumerWidget {
+  const _StatusLine({required this.status, required this.last});
+
+  final SyncStatus status;
+  final DateTime? last;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final s = ref.watch(stringsProvider);
+    final (key, icon, color) = switch (status) {
+      SyncStatus.saving => ('syncStatusSaving', Icons.sync_rounded, Palette.brown),
+      SyncStatus.waiting => ('syncStatusWaiting', Icons.cloud_off_rounded, Palette.brown),
+      _ => ('syncStatusSaved', Icons.cloud_done_rounded, Palette.darkGreen),
+    };
+    return Row(
+      key: const Key('sync-status'),
+      children: [
+        Icon(icon, size: 18, color: color),
+        const SizedBox(width: 6),
+        Expanded(
+          child: Text(
+            s(key) + (last == null ? '' : '  ·  ${s('lastSync')}: ${last!.toLocal().toString().substring(0, 16)}'),
+            style: parentCaption.copyWith(color: color, fontWeight: FontWeight.w700),
+          ),
+        ),
+      ],
     );
   }
 }

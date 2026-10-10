@@ -6,6 +6,7 @@ import '../profiles/child_profile.dart';
 import '../progress/progress.dart';
 import '../units/unit_meta.dart';
 import '../settings/settings.dart';
+import 'auto_sync.dart';
 import 'sync_api.dart';
 import 'sync_service.dart';
 
@@ -23,6 +24,9 @@ final syncServiceProvider = Provider<SyncService>((ref) => SyncService(
       store: ref.read(syncStoreProvider),
       tokens: ref.read(tokenStoreProvider),
     ));
+
+/// What one background sync did.
+enum SyncOutcome { done, failed, skipped }
 
 class SyncUiState {
   const SyncUiState({this.busy = false, this.signedIn = false, this.messageKey, this.messageIsError = false});
@@ -80,9 +84,16 @@ class SyncController extends Notifier<SyncUiState> {
         avatarKey: p.child.avatarKey,
         birthYear: p.child.birthYear,
         birthMonth: p.child.birthMonth,
+        goalMinutes: p.child.goalMinutes,
         track: p.child.track,
+        skills: p.child.skills,
       ))
           .id;
+      if (p.child.updatedAt != null) {
+        // the child as the server has it (with the time of that change), and not to be sent back
+        await profiles.applyFromServer(localId, name: p.child.name, avatarKey: p.child.avatarKey, birthYear: p.child.birthYear, birthMonth: p.child.birthMonth, goalMinutes: p.child.goalMinutes, track: p.child.track, skills: p.child.skills, updatedAt: p.child.updatedAt!);
+        await _service.markProfileKnown(localId, p.child.updatedAt!);
+      }
       await _mergeInto(localId, p);
     }
     // A parent who already has children does not start from the "add your first child" screen.
@@ -110,6 +121,17 @@ class SyncController extends Notifier<SyncUiState> {
     await _service.rememberPulled(localChildId: localId, serverChildId: p.child.id, serverRecordGuids: p.progress.map((r) => r.clientRecordId));
   }
 
+  /// The most recent change wins: a profile the server holds in a newer version replaces this phone's fields.
+  Future<void> _applyProfile(String localId, ServerChild server) async {
+    final mine = ref.read(profilesProvider).where((p) => p.id == localId).firstOrNull;
+    final theirs = server.updatedAt;
+    if (mine == null || theirs == null) return;
+    if (mine.updatedAt != null && !theirs.isAfter(mine.updatedAt!)) return;
+    await ref.read(profilesProvider.notifier).applyFromServer(localId,
+        name: server.name, avatarKey: server.avatarKey, birthYear: server.birthYear, birthMonth: server.birthMonth, goalMinutes: server.goalMinutes ?? mine.goalMinutes, track: server.track, skills: server.skills ?? mine.skills, updatedAt: theirs);
+    await _service.markProfileKnown(localId, theirs);
+  }
+
   /// Every child's achievements, ready to send.
   Map<String, List<ServerAchievement>> _achievements() {
     final meta = ref.read(unitMetaProvider);
@@ -128,7 +150,11 @@ class SyncController extends Notifier<SyncUiState> {
       achievements: _achievements(),
       pullBack: pullBack,
     );
+    for (final e in report.newerProfiles.entries) {
+      await _applyProfile(e.key, e.value);
+    }
     for (final e in report.pulled.entries) {
+      await _applyProfile(e.key, e.value.child);
       await _mergeInto(e.key, e.value);
     }
     if (pullBack) _pulledThisSession = true;
@@ -144,20 +170,23 @@ class SyncController extends Notifier<SyncUiState> {
 
   /// Sends new children and progress in the background (after an activity, after adding a child). Silent on failure:
   /// everything stays on the device and goes out with the next attempt.
-  Future<void> syncQuietly() async {
-    if (state.busy) return;
+  Future<SyncOutcome> syncQuietly({bool? pullBack}) async {
+    if (state.busy) return SyncOutcome.failed; // an account action is running: try again shortly
     try {
-      if (!await _service.isSignedIn()) return;
-      await _sync(pullBack: !_pulledThisSession);
+      if (!await _service.isSignedIn()) return SyncOutcome.skipped;
+      await _sync(pullBack: pullBack ?? !_pulledThisSession);
       state = state.copyWith();
+      return SyncOutcome.done;
     } on SyncException {
-      // offline or session expired: try again next time
+      // offline or session expired: the automatic sync waits and tries again
+      return SyncOutcome.failed;
     }
   }
 
   Future<void> deleteAccount(String password) => _run(() async {
         await _service.deleteAccount(password);
         await ref.read(settingsProvider.notifier).setParentName('');
+        ref.read(autoSyncProvider.notifier).stopped();
         return 'accountDeleted';
       });
 
@@ -188,6 +217,7 @@ class SyncController extends Notifier<SyncUiState> {
       }
       await _service.signOut();
       await ref.read(settingsProvider.notifier).setParentName('');
+      ref.read(autoSyncProvider.notifier).stopped();
       state = state.copyWith(signedIn: false, clearMessage: true);
     } finally {
       state = state.copyWith(busy: false);

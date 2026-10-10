@@ -120,6 +120,8 @@ class _ChildDetailScreenState extends ConsumerState<ChildDetailScreen> {
               child: ListView(
                 padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
                 children: [
+                  _TracksCard(childId: child.id),
+                  const SizedBox(height: 12),
                   if (current != null) ...[
                     ParentCard(
                       key: const Key('detail-current'),
@@ -494,6 +496,57 @@ class _History extends StatelessWidget {
               Text(s.format('dActiveDays', {'n': summary.activeDays}), key: const Key('history-days'), style: ParentText.body),
             ],
           ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Progress in each track, side by side: units done, what was played this week, and which one is the child's active track.
+class _TracksCard extends ConsumerWidget {
+  const _TracksCard({required this.childId});
+
+  final String childId;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final s = ref.watch(stringsProvider);
+    final tracks = ref.watch(childTracksProvider(childId));
+    if (tracks.isEmpty) return const SizedBox.shrink();
+    final primary = Theme.of(context).colorScheme.primary;
+    return ParentCard(
+      key: const Key('detail-tracks'),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(s('pTracksProgress'), style: ParentText.section),
+          const SizedBox(height: 8),
+          for (final t in tracks)
+            Padding(
+              key: Key('detail-track-${t.track}'),
+              padding: const EdgeInsets.symmetric(vertical: 6),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(s(t.track == 'explorers' ? 'pTrackExplorers' : 'pTrackLL'), style: ParentText.body.copyWith(fontWeight: FontWeight.w800)),
+                        Text(s.format('pUnitsOfN', {'done': t.unitsDone, 'total': t.unitsTotal}), style: ParentText.caption),
+                        Text(s.format('pActivitiesWeek', {'n': t.activitiesThisWeek}), style: ParentText.caption),
+                      ],
+                    ),
+                  ),
+                  if (t.active)
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                      decoration: BoxDecoration(color: primary.withValues(alpha: 0.12), borderRadius: BorderRadius.circular(12)),
+                      child: Text(s('pActiveTrack'), style: ParentText.caption.copyWith(color: primary, fontWeight: FontWeight.w800)),
+                    ),
+                ],
+              ),
+            ),
         ],
       ),
     );

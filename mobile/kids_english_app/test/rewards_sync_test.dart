@@ -96,13 +96,31 @@ class FakeSyncApi implements SyncApi {
     return AuthTokens(accessToken: 'access-$refreshCalls', refreshToken: 'refresh-$refreshCalls');
   }
 
+  /// The profile each server child holds (what the other phones would read), and every update the phone sent.
+  final Map<String, ServerChild> profiles = {};
+  final updates = <({String id, String name, String track, int? goal, Set<String>? skills, DateTime? at})>[];
+
   @override
-  Future<String> createChild(String accessToken, {required String name, required String avatarKey, required int birthYear, required String track, int? birthMonth}) async {
+  Future<ServerChild> updateChild(String accessToken, String serverChildId,
+      {required String name, required String avatarKey, required int birthYear, required String track, int? birthMonth, int? goalMinutes, Set<String>? skills, DateTime? updatedAt}) async {
+    _net();
+    updates.add((id: serverChildId, name: name, track: track, goal: goalMinutes, skills: skills, at: updatedAt));
+    final held = profiles[serverChildId];
+    // like the real server: the most recent change wins, an older one is ignored and the caller gets what the server has
+    if (held?.updatedAt != null && updatedAt != null && updatedAt.isBefore(held!.updatedAt!)) return held;
+    final now = ServerChild(id: serverChildId, name: name, avatarKey: avatarKey, birthYear: birthYear, track: track, birthMonth: birthMonth, goalMinutes: goalMinutes ?? held?.goalMinutes, skills: skills ?? held?.skills, updatedAt: updatedAt ?? DateTime.now().toUtc());
+    profiles[serverChildId] = now;
+    return now;
+  }
+
+  @override
+  Future<String> createChild(String accessToken, {required String name, required String avatarKey, required int birthYear, required String track, int? birthMonth, int? goalMinutes, Set<String>? skills, DateTime? updatedAt}) async {
     _net();
     final id = 'server-${createdChildren.length}';
     createdBirthMonths.add(birthMonth);
     createdChildren.add(name);
     stored[id] = {};
+    profiles[id] = ServerChild(id: id, name: name, avatarKey: avatarKey, birthYear: birthYear, track: track, birthMonth: birthMonth, goalMinutes: goalMinutes, skills: skills, updatedAt: updatedAt);
     return id;
   }
 
@@ -120,7 +138,7 @@ class FakeSyncApi implements SyncApi {
   @override
   Future<List<ServerChild>> listChildren(String accessToken) async {
     _net();
-    return [...serverChildren];
+    return [...serverChildren, ...profiles.values.where((p) => !serverChildren.any((c) => c.id == p.id))];
   }
 
   @override
@@ -732,16 +750,14 @@ void main() {
       expect(find.byKey(const Key('sync-now')), findsNothing);
     });
 
-    testWidgets('signed in: sync now sends the children, then sign out returns to the button', (tester) async {
+    testWidgets('signed in: no sync button, a status line instead; then sign out returns to the button', (tester) async {
       final api = FakeSyncApi();
       await open(api, tester, signedIn: true);
       await tester.pump();
       expect(find.byKey(const Key('sync-signed-in')), findsOneWidget);
-
-      await tester.tap(find.byKey(const Key('sync-now')));
-      await tester.pumpAndSettle();
-      expect(find.text('تمت المزامنة'), findsOneWidget);
-      expect(api.createdChildren, ['Omar']);
+      expect(find.byKey(const Key('sync-now')), findsNothing); // sync runs by itself
+      expect(find.byKey(const Key('sync-status')), findsOneWidget);
+      expect(find.text('كل التغييرات محفوظة'), findsOneWidget);
 
       await tester.tap(find.byKey(const Key('sync-signout')));
       await tester.pumpAndSettle();

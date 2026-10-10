@@ -54,6 +54,7 @@ class SyncState {
     this.childMap = const {},
     this.pushed = const {},
     this.pendingDeletes = const {},
+    this.profilePushed = const {},
     this.lastSyncUtc,
   });
 
@@ -63,6 +64,9 @@ class SyncState {
   final Set<String> pushed; // local clientRecordIds already accepted by the server
   /// Server child ids whose local profile was deleted but the server copy is not confirmed deleted yet (e.g. it was offline).
   final Set<String> pendingDeletes;
+
+  /// local child id -> the `updatedAt` of the profile version the server already has (a profile that differs is sent again).
+  final Map<String, String> profilePushed;
   final DateTime? lastSyncUtc;
 
   SyncState copyWith({
@@ -71,6 +75,7 @@ class SyncState {
     Map<String, String>? childMap,
     Set<String>? pushed,
     Set<String>? pendingDeletes,
+    Map<String, String>? profilePushed,
     DateTime? lastSyncUtc,
   }) =>
       SyncState(
@@ -79,6 +84,7 @@ class SyncState {
         childMap: childMap ?? this.childMap,
         pushed: pushed ?? this.pushed,
         pendingDeletes: pendingDeletes ?? this.pendingDeletes,
+        profilePushed: profilePushed ?? this.profilePushed,
         lastSyncUtc: lastSyncUtc ?? this.lastSyncUtc,
       );
 
@@ -88,6 +94,7 @@ class SyncState {
         'childMap': childMap,
         'pushed': pushed.toList(),
         'pendingDeletes': pendingDeletes.toList(),
+        'profilePushed': profilePushed,
         if (lastSyncUtc != null) 'lastSyncUtc': lastSyncUtc!.toUtc().toIso8601String(),
       };
 
@@ -97,6 +104,7 @@ class SyncState {
         childMap: ((json['childMap'] as Map?) ?? {}).map((k, v) => MapEntry(k as String, v as String)),
         pushed: ((json['pushed'] as List?) ?? []).cast<String>().toSet(),
         pendingDeletes: ((json['pendingDeletes'] as List?) ?? []).cast<String>().toSet(),
+        profilePushed: ((json['profilePushed'] as Map?) ?? {}).map((k, v) => MapEntry(k as String, v as String)),
         lastSyncUtc: json['lastSyncUtc'] == null ? null : DateTime.parse(json['lastSyncUtc'] as String),
       );
 }
@@ -131,10 +139,14 @@ class PulledChild {
 }
 
 class SyncReport {
-  const SyncReport({this.childrenCreated = 0, this.recordsPushed = 0, this.duplicates = 0, this.pulled = const {}});
+  const SyncReport({this.childrenCreated = 0, this.recordsPushed = 0, this.duplicates = 0, this.pulled = const {}, this.newerProfiles = const {}, this.profilesPushed = 0});
   final int childrenCreated;
   final int recordsPushed;
   final int duplicates;
+  final int profilesPushed;
+
+  /// Profiles the server holds in a newer version than this phone's (another phone changed them later): the controller applies them.
+  final Map<String, ServerChild> newerProfiles;
 
   /// With `pullBack`: what the server holds for each local child (progress and achievements from every phone).
   final Map<String, PulledChild> pulled;
@@ -274,6 +286,24 @@ class SyncService {
     ));
   }
 
+  /// The server's version of a profile is now this phone's too: it is not sent back.
+  Future<void> markProfileKnown(String localChildId, DateTime updatedAt) async {
+    final state = store.load();
+    await store.save(state.copyWith(profilePushed: {...state.profilePushed, localChildId: updatedAt.toUtc().toIso8601String()}));
+  }
+
+  /// True while something on this phone has not reached the server yet: a child never sent, a profile changed since it was sent,
+  /// progress records or deletions waiting. (Achievements are always sent as a whole, so they are not counted here.)
+  bool hasUnsentChanges({required List<ChildProfile> children, required List<ProgressRecord> progress}) {
+    final state = store.load();
+    if (state.pendingDeletes.isNotEmpty) return true;
+    for (final c in children) {
+      if (!state.childMap.containsKey(c.id)) return true;
+      if (state.profilePushed[c.id] != (c.updatedAt?.toUtc().toIso8601String() ?? '')) return true;
+    }
+    return progress.any((r) => !state.pushed.contains(r.clientRecordId));
+  }
+
   Future<bool> isSignedIn() async => (await tokens.readRefreshToken()) != null && store.load().baseUrl.isNotEmpty;
 
   /// Sends new children, progress and every child's achievements. With [pullBack] it then reads back what the server holds
@@ -303,10 +333,26 @@ class SyncService {
     for (final child in children) {
       if (childMap.containsKey(child.id)) continue;
       childMap[child.id] = await api.createChild(auth.accessToken,
-          name: child.name, avatarKey: child.avatarKey, birthYear: child.birthYear, track: child.track, birthMonth: child.birthMonth);
+          name: child.name, avatarKey: child.avatarKey, birthYear: child.birthYear, track: child.track, birthMonth: child.birthMonth, goalMinutes: child.goalMinutes, skills: child.skills, updatedAt: child.updatedAt);
       created++;
-      state = state.copyWith(childMap: Map.of(childMap));
+      state = state.copyWith(childMap: Map.of(childMap), profilePushed: {...state.profilePushed, child.id: child.updatedAt?.toUtc().toIso8601String() ?? ''});
       await store.save(state); // never create the same child twice, even if a later step fails
+    }
+
+    // A profile changed on this phone since it was last sent (name, avatar, birth, track, goal, skills) goes out too. The server keeps the
+    // most recent change: when another phone changed it later, what the server holds comes back and is applied here.
+    var profilesPushed = 0;
+    final newerProfiles = <String, ServerChild>{};
+    for (final child in children) {
+      final version = child.updatedAt?.toUtc().toIso8601String() ?? '';
+      if (state.profilePushed[child.id] == version) continue;
+      final answer = await api.updateChild(auth.accessToken, childMap[child.id]!,
+          name: child.name, avatarKey: child.avatarKey, birthYear: child.birthYear, track: child.track, birthMonth: child.birthMonth, goalMinutes: child.goalMinutes, skills: child.skills, updatedAt: child.updatedAt);
+      profilesPushed++;
+      final serverIsNewer = answer.updatedAt != null && (child.updatedAt == null || answer.updatedAt!.isAfter(child.updatedAt!));
+      if (serverIsNewer) newerProfiles[child.id] = answer;
+      state = state.copyWith(profilePushed: {...state.profilePushed, child.id: serverIsNewer ? answer.updatedAt!.toUtc().toIso8601String() : version});
+      await store.save(state);
     }
 
     final pushed = Set<String>.of(state.pushed);
@@ -343,10 +389,11 @@ class SyncService {
 
     final pulled = <String, PulledChild>{};
     if (pullBack) {
+      final serverChildren = {for (final c in await api.listChildren(auth.accessToken)) c.id: c};
       for (final child in children) {
         final serverId = childMap[child.id]!;
         pulled[child.id] = PulledChild(
-          child: ServerChild(id: serverId, name: child.name, avatarKey: child.avatarKey, birthYear: child.birthYear, track: child.track, birthMonth: child.birthMonth),
+          child: serverChildren[serverId] ?? ServerChild(id: serverId, name: child.name, avatarKey: child.avatarKey, birthYear: child.birthYear, track: child.track, birthMonth: child.birthMonth),
           progress: await api.listProgress(auth.accessToken, serverId),
           achievements: await api.listAchievements(auth.accessToken, serverId),
         );
@@ -354,6 +401,6 @@ class SyncService {
     }
 
     await store.save(state.copyWith(lastSyncUtc: DateTime.now().toUtc()));
-    return SyncReport(childrenCreated: created, recordsPushed: pushedCount, duplicates: duplicates, pulled: pulled);
+    return SyncReport(childrenCreated: created, recordsPushed: pushedCount, duplicates: duplicates, pulled: pulled, newerProfiles: newerProfiles, profilesPushed: profilesPushed);
   }
 }

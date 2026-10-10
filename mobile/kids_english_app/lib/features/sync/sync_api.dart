@@ -27,13 +27,18 @@ class SubmitResult {
 
 /// A child as the server stores it.
 class ServerChild {
-  const ServerChild({required this.id, required this.name, required this.avatarKey, required this.birthYear, required this.track, this.birthMonth});
+  const ServerChild({required this.id, required this.name, required this.avatarKey, required this.birthYear, required this.track, this.birthMonth, this.goalMinutes, this.skills, this.updatedAt});
   final String id;
   final String name;
   final String avatarKey;
   final int birthYear;
   final String track;
   final int? birthMonth;
+  final int? goalMinutes;
+  final Set<String>? skills;
+
+  /// When the profile was last changed on a device (null when an older app wrote it).
+  final DateTime? updatedAt;
 }
 
 /// A progress record as the server stores it (the `clientRecordId` is the GUID the app made for it).
@@ -78,7 +83,11 @@ abstract class SyncApi {
   /// Sets a new password with the code from the e-mail.
   Future<void> resetPassword({required String email, required String code, required String newPassword});
   Future<String> createChild(String accessToken,
-      {required String name, required String avatarKey, required int birthYear, required String track, int? birthMonth});
+      {required String name, required String avatarKey, required int birthYear, required String track, int? birthMonth, int? goalMinutes, Set<String>? skills, DateTime? updatedAt});
+
+  /// Sends the profile fields of an existing child. The server keeps the most recent change; what it holds afterwards comes back.
+  Future<ServerChild> updateChild(String accessToken, String serverChildId,
+      {required String name, required String avatarKey, required int birthYear, required String track, int? birthMonth, int? goalMinutes, Set<String>? skills, DateTime? updatedAt});
   Future<SubmitResult> submitProgress(String accessToken, String serverChildId, List<Map<String, Object?>> items);
 
   /// Every child of the signed-in parent (used right after sign-in to bring the family's data to this device).
@@ -201,11 +210,41 @@ class HttpSyncApi implements SyncApi {
     await _send('POST', 'api/auth/reset-password', {'email': email, 'token': code, 'newPassword': newPassword}, null);
   }
 
+  Map<String, Object?> _childBody({required String name, required String avatarKey, required int birthYear, required String track, int? birthMonth, int? goalMinutes, Set<String>? skills, DateTime? updatedAt}) => {
+        'name': name,
+        'avatarKey': avatarKey,
+        'birthYear': birthYear,
+        'track': track,
+        'birthMonth': ?birthMonth,
+        'goalMinutes': ?goalMinutes,
+        if (skills != null) 'skills': (skills.toList()..sort()),
+        if (updatedAt != null) 'updatedAt': updatedAt.toUtc().toIso8601String(),
+      };
+
+  static ServerChild _child(Map<String, dynamic> e) => ServerChild(
+        id: e['id'] as String,
+        name: e['name'] as String,
+        avatarKey: e['avatarKey'] as String,
+        birthYear: e['birthYear'] as int,
+        track: (e['track'] as String?) ?? 'little-learners',
+        birthMonth: e['birthMonth'] as int?,
+        goalMinutes: e['goalMinutes'] as int?,
+        skills: (e['skills'] as List<dynamic>?)?.cast<String>().toSet(),
+        updatedAt: e['updatedAt'] == null ? null : DateTime.parse(e['updatedAt'] as String),
+      );
+
   @override
   Future<String> createChild(String accessToken,
-      {required String name, required String avatarKey, required int birthYear, required String track, int? birthMonth}) async {
-    final json = await _post('api/children', {'name': name, 'avatarKey': avatarKey, 'birthYear': birthYear, 'track': track, 'birthMonth': ?birthMonth}, token: accessToken);
+      {required String name, required String avatarKey, required int birthYear, required String track, int? birthMonth, int? goalMinutes, Set<String>? skills, DateTime? updatedAt}) async {
+    final json = await _post('api/children', _childBody(name: name, avatarKey: avatarKey, birthYear: birthYear, track: track, birthMonth: birthMonth, goalMinutes: goalMinutes, skills: skills, updatedAt: updatedAt), token: accessToken);
     return json['id'] as String;
+  }
+
+  @override
+  Future<ServerChild> updateChild(String accessToken, String serverChildId,
+      {required String name, required String avatarKey, required int birthYear, required String track, int? birthMonth, int? goalMinutes, Set<String>? skills, DateTime? updatedAt}) async {
+    final json = await _send('PUT', 'api/children/$serverChildId', _childBody(name: name, avatarKey: avatarKey, birthYear: birthYear, track: track, birthMonth: birthMonth, goalMinutes: goalMinutes, skills: skills, updatedAt: updatedAt), accessToken);
+    return _child(json as Map<String, dynamic>);
   }
 
   @override
@@ -217,17 +256,7 @@ class HttpSyncApi implements SyncApi {
   @override
   Future<List<ServerChild>> listChildren(String accessToken) async {
     final json = await _send('GET', 'api/children', null, accessToken) as List<dynamic>;
-    return [
-      for (final e in json.cast<Map<String, dynamic>>())
-        ServerChild(
-          id: e['id'] as String,
-          name: e['name'] as String,
-          avatarKey: e['avatarKey'] as String,
-          birthYear: e['birthYear'] as int,
-          track: (e['track'] as String?) ?? 'little-learners',
-          birthMonth: e['birthMonth'] as int?,
-        ),
-    ];
+    return [for (final e in json.cast<Map<String, dynamic>>()) _child(e)];
   }
 
   @override

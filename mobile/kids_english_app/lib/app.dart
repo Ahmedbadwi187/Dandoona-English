@@ -7,6 +7,7 @@ import 'core/strings.dart';
 import 'core/theme.dart';
 import 'core/type.dart';
 import 'features/settings/settings.dart';
+import 'features/sync/auto_sync.dart';
 import 'features/splash/dandoona_splash.dart';
 import 'router.dart';
 
@@ -37,10 +38,12 @@ class KidsEnglishApp extends ConsumerWidget {
         child: SkyBackground(
           calm: true,
           // the phone's text size is respected, up to 1.3x in the child area and 1.5x in the parent area
-          child: TextScaleArea(
-            listenable: router.routerDelegate,
-            path: () => router.routerDelegate.currentConfiguration.isEmpty ? '/' : router.routerDelegate.currentConfiguration.uri.path,
-            child: child ?? const SizedBox.shrink(),
+          child: AutoSync(
+            child: TextScaleArea(
+              listenable: router.routerDelegate,
+              path: () => router.routerDelegate.currentConfiguration.isEmpty ? '/' : router.routerDelegate.currentConfiguration.uri.path,
+              child: child ?? const SizedBox.shrink(),
+            ),
           ),
         ),
       ),

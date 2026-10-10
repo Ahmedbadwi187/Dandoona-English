@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,6 +10,7 @@ import '../../core/strings.dart';
 import '../profiles/child_profile.dart';
 import '../settings/settings.dart';
 import '../../core/type.dart';
+import '../sync/auto_sync.dart';
 import '../sync/sync_api.dart';
 import '../sync/sync_controller.dart';
 import 'onboarding_screens.dart';
@@ -66,6 +69,7 @@ class _AuthRouteState extends ConsumerState<AuthRoute> {
     await controller.signIn(_server, _email, _password, register: _signup, firstName: _firstName, guardianConfirmed: _guardian, termsAccepted: _agreed);
     final ui = ref.read(syncControllerProvider);
     if (!mounted || !ui.signedIn || ui.messageIsError) return;
+    unawaited(ref.read(autoSyncProvider.notifier).accountReady()); // from now on it syncs by itself; the children already here go up
     if (widget.fromSettings) {
       await controller.syncNow(); // the children and progress already on this phone go to the new account
       if (mounted) context.pop();

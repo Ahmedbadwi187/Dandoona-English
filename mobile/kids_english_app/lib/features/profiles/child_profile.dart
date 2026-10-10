@@ -22,6 +22,7 @@ class ChildProfile {
     this.birthMonth,
     this.goalMinutes,
     this.skills,
+    this.updatedAt,
   });
 
   final String id;
@@ -40,6 +41,9 @@ class ChildProfile {
   /// What the parent said the child can already do (ids from assets/content/skills.json, or `none` / `unsure`); null = never asked.
   final Set<String>? skills;
 
+  /// When the profile fields (name, avatar, birth, track, goal, skills) last changed on a device; sync keeps the most recent change. Null = old data.
+  final DateTime? updatedAt;
+
   /// Age in whole years (the birth month is used when it is known).
   int ageYears(DateTime now) {
     final a = now.year - birthYear - (birthMonth != null && now.month < birthMonth! ? 1 : 0);
@@ -49,7 +53,7 @@ class ChildProfile {
   /// Accessory id from rewards/accessories.dart currently worn by the mascot for this child (null = none).
   final String? equippedAccessory;
 
-  ChildProfile copyWith({String? name, String? avatarKey, int? birthYear, int? birthMonth, int? goalMinutes, String? track, Set<String>? skills, String? equippedAccessory, bool clearAccessory = false}) =>
+  ChildProfile copyWith({String? name, String? avatarKey, int? birthYear, int? birthMonth, int? goalMinutes, String? track, Set<String>? skills, DateTime? updatedAt, String? equippedAccessory, bool clearAccessory = false}) =>
       ChildProfile(
         id: id,
         name: name ?? this.name,
@@ -59,6 +63,7 @@ class ChildProfile {
         goalMinutes: goalMinutes ?? this.goalMinutes,
         track: track ?? this.track,
         skills: skills ?? this.skills,
+        updatedAt: updatedAt ?? this.updatedAt,
         createdAt: createdAt,
         equippedAccessory: clearAccessory ? null : (equippedAccessory ?? this.equippedAccessory),
       );
@@ -71,6 +76,7 @@ class ChildProfile {
         if (birthMonth != null) 'birthMonth': birthMonth,
         if (goalMinutes != null) 'goalMinutes': goalMinutes,
         if (skills != null) 'skills': (skills!.toList()..sort()),
+        if (updatedAt != null) 'updatedAt': updatedAt!.toUtc().toIso8601String(),
         'track': track,
         'createdAt': createdAt.toUtc().toIso8601String(),
         if (equippedAccessory != null) 'equippedAccessory': equippedAccessory,
@@ -84,6 +90,7 @@ class ChildProfile {
         birthMonth: json['birthMonth'] as int?,
         goalMinutes: json['goalMinutes'] as int?,
         skills: (json['skills'] as List<dynamic>?)?.cast<String>().toSet(),
+        updatedAt: json['updatedAt'] == null ? null : DateTime.parse(json['updatedAt'] as String),
         track: (json['track'] as String?) ?? 'little-learners',
         createdAt: DateTime.parse(json['createdAt'] as String),
         equippedAccessory: json['equippedAccessory'] as String?,
@@ -134,6 +141,7 @@ class ProfilesNotifier extends Notifier<List<ChildProfile>> {
       goalMinutes: goalMinutes,
       track: track,
       skills: skills,
+      updatedAt: now,
       createdAt: now,
     );
     state = [...state, profile];
@@ -144,7 +152,16 @@ class ProfilesNotifier extends Notifier<List<ChildProfile>> {
   Future<void> update(String id, {String? name, String? avatarKey, int? birthYear, int? birthMonth, int? goalMinutes, String? track, Set<String>? skills}) async {
     state = [
       for (final p in state)
-        if (p.id == id) p.copyWith(name: name?.trim(), avatarKey: avatarKey, birthYear: birthYear, birthMonth: birthMonth, goalMinutes: goalMinutes, track: track, skills: skills) else p,
+        if (p.id == id) p.copyWith(name: name?.trim(), avatarKey: avatarKey, birthYear: birthYear, birthMonth: birthMonth, goalMinutes: goalMinutes, track: track, skills: skills, updatedAt: ref.read(clockProvider)()) else p,
+    ];
+    await _save();
+  }
+
+  /// A change that came from the server (the most recent one wins): applied as it is, with the time it was made, without stamping "now".
+  Future<void> applyFromServer(String id, {required String name, required String avatarKey, required int birthYear, int? birthMonth, int? goalMinutes, String? track, Set<String>? skills, required DateTime updatedAt}) async {
+    state = [
+      for (final p in state)
+        if (p.id == id) p.copyWith(name: name, avatarKey: avatarKey, birthYear: birthYear, birthMonth: birthMonth, goalMinutes: goalMinutes, track: track, skills: skills, updatedAt: updatedAt) else p,
     ];
     await _save();
   }
