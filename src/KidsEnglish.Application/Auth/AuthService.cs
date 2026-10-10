@@ -74,7 +74,7 @@ public class AuthService(
         var reset = await identity.CreatePasswordResetTokenAsync(request.Email, ct);
         if (reset is null) return;
         await email.SendAsync(new EmailMessage(request.Email, "Reset your Dandoona English password",
-            $"Your password reset code:\n{reset.Value.Token}\n\nIf you did not ask for this you can ignore this message; your password stays the same."), ct);
+            $"Your password reset code:\n{reset.Value.Token}\n\nType it in the app within a few minutes. If you did not ask for this you can ignore this message; your password stays the same."), ct);
     }
 
     public async Task ResetPasswordAsync(ResetPasswordRequest request, CancellationToken ct)

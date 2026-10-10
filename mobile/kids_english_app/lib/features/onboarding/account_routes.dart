@@ -4,9 +4,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../core/strings.dart';
 import '../profiles/child_profile.dart';
 import '../settings/settings.dart';
 import '../../core/type.dart';
+import '../sync/sync_api.dart';
 import '../sync/sync_controller.dart';
 import 'onboarding_screens.dart';
 
@@ -96,9 +98,99 @@ class _AuthRouteState extends ConsumerState<AuthRoute> {
       onGuardian: (v) => setState(() => _guardian = v),
       onAgreed: (v) => setState(() => _agreed = v),
       onSubmit: _submit,
+      onForgot: () => context.push('/forgot-password', extra: (email: _email, server: _server)), // (the address goes in extra, not in the URL)
       onPrivacy: () => context.push('/legal/privacy'),
       onTerms: () => context.push('/legal/terms'),
       onBack: () => context.canPop() ? context.pop() : context.go('/onboarding'),
+    );
+  }
+}
+
+/// Forgot password. The server e-mails a 6-digit code (it answers the same whether or not the address has an account); the parent
+/// types the code with a new password and goes back to log in.
+class ForgotPasswordRoute extends ConsumerStatefulWidget {
+  const ForgotPasswordRoute({super.key, this.email = '', this.server = ''});
+
+  final String email;
+  final String server;
+
+  @override
+  ConsumerState<ForgotPasswordRoute> createState() => _ForgotPasswordRouteState();
+}
+
+class _ForgotPasswordRouteState extends ConsumerState<ForgotPasswordRoute> {
+  late String _email = widget.email;
+  String _code = '', _password = '';
+  bool _codeStep = false, _busy = false;
+  String? _error;
+
+  String get _server {
+    if (widget.server.isNotEmpty) return widget.server;
+    final saved = ref.read(syncStoreProvider).load().baseUrl;
+    return saved.isNotEmpty ? saved : defaultApiBaseUrl;
+  }
+
+  String _messageFor(Object e, Strings s, {required bool resetting}) {
+    if (e is SyncException) {
+      return switch (e.kind) {
+        SyncErrorKind.network => s('syncNetwork'),
+        SyncErrorKind.validation => s(resetting ? 'obCodeInvalid' : 'syncInvalid'),
+        _ => s('syncFailed'),
+      };
+    }
+    return s('syncFailed');
+  }
+
+  Future<void> _send() async {
+    final s = ref.read(stringsProvider);
+    setState(() {
+      _busy = true;
+      _error = null;
+    });
+    try {
+      await ref.read(syncServiceProvider).forgotPassword(_server, _email.trim());
+      if (mounted) setState(() => _codeStep = true);
+    } on Object catch (e) {
+      if (mounted) setState(() => _error = _messageFor(e, s, resetting: false));
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
+  Future<void> _change() async {
+    final s = ref.read(stringsProvider);
+    setState(() {
+      _busy = true;
+      _error = null;
+    });
+    try {
+      await ref.read(syncServiceProvider).resetPassword(_server, _email.trim(), _code.trim(), _password);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(s('obPasswordChanged'))));
+      context.canPop() ? context.pop() : context.go('/auth');
+    } on Object catch (e) {
+      if (mounted) setState(() => _error = _messageFor(e, s, resetting: true));
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ForgotPasswordScreen(
+      s: ref.watch(stringsProvider),
+      codeStep: _codeStep,
+      email: _email,
+      code: _code,
+      password: _password,
+      busy: _busy,
+      error: _error,
+      onEmail: (v) => setState(() => _email = v),
+      onCode: (v) => setState(() => _code = v),
+      onPassword: (v) => setState(() => _password = v),
+      onSend: _send,
+      onChange: _change,
+      onBack: () => _codeStep ? setState(() => _codeStep = false) : (context.canPop() ? context.pop() : context.go('/auth')),
     );
   }
 }

@@ -72,6 +72,8 @@ public class ParentAccountTests(ApiFactory factory)
 
         (await c.PostAsJsonAsync("/api/auth/forgot-password", new ForgotPasswordRequest(email))).StatusCode.ShouldBe(HttpStatusCode.NoContent);
         var code = factory.Emails.LastCodeFor(email);
+        code.Length.ShouldBe(6); // a short number the parent can type on a phone
+        code.ShouldAllBe(ch => char.IsDigit(ch));
 
         var bad = await c.PostAsJsonAsync("/api/auth/reset-password", new ResetPasswordRequest(email, "nope", "NewPassw0rd!y"));
         bad.StatusCode.ShouldBe(HttpStatusCode.BadRequest);

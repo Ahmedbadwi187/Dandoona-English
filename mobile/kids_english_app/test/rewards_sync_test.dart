@@ -60,6 +60,25 @@ class FakeSyncApi implements SyncApi {
     return const AuthTokens(accessToken: 'access-0', refreshToken: 'refresh-0');
   }
 
+  /// The addresses a reset code was asked for, and the last new password set (with the code the "server" accepts).
+  final forgotten = <String>[];
+  String validResetCode = '123456';
+  String? passwordSetTo;
+
+  @override
+  Future<void> forgotPassword(String email) async {
+    _net();
+    forgotten.add(email);
+  }
+
+  @override
+  Future<void> resetPassword({required String email, required String code, required String newPassword}) async {
+    _net();
+    if (code != validResetCode || newPassword.length < 8) throw const SyncException(SyncErrorKind.validation, 'The code is not valid.');
+    passwordSetTo = newPassword;
+    validResetCode = ''; // used once
+  }
+
   @override
   Future<AuthTokens> login({required String email, required String password}) async {
     _net();

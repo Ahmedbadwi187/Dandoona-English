@@ -122,6 +122,7 @@ class AuthScreen extends StatelessWidget {
     required this.onGuardian,
     required this.onAgreed,
     required this.onSubmit,
+    this.onForgot,
     this.onBack,
     this.busy = false,
     this.error,
@@ -139,6 +140,9 @@ class AuthScreen extends StatelessWidget {
   final ValueChanged<String> onEmail, onPassword, onFirstName;
   final ValueChanged<bool> onGuardian, onAgreed;
   final LoadingCallback onSubmit;
+
+  /// "Forgot your password?" (log-in mode only).
+  final VoidCallback? onForgot;
   final VoidCallback? onBack;
   final bool busy;
   final String? error;
@@ -175,6 +179,16 @@ class AuthScreen extends StatelessWidget {
           _Field(key: const Key('auth-email'), label: s('obEmail'), value: email, onChanged: onEmail, keyboard: TextInputType.emailAddress),
           const SizedBox(height: 12),
           _Field(key: const Key('auth-password'), label: s('obPassword'), value: password, onChanged: onPassword, obscure: true),
+          if (!signup && onForgot != null)
+            Align(
+              alignment: AlignmentDirectional.centerStart,
+              child: TextButton(
+                key: const Key('auth-forgot'),
+                style: TextButton.styleFrom(minimumSize: const Size(48, 48), foregroundColor: Palette.plum),
+                onPressed: onForgot,
+                child: Text(s('obForgot'), style: parentBody.copyWith(fontWeight: FontWeight.w700, decoration: TextDecoration.underline)),
+              ),
+            ),
           if (signup) ...[
             const SizedBox(height: 12),
             _Field(key: const Key('auth-name'), label: s('obFirstName'), value: firstName, onChanged: onFirstName),
@@ -186,6 +200,68 @@ class AuthScreen extends StatelessWidget {
               onChanged: onAgreed,
               child: _AgreeText(s: s, onPrivacy: onPrivacy, onTerms: onTerms),
             ),
+          ],
+          if (error != null) Padding(padding: const EdgeInsets.only(top: 8), child: Text(error!, style: parentBody.copyWith(color: Palette.red))),
+        ],
+      ),
+    );
+  }
+}
+
+/// Forgot password: first the e-mail address (the server sends a 6-digit code), then the code with a new password.
+class ForgotPasswordScreen extends StatelessWidget {
+  const ForgotPasswordScreen({
+    super.key,
+    required this.s,
+    required this.codeStep,
+    required this.email,
+    required this.code,
+    required this.password,
+    required this.onEmail,
+    required this.onCode,
+    required this.onPassword,
+    required this.onSend,
+    required this.onChange,
+    this.onBack,
+    this.busy = false,
+    this.error,
+  });
+
+  final Strings s;
+
+  /// false: asking for the code; true: typing it with the new password.
+  final bool codeStep;
+  final String email, code, password;
+  final ValueChanged<String> onEmail, onCode, onPassword;
+  final LoadingCallback onSend, onChange;
+  final VoidCallback? onBack;
+  final bool busy;
+  final String? error;
+
+  bool get _emailOk => email.contains('@') && email.contains('.');
+  bool get _codeOk => code.trim().length == 6 && password.length >= 8;
+
+  @override
+  Widget build(BuildContext context) {
+    return OnboardingFrame(
+      s: s,
+      pose: DandoonaPose.thinking,
+      poseSize: 120,
+      title: s(codeStep ? 'obCodeTitle' : 'obForgotTitle'),
+      subtitle: s(codeStep ? 'obCodeBody' : 'obForgotBody'),
+      onBack: onBack,
+      onContinue: busy ? null : (codeStep ? (_codeOk ? onChange : null) : (_emailOk ? onSend : null)),
+      continueLoading: busy,
+      continueLabel: s(codeStep ? 'obChangePassword' : 'obSendCode'),
+      secondaryLabel: codeStep ? s('obResend') : null,
+      onSecondary: codeStep ? onSend : null,
+      child: Column(
+        children: [
+          if (!codeStep) _Field(key: const Key('forgot-email'), label: s('obEmail'), value: email, onChanged: onEmail, keyboard: TextInputType.emailAddress),
+          if (codeStep) ...[
+            _Field(key: const Key('forgot-code'), label: s('obCode'), value: code, onChanged: onCode, keyboard: TextInputType.number),
+            const SizedBox(height: 12),
+            _Field(key: const Key('forgot-password'), label: s('obNewPassword'), value: password, onChanged: onPassword, obscure: true),
           ],
           if (error != null) Padding(padding: const EdgeInsets.only(top: 8), child: Text(error!, style: parentBody.copyWith(color: Palette.red))),
         ],

@@ -68,6 +68,13 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/language', builder: (_, _) => const LanguageRoute()),
       GoRoute(path: '/onboarding', builder: (_, _) => const ParentWelcomeRoute()),
       GoRoute(path: '/auth', builder: (_, state) => AuthRoute(fromSettings: state.uri.queryParameters['from'] == 'settings')),
+      GoRoute(
+        path: '/forgot-password',
+        builder: (_, state) {
+          final extra = state.extra;
+          return extra is ({String email, String server}) ? ForgotPasswordRoute(email: extra.email, server: extra.server) : const ForgotPasswordRoute();
+        },
+      ),
       GoRoute(path: '/legal/:doc', builder: (_, state) => LegalScreen(doc: state.pathParameters['doc']!)),
       GoRoute(
         path: '/onboarding/child',

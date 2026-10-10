@@ -169,6 +169,12 @@ class SyncService {
     await _signedIn(baseUrl, email, t);
   }
 
+  /// Sends the 6-digit reset code to [email] (always looks successful: the server never says whether the address has an account).
+  Future<void> forgotPassword(String baseUrl, String email) => apiFor(baseUrl).forgotPassword(email);
+
+  Future<void> resetPassword(String baseUrl, String email, String code, String newPassword) =>
+      apiFor(baseUrl).resetPassword(email: email, code: code, newPassword: newPassword);
+
   Future<void> _signedIn(String baseUrl, String email, AuthTokens t) async {
     await tokens.saveRefreshToken(t.refreshToken);
     final previous = store.load();

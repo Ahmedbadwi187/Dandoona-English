@@ -36,6 +36,8 @@ public static class DependencyInjection
                 o.Lockout.MaxFailedAccessAttempts = 5;
                 o.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
                 o.Lockout.AllowedForNewUsers = true;
+                // the password reset code is the short number the e-mail provider makes (6 digits, easy to type on a phone)
+                o.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultEmailProvider;
             })
             .AddRoles<IdentityRole<Guid>>()
             .AddEntityFrameworkStores<AppDbContext>()
@@ -49,8 +51,12 @@ public static class DependencyInjection
         services.AddSingleton<IClock, SystemClock>();
         services.AddScoped<IIdentityService, IdentityService>();
         services.AddScoped<ITokenService, TokenService>();
-        // No e-mail provider is chosen yet: messages are written to the log. Replace this registration when one is.
-        services.AddSingleton<IEmailSender, DevEmailSender>();
+        // E-mail: with Email:Host in appsettings the messages are sent by that SMTP server; without it they are written to the log.
+        services.AddOptions<EmailOptions>().Bind(config.GetSection(EmailOptions.Section));
+        if (!string.IsNullOrWhiteSpace(config[$"{EmailOptions.Section}:Host"]))
+            services.AddSingleton<IEmailSender, SmtpEmailSender>();
+        else
+            services.AddSingleton<IEmailSender, DevEmailSender>();
         return services;
     }
 }

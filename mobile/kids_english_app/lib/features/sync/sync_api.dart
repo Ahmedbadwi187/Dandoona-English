@@ -71,6 +71,12 @@ abstract class SyncApi {
   Future<AuthTokens> register({required String email, required String password, required String displayName, bool guardianConfirmed = false, bool termsAccepted = false});
   Future<AuthTokens> login({required String email, required String password});
   Future<AuthTokens> refresh(String refreshToken);
+
+  /// Asks the server to e-mail a 6-digit code (it answers the same for any address, so nobody can find out who has an account).
+  Future<void> forgotPassword(String email);
+
+  /// Sets a new password with the code from the e-mail.
+  Future<void> resetPassword({required String email, required String code, required String newPassword});
   Future<String> createChild(String accessToken,
       {required String name, required String avatarKey, required int birthYear, required String track, int? birthMonth});
   Future<SubmitResult> submitProgress(String accessToken, String serverChildId, List<Map<String, Object?>> items);
@@ -184,6 +190,16 @@ class HttpSyncApi implements SyncApi {
   @override
   Future<AuthTokens> refresh(String refreshToken) async =>
       _tokens(await _post('api/auth/refresh', {'refreshToken': refreshToken}));
+
+  @override
+  Future<void> forgotPassword(String email) async {
+    await _send('POST', 'api/auth/forgot-password', {'email': email}, null);
+  }
+
+  @override
+  Future<void> resetPassword({required String email, required String code, required String newPassword}) async {
+    await _send('POST', 'api/auth/reset-password', {'email': email, 'token': code, 'newPassword': newPassword}, null);
+  }
 
   @override
   Future<String> createChild(String accessToken,
