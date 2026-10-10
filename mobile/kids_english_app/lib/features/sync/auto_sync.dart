@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../profiles/child_profile.dart';
 import '../progress/progress.dart';
+import '../skills/skills.dart';
 import '../units/unit_meta.dart';
 import 'sync_controller.dart';
 
@@ -191,7 +192,25 @@ class _AutoSyncState extends ConsumerState<AutoSync> with WidgetsBindingObserver
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
-    Future.microtask(() => ref.read(autoSyncProvider.notifier).start());
+    Future.microtask(() async {
+      await _convertOldChildren();
+      await ref.read(autoSyncProvider.notifier).start();
+    });
+  }
+
+  /// Children saved before the skills list get the skills that match their old answer (once; the active track is kept).
+  Future<void> _convertOldChildren() async {
+    try {
+      final config = await ref.read(skillsConfigProvider.future);
+      await convertOldChildren(
+        config: config,
+        children: [for (final c in ref.read(profilesProvider)) (id: c.id, skills: c.skills)],
+        placedOf: (id) => ref.read(unitMetaProvider).of(id).placed,
+        save: (id, skills) => ref.read(profilesProvider.notifier).setSkillsQuietly(id, skills),
+      );
+    } on Object {
+      // the list could not be read: the children stay as they are and it is tried again next start
+    }
   }
 
   @override

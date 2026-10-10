@@ -18,6 +18,7 @@ import '../content/content_repository.dart';
 import '../onboarding/onboarding_widgets.dart';
 import '../profiles/child_profile.dart';
 import '../session/session.dart';
+import '../skills/skip_ahead.dart';
 import 'map_path.dart';
 import 'review_logic.dart';
 import 'unit_meta.dart';
@@ -52,7 +53,16 @@ class _ReviewScreenState extends ConsumerState<ReviewScreen> {
 
   Future<void> _finished(ActivityResult r) async {
     final childId = ref.read(activeChildIdProvider);
-    if (childId != null) await ref.read(unitMetaProvider.notifier).passReview(childId, widget.reviewId);
+    if (childId != null) {
+      await ref.read(unitMetaProvider.notifier).passReview(childId, widget.reviewId);
+      // every star on the first try: for an "I'm not sure" child the parent area may suggest skipping ahead (never in the child's area)
+      final track = ref.read(activeContentProvider).asData?.value;
+      final child = ref.read(profilesProvider).where((p) => p.id == childId).firstOrNull;
+      if (r.stars == 3 && track != null && child != null) {
+        final units = widget.reviewId == castleId ? const <String>[] : (track.reviews.where((x) => x.id == widget.reviewId).firstOrNull?.units ?? const <String>[]);
+        await ref.read(skipAheadProvider.notifier).reviewPassedPerfectly(childId: childId, skills: child.skills ?? const {}, track: track, reviewUnits: units);
+      }
+    }
     if (mounted) setState(() => _result = r);
   }
 

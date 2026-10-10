@@ -157,6 +157,12 @@ class ProfilesNotifier extends Notifier<List<ChildProfile>> {
     await _save();
   }
 
+  /// Gives a child made before the skills list the skills that match the old answer. The time of the last change is left as it is (this is not an edit by the parent).
+  Future<void> setSkillsQuietly(String id, Set<String> skills) async {
+    state = [for (final p in state) if (p.id == id && p.skills == null) p.copyWith(skills: skills) else p];
+    await _save();
+  }
+
   /// A change that came from the server (the most recent one wins): applied as it is, with the time it was made, without stamping "now".
   Future<void> applyFromServer(String id, {required String name, required String avatarKey, required int birthYear, int? birthMonth, int? goalMinutes, String? track, Set<String>? skills, required DateTime updatedAt}) async {
     state = [

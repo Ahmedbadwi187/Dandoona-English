@@ -8,6 +8,7 @@ import '../content/content_repository.dart';
 import '../onboarding/track_resolver.dart';
 import '../profiles/child_profile.dart';
 import '../settings/settings.dart';
+import '../skills/skip_ahead.dart';
 import '../units/map_path.dart' show castleId;
 import '../units/unit_meta.dart';
 import 'parent_ui.dart';
@@ -104,6 +105,20 @@ class ParentPrompts extends ConsumerWidget {
               await ref.read(parentAsksProvider.notifier).explorersAnswered(child.id);
             },
             onNo: () => ref.read(parentAsksProvider.notifier).explorersAnswered(child.id),
+          ),
+        if (ref.watch(skipAheadProvider)[child.id]?.pendingUnit case final unit?)
+          _PromptCard(
+            key: Key('offer-skip-${child.id}'),
+            icon: Icons.fast_forward_rounded,
+            color: Palette.green,
+            text: s.format('pSkipOffer', {'name': child.name, 'unit': ref.watch(trackContentProvider(child.track)).asData?.value.unitById(unit)?.titleFor(ref.watch(settingsProvider).languageCode) ?? unit}),
+            note: s('pSkipKeeps'),
+            yes: s('pSkipYes'),
+            no: s('pNotNow'),
+            yesKey: Key('offer-skip-yes-${child.id}'),
+            noKey: Key('offer-skip-no-${child.id}'),
+            onYes: () => ref.read(skipAheadProvider.notifier).accept(child.id),
+            onNo: () => ref.read(skipAheadProvider.notifier).decline(child.id),
           ),
         if (needsMonthAsk(child, asks))
           _PromptCard(

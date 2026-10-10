@@ -12,6 +12,7 @@ import '../content/content_repository.dart';
 import '../onboarding/setup_flow.dart';
 import '../progress/progress.dart';
 import '../skills/skills.dart';
+import '../skills/skip_ahead.dart';
 import '../skills/skills_checklist.dart';
 import '../units/unit_logic.dart';
 import '../profiles/child_profile.dart';
@@ -107,9 +108,7 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
     final unitIds = [for (final u in content.units) u.id];
     final plan = placementFor(config: config, track: _track, skills: _skills, unitIds: unitIds);
     final played = {for (final u in content.units) if (u.lessonIds.any((l) => progress.hasProgress(_child.id, l))) u.id};
-    final oldPlaced = meta.of(_child.id).placed;
-    final kept = oldPlaced.where((u) => !unitIds.contains(u) || played.contains(u));
-    await ref.read(unitMetaProvider.notifier).setPlaced(_child.id, {...kept, ...plan.doneUnits});
+    await ref.read(unitMetaProvider.notifier).setPlaced(_child.id, placedAfterEdit(oldPlaced: meta.of(_child.id).placed, trackUnitIds: unitIds, playedUnits: played, plan: plan.doneUnits));
     await settings.setSessionMinutes(_goal);
     if (_reminder != ref.read(settingsProvider).reminderTime) {
       final reminders = ref.read(reminderServiceProvider);
@@ -359,6 +358,15 @@ class _EditChildScreenState extends ConsumerState<EditChildScreen> {
                           else ...[
                             SkillsChecklist(s: s, config: config, selected: _skills, onChanged: (v) => setState(() => _skills = v)),
                             _SkillsPreview(s: s, config: config, track: _track, skills: _skills, name: _name.text.trim().isEmpty ? _child.name : _name.text.trim(), lang: lang),
+                            if (_skills.contains(skillUnsure) || ref.watch(skipAheadProvider)[_child.id]?.off == true)
+                              SwitchListTile(
+                                key: const Key('skip-suggestions'),
+                                contentPadding: EdgeInsets.zero,
+                                title: Text(s('pSkipSuggestions'), style: ParentText.body),
+                                subtitle: Text(s('pSkipSuggestionsHint'), style: ParentText.caption),
+                                value: ref.watch(skipAheadProvider)[_child.id]?.off != true,
+                                onChanged: (on) => on ? ref.read(skipAheadProvider.notifier).turnOn(_child.id) : ref.read(skipAheadProvider.notifier).turnOff(_child.id),
+                              ),
                           ],
                         ],
                       ),

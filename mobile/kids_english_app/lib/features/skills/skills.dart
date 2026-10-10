@@ -186,7 +186,38 @@ Set<String> skillsFromOldLevel(SkillsConfig config, int level) {
   }
 }
 
+/// The skills a child made before the list existed would have had: the old single answer was kept only as the units it counted as done
+/// (Letters; Letters and Sound Builders), so it is read back from them. Nothing is guessed from play: a child with no such mark is "none yet".
+Set<String> skillsFromPlacement(SkillsConfig config, Set<String> placed) {
+  if (placed.contains('sound-builders')) return skillsFromOldLevel(config, 3); // reads simple words
+  if (placed.contains('letters')) return skillsFromOldLevel(config, 2); // knows all letters
+  return skillsFromOldLevel(config, 0);
+}
+
 final skillsConfigProvider = FutureProvider<SkillsConfig>((ref) async {
   final raw = await rootBundle.loadString('assets/content/skills.json');
   return SkillsConfig.fromJson(jsonDecode(raw) as Map<String, dynamic>);
 });
+
+/// Gives every child saved before the skills list (skills == null) the skills that match their old answer. Runs at start-up and does nothing for a
+/// child that already has skills. The track stays as it is: they keep their current active track.
+Future<int> convertOldChildren({
+  required SkillsConfig config,
+  required Iterable<({String id, Set<String>? skills})> children,
+  required Set<String> Function(String childId) placedOf,
+  required Future<void> Function(String childId, Set<String> skills) save,
+}) async {
+  var converted = 0;
+  for (final c in children) {
+    if (c.skills != null) continue;
+    await save(c.id, skillsFromPlacement(config, placedOf(c.id)));
+    converted++;
+  }
+  return converted;
+}
+
+/// The units counted as done by placement after the parent edits the skills of a child in [track]: the new plan's units are added, marks of
+/// the other track stay, and a mark on a unit the child really played stays too (real progress is never touched). Only marks on units
+/// the child never played can go away. Unlocked chests are separate (they stay unlocked).
+Set<String> placedAfterEdit({required Set<String> oldPlaced, required List<String> trackUnitIds, required Set<String> playedUnits, required List<String> plan}) =>
+    {...oldPlaced.where((u) => !trackUnitIds.contains(u) || playedUnits.contains(u)), ...plan};
