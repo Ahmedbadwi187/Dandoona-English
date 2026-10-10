@@ -33,6 +33,7 @@ internal class ChildConfig : IEntityTypeConfiguration<Child>
         b.Property(x => x.Name).HasMaxLength(30);
         b.Property(x => x.AvatarKey).HasMaxLength(50);
         b.Property(x => x.Track).HasMaxLength(50).HasDefaultValue(Tracks.LittleLearners);
+        b.Property(x => x.Skills).HasMaxLength(500); // skill ids joined by commas; null = never asked
         b.HasOne(x => x.Parent).WithMany(p => p.Children).HasForeignKey(x => x.ParentId).OnDelete(DeleteBehavior.Cascade);
         b.HasIndex(x => x.ParentId);
     }
