@@ -58,7 +58,7 @@ void main() {
       expect(find.byKey(const Key('welcome-no-account')), findsOneWidget);
       expect(find.byKey(const Key('welcome-account')), findsOneWidget);
       expect(find.text('Start without an account'), findsOneWidget);
-      expect(find.text('Everything stays on this device'), findsOneWidget);
+      expect(find.text('Everything stays on this device'), findsNothing); // (the two lines under the options were removed)
       expect(_continue(t).onPressed, isNotNull);
 
       await t.tap(find.byKey(const Key('ob-continue')));

@@ -71,7 +71,6 @@ class ParentWelcomeScreen extends StatelessWidget {
           ChoiceCard(
             key: const Key('welcome-no-account'),
             title: s('obNoAccount'),
-            subtitle: s('obNoAccountSub'),
             leading: const _RoundIcon(Icons.phone_android_rounded, Palette.green),
             selected: !withAccount,
             onTap: () => onChoose(false),
@@ -79,7 +78,6 @@ class ParentWelcomeScreen extends StatelessWidget {
           ChoiceCard(
             key: const Key('welcome-account'),
             title: s('obAccount'),
-            subtitle: s('obAccountSub'),
             leading: const _RoundIcon(Icons.cloud_sync_rounded, Palette.blue),
             selected: withAccount,
             onTap: () => onChoose(true),
