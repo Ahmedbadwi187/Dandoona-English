@@ -196,7 +196,7 @@ void main() {
     await _tap(t, 'ob-continue');
     await _pick(t, 'ob-month', _s('obMonth5'));
     await _tap(t, 'ob-continue');
-    await tapSkill(t, 'none');
+    await tapSkill(t, 'some-letters');
     await _tap(t, 'ob-continue');
     await _tap(t, 'goal-5');
     await _tap(t, 'ob-continue');

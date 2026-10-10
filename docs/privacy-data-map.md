@@ -30,7 +30,7 @@ Serilog structured logs must never include passwords, tokens, API keys, request 
 
 | Key (SharedPreferences) | Fields | Purpose | Notes |
 |---|---|---|---|
-| `children.v1` | id, name (nickname, max 30), avatarKey, birthYear, track, createdAt | Child profiles | No photo, email, full name or exact birth date. Deleted with the profile. |
+| `children.v1` | id, name (nickname, max 30), avatarKey, birthYear, birthMonth, goalMinutes, track, skills (ids from the skills list), updatedAt, createdAt | Child profiles | No photo, email, full name or exact birth date. Deleted with the profile. |
 | `progress.v1` | clientRecordId, childId, lessonId, activity, stars, attempts, timeSpentSeconds, completedAt | Progress and the parent dashboard | Deleted with the child. |
 | `meta.v2` | per child: unit id -> date a certificate was earned, and which unit celebrations were already shown | Show the unit certificates and show each celebration once | Deleted with the child. Written by the one-time migration for children who finished Letters before units existed; `progress.v1` is never rewritten. |
 | `misses.v1` | per child: the words not found in the "hear it, tap it" games (lesson id, word, how many times, at most 9) | Practice on the map and the parent's "Practice at home" list | Phone only, never sent to the server or anywhere. Deleted with the child. Each word found in Practice takes one off. |
@@ -139,3 +139,21 @@ activity). New keys **on the phone only**:
 Active days are counted from the progress already on the phone (days with a finished activity); there is no streak, nothing is
 reset and a missed day is never shown. The birth month is now required for new children (it was already asked); children saved
 with the year alone keep working, and the parent is asked once to add the month.
+
+## Skills, active tracks and automatic sync (10 Oct 2026)
+
+Ages 3 to 8, two released tracks (Little Learners 3-5, Explorers 6-8; Champions not built). What the parent answers in "What can your child already do?"
+is stored as a list of skill ids (`assets/content/skills.json`; or `none` / `unsure`). It is the parent's answer, never a test of the child, and it decides
+only the track suggestion and the starting unit.
+
+| Where | What | Notes |
+|---|---|---|
+| Phone: `children.v1` | + `skills`, `goalMinutes`, `updatedAt` (when the profile was last changed) | deleted with the profile |
+| Phone: `skipahead.v1` | per child: the unit being suggested, the units already suggested, refusals in a row, switched off | for the "seems to know this already, skip ahead?" card; no data leaves the phone |
+| Phone: `sync.v1` | + `profilePushed` (which version of each profile the server has) | |
+| Server: `Children` table | + `GoalMinutes`, `Skills` (ids joined by commas), `ProfileUpdatedAt` (all nullable; migration `ChildSkillsGoalAndProfileTime`) | only for parents who chose an account; deleted with the child |
+
+**Automatic sync** (accounts only): sends changes by itself; with no account nothing is ever sent. The status line in settings shows
+saved / saving / waiting. Conflicts: best result per lesson, union of rewards, most recent profile fields and skills.
+**Password reset**: the parent's e-mail address and a 6-digit code go through the SMTP provider the owner configures (`Email` section of appsettings);
+the code works once for a few minutes. The provider is a data processor: name it in the privacy policy when chosen.

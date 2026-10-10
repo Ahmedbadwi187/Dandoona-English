@@ -1,7 +1,7 @@
 name: kids_english_app
-description: Kids English learning app for Arabic-speaking children aged 3-12 (Little Learners track).
+description: Kids English learning app for Arabic-speaking children aged 3-8 (Little Learners and Explorers tracks).
 publish_to: none
-version: 0.1.0+1
+version: 0.2.0+2
 
 environment:
   sdk: ">=3.9.0 <4.0.0"

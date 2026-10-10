@@ -50,7 +50,7 @@
     <h2>3. What is stored on the device</h2>
     <table>
       <tr><th>Data</th><th>Purpose</th><th>Notes</th></tr>
-      <tr><td>Child profile: nickname (not a full name), avatar choice, birth <em>year</em>, learning track, chosen mascot accessory</td><td>Show the child's profile and age-appropriate content</td><td>No photo, no email, no exact date of birth.</td></tr>
+      <tr><td>Child profile: nickname (not a full name), avatar choice, birth <em>month and year</em>, daily goal, the English skills the parent ticked in a list (for example "knows some letters"), the active learning track (Little Learners, ages 3 to 5, or Explorers, ages 6 to 8), chosen mascot accessory</td><td>Show the child's profile, choose the right track and starting point, and age-appropriate content</td><td>No photo, no email, no exact date of birth. The skills are the parent's answer, not a test of the child.</td></tr>
       <tr><td>Progress: lesson, activity, stars, attempts, time spent, completion time</td><td>Stars, the letter map and the parent's weekly summary</td><td>Deleted when the profile is deleted.</td></tr>
       <tr><td>Settings: language, session length, unlock-all option</td><td>Parent preferences</td><td></td></tr>
     </table>
@@ -60,7 +60,9 @@
     <table>
       <tr><th>Data</th><th>Purpose</th></tr>
       <tr><td>Parent email address and a salted password hash (we never store the password itself)</td><td>Sign in</td></tr>
-      <tr><td>Each child's nickname, avatar, birth year and track</td><td>Keep profiles across devices</td></tr>
+      <tr><td>Each child's nickname, avatar, birth month and year, track, daily goal and the skills the parent ticked</td><td>Keep profiles across devices and restore them on a new phone</td></tr>
+      <tr><td>When a profile was last changed</td><td>When two phones change the same child, the most recent change is kept</td></tr>
+      <tr><td>Your email address, and a short code we send you when you ask to reset your password</td><td>Password reset (the message is sent by our email provider; the code works once, for a few minutes)</td></tr>
       <tr><td>Progress records (lesson, activity, stars, attempts, seconds, completion time)</td><td>Progress sync and the weekly summary</td></tr>
       <tr><td>A login token (stored on the phone in the system secure storage)</td><td>Stay signed in</td></tr>
     </table>
@@ -128,7 +130,7 @@
     <h2>٣. ما الذي يُخزَّن على الجهاز</h2>
     <table>
       <tr><th>البيانات</th><th>الغرض</th><th>ملاحظات</th></tr>
-      <tr><td>ملف الطفل: اسم مستعار (وليس الاسم الكامل)، الصورة الرمزية، <em>سنة</em> الميلاد، المسار التعليمي، إكسسوار الشخصية المختار</td><td>عرض ملف الطفل والمحتوى المناسب لعمره</td><td>لا صورة ولا بريد إلكتروني ولا تاريخ ميلاد دقيق.</td></tr>
+      <tr><td>ملف الطفل: اسم مستعار (وليس الاسم الكامل)، الصورة الرمزية، <em>شهر وسنة</em> الميلاد، الهدف اليومي، المهارات الإنجليزية التي اختارها ولي الأمر من قائمة (مثل «يعرف بعض الحروف»)، المسار النشط (المتعلّمون الصغار من ٣ إلى ٥ سنوات، أو المستكشفون من ٦ إلى ٨ سنوات)، إكسسوار الشخصية المختار</td><td>عرض ملف الطفل واختيار المسار ونقطة البداية المناسبين والمحتوى المناسب لعمره</td><td>لا صورة ولا بريد إلكتروني ولا تاريخ ميلاد دقيق. المهارات هي إجابة ولي الأمر وليست اختبارًا للطفل.</td></tr>
       <tr><td>التقدّم: الدرس والنشاط والنجوم والمحاولات والوقت المستغرق ووقت الإكمال</td><td>النجوم وخريطة الحروف والملخص الأسبوعي لولي الأمر</td><td>يُحذف عند حذف ملف الطفل.</td></tr>
       <tr><td>الإعدادات: اللغة ومدة الجلسة وخيار فتح جميع الحروف</td><td>تفضيلات ولي الأمر</td><td></td></tr>
     </table>
@@ -138,7 +140,9 @@
     <table>
       <tr><th>البيانات</th><th>الغرض</th></tr>
       <tr><td>البريد الإلكتروني لولي الأمر وبصمة كلمة المرور المملّحة (لا نخزّن كلمة المرور نفسها)</td><td>تسجيل الدخول</td></tr>
-      <tr><td>الاسم المستعار لكل طفل وصورته الرمزية وسنة ميلاده ومساره</td><td>الحفاظ على الملفات بين الأجهزة</td></tr>
+      <tr><td>الاسم المستعار لكل طفل وصورته الرمزية وشهر وسنة ميلاده ومساره وهدفه اليومي والمهارات التي اختارها ولي الأمر</td><td>الحفاظ على الملفات بين الأجهزة واستعادتها على هاتف جديد</td></tr>
+      <tr><td>وقت آخر تعديل على الملف</td><td>إذا عدّل هاتفان الطفل نفسه يُحفظ أحدث تعديل</td></tr>
+      <tr><td>بريدك الإلكتروني، ورمز قصير نرسله إليك عند طلب استعادة كلمة المرور</td><td>استعادة كلمة المرور (تُرسَل الرسالة عبر مزوّد البريد لدينا؛ يعمل الرمز مرة واحدة ولدقائق قليلة)</td></tr>
       <tr><td>سجلات التقدّم (الدرس والنشاط والنجوم والمحاولات والثواني ووقت الإكمال)</td><td>مزامنة التقدّم والملخص الأسبوعي</td></tr>
       <tr><td>رمز دخول (يُحفظ على الهاتف في التخزين الآمن للنظام)</td><td>البقاء مسجّلاً للدخول</td></tr>
     </table>

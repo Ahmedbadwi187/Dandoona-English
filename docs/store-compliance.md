@@ -1,6 +1,6 @@
 # Store compliance review (Google Play Families, Apple Kids Category)
 
-Status of each requirement for the Little Learners app (ages 3-5), with the evidence. "Owner action" items need something
+Status of each requirement for the app: **two released tracks, Little Learners (ages 3-5) and Explorers (ages 6-8)**, with the evidence. "Owner action" items need something
 that only the account owner can do (publishing accounts, hosting pages, store-console forms). This is an engineering
 review, not legal advice: have the privacy policy checked for the markets you ship to (COPPA in the US, GDPR-K in the EU,
 and the privacy laws of the Arab countries you target).
@@ -21,13 +21,13 @@ and the privacy laws of the Arab countries you target).
 ## Google Play - Families Policy
 | Requirement | Status | Evidence / action |
 |---|---|---|
-| Target audience includes children; choose the right age bands in Play Console | Owner action | Declare "5 and under" (and 6-8/9-12 when those tracks ship). Enrol in the Designed for Families program. |
+| Target audience includes children; choose the right age bands in Play Console | **Owner action (new)** | In Play Console > App content > Target audience, tick **5 and under** and **6-8** (not 9-12: Champions is not built). Enrol in the Designed for Families program. Then answer the questionnaire again: the app targets children and parents, no ads, no social features. |
 | No ads, or only Families-certified ad SDKs | Done | No ad SDK present. |
 | No personal data collected from children without parental consent; no persistent identifiers | Done | Child profile = nickname, avatar, birth year, stored locally. No advertising ID, no analytics. |
 | Parental gate before anything leaving the child experience | Done | Press-and-hold + multiplication before the parent area, settings, and the session time-up override. The child area has no external links, purchases or ads. |
 | Only age-appropriate content | Done | Self-drawn and generated illustrations reviewed by hand; no text in images; audio is the developer's reviewed script. |
 | Permissions only as needed, with explanation | Done | Microphone prompted on first use of record-and-listen; iOS usage string written. The activity works without it (skip, 1 star). |
-| Data safety form | Owner action | Local-only mode: "No data collected". With sync enabled: email address (account), child nickname/birth year, app activity (progress) - collected, linked to the parent account, encrypted in transit, **deletion available** (see below). |
+| Data safety form | **Owner action (update)** | Local-only mode: "No data collected". With an account: email address (account and password reset), child nickname, birth **month and year**, daily goal, the skills the parent ticked (a list of ids), the active track, app activity (progress) - collected, linked to the parent account, encrypted in transit, **deletion available** (see below). Add "app info and performance" only if you add crash reporting (there is none). Purpose for all of it: app functionality and account management; not shared, not used for ads or analytics. |
 | Deleting a child's data | Done | Deleting a child profile in the app also hard-deletes the child and all progress on the server (queued and retried if offline). Integration-tested (rows physically removed, sibling untouched) and verified against the live API. |
 | Account deletion in-app + a web link | Partly | In-app deletion with password confirmation is built and tested (Settings > Account & sync > Delete account & data; `POST /api/account/delete`). **Owner action:** a draft page exists (`site/delete-account.html`, English + Arabic): have it reviewed, host it over HTTPS and paste its URL in Play Console. |
 | Privacy policy URL | Owner action | Required for the store listing. A draft exists (`site/privacy-policy.html`, English + Arabic, covering PDPL, Families Policy and Kids Category): have a lawyer review it, fill the placeholders, host it over HTTPS. |
@@ -36,10 +36,10 @@ and the privacy laws of the Arab countries you target).
 ## Apple - Kids Category (App Store Review 1.3, 5.1.4)
 | Requirement | Status | Evidence / action |
 |---|---|---|
-| Pick an age band (5 and under / 6-8 / 9-11) | Owner action | "5 and under" for Little Learners. |
+| Pick an age band (5 and under / 6-8 / 9-11) | **Owner action (decision)** | **Keep the Kids Category band at "Ages 5 & Under"**: Little Learners is the Kids Category app; Explorers (6-8) is in the same app, available to a parent who chooses it. Apple lets the band be 5 & Under while the app's age rating stays 4+. If you ever want the 6-8 band, the whole app must meet the Kids Category rules for it (it already does: no ads, no analytics, parental gate). |
 | No third-party advertising or analytics | Done | None included. |
 | Parental gate before links out, purchases, or permission prompts for personal data | Done | Gate in front of the parent area; the app has no links out and no in-app purchases. |
-| Privacy "nutrition label" | Owner action | Local-only: "Data Not Collected". With sync: Contact Info (email), User Content/Usage (progress) linked to the user, not used for tracking. |
+| Privacy "nutrition label" | **Owner action (update)** | Local-only: "Data Not Collected". With an account: Contact Info (email address), Identifiers: none, User Content / Usage Data (progress, the child's nickname, birth month and year, daily goal and the skills list the parent ticked) linked to the user, **not used for tracking**. Update App Privacy in App Store Connect to match. |
 | Microphone usage description | Done | `NSMicrophoneUsageDescription` explains on-device record/play-back and immediate deletion. |
 | Account deletion in the app (5.1.1(v)) | Done | Same in-app flow as Android. |
 | An iOS build | **Not verified** | The `ios/` runner exists but this was developed on Windows: it has never been built or run. Needs a Mac (or a cloud Mac build) before submission. |
@@ -65,6 +65,27 @@ and the privacy laws of the Arab countries you target).
 | Transport | https required in release; Android blocks cleartext by default. HSTS/TLS termination is a deployment task. |
 | Secrets | JWT key and DB connection string live in user-secrets/Key Vault/environment, never in the repo (`appsettings.json` is empty for both). Rotate the JWT key if it was ever shared. |
 | Dependencies | Only MIT/Apache/BSD/PostgreSQL-licensed libraries except the documented SQL Server exceptions (`licenses.md`). |
+
+## What you must do yourself in the store consoles (checklist, 10 Oct 2026)
+
+**Google Play Console**
+1. App content > **Target audience and content**: add the age group **6-8** (keep 5 and under). Do not tick 9-12.
+2. App content > **Data safety**: update as in the table above (email, child profile with birth month and year, goal, skills ticked, active track, progress; none shared; encrypted in transit; deletion in the app and on the web page).
+3. App content > **Privacy policy**: paste the URL of the hosted `site/privacy-policy.html` (now says ages 3 to 8, the skills list, the password-reset e-mail). Have a lawyer read it first.
+4. Store listing: paste the descriptions from `docs/store-listing.md` (Arabic and English).
+5. Families Policy: re-check "Designed for Families" after the age change; no ads, no analytics: nothing else to declare.
+
+**Apple App Store Connect**
+1. **Kids Category age band: keep "Ages 5 & Under".** Do not change it to 6-8.
+2. **App Privacy**: update the nutrition label as in the table above.
+3. Privacy policy URL and the account-deletion page URL (same pages as Android).
+4. App description and keywords: from `docs/store-listing.md`.
+5. Notes for App Review: explain the offline design, the parental gate (hold + math), that the account is optional, and that Explorers content downloads from our server on first use (no purchases).
+
+**Both**
+- Host `site/` over HTTPS and use the same URLs.
+- The password-reset e-mail needs a real SMTP account in the host's `appsettings` (`Email` section, see `docs/deployment.md`); without it the reset code is only written to the server log.
+- Apply the database migration `ChildSkillsGoalAndProfileTime` **before** uploading the new API (`docs/deployment.md`).
 
 ## Open items before publishing (not engineering)
 1. Host the privacy policy and the account/data-deletion page; add both URLs to the store listings.
